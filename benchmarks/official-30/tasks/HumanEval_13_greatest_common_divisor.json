@@ -1,0 +1,11 @@
+{
+  "benchmark": "MultiPL-E",
+  "task_id": "HumanEval_13_greatest_common_divisor",
+  "language": "Rust",
+  "dataset_revision": "28441b6024e71d4a1c1c0f6bf171c935cd5a43f2",
+  "dataset_row_index": 13,
+  "prompt": "/// Return a greatest common divisor of two integers a and b\n/// >>> greatest_common_divisor(3, 5)\n/// 1\n/// >>> greatest_common_divisor(25, 15)\n/// 5\nfn greatest_common_divisor(a: isize, b: isize) -> isize {\n",
+  "stop_tokens": [
+    "\n}"
+  ]
+}

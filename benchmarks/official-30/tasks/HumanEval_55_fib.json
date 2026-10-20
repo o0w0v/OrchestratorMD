@@ -1,0 +1,11 @@
+{
+  "benchmark": "MultiPL-E",
+  "task_id": "HumanEval_55_fib",
+  "language": "Rust",
+  "dataset_revision": "28441b6024e71d4a1c1c0f6bf171c935cd5a43f2",
+  "dataset_row_index": 51,
+  "prompt": "/// Return n-th Fibonacci number.\n/// >>> fib(10)\n/// 55\n/// >>> fib(1)\n/// 1\n/// >>> fib(8)\n/// 21\nfn fib(n: isize) -> isize {\n",
+  "stop_tokens": [
+    "\n}"
+  ]
+}

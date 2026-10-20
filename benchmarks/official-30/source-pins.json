@@ -1,0 +1,33 @@
+{
+  "multipl_e_harness": {
+    "repository": "https://github.com/nuprl/MultiPL-E",
+    "commit": "3025a531af7450e7df8b96fe0440e9804480bbad"
+  },
+  "multi_swe_harness": {
+    "repository": "https://github.com/multi-swe-bench/multi-swe-bench",
+    "commit": "24f493f8a103e72312ded4f6b9c89f081d69cb09"
+  },
+  "multipl_e_dataset": {
+    "repository": "https://huggingface.co/datasets/nuprl/MultiPL-E",
+    "revision": "28441b6024e71d4a1c1c0f6bf171c935cd5a43f2",
+    "config": "humaneval-rs",
+    "split": "test"
+  },
+  "multi_swe_dataset": {
+    "repository": "https://huggingface.co/datasets/ByteDance-Seed/Multi-SWE-bench",
+    "revision": "56ff018c04a38e27ada1e9d0a6d5839a51f88f0d",
+    "files": [
+      "rust/BurntSushi__ripgrep_dataset.jsonl",
+      "rust/clap-rs__clap_dataset.jsonl",
+      "rust/nushell__nushell_dataset.jsonl",
+      "rust/rayon-rs__rayon_dataset.jsonl",
+      "rust/serde-rs__serde_dataset.jsonl",
+      "rust/sharkdp__bat_dataset.jsonl",
+      "rust/sharkdp__fd_dataset.jsonl",
+      "rust/tokio-rs__bytes_dataset.jsonl",
+      "rust/tokio-rs__tokio_dataset.jsonl",
+      "rust/tokio-rs__tracing_dataset.jsonl"
+    ]
+  },
+  "note": "Copied from the original frozen research metadata; obtain evaluator data separately and verify revision/content binding before scoring."
+}

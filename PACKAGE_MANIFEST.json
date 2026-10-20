@@ -1,0 +1,332 @@
+{
+  "snapshot_date_jst": "2026-10-20",
+  "source_chat_title": "Create repository AGENTS.md",
+  "task_count": 30,
+  "results_included": false,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "425570aff14344fb3f3439d4fca579741b5b135a201cfeac6092b488bf0eb299"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "2e0439a4ae851c15c735d9fe048a5604affb7c6e826bb9bfd3531330258d20e5"
+    },
+    {
+      "path": "benchmarks/official-30/INDEX.md",
+      "sha256": "4d7e893a187b01d61adde243be250c05cc5273650ad145cefa66f7593a5df886"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/multi_swe-LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/multipl_e-LICENSE",
+      "sha256": "6891bf32c7df59f0665d45a22bc09224ed122394eae4404048e0e4c7e4bc2f23"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/upstream/BurntSushi__ripgrep__UNLICENSE",
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/upstream/clap-rs__clap__LICENSE-APACHE",
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/upstream/nushell__nushell__LICENSE",
+      "sha256": "2dc1f03f729c21902d869b4d8f8dc528fc730f4c6ad83fc128672bda0ad69196"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/upstream/rayon-rs__rayon__LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/upstream/serde-rs__serde__LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/upstream/sharkdp__bat__LICENSE-APACHE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/upstream/sharkdp__fd__LICENSE-APACHE",
+      "sha256": "73c83c60d817e7df1943cb3f0af81e4939a8352c9a96c2fd00451b1116fa635c"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/upstream/tokio-rs__bytes__LICENSE",
+      "sha256": "45f522cacecb1023856e46df79ca625dfc550c94910078bd8aec6e02880b3d42"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/upstream/tokio-rs__tokio__LICENSE",
+      "sha256": "253cd04c6714889df2d32f3f64d669179a1c95c76ac43c40882c52eb06bc3552"
+    },
+    {
+      "path": "benchmarks/official-30/licenses/upstream/tokio-rs__tracing__LICENSE",
+      "sha256": "898b1ae9821e98daf8964c8d6c7f61641f5f5aa78ad500020771c0939ee0dea1"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/BurntSushi__ripgrep-2626.md",
+      "sha256": "0ee41da58c06f3579c4fcfe571b96dd616cd74a6d24c1c0e7cef8fc46b4efdfd"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/clap-rs__clap-5873.md",
+      "sha256": "c3840c959fe8785f9cfb701f03aface7058f1ba97c1025618c776889dc0ade8d"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_109_move_one_ball.md",
+      "sha256": "37a2a9e76dee9c7a64e0f64d34d4d72cdcf4180f4058a74ab5ca0bf7ca309803"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_11_string_xor.md",
+      "sha256": "4e85ad6320caa1979f71462e7e59e99518734977ebdace57b3c48f0d7e066d57"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_132_is_nested.md",
+      "sha256": "e97cdd867220b0ffadf3e092b0a73bbb5c70eec8b2088257fb0d0fb8e3e1812c"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_135_can_arrange.md",
+      "sha256": "a37ff80f211281de4199db0913863d53c9b90a2badbc541df705f9174a92ed2b"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_13_greatest_common_divisor.md",
+      "sha256": "a48b1949cace27e81b6789c01196448d7d3db6b4a5ead368983527448d72dc63"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_146_specialFilter.md",
+      "sha256": "28a8e8a501ffa3ba00aa92752879178858315f9bdbe6198d589bea4d5af83ea3"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_156_int_to_mini_roman.md",
+      "sha256": "24ce57e3a1802cb80935d34347872502bd8032aa284bdb06994007e44ecb5dbe"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_158_find_max.md",
+      "sha256": "b4feae5e204f4b8cec44960947b41eb2827a0cabb644e857421d982b6b14d595"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_18_how_many_times.md",
+      "sha256": "98aa8b5d687e9671d05224b2d0085917dafd8c47453a5ed402e84004aa35ee6b"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_30_get_positive.md",
+      "sha256": "7714db6fc337a581fb6d3aa5bb5601916609e51bcc92437f1379d57442b947f9"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_34_unique.md",
+      "sha256": "97e9bf197e6a09e2b41e6a58c741898e570d9deb967dbbc461a6fa9d2a36e6ef"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_4_mean_absolute_deviation.md",
+      "sha256": "f9ef8997ee5b2abe94e1269a40cc7d6c843ad7d2ac1e8be1f998893c62e3d9b3"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_51_remove_vowels.md",
+      "sha256": "090c02f76ef9226025095c3d674583df92142b91cc5b7835c4ec59d6014f4c04"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_55_fib.md",
+      "sha256": "bb03afdc59ec56df19e22141542a8c3a66e8561359c52672c91bf217b8084f50"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_61_correct_bracketing.md",
+      "sha256": "3bf6bc5012b278974edaeec6fc9ee721637fc4e9aacc59dd56884ca71f8a6c4d"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_62_derivative.md",
+      "sha256": "b2560a6ffef498c5414a94a95284872f5749910f9cc79d3a9c165fd58b4a090d"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_67_fruit_distribution.md",
+      "sha256": "9aaeda5be54794582f4c92431e44a1b114092277193ccb992fa90d74dcdcb9ae"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_83_starts_one_ends.md",
+      "sha256": "c3a5875430a8a9120524431fa9d1b28df9635b20b6d00ee0d65af40bff8de71e"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_99_closest_integer.md",
+      "sha256": "de2819a298a699ed968101ed5c8961e468faf559ac8e9eb6a4cac529fa953c44"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_9_rolling_max.md",
+      "sha256": "3a8abf75c6f5b628fd17a4ae2c9f590a8404c64df931e65b2f795d86d10cd63e"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/nushell__nushell-13870.md",
+      "sha256": "84c859199ecd8196111fde234213dc306b82b437b463ee692eb7ec8facc0c812"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/rayon-rs__rayon-986.md",
+      "sha256": "2f52d003906b0ce421b66f82c4d2c55c6facdd923c424178315d2fd66ac7cc10"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/serde-rs__serde-2798.md",
+      "sha256": "f54b154c307e567967a1cd6954a07b299543c026fd8f72829a40561af55fcc9d"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/sharkdp__bat-3189.md",
+      "sha256": "c4e85f81cf3e2f4219f809fed40f0f08a0a78b47ef0ad3d69552bd85020a7a6d"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/sharkdp__fd-1394.md",
+      "sha256": "6adb32a48ef297a4e0159e29293a1af71922acb81a0649d5d96d0118ed441727"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/tokio-rs__bytes-732.md",
+      "sha256": "72b78dc1185e56686ef6c4c093b18dd6e1b819105d09f2b37132b28963181b76"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/tokio-rs__tokio-7124.md",
+      "sha256": "54eae933d32065a93a49403401a1e20c5ef0b7292fee5a18ca1cf92f4292be94"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/tokio-rs__tracing-2897.md",
+      "sha256": "b7c6f4be6e8c6c102a162495932e431fedbcb44a8320dda0c40b42b4a6959e37"
+    },
+    {
+      "path": "benchmarks/official-30/README.md",
+      "sha256": "4f01896e0d95d4c393084110b84a95de6252bbec28c53122f08d31a3df5bf7e7"
+    },
+    {
+      "path": "benchmarks/official-30/results-template.csv",
+      "sha256": "305fa26283e881c5b8636fe23b473d8b2d9cdb55e7bd15ce48f2398f86941466"
+    },
+    {
+      "path": "benchmarks/official-30/source-pins.json",
+      "sha256": "91f219848592d9605dc76ce69d2d1fd179491ead3769621f72471c949f39e0be"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/BurntSushi__ripgrep-2626.json",
+      "sha256": "81723f72cb1e6b1529d55b06a3ef6cf072dc8d8ef812b7fd55302a160754f1d8"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/clap-rs__clap-5873.json",
+      "sha256": "6156477929be10414dafc0d0c74c9452da84f40a80f04c89ef3a2a32dcae4ac5"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_109_move_one_ball.json",
+      "sha256": "43e0db6026f4e2e6e90690d7f24295d5eadb45774fd5637e05e4bad68f5ba7c9"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_11_string_xor.json",
+      "sha256": "3263ceb46c8e3f5631e07a7f5a9eed7c781f9efd2d6cac0fd027a1980051d010"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_132_is_nested.json",
+      "sha256": "e31215d9d10927e29aee44e99a4e7c6a9f50d3e877df2eb7821cbcb029875f86"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_135_can_arrange.json",
+      "sha256": "f6339087deca57d8725355ddf4589c52d5464c1f85252fda5b7d7b5d859eb9c7"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_13_greatest_common_divisor.json",
+      "sha256": "9c366718fe8926b14226990ac58298482d783c5868a218ed8803d2f8d837ab86"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_146_specialFilter.json",
+      "sha256": "6a30064f4318a05ef0e59a19bb2123c4c2a7265409f2db9df0f448337dc13af9"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_156_int_to_mini_roman.json",
+      "sha256": "aae3b4d217cd4933f1af643caf7ff7a9e496b878847ce18f4826b6d369561e0f"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_158_find_max.json",
+      "sha256": "593ff195ba5662d014e4765bdc784d679dc043088ce46a89491ce3c6025aed40"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_18_how_many_times.json",
+      "sha256": "6e06f9e5d017f78a91f3bf3cf4245ced0ac0fcbe6aebfc0d2c7b93f30a2650cd"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_30_get_positive.json",
+      "sha256": "eeca96ed32a3efc964ab300c05ba1ae4b560729c00efa255cf62ce226a8ce1af"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_34_unique.json",
+      "sha256": "e4d1ab15e6301f86d91cf48244036b9ce04a703733c4d320c805c580da45c996"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_4_mean_absolute_deviation.json",
+      "sha256": "e549a40bdb65010925804ac530ede3e3168542f71bbc75c8a14db43095cafcdf"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_51_remove_vowels.json",
+      "sha256": "3118d7e8443c4b7952f74d5a453f4e74b8d4a334cf5ded82c4c6c6ab2303652b"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_55_fib.json",
+      "sha256": "a627968d8b53256a01344c44af05d5c8475896bedb5941b29cb30becde89a746"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_61_correct_bracketing.json",
+      "sha256": "bc2936018c74a97702c3e2117d1d2d894135c4b58be541c0f34bcb334e6874a2"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_62_derivative.json",
+      "sha256": "cb8d37dec536ebfaf403784033473fa65056449f4d1aa662695465f9cd88552d"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_67_fruit_distribution.json",
+      "sha256": "79a40bba56b71ec1d99cb22b184de6c29c20baf16d7e0ad314f15f3231918caa"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_83_starts_one_ends.json",
+      "sha256": "ab7832af8b3f0680b1a9ddb97364548dd10ea2c470ca46d6a88c2b73b24411d8"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_99_closest_integer.json",
+      "sha256": "4f2460c25b2f1d162cc048a56a5e0ea118c24504fa736f727bd4f365243733d6"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_9_rolling_max.json",
+      "sha256": "407eced831f674f8491be555a5a49e0a9e31663eaa27c983fdc9443ef9fd6628"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/nushell__nushell-13870.json",
+      "sha256": "2eed5523c46f106458417084ed18ef07773090c38fdb1c20191b0cfb3cde75ac"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/rayon-rs__rayon-986.json",
+      "sha256": "fd63e3bc657d2cf5f52764918908a7962f87737d7095368c1e1002a177a77652"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/serde-rs__serde-2798.json",
+      "sha256": "74cb3a9a876671016ae55eaacd12d32336196d637d70c59b3ae98c17826d50c2"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/sharkdp__bat-3189.json",
+      "sha256": "c3ce21fa8092fa61f788f5e0afcf3b1e876c0970d245f2c8d232ff7a181ffad3"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/sharkdp__fd-1394.json",
+      "sha256": "70909c115df82e92e4ecc0c516081e1b971e39cfc92a47a4dddba49e391b1a86"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/tokio-rs__bytes-732.json",
+      "sha256": "97e4e5e6228e47a3077d34338c541164d5812de19761265000dfc1dcbb97665d"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/tokio-rs__tokio-7124.json",
+      "sha256": "d85ef94a6768284495dac4e3a7fbf7a4089e0f3f8917db1a9b30b4a068d6fb15"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/tokio-rs__tracing-2897.json",
+      "sha256": "ed0f8aecd841fa166f6c58da7f25dbaa37fe5198e3a901eb9130b92895b996a2"
+    },
+    {
+      "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",
+      "sha256": "f40754fdf68a6ce8af074ee09ca5304dd36d0568d39c30acc5c1d3ad3fba18e1"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0b35eaef92e97aa6b0b1155740765dfbf7684076112bd3be0df850f6739eb827"
+    },
+    {
+      "path": "README.md",
+      "sha256": "26ba3bffbdfa13415aab1c8f9afdad4218043de78655a2e35a8c605ab84b29b2"
+    }
+  ]
+}

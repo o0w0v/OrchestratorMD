@@ -1,0 +1,11 @@
+{
+  "benchmark": "MultiPL-E",
+  "task_id": "HumanEval_83_starts_one_ends",
+  "language": "Rust",
+  "dataset_revision": "28441b6024e71d4a1c1c0f6bf171c935cd5a43f2",
+  "dataset_row_index": 79,
+  "prompt": "/// Given a positive integer n, return the count of the numbers of n-digit\n/// positive integers that start or end with 1.\nfn starts_one_ends(n: isize) -> isize {\n",
+  "stop_tokens": [
+    "\n}"
+  ]
+}

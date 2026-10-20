@@ -1,0 +1,11 @@
+{
+  "benchmark": "MultiPL-E",
+  "task_id": "HumanEval_158_find_max",
+  "language": "Rust",
+  "dataset_revision": "28441b6024e71d4a1c1c0f6bf171c935cd5a43f2",
+  "dataset_row_index": 150,
+  "prompt": "/// Write a function that accepts a vector of strings.\n/// The vector contains different words. Return the word with maximum number\n/// of unique characters. If multiple strings have maximum number of unique\n/// characters, return the one which comes first in lexicographical order.\n/// >>> find_max(vec![String::from(\"name\"), String::from(\"of\"), String::from(\"string\")])\n/// String::from(\"string\")\n/// >>> find_max(vec![String::from(\"name\"), String::from(\"enam\"), String::from(\"game\")])\n/// String::from(\"enam\")\n/// >>> find_max(vec![String::from(\"aaaaaaa\"), String::from(\"bb\"), String::from(\"cc\")])\n/// String::from(\"aaaaaaa\")\nfn find_max(words: Vec<String>) -> String {\n",
+  "stop_tokens": [
+    "\n}"
+  ]
+}

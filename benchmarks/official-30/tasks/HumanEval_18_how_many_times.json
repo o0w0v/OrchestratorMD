@@ -1,0 +1,11 @@
+{
+  "benchmark": "MultiPL-E",
+  "task_id": "HumanEval_18_how_many_times",
+  "language": "Rust",
+  "dataset_revision": "28441b6024e71d4a1c1c0f6bf171c935cd5a43f2",
+  "dataset_row_index": 18,
+  "prompt": "/// Find how many times a given substring can be found in the original string. Count overlaping cases.\n/// >>> how_many_times(String::from(\"\"), String::from(\"a\"))\n/// 0\n/// >>> how_many_times(String::from(\"aaa\"), String::from(\"a\"))\n/// 3\n/// >>> how_many_times(String::from(\"aaaa\"), String::from(\"aa\"))\n/// 3\nfn how_many_times(string: String, substring: String) -> isize {\n",
+  "stop_tokens": [
+    "\n}"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "benchmark": "MultiPL-E",
+  "task_id": "HumanEval_156_int_to_mini_roman",
+  "language": "Rust",
+  "dataset_revision": "28441b6024e71d4a1c1c0f6bf171c935cd5a43f2",
+  "dataset_row_index": 148,
+  "prompt": "/// Given a positive integer, obtain its roman numeral equivalent as a string,\n/// and return it in lowercase.\n/// Restrictions: 1 <= num <= 1000\n/// Examples:\n/// >>> int_to_mini_roman(19)\n/// String::from(\"xix\")\n/// >>> int_to_mini_roman(152)\n/// String::from(\"clii\")\n/// >>> int_to_mini_roman(426)\n/// String::from(\"cdxxvi\")\nfn int_to_mini_roman(number: isize) -> String {\n",
+  "stop_tokens": [
+    "\n}"
+  ]
+}

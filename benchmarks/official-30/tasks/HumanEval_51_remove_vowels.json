@@ -1,0 +1,11 @@
+{
+  "benchmark": "MultiPL-E",
+  "task_id": "HumanEval_51_remove_vowels",
+  "language": "Rust",
+  "dataset_revision": "28441b6024e71d4a1c1c0f6bf171c935cd5a43f2",
+  "dataset_row_index": 47,
+  "prompt": "/// remove_vowels is a function that takes string and returns string without vowels.\n/// >>> remove_vowels(String::from(\"\"))\n/// String::from(\"\")\n/// >>> remove_vowels(String::from(\"abcdef\"))\n/// String::from(\"bcdf\")\n/// >>> remove_vowels(String::from(\"aaaaa\"))\n/// String::from(\"\")\n/// >>> remove_vowels(String::from(\"aaBAA\"))\n/// String::from(\"B\")\n/// >>> remove_vowels(String::from(\"zbcd\"))\n/// String::from(\"zbcd\")\nfn remove_vowels(text: String) -> String {\n",
+  "stop_tokens": [
+    "\n}"
+  ]
+}

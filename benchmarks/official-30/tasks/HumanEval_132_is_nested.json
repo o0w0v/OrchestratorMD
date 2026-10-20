@@ -1,0 +1,11 @@
+{
+  "benchmark": "MultiPL-E",
+  "task_id": "HumanEval_132_is_nested",
+  "language": "Rust",
+  "dataset_revision": "28441b6024e71d4a1c1c0f6bf171c935cd5a43f2",
+  "dataset_row_index": 126,
+  "prompt": "/// Create a function that takes a string as input which contains only square brackets.\n/// The function should return true if and only if there is a valid subsequence of brackets \n/// where at least one bracket in the subsequence is nested.\n/// >>> is_nested(String::from(\"[[]]\"))\n/// true\n/// >>> is_nested(String::from(\"[]]]]]]][[[[[]\"))\n/// false\n/// >>> is_nested(String::from(\"[][]\"))\n/// false\n/// >>> is_nested(String::from(\"[]\"))\n/// false\n/// >>> is_nested(String::from(\"[[][]]\"))\n/// true\n/// >>> is_nested(String::from(\"[[]][[\"))\n/// true\nfn is_nested(string: String) -> bool {\n",
+  "stop_tokens": [
+    "\n}"
+  ]
+}

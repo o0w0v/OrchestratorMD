@@ -1,0 +1,17 @@
+{
+  "benchmark": "Multi-SWE-bench",
+  "task_id": "BurntSushi__ripgrep-2626",
+  "language": "Rust",
+  "repository": "BurntSushi/ripgrep",
+  "base_commit": "7099e174acbcbd940f57e4ab4913fee4040c826e",
+  "dataset_revision": "56ff018c04a38e27ada1e9d0a6d5839a51f88f0d",
+  "dataset_file": "rust/BurntSushi__ripgrep_dataset.jsonl",
+  "record_index": 0,
+  "issues": [
+    {
+      "number": 1966,
+      "title": "`rg --unknown-switch` panics on broken pipe error",
+      "body": "#### What version of ripgrep are you using?\r\n\r\n```console\r\n$ ./target/debug/rg --version\r\nripgrep 13.0.0 (rev 9b01a8f9ae)\r\n-SIMD -AVX (compiled)\r\n+SIMD +AVX (runtime)\r\n```\r\n\r\n#### How did you install ripgrep?\r\n\r\nCompiled from source.\r\n\r\n```console\r\n$ git rev-parse HEAD\r\n9b01a8f9ae53ebcd05c27ec21843758c2c1e823f\r\n```\r\n\r\n#### What operating system are you using ripgrep on?\r\n\r\nmacOS Big Sur 11.5.1 (20G80)\r\n\r\n#### Describe your bug.\r\n\r\nripgrep panics when printing a clap error to stderr if stderr is closed.\r\n\r\n#### What are the steps to reproduce the behavior?\r\n\r\nApply this diff to ripgrep:\r\n\r\n```diff\r\ndiff --git a/crates/core/main.rs b/crates/core/main.rs\r\nindex 47385de..f3d9889 100644\r\n--- a/crates/core/main.rs\r\n+++ b/crates/core/main.rs\r\n@@ -46,10 +46,14 @@ static ALLOC: jemallocator::Jemalloc = jemallocator::Jemalloc;\r\n type Result<T> = ::std::result::Result<T, Box<dyn error::Error>>;\r\n\r\n fn main() {\r\n-    if let Err(err) = Args::parse().and_then(try_main) {\r\n-        eprintln!(\"{}\", err);\r\n-        process::exit(2);\r\n-    }\r\n+    let f = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {\r\n+        if let Err(err) = Args::parse().and_then(try_main) {\r\n+            eprintln!(\"{}\", err);\r\n+            process::exit(2);\r\n+        }\r\n+    }));\r\n+    println!(\"panicked? - {}\", f.is_err());\r\n+    process::exit(1);\r\n }\r\n\r\n fn try_main(args: Args) -> Result<()> {\r\n```\r\n\r\nThen:\r\n\r\n```console\r\n$ cargo build\r\n$ ./target/debug/rg --unknown-switch 3>&1 1>&2 2>&3 | head -c 0 # swap stdout and stderr, close stdout\r\nhead: illegal byte count -- 0\r\npanicked? - true\r\n$ echo $?\r\n1\r\n```\r\n\r\nI'm not sure how I could observe this panic without the patch since rust writes the panic to stderr. Maybe if ripgrep is compiled with `panic = abort`?\r\n\r\n#### What is the actual behavior?\r\n\r\nripgrep panics if stderr is closed despite going to great lengths to avoid panicking when writing to stdout.\r\n\r\n#### What is the expected behavior?\r\n\r\nripgrep does not panic.\r\n"
+    }
+  ]
+}

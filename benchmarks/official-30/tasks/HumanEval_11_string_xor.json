@@ -1,0 +1,11 @@
+{
+  "benchmark": "MultiPL-E",
+  "task_id": "HumanEval_11_string_xor",
+  "language": "Rust",
+  "dataset_revision": "28441b6024e71d4a1c1c0f6bf171c935cd5a43f2",
+  "dataset_row_index": 11,
+  "prompt": "/// Input are two strings a and b consisting only of 1s and 0s.\n/// Perform binary XOR on these inputs and return result also as a string.\n/// >>> string_xor(String::from(\"010\"), String::from(\"110\"))\n/// String::from(\"100\")\nfn string_xor(a: String, b: String) -> String {\n",
+  "stop_tokens": [
+    "\n}"
+  ]
+}
