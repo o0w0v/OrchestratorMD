@@ -1,5 +1,6 @@
 {
   "set_id": "bounded-v2.2.5-syntax-preflight--offline",
+  "display_name": "実装・検証手順の比較 / bounded-v2.2.5-syntax-preflight / offline",
   "entry_count": 1,
   "tasks": [
     {
@@ -86,28 +87,19 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "S225-SAVED-001",
       "set_id": "bounded-v2.2.5-syntax-preflight--offline",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-v2.2.5-syntax-preflight--offline/S225-SAVED-001",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "bounded-v2.2.5-syntax-preflight--live/S225-001"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-a8036ec168d265"
+      ],
+      "result_page": "sets/bounded-v2.2.5-syntax-preflight--offline.md#s225-saved-001",
+      "result_data": "results/bounded-v2.2.5-syntax-preflight--offline.json"
     }
   ],
   "result_summary": {
-    "set_id": "bounded-v2.2.5-syntax-preflight--offline",
-    "source_set": "bounded-v2.2.5-syntax-preflight/offline",
     "entries": 1,
-    "structured_result_records": 0,
-    "task_ids_with_structured_results": 0,
-    "task_ids_without_structured_results": [
-      "S225-SAVED-001"
-    ],
-    "historical_reports": [
-      {
-        "file": "results/bounded-v2.2.5-syntax-preflight--offline/RESULTS_JA.md",
-        "source_report": "bounded-v2.2.5-syntax-preflight/RESULTS_JA.md",
-        "source_sha256": "4a12107966f41c1a3ca5ba9b5ced4a83de1049258ed7714c497971c3c73541a0"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 1,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 1
   }
 }

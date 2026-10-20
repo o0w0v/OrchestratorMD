@@ -1,5 +1,6 @@
 {
   "set_id": "economic-accounting-recovery-228",
+  "display_name": "実装・検証手順の比較 / economic-accounting-recovery-228",
   "entry_count": 3,
   "tasks": [
     {
@@ -87,10 +88,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-002",
       "set_id": "economic-accounting-recovery-228",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/economic-accounting-recovery-228/ECR228-002",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "bounded-2.2.8-economic-retry/ECR228-002"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-ba69b2bc0bd896",
+        "R-912ce82eb99ae3",
+        "R-5e13ce0aabac94"
+      ],
+      "result_page": "sets/economic-accounting-recovery-228.md#ecr228-002",
+      "result_data": "results/economic-accounting-recovery-228.json"
     },
     {
       "task_id": "ECR228-005",
@@ -177,10 +182,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-005",
       "set_id": "economic-accounting-recovery-228",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/economic-accounting-recovery-228/ECR228-005",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "bounded-2.2.8-economic-retry/ECR228-005"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-a6004c2d6ae4e0",
+        "R-1d3f574fec5bc4",
+        "R-e435d2be7c02be"
+      ],
+      "result_page": "sets/economic-accounting-recovery-228.md#ecr228-005",
+      "result_data": "results/economic-accounting-recovery-228.json"
     },
     {
       "task_id": "ECR228-009",
@@ -267,30 +276,21 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-009",
       "set_id": "economic-accounting-recovery-228",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/economic-accounting-recovery-228/ECR228-009",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "bounded-2.2.8-economic-retry/ECR228-009"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-73ba3d3100ccda",
+        "R-b82704d9e2b4c9",
+        "R-20df81ac6072ac"
+      ],
+      "result_page": "sets/economic-accounting-recovery-228.md#ecr228-009",
+      "result_data": "results/economic-accounting-recovery-228.json"
     }
   ],
   "result_summary": {
-    "set_id": "economic-accounting-recovery-228",
-    "source_set": "economic-accounting-recovery-228",
     "entries": 3,
-    "structured_result_records": 0,
-    "task_ids_with_structured_results": 0,
-    "task_ids_without_structured_results": [
-      "ECR228-002",
-      "ECR228-005",
-      "ECR228-009"
-    ],
-    "historical_reports": [
-      {
-        "file": "results/economic-accounting-recovery-228/RESULTS_ACCOUNTING_RECOVERY_JA.md",
-        "source_report": "economic-accounting-recovery-228/RESULTS_ACCOUNTING_RECOVERY_JA.md",
-        "source_sha256": "c9ffc234e18b3ce6d3d919d51246144610d260922ffe7ccd515fd634c54100a3"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 3,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 9
   }
 }

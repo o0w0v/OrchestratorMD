@@ -1,0 +1,89 @@
+{
+  "format_version": 2,
+  "set_id": "bounded-v2.2.5-syntax-preflight--offline",
+  "entries": {
+    "S225-SAVED-001": [
+      {
+        "result_id": "R-a8036ec168d265",
+        "entry_key": "bounded-v2.2.5-syntax-preflight--offline/S225-SAVED-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.5",
+          "task_id": "S225-SAVED-001",
+          "status": "ESCALATE",
+          "reason": "OFFLINE_REPAIR_PACKET_CAPTURED",
+          "failure_domain": "worker",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "9a0e4cec8a6d66b468558397fc78405ef0eecca76747772c3ed52505b82e7915",
+          "first_pass": false,
+          "duration_seconds": 1.64,
+          "repair_attempted": true,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": null,
+            "ollama_output_tokens": null,
+            "ollama_cache_tokens": null,
+            "ollama_duration_seconds": null
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": true,
+            "reference_input_tokens": null,
+            "model_input_tokens": null,
+            "model_output_tokens": null,
+            "Worker_seconds": 1.64
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/S225-SAVED-001/result.json",
+        "validation_pass": null,
+        "source_sha256": "e2e0afbc51ca50ed6e5cdef23a7821497b635a7f0d0063a55996875350969e8c",
+        "json_pointer": "",
+        "reported_task_id": "S225-SAVED-001",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "28aa5b97d7166cc208bfe12a35af778c59dba1f4c1f941721b8fb623bb8e7174",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/bounded-v2.2.5-syntax-preflight--offline/RESULTS_JA.md",
+      "source_report": "bounded-v2.2.5-syntax-preflight/RESULTS_JA.md",
+      "source_sha256": "4a12107966f41c1a3ca5ba9b5ced4a83de1049258ed7714c497971c3c73541a0",
+      "scope": "SAME_EXPERIMENT_CONTEXT"
+    }
+  ],
+  "summary": {
+    "entries": 1,
+    "linked_entries": 1,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 1
+  }
+}

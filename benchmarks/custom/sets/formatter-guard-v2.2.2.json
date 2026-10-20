@@ -1,5 +1,6 @@
 {
   "set_id": "formatter-guard-v2.2.2",
+  "display_name": "実装・検証手順の比較 / formatter-guard-v2.2.2",
   "entry_count": 4,
   "tasks": [
     {
@@ -81,10 +82,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "F222-001",
       "set_id": "formatter-guard-v2.2.2",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/formatter-guard-v2.2.2/F222-001",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-eca1e98cb0c092",
+        "R-bdcd46fd4589e9"
+      ],
+      "result_page": "sets/formatter-guard-v2.2.2.md#f222-001",
+      "result_data": "results/formatter-guard-v2.2.2.json"
     },
     {
       "task_id": "F222-002",
@@ -164,10 +168,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "F222-002",
       "set_id": "formatter-guard-v2.2.2",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/formatter-guard-v2.2.2/F222-002",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-bd82488de1539c",
+        "R-45ee6b90bd91b1"
+      ],
+      "result_page": "sets/formatter-guard-v2.2.2.md#f222-002",
+      "result_data": "results/formatter-guard-v2.2.2.json"
     },
     {
       "task_id": "F222-003",
@@ -247,10 +254,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "F222-003",
       "set_id": "formatter-guard-v2.2.2",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/formatter-guard-v2.2.2/F222-003",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-ecccf58b17f8fa",
+        "R-0b93f032323e14"
+      ],
+      "result_page": "sets/formatter-guard-v2.2.2.md#f222-003",
+      "result_data": "results/formatter-guard-v2.2.2.json"
     },
     {
       "task_id": "F222-004",
@@ -331,31 +341,20 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "F222-004",
       "set_id": "formatter-guard-v2.2.2",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/formatter-guard-v2.2.2/F222-004",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-105cab04b234f3",
+        "R-523d1b3f1a6666"
+      ],
+      "result_page": "sets/formatter-guard-v2.2.2.md#f222-004",
+      "result_data": "results/formatter-guard-v2.2.2.json"
     }
   ],
   "result_summary": {
-    "set_id": "formatter-guard-v2.2.2",
-    "source_set": "formatter-guard-v2.2.2",
     "entries": 4,
-    "structured_result_records": 0,
-    "task_ids_with_structured_results": 0,
-    "task_ids_without_structured_results": [
-      "F222-001",
-      "F222-002",
-      "F222-003",
-      "F222-004"
-    ],
-    "historical_reports": [
-      {
-        "file": "results/formatter-guard-v2.2.2/RESULTS_JA.md",
-        "source_report": "formatter-guard-v2.2.2/RESULTS_JA.md",
-        "source_sha256": "a704331f307e41fa90e14e6907cb452149186e158e8911c9c962de9b41f81018"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 4,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 8
   }
 }

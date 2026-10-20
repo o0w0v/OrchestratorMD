@@ -1,0 +1,445 @@
+{
+  "format_version": 2,
+  "set_id": "formatter-guard-v2.2.2",
+  "entries": {
+    "F222-001": [
+      {
+        "result_id": "R-eca1e98cb0c092",
+        "entry_key": "formatter-guard-v2.2.2/F222-001",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "F222-001",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 3805,
+            "ollama_output_tokens": 207,
+            "ollama_cache_tokens": 604,
+            "ollama_duration_seconds": 28.0759627
+          },
+          "duration_seconds": 77.469
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "fa032c950678367a165d758145da730431c456a85d2b56afbb9cc82733aee515",
+        "json_pointer": "/runs/0",
+        "reported_task_id": "F222-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "193bce358748a644a2ecba5fe59e54e820a3e2ff7624fe8a051c66f4203c1b9c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-bdcd46fd4589e9",
+        "entry_key": "formatter-guard-v2.2.2/F222-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "F222-001",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "7164db07de7f0d0121196e713c5a40c1df8a266212be7993de093120b2f9c47d",
+          "first_pass": true,
+          "tested_content_id": "bed5fbb03b7fe54d43e1c0e4d4324607a1b0ad0da4ce8e19544b2de4c4871970",
+          "duration_seconds": 77.469,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 3805,
+            "ollama_output_tokens": 207,
+            "ollama_cache_tokens": 604,
+            "ollama_duration_seconds": 28.0759627
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 3805,
+            "model_output_tokens": 207,
+            "Worker_seconds": 77.469
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/F222-001/result.json",
+        "validation_pass": null,
+        "source_sha256": "b0b170b1199f768345cb38af2fa60bd18c761381fef8ce1e32f21292c6fc8a35",
+        "json_pointer": "",
+        "reported_task_id": "F222-001",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "193bce358748a644a2ecba5fe59e54e820a3e2ff7624fe8a051c66f4203c1b9c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "F222-002": [
+      {
+        "result_id": "R-bd82488de1539c",
+        "entry_key": "formatter-guard-v2.2.2/F222-002",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "F222-002",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": false,
+          "repair_pass": true,
+          "usage": {
+            "ollama_input_tokens": 5398,
+            "ollama_output_tokens": 239,
+            "ollama_cache_tokens": 730,
+            "ollama_duration_seconds": 8.8512708
+          },
+          "duration_seconds": 70.687
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "fa032c950678367a165d758145da730431c456a85d2b56afbb9cc82733aee515",
+        "json_pointer": "/runs/1",
+        "reported_task_id": "F222-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a8915cf2ec91e62bac6dd45e9622bf458e29a8d080e75652b19017d9516743fd",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-45ee6b90bd91b1",
+        "entry_key": "formatter-guard-v2.2.2/F222-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "F222-002",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "f630cf25d70f378fe8d66b895f80d627b581ae8e28277c99cb821edebac4b759",
+          "first_pass": false,
+          "repair_pass": true,
+          "tested_content_id": "7b429269b0b9b70e31916f7f8bf31cc72cf1e7a3a8268a922fc1670160799e77",
+          "duration_seconds": 70.687,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 5398,
+            "ollama_output_tokens": 239,
+            "ollama_cache_tokens": 730,
+            "ollama_duration_seconds": 8.8512708
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": true,
+            "reference_input_tokens": null,
+            "model_input_tokens": 5398,
+            "model_output_tokens": 239,
+            "Worker_seconds": 70.687
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/F222-002/result.json",
+        "validation_pass": null,
+        "source_sha256": "fc5a3b6d56e4bc743f66d1e4f9704baf88e10a36c396b3d2225f541642d9309f",
+        "json_pointer": "",
+        "reported_task_id": "F222-002",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "a8915cf2ec91e62bac6dd45e9622bf458e29a8d080e75652b19017d9516743fd",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "F222-003": [
+      {
+        "result_id": "R-ecccf58b17f8fa",
+        "entry_key": "formatter-guard-v2.2.2/F222-003",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "F222-003",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 702,
+            "ollama_output_tokens": 39,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 1.9450216
+          },
+          "duration_seconds": 45.016
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "fa032c950678367a165d758145da730431c456a85d2b56afbb9cc82733aee515",
+        "json_pointer": "/runs/2",
+        "reported_task_id": "F222-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b747466fda8597e3ac39bd7d35d0bd8a87fc55cd378c0eeeac7e0bc113baac16",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-0b93f032323e14",
+        "entry_key": "formatter-guard-v2.2.2/F222-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "F222-003",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "6698a3cc70d61f5e55b7db1409d7425618ddd956a164998edc40989e29e9f567",
+          "first_pass": true,
+          "tested_content_id": "3b0f8a5b2029de242972081b1418896a1ad2a3d2fd9e254a85097b98aac414ba",
+          "duration_seconds": 45.016,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 702,
+            "ollama_output_tokens": 39,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 1.9450216
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 702,
+            "model_output_tokens": 39,
+            "Worker_seconds": 45.016
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/F222-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "db6e2c34fc18e613620f9c55bf486eb8874a5b700bae7a229bf8ca6b452ae7d2",
+        "json_pointer": "",
+        "reported_task_id": "F222-003",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "b747466fda8597e3ac39bd7d35d0bd8a87fc55cd378c0eeeac7e0bc113baac16",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "F222-004": [
+      {
+        "result_id": "R-105cab04b234f3",
+        "entry_key": "formatter-guard-v2.2.2/F222-004",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "F222-004",
+          "status": "ESCALATE",
+          "reason": "OUTPUT_LIMIT",
+          "failure_domain": "budget",
+          "first_pass": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 11533,
+            "ollama_output_tokens": 208,
+            "ollama_cache_tokens": 684,
+            "ollama_duration_seconds": 14.2830818
+          },
+          "duration_seconds": 53.985
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "fa032c950678367a165d758145da730431c456a85d2b56afbb9cc82733aee515",
+        "json_pointer": "/runs/3",
+        "reported_task_id": "F222-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "9ee26a3a7422296ba662d6efa843f2b3ea43cfd05532bd3b953467f0312e1a10",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-523d1b3f1a6666",
+        "entry_key": "formatter-guard-v2.2.2/F222-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "F222-004",
+          "status": "ESCALATE",
+          "reason": "OUTPUT_LIMIT",
+          "failure_domain": "budget",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "024ee2c82c6bcc7ec65823325da33e19aedeb68bfe116fcf63f1102b0e03a0bc",
+          "first_pass": false,
+          "duration_seconds": 53.985,
+          "repair_attempted": true,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 11533,
+            "ollama_output_tokens": 208,
+            "ollama_cache_tokens": 684,
+            "ollama_duration_seconds": 14.2830818
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": true,
+            "reference_input_tokens": null,
+            "model_input_tokens": 11533,
+            "model_output_tokens": 208,
+            "Worker_seconds": 53.985
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/F222-004/result.json",
+        "validation_pass": null,
+        "source_sha256": "7d49f25c4c12554e9467e7f23bad4016b589351c87b463a05e3181110f3c4265",
+        "json_pointer": "",
+        "reported_task_id": "F222-004",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "9ee26a3a7422296ba662d6efa843f2b3ea43cfd05532bd3b953467f0312e1a10",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/formatter-guard-v2.2.2/RESULTS_JA.md",
+      "source_report": "formatter-guard-v2.2.2/RESULTS_JA.md",
+      "source_sha256": "a704331f307e41fa90e14e6907cb452149186e158e8911c9c962de9b41f81018",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 4,
+    "linked_entries": 4,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 8
+  }
+}

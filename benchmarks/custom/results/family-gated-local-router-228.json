@@ -1,0 +1,4736 @@
+{
+  "format_version": 2,
+  "set_id": "family-gated-local-router-228",
+  "entries": {
+    "FGR228-001": [
+      {
+        "result_id": "R-fecc5c0ea16d4e",
+        "entry_key": "family-gated-local-router-228/FGR228-001",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-001",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.5313000000000003,
+          "actual_usage": {
+            "input_tokens": 239614,
+            "cached_input_tokens": 206720,
+            "uncached_input_tokens": 32894,
+            "output_tokens": 3412,
+            "total_tokens": 243026
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46535,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16839,
+                "output_tokens": 797,
+                "total_tokens": 47332
+              },
+              "credits": 1.18968,
+              "wall_seconds": 24.03200000000652
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33151,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6655,
+                "output_tokens": 321,
+                "total_tokens": 33472
+              },
+              "credits": 0.54548,
+              "wall_seconds": 14.046999999991385
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 167.06200000000536,
+          "Host_validation_wall": 51.59399999998277,
+          "Host_formatter_seconds": 1.4059999999590218,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/0",
+        "reported_task_id": "FGR228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "301051df920717a44b9b0ff092472bf2d7c92024fb7a386f2e0318404852e994",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-5d12290bf0d863",
+        "entry_key": "family-gated-local-router-228/FGR228-001",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-001",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 167.06200000000536
+        },
+        "source_file": "outcomes/FGR228-001.json",
+        "validation_pass": null,
+        "source_sha256": "390ebfd4200ba0af86e4bbce3c28674579dd1f1f9ddaff54b553189a060b8af5",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-001",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "301051df920717a44b9b0ff092472bf2d7c92024fb7a386f2e0318404852e994",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-002": [
+      {
+        "result_id": "R-b0e4f561a894d6",
+        "entry_key": "family-gated-local-router-228/FGR228-002",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-002",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.3062500000000004,
+          "actual_usage": {
+            "input_tokens": 79759,
+            "cached_input_tokens": 44160,
+            "uncached_input_tokens": 35599,
+            "output_tokens": 1222,
+            "total_tokens": 80981
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46506,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16810,
+                "output_tokens": 868,
+                "total_tokens": 47374
+              },
+              "credits": 1.20598,
+              "wall_seconds": 26.296999999991385
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33253,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18789,
+                "output_tokens": 354,
+                "total_tokens": 33607
+              },
+              "credits": 1.10027,
+              "wall_seconds": 13.921999999991385
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1286,
+            "ollama_output_tokens": 61,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 5.1319197
+          },
+          "LOCAL_GATE_WALL": 56.719,
+          "TOTAL_WORKFLOW_WALL": 101.34400000001187,
+          "Host_validation_wall": 39.329,
+          "Host_formatter_seconds": 0.8259999999718275,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/1",
+        "reported_task_id": "FGR228-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4b160ae26d3d45094c1874df2deeb7ef3a0c2c5b709ab3d27e82145e7f120a2a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-67ec34e8c535ab",
+        "entry_key": "family-gated-local-router-228/FGR228-002",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-002",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 56.719,
+            "usage": {
+              "ollama_input_tokens": 1286,
+              "ollama_output_tokens": 61,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 5.1319197
+            },
+            "task_id": "FGR228-002",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the declared function body. It returns the required line for a missing proposal and uses String::len() to report UTF-8 bytes for a present target. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 33253,
+              "cached_input_tokens": 14464,
+              "output_tokens": 354,
+              "uncached_input_tokens": 18789,
+              "total_tokens": 33607
+            },
+            "credits": 1.10027,
+            "wall_seconds": 13.921999999991385
+          },
+          "total_wall_seconds": 101.34400000001187,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-002.json",
+        "validation_pass": null,
+        "source_sha256": "3eea6d1c3051e14f909942b5a314e0bc28bf09b1a12068f7208e889ab6b5c88c",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-002",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "4b160ae26d3d45094c1874df2deeb7ef3a0c2c5b709ab3d27e82145e7f120a2a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-003": [
+      {
+        "result_id": "R-e1404a87bbe734",
+        "entry_key": "family-gated-local-router-228/FGR228-003",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-003",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.2255599999999998,
+          "actual_usage": {
+            "input_tokens": 222249,
+            "cached_input_tokens": 200192,
+            "uncached_input_tokens": 22057,
+            "output_tokens": 4487,
+            "total_tokens": 226736
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46488,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4632,
+                "output_tokens": 1076,
+                "total_tokens": 47564
+              },
+              "credits": 0.70988,
+              "wall_seconds": 30.51600000000326
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33099,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6603,
+                "output_tokens": 294,
+                "total_tokens": 33393
+              },
+              "credits": 0.53613,
+              "wall_seconds": 12.76600000000326
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1501,
+            "ollama_output_tokens": 91,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 11.7284903
+          },
+          "LOCAL_GATE_WALL": 52.11,
+          "TOTAL_WORKFLOW_WALL": 241.51500000001397,
+          "Host_validation_wall": 78.32900000000326,
+          "Host_formatter_seconds": 2.6560000000172295,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/2",
+        "reported_task_id": "FGR228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d4879ea5ce0d92d717c69b6314fac85599b5687f1a7148ce3f2ce1550904e4af",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-286b7e1793a8dd",
+        "entry_key": "family-gated-local-router-228/FGR228-003",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-003",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 52.11,
+            "usage": {
+              "ollama_input_tokens": 1501,
+              "ollama_output_tokens": 91,
+              "ollama_cache_tokens": 0,
+              "ollama_duration_seconds": 11.7284903
+            },
+            "task_id": "FGR228-003",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 241.51500000001397
+        },
+        "source_file": "outcomes/FGR228-003.json",
+        "validation_pass": null,
+        "source_sha256": "da9739c9e62331e896386c4c91ce2036655710f2fdcd4dfe20d1db2801ad1a85",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-003",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d4879ea5ce0d92d717c69b6314fac85599b5687f1a7148ce3f2ce1550904e4af",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-004": [
+      {
+        "result_id": "R-15a3f738526236",
+        "entry_key": "family-gated-local-router-228/FGR228-004",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-004",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.3256300000000003,
+          "actual_usage": {
+            "input_tokens": 195706,
+            "cached_input_tokens": 178176,
+            "uncached_input_tokens": 17530,
+            "output_tokens": 2233,
+            "total_tokens": 197939
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46342,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4486,
+                "output_tokens": 647,
+                "total_tokens": 46989
+              },
+              "credits": 0.59533,
+              "wall_seconds": 26.546999999991385
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32478,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 5982,
+                "output_tokens": 324,
+                "total_tokens": 32802
+              },
+              "credits": 0.51258,
+              "wall_seconds": 14.796000000002095
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 139.23499999998603,
+          "Host_validation_wall": 47.85899999999674,
+          "Host_formatter_seconds": 1.1100000000442378,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/3",
+        "reported_task_id": "FGR228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "158d62363c14ad7345d7f5083da03a2ddbe08962b8350f4b0d1480be123ce657",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-a1c2b0515b808c",
+        "entry_key": "family-gated-local-router-228/FGR228-004",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-004",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 139.23499999998603
+        },
+        "source_file": "outcomes/FGR228-004.json",
+        "validation_pass": null,
+        "source_sha256": "d6937d07443ca0f06dab3b97f6106332df17efd73931bb070b635c0e4954941a",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-004",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "158d62363c14ad7345d7f5083da03a2ddbe08962b8350f4b0d1480be123ce657",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-005": [
+      {
+        "result_id": "R-f4936ed9989c95",
+        "entry_key": "family-gated-local-router-228/FGR228-005",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-005",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.18516,
+          "actual_usage": {
+            "input_tokens": 79500,
+            "cached_input_tokens": 68352,
+            "uncached_input_tokens": 11148,
+            "output_tokens": 1144,
+            "total_tokens": 80644
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46381,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4525,
+                "output_tokens": 792,
+                "total_tokens": 47173
+              },
+              "credits": 0.63353,
+              "wall_seconds": 26.171999999991385
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33119,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6623,
+                "output_tokens": 352,
+                "total_tokens": 33471
+              },
+              "credits": 0.55163,
+              "wall_seconds": 14.187999999994645
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1280,
+            "ollama_output_tokens": 40,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 8.0753589
+          },
+          "LOCAL_GATE_WALL": 56.641,
+          "TOTAL_WORKFLOW_WALL": 101.35999999998603,
+          "Host_validation_wall": 36.29699999999999,
+          "Host_formatter_seconds": 0.8589999999967404,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/4",
+        "reported_task_id": "FGR228-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "aa88d4ff978fb3cbae4aae7251a9a616f0c12c0f8c8eeb02fdc41b0720dd3c33",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1f92669b68719a",
+        "entry_key": "family-gated-local-router-228/FGR228-005",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-005",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 56.641,
+            "usage": {
+              "ollama_input_tokens": 1280,
+              "ollama_output_tokens": 40,
+              "ollama_cache_tokens": 0,
+              "ollama_duration_seconds": 8.0753589
+            },
+            "task_id": "FGR228-005",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and scope, and returns the UTF-8 byte length with exactly one LF. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 33119,
+              "cached_input_tokens": 26496,
+              "output_tokens": 352,
+              "uncached_input_tokens": 6623,
+              "total_tokens": 33471
+            },
+            "credits": 0.55163,
+            "wall_seconds": 14.187999999994645
+          },
+          "total_wall_seconds": 101.35999999998603,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-005.json",
+        "validation_pass": null,
+        "source_sha256": "50a54dcda5ee61c112257ba01f7f8ab984a47c649b19695bb38b8a47739b3596",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-005",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "aa88d4ff978fb3cbae4aae7251a9a616f0c12c0f8c8eeb02fdc41b0720dd3c33",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-006": [
+      {
+        "result_id": "R-86f248631404ef",
+        "entry_key": "family-gated-local-router-228/FGR228-006",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-006",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.4672399999999999,
+          "actual_usage": {
+            "input_tokens": 79258,
+            "cached_input_tokens": 62848,
+            "uncached_input_tokens": 16410,
+            "output_tokens": 1330,
+            "total_tokens": 80588
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46436,
+                "cached_input_tokens": 38784,
+                "uncached_input_tokens": 7652,
+                "output_tokens": 802,
+                "total_tokens": 47238
+              },
+              "credits": 0.77702,
+              "wall_seconds": 23.671999999991385
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32822,
+                "cached_input_tokens": 24064,
+                "uncached_input_tokens": 8758,
+                "output_tokens": 528,
+                "total_tokens": 33350
+              },
+              "credits": 0.69022,
+              "wall_seconds": 17.125
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 971,
+            "ollama_output_tokens": 24,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 2.2942319
+          },
+          "LOCAL_GATE_WALL": 53.657,
+          "TOTAL_WORKFLOW_WALL": 98.70299999997951,
+          "Host_validation_wall": 39.39,
+          "Host_formatter_seconds": 0.9059999999881256,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/5",
+        "reported_task_id": "FGR228-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "5739281e27055a9d90e7e842335c4c786563a277310109d9e68a977521ab66a0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-3f0583d596d17b",
+        "entry_key": "family-gated-local-router-228/FGR228-006",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-006",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": true,
+            "duration_seconds": 53.657,
+            "usage": {
+              "ollama_input_tokens": 971,
+              "ollama_output_tokens": 24,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 2.2942319
+            },
+            "task_id": "FGR228-006",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the declared function body. It formats state.logical_cpus, including zero and usize::MAX, followed by exactly one LF without modifying state. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32822,
+              "cached_input_tokens": 24064,
+              "output_tokens": 528,
+              "uncached_input_tokens": 8758,
+              "total_tokens": 33350
+            },
+            "credits": 0.69022,
+            "wall_seconds": 17.125
+          },
+          "total_wall_seconds": 98.70299999997951,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-006.json",
+        "validation_pass": null,
+        "source_sha256": "5e324921818354e03f9235b6644e839e969e54bf50802e1c8d7a68ac9b8ac215",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-006",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "5739281e27055a9d90e7e842335c4c786563a277310109d9e68a977521ab66a0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-007": [
+      {
+        "result_id": "R-245bf0ff332d88",
+        "entry_key": "family-gated-local-router-228/FGR228-007",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-007",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.82104,
+          "actual_usage": {
+            "input_tokens": 199585,
+            "cached_input_tokens": 153088,
+            "uncached_input_tokens": 46497,
+            "output_tokens": 2923,
+            "total_tokens": 202508
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46540,
+                "cached_input_tokens": 26624,
+                "uncached_input_tokens": 19916,
+                "output_tokens": 704,
+                "total_tokens": 47244
+              },
+              "credits": 1.30492,
+              "wall_seconds": 20.73499999998603
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33046,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6550,
+                "output_tokens": 313,
+                "total_tokens": 33359
+              },
+              "credits": 0.53823,
+              "wall_seconds": 13.985000000015134
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 157.53100000001723,
+          "Host_validation_wall": 52.53200000000652,
+          "Host_formatter_seconds": 1.375,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/6",
+        "reported_task_id": "FGR228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4c2c8688c1ce0b845c624e8f18a9625bd0aa5a4c2b57cbe300ffcb86f1c731ca",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-a464aa4b706b27",
+        "entry_key": "family-gated-local-router-228/FGR228-007",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-007",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 157.53100000001723
+        },
+        "source_file": "outcomes/FGR228-007.json",
+        "validation_pass": null,
+        "source_sha256": "fdddca48ede56b8d7820830548cf2058b2dd690228aca66a67f159eabc5b777b",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-007",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "4c2c8688c1ce0b845c624e8f18a9625bd0aa5a4c2b57cbe300ffcb86f1c731ca",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-008": [
+      {
+        "result_id": "R-feed3e95b6ecf4",
+        "entry_key": "family-gated-local-router-228/FGR228-008",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-008",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.4881100000000003,
+          "actual_usage": {
+            "input_tokens": 182923,
+            "cached_input_tokens": 163712,
+            "uncached_input_tokens": 19211,
+            "output_tokens": 2836,
+            "total_tokens": 185759
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46366,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4510,
+                "output_tokens": 900,
+                "total_tokens": 47266
+              },
+              "credits": 0.65978,
+              "wall_seconds": 31.360000000015134
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32671,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6175,
+                "output_tokens": 305,
+                "total_tokens": 32976
+              },
+              "credits": 0.51748,
+              "wall_seconds": 17.23499999998603
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 158.56200000000536,
+          "Host_validation_wall": 53.0,
+          "Host_formatter_seconds": 1.330000000045402,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/7",
+        "reported_task_id": "FGR228-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "cb527bf9bb7638e9d4022f0562325ed02bfff6026fb4c03314d5317d0aa1984d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-07986fba3a3e67",
+        "entry_key": "family-gated-local-router-228/FGR228-008",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-008",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 158.56200000000536
+        },
+        "source_file": "outcomes/FGR228-008.json",
+        "validation_pass": null,
+        "source_sha256": "2da061e08ea3c4209f44c4458e83bd4caca1ff9e9901fbe8157605d029e60371",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-008",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "cb527bf9bb7638e9d4022f0562325ed02bfff6026fb4c03314d5317d0aa1984d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-009": [
+      {
+        "result_id": "R-bbd8e6a56775d3",
+        "entry_key": "family-gated-local-router-228/FGR228-009",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-009",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.37226,
+          "actual_usage": {
+            "input_tokens": 193855,
+            "cached_input_tokens": 175872,
+            "uncached_input_tokens": 17983,
+            "output_tokens": 2375,
+            "total_tokens": 196230
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 62191,
+                "cached_input_tokens": 57216,
+                "uncached_input_tokens": 4975,
+                "output_tokens": 917,
+                "total_tokens": 63108
+              },
+              "credits": 0.76408,
+              "wall_seconds": 31.39000000001397
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32414,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 5918,
+                "output_tokens": 264,
+                "total_tokens": 32678
+              },
+              "credits": 0.49438,
+              "wall_seconds": 13.64100000000326
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 135.32800000000861,
+          "Host_validation_wall": 52.25,
+          "Host_formatter_seconds": 1.2960000000020955,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/8",
+        "reported_task_id": "FGR228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b00048c5a5cacfa44986d909707b25b3fd2f6e9c62cb70a120d67ed628bf2af2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-4a4799168f14b7",
+        "entry_key": "family-gated-local-router-228/FGR228-009",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-009",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 135.32800000000861
+        },
+        "source_file": "outcomes/FGR228-009.json",
+        "validation_pass": null,
+        "source_sha256": "d20aa5d0b536523b9e112a8d8a3afe1e027430092c38157c5c98dda8a6663310",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-009",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "b00048c5a5cacfa44986d909707b25b3fd2f6e9c62cb70a120d67ed628bf2af2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-010": [
+      {
+        "result_id": "R-412654475c37e5",
+        "entry_key": "family-gated-local-router-228/FGR228-010",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-010",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.17413,
+          "actual_usage": {
+            "input_tokens": 184217,
+            "cached_input_tokens": 150016,
+            "uncached_input_tokens": 34201,
+            "output_tokens": 2856,
+            "total_tokens": 187073
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46447,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4591,
+                "output_tokens": 852,
+                "total_tokens": 47299
+              },
+              "credits": 0.65183,
+              "wall_seconds": 26.015999999974156
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32711,
+                "cached_input_tokens": 12032,
+                "uncached_input_tokens": 20679,
+                "output_tokens": 295,
+                "total_tokens": 33006
+              },
+              "credits": 1.16786,
+              "wall_seconds": 13.202999999979511
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 149.875,
+          "Host_validation_wall": 54.21799999999348,
+          "Host_formatter_seconds": 1.6239999999816064,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/9",
+        "reported_task_id": "FGR228-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c70c9df9075eb412c95f14c9548931896cca108e7acd6ac8a37ba2e97c6454bc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-7dc36b7b5e5124",
+        "entry_key": "family-gated-local-router-228/FGR228-010",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-010",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 149.875
+        },
+        "source_file": "outcomes/FGR228-010.json",
+        "validation_pass": null,
+        "source_sha256": "f7634fe28a73f9060d3d31933282f5fcdea0ba567a62e460b3ffe461cde0172e",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-010",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "c70c9df9075eb412c95f14c9548931896cca108e7acd6ac8a37ba2e97c6454bc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-011": [
+      {
+        "result_id": "R-70629d341a690b",
+        "entry_key": "family-gated-local-router-228/FGR228-011",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-011",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.34745,
+          "actual_usage": {
+            "input_tokens": 181483,
+            "cached_input_tokens": 162560,
+            "uncached_input_tokens": 18923,
+            "output_tokens": 2354,
+            "total_tokens": 183837
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46493,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4637,
+                "output_tokens": 737,
+                "total_tokens": 47230
+              },
+              "credits": 0.62538,
+              "wall_seconds": 21.296000000002095
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32879,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6383,
+                "output_tokens": 302,
+                "total_tokens": 33181
+              },
+              "credits": 0.52713,
+              "wall_seconds": 17.25
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 148.35899999999674,
+          "Host_validation_wall": 54.578999999997905,
+          "Host_formatter_seconds": 1.5319999999774154,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/10",
+        "reported_task_id": "FGR228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "8b565e26a022e59668dde5791a39f34d6dda2b69df0e9e57ad2a7a38f3c82d6a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b9aba990e59034",
+        "entry_key": "family-gated-local-router-228/FGR228-011",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-011",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 148.35899999999674
+        },
+        "source_file": "outcomes/FGR228-011.json",
+        "validation_pass": null,
+        "source_sha256": "b3d2890cd24c2142714c0080983600c5be973fdd49f0e36b080610968552a3b4",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-011",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "8b565e26a022e59668dde5791a39f34d6dda2b69df0e9e57ad2a7a38f3c82d6a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-012": [
+      {
+        "result_id": "R-2bf213e2824369",
+        "entry_key": "family-gated-local-router-228/FGR228-012",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-012",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.47745,
+          "actual_usage": {
+            "input_tokens": 180832,
+            "cached_input_tokens": 161920,
+            "uncached_input_tokens": 18912,
+            "output_tokens": 2889,
+            "total_tokens": 183721
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46491,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4635,
+                "output_tokens": 877,
+                "total_tokens": 47368
+              },
+              "credits": 0.66028,
+              "wall_seconds": 31.328000000008615
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33091,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6595,
+                "output_tokens": 287,
+                "total_tokens": 33378
+              },
+              "credits": 0.53398,
+              "wall_seconds": 14.812000000005355
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 161.56299999999464,
+          "Host_validation_wall": 53.46899999998277,
+          "Host_formatter_seconds": 1.4530000000086147,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/11",
+        "reported_task_id": "FGR228-012",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f7112a6618554e9039f2919ef7cb27e6ae696c867a7e0953bf34b9f1a1dbbc77",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b4ceef6e880e4f",
+        "entry_key": "family-gated-local-router-228/FGR228-012",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-012",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 161.56299999999464
+        },
+        "source_file": "outcomes/FGR228-012.json",
+        "validation_pass": null,
+        "source_sha256": "0e9004437058b84a5e57fc23f78b357479729670a5ef369acad2bd130bd812f4",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-012",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "f7112a6618554e9039f2919ef7cb27e6ae696c867a7e0953bf34b9f1a1dbbc77",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-013": [
+      {
+        "result_id": "R-03a5bfd905ec25",
+        "entry_key": "family-gated-local-router-228/FGR228-013",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-013",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.3235999999999999,
+          "actual_usage": {
+            "input_tokens": 79719,
+            "cached_input_tokens": 65280,
+            "uncached_input_tokens": 14439,
+            "output_tokens": 1101,
+            "total_tokens": 80820
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46490,
+                "cached_input_tokens": 38784,
+                "uncached_input_tokens": 7706,
+                "output_tokens": 719,
+                "total_tokens": 47209
+              },
+              "credits": 0.75897,
+              "wall_seconds": 24.203000000008615
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33229,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6733,
+                "output_tokens": 382,
+                "total_tokens": 33611
+              },
+              "credits": 0.56463,
+              "wall_seconds": 14.828000000008615
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1251,
+            "ollama_output_tokens": 36,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 7.9656471
+          },
+          "LOCAL_GATE_WALL": 58.297,
+          "TOTAL_WORKFLOW_WALL": 101.79699999999139,
+          "Host_validation_wall": 38.437000000000005,
+          "Host_formatter_seconds": 0.842000000004191,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/12",
+        "reported_task_id": "FGR228-013",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e95a079bd25a8d788c39595a7bc72239b0d30f239687c4219e99c258336987b2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-2f27c034159b7d",
+        "entry_key": "family-gated-local-router-228/FGR228-013",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-013",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": true,
+            "duration_seconds": 58.297,
+            "usage": {
+              "ollama_input_tokens": 1251,
+              "ollama_output_tokens": 36,
+              "ollama_cache_tokens": 0,
+              "ollama_duration_seconds": 7.9656471
+            },
+            "task_id": "FGR228-013",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and returns every root PID in input order, including duplicates and zero, without changing state. All mandatory validation and scope checks passed. The Host’s final-LF canonicalization leaves no remaining contract defect.",
+            "usage": {
+              "input_tokens": 33229,
+              "cached_input_tokens": 26496,
+              "output_tokens": 382,
+              "uncached_input_tokens": 6733,
+              "total_tokens": 33611
+            },
+            "credits": 0.56463,
+            "wall_seconds": 14.828000000008615
+          },
+          "total_wall_seconds": 101.79699999999139,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-013.json",
+        "validation_pass": null,
+        "source_sha256": "2576472d2c2b5a3a13f7fc835a9dd53e56d9cd757610b9741dd0dcb10e3d04ca",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-013",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "e95a079bd25a8d788c39595a7bc72239b0d30f239687c4219e99c258336987b2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-014": [
+      {
+        "result_id": "R-816f19f709f845",
+        "entry_key": "family-gated-local-router-228/FGR228-014",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-014",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.22566,
+          "actual_usage": {
+            "input_tokens": 79235,
+            "cached_input_tokens": 68352,
+            "uncached_input_tokens": 10883,
+            "output_tokens": 1359,
+            "total_tokens": 80594
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46405,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4549,
+                "output_tokens": 883,
+                "total_tokens": 47288
+              },
+              "credits": 0.65748,
+              "wall_seconds": 28.0
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32830,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6334,
+                "output_tokens": 476,
+                "total_tokens": 33306
+              },
+              "credits": 0.56818,
+              "wall_seconds": 16.65700000000652
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 964,
+            "ollama_output_tokens": 40,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 7.446665
+          },
+          "LOCAL_GATE_WALL": 59.406,
+          "TOTAL_WORKFLOW_WALL": 108.29699999999139,
+          "Host_validation_wall": 39.329,
+          "Host_formatter_seconds": 0.8740000000107102,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/13",
+        "reported_task_id": "FGR228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "9e4984cb1b686a7ceb80734fd30d1469e7a09e6e8a6ff1faa17f85713588212d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-a707ed26f866f9",
+        "entry_key": "family-gated-local-router-228/FGR228-014",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-014",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": true,
+            "duration_seconds": 59.406,
+            "usage": {
+              "ollama_input_tokens": 964,
+              "ollama_output_tokens": 40,
+              "ollama_cache_tokens": 0,
+              "ollama_duration_seconds": 7.446665
+            },
+            "task_id": "FGR228-014",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the declared function body. It returns every nonempty warning’s index in order, treats whitespace as nonempty, and leaves state unchanged. All mandatory checks and Host scope guards passed. The Host’s final-LF canonicalization leaves no remaining defect.",
+            "usage": {
+              "input_tokens": 32830,
+              "cached_input_tokens": 26496,
+              "output_tokens": 476,
+              "uncached_input_tokens": 6334,
+              "total_tokens": 33306
+            },
+            "credits": 0.56818,
+            "wall_seconds": 16.65700000000652
+          },
+          "total_wall_seconds": 108.29699999999139,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-014.json",
+        "validation_pass": null,
+        "source_sha256": "496682563dc31ef8aefb0193ffd0d0de33746e769b2964b1fe20070dd1494dc2",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-014",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "9e4984cb1b686a7ceb80734fd30d1469e7a09e6e8a6ff1faa17f85713588212d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-015": [
+      {
+        "result_id": "R-136428983b1604",
+        "entry_key": "family-gated-local-router-228/FGR228-015",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-015",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.32302,
+          "actual_usage": {
+            "input_tokens": 211830,
+            "cached_input_tokens": 175744,
+            "uncached_input_tokens": 36086,
+            "output_tokens": 2560,
+            "total_tokens": 214390
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 61447,
+                "cached_input_tokens": 56704,
+                "uncached_input_tokens": 4743,
+                "output_tokens": 852,
+                "total_tokens": 62299
+              },
+              "credits": 0.73367,
+              "wall_seconds": 28.23499999998603
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32585,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6089,
+                "output_tokens": 255,
+                "total_tokens": 32840
+              },
+              "credits": 0.50068,
+              "wall_seconds": 15.187000000005355
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 150.0460000000021,
+          "Host_validation_wall": 55.125,
+          "Host_formatter_seconds": 1.297000000020489,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/14",
+        "reported_task_id": "FGR228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "87d3f8565fd6698068c20c015ccbbe470d8408137f5769c34fb4ffe8ea9c191a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-5cc97908581fd5",
+        "entry_key": "family-gated-local-router-228/FGR228-015",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-015",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 150.0460000000021
+        },
+        "source_file": "outcomes/FGR228-015.json",
+        "validation_pass": null,
+        "source_sha256": "5f3556c076de4d4972551b256fdea56b8a87d183ed569e1ab8cc99e0de38b5ce",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-015",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "87d3f8565fd6698068c20c015ccbbe470d8408137f5769c34fb4ffe8ea9c191a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-016": [
+      {
+        "result_id": "R-4a8c2c702ed38d",
+        "entry_key": "family-gated-local-router-228/FGR228-016",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-016",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.30819,
+          "actual_usage": {
+            "input_tokens": 79557,
+            "cached_input_tokens": 66048,
+            "uncached_input_tokens": 13509,
+            "output_tokens": 1210,
+            "total_tokens": 80767
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46426,
+                "cached_input_tokens": 39552,
+                "uncached_input_tokens": 6874,
+                "output_tokens": 870,
+                "total_tokens": 47296
+              },
+              "credits": 0.75896,
+              "wall_seconds": 29.437000000005355
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33131,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6635,
+                "output_tokens": 340,
+                "total_tokens": 33471
+              },
+              "credits": 0.54923,
+              "wall_seconds": 15.562999999994645
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1235,
+            "ollama_output_tokens": 56,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 4.7364796
+          },
+          "LOCAL_GATE_WALL": 55.297,
+          "TOTAL_WORKFLOW_WALL": 104.88999999998487,
+          "Host_validation_wall": 38.265,
+          "Host_formatter_seconds": 0.8590000000258442,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/15",
+        "reported_task_id": "FGR228-016",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "29d5288d105108f4f1561ceb421f3493533389d234f7ad44a84366f6710fd46f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-a8ec01cba329e6",
+        "entry_key": "family-gated-local-router-228/FGR228-016",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-016",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": true,
+            "duration_seconds": 55.297,
+            "usage": {
+              "ollama_input_tokens": 1235,
+              "ollama_output_tokens": 56,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 4.7364796
+            },
+            "task_id": "FGR228-016",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and returns input-order indices only for records with verification.passed == true. It stays within the declared editable region, and all mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 33131,
+              "cached_input_tokens": 26496,
+              "output_tokens": 340,
+              "uncached_input_tokens": 6635,
+              "total_tokens": 33471
+            },
+            "credits": 0.54923,
+            "wall_seconds": 15.562999999994645
+          },
+          "total_wall_seconds": 104.88999999998487,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-016.json",
+        "validation_pass": null,
+        "source_sha256": "94afb3c81010c7897be206cfc2247b55abbff89a45af870f382ddceb30130b10",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-016",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "29d5288d105108f4f1561ceb421f3493533389d234f7ad44a84366f6710fd46f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-017": [
+      {
+        "result_id": "R-ceb91008a8ce77",
+        "entry_key": "family-gated-local-router-228/FGR228-017",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-017",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.32578,
+          "actual_usage": {
+            "input_tokens": 79086,
+            "cached_input_tokens": 41856,
+            "uncached_input_tokens": 37230,
+            "output_tokens": 1020,
+            "total_tokens": 80106
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46338,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4482,
+                "output_tokens": 756,
+                "total_tokens": 47094
+              },
+              "credits": 0.62238,
+              "wall_seconds": 27.01600000000326
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32748,
+                "cached_input_tokens": 0,
+                "uncached_input_tokens": 32748,
+                "output_tokens": 264,
+                "total_tokens": 33012
+              },
+              "credits": 1.7034,
+              "wall_seconds": 12.702999999979511
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 908,
+            "ollama_output_tokens": 76,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 5.9629768
+          },
+          "LOCAL_GATE_WALL": 57.218,
+          "TOTAL_WORKFLOW_WALL": 101.29699999999139,
+          "Host_validation_wall": 38.967999999999996,
+          "Host_formatter_seconds": 0.9370000000344589,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/16",
+        "reported_task_id": "FGR228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "dcf2860b7d34b1ff9a956e1cb0de5a320581ef64446a9f51f53b97141d56e768",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b584329d8cd057",
+        "entry_key": "family-gated-local-router-228/FGR228-017",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-017",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 57.218,
+            "usage": {
+              "ollama_input_tokens": 908,
+              "ollama_output_tokens": 76,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 5.9629768
+            },
+            "task_id": "FGR228-017",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate preserves the required signature and flattens evidence in event and entry order, excluding only empty strings while retaining whitespace, duplicates, and the input. All mandatory checks and the scope guard passed.",
+            "usage": {
+              "input_tokens": 32748,
+              "cached_input_tokens": 0,
+              "output_tokens": 264,
+              "uncached_input_tokens": 32748,
+              "total_tokens": 33012
+            },
+            "credits": 1.7034,
+            "wall_seconds": 12.702999999979511
+          },
+          "total_wall_seconds": 101.29699999999139,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-017.json",
+        "validation_pass": null,
+        "source_sha256": "e92c4166301c99d368bac4980930cb92785608d31e4eea0b75910a8f7a87c92d",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-017",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "dcf2860b7d34b1ff9a956e1cb0de5a320581ef64446a9f51f53b97141d56e768",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-018": [
+      {
+        "result_id": "R-05b658faaceeb3",
+        "entry_key": "family-gated-local-router-228/FGR228-018",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-018",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.32913,
+          "actual_usage": {
+            "input_tokens": 205623,
+            "cached_input_tokens": 173056,
+            "uncached_input_tokens": 32567,
+            "output_tokens": 3342,
+            "total_tokens": 208965
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46415,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4559,
+                "output_tokens": 964,
+                "total_tokens": 47379
+              },
+              "credits": 0.67823,
+              "wall_seconds": 27.20299999997951
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32851,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6355,
+                "output_tokens": 282,
+                "total_tokens": 33133
+              },
+              "credits": 0.52073,
+              "wall_seconds": 16.40700000000652
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 161.53099999998813,
+          "Host_validation_wall": 53.10899999999674,
+          "Host_formatter_seconds": 1.375,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/17",
+        "reported_task_id": "FGR228-018",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "74c24cfb17ecb9e693fe8a01dcd6732ee181e8910e5f01572029bb6a6a6171b2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-bc47a33f18bb30",
+        "entry_key": "family-gated-local-router-228/FGR228-018",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-018",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 161.53099999998813
+        },
+        "source_file": "outcomes/FGR228-018.json",
+        "validation_pass": null,
+        "source_sha256": "20a5c226f60563732ccb5d3e7dafe81f23e901cbfd1ab5ac1ed515528ddc604f",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-018",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "74c24cfb17ecb9e693fe8a01dcd6732ee181e8910e5f01572029bb6a6a6171b2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-019": [
+      {
+        "result_id": "R-5d472604732851",
+        "entry_key": "family-gated-local-router-228/FGR228-019",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-019",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.1194600000000001,
+          "actual_usage": {
+            "input_tokens": 78931,
+            "cached_input_tokens": 68352,
+            "uncached_input_tokens": 10579,
+            "output_tokens": 995,
+            "total_tokens": 79926
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46340,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4484,
+                "output_tokens": 723,
+                "total_tokens": 47063
+              },
+              "credits": 0.61423,
+              "wall_seconds": 23.96799999999348
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32591,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6095,
+                "output_tokens": 272,
+                "total_tokens": 32863
+              },
+              "credits": 0.50523,
+              "wall_seconds": 15.546999999991385
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 912,
+            "ollama_output_tokens": 46,
+            "ollama_cache_tokens": 91,
+            "ollama_duration_seconds": 3.7537583
+          },
+          "LOCAL_GATE_WALL": 54.812,
+          "TOTAL_WORKFLOW_WALL": 98.81200000000536,
+          "Host_validation_wall": 38.765,
+          "Host_formatter_seconds": 0.875,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/18",
+        "reported_task_id": "FGR228-019",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "608049b6bce58ff9719de066ec1cdb7cc1dcd8237a375ff3592b32201ed492b4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-caf6f64873bd35",
+        "entry_key": "family-gated-local-router-228/FGR228-019",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-019",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 54.812,
+            "usage": {
+              "ollama_input_tokens": 912,
+              "ollama_output_tokens": 46,
+              "ollama_cache_tokens": 91,
+              "ollama_duration_seconds": 3.7537583
+            },
+            "task_id": "FGR228-019",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the allowed function body, preserves the required signature, and computes saturating subtraction followed by saturating multiplication by 1024. All mandatory validation and scope checks passed; the packet shows no concrete remaining defect.",
+            "usage": {
+              "input_tokens": 32591,
+              "cached_input_tokens": 26496,
+              "output_tokens": 272,
+              "uncached_input_tokens": 6095,
+              "total_tokens": 32863
+            },
+            "credits": 0.50523,
+            "wall_seconds": 15.546999999991385
+          },
+          "total_wall_seconds": 98.81200000000536,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-019.json",
+        "validation_pass": null,
+        "source_sha256": "5eace022b002fcb65bb8fc5680364e4504aef1cb465f0afbf8cdf0af4457ccb6",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-019",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "608049b6bce58ff9719de066ec1cdb7cc1dcd8237a375ff3592b32201ed492b4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-020": [
+      {
+        "result_id": "R-c02fa327437117",
+        "entry_key": "family-gated-local-router-228/FGR228-020",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-020",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.16126,
+          "actual_usage": {
+            "input_tokens": 79562,
+            "cached_input_tokens": 68352,
+            "uncached_input_tokens": 11210,
+            "output_tokens": 1036,
+            "total_tokens": 80598
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46504,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4648,
+                "output_tokens": 763,
+                "total_tokens": 47267
+              },
+              "credits": 0.63243,
+              "wall_seconds": 24.187999999994645
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33058,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6562,
+                "output_tokens": 273,
+                "total_tokens": 33331
+              },
+              "credits": 0.52883,
+              "wall_seconds": 13.437999999994645
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1229,
+            "ollama_output_tokens": 54,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 8.99842
+          },
+          "LOCAL_GATE_WALL": 58.625,
+          "TOTAL_WORKFLOW_WALL": 100.85899999999674,
+          "Host_validation_wall": 37.549,
+          "Host_formatter_seconds": 0.8290000000270084,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/19",
+        "reported_task_id": "FGR228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "2d4749060980c7dce62160a8df44a7326763825ebd239aee91761baac0c159be",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-8eabfe928ef845",
+        "entry_key": "family-gated-local-router-228/FGR228-020",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-020",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 58.625,
+            "usage": {
+              "ollama_input_tokens": 1229,
+              "ollama_output_tokens": 54,
+              "ollama_cache_tokens": 0,
+              "ollama_duration_seconds": 8.99842
+            },
+            "task_id": "FGR228-020",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate returns the maximum rss_kib, returns 0 for an empty process list, and preserves state. The signature and scope are unchanged, and all mandatory checks passed.",
+            "usage": {
+              "input_tokens": 33058,
+              "cached_input_tokens": 26496,
+              "output_tokens": 273,
+              "uncached_input_tokens": 6562,
+              "total_tokens": 33331
+            },
+            "credits": 0.52883,
+            "wall_seconds": 13.437999999994645
+          },
+          "total_wall_seconds": 100.85899999999674,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-020.json",
+        "validation_pass": null,
+        "source_sha256": "529dfc99adb33113f6975afc0b9eef1f4f1ae15eb3ac0c014e94a10f0c4cc425",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-020",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "2d4749060980c7dce62160a8df44a7326763825ebd239aee91761baac0c159be",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-021": [
+      {
+        "result_id": "R-3bee4b4740a8b3",
+        "entry_key": "family-gated-local-router-228/FGR228-021",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-021",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 4.28698,
+          "actual_usage": {
+            "input_tokens": 199921,
+            "cached_input_tokens": 141696,
+            "uncached_input_tokens": 58225,
+            "output_tokens": 2669,
+            "total_tokens": 202590
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46416,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 31952,
+                "output_tokens": 632,
+                "total_tokens": 47048
+              },
+              "credits": 1.82792,
+              "wall_seconds": 23.90600000001723
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32670,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6174,
+                "output_tokens": 260,
+                "total_tokens": 32930
+              },
+              "credits": 0.50618,
+              "wall_seconds": 12.26600000000326
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 151.59400000001187,
+          "Host_validation_wall": 55.01600000000326,
+          "Host_formatter_seconds": 1.6730000000388827,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/20",
+        "reported_task_id": "FGR228-021",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a0e3a040ddaa3212715eb82606bb3177db7322705900fad8658aca618f4b1ada",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-04d6536d9bd09e",
+        "entry_key": "family-gated-local-router-228/FGR228-021",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-021",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 151.59400000001187
+        },
+        "source_file": "outcomes/FGR228-021.json",
+        "validation_pass": null,
+        "source_sha256": "9219bc6a98da535813d306d6284a032dcbb7934950599f32bd35c7fb4a349dba",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-021",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "a0e3a040ddaa3212715eb82606bb3177db7322705900fad8658aca618f4b1ada",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-022": [
+      {
+        "result_id": "R-2a165ee79120a8",
+        "entry_key": "family-gated-local-router-228/FGR228-022",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-022",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.19143,
+          "actual_usage": {
+            "input_tokens": 179296,
+            "cached_input_tokens": 161536,
+            "uncached_input_tokens": 17760,
+            "output_tokens": 1983,
+            "total_tokens": 181279
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46466,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4610,
+                "output_tokens": 754,
+                "total_tokens": 47220
+              },
+              "credits": 0.62828,
+              "wall_seconds": 25.078000000008615
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32607,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6111,
+                "output_tokens": 267,
+                "total_tokens": 32874
+              },
+              "credits": 0.50478,
+              "wall_seconds": 13.265999999974156
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "LINT_REPAIR_NOT_ELIGIBLE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1218,
+            "ollama_output_tokens": 39,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 7.6609944
+          },
+          "LOCAL_GATE_WALL": 68.032,
+          "TOTAL_WORKFLOW_WALL": 204.28099999998813,
+          "Host_validation_wall": 104.61099999997951,
+          "Host_formatter_seconds": 2.625999999960186,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/21",
+        "reported_task_id": "FGR228-022",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d7198c4d2eaf1a8e2103920249d44b32991c5ff4b3dde21362986d10a03e2b16",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-24cc7bf6121a5c",
+        "entry_key": "family-gated-local-router-228/FGR228-022",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-022",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "LINT_REPAIR_NOT_ELIGIBLE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 68.032,
+            "usage": {
+              "ollama_input_tokens": 1218,
+              "ollama_output_tokens": 39,
+              "ollama_cache_tokens": 0,
+              "ollama_duration_seconds": 7.6609944
+            },
+            "task_id": "FGR228-022",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 204.28099999998813
+        },
+        "source_file": "outcomes/FGR228-022.json",
+        "validation_pass": null,
+        "source_sha256": "2fbbb0de4ba2202e324637b6b564d8e8804594525d84c5da6d69e4651c211147",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-022",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d7198c4d2eaf1a8e2103920249d44b32991c5ff4b3dde21362986d10a03e2b16",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-023": [
+      {
+        "result_id": "R-6dfd43b0b5fdf0",
+        "entry_key": "family-gated-local-router-228/FGR228-023",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-023",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.4751,
+          "actual_usage": {
+            "input_tokens": 177959,
+            "cached_input_tokens": 132480,
+            "uncached_input_tokens": 45479,
+            "output_tokens": 2155,
+            "total_tokens": 180114
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46524,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4668,
+                "output_tokens": 795,
+                "total_tokens": 47319
+              },
+              "credits": 0.64143,
+              "wall_seconds": 26.73499999998603
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32463,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 5967,
+                "output_tokens": 265,
+                "total_tokens": 32728
+              },
+              "credits": 0.49708,
+              "wall_seconds": 15.75
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 140.56200000000536,
+          "Host_validation_wall": 56.98399999999674,
+          "Host_formatter_seconds": 1.3280000000086147,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/22",
+        "reported_task_id": "FGR228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "96d3a847478a790f537bdc4d681637c55494a4440950a73d3cba3c42e81d1501",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-a115a7471d42ea",
+        "entry_key": "family-gated-local-router-228/FGR228-023",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-023",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 140.56200000000536
+        },
+        "source_file": "outcomes/FGR228-023.json",
+        "validation_pass": null,
+        "source_sha256": "e5af9c4795740057cc4581c43a2246b30e77c911ac2bf456f46d848708b0bf2b",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-023",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "96d3a847478a790f537bdc4d681637c55494a4440950a73d3cba3c42e81d1501",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-024": [
+      {
+        "result_id": "R-e3b7d47f3a22cf",
+        "entry_key": "family-gated-local-router-228/FGR228-024",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-024",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.2653400000000001,
+          "actual_usage": {
+            "input_tokens": 79475,
+            "cached_input_tokens": 66048,
+            "uncached_input_tokens": 13427,
+            "output_tokens": 1055,
+            "total_tokens": 80530
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46409,
+                "cached_input_tokens": 39552,
+                "uncached_input_tokens": 6857,
+                "output_tokens": 747,
+                "total_tokens": 47156
+              },
+              "credits": 0.72736,
+              "wall_seconds": 22.046999999991385
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33066,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6570,
+                "output_tokens": 308,
+                "total_tokens": 33374
+              },
+              "credits": 0.53798,
+              "wall_seconds": 16.889999999984866
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1242,
+            "ollama_output_tokens": 47,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 4.1387768
+          },
+          "LOCAL_GATE_WALL": 54.687,
+          "TOTAL_WORKFLOW_WALL": 98.23499999998603,
+          "Host_validation_wall": 37.937,
+          "Host_formatter_seconds": 0.8269999999902211,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/23",
+        "reported_task_id": "FGR228-024",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "90cfc3ef5e90d1bff091ffc77db080e7539ef109c4ca33a2bd2e5453cd654a55",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-0bdf8d5c971d15",
+        "entry_key": "family-gated-local-router-228/FGR228-024",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-024",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 54.687,
+            "usage": {
+              "ollama_input_tokens": 1242,
+              "ollama_output_tokens": 47,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 4.1387768
+            },
+            "task_id": "FGR228-024",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate returns None for an empty slice and the minimum available_kib for every nonempty slice, including zero and values above total_kib. The diff is confined to the allowed region, and all mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 33066,
+              "cached_input_tokens": 26496,
+              "output_tokens": 308,
+              "uncached_input_tokens": 6570,
+              "total_tokens": 33374
+            },
+            "credits": 0.53798,
+            "wall_seconds": 16.889999999984866
+          },
+          "total_wall_seconds": 98.23499999998603,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-024.json",
+        "validation_pass": null,
+        "source_sha256": "1810684f6bd59e91990b5a8f2418cb83a96d1401991d6177c0ef00894abede25",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-024",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "90cfc3ef5e90d1bff091ffc77db080e7539ef109c4ca33a2bd2e5453cd654a55",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-025": [
+      {
+        "result_id": "R-68dbdec5325864",
+        "entry_key": "family-gated-local-router-228/FGR228-025",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-025",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.04589,
+          "actual_usage": {
+            "input_tokens": 228224,
+            "cached_input_tokens": 205568,
+            "uncached_input_tokens": 22656,
+            "output_tokens": 3541,
+            "total_tokens": 231765
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46783,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4927,
+                "output_tokens": 1127,
+                "total_tokens": 47910
+              },
+              "credits": 0.73738,
+              "wall_seconds": 34.187000000005355
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33324,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6828,
+                "output_tokens": 358,
+                "total_tokens": 33682
+              },
+              "credits": 0.56338,
+              "wall_seconds": 12.0
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 164.67199999999139,
+          "Host_validation_wall": 53.937000000005355,
+          "Host_formatter_seconds": 1.2030000000086147,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/24",
+        "reported_task_id": "FGR228-025",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b1c906d55d94e8ca18173ce115ca2ac885112d5b464de3912163cc1f6ab4aae0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-7822113d081384",
+        "entry_key": "family-gated-local-router-228/FGR228-025",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-025",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 164.67199999999139
+        },
+        "source_file": "outcomes/FGR228-025.json",
+        "validation_pass": null,
+        "source_sha256": "f4de8ffa5a4ec10e2b565f76e7ed8021673c5a64ead656b63140135f42168264",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-025",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "b1c906d55d94e8ca18173ce115ca2ac885112d5b464de3912163cc1f6ab4aae0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-026": [
+      {
+        "result_id": "R-376acb21306627",
+        "entry_key": "family-gated-local-router-228/FGR228-026",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-026",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.03945,
+          "actual_usage": {
+            "input_tokens": 179167,
+            "cached_input_tokens": 145920,
+            "uncached_input_tokens": 33247,
+            "output_tokens": 2590,
+            "total_tokens": 181757
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46696,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4840,
+                "output_tokens": 996,
+                "total_tokens": 47692
+              },
+              "credits": 0.70028,
+              "wall_seconds": 24.51600000000326
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32656,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18192,
+                "output_tokens": 259,
+                "total_tokens": 32915
+              },
+              "credits": 1.04667,
+              "wall_seconds": 14.735000000015134
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 149.23499999998603,
+          "Host_validation_wall": 63.687000000005355,
+          "Host_formatter_seconds": 1.6869999999762513,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/25",
+        "reported_task_id": "FGR228-026",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6c6d010f4015b4c0ae20f8b5e881ca43f9fe5187ebcc9b155263af22266107c9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-ce5f99c698051a",
+        "entry_key": "family-gated-local-router-228/FGR228-026",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-026",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 149.23499999998603
+        },
+        "source_file": "outcomes/FGR228-026.json",
+        "validation_pass": null,
+        "source_sha256": "cf43991fa027f9540c70a65b257812bf931ee74801ceb388f14803ed399036a0",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-026",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "6c6d010f4015b4c0ae20f8b5e881ca43f9fe5187ebcc9b155263af22266107c9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-027": [
+      {
+        "result_id": "R-48b784c4776c74",
+        "entry_key": "family-gated-local-router-228/FGR228-027",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-027",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.8574900000000003,
+          "actual_usage": {
+            "input_tokens": 222710,
+            "cached_input_tokens": 179328,
+            "uncached_input_tokens": 43382,
+            "output_tokens": 3167,
+            "total_tokens": 225877
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46598,
+                "cached_input_tokens": 27392,
+                "uncached_input_tokens": 19206,
+                "output_tokens": 843,
+                "total_tokens": 47441
+              },
+              "credits": 1.30801,
+              "wall_seconds": 28.95299999997951
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33025,
+                "cached_input_tokens": 24064,
+                "uncached_input_tokens": 8961,
+                "output_tokens": 309,
+                "total_tokens": 33334
+              },
+              "credits": 0.64562,
+              "wall_seconds": 15.51600000000326
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 162.39100000000326,
+          "Host_validation_wall": 53.828000000008615,
+          "Host_formatter_seconds": 1.7190000000118744,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/26",
+        "reported_task_id": "FGR228-027",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "ab2353239c2995de39d6427e9878ec44cbc5a603be442930ee03e8e91233f6d5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b05fcb62d45379",
+        "entry_key": "family-gated-local-router-228/FGR228-027",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-027",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 162.39100000000326
+        },
+        "source_file": "outcomes/FGR228-027.json",
+        "validation_pass": null,
+        "source_sha256": "890d94c7801003e82e2f62d20e1ecb5f2f90d20431a21f8e3c6afb00d7b35f6c",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-027",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "ab2353239c2995de39d6427e9878ec44cbc5a603be442930ee03e8e91233f6d5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-028": [
+      {
+        "result_id": "R-bee5a400d8ef7d",
+        "entry_key": "family-gated-local-router-228/FGR228-028",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-028",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.1116599999999996,
+          "actual_usage": {
+            "input_tokens": 178320,
+            "cached_input_tokens": 141952,
+            "uncached_input_tokens": 36368,
+            "output_tokens": 2334,
+            "total_tokens": 180654
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46549,
+                "cached_input_tokens": 27392,
+                "uncached_input_tokens": 19157,
+                "output_tokens": 863,
+                "total_tokens": 47412
+              },
+              "credits": 1.31056,
+              "wall_seconds": 28.59399999998277
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32640,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6144,
+                "output_tokens": 310,
+                "total_tokens": 32950
+              },
+              "credits": 0.51718,
+              "wall_seconds": 13.71899999998277
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 142.76500000001397,
+          "Host_validation_wall": 56.14000000001397,
+          "Host_formatter_seconds": 1.7180000000225846,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/27",
+        "reported_task_id": "FGR228-028",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "105be8e7d886d85f8b7a0973562f38e9a1c001136db11ce067d118bd20b09dc2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-983eb3fbce4af0",
+        "entry_key": "family-gated-local-router-228/FGR228-028",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-028",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 142.76500000001397
+        },
+        "source_file": "outcomes/FGR228-028.json",
+        "validation_pass": null,
+        "source_sha256": "d0dd6e1ba976c698b65d224543f3d54cea529e434f88b631ef6c2ca909fba23c",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-028",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "105be8e7d886d85f8b7a0973562f38e9a1c001136db11ce067d118bd20b09dc2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-029": [
+      {
+        "result_id": "R-36fcb180d55582",
+        "entry_key": "family-gated-local-router-228/FGR228-029",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-029",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.31524,
+          "actual_usage": {
+            "input_tokens": 180753,
+            "cached_input_tokens": 162048,
+            "uncached_input_tokens": 18705,
+            "output_tokens": 2279,
+            "total_tokens": 183032
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46741,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4885,
+                "output_tokens": 760,
+                "total_tokens": 47501
+              },
+              "credits": 0.64353,
+              "wall_seconds": 21.171999999991385
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32863,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6367,
+                "output_tokens": 280,
+                "total_tokens": 33143
+              },
+              "credits": 0.52083,
+              "wall_seconds": 17.15600000001723
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 131.20300000000861,
+          "Host_validation_wall": 54.078000000008615,
+          "Host_formatter_seconds": 1.8440000000118744,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/28",
+        "reported_task_id": "FGR228-029",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "dde3c72c83ddda40901148078f37217ec894c1da627f04e39da427e62929f55f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-959f4362805eb6",
+        "entry_key": "family-gated-local-router-228/FGR228-029",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-029",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 131.20300000000861
+        },
+        "source_file": "outcomes/FGR228-029.json",
+        "validation_pass": null,
+        "source_sha256": "77022e9eac26d7799e215b9ef65f6b5bde991a89ad92aa717e8a0dcc9c3436e2",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-029",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "dde3c72c83ddda40901148078f37217ec894c1da627f04e39da427e62929f55f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-030": [
+      {
+        "result_id": "R-f459386de7d7e8",
+        "entry_key": "family-gated-local-router-228/FGR228-030",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": "COMPLETE",
+        "local_status": "NOT_RUN",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-030",
+          "arm": "direct",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.5759499999999997,
+          "actual_usage": {
+            "input_tokens": 180697,
+            "cached_input_tokens": 158720,
+            "uncached_input_tokens": 21977,
+            "output_tokens": 2734,
+            "total_tokens": 183431
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46658,
+                "cached_input_tokens": 38784,
+                "uncached_input_tokens": 7874,
+                "output_tokens": 668,
+                "total_tokens": 47326
+              },
+              "credits": 0.75462,
+              "wall_seconds": 18.07799999997951
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33106,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6610,
+                "output_tokens": 327,
+                "total_tokens": 33433
+              },
+              "credits": 0.54473,
+              "wall_seconds": 22.578000000008615
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_RUN",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 140.35999999998603,
+          "Host_validation_wall": 54.594000000011874,
+          "Host_formatter_seconds": 1.3440000000118744,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/29",
+        "reported_task_id": "FGR228-030",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "ccad580fe7bb2b8e85e4fc3794a6f75aaef5b212a49f6d1cc6d7529ba534e488",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-8b291eef899654",
+        "entry_key": "family-gated-local-router-228/FGR228-030",
+        "stage": "WORKFLOW",
+        "condition": "arm=direct",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-030",
+          "arm": "direct",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 140.35999999998603
+        },
+        "source_file": "outcomes/FGR228-030.json",
+        "validation_pass": null,
+        "source_sha256": "0872430e6a7d20c70fbfb06174249d300457ff71cc1c52fa799961a9736fdb13",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-030",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "ccad580fe7bb2b8e85e4fc3794a6f75aaef5b212a49f6d1cc6d7529ba534e488",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-031": [
+      {
+        "result_id": "R-b501f8dd82cfa9",
+        "entry_key": "family-gated-local-router-228/FGR228-031",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-031",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.70985,
+          "actual_usage": {
+            "input_tokens": 79810,
+            "cached_input_tokens": 56320,
+            "uncached_input_tokens": 23490,
+            "output_tokens": 1015,
+            "total_tokens": 80825
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46635,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4779,
+                "output_tokens": 767,
+                "total_tokens": 47402
+              },
+              "credits": 0.63998,
+              "wall_seconds": 21.828000000008615
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33175,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18711,
+                "output_tokens": 248,
+                "total_tokens": 33423
+              },
+              "credits": 1.06987,
+              "wall_seconds": 13.578000000008615
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1244,
+            "ollama_output_tokens": 31,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 2.8727301
+          },
+          "LOCAL_GATE_WALL": 53.266,
+          "TOTAL_WORKFLOW_WALL": 93.28100000001723,
+          "Host_validation_wall": 38.018,
+          "Host_formatter_seconds": 0.860000000015134,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/30",
+        "reported_task_id": "FGR228-031",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c5e1d661d39c53a8902d1933bac61df6944109385063cc40d5b955a187f7173f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-fb0edfbd7ecbf9",
+        "entry_key": "family-gated-local-router-228/FGR228-031",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-031",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 53.266,
+            "usage": {
+              "ollama_input_tokens": 1244,
+              "ollama_output_tokens": 31,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 2.8727301
+            },
+            "task_id": "FGR228-031",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate preserves the required signature and delegates rendering of state.disk_count to fgr_optional_count. All mandatory checks and the Host scope guard passed.",
+            "usage": {
+              "input_tokens": 33175,
+              "cached_input_tokens": 14464,
+              "output_tokens": 248,
+              "uncached_input_tokens": 18711,
+              "total_tokens": 33423
+            },
+            "credits": 1.06987,
+            "wall_seconds": 13.578000000008615
+          },
+          "total_wall_seconds": 93.28100000001723,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-031.json",
+        "validation_pass": null,
+        "source_sha256": "cadfaf086239ac1c5f78e80cdd50194f2f7346c390c70891651dd46f78242b15",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-031",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "c5e1d661d39c53a8902d1933bac61df6944109385063cc40d5b955a187f7173f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-032": [
+      {
+        "result_id": "R-c90229fd84b7c1",
+        "entry_key": "family-gated-local-router-228/FGR228-032",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-032",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.85692,
+          "actual_usage": {
+            "input_tokens": 193794,
+            "cached_input_tokens": 163584,
+            "uncached_input_tokens": 30210,
+            "output_tokens": 2114,
+            "total_tokens": 195908
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 62345,
+                "cached_input_tokens": 45184,
+                "uncached_input_tokens": 17161,
+                "output_tokens": 910,
+                "total_tokens": 63255
+              },
+              "credits": 1.31147,
+              "wall_seconds": 28.875
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32621,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6125,
+                "output_tokens": 238,
+                "total_tokens": 32859
+              },
+              "credits": 0.49823,
+              "wall_seconds": 11.578000000008615
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 137.01600000000326,
+          "Host_validation_wall": 57.390999999974156,
+          "Host_formatter_seconds": 1.4539999999979045,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/31",
+        "reported_task_id": "FGR228-032",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b5637b1e52edb5db961c14b1f9b8c6d4fe846a785d6f4c649f6b02765e0e05fa",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-ac82889c6c252a",
+        "entry_key": "family-gated-local-router-228/FGR228-032",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-032",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 137.01600000000326
+        },
+        "source_file": "outcomes/FGR228-032.json",
+        "validation_pass": null,
+        "source_sha256": "ef0aaa001b205c868d1a1a8ff19b3dce3705ab81e47824d082b1570cffcf3a17",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-032",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "b5637b1e52edb5db961c14b1f9b8c6d4fe846a785d6f4c649f6b02765e0e05fa",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-033": [
+      {
+        "result_id": "R-47593af507718b",
+        "entry_key": "family-gated-local-router-228/FGR228-033",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-033",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.17361,
+          "actual_usage": {
+            "input_tokens": 80004,
+            "cached_input_tokens": 68352,
+            "uncached_input_tokens": 11652,
+            "output_tokens": 997,
+            "total_tokens": 81001
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46583,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4727,
+                "output_tokens": 707,
+                "total_tokens": 47290
+              },
+              "credits": 0.62238,
+              "wall_seconds": 24.453000000008615
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33421,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6925,
+                "output_tokens": 290,
+                "total_tokens": 33711
+              },
+              "credits": 0.55123,
+              "wall_seconds": 16.203000000008615
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1449,
+            "ollama_output_tokens": 30,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 3.0025333
+          },
+          "LOCAL_GATE_WALL": 53.187,
+          "TOTAL_WORKFLOW_WALL": 98.1710000000021,
+          "Host_validation_wall": 37.82899999999999,
+          "Host_formatter_seconds": 0.8280000000377186,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/32",
+        "reported_task_id": "FGR228-033",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "94934e3e93fd73f9268e114ed6af2b0bcad01e6f890b49ede90bb1770019e58a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-7b378f9e05a9b3",
+        "entry_key": "family-gated-local-router-228/FGR228-033",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-033",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 53.187,
+            "usage": {
+              "ollama_input_tokens": 1449,
+              "ollama_output_tokens": 30,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 3.0025333
+            },
+            "task_id": "FGR228-033",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature, calls fgr_kind_tag on event.kind, and returns its tag as an owned String. All mandatory checks and scope guards passed, with no concrete contract or scope defect remaining.",
+            "usage": {
+              "input_tokens": 33421,
+              "cached_input_tokens": 26496,
+              "output_tokens": 290,
+              "uncached_input_tokens": 6925,
+              "total_tokens": 33711
+            },
+            "credits": 0.55123,
+            "wall_seconds": 16.203000000008615
+          },
+          "total_wall_seconds": 98.1710000000021,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-033.json",
+        "validation_pass": null,
+        "source_sha256": "b92a10b8b8d8eb7dbed7cc79e509fbf299e76bf48625ae821281ac22ef0eba66",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-033",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "94934e3e93fd73f9268e114ed6af2b0bcad01e6f890b49ede90bb1770019e58a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-034": [
+      {
+        "result_id": "R-5727c5b40de12c",
+        "entry_key": "family-gated-local-router-228/FGR228-034",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-034",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.78202,
+          "actual_usage": {
+            "input_tokens": 180535,
+            "cached_input_tokens": 150144,
+            "uncached_input_tokens": 30391,
+            "output_tokens": 2047,
+            "total_tokens": 182582
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46529,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4673,
+                "output_tokens": 640,
+                "total_tokens": 47169
+              },
+              "credits": 0.60293,
+              "wall_seconds": 19.26600000000326
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32921,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6425,
+                "output_tokens": 261,
+                "total_tokens": 33182
+              },
+              "credits": 0.51898,
+              "wall_seconds": 13.953000000008615
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "LINT_REPAIR_NOT_ELIGIBLE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1256,
+            "ollama_output_tokens": 33,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 7.2515458
+          },
+          "LOCAL_GATE_WALL": 57.219,
+          "TOTAL_WORKFLOW_WALL": 194.95300000000861,
+          "Host_validation_wall": 91.90600000000327,
+          "Host_formatter_seconds": 2.1089999999967404,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/33",
+        "reported_task_id": "FGR228-034",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "9745c3256ccfb363834ec458208c06c2b557b165a8ef0a627893d649888aa2f2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-d0e43adb06bdec",
+        "entry_key": "family-gated-local-router-228/FGR228-034",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-034",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "LINT_REPAIR_NOT_ELIGIBLE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 57.219,
+            "usage": {
+              "ollama_input_tokens": 1256,
+              "ollama_output_tokens": 33,
+              "ollama_cache_tokens": 0,
+              "ollama_duration_seconds": 7.2515458
+            },
+            "task_id": "FGR228-034",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 194.95300000000861
+        },
+        "source_file": "outcomes/FGR228-034.json",
+        "validation_pass": null,
+        "source_sha256": "c650c7a829593d49f528044bc2a9e57452d9c78711901ac16c0d374b1ccad0f5",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-034",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "9745c3256ccfb363834ec458208c06c2b557b165a8ef0a627893d649888aa2f2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-035": [
+      {
+        "result_id": "R-6cae2b48c7a9fc",
+        "entry_key": "family-gated-local-router-228/FGR228-035",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-035",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.17909,
+          "actual_usage": {
+            "input_tokens": 178783,
+            "cached_input_tokens": 160768,
+            "uncached_input_tokens": 18015,
+            "output_tokens": 1898,
+            "total_tokens": 180681
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46550,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4694,
+                "output_tokens": 659,
+                "total_tokens": 47209
+              },
+              "credits": 0.60873,
+              "wall_seconds": 21.53200000000652
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33108,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6612,
+                "output_tokens": 235,
+                "total_tokens": 33343
+              },
+              "credits": 0.52183,
+              "wall_seconds": 11.655999999988126
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 124.01499999998487,
+          "Host_validation_wall": 51.046999999991385,
+          "Host_formatter_seconds": 1.6410000000323635,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/34",
+        "reported_task_id": "FGR228-035",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "834d825eab320333ea5176824e2575c4d7b46058b104bf54738c9ccec525532a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-4c495f69ba4207",
+        "entry_key": "family-gated-local-router-228/FGR228-035",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "FGR228-035",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 124.01499999998487
+        },
+        "source_file": "outcomes/FGR228-035.json",
+        "validation_pass": null,
+        "source_sha256": "0b8b77bd39579a87158bbc3be84ea64aed41fe86ec6ba1389672327560802210",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-035",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "834d825eab320333ea5176824e2575c4d7b46058b104bf54738c9ccec525532a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "FGR228-036": [
+      {
+        "result_id": "R-7870e35e37b900",
+        "entry_key": "family-gated-local-router-228/FGR228-036",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-036",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.19356,
+          "actual_usage": {
+            "input_tokens": 80063,
+            "cached_input_tokens": 68352,
+            "uncached_input_tokens": 11711,
+            "output_tokens": 1065,
+            "total_tokens": 81128
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46588,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4732,
+                "output_tokens": 784,
+                "total_tokens": 47372
+              },
+              "credits": 0.64188,
+              "wall_seconds": 26.34399999998277
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33475,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6979,
+                "output_tokens": 281,
+                "total_tokens": 33756
+              },
+              "credits": 0.55168,
+              "wall_seconds": 14.671999999991385
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1448,
+            "ollama_output_tokens": 35,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 3.3348714
+          },
+          "LOCAL_GATE_WALL": 53.359,
+          "TOTAL_WORKFLOW_WALL": 98.76500000001397,
+          "Host_validation_wall": 37.373999999999995,
+          "Host_formatter_seconds": 0.9060000000172295,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "569ae2bdf1d87276de3f9a870aa1c94c3845e0389b102f878d20bcd5f2780c15",
+        "json_pointer": "/35",
+        "reported_task_id": "FGR228-036",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "866c4fd812359390d2f38f0117d4203c1516bef836cf64def3155b5add842b65",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-d0ac0aacd2a411",
+        "entry_key": "family-gated-local-router-228/FGR228-036",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "FGR228-036",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 53.359,
+            "usage": {
+              "ollama_input_tokens": 1448,
+              "ollama_output_tokens": 35,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 3.3348714
+            },
+            "task_id": "FGR228-036",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff calls fgr_risk_label on intent.risk_budget and converts its result to String within the permitted region. The signature is preserved, all mandatory checks and scope guards passed, and the packet shows no remaining contract or scope defect.",
+            "usage": {
+              "input_tokens": 33475,
+              "cached_input_tokens": 26496,
+              "output_tokens": 281,
+              "uncached_input_tokens": 6979,
+              "total_tokens": 33756
+            },
+            "credits": 0.55168,
+            "wall_seconds": 14.671999999991385
+          },
+          "total_wall_seconds": 98.76500000001397,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/FGR228-036.json",
+        "validation_pass": null,
+        "source_sha256": "42e15843b94adc78a5d3f6b9e184208ae52cea78a5ea1086a4a16dc18a51b671",
+        "json_pointer": "",
+        "reported_task_id": "FGR228-036",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "866c4fd812359390d2f38f0117d4203c1516bef836cf64def3155b5add842b65",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.before-table-fix.md",
+      "source_report": "family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.before-table-fix.md",
+      "source_sha256": "c52e66b014fd6e00b121ff9a832ae66819274235f8fb3ff44ca1af392325283a",
+      "scope": "SAME_RUN"
+    },
+    {
+      "path": "reports/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.md",
+      "source_report": "family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.md",
+      "source_sha256": "1f90d3f11ed01cd0e7a46f632b7e175cba678c13df7b7dbafa57cbe39b5cab94",
+      "scope": "SAME_RUN"
+    },
+    {
+      "path": "reports/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.original.md",
+      "source_report": "family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.original.md",
+      "source_sha256": "b861e808e459faab93db781d61518814d33acb4d4acbcba972c1eb75bc03e5ed",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 36,
+    "linked_entries": 36,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 72
+  }
+}

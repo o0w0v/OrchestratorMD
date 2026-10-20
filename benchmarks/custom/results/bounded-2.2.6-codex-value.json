@@ -1,0 +1,498 @@
+{
+  "format_version": 2,
+  "set_id": "bounded-2.2.6-codex-value",
+  "entries": {
+    "CVB-001": [
+      {
+        "result_id": "R-fb7c07216055e1",
+        "entry_key": "bounded-2.2.6-codex-value/CVB-001",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/CVB-001/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "CVB-001",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "first_pass": true,
+          "repair_pass": null,
+          "duration_seconds": 84.25,
+          "usage": {
+            "ollama_input_tokens": 1152,
+            "ollama_output_tokens": 142,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 23.3642643
+          },
+          "review_classification": "workspace/records/router-v2.2/CVB-001/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2505adb0f1cff8a8d492f6c17a74183ef3cbb31e7240804da4541793fd8417e2",
+        "json_pointer": "/runs/0",
+        "reported_task_id": "CVB-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "1a79be74ede0e0c6023e7312e6d57f3169dd0f32340bb336f2aa81f5c04868a4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-cd1fef1e93675e",
+        "entry_key": "bounded-2.2.6-codex-value/CVB-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "CVB-001",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "48ea81042618d4aaef4d3ff0dd5b44a97b9208432d8d900aff4f14fcc68ba756",
+          "first_pass": true,
+          "tested_content_id": "474fa2e5c84e05087f38463c6fc567cf36bb9300ddd3b9a8932a3bb757cc5966",
+          "duration_seconds": 84.25,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 1152,
+            "ollama_output_tokens": 142,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 23.3642643
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 1152,
+            "model_output_tokens": 142,
+            "Worker_seconds": 84.25
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/CVB-001/result.json",
+        "validation_pass": null,
+        "source_sha256": "f918bb344e9061bf09d9d5b260d2278b4a26d21d84982012136f3329f9b40bb7",
+        "json_pointer": "",
+        "reported_task_id": "CVB-001",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "1a79be74ede0e0c6023e7312e6d57f3169dd0f32340bb336f2aa81f5c04868a4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "CVB-002": [
+      {
+        "result_id": "R-51b8a6a31cf956",
+        "entry_key": "bounded-2.2.6-codex-value/CVB-002",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/CVB-002/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "CVB-002",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "first_pass": false,
+          "repair_pass": true,
+          "duration_seconds": 82.656,
+          "usage": {
+            "ollama_input_tokens": 9610,
+            "ollama_output_tokens": 311,
+            "ollama_cache_tokens": 1890,
+            "ollama_duration_seconds": 13.1874752
+          },
+          "review_classification": "workspace/records/router-v2.2/CVB-002/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2505adb0f1cff8a8d492f6c17a74183ef3cbb31e7240804da4541793fd8417e2",
+        "json_pointer": "/runs/1",
+        "reported_task_id": "CVB-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3f563bfd99e09ed0b1a8e10ae2c301c0ac90000c6e4522fd801139a627be6193",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-baf06b723395c9",
+        "entry_key": "bounded-2.2.6-codex-value/CVB-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "CVB-002",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "1af4337040e0b10ecb93e76a0b36ed4212ce7caf47173ee2545f9db7bfdfddc3",
+          "first_pass": false,
+          "repair_pass": true,
+          "tested_content_id": "bc1622d97977e56dc8487a769f70d35d2ffde2a02c0026b12c67c820dcf92137",
+          "duration_seconds": 82.656,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 9610,
+            "ollama_output_tokens": 311,
+            "ollama_cache_tokens": 1890,
+            "ollama_duration_seconds": 13.1874752
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": true,
+            "reference_input_tokens": null,
+            "model_input_tokens": 9610,
+            "model_output_tokens": 311,
+            "Worker_seconds": 82.656
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/CVB-002/result.json",
+        "validation_pass": null,
+        "source_sha256": "711ebf6ca9d2f2b249e1cb3db0ba18ebfa89fa3ecd9aa54bdfecbd071bc33e0d",
+        "json_pointer": "",
+        "reported_task_id": "CVB-002",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "3f563bfd99e09ed0b1a8e10ae2c301c0ac90000c6e4522fd801139a627be6193",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "CVB-003": [
+      {
+        "result_id": "R-b9856ec2488c29",
+        "entry_key": "bounded-2.2.6-codex-value/CVB-003",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/CVB-003/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "CVB-003",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "first_pass": true,
+          "repair_pass": null,
+          "duration_seconds": 58.547,
+          "usage": {
+            "ollama_input_tokens": 4028,
+            "ollama_output_tokens": 272,
+            "ollama_cache_tokens": 694,
+            "ollama_duration_seconds": 8.8805523
+          },
+          "review_classification": "workspace/records/router-v2.2/CVB-003/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2505adb0f1cff8a8d492f6c17a74183ef3cbb31e7240804da4541793fd8417e2",
+        "json_pointer": "/runs/2",
+        "reported_task_id": "CVB-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "15761d78191780b47c000f54dc8c04d7db19a8cae9440cf030c6fa3bf014ca89",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-ae717759f3757f",
+        "entry_key": "bounded-2.2.6-codex-value/CVB-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "CVB-003",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "f3df439aa8e9f38bc3efe8161e93b6d2a569c1cdf46738b6b4f776a1208ef8e9",
+          "first_pass": true,
+          "tested_content_id": "b195a5620f6bd23a450ed48adee6273514160fa7d8239ecfdb0c9ad572125ea3",
+          "duration_seconds": 58.547,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 4028,
+            "ollama_output_tokens": 272,
+            "ollama_cache_tokens": 694,
+            "ollama_duration_seconds": 8.8805523
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 4028,
+            "model_output_tokens": 272,
+            "Worker_seconds": 58.547
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/CVB-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "de2038d3c3fceb47c9f287a9bff0e906f635ec87bfbc9627579d41a3d679b9e3",
+        "json_pointer": "",
+        "reported_task_id": "CVB-003",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "15761d78191780b47c000f54dc8c04d7db19a8cae9440cf030c6fa3bf014ca89",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "CVB-004": [
+      {
+        "result_id": "R-1767e792d0966b",
+        "entry_key": "bounded-2.2.6-codex-value/CVB-004",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "INFRA_ERROR",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/CVB-004/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "CVB-004",
+          "status": "INFRA_ERROR",
+          "reason": "CUDA_ERROR",
+          "failure_domain": "infrastructure",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "first_pass": null,
+          "repair_pass": null,
+          "duration_seconds": 23.984,
+          "usage": {
+            "ollama_input_tokens": null,
+            "ollama_output_tokens": null,
+            "ollama_cache_tokens": null,
+            "ollama_duration_seconds": null
+          },
+          "review_classification": "workspace/records/router-v2.2/CVB-004/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2505adb0f1cff8a8d492f6c17a74183ef3cbb31e7240804da4541793fd8417e2",
+        "json_pointer": "/runs/3",
+        "reported_task_id": "CVB-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c40935a88dc3f50e1c6424542848efa0fa8957bd928448f8aee007f81e5ff5ad",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-4e6dce2e434c62",
+        "entry_key": "bounded-2.2.6-codex-value/CVB-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "INFRA_ERROR",
+        "local_status": "INFRA_ERROR",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "CVB-004",
+          "status": "INFRA_ERROR",
+          "reason": "CUDA_ERROR",
+          "failure_domain": "infrastructure",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "1aa6f06af513cb5b26d769e9979bf791254d5c2734d65595bd9e1de447328858",
+          "duration_seconds": 23.984,
+          "repair_attempted": false,
+          "first_pass": null,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": null,
+            "ollama_output_tokens": null,
+            "ollama_cache_tokens": null,
+            "ollama_duration_seconds": null
+          },
+          "metrics": {
+            "First_PASS": null,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": null,
+            "model_output_tokens": null,
+            "Worker_seconds": 23.984
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/CVB-004/result.json",
+        "validation_pass": null,
+        "source_sha256": "31898424dc519f8de378f6b25c37034695a12de3de1ffe9ff244426c51dd0611",
+        "json_pointer": "",
+        "reported_task_id": "CVB-004",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "c40935a88dc3f50e1c6424542848efa0fa8957bd928448f8aee007f81e5ff5ad",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "CVB-005": [
+      {
+        "result_id": "R-e11bd189f2c11d",
+        "entry_key": "bounded-2.2.6-codex-value/CVB-005",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "CVB-005",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2505adb0f1cff8a8d492f6c17a74183ef3cbb31e7240804da4541793fd8417e2",
+        "json_pointer": "/unstarted/0",
+        "reported_task_id": "CVB-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "8c6c4911c973a51899185a59230dcf143e2df9c868d4d3599aaa4bcfe76fee13",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/bounded-2.2.6-codex-value/RESULTS_A_COMPLETION_JA.md",
+      "source_report": "bounded-2.2.6-codex-value/RESULTS_A_COMPLETION_JA.md",
+      "source_sha256": "4f8f7e6795660790f68de48fa463a3873414c4e1c48c2406adc4b8aecafb81cb",
+      "scope": "SAME_RUN"
+    },
+    {
+      "path": "reports/bounded-2.2.6-codex-value/RESULTS_CODEX_BASELINE_JA.md",
+      "source_report": "bounded-2.2.6-codex-value/RESULTS_CODEX_BASELINE_JA.md",
+      "source_sha256": "0c84749920f0f315f1914fce2df465a8b3f6a854ff404e071247bc550fc35a81",
+      "scope": "SAME_RUN"
+    },
+    {
+      "path": "reports/bounded-2.2.6-codex-value/RESULTS_JA.md",
+      "source_report": "bounded-2.2.6-codex-value/RESULTS_JA.md",
+      "source_sha256": "d0c864f9cefefb4caaaee39c74f219440d3839385c657b0d37c0c58e5dbfc017",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 5,
+    "linked_entries": 5,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 9
+  }
+}

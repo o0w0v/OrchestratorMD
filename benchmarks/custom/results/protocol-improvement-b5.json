@@ -1,0 +1,436 @@
+{
+  "format_version": 2,
+  "set_id": "protocol-improvement-b5",
+  "entries": {
+    "B5-003": [
+      {
+        "result_id": "R-5fbd5824aff323",
+        "entry_key": "protocol-improvement-b5/B5-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "B5-003",
+          "protocol": "agentic",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "first_pass": true,
+          "final_pass": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "false_green": false,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "generation_calls": 2,
+          "worker_seconds": 66.188,
+          "usage": {
+            "ollama_input_tokens": 2880,
+            "ollama_output_tokens": 274,
+            "ollama_cache_tokens": 548,
+            "ollama_duration_seconds": 29.428277
+          },
+          "codex_repair_loc": 0,
+          "codex_modified_code": false,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": true,
+        "source_sha256": "3f4b05894248ae0fdd4417c54b9ce9d748ad18639f7b8f555c88e2f810da2c61",
+        "json_pointer": "/0",
+        "reported_task_id": "B5-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "9725a9619caa771c2d2a16cd2f8adb7c1d27250a66b709ffae700333bad86ccd",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-fd7734e6549af1",
+        "entry_key": "protocol-improvement-b5/B5-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "reviews/B5-003.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "B5-003",
+          "protocol": "agentic",
+          "local_status": "PASS",
+          "review_classification": "reviews/B5-003.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "3e1db593db2830f451e0bc43714732b180b6eb2014e4473b4667b0b15492ab53",
+        "json_pointer": "/0",
+        "reported_task_id": "B5-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "9725a9619caa771c2d2a16cd2f8adb7c1d27250a66b709ffae700333bad86ccd",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-af928336b1ca3d",
+        "entry_key": "protocol-improvement-b5/B5-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "B5-003",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "0ba0bb54b7178975c28beb6c365475642690060bcac6675843bcb70e1a24ca7d",
+          "first_pass": true,
+          "tested_content_id": "3236248dc6210358ccf72826ed2751f6f4e919c90a81da949ed8b48940b1cfa5",
+          "duration_seconds": 66.188,
+          "repair_attempted": false,
+          "usage": {
+            "ollama_input_tokens": 2880,
+            "ollama_output_tokens": 274,
+            "ollama_cache_tokens": 548,
+            "ollama_duration_seconds": 29.428277
+          },
+          "repair_pass": null,
+          "failure_domain": "worker"
+        },
+        "source_file": "results/B5-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "6851e71fc11b9738bd01af39b7c44fde943e48c8b153eac911e2c3fa4ec220ce",
+        "json_pointer": "",
+        "reported_task_id": "B5-003",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "9725a9619caa771c2d2a16cd2f8adb7c1d27250a66b709ffae700333bad86ccd",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "B5-004": [
+      {
+        "result_id": "R-c6c7e9a1d6db88",
+        "entry_key": "protocol-improvement-b5/B5-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "B5-004",
+          "protocol": "agentic",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "first_pass": true,
+          "final_pass": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "false_green": false,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "generation_calls": 2,
+          "worker_seconds": 41.453,
+          "usage": {
+            "ollama_input_tokens": 2570,
+            "ollama_output_tokens": 230,
+            "ollama_cache_tokens": 593,
+            "ollama_duration_seconds": 6.4757328
+          },
+          "codex_repair_loc": 0,
+          "codex_modified_code": false,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": true,
+        "source_sha256": "3f4b05894248ae0fdd4417c54b9ce9d748ad18639f7b8f555c88e2f810da2c61",
+        "json_pointer": "/1",
+        "reported_task_id": "B5-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "8b34fd40c3b79c3033b0bbc092b8c3c47a460d38ce8a471c9aa9ca9dec602eec",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1199ab383e78eb",
+        "entry_key": "protocol-improvement-b5/B5-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "reviews/B5-004.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "B5-004",
+          "protocol": "agentic",
+          "local_status": "PASS",
+          "review_classification": "reviews/B5-004.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "3e1db593db2830f451e0bc43714732b180b6eb2014e4473b4667b0b15492ab53",
+        "json_pointer": "/1",
+        "reported_task_id": "B5-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "8b34fd40c3b79c3033b0bbc092b8c3c47a460d38ce8a471c9aa9ca9dec602eec",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-aebb3988326b44",
+        "entry_key": "protocol-improvement-b5/B5-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "B5-004",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "7c93521ec3b5fc9b09dc43b699baec169837011eba9acba2ed5f69bf45e5a0ef",
+          "first_pass": true,
+          "tested_content_id": "8ff6be1e59fcbc23e37a27bc086b140c7f8b5270db3c499a63cc8b58197d49ca",
+          "duration_seconds": 41.453,
+          "repair_attempted": false,
+          "usage": {
+            "ollama_input_tokens": 2570,
+            "ollama_output_tokens": 230,
+            "ollama_cache_tokens": 593,
+            "ollama_duration_seconds": 6.4757328
+          },
+          "repair_pass": null,
+          "failure_domain": "worker"
+        },
+        "source_file": "results/B5-004/result.json",
+        "validation_pass": null,
+        "source_sha256": "eff5529f5fa815422663313b717d69375ed784482d8fc76ff7c76705b5c1de41",
+        "json_pointer": "",
+        "reported_task_id": "B5-004",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "8b34fd40c3b79c3033b0bbc092b8c3c47a460d38ce8a471c9aa9ca9dec602eec",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "B5-005": [
+      {
+        "result_id": "R-2d632922fadb0d",
+        "entry_key": "protocol-improvement-b5/B5-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "B5-005",
+          "protocol": "agentic",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "first_pass": true,
+          "final_pass": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "false_green": false,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "generation_calls": 2,
+          "worker_seconds": 36.828,
+          "usage": {
+            "ollama_input_tokens": 2694,
+            "ollama_output_tokens": 182,
+            "ollama_cache_tokens": 566,
+            "ollama_duration_seconds": 5.999494
+          },
+          "codex_repair_loc": 0,
+          "codex_modified_code": false,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": true,
+        "source_sha256": "3f4b05894248ae0fdd4417c54b9ce9d748ad18639f7b8f555c88e2f810da2c61",
+        "json_pointer": "/2",
+        "reported_task_id": "B5-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "88b7c4d0c1fea08e34209da8299fc17f81be983289cbf06c2959d8bc36c1e4a9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-fe1f543cc95472",
+        "entry_key": "protocol-improvement-b5/B5-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "reviews/B5-005.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "B5-005",
+          "protocol": "agentic",
+          "local_status": "PASS",
+          "review_classification": "reviews/B5-005.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "3e1db593db2830f451e0bc43714732b180b6eb2014e4473b4667b0b15492ab53",
+        "json_pointer": "/2",
+        "reported_task_id": "B5-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "88b7c4d0c1fea08e34209da8299fc17f81be983289cbf06c2959d8bc36c1e4a9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c354e886681917",
+        "entry_key": "protocol-improvement-b5/B5-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "B5-005",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "bf318c2a1995d0933e3641667461513daccd1d01721309d955349c388a3863b1",
+          "first_pass": true,
+          "tested_content_id": "188d0bb1c179a48a3297848eb9b9ad6328809d49a6acd3e2b1398afb42e351cf",
+          "duration_seconds": 36.828,
+          "repair_attempted": false,
+          "usage": {
+            "ollama_input_tokens": 2694,
+            "ollama_output_tokens": 182,
+            "ollama_cache_tokens": 566,
+            "ollama_duration_seconds": 5.999494
+          },
+          "repair_pass": null,
+          "failure_domain": "worker"
+        },
+        "source_file": "results/B5-005/result.json",
+        "validation_pass": null,
+        "source_sha256": "aae6061b8fcf593c9bbab36d8a99d2a1ec01ad450b1cd580ebd98ca478f7827d",
+        "json_pointer": "",
+        "reported_task_id": "B5-005",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "88b7c4d0c1fea08e34209da8299fc17f81be983289cbf06c2959d8bc36c1e4a9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/protocol-improvement-b5/RESULTS_JA.md",
+      "source_report": "protocol-improvement-b5/RESULTS_JA.md",
+      "source_sha256": "2d5c12f030266f51409da1c7eedc567ff3de8f3f45bf23716adebc16240a5b16",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 3,
+    "linked_entries": 3,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 9
+  }
+}

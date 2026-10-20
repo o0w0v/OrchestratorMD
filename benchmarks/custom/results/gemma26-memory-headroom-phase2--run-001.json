@@ -1,0 +1,3703 @@
+{
+  "format_version": 2,
+  "set_id": "gemma26-memory-headroom-phase2--run-001",
+  "entries": {
+    "LS3W228-001": [
+      {
+        "result_id": "R-e4200e68961648",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-001",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/0",
+        "reported_task_id": "LS3W228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2492098df90d891aa997121856b2639697ff43530f0f26a0429c13b95f1efa4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-722c39d1dca87c",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-001",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/12",
+        "reported_task_id": "LS3W228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2492098df90d891aa997121856b2639697ff43530f0f26a0429c13b95f1efa4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c8ee9cdbb889c6",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-001",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/24",
+        "reported_task_id": "LS3W228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2492098df90d891aa997121856b2639697ff43530f0f26a0429c13b95f1efa4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-86905609fd9bb2",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-001",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 56.313,
+          "usage": {
+            "ollama_input_tokens": 1349,
+            "ollama_output_tokens": 47,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.9558477
+          },
+          "task_id": "LS3W228-001",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/0/Local",
+        "reported_task_id": "LS3W228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2492098df90d891aa997121856b2639697ff43530f0f26a0429c13b95f1efa4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-e73f6a4deb168f",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-001",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff changes only the permitted region. It selects processes by exact parent_pid, returns their PIDs in input order with duplicates, and treats parent zero normally. All mandatory validation and scope checks passed.",
+          "usage": {
+            "input_tokens": 33435,
+            "cached_input_tokens": 26624,
+            "output_tokens": 302,
+            "uncached_input_tokens": 6811,
+            "total_tokens": 33737
+          },
+          "credits": 0.54917,
+          "wall_seconds": 12.171999999991385,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/0/review/result",
+        "reported_task_id": "LS3W228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2492098df90d891aa997121856b2639697ff43530f0f26a0429c13b95f1efa4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-2d91dffacd1589",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-001",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 57.312,
+          "usage": {
+            "ollama_input_tokens": 1349,
+            "ollama_output_tokens": 47,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 3.1175033
+          },
+          "task_id": "LS3W228-001",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/0/Local",
+        "reported_task_id": "LS3W228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2492098df90d891aa997121856b2639697ff43530f0f26a0429c13b95f1efa4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-9319e25ea8908b",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-001",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff changes only the permitted region. It selects processes by exact parent_pid, returns their PIDs in input order with duplicates, and treats parent zero normally. All mandatory validation and scope checks passed.",
+          "usage": {
+            "input_tokens": 33435,
+            "cached_input_tokens": 26624,
+            "output_tokens": 302,
+            "uncached_input_tokens": 6811,
+            "total_tokens": 33737
+          },
+          "credits": 0.54917,
+          "wall_seconds": 12.171999999991385,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/0/review/result",
+        "reported_task_id": "LS3W228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2492098df90d891aa997121856b2639697ff43530f0f26a0429c13b95f1efa4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-3536a934c2c2a1",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-001",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff changes only the permitted region. It selects processes by exact parent_pid, returns their PIDs in input order with duplicates, and treats parent zero normally. All mandatory validation and scope checks passed.",
+          "usage": {
+            "input_tokens": 33435,
+            "cached_input_tokens": 26624,
+            "output_tokens": 302,
+            "uncached_input_tokens": 6811,
+            "total_tokens": 33737
+          },
+          "credits": 0.54917,
+          "wall_seconds": 12.171999999991385,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/0/review/result",
+        "reported_task_id": "LS3W228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2492098df90d891aa997121856b2639697ff43530f0f26a0429c13b95f1efa4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-834c97527c8d8f",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-001",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 54.828,
+          "usage": {
+            "ollama_input_tokens": 1349,
+            "ollama_output_tokens": 47,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.4974395
+          },
+          "task_id": "LS3W228-001",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/0/Local",
+        "reported_task_id": "LS3W228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2492098df90d891aa997121856b2639697ff43530f0f26a0429c13b95f1efa4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-003": [
+      {
+        "result_id": "R-998e77f94df270",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-003",
+          "Local_status": "ESCALATE"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/1",
+        "reported_task_id": "LS3W228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7205bd15c88a1de13d5a74677ee8e0601a3fa43236240f3a187aef0d25d0f51d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-688b30b9b630a1",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-003",
+          "Local_status": "ESCALATE"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/13",
+        "reported_task_id": "LS3W228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7205bd15c88a1de13d5a74677ee8e0601a3fa43236240f3a187aef0d25d0f51d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-bfe2e59e725758",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-003",
+          "Local_status": "ESCALATE"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/25",
+        "reported_task_id": "LS3W228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7205bd15c88a1de13d5a74677ee8e0601a3fa43236240f3a187aef0d25d0f51d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-cb5cc377003969",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-003",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "FORMAT_UNSUPPORTED_NORMALIZATION",
+          "failure_domain": "formatter_unsupported",
+          "raw_local_first_pass": false,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 9.625,
+          "usage": {
+            "ollama_input_tokens": 1876,
+            "ollama_output_tokens": 87,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.350349
+          },
+          "task_id": "LS3W228-003",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "ESCALATE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/1/Local",
+        "reported_task_id": "LS3W228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7205bd15c88a1de13d5a74677ee8e0601a3fa43236240f3a187aef0d25d0f51d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-72dd7b4e970609",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-003",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "FORMAT_UNSUPPORTED_NORMALIZATION",
+          "failure_domain": "formatter_unsupported",
+          "raw_local_first_pass": false,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 9.812,
+          "usage": {
+            "ollama_input_tokens": 1876,
+            "ollama_output_tokens": 87,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.4953702
+          },
+          "task_id": "LS3W228-003",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "ESCALATE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/1/Local",
+        "reported_task_id": "LS3W228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7205bd15c88a1de13d5a74677ee8e0601a3fa43236240f3a187aef0d25d0f51d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-8096e044ffef22",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-003",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "FORMAT_UNSUPPORTED_NORMALIZATION",
+          "failure_domain": "formatter_unsupported",
+          "raw_local_first_pass": false,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 8.593,
+          "usage": {
+            "ollama_input_tokens": 1876,
+            "ollama_output_tokens": 77,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 3.4439038
+          },
+          "task_id": "LS3W228-003",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "ESCALATE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/1/Local",
+        "reported_task_id": "LS3W228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7205bd15c88a1de13d5a74677ee8e0601a3fa43236240f3a187aef0d25d0f51d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-004": [
+      {
+        "result_id": "R-d5c01d8cd1ff32",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-004",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/2",
+        "reported_task_id": "LS3W228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bad5690487af87466ad54f3628ccdfcbcc3081b2084be94377af469da5da0715",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-acf6e6606e6aed",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-004",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/14",
+        "reported_task_id": "LS3W228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bad5690487af87466ad54f3628ccdfcbcc3081b2084be94377af469da5da0715",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-4fec7f6c702ac9",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-004",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/26",
+        "reported_task_id": "LS3W228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bad5690487af87466ad54f3628ccdfcbcc3081b2084be94377af469da5da0715",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-479e3991a7c9b2",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-004",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 51.344,
+          "usage": {
+            "ollama_input_tokens": 1034,
+            "ollama_output_tokens": 26,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.3415543
+          },
+          "task_id": "LS3W228-004",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/2/Local",
+        "reported_task_id": "LS3W228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bad5690487af87466ad54f3628ccdfcbcc3081b2084be94377af469da5da0715",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b609a3909c652a",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-004",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The change returns the UTF-8 byte length of every warning in order, preserving empty entries and duplicates. The diff stays within the declared region, and all mandatory validation and scope checks passed.",
+          "usage": {
+            "input_tokens": 32925,
+            "cached_input_tokens": 26624,
+            "output_tokens": 320,
+            "uncached_input_tokens": 6301,
+            "total_tokens": 33245
+          },
+          "credits": 0.52817,
+          "wall_seconds": 11.10899999999674,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/2/review/result",
+        "reported_task_id": "LS3W228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bad5690487af87466ad54f3628ccdfcbcc3081b2084be94377af469da5da0715",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-4779860f9bd7bf",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-004",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The change returns the UTF-8 byte length of every warning in order, preserving empty entries and duplicates. The diff stays within the declared region, and all mandatory validation and scope checks passed.",
+          "usage": {
+            "input_tokens": 32925,
+            "cached_input_tokens": 26624,
+            "output_tokens": 320,
+            "uncached_input_tokens": 6301,
+            "total_tokens": 33245
+          },
+          "credits": 0.52817,
+          "wall_seconds": 11.10899999999674,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/2/review/result",
+        "reported_task_id": "LS3W228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bad5690487af87466ad54f3628ccdfcbcc3081b2084be94377af469da5da0715",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-887658c7a78883",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-004",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 46.047,
+          "usage": {
+            "ollama_input_tokens": 1034,
+            "ollama_output_tokens": 26,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.2339755
+          },
+          "task_id": "LS3W228-004",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/2/Local",
+        "reported_task_id": "LS3W228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bad5690487af87466ad54f3628ccdfcbcc3081b2084be94377af469da5da0715",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1764cacea13896",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-004",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The change returns the UTF-8 byte length of every warning in order, preserving empty entries and duplicates. The diff stays within the declared region, and all mandatory validation and scope checks passed.",
+          "usage": {
+            "input_tokens": 32925,
+            "cached_input_tokens": 26624,
+            "output_tokens": 320,
+            "uncached_input_tokens": 6301,
+            "total_tokens": 33245
+          },
+          "credits": 0.52817,
+          "wall_seconds": 11.10899999999674,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/2/review/result",
+        "reported_task_id": "LS3W228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bad5690487af87466ad54f3628ccdfcbcc3081b2084be94377af469da5da0715",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1e4a75cfc65637",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-004",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 49.703,
+          "usage": {
+            "ollama_input_tokens": 1034,
+            "ollama_output_tokens": 26,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 1.9552791
+          },
+          "task_id": "LS3W228-004",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/2/Local",
+        "reported_task_id": "LS3W228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bad5690487af87466ad54f3628ccdfcbcc3081b2084be94377af469da5da0715",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-007": [
+      {
+        "result_id": "R-f2b66d1e9f2360",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-007",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/3",
+        "reported_task_id": "LS3W228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "439569830ed6a1177ff6b9f99dadc5f88293e80ad38c1dc591b774c4f3823455",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-f9f35b61dc969e",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-007",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/15",
+        "reported_task_id": "LS3W228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "439569830ed6a1177ff6b9f99dadc5f88293e80ad38c1dc591b774c4f3823455",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c390933af79768",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-007",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/27",
+        "reported_task_id": "LS3W228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "439569830ed6a1177ff6b9f99dadc5f88293e80ad38c1dc591b774c4f3823455",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-151e50dfc69981",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-007",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 50.938,
+          "usage": {
+            "ollama_input_tokens": 1325,
+            "ollama_output_tokens": 147,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.6502947
+          },
+          "task_id": "LS3W228-007",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/3/Local",
+        "reported_task_id": "LS3W228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "439569830ed6a1177ff6b9f99dadc5f88293e80ad38c1dc591b774c4f3823455",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-875579305d1ce5",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-007",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff stays within the declared region and computes max(rss_kib) − min(rss_kib) for every process, including zero-valued samples. Empty and single-process states return zero. All mandatory checks and scope guards passed.",
+          "usage": {
+            "input_tokens": 33462,
+            "cached_input_tokens": 14592,
+            "output_tokens": 364,
+            "uncached_input_tokens": 18870,
+            "total_tokens": 33826
+          },
+          "credits": 1.10746,
+          "wall_seconds": 13.812999999994645,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/3/review/result",
+        "reported_task_id": "LS3W228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "439569830ed6a1177ff6b9f99dadc5f88293e80ad38c1dc591b774c4f3823455",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-104da7c2394e2b",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-007",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 53.484,
+          "usage": {
+            "ollama_input_tokens": 1325,
+            "ollama_output_tokens": 147,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.9403174
+          },
+          "task_id": "LS3W228-007",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/3/Local",
+        "reported_task_id": "LS3W228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "439569830ed6a1177ff6b9f99dadc5f88293e80ad38c1dc591b774c4f3823455",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-94ca4592591427",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-007",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff stays within the declared region and computes max(rss_kib) − min(rss_kib) for every process, including zero-valued samples. Empty and single-process states return zero. All mandatory checks and scope guards passed.",
+          "usage": {
+            "input_tokens": 33462,
+            "cached_input_tokens": 14592,
+            "output_tokens": 364,
+            "uncached_input_tokens": 18870,
+            "total_tokens": 33826
+          },
+          "credits": 1.10746,
+          "wall_seconds": 13.812999999994645,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/3/review/result",
+        "reported_task_id": "LS3W228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "439569830ed6a1177ff6b9f99dadc5f88293e80ad38c1dc591b774c4f3823455",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-6d3d62a47d2b1e",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-007",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The candidate returns the maximum minus minimum rss_kib across all processes, including zero-valued samples, and returns zero for empty or single-process states. The signature and scope are preserved, and all reported mandatory checks pass.",
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/3/review/result",
+        "reported_task_id": "LS3W228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "439569830ed6a1177ff6b9f99dadc5f88293e80ad38c1dc591b774c4f3823455",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-fc6b0cc9014572",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-007",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 51.813,
+          "usage": {
+            "ollama_input_tokens": 1325,
+            "ollama_output_tokens": 147,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.1382914
+          },
+          "task_id": "LS3W228-007",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/3/Local",
+        "reported_task_id": "LS3W228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "439569830ed6a1177ff6b9f99dadc5f88293e80ad38c1dc591b774c4f3823455",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-009": [
+      {
+        "result_id": "R-d433823350dccd",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-009",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/4",
+        "reported_task_id": "LS3W228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a93f72486485270a9424d8035796bd826cf97c783241205de1c00c0876ecb85",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-6cb61fcd54ea7a",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-009",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/16",
+        "reported_task_id": "LS3W228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a93f72486485270a9424d8035796bd826cf97c783241205de1c00c0876ecb85",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b0c3df5b32fb55",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-009",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/28",
+        "reported_task_id": "LS3W228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a93f72486485270a9424d8035796bd826cf97c783241205de1c00c0876ecb85",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1cfe0d2bd9cf04",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-009",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff preserves the required signature and saturating-sums the u128 elapsed_ms value from every record, including records without events or executions. An empty slice returns zero. All mandatory checks and scope guards passed, and no concrete contract defect remains.",
+          "usage": {
+            "input_tokens": 33282,
+            "cached_input_tokens": 26624,
+            "output_tokens": 264,
+            "uncached_input_tokens": 6658,
+            "total_tokens": 33546
+          },
+          "credits": 0.53202,
+          "wall_seconds": 11.53200000000652,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/4/review/result",
+        "reported_task_id": "LS3W228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a93f72486485270a9424d8035796bd826cf97c783241205de1c00c0876ecb85",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-454f4d87d6b36f",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-009",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 50.078,
+          "usage": {
+            "ollama_input_tokens": 1358,
+            "ollama_output_tokens": 43,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.7974805
+          },
+          "task_id": "LS3W228-009",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/4/Local",
+        "reported_task_id": "LS3W228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a93f72486485270a9424d8035796bd826cf97c783241205de1c00c0876ecb85",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-6490cb10964a22",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-009",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 52.078,
+          "usage": {
+            "ollama_input_tokens": 1358,
+            "ollama_output_tokens": 43,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.7107867
+          },
+          "task_id": "LS3W228-009",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/4/Local",
+        "reported_task_id": "LS3W228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a93f72486485270a9424d8035796bd826cf97c783241205de1c00c0876ecb85",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-69d134f19734eb",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-009",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff preserves the required signature and saturating-sums the u128 elapsed_ms value from every record, including records without events or executions. An empty slice returns zero. All mandatory checks and scope guards passed, and no concrete contract defect remains.",
+          "usage": {
+            "input_tokens": 33282,
+            "cached_input_tokens": 26624,
+            "output_tokens": 264,
+            "uncached_input_tokens": 6658,
+            "total_tokens": 33546
+          },
+          "credits": 0.53202,
+          "wall_seconds": 11.53200000000652,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/4/review/result",
+        "reported_task_id": "LS3W228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a93f72486485270a9424d8035796bd826cf97c783241205de1c00c0876ecb85",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-89948b1a098db1",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-009",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 49.406,
+          "usage": {
+            "ollama_input_tokens": 1358,
+            "ollama_output_tokens": 43,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.3129481
+          },
+          "task_id": "LS3W228-009",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/4/Local",
+        "reported_task_id": "LS3W228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a93f72486485270a9424d8035796bd826cf97c783241205de1c00c0876ecb85",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-a76534af17cc30",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-009",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff preserves the required signature and saturating-sums the u128 elapsed_ms value from every record, including records without events or executions. An empty slice returns zero. All mandatory checks and scope guards passed, and no concrete contract defect remains.",
+          "usage": {
+            "input_tokens": 33282,
+            "cached_input_tokens": 26624,
+            "output_tokens": 264,
+            "uncached_input_tokens": 6658,
+            "total_tokens": 33546
+          },
+          "credits": 0.53202,
+          "wall_seconds": 11.53200000000652,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/4/review/result",
+        "reported_task_id": "LS3W228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a93f72486485270a9424d8035796bd826cf97c783241205de1c00c0876ecb85",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-011": [
+      {
+        "result_id": "R-b8199a9d5346aa",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-011",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-011",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/5",
+        "reported_task_id": "LS3W228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6db50a8c836598f923e0b61f6784dbeb75250d9d70cf6673faa0d48eb50c61d8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b8ef6bb323dfe9",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-011",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-011",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/17",
+        "reported_task_id": "LS3W228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6db50a8c836598f923e0b61f6784dbeb75250d9d70cf6673faa0d48eb50c61d8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-551ff4eac1a5aa",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-011",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-011",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/29",
+        "reported_task_id": "LS3W228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6db50a8c836598f923e0b61f6784dbeb75250d9d70cf6673faa0d48eb50c61d8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-507e18d2086a59",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-011",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": false,
+          "canonicalized_local_first_pass": true,
+          "duration_seconds": 48.797,
+          "usage": {
+            "ollama_input_tokens": 950,
+            "ollama_output_tokens": 25,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 1.8462708
+          },
+          "task_id": "LS3W228-011",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/5/Local",
+        "reported_task_id": "LS3W228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6db50a8c836598f923e0b61f6784dbeb75250d9d70cf6673faa0d48eb50c61d8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-9606086982a770",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-011",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "REJECT",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "REJECT",
+          "reason": "All reported checks pass, but the candidate violates the frozen saturation requirement.",
+          "usage": {
+            "input_tokens": 32897,
+            "cached_input_tokens": 26624,
+            "output_tokens": 308,
+            "uncached_input_tokens": 6273,
+            "total_tokens": 33205
+          },
+          "credits": 0.52377,
+          "wall_seconds": 10.264999999984866,
+          "review_classification": "REJECT"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/5/review/result",
+        "reported_task_id": "LS3W228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6db50a8c836598f923e0b61f6784dbeb75250d9d70cf6673faa0d48eb50c61d8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-d581a946367c4b",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-011",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "REJECT",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "REJECT",
+          "reason": "All reported checks pass, but the candidate violates the frozen saturation requirement.",
+          "usage": {
+            "input_tokens": 32897,
+            "cached_input_tokens": 26624,
+            "output_tokens": 308,
+            "uncached_input_tokens": 6273,
+            "total_tokens": 33205
+          },
+          "credits": 0.52377,
+          "wall_seconds": 10.264999999984866,
+          "review_classification": "REJECT"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/5/review/result",
+        "reported_task_id": "LS3W228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6db50a8c836598f923e0b61f6784dbeb75250d9d70cf6673faa0d48eb50c61d8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-e074bfa46c866a",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-011",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": false,
+          "canonicalized_local_first_pass": true,
+          "duration_seconds": 51.297,
+          "usage": {
+            "ollama_input_tokens": 950,
+            "ollama_output_tokens": 25,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 1.8817582
+          },
+          "task_id": "LS3W228-011",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/5/Local",
+        "reported_task_id": "LS3W228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6db50a8c836598f923e0b61f6784dbeb75250d9d70cf6673faa0d48eb50c61d8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-2b5e2a3bffe926",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-011",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "REJECT",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "REJECT",
+          "reason": "All reported checks pass, but the candidate violates the frozen saturation requirement.",
+          "usage": {
+            "input_tokens": 32897,
+            "cached_input_tokens": 26624,
+            "output_tokens": 308,
+            "uncached_input_tokens": 6273,
+            "total_tokens": 33205
+          },
+          "credits": 0.52377,
+          "wall_seconds": 10.264999999984866,
+          "review_classification": "REJECT"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/5/review/result",
+        "reported_task_id": "LS3W228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6db50a8c836598f923e0b61f6784dbeb75250d9d70cf6673faa0d48eb50c61d8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-6c2b7913a3ff1f",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-011",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": false,
+          "canonicalized_local_first_pass": true,
+          "duration_seconds": 49.062,
+          "usage": {
+            "ollama_input_tokens": 950,
+            "ollama_output_tokens": 25,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 1.6718542
+          },
+          "task_id": "LS3W228-011",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/5/Local",
+        "reported_task_id": "LS3W228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6db50a8c836598f923e0b61f6784dbeb75250d9d70cf6673faa0d48eb50c61d8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-014": [
+      {
+        "result_id": "R-fb1e3e52ff6820",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-014",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-014",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/6",
+        "reported_task_id": "LS3W228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a14a975414e0f9d84d15443aede1a206f8ee91c5ead08006de80e6d17d1f04e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c3cfa35225b4f3",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-014",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-014",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/18",
+        "reported_task_id": "LS3W228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a14a975414e0f9d84d15443aede1a206f8ee91c5ead08006de80e6d17d1f04e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-489fd000cc91cf",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-014",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-014",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/30",
+        "reported_task_id": "LS3W228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a14a975414e0f9d84d15443aede1a206f8ee91c5ead08006de80e6d17d1f04e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-74660c610d1add",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-014",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 52.469,
+          "usage": {
+            "ollama_input_tokens": 1648,
+            "ollama_output_tokens": 25,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.9066179
+          },
+          "task_id": "LS3W228-014",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/6/Local",
+        "reported_task_id": "LS3W228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a14a975414e0f9d84d15443aede1a206f8ee91c5ead08006de80e6d17d1f04e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-9547002275e621",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-014",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff forwards record.usage.elapsed_ms directly to ls3_whole_seconds, preserves the required signature, and changes only the declared region. All mandatory checks and scope guards passed.",
+          "usage": {
+            "input_tokens": 33612,
+            "cached_input_tokens": 26624,
+            "output_tokens": 247,
+            "uncached_input_tokens": 6988,
+            "total_tokens": 33859
+          },
+          "credits": 0.54427,
+          "wall_seconds": 11.0,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/6/review/result",
+        "reported_task_id": "LS3W228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a14a975414e0f9d84d15443aede1a206f8ee91c5ead08006de80e6d17d1f04e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-78078a30978551",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-014",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 58.875,
+          "usage": {
+            "ollama_input_tokens": 1648,
+            "ollama_output_tokens": 25,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.972397
+          },
+          "task_id": "LS3W228-014",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/6/Local",
+        "reported_task_id": "LS3W228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a14a975414e0f9d84d15443aede1a206f8ee91c5ead08006de80e6d17d1f04e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-8f9c94e59e829f",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-014",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff forwards record.usage.elapsed_ms directly to ls3_whole_seconds, preserves the required signature, and changes only the declared region. All mandatory checks and scope guards passed.",
+          "usage": {
+            "input_tokens": 33612,
+            "cached_input_tokens": 26624,
+            "output_tokens": 247,
+            "uncached_input_tokens": 6988,
+            "total_tokens": 33859
+          },
+          "credits": 0.54427,
+          "wall_seconds": 11.0,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/6/review/result",
+        "reported_task_id": "LS3W228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a14a975414e0f9d84d15443aede1a206f8ee91c5ead08006de80e6d17d1f04e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-5be2346b4ebc84",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-014",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff forwards record.usage.elapsed_ms directly to ls3_whole_seconds, preserves the required signature, and changes only the declared region. All mandatory checks and scope guards passed.",
+          "usage": {
+            "input_tokens": 33612,
+            "cached_input_tokens": 26624,
+            "output_tokens": 247,
+            "uncached_input_tokens": 6988,
+            "total_tokens": 33859
+          },
+          "credits": 0.54427,
+          "wall_seconds": 11.0,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/6/review/result",
+        "reported_task_id": "LS3W228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a14a975414e0f9d84d15443aede1a206f8ee91c5ead08006de80e6d17d1f04e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-d8b28f46959fbd",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-014",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 50.75,
+          "usage": {
+            "ollama_input_tokens": 1648,
+            "ollama_output_tokens": 25,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.4946706
+          },
+          "task_id": "LS3W228-014",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/6/Local",
+        "reported_task_id": "LS3W228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a14a975414e0f9d84d15443aede1a206f8ee91c5ead08006de80e6d17d1f04e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-015": [
+      {
+        "result_id": "R-a802c5b97fbcaa",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-015",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-015",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/7",
+        "reported_task_id": "LS3W228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3ffb1a42ada09b1cb801d70967d9e8d86461968c3dc5cc6906459eb87f8397e5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-9ff36bb3fc6ac2",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-015",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-015",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/19",
+        "reported_task_id": "LS3W228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3ffb1a42ada09b1cb801d70967d9e8d86461968c3dc5cc6906459eb87f8397e5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-9695db457b1f95",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-015",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-015",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/31",
+        "reported_task_id": "LS3W228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3ffb1a42ada09b1cb801d70967d9e8d86461968c3dc5cc6906459eb87f8397e5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-8e23b34f654857",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-015",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 53.532,
+          "usage": {
+            "ollama_input_tokens": 1633,
+            "ollama_output_tokens": 49,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 3.2592977
+          },
+          "task_id": "LS3W228-015",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/7/Local",
+        "reported_task_id": "LS3W228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3ffb1a42ada09b1cb801d70967d9e8d86461968c3dc5cc6906459eb87f8397e5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b4c71ac56d6b27",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-015",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff stays within the declared marker, preserves the required signature, and returns an owned \"missing\" for no proposal or the protected helper’s result for a proposal. All mandatory checks and scope guards passed; no concrete contract defect remains.",
+          "usage": {
+            "input_tokens": 33818,
+            "cached_input_tokens": 26624,
+            "output_tokens": 353,
+            "uncached_input_tokens": 7194,
+            "total_tokens": 34171
+          },
+          "credits": 0.58107,
+          "wall_seconds": 12.73399999999674,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/7/review/result",
+        "reported_task_id": "LS3W228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3ffb1a42ada09b1cb801d70967d9e8d86461968c3dc5cc6906459eb87f8397e5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-5b93764c140085",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-015",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 54.516,
+          "usage": {
+            "ollama_input_tokens": 1633,
+            "ollama_output_tokens": 49,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 3.4751523
+          },
+          "task_id": "LS3W228-015",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/7/Local",
+        "reported_task_id": "LS3W228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3ffb1a42ada09b1cb801d70967d9e8d86461968c3dc5cc6906459eb87f8397e5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-6dabeae242d0ea",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-015",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff stays within the declared marker, preserves the required signature, and returns an owned \"missing\" for no proposal or the protected helper’s result for a proposal. All mandatory checks and scope guards passed; no concrete contract defect remains.",
+          "usage": {
+            "input_tokens": 33818,
+            "cached_input_tokens": 26624,
+            "output_tokens": 353,
+            "uncached_input_tokens": 7194,
+            "total_tokens": 34171
+          },
+          "credits": 0.58107,
+          "wall_seconds": 12.73399999999674,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/7/review/result",
+        "reported_task_id": "LS3W228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3ffb1a42ada09b1cb801d70967d9e8d86461968c3dc5cc6906459eb87f8397e5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-092c8f51c34bbb",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-015",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff stays within the declared marker, preserves the required signature, and returns an owned \"missing\" for no proposal or the protected helper’s result for a proposal. All mandatory checks and scope guards passed; no concrete contract defect remains.",
+          "usage": {
+            "input_tokens": 33818,
+            "cached_input_tokens": 26624,
+            "output_tokens": 353,
+            "uncached_input_tokens": 7194,
+            "total_tokens": 34171
+          },
+          "credits": 0.58107,
+          "wall_seconds": 12.73399999999674,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/7/review/result",
+        "reported_task_id": "LS3W228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3ffb1a42ada09b1cb801d70967d9e8d86461968c3dc5cc6906459eb87f8397e5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-166dd6a7d162de",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-015",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 52.016,
+          "usage": {
+            "ollama_input_tokens": 1633,
+            "ollama_output_tokens": 49,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.9430371
+          },
+          "task_id": "LS3W228-015",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/7/Local",
+        "reported_task_id": "LS3W228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3ffb1a42ada09b1cb801d70967d9e8d86461968c3dc5cc6906459eb87f8397e5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-017": [
+      {
+        "result_id": "R-55ac6c9ef2446f",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-017",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-017",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/8",
+        "reported_task_id": "LS3W228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "598180bc745109b4be404c2051ea6f8e269d8f9c402cc283e477d6c4019c54f6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-0c0f4165f63263",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-017",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-017",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/20",
+        "reported_task_id": "LS3W228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "598180bc745109b4be404c2051ea6f8e269d8f9c402cc283e477d6c4019c54f6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-364b547730e030",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-017",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-017",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/32",
+        "reported_task_id": "LS3W228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "598180bc745109b4be404c2051ea6f8e269d8f9c402cc283e477d6c4019c54f6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-88b80329c89419",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-017",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff changes only the declared observation_bucket body and makes the exact required helper call with the arguments in order. All mandatory checks and scope guards passed; no remaining contract defect is evident.",
+          "usage": {
+            "input_tokens": 33429,
+            "cached_input_tokens": 26624,
+            "output_tokens": 282,
+            "uncached_input_tokens": 6805,
+            "total_tokens": 33711
+          },
+          "credits": 0.54387,
+          "wall_seconds": 11.812000000005355,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/8/review/result",
+        "reported_task_id": "LS3W228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "598180bc745109b4be404c2051ea6f8e269d8f9c402cc283e477d6c4019c54f6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-a27e3603af4db0",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-017",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 53.531,
+          "usage": {
+            "ollama_input_tokens": 1378,
+            "ollama_output_tokens": 27,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.5946539
+          },
+          "task_id": "LS3W228-017",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/8/Local",
+        "reported_task_id": "LS3W228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "598180bc745109b4be404c2051ea6f8e269d8f9c402cc283e477d6c4019c54f6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-2213a573a41453",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-017",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 52.953,
+          "usage": {
+            "ollama_input_tokens": 1378,
+            "ollama_output_tokens": 27,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.6645973
+          },
+          "task_id": "LS3W228-017",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/8/Local",
+        "reported_task_id": "LS3W228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "598180bc745109b4be404c2051ea6f8e269d8f9c402cc283e477d6c4019c54f6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b0de389a37d2eb",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-017",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff changes only the declared observation_bucket body and makes the exact required helper call with the arguments in order. All mandatory checks and scope guards passed; no remaining contract defect is evident.",
+          "usage": {
+            "input_tokens": 33429,
+            "cached_input_tokens": 26624,
+            "output_tokens": 282,
+            "uncached_input_tokens": 6805,
+            "total_tokens": 33711
+          },
+          "credits": 0.54387,
+          "wall_seconds": 11.812000000005355,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/8/review/result",
+        "reported_task_id": "LS3W228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "598180bc745109b4be404c2051ea6f8e269d8f9c402cc283e477d6c4019c54f6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-26d6232d692613",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-017",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff changes only the declared observation_bucket body and makes the exact required helper call with the arguments in order. All mandatory checks and scope guards passed; no remaining contract defect is evident.",
+          "usage": {
+            "input_tokens": 33429,
+            "cached_input_tokens": 26624,
+            "output_tokens": 282,
+            "uncached_input_tokens": 6805,
+            "total_tokens": 33711
+          },
+          "credits": 0.54387,
+          "wall_seconds": 11.812000000005355,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/8/review/result",
+        "reported_task_id": "LS3W228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "598180bc745109b4be404c2051ea6f8e269d8f9c402cc283e477d6c4019c54f6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-e2d24c9bb1a666",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-017",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 50.297,
+          "usage": {
+            "ollama_input_tokens": 1378,
+            "ollama_output_tokens": 27,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.1429923
+          },
+          "task_id": "LS3W228-017",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/8/Local",
+        "reported_task_id": "LS3W228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "598180bc745109b4be404c2051ea6f8e269d8f9c402cc283e477d6c4019c54f6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-020": [
+      {
+        "result_id": "R-4bc2f72b937582",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-020",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-020",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/9",
+        "reported_task_id": "LS3W228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e03274936e78c36c91af534bfd0f5a43de3179fc2f3e87f284974de495d65840",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-426f99dde7bae3",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-020",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-020",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/21",
+        "reported_task_id": "LS3W228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e03274936e78c36c91af534bfd0f5a43de3179fc2f3e87f284974de495d65840",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-973e2c976c2c14",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-020",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-020",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/33",
+        "reported_task_id": "LS3W228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e03274936e78c36c91af534bfd0f5a43de3179fc2f3e87f284974de495d65840",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-24313f82ac3e4d",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-020",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff implements the exact signature and required output for empty and nonempty warning vectors, including a vector containing an empty string. All mandatory checks and scope guards passed, with no concrete remaining contract defect.",
+          "usage": {
+            "input_tokens": 32975,
+            "cached_input_tokens": 26624,
+            "output_tokens": 241,
+            "uncached_input_tokens": 6351,
+            "total_tokens": 33216
+          },
+          "credits": 0.51092,
+          "wall_seconds": 10.296999999991385,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/9/review/result",
+        "reported_task_id": "LS3W228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e03274936e78c36c91af534bfd0f5a43de3179fc2f3e87f284974de495d65840",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-3f8a11f73595d3",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-020",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 51.266,
+          "usage": {
+            "ollama_input_tokens": 1029,
+            "ollama_output_tokens": 54,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.6270535
+          },
+          "task_id": "LS3W228-020",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/9/Local",
+        "reported_task_id": "LS3W228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e03274936e78c36c91af534bfd0f5a43de3179fc2f3e87f284974de495d65840",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c5a72dda65e26f",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-020",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 53.281,
+          "usage": {
+            "ollama_input_tokens": 1029,
+            "ollama_output_tokens": 54,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.8059818
+          },
+          "task_id": "LS3W228-020",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/9/Local",
+        "reported_task_id": "LS3W228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e03274936e78c36c91af534bfd0f5a43de3179fc2f3e87f284974de495d65840",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-d7681ad1bf0020",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-020",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff implements the exact signature and required output for empty and nonempty warning vectors, including a vector containing an empty string. All mandatory checks and scope guards passed, with no concrete remaining contract defect.",
+          "usage": {
+            "input_tokens": 32975,
+            "cached_input_tokens": 26624,
+            "output_tokens": 241,
+            "uncached_input_tokens": 6351,
+            "total_tokens": 33216
+          },
+          "credits": 0.51092,
+          "wall_seconds": 10.296999999991385,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/9/review/result",
+        "reported_task_id": "LS3W228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e03274936e78c36c91af534bfd0f5a43de3179fc2f3e87f284974de495d65840",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-33e3ebc3739c22",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-020",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff implements the exact signature and required output for empty and nonempty warning vectors, including a vector containing an empty string. All mandatory checks and scope guards passed, with no concrete remaining contract defect.",
+          "usage": {
+            "input_tokens": 32975,
+            "cached_input_tokens": 26624,
+            "output_tokens": 241,
+            "uncached_input_tokens": 6351,
+            "total_tokens": 33216
+          },
+          "credits": 0.51092,
+          "wall_seconds": 10.296999999991385,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/9/review/result",
+        "reported_task_id": "LS3W228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e03274936e78c36c91af534bfd0f5a43de3179fc2f3e87f284974de495d65840",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-d52c0ee8562244",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-020",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 45.156,
+          "usage": {
+            "ollama_input_tokens": 1029,
+            "ollama_output_tokens": 54,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.2023034
+          },
+          "task_id": "LS3W228-020",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/9/Local",
+        "reported_task_id": "LS3W228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e03274936e78c36c91af534bfd0f5a43de3179fc2f3e87f284974de495d65840",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-021": [
+      {
+        "result_id": "R-5088d945b991b1",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-021",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-021",
+          "Local_status": "ESCALATE"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/10",
+        "reported_task_id": "LS3W228-021",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0d533a9e0497e535124e3ac6030b2f0d811df9b94ab2dae70764b314f1c8518a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-fdc11da7e9c752",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-021",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-021",
+          "Local_status": "ESCALATE"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/22",
+        "reported_task_id": "LS3W228-021",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0d533a9e0497e535124e3ac6030b2f0d811df9b94ab2dae70764b314f1c8518a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-78aedf447e4df4",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-021",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-021",
+          "Local_status": "ESCALATE"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/34",
+        "reported_task_id": "LS3W228-021",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0d533a9e0497e535124e3ac6030b2f0d811df9b94ab2dae70764b314f1c8518a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-bc6a1b4af4caf1",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-021",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "raw_local_first_pass": false,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 48.656,
+          "usage": {
+            "ollama_input_tokens": 1334,
+            "ollama_output_tokens": 87,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 3.6912447
+          },
+          "task_id": "LS3W228-021",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "ESCALATE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/10/Local",
+        "reported_task_id": "LS3W228-021",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0d533a9e0497e535124e3ac6030b2f0d811df9b94ab2dae70764b314f1c8518a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-91800bf834353a",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-021",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "raw_local_first_pass": false,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 47.766,
+          "usage": {
+            "ollama_input_tokens": 1334,
+            "ollama_output_tokens": 87,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.0099737
+          },
+          "task_id": "LS3W228-021",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "ESCALATE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/10/Local",
+        "reported_task_id": "LS3W228-021",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0d533a9e0497e535124e3ac6030b2f0d811df9b94ab2dae70764b314f1c8518a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-10167aa97f99e3",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-021",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "raw_local_first_pass": false,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 47.328,
+          "usage": {
+            "ollama_input_tokens": 1334,
+            "ollama_output_tokens": 87,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 3.1987837
+          },
+          "task_id": "LS3W228-021",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "ESCALATE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/10/Local",
+        "reported_task_id": "LS3W228-021",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0d533a9e0497e535124e3ac6030b2f0d811df9b94ab2dae70764b314f1c8518a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-023": [
+      {
+        "result_id": "R-e63a2f7f7cf969",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-023",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=A2",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "A2",
+          "task_id": "LS3W228-023",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/11",
+        "reported_task_id": "LS3W228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4dccd3da5b8afa8c0c1f919dadcbd53fcdf5085aaba5c700faf726752a68f22a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-4796a0dd9718cc",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-023",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=D",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "D",
+          "task_id": "LS3W228-023",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/23",
+        "reported_task_id": "LS3W228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4dccd3da5b8afa8c0c1f919dadcbd53fcdf5085aaba5c700faf726752a68f22a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-294a6472846bdf",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-023",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "arm=E",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "arm": "E",
+          "task_id": "LS3W228-023",
+          "Local_status": "PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e2f2a7afd1522a900c6d2686ba0b70732e96ff62b389c5d819956a7bf9cce204",
+        "json_pointer": "/runs/35",
+        "reported_task_id": "LS3W228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4dccd3da5b8afa8c0c1f919dadcbd53fcdf5085aaba5c700faf726752a68f22a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-128c36b917601b",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-023",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff preserves the required signature and uses the byte lengths of intent.id and intent.requested_by to produce the exact receipt with one trailing LF. All mandatory checks and the scope guard passed; no concrete contract defect remains.",
+          "usage": {
+            "input_tokens": 33349,
+            "cached_input_tokens": 26624,
+            "output_tokens": 296,
+            "uncached_input_tokens": 6725,
+            "total_tokens": 33645
+          },
+          "credits": 0.54337,
+          "wall_seconds": 12.030999999988126,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/11/review/result",
+        "reported_task_id": "LS3W228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4dccd3da5b8afa8c0c1f919dadcbd53fcdf5085aaba5c700faf726752a68f22a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-5b6e4763a66701",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-023",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=A2",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 51.812,
+          "usage": {
+            "ollama_input_tokens": 1368,
+            "ollama_output_tokens": 46,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.9617106
+          },
+          "task_id": "LS3W228-023",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/A2/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "577dbb8cf96af6e8a030d35a4eb08b611b34272a59c3bbde2bb6c80f34a008ef",
+        "json_pointer": "/runs/11/Local",
+        "reported_task_id": "LS3W228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4dccd3da5b8afa8c0c1f919dadcbd53fcdf5085aaba5c700faf726752a68f22a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c94612d14ee51c",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-023",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff preserves the required signature and uses the byte lengths of intent.id and intent.requested_by to produce the exact receipt with one trailing LF. All mandatory checks and the scope guard passed; no concrete contract defect remains.",
+          "usage": {
+            "input_tokens": 33349,
+            "cached_input_tokens": 26624,
+            "output_tokens": 296,
+            "uncached_input_tokens": 6725,
+            "total_tokens": 33645
+          },
+          "credits": 0.54337,
+          "wall_seconds": 12.030999999988126,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/11/review/result",
+        "reported_task_id": "LS3W228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4dccd3da5b8afa8c0c1f919dadcbd53fcdf5085aaba5c700faf726752a68f22a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-ff3d7baf739750",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-023",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=D",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 50.172,
+          "usage": {
+            "ollama_input_tokens": 1368,
+            "ollama_output_tokens": 46,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 3.1817025
+          },
+          "task_id": "LS3W228-023",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/D/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "e9bdd81394de85edc3e6d711e2dd07f626c4768bcc43126f21c3764486871c24",
+        "json_pointer": "/runs/11/Local",
+        "reported_task_id": "LS3W228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4dccd3da5b8afa8c0c1f919dadcbd53fcdf5085aaba5c700faf726752a68f22a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-0bcd3a1887a7c4",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-023",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "raw_local_first_pass": true,
+          "canonicalized_local_first_pass": false,
+          "duration_seconds": 50.094,
+          "usage": {
+            "ollama_input_tokens": 1368,
+            "ollama_output_tokens": 46,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.5439929
+          },
+          "task_id": "LS3W228-023",
+          "cuda": false,
+          "backend_crash": false,
+          "gpu_query_timeout": false,
+          "Local_attempted": true,
+          "final_status": "PASS"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/11/Local",
+        "reported_task_id": "LS3W228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4dccd3da5b8afa8c0c1f919dadcbd53fcdf5085aaba5c700faf726752a68f22a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-2ccff39f126496",
+        "entry_key": "gemma26-memory-headroom-phase2--run-001/LS3W228-023",
+        "stage": "VALIDATION",
+        "condition": "arms_condition=E",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "classification": "ACCEPT_NO_CHANGE",
+          "reason": "The diff preserves the required signature and uses the byte lengths of intent.id and intent.requested_by to produce the exact receipt with one trailing LF. All mandatory checks and the scope guard passed; no concrete contract defect remains.",
+          "usage": {
+            "input_tokens": 33349,
+            "cached_input_tokens": 26624,
+            "output_tokens": 296,
+            "uncached_input_tokens": 6725,
+            "total_tokens": 33645
+          },
+          "credits": 0.54337,
+          "wall_seconds": 12.030999999988126,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "arms/E/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a3f9637312e78b12fc7bcd36989e0d958d23cb0d2591fd17f35de03cfbfafa5b",
+        "json_pointer": "/runs/11/review/result",
+        "reported_task_id": "LS3W228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4dccd3da5b8afa8c0c1f919dadcbd53fcdf5085aaba5c700faf726752a68f22a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/gemma26-memory-headroom-phase2--run-001/RESULTS_JA.md",
+      "source_report": "gemma26-memory-headroom-phase2/run-001/RESULTS_JA.md",
+      "source_sha256": "8dd307fe602c7d6e24dd4a5502d5680445863349b0ace2cc17ed56027a488283",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 12,
+    "linked_entries": 12,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 102
+  }
+}

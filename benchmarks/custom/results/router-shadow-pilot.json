@@ -1,0 +1,612 @@
+{
+  "format_version": 2,
+  "set_id": "router-shadow-pilot",
+  "entries": {
+    "PILOT-001": [
+      {
+        "result_id": "R-e212daf735dd16",
+        "entry_key": "router-shadow-pilot/PILOT-001",
+        "stage": "VALIDATION",
+        "condition": "results_condition=PILOT-001-task-design-failure.json",
+        "status": "TASK_DESIGN_FAILURE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-001",
+          "status": "TASK_DESIGN_FAILURE",
+          "reason": "Inventory formatter acceptance wrongly forbids Some(...) anywhere in CLI output, including the unrelated Event debug field. Restrict that assertion to the Disks inventory line."
+        },
+        "source_file": "results/PILOT-001-task-design-failure.json",
+        "validation_pass": null,
+        "source_sha256": "071cc591f5f115348eca83954cfa46c3c191c3a208643489129a04c3be10bf15",
+        "json_pointer": "",
+        "reported_task_id": "PILOT-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d94184ccc818d1ca5231e46e5aa98891ac00e355c56fbed6f1af92d017ccfddf",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": null
+      }
+    ],
+    "PILOT-002": [
+      {
+        "result_id": "R-6e5808e2b7e939",
+        "entry_key": "router-shadow-pilot/PILOT-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:12b",
+        "status": "INFRA_ERROR",
+        "local_status": "INFRA_ERROR",
+        "final_quality": null,
+        "review": "REJECT",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-002",
+          "task_type": "UNIT_TEST_GENERATION",
+          "model": "gemma4:12b",
+          "protocol": "fixed_slot",
+          "status": "INFRA_ERROR",
+          "reason": "INFRA_ERROR",
+          "attempts": 1,
+          "first_pass": null,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "duration_seconds": 69.531,
+          "local_dispatched": true,
+          "local_input_tokens": null,
+          "local_cached_input_tokens": null,
+          "local_output_tokens": null,
+          "reported_input_tokens": 0,
+          "reported_output_tokens": 0,
+          "reported_cached_input_tokens": 0,
+          "acceptance": "REJECT",
+          "codex_modified_code": false,
+          "codex_repair_loc": 0,
+          "end_to_end_seconds": 431.8423194885254,
+          "scope_violation": false,
+          "codex_planning_input_tokens": null,
+          "codex_planning_output_tokens": null,
+          "codex_review_input_tokens": null,
+          "codex_review_output_tokens": null,
+          "codex_repair_input_tokens": null,
+          "codex_repair_output_tokens": null,
+          "active_review_seconds": null,
+          "review_classification": "REJECT"
+        },
+        "source_file": "metrics/tasks.json",
+        "validation_pass": null,
+        "source_sha256": "f528c6de197bb6e66cba30825627f1a116bf45e50c965cbc822ad0e7a57874cd",
+        "json_pointer": "/1",
+        "reported_task_id": "PILOT-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "5fb12ade7874cd229cac0726f329cc20891e78bff5188f616342c9b9a7f4b10f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:12b"
+      },
+      {
+        "result_id": "R-0fac64353b4612",
+        "entry_key": "router-shadow-pilot/PILOT-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:12b",
+        "status": "INFRA_ERROR",
+        "local_status": "INFRA_ERROR",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-002",
+          "status": "INFRA_ERROR",
+          "reason": "INFRA_ERROR",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "UNIT_TEST_GENERATION",
+          "model": "gemma4:12b",
+          "protocol": "fixed_slot",
+          "base_content_id": "654ecf6bd60ebb2e5f4115dc106fa063aa1700cdb15858f544baeaab245ef7b9",
+          "duration_seconds": 69.531,
+          "repair_attempted": false,
+          "usage": {
+            "ollama_input_tokens": null,
+            "ollama_output_tokens": null,
+            "ollama_cache_tokens": null,
+            "ollama_duration_seconds": null
+          },
+          "first_pass": null,
+          "repair_pass": null
+        },
+        "source_file": "results/PILOT-002/result.json",
+        "validation_pass": null,
+        "source_sha256": "a46a4fe0575efbce7cbd3ad6e77d5d130245f49f031ddb00e29b93b13ff54888",
+        "json_pointer": "",
+        "reported_task_id": "PILOT-002",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "5fb12ade7874cd229cac0726f329cc20891e78bff5188f616342c9b9a7f4b10f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:12b"
+      }
+    ],
+    "PILOT-003": [
+      {
+        "result_id": "R-f637ac07090d6a",
+        "entry_key": "router-shadow-pilot/PILOT-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:12b",
+        "status": "INFRA_ERROR",
+        "local_status": "INFRA_ERROR",
+        "final_quality": null,
+        "review": "REJECT",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-003",
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:12b",
+          "protocol": "fixed_slot",
+          "status": "INFRA_ERROR",
+          "reason": "INFRA_ERROR",
+          "attempts": 2,
+          "first_pass": false,
+          "repair_attempted": true,
+          "repair_pass": null,
+          "duration_seconds": 53.141,
+          "local_dispatched": true,
+          "local_input_tokens": null,
+          "local_cached_input_tokens": null,
+          "local_output_tokens": null,
+          "reported_input_tokens": 635,
+          "reported_output_tokens": 479,
+          "reported_cached_input_tokens": 0,
+          "acceptance": "REJECT",
+          "codex_modified_code": false,
+          "codex_repair_loc": 0,
+          "end_to_end_seconds": 117.39729857444763,
+          "scope_violation": false,
+          "codex_planning_input_tokens": null,
+          "codex_planning_output_tokens": null,
+          "codex_review_input_tokens": null,
+          "codex_review_output_tokens": null,
+          "codex_repair_input_tokens": null,
+          "codex_repair_output_tokens": null,
+          "active_review_seconds": null,
+          "review_classification": "REJECT"
+        },
+        "source_file": "metrics/tasks.json",
+        "validation_pass": null,
+        "source_sha256": "f528c6de197bb6e66cba30825627f1a116bf45e50c965cbc822ad0e7a57874cd",
+        "json_pointer": "/2",
+        "reported_task_id": "PILOT-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d8412a917441c960c157d12dd6a39de023de85f3f947de17ee47ffb190ac6920",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:12b"
+      },
+      {
+        "result_id": "R-ce917701d1cf25",
+        "entry_key": "router-shadow-pilot/PILOT-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:12b",
+        "status": "INFRA_ERROR",
+        "local_status": "INFRA_ERROR",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-003",
+          "status": "INFRA_ERROR",
+          "reason": "INFRA_ERROR",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:12b",
+          "protocol": "fixed_slot",
+          "base_content_id": "e9e9210a4040bb8b3fa0ad8c1b2df7c165db9c183b51175bc7a48834f3713ca9",
+          "first_pass": false,
+          "duration_seconds": 53.141,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": null,
+            "ollama_output_tokens": null,
+            "ollama_cache_tokens": null,
+            "ollama_duration_seconds": null
+          },
+          "repair_pass": null
+        },
+        "source_file": "results/PILOT-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "121d1a249e18403a45c28fa928b73c40ecc6114638a5042e657db7539880b063",
+        "json_pointer": "",
+        "reported_task_id": "PILOT-003",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d8412a917441c960c157d12dd6a39de023de85f3f947de17ee47ffb190ac6920",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:12b"
+      }
+    ],
+    "PILOT-004": [
+      {
+        "result_id": "R-2f77ce900ae511",
+        "entry_key": "router-shadow-pilot/PILOT-004",
+        "stage": "EXECUTION_STATE",
+        "condition": "source=report_table",
+        "status": "NOT_RUN_INFRA_STOP",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-004",
+          "status": "NOT_RUN_INFRA_STOP"
+        },
+        "source_file": "RESULTS_JA.md",
+        "validation_pass": null,
+        "source_sha256": "228d4ba1fe5002ee88fa5436030475f780c40c94524c5a8498e86c0c550bf9d9",
+        "json_pointer": "markdown-line:33",
+        "reported_task_id": "PILOT-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2187d7e162f6b42a4ac28f19983c02fd173293c038244bcd6df0c4a8fabc0dc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 50,
+        "reported_model": null,
+        "source_excerpt": "| PILOT-004 | memory event evidenceへavailable_percent追加 | observer/events間で生成位置を探す小変更 | NOT_RUN_INFRA_STOP | 未評価 |"
+      }
+    ],
+    "PILOT-005": [
+      {
+        "result_id": "R-f17d81b9e86c52",
+        "entry_key": "router-shadow-pilot/PILOT-005",
+        "stage": "EXECUTION_STATE",
+        "condition": "source=report_table",
+        "status": "NOT_RUN_INFRA_STOP",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-005",
+          "status": "NOT_RUN_INFRA_STOP"
+        },
+        "source_file": "RESULTS_JA.md",
+        "validation_pass": null,
+        "source_sha256": "228d4ba1fe5002ee88fa5436030475f780c40c94524c5a8498e86c0c550bf9d9",
+        "json_pointer": "markdown-line:34",
+        "reported_task_id": "PILOT-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "07e34372182ca8fdc721f09fec297df22ae516df27d3cf7724c9e6e8f90ec7e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 50,
+        "reported_model": null,
+        "source_excerpt": "| PILOT-005 | `inspect --help`をglobal helpと同じ挙動にする | CLI/intentの限定探索。未知引数は引き続き拒否 | NOT_RUN_INFRA_STOP | 未評価 |"
+      }
+    ],
+    "PILOT-006": [
+      {
+        "result_id": "R-2f7dcbce37ec7c",
+        "entry_key": "router-shadow-pilot/PILOT-006",
+        "stage": "EXECUTION_STATE",
+        "condition": "source=report_table",
+        "status": "NOT_RUN_INFRA_STOP",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-006",
+          "status": "NOT_RUN_INFRA_STOP"
+        },
+        "source_file": "RESULTS_JA.md",
+        "validation_pass": null,
+        "source_sha256": "228d4ba1fe5002ee88fa5436030475f780c40c94524c5a8498e86c0c550bf9d9",
+        "json_pointer": "markdown-line:35",
+        "reported_task_id": "PILOT-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a7102efafb5f96a4098853af8b0790111450da585f0fa827294e9edb22c7f2b2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 50,
+        "reported_model": null,
+        "source_excerpt": "| PILOT-006 | `--audit`が次のoptionをpathとして消費する実bug | demoで `--repeat` というファイルが作られることを事前再現 | NOT_RUN_INFRA_STOP | 未評価 |"
+      }
+    ],
+    "PILOT-007": [
+      {
+        "result_id": "R-d04b94a5aac061",
+        "entry_key": "router-shadow-pilot/PILOT-007",
+        "stage": "EXECUTION_STATE",
+        "condition": "source=report_table",
+        "status": "NOT_RUN_INFRA_STOP",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-007",
+          "status": "NOT_RUN_INFRA_STOP"
+        },
+        "source_file": "RESULTS_JA.md",
+        "validation_pass": null,
+        "source_sha256": "228d4ba1fe5002ee88fa5436030475f780c40c94524c5a8498e86c0c550bf9d9",
+        "json_pointer": "markdown-line:36",
+        "reported_task_id": "PILOT-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "99808c993ecf62f61fe7feef890158ad4f693d5f4c7bc25d9b1557116013878c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 50,
+        "reported_model": null,
+        "source_excerpt": "| PILOT-007 | dedup/cacheの実装上の5事実をtyped抽出 | コード編集不要の保守分析 | NOT_RUN_INFRA_STOP | 未評価 |"
+      }
+    ],
+    "PILOT-008": [
+      {
+        "result_id": "R-0ace041151d85e",
+        "entry_key": "router-shadow-pilot/PILOT-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "CODEX_ONLY",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-008",
+          "task_type": "AGENTIC_CODING",
+          "model": null,
+          "protocol": null,
+          "status": "ESCALATE",
+          "reason": "CODEX_REQUIRED",
+          "attempts": 0,
+          "first_pass": null,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "duration_seconds": 0.0,
+          "local_dispatched": false,
+          "local_input_tokens": 0,
+          "local_cached_input_tokens": 0,
+          "local_output_tokens": 0,
+          "reported_input_tokens": 0,
+          "reported_output_tokens": 0,
+          "reported_cached_input_tokens": 0,
+          "acceptance": "CODEX_ONLY",
+          "codex_modified_code": false,
+          "codex_repair_loc": 0,
+          "end_to_end_seconds": 64.08802509307861,
+          "scope_violation": false,
+          "codex_planning_input_tokens": null,
+          "codex_planning_output_tokens": null,
+          "codex_review_input_tokens": null,
+          "codex_review_output_tokens": null,
+          "codex_repair_input_tokens": null,
+          "codex_repair_output_tokens": null,
+          "active_review_seconds": null,
+          "review_classification": "CODEX_ONLY"
+        },
+        "source_file": "metrics/tasks.json",
+        "validation_pass": null,
+        "source_sha256": "f528c6de197bb6e66cba30825627f1a116bf45e50c965cbc822ad0e7a57874cd",
+        "json_pointer": "/3",
+        "reported_task_id": "PILOT-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "8862c1c4f12175f90d859c8289b291c3909059ede3de9baa6d7977dd582ba365",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-e56b080a6e1f72",
+        "entry_key": "router-shadow-pilot/PILOT-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-008",
+          "status": "ESCALATE",
+          "reason": "CODEX_REQUIRED",
+          "attempts": 0,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": null,
+          "protocol": null,
+          "duration_seconds": 0.0,
+          "repair_attempted": false,
+          "usage": {
+            "ollama_input_tokens": 0,
+            "ollama_output_tokens": 0,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 0.0
+          },
+          "first_pass": null,
+          "repair_pass": null
+        },
+        "source_file": "results/PILOT-008/result.json",
+        "validation_pass": null,
+        "source_sha256": "9b2ae15519e1fd5958ba7da3dee0fa9011621030706fc4e656d4b01184fb5910",
+        "json_pointer": "",
+        "reported_task_id": "PILOT-008",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "8862c1c4f12175f90d859c8289b291c3909059ede3de9baa6d7977dd582ba365",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "PILOT-009": [
+      {
+        "result_id": "R-d5e006c02e42ff",
+        "entry_key": "router-shadow-pilot/PILOT-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-009",
+          "task_type": "MECHANICAL_CODE",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "attempts": 1,
+          "first_pass": true,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "duration_seconds": 219.093,
+          "local_dispatched": true,
+          "local_input_tokens": 386,
+          "local_cached_input_tokens": 0,
+          "local_output_tokens": 42,
+          "reported_input_tokens": 386,
+          "reported_output_tokens": 42,
+          "reported_cached_input_tokens": 0,
+          "acceptance": "ACCEPT_NO_CHANGE",
+          "codex_modified_code": false,
+          "codex_repair_loc": 0,
+          "end_to_end_seconds": 651.0817074775696,
+          "scope_violation": false,
+          "codex_planning_input_tokens": null,
+          "codex_planning_output_tokens": null,
+          "codex_review_input_tokens": null,
+          "codex_review_output_tokens": null,
+          "codex_repair_input_tokens": null,
+          "codex_repair_output_tokens": null,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/tasks.json",
+        "validation_pass": null,
+        "source_sha256": "f528c6de197bb6e66cba30825627f1a116bf45e50c965cbc822ad0e7a57874cd",
+        "json_pointer": "/0",
+        "reported_task_id": "PILOT-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c1725c8240927cacfd3723c700c6f95a1dec7fdbc5ca5a5e14c7ae3726c0f82e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-0722835bbc25e5",
+        "entry_key": "router-shadow-pilot/PILOT-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-009",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "MECHANICAL_CODE",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "c72b8b6784e2040fe240ef7bdbe99728a2112d708ee2ce5a40e39b52f9f347b1",
+          "first_pass": true,
+          "tested_content_id": "ba97bab7857f345f50bc7c4e41c7a612f9d09b97e8b6dad4201507b6ad1ceda0",
+          "duration_seconds": 219.093,
+          "repair_attempted": false,
+          "usage": {
+            "ollama_input_tokens": 386,
+            "ollama_output_tokens": 42,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 193.4784593
+          },
+          "repair_pass": null
+        },
+        "source_file": "results/PILOT-009/result.json",
+        "validation_pass": null,
+        "source_sha256": "b4ed9b27ad1a43c9cd5250be991dcad92060101cfec76da5f3caa2afc68e7d75",
+        "json_pointer": "",
+        "reported_task_id": "PILOT-009",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "c1725c8240927cacfd3723c700c6f95a1dec7fdbc5ca5a5e14c7ae3726c0f82e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/router-shadow-pilot/RESULTS_JA.md",
+      "source_report": "router-shadow-pilot/RESULTS_JA.md",
+      "source_sha256": "228d4ba1fe5002ee88fa5436030475f780c40c94524c5a8498e86c0c550bf9d9",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 9,
+    "linked_entries": 9,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 13
+  }
+}

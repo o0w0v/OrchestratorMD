@@ -1,5 +1,6 @@
 {
   "set_id": "router-shadow-pilot-v2.1",
+  "display_name": "実装委譲の検証 / 手順-v2.1",
   "entry_count": 8,
   "tasks": [
     {
@@ -34,10 +35,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "PILOT-002",
       "set_id": "router-shadow-pilot-v2.1",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.1/PILOT-002",
-      "fixture_file_count": 29,
-      "same_exact_contract_as": "protocol-improvement-v2.1/A-001"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-ae97b0eef718d8",
+        "R-240004c8ad3032"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.1.md#pilot-002",
+      "result_data": "results/router-shadow-pilot-v2.1.json"
     },
     {
       "task_id": "PILOT-003",
@@ -92,10 +96,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "PILOT-003",
       "set_id": "router-shadow-pilot-v2.1",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.1/PILOT-003",
-      "fixture_file_count": 28,
-      "same_exact_contract_as": "router-shadow-pilot/PILOT-003"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-ddd0013b62e8de",
+        "R-5edffc34e11fc9"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.1.md#pilot-003",
+      "result_data": "results/router-shadow-pilot-v2.1.json"
     },
     {
       "task_id": "PILOT-004",
@@ -150,10 +157,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "PILOT-004",
       "set_id": "router-shadow-pilot-v2.1",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.1/PILOT-004",
-      "fixture_file_count": 28,
-      "same_exact_contract_as": "protocol-improvement-v2.1/B-002"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-93cfb3b5661888",
+        "R-aeb6f5398540a2"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.1.md#pilot-004",
+      "result_data": "results/router-shadow-pilot-v2.1.json"
     },
     {
       "task_id": "PILOT-005",
@@ -188,10 +198,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "PILOT-005",
       "set_id": "router-shadow-pilot-v2.1",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.1/PILOT-005",
-      "fixture_file_count": 28,
-      "same_exact_contract_as": "protocol-improvement-v2.1/B-001"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-d9dddb1c1c8341",
+        "R-604a7c5e2d8efa"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.1.md#pilot-005",
+      "result_data": "results/router-shadow-pilot-v2.1.json"
     },
     {
       "task_id": "PILOT-006",
@@ -226,10 +239,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "PILOT-006",
       "set_id": "router-shadow-pilot-v2.1",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.1/PILOT-006",
-      "fixture_file_count": 28,
-      "same_exact_contract_as": "router-shadow-pilot/PILOT-006"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-13409c49d09095",
+        "R-c00bb6746f6b7d"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.1.md#pilot-006",
+      "result_data": "results/router-shadow-pilot-v2.1.json"
     },
     {
       "task_id": "PILOT-007",
@@ -282,10 +298,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "PILOT-007",
       "set_id": "router-shadow-pilot-v2.1",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.1/PILOT-007",
-      "fixture_file_count": 2,
-      "same_exact_contract_as": "protocol-improvement-v2.1/C-001"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-919dde4939828d",
+        "R-c559c019ba65e4"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.1.md#pilot-007",
+      "result_data": "results/router-shadow-pilot-v2.1.json"
     },
     {
       "task_id": "PILOT-008",
@@ -311,10 +330,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "PILOT-008",
       "set_id": "router-shadow-pilot-v2.1",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.1/PILOT-008",
-      "fixture_file_count": 0,
-      "same_exact_contract_as": "router-shadow-pilot/PILOT-008"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-9157036d8f8a24",
+        "R-d9fb5957c158b4"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.1.md#pilot-008",
+      "result_data": "results/router-shadow-pilot-v2.1.json"
     },
     {
       "task_id": "PILOT-009",
@@ -362,26 +384,20 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "PILOT-009",
       "set_id": "router-shadow-pilot-v2.1",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.1/PILOT-009",
-      "fixture_file_count": 28,
-      "same_exact_contract_as": "router-shadow-pilot/PILOT-001"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-54bbf38c2656a5",
+        "R-b084211ed1f552"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.1.md#pilot-009",
+      "result_data": "results/router-shadow-pilot-v2.1.json"
     }
   ],
   "result_summary": {
-    "set_id": "router-shadow-pilot-v2.1",
-    "source_set": "router-shadow-pilot-v2.1",
     "entries": 8,
-    "structured_result_records": 8,
-    "task_ids_with_structured_results": 8,
-    "task_ids_without_structured_results": [],
-    "historical_reports": [
-      {
-        "file": "results/router-shadow-pilot-v2.1/RESULTS_JA.md",
-        "source_report": "router-shadow-pilot-v2.1/RESULTS_JA.md",
-        "source_sha256": "7f60aad4e1b0c50ea11c25605945fa0a6c5db5a11e51ce4fac5bc4a25c9c6bd4"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 8,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 16
   }
 }

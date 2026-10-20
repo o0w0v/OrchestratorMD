@@ -1,0 +1,920 @@
+{
+  "format_version": 2,
+  "set_id": "router-shadow-pilot-v2.2.6-full",
+  "entries": {
+    "P224-001": [
+      {
+        "result_id": "R-2a80f579c98725",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-001",
+          "protocol": "fixed_slot",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/0",
+        "reported_task_id": "P224-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "40d35242d16d4d675b45413ffad7ab81167bc768afcaf718dc5a78ca88f398d9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-08ee46894d99d9",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-001",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-001",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/0",
+        "reported_task_id": "P224-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "40d35242d16d4d675b45413ffad7ab81167bc768afcaf718dc5a78ca88f398d9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-002": [
+      {
+        "result_id": "R-b23f94fb4e99f9",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-002",
+          "protocol": "agentic",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/1",
+        "reported_task_id": "P224-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "8888be10428fda99c1d16cd3c403c68b5930c83c58618b8543b172bddbfaf259",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-ce8e419779c095",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-002",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-002",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/1",
+        "reported_task_id": "P224-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "8888be10428fda99c1d16cd3c403c68b5930c83c58618b8543b172bddbfaf259",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-003": [
+      {
+        "result_id": "R-a3d8f6453b7a9d",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=qwen3-coder-next:latest",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-003",
+          "protocol": "fixed_slot",
+          "model": "qwen3-coder-next:latest",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/2",
+        "reported_task_id": "P224-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "12719be179ea1203fafdfdc579d39535a0473fcb1c2f5c8093b5ce5a7894de06",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "qwen3-coder-next:latest"
+      },
+      {
+        "result_id": "R-11842c64793f7d",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-003",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-003",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/2",
+        "reported_task_id": "P224-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "12719be179ea1203fafdfdc579d39535a0473fcb1c2f5c8093b5ce5a7894de06",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-004": [
+      {
+        "result_id": "R-0caa0e9b76300d",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-004",
+          "protocol": "fixed_slot",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/3",
+        "reported_task_id": "P224-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "9524589d3935798420cfb8e7b1b703bf7b4f29c5a4af02bcc13da992efb010d9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-22a1fb02d12045",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-004",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-004",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/3",
+        "reported_task_id": "P224-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "9524589d3935798420cfb8e7b1b703bf7b4f29c5a4af02bcc13da992efb010d9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-005": [
+      {
+        "result_id": "R-097827e5398e3b",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-005",
+          "protocol": "reasoning",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/4",
+        "reported_task_id": "P224-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e58a0279d89e69c02ba37775398ac1fb6d87e6da23516e51480b3351a22564e7",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-7b27a9f71bdc7f",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-005",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-005",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/4",
+        "reported_task_id": "P224-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e58a0279d89e69c02ba37775398ac1fb6d87e6da23516e51480b3351a22564e7",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-006": [
+      {
+        "result_id": "R-bbc9e764dc7aa8",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-006",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-006",
+          "protocol": "agentic",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/5",
+        "reported_task_id": "P224-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b02eb2b883e1b1f1379543f37a5293f807418d6687c78057dbc8fe3bd1de3158",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-1c6e5ef71177e6",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-006",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-006",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/5",
+        "reported_task_id": "P224-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b02eb2b883e1b1f1379543f37a5293f807418d6687c78057dbc8fe3bd1de3158",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-007": [
+      {
+        "result_id": "R-12a4141bb3d699",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-007",
+          "protocol": "fixed_slot",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/6",
+        "reported_task_id": "P224-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6d0c11fe18bda96de25881e8f66889691613640d0bde2820aa3b93f5361c42a0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-276c0d8e4e20a6",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-007",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-007",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/6",
+        "reported_task_id": "P224-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6d0c11fe18bda96de25881e8f66889691613640d0bde2820aa3b93f5361c42a0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-008": [
+      {
+        "result_id": "R-8b5a90c0c9b63e",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-008",
+          "protocol": "agentic",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/7",
+        "reported_task_id": "P224-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "135d818ba1602b80fc22a1fdd09d8e2087feb0285423621234ef21f792e4294a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-e6b752d6381ba3",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-008",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-008",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/7",
+        "reported_task_id": "P224-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "135d818ba1602b80fc22a1fdd09d8e2087feb0285423621234ef21f792e4294a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-009": [
+      {
+        "result_id": "R-c48ec1976fc49a",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-009",
+          "protocol": "fixed_slot",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/8",
+        "reported_task_id": "P224-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7933ac146faac9405489b6dc258d04f358daa6efafe22a373d36f9cac07253ef",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-d4775dd4ee12ce",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-009",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-009",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/8",
+        "reported_task_id": "P224-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7933ac146faac9405489b6dc258d04f358daa6efafe22a373d36f9cac07253ef",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-010": [
+      {
+        "result_id": "R-9ff35b1d9cdcb6",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-010",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-010",
+          "protocol": "agentic",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/9",
+        "reported_task_id": "P224-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "1e978f96110399c77cd377dd7e069cc5303b236a3b9f1873e9683f48e7b13fc5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-eb0651b501c37d",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-010",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-010",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/9",
+        "reported_task_id": "P224-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "1e978f96110399c77cd377dd7e069cc5303b236a3b9f1873e9683f48e7b13fc5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-011": [
+      {
+        "result_id": "R-1bafbfd8719e19",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-011",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-011",
+          "protocol": "fixed_slot",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/10",
+        "reported_task_id": "P224-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6aafcb8576b17f554ace7ec46dd273b5bb6a31fffa8db340f68912f122cf9845",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-3404d0dc39801f",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-011",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-011",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/10",
+        "reported_task_id": "P224-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6aafcb8576b17f554ace7ec46dd273b5bb6a31fffa8db340f68912f122cf9845",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-012": [
+      {
+        "result_id": "R-0f12cb04d59f93",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-012",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-012",
+          "protocol": "agentic",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/11",
+        "reported_task_id": "P224-012",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "73707aad4146d9425090cf0f8c331ec441c8d2336af3b8ccfe8f602f0a78de9e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-35dabd216a6cbb",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-012",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-012",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/11",
+        "reported_task_id": "P224-012",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "73707aad4146d9425090cf0f8c331ec441c8d2336af3b8ccfe8f602f0a78de9e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P224-013": [
+      {
+        "result_id": "R-02a4dbb1766f3d",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-013",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "CODEX_ONLY",
+        "local_status": "CODEX_ONLY",
+        "final_quality": null,
+        "review": "CODEX_ONLY",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-013",
+          "protocol": null,
+          "model": null,
+          "planned": true,
+          "status": "CODEX_ONLY",
+          "terminal": true,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Existing Codex boundary revalidated",
+          "review_classification": "CODEX_ONLY"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/12",
+        "reported_task_id": "P224-013",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4c07de9ed9e30b5973a98c2afa2b8fa764e24ec502d736fd237e05b88e0a4eb0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": null
+      }
+    ],
+    "P224-014": [
+      {
+        "result_id": "R-3ad9efe84187b1",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-014",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "NOT_RUN",
+        "local_status": "NOT_RUN",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-014",
+          "protocol": "fixed_slot",
+          "model": "gemma4:26b",
+          "planned": true,
+          "status": "NOT_RUN",
+          "terminal": false,
+          "inference_calls": 0,
+          "local_final_pass": null,
+          "first_pass": null,
+          "added_LOC": 0,
+          "deleted_LOC": 0,
+          "reason": "Cohort environment changed before inference"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "a1846b80e71e9ebeaf9fd8550bd7f4a6ce31e44a2959e9a7cf22e5776f2e359a",
+        "json_pointer": "/13",
+        "reported_task_id": "P224-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d760a0741bb7425707dd4b5d5764c2e55b91347273cc96fdd252aa7a07925622",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-c0b01b3b95fd85",
+        "entry_key": "router-shadow-pilot-v2.2.6-full/P224-014",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P224-014",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "a9048c28ebf549304cdd54fef9b079f82e2938d6f9c1042784111cbfafeca780",
+        "json_pointer": "/unstarted/12",
+        "reported_task_id": "P224-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d760a0741bb7425707dd4b5d5764c2e55b91347273cc96fdd252aa7a07925622",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/router-shadow-pilot-v2.2.6-full/RESULTS_JA.md",
+      "source_report": "router-shadow-pilot-v2.2.6-full/RESULTS_JA.md",
+      "source_sha256": "88161c6731e9b082de792d8e10fdec04c50fb607ec901651345dc2ddb2d266c9",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 14,
+    "linked_entries": 14,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 27
+  }
+}

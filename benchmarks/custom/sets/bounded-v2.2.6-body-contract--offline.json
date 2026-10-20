@@ -1,5 +1,6 @@
 {
   "set_id": "bounded-v2.2.6-body-contract--offline",
+  "display_name": "実装・検証手順の比較 / bounded-v2.2.6-body-contract / offline",
   "entry_count": 2,
   "tasks": [
     {
@@ -86,10 +87,12 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "S226-SAVED-001",
       "set_id": "bounded-v2.2.6-body-contract--offline",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-v2.2.6-body-contract--offline/S226-SAVED-001",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "bounded-v2.2.5-syntax-preflight--live/S225-001"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-d7eebe90ac827f"
+      ],
+      "result_page": "sets/bounded-v2.2.6-body-contract--offline.md#s226-saved-001",
+      "result_data": "results/bounded-v2.2.6-body-contract--offline.json"
     },
     {
       "task_id": "S226-SAVED-003",
@@ -175,29 +178,19 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "S226-SAVED-003",
       "set_id": "bounded-v2.2.6-body-contract--offline",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-v2.2.6-body-contract--offline/S226-SAVED-003",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "bounded-v2.2.6-body-contract--live/S226-001"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-4a7e7834ad30b4"
+      ],
+      "result_page": "sets/bounded-v2.2.6-body-contract--offline.md#s226-saved-003",
+      "result_data": "results/bounded-v2.2.6-body-contract--offline.json"
     }
   ],
   "result_summary": {
-    "set_id": "bounded-v2.2.6-body-contract--offline",
-    "source_set": "bounded-v2.2.6-body-contract/offline",
     "entries": 2,
-    "structured_result_records": 0,
-    "task_ids_with_structured_results": 0,
-    "task_ids_without_structured_results": [
-      "S226-SAVED-001",
-      "S226-SAVED-003"
-    ],
-    "historical_reports": [
-      {
-        "file": "results/bounded-v2.2.6-body-contract--offline/RESULTS_JA.md",
-        "source_report": "bounded-v2.2.6-body-contract/RESULTS_JA.md",
-        "source_sha256": "a8203d5e417a82079fb310a2c690dd809511d4f416db9144b05cc77154fce1fe"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 2,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 2
   }
 }

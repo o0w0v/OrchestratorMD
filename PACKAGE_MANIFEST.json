@@ -1,10 +1,10 @@
 {
-  "snapshot_date_jst": "2026-10-20",
-  "source_chat_title": "Create repository AGENTS.md",
+  "format_version": 2,
   "custom_task_sets": 48,
   "custom_task_entries": 619,
   "official_selected_tasks": 30,
-  "historical_custom_results_included": true,
+  "entries_with_individual_records": 607,
+  "unconfirmed_entries": 12,
   "model_evaluation_rerun": false,
   "files": [
     {
@@ -21,227 +21,831 @@
     },
     {
       "path": "README.md",
-      "sha256": "636945241283cb3395d11a624f18ec2edf5d65be9b88208484675eed838f3da6"
+      "sha256": "732d668d91c7dd5059d8c6d8d53a64b2000fe7b49a23b9ba2e08f185d6c45d41"
+    },
+    {
+      "path": "benchmarks/custom/CORRESPONDENCE_AUDIT.md",
+      "sha256": "3a114b30385c57ea4946625fa8853e203dee5e677086087bc9c0178011d972c6"
     },
     {
       "path": "benchmarks/custom/INDEX.md",
-      "sha256": "2f15f2d83081a8f986c6337f2edb5f85b4982ee158b9ecfe06b97089d28fb3d6"
+      "sha256": "d4b518a260dc42aa5ca3729c26ad89bd671d113cf9b2f773700694ecc5125b6e"
     },
     {
       "path": "benchmarks/custom/README.md",
-      "sha256": "080bfdc96a763f400547778a5aa860acf1e2ba7998aac07957ef094df1563e90"
+      "sha256": "ab49bbb108505956a297c829556cb9733ad298144e0e9d9a735c61cfa093d79f"
     },
     {
       "path": "benchmarks/custom/UPLOAD_MANIFEST.json",
-      "sha256": "cd712b3b10ece76e1cc76e1360b36e80cd7e05f433edddcca1a828345c9595b9"
+      "sha256": "decfa9dbf8b4600bdbb6748399899969ae0fba422862ffb9b0756e71c6244ce5"
+    },
+    {
+      "path": "benchmarks/custom/catalog.json",
+      "sha256": "dd1064c7b56e9643f2d47f7ab1cd600b88248ec292a63d4cc75099bdfb2fe7b2"
+    },
+    {
+      "path": "benchmarks/custom/correspondence-audit.json",
+      "sha256": "145fd497c284a94ab277234eacf3adf59f060d792694547c3142400bdab35134"
     },
     {
       "path": "benchmarks/custom/historical-results.csv",
-      "sha256": "04adf7b1488e41d91e08746ccf0197ec57ea575ac268f8fb482c3823168e1591"
+      "sha256": "dddbcc1a82437ec75bd7a6375a6b035ba58fc39def50065211151adcc897e9bd"
+    },
+    {
+      "path": "benchmarks/custom/reports/adaptive-reviewer-escalation/RESULTS_JA.md",
+      "sha256": "4af021770bc70f97f6a8e5fce2afeed2e8a616d7de48e3d5bdedd61275ec5b4d"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-2.2.6-codex-value/RESULTS_A_COMPLETION_JA.md",
+      "sha256": "2946c7ebae835de62e378105ab39f9edb048a96b253cbed312644bcadf2d01eb"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-2.2.6-codex-value/RESULTS_CODEX_BASELINE_JA.md",
+      "sha256": "75abfcf808574cdce82cd42541e40f307e72beb04f02736cc657a9c8d9895a99"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-2.2.6-codex-value/RESULTS_JA.md",
+      "sha256": "0dcfd11f62c14a09c5515725681f3501df30eb3d0b3dcf645edcb2ef12cb9007"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-2.2.7-economic-confirmation/RESULTS_2_2_7_ECONOMIC_CONFIRMATION_JA.md",
+      "sha256": "96230796f3cd1b8831c19d7925f4fdc7e3873cd0514622d8f91965fe45afe8aa"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-2.2.8-economic-retry/RESULTS_2_2_8_ECONOMIC_RETRY_JA.md",
+      "sha256": "439c228c4283a0aa65d4e6fd303366e84d1ae3988af4afae69ba84a0d1c71a2f"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-2.2.8-limited-economic-shadow/RESULTS_LIMITED_SHADOW_JA.md",
+      "sha256": "4a46dd135815ead2202dda3a99b2cdd16e53b59419f8bb9fb498dc5a316bff97"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-v2.2.5-syntax-preflight--live/RESULTS_JA.md",
+      "sha256": "b3b1eb3b4619d7cb88fc55357a5cf6e2aff218398b8836dcf97a9728332c1c9f"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-v2.2.5-syntax-preflight--offline/RESULTS_JA.md",
+      "sha256": "3561106600cec7d495ecd80f44560ea95f2cd216aeacebea391d0cb1412f52d6"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-v2.2.6-body-contract--live/RESULTS_JA.md",
+      "sha256": "704aff3831ea5d8261088fb768b708cd34e48613d24b4de8fccb1d494aa94019"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-v2.2.6-body-contract--offline-final/RESULTS_JA.md",
+      "sha256": "57363f89b834268921f6e2fbfde354d8bd670126c817c81416ee095ccfb28137"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-v2.2.6-body-contract--offline-verified/RESULTS_JA.md",
+      "sha256": "c5ae3c84b2bf359eccae988da6430ea99df2080bf8b21993d81c2c2d1b923d9f"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-v2.2.6-body-contract--offline/RESULTS_JA.md",
+      "sha256": "920afc04fb2d7425222d392fb3a5fe2ed9fcbf4a30ff011246a4529b62f8fa40"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-v2.2.7-final-lf/RESULTS_BOUNDED_2_2_7_LF_JA.md",
+      "sha256": "703d9d982a04de150420fe85b1303d6fe085bfdf2acf9067be8ea7f590c2510a"
+    },
+    {
+      "path": "benchmarks/custom/reports/bounded-v2.2.8-candidate-parse/RESULTS_JA.md",
+      "sha256": "08a025354ca8ec38df5cef477163acdf0cefed019d66fc1d71c7dc9a0c6370f7"
+    },
+    {
+      "path": "benchmarks/custom/reports/economic-accounting-recovery-228/RESULTS_ACCOUNTING_RECOVERY_JA.md",
+      "sha256": "a2211a0bbf44a3df4dbde321867141264a999aee91ef877a2a21daf86da95bcc"
+    },
+    {
+      "path": "benchmarks/custom/reports/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.before-table-fix.md",
+      "sha256": "71f6829772217aadd04816808ee8531f21262ff2812587e33bb7fd0c8ff93a91"
+    },
+    {
+      "path": "benchmarks/custom/reports/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.md",
+      "sha256": "4c56595702e91941ca3df903044a855608fbd6b5b8319ee8d0dcab309c6239ec"
+    },
+    {
+      "path": "benchmarks/custom/reports/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.original.md",
+      "sha256": "fa3a6a725eefd0ce90dc9f5d8f1e83d569991bee05ce426d719514b139afd5e0"
+    },
+    {
+      "path": "benchmarks/custom/reports/final-lf-replay/RESULTS_FINAL_LF_REPLAY_JA.md",
+      "sha256": "c93548d099a61d6baa56665e647b1f8be32faa4355ca1d611208f162bb7f2691"
+    },
+    {
+      "path": "benchmarks/custom/reports/formatter-guard-v2.2.2/RESULTS_JA.md",
+      "sha256": "1a14613dcb7094e87a83bc9599f12120d9c9de5080b94f1f3cbe8e2f73880191"
+    },
+    {
+      "path": "benchmarks/custom/reports/formatter-structural-v2.2.4/RESULTS_JA.md",
+      "sha256": "3b5a29dfe5b3ed2b91a07931896fcf9d810b262e89d7edf390438095240f31d8"
+    },
+    {
+      "path": "benchmarks/custom/reports/gemma26-continuous-backend-soak-v2--run-002/RESULTS_JA.md",
+      "sha256": "5a0293b21a046e299d916199da3925ce2f6fcca44275d45c76a3705955150d8e"
+    },
+    {
+      "path": "benchmarks/custom/reports/gemma26-memory-headroom-228--run-004/RESULTS_GEMMA26_MEMORY_MICROBENCH_JA.md",
+      "sha256": "a49db38ea0615a275b35d3b293005a78be382224f278187e0387e977888b3e92"
+    },
+    {
+      "path": "benchmarks/custom/reports/gemma26-memory-headroom-phase2--run-001/RESULTS_JA.md",
+      "sha256": "1c846c22fc8a9cbc9c9f448ca1c17312caa348256b8a9e4e39e8fce6ea0c93d3"
+    },
+    {
+      "path": "benchmarks/custom/reports/gemma26-production-like-soak-228--run-001/RESULTS_GEMMA26_SOAK_JA.md",
+      "sha256": "516ee19b76ffac81bc87d2f9db118701f3b56c64d185bdb894140d4cb21e6e28"
+    },
+    {
+      "path": "benchmarks/custom/reports/local-specialist-3way-228--run-001/RESULTS_BASELINE_STOP_JA.md",
+      "sha256": "091786cbfec5378356f73e8d4a0d614fb2457941cb3f61f3f237f06a72504f40"
+    },
+    {
+      "path": "benchmarks/custom/reports/local-specialist-3way-228--run-001/RESULTS_LOCAL_3WAY_JA.md",
+      "sha256": "a30c734f40170068957587d8111ad42829491f92682b7a715ce1867c0be13ef0"
+    },
+    {
+      "path": "benchmarks/custom/reports/local-specialist-3way-228--run-002/RESULTS_LOCAL_3WAY_JA.md",
+      "sha256": "3910c3183826dddd19646ed8ce6e228cc6170e91810a53c18de815aa64a60069"
+    },
+    {
+      "path": "benchmarks/custom/reports/local-specialist-3way-228--run-003/RESULTS_LOCAL_3WAY_JA.md",
+      "sha256": "b9f23b9d74ffd75148be4e4ecb4812034b744a3178d8ce1a388bb86f0f54ef25"
+    },
+    {
+      "path": "benchmarks/custom/reports/local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_DEVELOPMENT_JA.md",
+      "sha256": "bc70cc8d24fd81a2fd64345bba825d7014f223eefed82bf31546c7c306439e10"
+    },
+    {
+      "path": "benchmarks/custom/reports/local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_FINAL_JA.md",
+      "sha256": "e058783fa9e048b4116b8d4ff7bd588e02e7698e381029e6e1a6ad71197d58a2"
+    },
+    {
+      "path": "benchmarks/custom/reports/local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_JA.md",
+      "sha256": "4c085568ef2a27e77a7db3079516df6fe647451670ab7cd57a7b7159477121db"
+    },
+    {
+      "path": "benchmarks/custom/reports/one-shot-local-gate/RESULTS_JA.md",
+      "sha256": "f410b7bdde3afaad6be96fb875d689f6626d2e87f2ca199eb387a83bc6f54d59"
+    },
+    {
+      "path": "benchmarks/custom/reports/protocol-improvement-b2/RESULTS_JA.md",
+      "sha256": "baf96a82aaed6104456c86b62bd9cc0187933044fb91e8f29c56934b0830c990"
+    },
+    {
+      "path": "benchmarks/custom/reports/protocol-improvement-b3/RESULTS_JA.md",
+      "sha256": "3446ae82c042f576be456c8f011299f546e0151a6b402c4185cc05b3164c9355"
+    },
+    {
+      "path": "benchmarks/custom/reports/protocol-improvement-b4/RESULTS_JA.md",
+      "sha256": "bcd82a1e024b2d6e33cda488a69c2dc655cc518f160c6df7b8f981abc9fbe292"
+    },
+    {
+      "path": "benchmarks/custom/reports/protocol-improvement-b5/RESULTS_JA.md",
+      "sha256": "6ce0d66ecd2074ccb2b03afa2d1b901bf2ddc55459f574bd8dbb8c83972a2574"
+    },
+    {
+      "path": "benchmarks/custom/reports/protocol-improvement-v2.1/RESULTS_JA.md",
+      "sha256": "afd0131921fadb3bf65ce163e18ddee887c46427cc85b3b29679fc65ec33acf8"
+    },
+    {
+      "path": "benchmarks/custom/reports/role-separated-codex-routing/RESULTS_ROLE_ROUTING_JA.md",
+      "sha256": "2e98caaf8e3ff8218d0c90f682f2ad594ad67e3136071c122b5558334c3485bf"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot-v2.1/RESULTS_JA.md",
+      "sha256": "be5dc262cfa644eca8489e0c97988558b23916d1fcacd53166a10000c05a55ff"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot-v2.2.1/RESULTS_JA.md",
+      "sha256": "bac198d6fb914f075be5aab5266723b6f10057b87901da6c15e5f4795c6c2ae4"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot-v2.2.3/RESULTS_JA.md",
+      "sha256": "99f1ebe2281195ec9e47f8694b41c66e3701908aa444a59b7cf6f34b676bda8c"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot-v2.2.4-fresh-001/RESULTS_JA.md",
+      "sha256": "5c5cb4a225fe76329eeabad131bd15d70977412460b330019636345f7ed42124"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot-v2.2.4/RESULTS_JA.md",
+      "sha256": "e97b0cb3c05740df0d2a907e62f65f2134773ff85192763ce507c27b5e9030a2"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot-v2.2.5-full/RESULTS_JA.md",
+      "sha256": "524300cfb2add2bb76c11ba223a156c810737d0916e9c219bb1e0a64244245c3"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot-v2.2.6-fresh-tasks/RESULTS_JA.md",
+      "sha256": "a332e2e34fb58351c57fa31a58a89849119eef3dfab02b4ccc336c49222519c2"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot-v2.2.6-full-002/RESULTS_JA.md",
+      "sha256": "e324f594f9515a7440e6ce77f190a06c0095c03ec214b4fa41de57a7a8206849"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot-v2.2.6-full/RESULTS_JA.md",
+      "sha256": "a0dcadc99efd047d99219768672f92124166e0f16e370fb9e6202899ee4a5ec0"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot-v2.2/RESULTS_JA.md",
+      "sha256": "552cec3331ae7623355b1affbf36f077b8825884a3fe62cd756a74f1faef57ff"
+    },
+    {
+      "path": "benchmarks/custom/reports/router-shadow-pilot/RESULTS_JA.md",
+      "sha256": "73b9a89dd2346196631122c8ac76691a2b56e3f4fcc130ee28842ec5f6e7d574"
     },
     {
       "path": "benchmarks/custom/result-coverage.json",
-      "sha256": "a03a2589151ac779925a8e57131a2d6bb91885de6a1d87ec8a48ce5d48fcdd98"
+      "sha256": "8598f3e072fdfbd444fcb1a2f2c59ac4ac9bab81ac0b462865d1b47cad869807"
     },
     {
       "path": "benchmarks/custom/results-template.csv",
-      "sha256": "1ee7a84226a3e614c79f3dde4aa968db2956a45fd54488f42a643c534c9893f9"
+      "sha256": "e856ea879d29da66ea64f985479c630a46dd54b32040e3f3a249933c4060631b"
+    },
+    {
+      "path": "benchmarks/custom/results/adaptive-reviewer-escalation.json",
+      "sha256": "ae94bcaee3c16762f4df0f17df5099f7f1955d92053f03c382c1c18994767efa"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-2.2.6-codex-value.json",
+      "sha256": "4bc6d2e9e5720966c68ab0b5b2bd94daaf6f9373c017b0d41e09edf129fe1567"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-2.2.7-economic-confirmation.json",
+      "sha256": "dd1f4aaa9e59526c606eb248ae689affd514895d65c4648f017feb751a818125"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-2.2.8-economic-retry.json",
+      "sha256": "e981f00381553ef003a929cfbf296ef873c97ff1895dd05210fc4180048f2143"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-2.2.8-limited-economic-shadow.json",
+      "sha256": "8a2084c91ef03f4f52ddcb76ebeeb94ec316dbc9bb5c77cb6c2d1922730e8e0a"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-v2.2.5-syntax-preflight--live.json",
+      "sha256": "f0aae89c4cde0222f2dbdf4d589bbe893ef2c8a4a746afca2b20da23e58800e2"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-v2.2.5-syntax-preflight--offline.json",
+      "sha256": "3097b94e66f3a6506a1e682460916985906b7d10475089837cd35a0f5b02cdb0"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-v2.2.6-body-contract--live.json",
+      "sha256": "4c7bfb233388c98be3bf2f7b12bbe946904e21451dc23b77a771f540e0d8855a"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-v2.2.6-body-contract--offline-final.json",
+      "sha256": "7ef622748347741336f24391cbb35503b662443284c609de695eb2727c644d31"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-v2.2.6-body-contract--offline-verified.json",
+      "sha256": "627c9e0a69b01985e2bfffac385dc7899c81b41e32be5f6bbdc3f52ac15ecba4"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-v2.2.6-body-contract--offline.json",
+      "sha256": "6391e1c324cff156e486331fae59ce1deceb9798e48a954c71835466396d9ef8"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-v2.2.7-final-lf.json",
+      "sha256": "48c10d39436a491a33b65155991728b9181eac6b4295e496c320653a939ba069"
+    },
+    {
+      "path": "benchmarks/custom/results/bounded-v2.2.8-candidate-parse.json",
+      "sha256": "8d02f53986b9c29c7c6b79ad02b8aa1b30b5b107d27fc070c049cd11fe7b46d8"
+    },
+    {
+      "path": "benchmarks/custom/results/economic-accounting-recovery-228.json",
+      "sha256": "14fd050def56ea509105bb5413e29dfaaec8b635364da8bbbfd958408a6ac9e2"
+    },
+    {
+      "path": "benchmarks/custom/results/family-gated-local-router-228.json",
+      "sha256": "4555e930fee95777a423f1055010ffb59299710ff7250866e5bd46a7fa1ba240"
+    },
+    {
+      "path": "benchmarks/custom/results/final-lf-replay.json",
+      "sha256": "fdd41410ddfcfc1aab566c1ed8ee32171f96f1a4d564f6e6126824c18e7bc89b"
+    },
+    {
+      "path": "benchmarks/custom/results/formatter-guard-v2.2.2.json",
+      "sha256": "fad5fa1cd39c33f70d80237103d0d604c8b4c20e5f96c7c84caedec1a6cc7fa5"
+    },
+    {
+      "path": "benchmarks/custom/results/formatter-structural-v2.2.4.json",
+      "sha256": "f12801fc876dd372b7860b0987e021b520269ffce2e29d78c1aadaff26129063"
+    },
+    {
+      "path": "benchmarks/custom/results/gemma26-continuous-backend-soak-v2--run-002.json",
+      "sha256": "cd0a7f8b8520ecd6be28f7430d3c476364516e54ab03d2ff683df7910b4a6642"
+    },
+    {
+      "path": "benchmarks/custom/results/gemma26-memory-headroom-228--run-001.json",
+      "sha256": "ccd8d003e2d5a6c0c1c2dd7aa20b79f4b091834fbf8c92728a2b8fa2db8005f6"
+    },
+    {
+      "path": "benchmarks/custom/results/gemma26-memory-headroom-228--run-002.json",
+      "sha256": "e862b9ef715f587275daf7f20a26e428d00c3cea5aeae98abdb8ccbd976130de"
+    },
+    {
+      "path": "benchmarks/custom/results/gemma26-memory-headroom-228--run-003.json",
+      "sha256": "e18a81ee32318254d1ef7a0616e03101e77194bda93b149c2251de07db12ef2a"
+    },
+    {
+      "path": "benchmarks/custom/results/gemma26-memory-headroom-228--run-004.json",
+      "sha256": "8e9a16cdff1cdf0118960ac6d6565ae200e81f9eb245410bce2d2ff79589fc5e"
+    },
+    {
+      "path": "benchmarks/custom/results/gemma26-memory-headroom-phase2--run-001.json",
+      "sha256": "27826d1bd26e914a4bb01c10fbb59bfda2dcef20cad33a11595260c35a8dd043"
+    },
+    {
+      "path": "benchmarks/custom/results/gemma26-production-like-soak-228--run-001.json",
+      "sha256": "b0af44b291f7c846ea58bc8c833bf5e42ad8ffe81b08abb1998467f1c814109e"
+    },
+    {
+      "path": "benchmarks/custom/results/local-specialist-3way-228--run-001.json",
+      "sha256": "736ff785a2a71bede288c7c7602d773e0da74cf1c4cdc66ea4b5f8acdbb26957"
+    },
+    {
+      "path": "benchmarks/custom/results/local-specialist-3way-228--run-002.json",
+      "sha256": "911031cc2b2862fbc10c47ffe6ea2001d0b1c61eeda86fd9eef20db1ecde3190"
+    },
+    {
+      "path": "benchmarks/custom/results/local-specialist-3way-228--run-003.json",
+      "sha256": "aec3d68a39299f83b7ebb720c3a94448b7a37ed6eca30a2b2051d9778a712370"
+    },
+    {
+      "path": "benchmarks/custom/results/local-specialist-economics.json",
+      "sha256": "dbc3f8a50c586716188725b9c6f68c3d0b07cf14c03fdf3c62fb46d1d7f613f9"
+    },
+    {
+      "path": "benchmarks/custom/results/model-routing.json",
+      "sha256": "a647d11c8ebf4f6a1d7c3fbda0da53f8f180e176fa5e85cfdc48e1584f481a79"
+    },
+    {
+      "path": "benchmarks/custom/results/one-shot-local-gate.json",
+      "sha256": "9b21dac4078713e3af07474c189cef9b65b44e83f6e3e33e06da99c1198474b8"
+    },
+    {
+      "path": "benchmarks/custom/results/protocol-improvement-b2.json",
+      "sha256": "42e6123c60a50ce1ac8376e5d3b0d73c4c68f7df60dbcb83aebdbf83116117cd"
+    },
+    {
+      "path": "benchmarks/custom/results/protocol-improvement-b3.json",
+      "sha256": "c7fb7227cad7c58a1ff843a231bffadb8bc6accaa42a5bad52118522550d783a"
+    },
+    {
+      "path": "benchmarks/custom/results/protocol-improvement-b4.json",
+      "sha256": "0d7ecdb0063f9e2ab11486eaee129257005a36ab082b8d0526dcd1a83007797b"
+    },
+    {
+      "path": "benchmarks/custom/results/protocol-improvement-b5.json",
+      "sha256": "b60a8fc72e9ae18755e6d8b1129009c3df7f86d1dce269729e97a1fe37e64e03"
+    },
+    {
+      "path": "benchmarks/custom/results/protocol-improvement-v2.1.json",
+      "sha256": "68ce73a363e6f3e4aa12bc58c7189a3720b01c52eddcac8062a0d7c115f4c05f"
+    },
+    {
+      "path": "benchmarks/custom/results/role-separated-codex-routing.json",
+      "sha256": "6c11ae4d3aac8bb82b7f94e28495d689d1cc13250683b55854d85bad70800f07"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot-v2.1.json",
+      "sha256": "5d0f9647c5f12b0d4687dc14233828aab896c41165a02a37f0d13dcdab813a56"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot-v2.2.1.json",
+      "sha256": "c5ef810f54d0d05aa4e446c60a04dfa8dbbe26cf6d3c52ec84a108d819db4de9"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot-v2.2.3.json",
+      "sha256": "3147bab26e3487c6596b5838d3b3ea0b97ea620bb44f536499033239347adee9"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot-v2.2.4-fresh-001.json",
+      "sha256": "7eff81e3707c2bc6fe6d4e6ce808bc1ff286d3a9197d0784e0e49698044b9f3c"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot-v2.2.4.json",
+      "sha256": "5ff83621d3a6914407f55078c59e40a3e01a711cb37c032ef9bbcd6f82ed6199"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot-v2.2.5-full.json",
+      "sha256": "bbb6a628334f5d08819431ba6a74d17128eca255826b174051d06ea5fbd0bde4"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot-v2.2.6-fresh-tasks.json",
+      "sha256": "b3cdef48853720f5da22d0c71f8478adc18cfdb604cc888fcac22bcdcb50d6be"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot-v2.2.6-full-002.json",
+      "sha256": "d597b7476388fbb701e62570c584ce23bedb275c9d48553668204a29b8692de2"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot-v2.2.6-full.json",
+      "sha256": "16ecc3f90cbf98233a6c02a82ef04d1ac8999727fbd973950d456342c0993f81"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot-v2.2.json",
+      "sha256": "7b0475ffff6354259f349cce4eff0a376a7bbbf7a2c8553574ef5d7b4295ffef"
+    },
+    {
+      "path": "benchmarks/custom/results/router-shadow-pilot.json",
+      "sha256": "b27aa2e853d5645c71b7593c3d2652bd6367223c97dfeee2a2da301d319db4aa"
     },
     {
       "path": "benchmarks/custom/sets/adaptive-reviewer-escalation.json",
-      "sha256": "644987d8d8dcb173b4b061410a8d3204a22a94df2d46db67fe34d5660614ce2c"
+      "sha256": "d0c0c591148c0275ffc0bb5f736ce79f08c67b976bf323b94ea06d58a4ec82d0"
+    },
+    {
+      "path": "benchmarks/custom/sets/adaptive-reviewer-escalation.md",
+      "sha256": "e89a82aa0f14009ad0bc13b1e1f81aa525a68dee00cda3f7cfc35d275bf511d5"
     },
     {
       "path": "benchmarks/custom/sets/bounded-2.2.6-codex-value.json",
-      "sha256": "65b5859eebd32e192ee1813d4358882938124c46fdd4c58f8dc2817039771214"
+      "sha256": "2449205eeba7d65770fc91048b64235afc590ac5ad4a141f2e5f33fff05900fe"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-2.2.6-codex-value.md",
+      "sha256": "4fb0bae87bb6146abb828f13dcf1b793b82d70027465f711fe5888e2c738d327"
     },
     {
       "path": "benchmarks/custom/sets/bounded-2.2.7-economic-confirmation.json",
-      "sha256": "24adc7dc22c6b2737fc57d8c407f1d2837f9149ae761cd20d68189ca2db92716"
+      "sha256": "75bece438f8bc614be8a40151685df5182c0038d0560f71813b84867b038cd7b"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-2.2.7-economic-confirmation.md",
+      "sha256": "8e76459c38f10afb8d4a77f91e5283c30f9e72922d39e909148f0159526b30db"
     },
     {
       "path": "benchmarks/custom/sets/bounded-2.2.8-economic-retry.json",
-      "sha256": "18cdc9290b777b3def6ab2173aec4da1394d7357e7aa5212f60f009f61eb85d8"
+      "sha256": "42e8a140c9fe1b9a7c0fd674a6bd1c9dc469653b33a71b9db487167cc5f6deb8"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-2.2.8-economic-retry.md",
+      "sha256": "a2ed9a4672d691e344f05cc3ee3f77848463be6123324991a0d136106b3573c8"
     },
     {
       "path": "benchmarks/custom/sets/bounded-2.2.8-limited-economic-shadow.json",
-      "sha256": "6b7513b90df09bbcc08dc6a4b0c3fe64ae5a2328c70f26c2d41979518d72edea"
+      "sha256": "49a56469511827ea8076f3a32f6ae8afb50963f266c2f5133c1911050ebad47d"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-2.2.8-limited-economic-shadow.md",
+      "sha256": "d1a2e8c942c7c690a06954be1e6aec11cd35da72f3eba07ffba52587be54c4c2"
     },
     {
       "path": "benchmarks/custom/sets/bounded-v2.2.5-syntax-preflight--live.json",
-      "sha256": "486ceaf51c6bb1085660a8fbce46e91eb7283541c7e42a0c3005eb545acc8a43"
+      "sha256": "305cf0443e847562a44bdfbb5f2af550995dcf6b924581ea21352c4c8de7d285"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.5-syntax-preflight--live.md",
+      "sha256": "aacf577fa18a86eab577d4886f7f866aaf93823fb9bb183e096132224d2375e8"
     },
     {
       "path": "benchmarks/custom/sets/bounded-v2.2.5-syntax-preflight--offline.json",
-      "sha256": "f83da2dab2805e6f56009a5e8643338de27e6ee13bf457d64fc97c2283de9794"
+      "sha256": "759b554f4a0ad5f3dbe4d31219c7367c4771c9ac9f953d233cd0fb598f05a1d9"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.5-syntax-preflight--offline.md",
+      "sha256": "f8cbaaca0f052d2271164fd0365474595bb06bae9fb0e54c60817bce4eb5eb81"
     },
     {
       "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--live.json",
-      "sha256": "45016d4de37c417e288de7ef28971a4c80b5a6d3a18cbbaaf8cca5242fcae201"
+      "sha256": "b92b89c5a1a004dcd00263bf924f5cf8cb180febc407683dff55f2c366641e8f"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--live.md",
+      "sha256": "b670b69eeae3045144e0a4519070e758f85938dc3484d3e6f60df80aa1fd7f22"
     },
     {
       "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--offline-final.json",
-      "sha256": "220833266b1540b4f8d93c93f23d4efbe143e11126345e8801220e83f52b811c"
+      "sha256": "4b443578838ddedbe59a01405bff142fa689de78fa289ae2f2ae8c5a5307011b"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--offline-final.md",
+      "sha256": "b3fe352dda3f2d938f16376818dc53a99e5eb38a6efe3903d5e2b38cb2241f05"
     },
     {
       "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--offline-verified.json",
-      "sha256": "f862960af6fbada30e537321bd0191a983ea7eede848ca9c17a7dbb0e8440d5a"
+      "sha256": "ea5b796169caf5f2f5ea827eebef56db873647f93c815fed86f258f1a298c8ba"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--offline-verified.md",
+      "sha256": "5142b25d9860dc9d176c856680511b51bb7b122bd6a708a13cbe20148288204d"
     },
     {
       "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--offline.json",
-      "sha256": "a2fdabf4388ed19c1c39969e3bde5202fee142e9d6d75b341945db8319c6724e"
+      "sha256": "a7844625a241cfa859edb1060de08bd3c494365b369b02a12bdd59a18a71ca3c"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--offline.md",
+      "sha256": "009827374eee78628cb769e93cf00857fd559f666e156c406cb8706ec161fbed"
     },
     {
       "path": "benchmarks/custom/sets/bounded-v2.2.7-final-lf.json",
-      "sha256": "80a2ba4e8cc1661cd055208d7ee9dc993ea6ef3e4961054de14ed7cdb78cdd88"
+      "sha256": "ed34d6ea6399ffa5669ee6215b1ac1799d0cfb6f111869ccfeca7cd4fcbb795e"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.7-final-lf.md",
+      "sha256": "6b5d05fa99c475a2e803646c2ed2cf0142c492eff7633d215c82df1cbc8114f9"
     },
     {
       "path": "benchmarks/custom/sets/bounded-v2.2.8-candidate-parse.json",
-      "sha256": "d65afc1ba05b4ca4eec72861f926ef1ac83f1f6c8fba66162c56e3e439e6bc8f"
+      "sha256": "55f97c776ae5c837ef7512cfe688a9c59f78ea99c158e236ca6eb86f11686850"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.8-candidate-parse.md",
+      "sha256": "f8a111065f98f237e07a125c28d29750527706ada37a17a422d4a14c31da8888"
     },
     {
       "path": "benchmarks/custom/sets/economic-accounting-recovery-228.json",
-      "sha256": "6b4143958e728ed9d03e70f8ca1dab93baa0f4253b42919434d4823da69444a3"
+      "sha256": "f3ad32c13b4daea604082d3fca062dd44d5696e040c3a31c5490daecc821a3b7"
+    },
+    {
+      "path": "benchmarks/custom/sets/economic-accounting-recovery-228.md",
+      "sha256": "da6699d661c58dd911a9123891779ac2ad0c95a06a5a0412a22dd0bc613f38fe"
     },
     {
       "path": "benchmarks/custom/sets/family-gated-local-router-228.json",
-      "sha256": "4c7ed605768e8e0ddd30fece75dcffd72caf2debadf5dd89b15bcdb5a6b0f52d"
+      "sha256": "80b2e73ee75a0241e2aa3c9e7daee4e9a75f795ad340c1f3097f48b4118e54b7"
+    },
+    {
+      "path": "benchmarks/custom/sets/family-gated-local-router-228.md",
+      "sha256": "cd2dc321652b4a9b233196ceec9593879d463c6afdd01e5931d989c0bfaed5d1"
     },
     {
       "path": "benchmarks/custom/sets/final-lf-replay.json",
-      "sha256": "6146a354fde39ce30621adfdc4052b2e76dfca877326de8b2ec48788ac282d9b"
+      "sha256": "3afdfa020ac52a569acc46f285f7b5d445416859531981d9b1d8779e87293a20"
+    },
+    {
+      "path": "benchmarks/custom/sets/final-lf-replay.md",
+      "sha256": "45d87745d29d250dfc35de1e04d3b32c510ba5640496cab9a2bf53d32d984a6b"
     },
     {
       "path": "benchmarks/custom/sets/formatter-guard-v2.2.2.json",
-      "sha256": "6087454b9c86e0268e83b60528c79b3205b98a8b809036392dfdeabb9606e3bd"
+      "sha256": "a7318ad2b8eaf759be0d9479b4931a498fefecaf0fc190ba9def1021bb96e2d1"
+    },
+    {
+      "path": "benchmarks/custom/sets/formatter-guard-v2.2.2.md",
+      "sha256": "9bfbdc8182a0647af8cf161b1f927a16b21743cfe90972490cba790fad4a9272"
     },
     {
       "path": "benchmarks/custom/sets/formatter-structural-v2.2.4.json",
-      "sha256": "08f63bc8daa60dcdaec151a454f0d7b09aaaf35c9953e99a07ef82acd320d72a"
+      "sha256": "cf6b04230139a26c4eeef43fb7fbf3f3fc639a28a646655c7a114c249d33e24c"
+    },
+    {
+      "path": "benchmarks/custom/sets/formatter-structural-v2.2.4.md",
+      "sha256": "76880a22ee40a6429b066f4c006998a4b239f0f3d01f4f97dfd8f4857e094683"
     },
     {
       "path": "benchmarks/custom/sets/gemma26-continuous-backend-soak-v2--run-002.json",
-      "sha256": "790457a3767a1ee5731ccfcc986ee7e70666dd7c0c3b40b23c9ddfb30c4caa62"
+      "sha256": "55c1b626bfd54a6900b3c016698e469dd0bd19d15756d9f2dc9b212db114e11f"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-continuous-backend-soak-v2--run-002.md",
+      "sha256": "54e5104b38524c28700933798fc1db035262d5bf72979e1e93cf1b19ab970661"
     },
     {
       "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-001.json",
-      "sha256": "712e784578c93a26f8ddb5474e517d945a4341b54e49d5603b1c790b87cb50c7"
+      "sha256": "936e1df8bc37db145cfeb155dd0f8bcc2fe6e0c4d4c4dd5136eb30ecb8ab5b1c"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-001.md",
+      "sha256": "c1c29445bad76f6bb400856de600a89401deb1ce56bedf766cfa5a2980b3ac5e"
     },
     {
       "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-002.json",
-      "sha256": "99fcaf6796fee95c2fd2c465c8a8d8b8e6b23dace9d65d15dc548f758312b77a"
+      "sha256": "71f237c6ad83643429c84496348d3ff98482a524e457bcb13f50c79f42430fdc"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-002.md",
+      "sha256": "85cc86646f308798265ef07d17a9dd3c727d4b1973b00c72707a30a2d2f9c504"
     },
     {
       "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-003.json",
-      "sha256": "8fe92eca1a86aad16ed87a46caf194797c4e236fff36b4a03f88f6336dcf8a33"
+      "sha256": "59c88abd86a2797a1962816dda2b0062f6e138642e5c5da22aa97276c7a1a2df"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-003.md",
+      "sha256": "25cdfd8a40619ddda7702cfd1b81f86cd9043d99e9df58a96f5de318f472b7de"
     },
     {
       "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-004.json",
-      "sha256": "6d2c72046cc67caadee58bc4fd6333702e1cbc338b352f278d568bb06d780f1a"
+      "sha256": "e85190d8a90f501703016b91ac74af480d3e239fb921a927543b4399861fe6fb"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-004.md",
+      "sha256": "6d0683e3fa0a7d374dd35d094d376024a4c03accd24000da57cb484f4be99d12"
     },
     {
       "path": "benchmarks/custom/sets/gemma26-memory-headroom-phase2--run-001.json",
-      "sha256": "a995e0c2d202cca80b2c5e34602691e65e7b5bf707273d7b91510d9b22dca2be"
+      "sha256": "10f2a3ce07ede34b2d446356cd5f7b3aab40427f04b1df5100483dd0f5adfc26"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-memory-headroom-phase2--run-001.md",
+      "sha256": "119d9fcd03582a15fa7e0ae7b5309bea9cd1ac6c0192b7b6e44159992b296145"
     },
     {
       "path": "benchmarks/custom/sets/gemma26-production-like-soak-228--run-001.json",
-      "sha256": "8bb2c32182c50c51f00b61617fd53ca62abafd1ea0f8225f2e4fb4e48ef5c2ef"
+      "sha256": "f186d29f2fcadfc97e828e10e42fca8054fa66b53768274a5c1ccb98f04fab5d"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-production-like-soak-228--run-001.md",
+      "sha256": "13e3972a6ccd1a15ebace15c0886b161b30284d228dfad907275acdd191dde10"
     },
     {
       "path": "benchmarks/custom/sets/local-specialist-3way-228--run-001.json",
-      "sha256": "bedc697fc0b8d15edd14ef7b6e5784d89a262a043c77ba7c40be1130c626ddb1"
+      "sha256": "fbb0558d00b6cd1df888d1118f613a8713217859c1f265d32691181dd88a5458"
+    },
+    {
+      "path": "benchmarks/custom/sets/local-specialist-3way-228--run-001.md",
+      "sha256": "0741d601f95750cf372d15b7e1d6fcee165617fe85db3d83c8834b8a4b3e5ab4"
     },
     {
       "path": "benchmarks/custom/sets/local-specialist-3way-228--run-002.json",
-      "sha256": "5c3358adeef02ec817d9b15ddd180c9b77b8d741cfe4001b5aec544c81051d3f"
+      "sha256": "5cd1029b891712a512bea9296efa325e9e32438b72fc74e768298346a8236754"
+    },
+    {
+      "path": "benchmarks/custom/sets/local-specialist-3way-228--run-002.md",
+      "sha256": "af78ffb1f7d2427f404148cd0da64f82fa1a8f6b6b414308f952b8a0e476eb19"
     },
     {
       "path": "benchmarks/custom/sets/local-specialist-3way-228--run-003.json",
-      "sha256": "2d3b2e71682fc999bd1a415e8d3064cfa45bc53acf416b203c3be628df38ea55"
+      "sha256": "c00948495b02d8d835a939e9d90d587ec4d92921abe0b2beb7aad0bad347528f"
+    },
+    {
+      "path": "benchmarks/custom/sets/local-specialist-3way-228--run-003.md",
+      "sha256": "bb667cd37aa0dde893829c533268fd30525ce8aaa6ab22b55ab5c2ecaadb1987"
     },
     {
       "path": "benchmarks/custom/sets/local-specialist-economics.json",
-      "sha256": "9173075ac581465055dbb0cc33d51cdd17d288f6260cea2eea2c323bc9ac623a"
+      "sha256": "4ea6bb2c8ae12570a5a952e46f21ac94778b3914121632b40f0e22aa284bd0b8"
+    },
+    {
+      "path": "benchmarks/custom/sets/local-specialist-economics.md",
+      "sha256": "129954397c2f9990fcf7c92a54ab43aeebea06460b9df106eed351daaf4d1cf2"
     },
     {
       "path": "benchmarks/custom/sets/model-routing.json",
-      "sha256": "cb2245292b1200ba4d40e1a33077f159f1f7239912356898ad67a63668bae96c"
+      "sha256": "f10f8b85eb314db7da5d75cc1e52f66220b09665d8aaaae8c789e16de6b32929"
+    },
+    {
+      "path": "benchmarks/custom/sets/model-routing.md",
+      "sha256": "0aa6e91b16250e10676203cf8478c96702aa4a712e3e53102fa4dd94d2472d08"
     },
     {
       "path": "benchmarks/custom/sets/one-shot-local-gate.json",
-      "sha256": "06b8b3691faa184e1a93522a1552494a46b3a2fc9db4c84324cc01c920721c82"
+      "sha256": "5e806048237f06bf6c0a50104fe2d62eaed91a3694d7b835db6bdaac2d0e1335"
+    },
+    {
+      "path": "benchmarks/custom/sets/one-shot-local-gate.md",
+      "sha256": "55d36a21160f846af57bf5bdc00e1c88a475fd5a0b781a256e4fced59fd92f3a"
     },
     {
       "path": "benchmarks/custom/sets/protocol-improvement-b2.json",
-      "sha256": "b5cedb63e32bfe208ad679dd26a384e3767bba2bbd1a4b348561b0aa633d5545"
+      "sha256": "d941f2fd21d0d53bf803142da7a3b577310704141e6cd50d2dc66e18a713e7e3"
+    },
+    {
+      "path": "benchmarks/custom/sets/protocol-improvement-b2.md",
+      "sha256": "3229ed7211b7f4c8e145febc6545dd050f6fa26d7ec89256e1ec5fa738967030"
     },
     {
       "path": "benchmarks/custom/sets/protocol-improvement-b3.json",
-      "sha256": "ccab3c702ca6c5a130c0a6cb6efa1ff0f2dd2ecae9353adaaabacd15b87a31fb"
+      "sha256": "d3f6ef391af51132b2084370343569c6a0d7b24531a5561a6a782f22a647f528"
+    },
+    {
+      "path": "benchmarks/custom/sets/protocol-improvement-b3.md",
+      "sha256": "1a76e7141aecab9e5f3f5dafe944a885b6551ee578a55a25b1686b8641d235ae"
     },
     {
       "path": "benchmarks/custom/sets/protocol-improvement-b4.json",
-      "sha256": "2824b61eae8ac5a066da0f7cc65a7903d88c2a153793c27d56677f1a45b468a3"
+      "sha256": "30a74d2c1651e794cebfd2fdb8eb1147d6734d3037b8671ba7d98a0e79f72737"
+    },
+    {
+      "path": "benchmarks/custom/sets/protocol-improvement-b4.md",
+      "sha256": "74c1be52b64b8394e5c58c40686c67dbf43163536a66dc9db0757e2537593de6"
     },
     {
       "path": "benchmarks/custom/sets/protocol-improvement-b5.json",
-      "sha256": "eaf64199c8e38d6b982b2571a6cd0089982a6d466401314f4fc5b538849011a0"
+      "sha256": "986c93b4b483c5fb0cca8082c47c8d5503140b9eb074cf5479ece2e573586004"
+    },
+    {
+      "path": "benchmarks/custom/sets/protocol-improvement-b5.md",
+      "sha256": "c0e0a48287e0b609c6c529c4122dcbfd778e301524bd4a9dfa83295b509ac51e"
     },
     {
       "path": "benchmarks/custom/sets/protocol-improvement-v2.1.json",
-      "sha256": "280c59f371c9281304b90fab49e291f2dae5151ffe7bcfdf3a845f9c761fe82c"
+      "sha256": "01e9ec3656bee6595b9104a8a9e5531a96fccedcffbf257c36b3c596ccfa487e"
+    },
+    {
+      "path": "benchmarks/custom/sets/protocol-improvement-v2.1.md",
+      "sha256": "0823609927644bd92d1705a576866c56798cad47e21fd86c33de2a7d6ad333d6"
     },
     {
       "path": "benchmarks/custom/sets/role-separated-codex-routing.json",
-      "sha256": "1440b7eafb522df36a2cacb94bea5d64be3c552f42f8a249f8e4590bff817022"
+      "sha256": "885f37d7296b983cf59d6cc9a90bd0386a0a83dab88af055432b97caa7ee47d9"
+    },
+    {
+      "path": "benchmarks/custom/sets/role-separated-codex-routing.md",
+      "sha256": "133985accb8dade18df8f9057cb083f88400d9864cf0c02ce918645fca2dd096"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot-v2.1.json",
-      "sha256": "680918d2f116168a8770e3890208b9f7cbe479e4224ec08c3d64b461be21a10e"
+      "sha256": "6a639bf2bca043c79ce95b410f5f0dd07c55c6993bafa26ff81f177cfc6abc8d"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.1.md",
+      "sha256": "c28d134bb26910f43241b56d7095fddc4880bb8ae5de8ba0214874719cece400"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.1.json",
-      "sha256": "8431361cc76f83f5356c316725df5c8a7c0c8a8bd501de69b9265a41b80be1cb"
+      "sha256": "b8e782f3ac93197e0fdf86c9bcd7f3430e7bea7f1218d48f4c875cb97769733d"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.1.md",
+      "sha256": "0774f14e2897c5d17db21ef5ad12c11341c1b8b0ad901e5fa6145c68336d7f55"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.3.json",
-      "sha256": "d9eb0ed520d3a84ef17d6fafce3a89a98d2994b805dabbab9cc2ea96862b55f3"
+      "sha256": "ed1b990d15678d5f7b8d5b7609e916f1fd04e3ab3439dbf277fd4a208687864b"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.3.md",
+      "sha256": "a6491f0e3f8d84e67225fb5ce2efd05721b9f50881f5f31461e6e5dd3d70711b"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.4-fresh-001.json",
-      "sha256": "73fc14947fb7c0979f91bd688d93bb00fa30adfcd8421c14ba9fc3ca55f6b7d1"
+      "sha256": "cf79cc2e699485580f3c0f3eec5968e248d45cf858fcdb86cee5108d08d12841"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.4-fresh-001.md",
+      "sha256": "798b9acc6e3767cfc09721dcd5691cb6f7c047855063d42b99e1a5fc5f198eeb"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.4.json",
-      "sha256": "ec6b99974feae3453bb5dfe1f9873161c6485d2f4a1a42c7660f8fba8a6440ea"
+      "sha256": "a05e8493f571da8f1290098a638d8d1b19013cd0b65ce9dd84ace7e7a0fc3bb4"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.4.md",
+      "sha256": "2118fd79560a489f89178c199a87f4e4dbcb9487a2079709bf79461a32abfcdc"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.5-full.json",
-      "sha256": "27cf2a2c119e5f474bc712d9ac64e52bc59300f7812da2859ccf647a64d8b27a"
+      "sha256": "42b0e3859bb3e9e30eccfa5e91723ac8741de7c19fcdc13e921734a98955d1d5"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.5-full.md",
+      "sha256": "4ef97142d670d5064fd8b27b8065e43d0b3e7cdaec3fed403c1553d505c341cf"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.6-fresh-tasks.json",
-      "sha256": "3bcc9ee6abcb44c67e55d462b281217a91881bce5fe61eb9649d0410373ea00d"
+      "sha256": "722108403e3120b2e972d7b533c2ed8cc2d817f0f7c169beb01f5de2ad6d2240"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.6-fresh-tasks.md",
+      "sha256": "8163e704662f7bd064ba75dca3a0e484a7c38fa4c9bc3d54b874aa9786faf84b"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.6-full-002.json",
-      "sha256": "39d446e4abfe1015ee78bffadd77d4f845044cf37c1020a39bebcc61dba60be8"
+      "sha256": "783675fe8866a57715ba13b9256bf79162048c3eac64bd8f08c9ce02ee8e56d0"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.6-full-002.md",
+      "sha256": "ad3e4a11c20e984afa99e918c12701b3449e8c206e59e0d93f9fa202bd84fea9"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.6-full.json",
-      "sha256": "75f3eb7a28252007c1448a1812b0b2b914f1485dd2e3dd7163ff546e2f243290"
+      "sha256": "a1c185359f98492e8042b8c7db3ffd776d2782110b304770d4e2bb2159945f42"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.6-full.md",
+      "sha256": "67805e766412ec74de4f5869691c0b2fe439766f662f36b7e9429090e8507046"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.json",
-      "sha256": "2fce65617ae5bf0b2062f5ecf29fbee14db0ce249f2389010e0b7cf018fc10fb"
+      "sha256": "da19e36f2b7fc2c5c319f4200bc39d1fde2de2e4ee9488d12158b938d716aae6"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.md",
+      "sha256": "b3c3ba467839611a16b3f187dee296a3bb44fb611af95d1c75a835e9777f7991"
     },
     {
       "path": "benchmarks/custom/sets/router-shadow-pilot.json",
-      "sha256": "008554e5a9795059f6fe0ec5b97c666def6ed4e0a161c95bd4005d8cf758d3e5"
+      "sha256": "106dcac81119e003e3b9c5533548138f251de2aa5472ffe187820ea45c22ea04"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot.md",
+      "sha256": "67635da9cc46ae2e08b661c24822404944b05b16e9287e376cac86d297d62e23"
+    },
+    {
+      "path": "benchmarks/custom/setup-stop-context.json",
+      "sha256": "0d9b3cfc4ef3f49049bd5b9e545c4e2b21b409349ae5eede734624ff9115ef16"
     },
     {
       "path": "benchmarks/custom/synthetic-task-bundle.zip",
-      "sha256": "234671bb6c4f5924f3cb700e6b41e030c07eacac3e10a5967f6c680eb352752b"
+      "sha256": "1766304d1fd9df63f34f26f93324009db30ab699578c4bb357e9e2738b84881c"
     },
     {
       "path": "benchmarks/official-30/INDEX.md",
@@ -249,7 +853,7 @@
     },
     {
       "path": "benchmarks/official-30/README.md",
-      "sha256": "4f01896e0d95d4c393084110b84a95de6252bbec28c53122f08d31a3df5bf7e7"
+      "sha256": "e0970e00d264a9fb59912ed9dc355249de005529e7ac6df8ef9987544c6f5ab6"
     },
     {
       "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",

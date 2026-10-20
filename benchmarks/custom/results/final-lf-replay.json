@@ -1,0 +1,310 @@
+{
+  "format_version": 2,
+  "set_id": "final-lf-replay",
+  "entries": {
+    "LSE-008": [
+      {
+        "result_id": "R-cd16ef0faea4fa",
+        "entry_key": "final-lf-replay/LSE-008",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "LF_NORMALIZATION_SEMANTIC_FAIL",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LSE-008",
+          "status": "LF_NORMALIZATION_SEMANTIC_FAIL"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "78e46f8e791f41e73bf27ced50560cfd18af429de67e11817a1240228c6fc69e",
+        "json_pointer": "/runs/0",
+        "reported_task_id": "LSE-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "ea2a4fcb44f90694a3d4b961e84165aeb14db1dbeaa843f871d5bcbc947ddf46",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-a28ed96178bc4f",
+        "entry_key": "final-lf-replay/LSE-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "LF_NORMALIZATION_SEMANTIC_FAIL",
+        "local_status": "LF_NORMALIZATION_SEMANTIC_FAIL",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LSE-008",
+          "status": "LF_NORMALIZATION_SEMANTIC_FAIL",
+          "LF_NORMALIZED_REVIEW_CREDITS": null
+        },
+        "source_file": "runs/LSE-008/result.json",
+        "validation_pass": null,
+        "source_sha256": "e9f1de65626f5e724140e74d79121891047b9e3649c4e711b94d323d54d10013",
+        "json_pointer": "",
+        "reported_task_id": "LSE-008",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "ea2a4fcb44f90694a3d4b961e84165aeb14db1dbeaa843f871d5bcbc947ddf46",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "LSE-009": [
+      {
+        "result_id": "R-82d804c18b3bf6",
+        "entry_key": "final-lf-replay/LSE-009",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "LF_NORMALIZATION_SEMANTIC_FAIL",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LSE-009",
+          "status": "LF_NORMALIZATION_SEMANTIC_FAIL"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "78e46f8e791f41e73bf27ced50560cfd18af429de67e11817a1240228c6fc69e",
+        "json_pointer": "/runs/1",
+        "reported_task_id": "LSE-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f2e0bff2da4260660ebdb1effd780b9ccbdae4296988eded8d64c80905ff0316",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-02781bbfff3772",
+        "entry_key": "final-lf-replay/LSE-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "LF_NORMALIZATION_SEMANTIC_FAIL",
+        "local_status": "LF_NORMALIZATION_SEMANTIC_FAIL",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LSE-009",
+          "status": "LF_NORMALIZATION_SEMANTIC_FAIL",
+          "LF_NORMALIZED_REVIEW_CREDITS": null
+        },
+        "source_file": "runs/LSE-009/result.json",
+        "validation_pass": null,
+        "source_sha256": "0e36be93f42195f496a91e2d2b65abfb790944fa56674a257d93587b944e02ca",
+        "json_pointer": "",
+        "reported_task_id": "LSE-009",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "f2e0bff2da4260660ebdb1effd780b9ccbdae4296988eded8d64c80905ff0316",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "LSE-010": [
+      {
+        "result_id": "R-62cf50a9bab08d",
+        "entry_key": "final-lf-replay/LSE-010",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "LF_NORMALIZATION_PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "runs/LSE-010/review/END.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LSE-010",
+          "status": "LF_NORMALIZATION_PASS",
+          "review_classification": "runs/LSE-010/review/END.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "78e46f8e791f41e73bf27ced50560cfd18af429de67e11817a1240228c6fc69e",
+        "json_pointer": "/runs/2",
+        "reported_task_id": "LSE-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "608ca9d1826e0c27b598febf164121cb13d807f64495cd5310aa0bcd54e3558e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-826facd99fbdad",
+        "entry_key": "final-lf-replay/LSE-010",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "LF_NORMALIZATION_PASS",
+        "local_status": "LF_NORMALIZATION_PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LSE-010",
+          "status": "LF_NORMALIZATION_PASS",
+          "LF_NORMALIZED_REVIEW_CREDITS": 0.44604
+        },
+        "source_file": "runs/LSE-010/result.json",
+        "validation_pass": null,
+        "source_sha256": "07b625da34a21f0962243f472f8f90b03fd52d3f3e68171f95f3e7efd938f7f1",
+        "json_pointer": "",
+        "reported_task_id": "LSE-010",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "608ca9d1826e0c27b598febf164121cb13d807f64495cd5310aa0bcd54e3558e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "LSE-011": [
+      {
+        "result_id": "R-bfa86ebe28c49a",
+        "entry_key": "final-lf-replay/LSE-011",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "LF_NORMALIZATION_PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "runs/LSE-011/review/END.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LSE-011",
+          "status": "LF_NORMALIZATION_PASS",
+          "review_classification": "runs/LSE-011/review/END.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "78e46f8e791f41e73bf27ced50560cfd18af429de67e11817a1240228c6fc69e",
+        "json_pointer": "/runs/3",
+        "reported_task_id": "LSE-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "8c16d53a6f071144314bc5dcb4f122d2c2cb98b815727aa16ee6db157b60bba6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1b6148d106bce0",
+        "entry_key": "final-lf-replay/LSE-011",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "LF_NORMALIZATION_PASS",
+        "local_status": "LF_NORMALIZATION_PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LSE-011",
+          "status": "LF_NORMALIZATION_PASS",
+          "LF_NORMALIZED_REVIEW_CREDITS": 0.47954
+        },
+        "source_file": "runs/LSE-011/result.json",
+        "validation_pass": null,
+        "source_sha256": "e9c6f11e45b9509e5bd58c7e621a080a27b4c989905ba05c61b415f0ef936e32",
+        "json_pointer": "",
+        "reported_task_id": "LSE-011",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "8c16d53a6f071144314bc5dcb4f122d2c2cb98b815727aa16ee6db157b60bba6",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "LSE-012": [
+      {
+        "result_id": "R-a1916b4a6bb4c5",
+        "entry_key": "final-lf-replay/LSE-012",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "LF_NORMALIZATION_PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "runs/LSE-012/review/END.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LSE-012",
+          "status": "LF_NORMALIZATION_PASS",
+          "review_classification": "runs/LSE-012/review/END.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "78e46f8e791f41e73bf27ced50560cfd18af429de67e11817a1240228c6fc69e",
+        "json_pointer": "/runs/4",
+        "reported_task_id": "LSE-012",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bf2961007a5191ac588b9cc6f2e86b6b28fcec23d3b20c8b4877a15535bf92fd",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c83c6395afe86e",
+        "entry_key": "final-lf-replay/LSE-012",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": "LF_NORMALIZATION_PASS",
+        "local_status": "LF_NORMALIZATION_PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LSE-012",
+          "status": "LF_NORMALIZATION_PASS",
+          "LF_NORMALIZED_REVIEW_CREDITS": 0.46789
+        },
+        "source_file": "runs/LSE-012/result.json",
+        "validation_pass": null,
+        "source_sha256": "83650348e3fda0c811f526cab8042cc2c03a0d1fe98358c72d3936ec908e7e15",
+        "json_pointer": "",
+        "reported_task_id": "LSE-012",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "bf2961007a5191ac588b9cc6f2e86b6b28fcec23d3b20c8b4877a15535bf92fd",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/final-lf-replay/RESULTS_FINAL_LF_REPLAY_JA.md",
+      "source_report": "final-lf-replay/RESULTS_FINAL_LF_REPLAY_JA.md",
+      "source_sha256": "33dda89fd29856c80ab959a893fad617aa4b5210cec339088b0493705c5fa81c",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 5,
+    "linked_entries": 5,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 10
+  }
+}

@@ -1,5 +1,6 @@
 {
   "set_id": "final-lf-replay",
+  "display_name": "実装・検証手順の比較 / final-lf-replay",
   "entry_count": 5,
   "tasks": [
     {
@@ -86,10 +87,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LSE-008",
       "set_id": "final-lf-replay",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/final-lf-replay/LSE-008",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-cd16ef0faea4fa",
+        "R-a28ed96178bc4f"
+      ],
+      "result_page": "sets/final-lf-replay.md#lse-008",
+      "result_data": "results/final-lf-replay.json"
     },
     {
       "task_id": "LSE-009",
@@ -175,10 +179,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LSE-009",
       "set_id": "final-lf-replay",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/final-lf-replay/LSE-009",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-82d804c18b3bf6",
+        "R-02781bbfff3772"
+      ],
+      "result_page": "sets/final-lf-replay.md#lse-009",
+      "result_data": "results/final-lf-replay.json"
     },
     {
       "task_id": "LSE-010",
@@ -264,10 +271,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LSE-010",
       "set_id": "final-lf-replay",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/final-lf-replay/LSE-010",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-62cf50a9bab08d",
+        "R-826facd99fbdad"
+      ],
+      "result_page": "sets/final-lf-replay.md#lse-010",
+      "result_data": "results/final-lf-replay.json"
     },
     {
       "task_id": "LSE-011",
@@ -354,10 +364,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LSE-011",
       "set_id": "final-lf-replay",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/final-lf-replay/LSE-011",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-bfa86ebe28c49a",
+        "R-1b6148d106bce0"
+      ],
+      "result_page": "sets/final-lf-replay.md#lse-011",
+      "result_data": "results/final-lf-replay.json"
     },
     {
       "task_id": "LSE-012",
@@ -443,26 +456,20 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LSE-012",
       "set_id": "final-lf-replay",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/final-lf-replay/LSE-012",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-a1916b4a6bb4c5",
+        "R-c83c6395afe86e"
+      ],
+      "result_page": "sets/final-lf-replay.md#lse-012",
+      "result_data": "results/final-lf-replay.json"
     }
   ],
   "result_summary": {
-    "set_id": "final-lf-replay",
-    "source_set": "final-lf-replay",
     "entries": 5,
-    "structured_result_records": 5,
-    "task_ids_with_structured_results": 5,
-    "task_ids_without_structured_results": [],
-    "historical_reports": [
-      {
-        "file": "results/final-lf-replay/RESULTS_FINAL_LF_REPLAY_JA.md",
-        "source_report": "final-lf-replay/RESULTS_FINAL_LF_REPLAY_JA.md",
-        "source_sha256": "33dda89fd29856c80ab959a893fad617aa4b5210cec339088b0493705c5fa81c"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 5,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 10
   }
 }

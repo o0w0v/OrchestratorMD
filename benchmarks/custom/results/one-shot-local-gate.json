@@ -1,0 +1,871 @@
+{
+  "format_version": 2,
+  "set_id": "one-shot-local-gate",
+  "entries": {
+    "OSL-001": [
+      {
+        "result_id": "R-75dc752f3a2a6c",
+        "entry_key": "one-shot-local-gate/OSL-001",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "duration_seconds": 69.468,
+          "usage": {
+            "ollama_input_tokens": 1624,
+            "ollama_output_tokens": 235,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 25.1675614
+          },
+          "repair_attempted": false,
+          "task_id": "OSL-001",
+          "group": "LOCAL_FIRST_FAIL"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "d21df23c2f048010fdd0cf0dbb80258a33be8e5e5e4be7f41cb0d17c7eab7cde",
+        "json_pointer": "/runs/0",
+        "reported_task_id": "OSL-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "024a473503dcd4168234325c28b52e4cfc3851db76d551c0d2b5127385de03fc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-0381cd3a71803b",
+        "entry_key": "one-shot-local-gate/OSL-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "OSL-001",
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "1f4aa35b231e809ee9eb80d3dc731d1f9023befcc296846a232f1b8bfffe3264",
+          "first_pass": false,
+          "duration_seconds": 69.468,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 1624,
+            "ollama_output_tokens": 235,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 25.1675614
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 1624,
+            "model_output_tokens": 235,
+            "Worker_seconds": 69.468
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/OSL-001/result.json",
+        "validation_pass": null,
+        "source_sha256": "344a305b858eedfd1cf8507a9d453448fe89afdd6093df29259f322b22869614",
+        "json_pointer": "",
+        "reported_task_id": "OSL-001",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "024a473503dcd4168234325c28b52e4cfc3851db76d551c0d2b5127385de03fc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "OSL-002": [
+      {
+        "result_id": "R-64ad3dc3f8ea17",
+        "entry_key": "one-shot-local-gate/OSL-002",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "duration_seconds": 54.235,
+          "usage": {
+            "ollama_input_tokens": 1285,
+            "ollama_output_tokens": 81,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.9667609
+          },
+          "repair_attempted": false,
+          "task_id": "OSL-002",
+          "group": "LOCAL_FIRST_PASS"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "d21df23c2f048010fdd0cf0dbb80258a33be8e5e5e4be7f41cb0d17c7eab7cde",
+        "json_pointer": "/runs/1",
+        "reported_task_id": "OSL-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c48de9822b268df90f66048d2e1fd841619c23ddae36baea905c29fca5efdfb7",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-f4655185a569de",
+        "entry_key": "one-shot-local-gate/OSL-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "OSL-002",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "33cddea0ea4738f354cf007e6b3c1bc3f7f6b0e5e2ad915716e315bf981f29d6",
+          "first_pass": true,
+          "tested_content_id": "ce6f20175da29ab6ba59f56461d3e199e8066f4c0db4385bfc77de27d5b48a94",
+          "duration_seconds": 54.235,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 1285,
+            "ollama_output_tokens": 81,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.9667609
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 1285,
+            "model_output_tokens": 81,
+            "Worker_seconds": 54.235
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/OSL-002/result.json",
+        "validation_pass": null,
+        "source_sha256": "0f95d8813431cdb752f386fb65e72b10400fecd7247f28e78b577274e071471b",
+        "json_pointer": "",
+        "reported_task_id": "OSL-002",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "c48de9822b268df90f66048d2e1fd841619c23ddae36baea905c29fca5efdfb7",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "OSL-003": [
+      {
+        "result_id": "R-20fc0c4864dbf5",
+        "entry_key": "one-shot-local-gate/OSL-003",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "LINT_REPAIR_NOT_ELIGIBLE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "duration_seconds": 56.047,
+          "usage": {
+            "ollama_input_tokens": 713,
+            "ollama_output_tokens": 194,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.3409204
+          },
+          "repair_attempted": false,
+          "task_id": "OSL-003",
+          "group": "LOCAL_FIRST_FAIL"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "d21df23c2f048010fdd0cf0dbb80258a33be8e5e5e4be7f41cb0d17c7eab7cde",
+        "json_pointer": "/runs/2",
+        "reported_task_id": "OSL-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a57678821f0bd34e0c908924699bc1a2b5b7ac6c0be1965dfbc1c0c166cd955b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1e2e52144ab81d",
+        "entry_key": "one-shot-local-gate/OSL-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "OSL-003",
+          "status": "ESCALATE",
+          "reason": "LINT_REPAIR_NOT_ELIGIBLE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "369a2fbb17fd4f45c3485c19a55efd92b0a873fc5a632b4fbaed887aeff55bbc",
+          "first_pass": false,
+          "duration_seconds": 56.047,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 713,
+            "ollama_output_tokens": 194,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.3409204
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 713,
+            "model_output_tokens": 194,
+            "Worker_seconds": 56.047
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/OSL-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "97d21db4081acb20f64a76e23a77aefca488b3f4466009cba0d11db9c571f832",
+        "json_pointer": "",
+        "reported_task_id": "OSL-003",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "a57678821f0bd34e0c908924699bc1a2b5b7ac6c0be1965dfbc1c0c166cd955b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "OSL-004": [
+      {
+        "result_id": "R-136c0dc1ca63bf",
+        "entry_key": "one-shot-local-gate/OSL-004",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "FORMAT_UNSUPPORTED_NORMALIZATION",
+          "failure_domain": "formatter_unsupported",
+          "first_pass": null,
+          "duration_seconds": 10.0,
+          "usage": {
+            "ollama_input_tokens": 1362,
+            "ollama_output_tokens": 195,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.9545238
+          },
+          "repair_attempted": false,
+          "task_id": "OSL-004",
+          "group": "LOCAL_FIRST_FAIL"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "d21df23c2f048010fdd0cf0dbb80258a33be8e5e5e4be7f41cb0d17c7eab7cde",
+        "json_pointer": "/runs/3",
+        "reported_task_id": "OSL-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f98fcd58a78071760171f7db0bdbd9b6d52fa39caefcc13df9478d3326943224",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-fa187917c89723",
+        "entry_key": "one-shot-local-gate/OSL-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "OSL-004",
+          "status": "ESCALATE",
+          "reason": "FORMAT_UNSUPPORTED_NORMALIZATION",
+          "failure_domain": "formatter_unsupported",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "d2921f848d25e9423ab348e05bdb86d69c857515402f6773defcf89130c8cdf1",
+          "duration_seconds": 10.0,
+          "repair_attempted": false,
+          "first_pass": null,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 1362,
+            "ollama_output_tokens": 195,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.9545238
+          },
+          "metrics": {
+            "First_PASS": null,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 1362,
+            "model_output_tokens": 195,
+            "Worker_seconds": 10.0
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/OSL-004/result.json",
+        "validation_pass": null,
+        "source_sha256": "f4b316dd5778f8d76fb957ab356e1467a5be10ac0b71e9a2f97af5eac9e59c71",
+        "json_pointer": "",
+        "reported_task_id": "OSL-004",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "f98fcd58a78071760171f7db0bdbd9b6d52fa39caefcc13df9478d3326943224",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "OSL-005": [
+      {
+        "result_id": "R-cd3d4ae853c3b3",
+        "entry_key": "one-shot-local-gate/OSL-005",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "FORMAT_UNSUPPORTED_NORMALIZATION",
+          "failure_domain": "formatter_unsupported",
+          "first_pass": null,
+          "duration_seconds": 9.985,
+          "usage": {
+            "ollama_input_tokens": 1377,
+            "ollama_output_tokens": 213,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.923164
+          },
+          "repair_attempted": false,
+          "task_id": "OSL-005",
+          "group": "LOCAL_FIRST_FAIL"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "d21df23c2f048010fdd0cf0dbb80258a33be8e5e5e4be7f41cb0d17c7eab7cde",
+        "json_pointer": "/runs/4",
+        "reported_task_id": "OSL-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "dd3f6ba09b5c81fb5da88576720b2540389c7a313a10efe96b7eccb89f89be75",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-975980e2aba2d7",
+        "entry_key": "one-shot-local-gate/OSL-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "OSL-005",
+          "status": "ESCALATE",
+          "reason": "FORMAT_UNSUPPORTED_NORMALIZATION",
+          "failure_domain": "formatter_unsupported",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "482efc472604adaaf08a262dc53abcab5ad419e8b4c0dfa00d48d1661f500b04",
+          "duration_seconds": 9.985,
+          "repair_attempted": false,
+          "first_pass": null,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 1377,
+            "ollama_output_tokens": 213,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 4.923164
+          },
+          "metrics": {
+            "First_PASS": null,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 1377,
+            "model_output_tokens": 213,
+            "Worker_seconds": 9.985
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/OSL-005/result.json",
+        "validation_pass": null,
+        "source_sha256": "afdfafe04e9f9db665c8b55234a6970c5be9130c64fd080546ba5d7bcce23527",
+        "json_pointer": "",
+        "reported_task_id": "OSL-005",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "dd3f6ba09b5c81fb5da88576720b2540389c7a313a10efe96b7eccb89f89be75",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "OSL-006": [
+      {
+        "result_id": "R-62a32398ed0660",
+        "entry_key": "one-shot-local-gate/OSL-006",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "duration_seconds": 52.156,
+          "usage": {
+            "ollama_input_tokens": 994,
+            "ollama_output_tokens": 128,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 3.3113194
+          },
+          "repair_attempted": false,
+          "task_id": "OSL-006",
+          "group": "LOCAL_FIRST_FAIL"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "d21df23c2f048010fdd0cf0dbb80258a33be8e5e5e4be7f41cb0d17c7eab7cde",
+        "json_pointer": "/runs/5",
+        "reported_task_id": "OSL-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "401fd573e19bcf6e1a42563c8ea6eda98418376232a3962b930f82c3746b1929",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-e0453a056cbadc",
+        "entry_key": "one-shot-local-gate/OSL-006",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "OSL-006",
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "65c2c7d17d21abe50a9a21070fb14dd76a81ba0a3bf54cf7978f05065f4a14d3",
+          "first_pass": false,
+          "duration_seconds": 52.156,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 994,
+            "ollama_output_tokens": 128,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 3.3113194
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 994,
+            "model_output_tokens": 128,
+            "Worker_seconds": 52.156
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/OSL-006/result.json",
+        "validation_pass": null,
+        "source_sha256": "17ba1a73b29b824c55b2554fff534be90f912c3ed11bc0c72bb9c40111fe8f28",
+        "json_pointer": "",
+        "reported_task_id": "OSL-006",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "401fd573e19bcf6e1a42563c8ea6eda98418376232a3962b930f82c3746b1929",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "OSL-007": [
+      {
+        "result_id": "R-4b15f254b7f52b",
+        "entry_key": "one-shot-local-gate/OSL-007",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "duration_seconds": 51.969,
+          "usage": {
+            "ollama_input_tokens": 3663,
+            "ollama_output_tokens": 181,
+            "ollama_cache_tokens": 593,
+            "ollama_duration_seconds": 6.2312798
+          },
+          "repair_attempted": false,
+          "task_id": "OSL-007",
+          "group": "LOCAL_FIRST_FAIL"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "d21df23c2f048010fdd0cf0dbb80258a33be8e5e5e4be7f41cb0d17c7eab7cde",
+        "json_pointer": "/runs/6",
+        "reported_task_id": "OSL-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a1d7a0fab96131941ddaccce8f202bc81d9deb9ad2f6512819d3bf38b525b24f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-a20a4b4b814058",
+        "entry_key": "one-shot-local-gate/OSL-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "OSL-007",
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "172e0a4104e7f1387986eb3e8a7ef2a839daac6661ee8d6d9d05ce9a8f670412",
+          "first_pass": false,
+          "duration_seconds": 51.969,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 3663,
+            "ollama_output_tokens": 181,
+            "ollama_cache_tokens": 593,
+            "ollama_duration_seconds": 6.2312798
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 3663,
+            "model_output_tokens": 181,
+            "Worker_seconds": 51.969
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/OSL-007/result.json",
+        "validation_pass": null,
+        "source_sha256": "0306ee4be5201ed595ea2e57787e6c2a110c931ad9fc16be504c250868cf27a1",
+        "json_pointer": "",
+        "reported_task_id": "OSL-007",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "a1d7a0fab96131941ddaccce8f202bc81d9deb9ad2f6512819d3bf38b525b24f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "OSL-008": [
+      {
+        "result_id": "R-33fe33aab59cb5",
+        "entry_key": "one-shot-local-gate/OSL-008",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "duration_seconds": 56.953,
+          "usage": {
+            "ollama_input_tokens": 3415,
+            "ollama_output_tokens": 205,
+            "ollama_cache_tokens": 693,
+            "ollama_duration_seconds": 10.0895435
+          },
+          "repair_attempted": false,
+          "task_id": "OSL-008",
+          "group": "LOCAL_FIRST_FAIL"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "d21df23c2f048010fdd0cf0dbb80258a33be8e5e5e4be7f41cb0d17c7eab7cde",
+        "json_pointer": "/runs/7",
+        "reported_task_id": "OSL-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "17eaede9ac5eb97484ddb3f2f286d8256d229059045b7f56417e284f3ce72dfc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-21fb172c57b6ce",
+        "entry_key": "one-shot-local-gate/OSL-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "OSL-008",
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "19897e465168dad84ffd30e402141acbe047e52f8e11e613aa2397664920590a",
+          "first_pass": false,
+          "duration_seconds": 56.953,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 3415,
+            "ollama_output_tokens": 205,
+            "ollama_cache_tokens": 693,
+            "ollama_duration_seconds": 10.0895435
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 3415,
+            "model_output_tokens": 205,
+            "Worker_seconds": 56.953
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/OSL-008/result.json",
+        "validation_pass": null,
+        "source_sha256": "f31a3f91478909a4bc2de4022e0335335d11ddaed42e9b746a101a93871be250",
+        "json_pointer": "",
+        "reported_task_id": "OSL-008",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "17eaede9ac5eb97484ddb3f2f286d8256d229059045b7f56417e284f3ce72dfc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/one-shot-local-gate/RESULTS_JA.md",
+      "source_report": "one-shot-local-gate/RESULTS_JA.md",
+      "source_sha256": "289e111739a948b493057f9af2c552ca17c59ed287eef81731fb87a9af487e3f",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 8,
+    "linked_entries": 8,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 16
+  }
+}

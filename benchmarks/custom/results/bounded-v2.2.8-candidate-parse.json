@@ -1,0 +1,178 @@
+{
+  "format_version": 2,
+  "set_id": "bounded-v2.2.8-candidate-parse",
+  "entries": {
+    "PAR228-001": [
+      {
+        "result_id": "R-eeb11a3a16a72d",
+        "entry_key": "bounded-v2.2.8-candidate-parse/PAR228-001",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PAR228-001",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "tokens": {
+            "ollama_input_tokens": 854,
+            "ollama_output_tokens": 31,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 7.6840546
+          },
+          "wall_seconds": 51.625
+        },
+        "source_file": "live/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "3f5c238fb6760554f506d0fe7d0398f2ecd34098edf74a93bc57bfb9571e3ec9",
+        "json_pointer": "/0",
+        "reported_task_id": "PAR228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "17c0a43fefb0a0e272bed9917ebec7e2d23593f6b5c97e65d9c1a5e4b33fb54a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "PAR228-002": [
+      {
+        "result_id": "R-596742d6d19685",
+        "entry_key": "bounded-v2.2.8-candidate-parse/PAR228-002",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PAR228-002",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "tokens": {
+            "ollama_input_tokens": 2698,
+            "ollama_output_tokens": 125,
+            "ollama_cache_tokens": 557,
+            "ollama_duration_seconds": 10.6078736
+          },
+          "wall_seconds": 57.172
+        },
+        "source_file": "live/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "3f5c238fb6760554f506d0fe7d0398f2ecd34098edf74a93bc57bfb9571e3ec9",
+        "json_pointer": "/1",
+        "reported_task_id": "PAR228-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "ba8751dbf0e995ab0cbd74f87e5549741a02ba529ce01a5d06b7ea53f18dda52",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "PAR228-003": [
+      {
+        "result_id": "R-10bc0fd8c1d186",
+        "entry_key": "bounded-v2.2.8-candidate-parse/PAR228-003",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PAR228-003",
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "tokens": {
+            "ollama_input_tokens": 618,
+            "ollama_output_tokens": 45,
+            "ollama_cache_tokens": 52,
+            "ollama_duration_seconds": 3.546739
+          },
+          "wall_seconds": 32.125
+        },
+        "source_file": "live/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "3f5c238fb6760554f506d0fe7d0398f2ecd34098edf74a93bc57bfb9571e3ec9",
+        "json_pointer": "/2",
+        "reported_task_id": "PAR228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "1b9feb17f252250173210c3867d3e0a53290b94adc2c88bd450d6ae936defd6f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "PAR228-004": [
+      {
+        "result_id": "R-59f1e1ec8094f7",
+        "entry_key": "bounded-v2.2.8-candidate-parse/PAR228-004",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PAR228-004",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "tokens": {
+            "ollama_input_tokens": 2651,
+            "ollama_output_tokens": 125,
+            "ollama_cache_tokens": 539,
+            "ollama_duration_seconds": 10.1763594
+          },
+          "wall_seconds": 54.406
+        },
+        "source_file": "live/run-history.json",
+        "validation_pass": null,
+        "source_sha256": "3f5c238fb6760554f506d0fe7d0398f2ecd34098edf74a93bc57bfb9571e3ec9",
+        "json_pointer": "/3",
+        "reported_task_id": "PAR228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d658916f3340904feace8babc6613cf282fc67017ae8ea548d57806ecb518c9b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/bounded-v2.2.8-candidate-parse/RESULTS_JA.md",
+      "source_report": "bounded-v2.2.8-candidate-parse/RESULTS_JA.md",
+      "source_sha256": "a1c40ebc0e6db2b27f40e96a2663bdb0d0db9950c0a267bb95373614d4657a1c",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 4,
+    "linked_entries": 4,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 4
+  }
+}

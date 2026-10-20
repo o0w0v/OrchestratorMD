@@ -1,0 +1,1940 @@
+{
+  "format_version": 2,
+  "set_id": "bounded-2.2.8-economic-retry",
+  "entries": {
+    "ECR228-001": [
+      {
+        "result_id": "R-8d1422afe9d06b",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-001",
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": false,
+          "group": "LOCAL_FIRST_FAIL",
+          "CODEX_ONLY_CREDITS": 5.41207,
+          "LOCAL_ROUTED_CREDITS": 4.38694,
+          "CREDITS_SAVED": 1.0251299999999999,
+          "CREDIT_REDUCTION_RATE": 0.18941551014676453,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 4.20329,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 3.17816,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46527,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16831,
+                "output_tokens": 875,
+                "total_tokens": 47402
+              },
+              "credits": 1.20878,
+              "wall_seconds": 47.73399999999674
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 1.20878,
+          "Local_usage": {
+            "ollama_input_tokens": 1559,
+            "ollama_output_tokens": 135,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 18.9990749
+          },
+          "Local_worker_seconds": 63.968,
+          "CODEX_ONLY_COMPONENT_WALL": 263.57799999999406,
+          "LOCAL_ROUTED_COMPONENT_WALL": 347.0920000000107,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 167.04699999999139
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/0",
+        "reported_task_id": "ECR228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "cf02f1df8cbc38524e8577503d38bc009dcfe8841b85c7d69ff4b42b305553e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-3915818c336250",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-001",
+          "local_status": "ESCALATE",
+          "local_adopted": false
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/0",
+        "reported_task_id": "ECR228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "cf02f1df8cbc38524e8577503d38bc009dcfe8841b85c7d69ff4b42b305553e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-4f685566b0d914",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-001",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "All mandatory checks and the scope guard passed. The diff stays within the declared region and implements the exact three-line receipt, counting each row by execution status without modifying records.",
+            "usage": {
+              "input_tokens": 33235,
+              "cached_input_tokens": 14464,
+              "output_tokens": 260,
+              "uncached_input_tokens": 18771,
+              "total_tokens": 33495
+            },
+            "credits": 1.07587,
+            "wall_seconds": 26.5
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-001/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "4488a434688ac52d9f425d75a26ab9c43e71ec70c2490268fba61ed829fbd991",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "cf02f1df8cbc38524e8577503d38bc009dcfe8841b85c7d69ff4b42b305553e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-002": [
+      {
+        "result_id": "R-580bdee1a25004",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-002",
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": false,
+          "group": "LOCAL_FIRST_FAIL",
+          "CODEX_ONLY_CREDITS": null,
+          "LOCAL_ROUTED_CREDITS": null,
+          "CREDITS_SAVED": null,
+          "CREDIT_REDUCTION_RATE": null,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.5934600000000003,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 3.55989,
+          "phase_usage": {
+            "planner": {
+              "credits": null,
+              "wall_seconds": 57.42200000000594
+            }
+          },
+          "SHARED_PLANNER_CREDITS": null,
+          "Local_usage": {
+            "ollama_input_tokens": 1042,
+            "ollama_output_tokens": 102,
+            "ollama_cache_tokens": 91,
+            "ollama_duration_seconds": 8.0807629
+          },
+          "Local_worker_seconds": 53.547,
+          "CODEX_ONLY_COMPONENT_WALL": 211.60800000000745,
+          "LOCAL_ROUTED_COMPONENT_WALL": 258.59400000000596,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 103.59299999999348
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/1",
+        "reported_task_id": "ECR228-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c38fa4ed83f14c5489ca28df65439e1c8e71d8ee3b826bf317296dd37e11de61",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b53133244fb396",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-002",
+          "local_status": "ESCALATE",
+          "local_adopted": false
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/1",
+        "reported_task_id": "ECR228-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c38fa4ed83f14c5489ca28df65439e1c8e71d8ee3b826bf317296dd37e11de61",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-5d609607360282",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-002",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the permitted marker region and renders both Option<usize> fields exactly as required, including zero and usize::MAX. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 32699,
+              "cached_input_tokens": 14464,
+              "output_tokens": 261,
+              "uncached_input_tokens": 18235,
+              "total_tokens": 32960
+            },
+            "credits": 1.04932,
+            "wall_seconds": 23.906000000002678
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-002/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "18a2886233128005c8498685df5e9083dfb0dc235d9d2097e60b7aa6daad3da4",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "c38fa4ed83f14c5489ca28df65439e1c8e71d8ee3b826bf317296dd37e11de61",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-003": [
+      {
+        "result_id": "R-3ef7cbf7a52cf9",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-003",
+          "Local_status": "ESCALATE",
+          "Local_reason": "FORMAT_UNSUPPORTED_NORMALIZATION",
+          "Local_failure_domain": "formatter_unsupported",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": false,
+          "group": "LOCAL_FIRST_FAIL",
+          "CODEX_ONLY_CREDITS": 3.22452,
+          "LOCAL_ROUTED_CREDITS": 6.20762,
+          "CREDITS_SAVED": -2.9831000000000003,
+          "CREDIT_REDUCTION_RATE": -0.9251299418207982,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 1.9213900000000002,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 4.90449,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 62238,
+                "cached_input_tokens": 45056,
+                "uncached_input_tokens": 17182,
+                "output_tokens": 875,
+                "total_tokens": 63113
+              },
+              "credits": 1.30313,
+              "wall_seconds": 62.63999999999942
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 1.30313,
+          "Local_usage": {
+            "ollama_input_tokens": 1296,
+            "ollama_output_tokens": 37,
+            "ollama_cache_tokens": 91,
+            "ollama_duration_seconds": 3.6492937
+          },
+          "Local_worker_seconds": 9.11,
+          "CODEX_ONLY_COMPONENT_WALL": 210.90599999998813,
+          "LOCAL_ROUTED_COMPONENT_WALL": 314.6270000000071,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 96.89099999998871
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/2",
+        "reported_task_id": "ECR228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "cd300f29f8942b063c94aa97f7a8cef13c05a1765fe20ed45a77aea914150db1",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-563288c97bddcb",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-003",
+          "local_status": "ESCALATE",
+          "local_adopted": false
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/2",
+        "reported_task_id": "ECR228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "cd300f29f8942b063c94aa97f7a8cef13c05a1765fe20ed45a77aea914150db1",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b5ee76ecb27f80",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-003",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the permitted function body. It returns each present event with its row’s schema version as a reference to the original value, in row order, without filtering or modifying records. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32889,
+              "cached_input_tokens": 26496,
+              "output_tokens": 289,
+              "uncached_input_tokens": 6393,
+              "total_tokens": 33178
+            },
+            "credits": 0.52438,
+            "wall_seconds": 23.687999999994645
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-003/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "9653d5a62f9c0cb6c2b8db5ffd20ccb5abb09f6809e315c4b49370714940f5a8",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "cd300f29f8942b063c94aa97f7a8cef13c05a1765fe20ed45a77aea914150db1",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-004": [
+      {
+        "result_id": "R-5bc8f9eeeabcf9",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-004",
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": false,
+          "group": "LOCAL_FIRST_FAIL",
+          "CODEX_ONLY_CREDITS": 3.4666200000000003,
+          "LOCAL_ROUTED_CREDITS": 3.31451,
+          "CREDITS_SAVED": 0.1521100000000004,
+          "CREDIT_REDUCTION_RATE": 0.04387847528716744,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.28894,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 2.13683,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46495,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16799,
+                "output_tokens": 757,
+                "total_tokens": 47252
+              },
+              "credits": 1.17768,
+              "wall_seconds": 51.61000000000058
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 1.17768,
+          "Local_usage": {
+            "ollama_input_tokens": 1530,
+            "ollama_output_tokens": 62,
+            "ollama_cache_tokens": 91,
+            "ollama_duration_seconds": 5.7725361
+          },
+          "Local_worker_seconds": 45.813,
+          "CODEX_ONLY_COMPONENT_WALL": 239.71899999999732,
+          "LOCAL_ROUTED_COMPONENT_WALL": 281.0490000000044,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 137.43799999999464
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/3",
+        "reported_task_id": "ECR228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6f257e10d66effe55538c69d9754439bc5915013ec6e097d2146b7f35289414b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-22b3941c4814ca",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-004",
+          "local_status": "ESCALATE",
+          "local_adopted": false
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/3",
+        "reported_task_id": "ECR228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "6f257e10d66effe55538c69d9754439bc5915013ec6e097d2146b7f35289414b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-20e3475cde5620",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-004",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff returns a borrowed slice from the first Deny policy, including an empty reason, and preserves record order. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 33167,
+              "cached_input_tokens": 26496,
+              "output_tokens": 300,
+              "uncached_input_tokens": 6671,
+              "total_tokens": 33467
+            },
+            "credits": 0.54103,
+            "wall_seconds": 37.48500000000058
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-004/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "a7f445ed8ffc602604a54e5ff9a66eb7e3a0304790dea8b56fffa88eb7f936a0",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "6f257e10d66effe55538c69d9754439bc5915013ec6e097d2146b7f35289414b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-005": [
+      {
+        "result_id": "R-f9755218445148",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-005",
+          "Local_status": "ESCALATE",
+          "Local_reason": "LINT_REPAIR_NOT_ELIGIBLE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": false,
+          "group": "LOCAL_FIRST_FAIL",
+          "CODEX_ONLY_CREDITS": 6.93834,
+          "LOCAL_ROUTED_CREDITS": null,
+          "CREDITS_SAVED": null,
+          "CREDIT_REDUCTION_RATE": null,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 5.759510000000001,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": null,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46318,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16622,
+                "output_tokens": 797,
+                "total_tokens": 47115
+              },
+              "credits": 1.17883,
+              "wall_seconds": 67.10899999999674
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 1.17883,
+          "Local_usage": {
+            "ollama_input_tokens": 920,
+            "ollama_output_tokens": 42,
+            "ollama_cache_tokens": 91,
+            "ollama_duration_seconds": 3.8900532
+          },
+          "Local_worker_seconds": 54.469,
+          "CODEX_ONLY_COMPONENT_WALL": 404.49999999998545,
+          "LOCAL_ROUTED_COMPONENT_WALL": 418.014999999973,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 258.5159999999887
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/4",
+        "reported_task_id": "ECR228-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d336d1a70282536dabe73625f4b958bb45d986c05e7fa57ff65c90c55c58d78c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c3adf5624ec22f",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-005",
+          "local_status": "ESCALATE",
+          "local_adopted": false
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/4",
+        "reported_task_id": "ECR228-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d336d1a70282536dabe73625f4b958bb45d986c05e7fa57ff65c90c55c58d78c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c8455593195fee",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-005",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-02/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The row-wise saturating subtraction satisfies the frozen contract across the full u64 range, preserves order and duplicates, and changes only the allowed region. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 32436,
+              "cached_input_tokens": 26496,
+              "output_tokens": 295,
+              "uncached_input_tokens": 5940,
+              "total_tokens": 32731
+            },
+            "credits": 0.50323,
+            "wall_seconds": 21.593999999997322
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-005/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "a64ebfb68f231e3a02155826339f8606aacdc82bf85d3db03fd9924c6f1bae34",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d336d1a70282536dabe73625f4b958bb45d986c05e7fa57ff65c90c55c58d78c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-006": [
+      {
+        "result_id": "R-fb23075c886871",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-006",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-006",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": true,
+          "group": "LF_CANONICALIZED_PASS",
+          "CODEX_ONLY_CREDITS": 3.90623,
+          "LOCAL_ROUTED_CREDITS": 1.9417,
+          "CREDITS_SAVED": 1.9645299999999999,
+          "CREDIT_REDUCTION_RATE": 0.5029222549619454,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.51521,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 0.55068,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46517,
+                "cached_input_tokens": 26624,
+                "uncached_input_tokens": 19893,
+                "output_tokens": 1053,
+                "total_tokens": 47570
+              },
+              "credits": 1.39102,
+              "wall_seconds": 58.03100000000268
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 1.39102,
+          "Local_usage": {
+            "ollama_input_tokens": 1005,
+            "ollama_output_tokens": 92,
+            "ollama_cache_tokens": 91,
+            "ollama_duration_seconds": 7.3622039
+          },
+          "Local_worker_seconds": 54.062,
+          "CODEX_ONLY_COMPONENT_WALL": 238.68700000000536,
+          "LOCAL_ROUTED_COMPONENT_WALL": 136.562,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 127.125
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/5",
+        "reported_task_id": "ECR228-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "64f01ead22db5b94f099efa1418ba0caba921b07c4ae455a361984f212bd5a45",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-166682dc917198",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-006",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-006",
+          "local_status": "PASS",
+          "local_adopted": true
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/5",
+        "reported_task_id": "ECR228-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "64f01ead22db5b94f099efa1418ba0caba921b07c4ae455a361984f212bd5a45",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-58f21980db09a8",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-006",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate compares each source byte-for-byte with the immediately preceding source, returns true for the first row, and handles empty input. The diff stays within the declared marker, and all reported mandatory and scope checks pass. I found no concrete remaining contract or scope defect.",
+            "usage": {
+              "input_tokens": 32616,
+              "cached_input_tokens": 26496,
+              "output_tokens": 326,
+              "uncached_input_tokens": 6120,
+              "total_tokens": 32942
+            },
+            "credits": 0.51998,
+            "wall_seconds": 21.889999999999418
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-006/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "6edc4e14ce1a2d5687847c625d73e5aed58a5d0ff40f695168c10386a64cf753",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "64f01ead22db5b94f099efa1418ba0caba921b07c4ae455a361984f212bd5a45",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-007": [
+      {
+        "result_id": "R-9d45b04fb99dc2",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-007",
+          "Local_status": "ESCALATE",
+          "Local_reason": "NO_HANDLE_DISCOVERED",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": false,
+          "group": "LOCAL_FIRST_FAIL",
+          "CODEX_ONLY_CREDITS": 3.75361,
+          "LOCAL_ROUTED_CREDITS": 6.83502,
+          "CREDITS_SAVED": -3.08141,
+          "CREDIT_REDUCTION_RATE": -0.8209190619163951,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.34628,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 5.42769,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 62847,
+                "cached_input_tokens": 45056,
+                "uncached_input_tokens": 17791,
+                "output_tokens": 1170,
+                "total_tokens": 64017
+              },
+              "credits": 1.40733,
+              "wall_seconds": 58.703000000008615
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 1.40733,
+          "Local_usage": {
+            "ollama_input_tokens": 5836,
+            "ollama_output_tokens": 247,
+            "ollama_cache_tokens": 5142,
+            "ollama_duration_seconds": 19.3823856
+          },
+          "Local_worker_seconds": 24.266,
+          "CODEX_ONLY_COMPONENT_WALL": 281.45299999999406,
+          "LOCAL_ROUTED_COMPONENT_WALL": 398.28100000001393,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 172.62499999998545
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/6",
+        "reported_task_id": "ECR228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c3f233277f481fcab0d51111851bab7a665e2587111cbb00582e36b50e63b573",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-13dac631a3e069",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-007",
+          "local_status": "ESCALATE",
+          "local_adopted": false
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/6",
+        "reported_task_id": "ECR228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c3f233277f481fcab0d51111851bab7a665e2587111cbb00582e36b50e63b573",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-569d88914c8813",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-007",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff returns the first index whose record has a proposal and a RequireConfirmation policy, without changing records or other behavior. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 33461,
+              "cached_input_tokens": 26496,
+              "output_tokens": 348,
+              "uncached_input_tokens": 6965,
+              "total_tokens": 33809
+            },
+            "credits": 0.56773,
+            "wall_seconds": 31.202999999994063
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-007/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "eab28be81d4f1db3b58f7c480f12ca2ba0b6e5e2c37a840a00423a690136342b",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "c3f233277f481fcab0d51111851bab7a665e2587111cbb00582e36b50e63b573",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-008": [
+      {
+        "result_id": "R-dbc5854b015437",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-008",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": true,
+          "group": "LF_CANONICALIZED_PASS",
+          "CODEX_ONLY_CREDITS": 3.18508,
+          "LOCAL_ROUTED_CREDITS": 1.96339,
+          "CREDITS_SAVED": 1.2216900000000002,
+          "CREDIT_REDUCTION_RATE": 0.3835665038240798,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.49575,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 1.27406,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46572,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4716,
+                "output_tokens": 977,
+                "total_tokens": 47549
+              },
+              "credits": 0.68933,
+              "wall_seconds": 49.23500000000058
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 0.68933,
+          "Local_usage": {
+            "ollama_input_tokens": 3006,
+            "ollama_output_tokens": 152,
+            "ollama_cache_tokens": 685,
+            "ollama_duration_seconds": 13.5100981
+          },
+          "Local_worker_seconds": 67.969,
+          "CODEX_ONLY_COMPONENT_WALL": 217.0630000000092,
+          "LOCAL_ROUTED_COMPONENT_WALL": 151.65799999999848,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 121.95300000000861
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/7",
+        "reported_task_id": "ECR228-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0933459f7498ecb0a1744865a7f13aa935338b8b541f63b587d6ec06ccfc3c78",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-bf4a1ed3f9d423",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-008",
+          "local_status": "PASS",
+          "local_adopted": true
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/7",
+        "reported_task_id": "ECR228-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0933459f7498ecb0a1744865a7f13aa935338b8b541f63b587d6ec06ccfc3c78",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-68dfb1614a9427",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-008",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff returns evidence.len() for each HighLoad event in input order, including zero counts and duplicate events. It leaves other events and source unchanged, and all mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32890,
+              "cached_input_tokens": 26496,
+              "output_tokens": 292,
+              "uncached_input_tokens": 6394,
+              "total_tokens": 33182
+            },
+            "credits": 0.52518,
+            "wall_seconds": 30.406000000002678
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-008/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "c0a1ccd123912f211816d2dd9318586a33055232990849ed6ef62745d070c1b7",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "0933459f7498ecb0a1744865a7f13aa935338b8b541f63b587d6ec06ccfc3c78",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-009": [
+      {
+        "result_id": "R-6cbff9dacfea57",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-009",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": true,
+          "group": "RAW_PASS",
+          "CODEX_ONLY_CREDITS": null,
+          "LOCAL_ROUTED_CREDITS": null,
+          "CREDITS_SAVED": null,
+          "CREDIT_REDUCTION_RATE": null,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.22801,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 1.07342,
+          "phase_usage": {
+            "planner": {
+              "credits": null,
+              "wall_seconds": 48.89099999998871
+            }
+          },
+          "SHARED_PLANNER_CREDITS": null,
+          "Local_usage": {
+            "ollama_input_tokens": 1241,
+            "ollama_output_tokens": 26,
+            "ollama_cache_tokens": 52,
+            "ollama_duration_seconds": 2.8045803
+          },
+          "Local_worker_seconds": 51.203,
+          "CODEX_ONLY_COMPONENT_WALL": 179.23399999999674,
+          "LOCAL_ROUTED_COMPONENT_WALL": 118.74999999999139,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 78.60899999999674
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/8",
+        "reported_task_id": "ECR228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "1f0bb8be1ce286af4d6d021a432fe20d99aa61944e641aef38600d3c3d603f71",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-809d570f8398f4",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-009",
+          "local_status": "PASS",
+          "local_adopted": true
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/8",
+        "reported_task_id": "ECR228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "1f0bb8be1ce286af4d6d021a432fe20d99aa61944e641aef38600d3c3d603f71",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-6f5abf541e38f8",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-009",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff compares the full u128 elapsed value with a lossless u128 conversion of the budget, including equality. All mandatory validation and scope checks passed, and the packet shows no remaining contract defect.",
+            "usage": {
+              "input_tokens": 32644,
+              "cached_input_tokens": 12032,
+              "output_tokens": 255,
+              "uncached_input_tokens": 20612,
+              "total_tokens": 32899
+            },
+            "credits": 1.15451,
+            "wall_seconds": 19.75
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-009/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "91f949731bd5e4c2b817087bd159adabf3b224bff7a9c58c44488b7060e397f9",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "1f0bb8be1ce286af4d6d021a432fe20d99aa61944e641aef38600d3c3d603f71",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-010": [
+      {
+        "result_id": "R-604718fc60c883",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-010",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-010",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 1,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": false,
+          "group": "LOCAL_VALIDATION_FALSE_GREEN",
+          "CODEX_ONLY_CREDITS": 2.3375000000000004,
+          "LOCAL_ROUTED_CREDITS": 2.94814,
+          "CREDITS_SAVED": -0.6106399999999996,
+          "CREDIT_REDUCTION_RATE": -0.26123636363636343,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 1.7006700000000001,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 2.3113099999999998,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46342,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4486,
+                "output_tokens": 813,
+                "total_tokens": 47155
+              },
+              "credits": 0.63683,
+              "wall_seconds": 42.11000000000058
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 0.63683,
+          "Local_usage": {
+            "ollama_input_tokens": 675,
+            "ollama_output_tokens": 53,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 4.4770108
+          },
+          "Local_worker_seconds": 50.312,
+          "CODEX_ONLY_COMPONENT_WALL": 192.875,
+          "LOCAL_ROUTED_COMPONENT_WALL": 280.71900000000653,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 98.13999999999942
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/9",
+        "reported_task_id": "ECR228-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "84dd97d3b983b22ad9b6e2ca2040d1d5e760b0f553760e41323ad61061e39ab5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-28cd66d8146de5",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-010",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-010",
+          "local_status": "PASS",
+          "local_adopted": false
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/9",
+        "reported_task_id": "ECR228-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "84dd97d3b983b22ad9b6e2ca2040d1d5e760b0f553760e41323ad61061e39ab5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-30589928f4df30",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-010",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The change computes the exact modular sum without overflow, stays within the declared function body, and all mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32055,
+              "cached_input_tokens": 26496,
+              "output_tokens": 290,
+              "uncached_input_tokens": 5559,
+              "total_tokens": 32345
+            },
+            "credits": 0.48293,
+            "wall_seconds": 19.812000000005355
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-010/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "cf52262ff8189cb4b5ce56b478d5fe9a9fc3956d93b71a2d138f2fa4265391d8",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "84dd97d3b983b22ad9b6e2ca2040d1d5e760b0f553760e41323ad61061e39ab5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-011": [
+      {
+        "result_id": "R-1d698c8330e121",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-011",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-011",
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": false,
+          "group": "LOCAL_FIRST_FAIL",
+          "CODEX_ONLY_CREDITS": 3.2841500000000003,
+          "LOCAL_ROUTED_CREDITS": 3.3331999999999997,
+          "CREDITS_SAVED": -0.04904999999999937,
+          "CREDIT_REDUCTION_RATE": -0.014935371405081792,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.00877,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 2.05782,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46534,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16838,
+                "output_tokens": 1140,
+                "total_tokens": 47674
+              },
+              "credits": 1.27538,
+              "wall_seconds": 66.3289999999979
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 1.27538,
+          "Local_usage": {
+            "ollama_input_tokens": 922,
+            "ollama_output_tokens": 151,
+            "ollama_cache_tokens": 91,
+            "ollama_duration_seconds": 11.8226678
+          },
+          "Local_worker_seconds": 55.516,
+          "CODEX_ONLY_COMPONENT_WALL": 242.42399999999907,
+          "LOCAL_ROUTED_COMPONENT_WALL": 299.7820000000032,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 124.4380000000092
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/10",
+        "reported_task_id": "ECR228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e6e9108bc31265c61aeea1568674e27224a9aaa841292dbacf4ee203d55ed0ba",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-29cdf3206160e5",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-011",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "ECR228-011",
+          "local_status": "ESCALATE",
+          "local_adopted": false
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/10",
+        "reported_task_id": "ECR228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e6e9108bc31265c61aeea1568674e27224a9aaa841292dbacf4ee203d55ed0ba",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-245d50a56cfc95",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-011",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff satisfies the frozen contract: it rejects any invalid row, returns the exact minimum available_kib for valid rows, and preserves the samples. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 32538,
+              "cached_input_tokens": 26496,
+              "output_tokens": 312,
+              "uncached_input_tokens": 6042,
+              "total_tokens": 32850
+            },
+            "credits": 0.51258,
+            "wall_seconds": 23.218999999997322
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-011/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "3bd5ea1350a7e4cd36442f581b0eeefe6d669dbaa898e4d17d2d80055641b54f",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "e6e9108bc31265c61aeea1568674e27224a9aaa841292dbacf4ee203d55ed0ba",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-012": [
+      {
+        "result_id": "R-b281aa8e840104",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-012",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-012",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": true,
+          "group": "RAW_PASS",
+          "CODEX_ONLY_CREDITS": 3.06461,
+          "LOCAL_ROUTED_CREDITS": 1.5609600000000001,
+          "CREDITS_SAVED": 1.50365,
+          "CREDIT_REDUCTION_RATE": 0.49064970746685543,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.33788,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 0.83423,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46250,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4394,
+                "output_tokens": 1191,
+                "total_tokens": 47441
+              },
+              "credits": 0.72673,
+              "wall_seconds": 55.703000000008615
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 0.72673,
+          "Local_usage": {
+            "ollama_input_tokens": 883,
+            "ollama_output_tokens": 80,
+            "ollama_cache_tokens": 91,
+            "ollama_duration_seconds": 6.6354414
+          },
+          "Local_worker_seconds": 55.078,
+          "CODEX_ONLY_COMPONENT_WALL": 250.01600000000326,
+          "LOCAL_ROUTED_COMPONENT_WALL": 175.14000000000536,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 141.56299999999464
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/11",
+        "reported_task_id": "ECR228-012",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "8c88a8bcc9bf670339e118222b9d25a2d276219e2ae95453ecf4b89216f18e11",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b155406c920bd3",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-012",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-012",
+          "local_status": "PASS",
+          "local_adopted": true
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/11",
+        "reported_task_id": "ECR228-012",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "8c88a8bcc9bf670339e118222b9d25a2d276219e2ae95453ecf4b89216f18e11",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b2f722a5495f65",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-012",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff checks every adjacent pair in the original order, permits ties, and rejects all decreases. Empty and single-item inputs return true. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 32296,
+              "cached_input_tokens": 14464,
+              "output_tokens": 362,
+              "uncached_input_tokens": 17832,
+              "total_tokens": 32658
+            },
+            "credits": 1.05442,
+            "wall_seconds": 20.921999999991385
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-012/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "99c5029b97ba438f20373d1198bcc6b55878d864584d6bb82f0ff912b2c23fe8",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "8c88a8bcc9bf670339e118222b9d25a2d276219e2ae95453ecf4b89216f18e11",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-013": [
+      {
+        "result_id": "R-e057f7a35eefea",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-013",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-013",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": true,
+          "group": "LF_CANONICALIZED_PASS",
+          "CODEX_ONLY_CREDITS": 3.55421,
+          "LOCAL_ROUTED_CREDITS": 1.87519,
+          "CREDITS_SAVED": 1.67902,
+          "CREDIT_REDUCTION_RATE": 0.47240315006710354,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.88983,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 1.21081,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46698,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4842,
+                "output_tokens": 852,
+                "total_tokens": 47550
+              },
+              "credits": 0.66438,
+              "wall_seconds": 54.90700000000652
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 0.66438,
+          "Local_usage": {
+            "ollama_input_tokens": 1305,
+            "ollama_output_tokens": 23,
+            "ollama_cache_tokens": 91,
+            "ollama_duration_seconds": 2.6579933
+          },
+          "Local_worker_seconds": 51.063,
+          "CODEX_ONLY_COMPONENT_WALL": 200.51500000001397,
+          "LOCAL_ROUTED_COMPONENT_WALL": 125.84500000000652,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 95.1710000000021
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/12",
+        "reported_task_id": "ECR228-013",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "da6d1819e6f3f27e11935599308853e6c6c4ce039f3d4556d9b56d109850f65f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-2099cb3950dd4c",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-013",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-013",
+          "local_status": "PASS",
+          "local_adopted": true
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/12",
+        "reported_task_id": "ECR228-013",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "da6d1819e6f3f27e11935599308853e6c6c4ce039f3d4556d9b56d109850f65f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-2a78a87fd8d242",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-013",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the declared region and delegates rendering to the existing helper with \"disks\" and state.disk_count. The helper preserves the required output for None, Some(0), and Some(usize::MAX). All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32959,
+              "cached_input_tokens": 14464,
+              "output_tokens": 292,
+              "uncached_input_tokens": 18495,
+              "total_tokens": 33251
+            },
+            "credits": 1.07007,
+            "wall_seconds": 21.531000000002678
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-013/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "a22a9bf7c0158e4bb43a24bdf9fc14d5ce519f9e31f46caa39b539a83d2019a0",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "da6d1819e6f3f27e11935599308853e6c6c4ce039f3d4556d9b56d109850f65f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-014": [
+      {
+        "result_id": "R-8a35f746b79251",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-014",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-014",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_adopted": true,
+          "group": "LF_CANONICALIZED_PASS",
+          "CODEX_ONLY_CREDITS": 3.8751800000000003,
+          "LOCAL_ROUTED_CREDITS": 2.1719999999999997,
+          "CREDITS_SAVED": 1.7031800000000006,
+          "CREDIT_REDUCTION_RATE": 0.43950990663659506,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.83835,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 1.13517,
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 64593,
+                "cached_input_tokens": 55296,
+                "uncached_input_tokens": 9297,
+                "output_tokens": 1182,
+                "total_tokens": 65775
+              },
+              "credits": 1.03683,
+              "wall_seconds": 68.85899999999674
+            }
+          },
+          "SHARED_PLANNER_CREDITS": 1.03683,
+          "Local_usage": {
+            "ollama_input_tokens": 1012,
+            "ollama_output_tokens": 39,
+            "ollama_cache_tokens": 91,
+            "ollama_duration_seconds": 3.6595643
+          },
+          "Local_worker_seconds": 60.312,
+          "CODEX_ONLY_COMPONENT_WALL": 220.64100000000326,
+          "LOCAL_ROUTED_COMPONENT_WALL": 156.6549999999935,
+          "CODEX_ONLY_IMPLEMENTATION_WALL": 96.78200000000652
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "e7c349ba8f929eda3f9b0dee6b84a279d6e76ac2622e7c775dab71fe8026789f",
+        "json_pointer": "/13",
+        "reported_task_id": "ECR228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f38459c49a1127e33b26ebb26f1855db29ea1f18c2792b20d97f6badf9cda13f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-42f3d1cb08ad8c",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-014",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "ECR228-014",
+          "local_status": "PASS",
+          "local_adopted": true
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "66861795077990c807f8e9fa5f671bb0a74657411beb2ce314a0122915ae48e8",
+        "json_pointer": "/tasks/13",
+        "reported_task_id": "ECR228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f38459c49a1127e33b26ebb26f1855db29ea1f18c2792b20d97f6badf9cda13f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-cd6dc69cfa83e3",
+        "entry_key": "bounded-2.2.8-economic-retry/ECR228-014",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff applies the existing selector to each input, preserving the required behavior and staying within the allowed worker region. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32620,
+              "cached_input_tokens": 14464,
+              "output_tokens": 269,
+              "uncached_input_tokens": 18156,
+              "total_tokens": 32889
+            },
+            "credits": 1.04737,
+            "wall_seconds": 17.922000000005937
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-014/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "a04f73c14fc035e0981ac6c982232345eec6b11dc72730e3b5ba4945b41607cc",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "f38459c49a1127e33b26ebb26f1855db29ea1f18c2792b20d97f6badf9cda13f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/bounded-2.2.8-economic-retry/RESULTS_2_2_8_ECONOMIC_RETRY_JA.md",
+      "source_report": "bounded-2.2.8-economic-retry/RESULTS_2_2_8_ECONOMIC_RETRY_JA.md",
+      "source_sha256": "ec1fbae128debb33754203accec708821a796a5cdd80c113458d67b11ac78ad2",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 14,
+    "linked_entries": 14,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 42
+  }
+}

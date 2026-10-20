@@ -1,5 +1,6 @@
 {
   "set_id": "bounded-2.2.8-limited-economic-shadow",
+  "display_name": "実装・検証手順の比較 / bounded-2.2.8-limited-economic-shadow",
   "entry_count": 30,
   "tasks": [
     {
@@ -87,10 +88,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-001",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-001",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-6a15877c530c8a",
+        "R-fcc6349b020ad0"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-001",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-002",
@@ -177,10 +181,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-002",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-002",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-0972a2a720d288",
+        "R-f8803a68513bc1"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-002",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-003",
@@ -267,10 +274,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-003",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-003",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-693b11ffa1959f",
+        "R-d549ca9cf07559"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-003",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-004",
@@ -357,10 +367,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-004",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-004",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-cfb98cd5cc3da4",
+        "R-33a54989dc15df"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-004",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-005",
@@ -447,10 +460,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-005",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-005",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-7197d22a26e2d3",
+        "R-f143f9384b418b"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-005",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-006",
@@ -537,10 +553,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-006",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-006",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-3a0ce582ec9439",
+        "R-98a2d27cd278d7"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-006",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-007",
@@ -627,10 +646,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-007",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-007",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-2fcbc91620c2fa",
+        "R-bbd717a1864d6e"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-007",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-008",
@@ -717,10 +739,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-008",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-008",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-c0e9aa4a8ed900",
+        "R-69a49d662528d8"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-008",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-009",
@@ -807,10 +832,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-009",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-009",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-4788c8c0001d65",
+        "R-4199f7d2c3e439"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-009",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-010",
@@ -897,10 +925,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-010",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-010",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-49b9fbfa5fcb82",
+        "R-593e24a8a21b76"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-010",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-011",
@@ -987,10 +1018,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-011",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-011",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-b97e65bfdfcd1a",
+        "R-1af4bb09076461"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-011",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-012",
@@ -1077,10 +1111,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-012",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-012",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-ba20602c9940e2",
+        "R-082ef5aafa41e9"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-012",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-013",
@@ -1167,10 +1204,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-013",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-013",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-804633a1ead51e",
+        "R-ae64f007ea10d8"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-013",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-014",
@@ -1257,10 +1297,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-014",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-014",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-6758047c2e6fe4",
+        "R-d71754732ab466"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-014",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-015",
@@ -1347,10 +1390,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-015",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-015",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-cdbb0706ef1d5d",
+        "R-f6736c714bea9e"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-015",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-016",
@@ -1437,10 +1483,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-016",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-016",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-fdc99e9bce86b1",
+        "R-9dd21f3bd0e269"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-016",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-017",
@@ -1527,10 +1576,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-017",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-017",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-1a909065f40cf2",
+        "R-cc0832f3cfbc09"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-017",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-018",
@@ -1617,10 +1669,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-018",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-018",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-997767434655d7",
+        "R-5907655220be57"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-018",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-019",
@@ -1707,10 +1762,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-019",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-019",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-ce2b08ef7bbd78",
+        "R-d04b3195f2d7b3"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-019",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-020",
@@ -1797,10 +1855,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-020",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-020",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-10919237f6f6ca",
+        "R-c7aba689d6a42d"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-020",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-021",
@@ -1888,10 +1949,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-021",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-021",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-3ebef05e3766bf",
+        "R-e321b0277d091d"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-021",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-022",
@@ -1979,10 +2043,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-022",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-022",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-6802d205c3acba",
+        "R-bb71af1d5c43e7"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-022",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-023",
@@ -2070,10 +2137,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-023",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-023",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-97bf997831154d",
+        "R-90b3c8698d7820"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-023",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-024",
@@ -2161,10 +2231,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-024",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-024",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-5f739eb7c51ed8",
+        "R-3301a8818d50a8"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-024",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-025",
@@ -2252,10 +2325,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-025",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-025",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-1389c47acb96c5",
+        "R-1559a3c618f122"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-025",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-026",
@@ -2342,10 +2418,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-026",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-026",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-701bfdfdbaf138",
+        "R-0dc7ba72bf37e9"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-026",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-027",
@@ -2432,10 +2511,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-027",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-027",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-20cd99b3b559bb",
+        "R-0303ac8f365ffd"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-027",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-028",
@@ -2522,10 +2604,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-028",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-028",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-9e3a797cbd9ec8",
+        "R-9c3cc5c72d055d"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-028",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-029",
@@ -2612,10 +2697,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-029",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-029",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-794d48d2bcab2d",
+        "R-8d98a142d5defd"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-029",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     },
     {
       "task_id": "LES228-030",
@@ -2702,26 +2790,20 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "LES228-030",
       "set_id": "bounded-2.2.8-limited-economic-shadow",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/bounded-2.2.8-limited-economic-shadow/LES228-030",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-0fd5e83f496842",
+        "R-30c299edd72c0b"
+      ],
+      "result_page": "sets/bounded-2.2.8-limited-economic-shadow.md#les228-030",
+      "result_data": "results/bounded-2.2.8-limited-economic-shadow.json"
     }
   ],
   "result_summary": {
-    "set_id": "bounded-2.2.8-limited-economic-shadow",
-    "source_set": "bounded-2.2.8-limited-economic-shadow",
     "entries": 30,
-    "structured_result_records": 84,
-    "task_ids_with_structured_results": 30,
-    "task_ids_without_structured_results": [],
-    "historical_reports": [
-      {
-        "file": "results/bounded-2.2.8-limited-economic-shadow/RESULTS_LIMITED_SHADOW_JA.md",
-        "source_report": "bounded-2.2.8-limited-economic-shadow/RESULTS_LIMITED_SHADOW_JA.md",
-        "source_sha256": "baed649214a2225f4d256e1f0e38827c682cc7355246c7bafef636cdf06a9366"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 30,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 60
   }
 }

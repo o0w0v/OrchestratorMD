@@ -1,5 +1,6 @@
 {
   "set_id": "bounded-2.2.8-economic-retry",
+  "display_name": "実装・検証手順の比較 / bounded-2.2.8-economic-retry",
   "entry_count": 14,
   "tasks": [
     {
@@ -87,10 +88,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-001",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-001",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-8d1422afe9d06b",
+        "R-3915818c336250",
+        "R-4f685566b0d914"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-001",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-002",
@@ -177,10 +182,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-002",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-002",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-580bdee1a25004",
+        "R-b53133244fb396",
+        "R-5d609607360282"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-002",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-003",
@@ -267,10 +276,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-003",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-003",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-3ef7cbf7a52cf9",
+        "R-563288c97bddcb",
+        "R-b5ee76ecb27f80"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-003",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-004",
@@ -357,10 +370,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-004",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-004",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-5bc8f9eeeabcf9",
+        "R-22b3941c4814ca",
+        "R-20e3475cde5620"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-004",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-005",
@@ -447,10 +464,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-005",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-005",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-f9755218445148",
+        "R-c3adf5624ec22f",
+        "R-c8455593195fee"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-005",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-006",
@@ -537,10 +558,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-006",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-006",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-fb23075c886871",
+        "R-166682dc917198",
+        "R-58f21980db09a8"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-006",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-007",
@@ -628,10 +653,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-007",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-007",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-9d45b04fb99dc2",
+        "R-13dac631a3e069",
+        "R-569d88914c8813"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-007",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-008",
@@ -719,10 +748,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-008",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-008",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-dbc5854b015437",
+        "R-bf4a1ed3f9d423",
+        "R-68dfb1614a9427"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-008",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-009",
@@ -809,10 +842,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-009",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-009",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-6cbff9dacfea57",
+        "R-809d570f8398f4",
+        "R-6f5abf541e38f8"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-009",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-010",
@@ -899,10 +936,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-010",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-010",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-604718fc60c883",
+        "R-28cd66d8146de5",
+        "R-30589928f4df30"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-010",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-011",
@@ -989,10 +1030,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-011",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-011",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-1d698c8330e121",
+        "R-29cdf3206160e5",
+        "R-245d50a56cfc95"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-011",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-012",
@@ -1079,10 +1124,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-012",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-012",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-b281aa8e840104",
+        "R-b155406c920bd3",
+        "R-b2f722a5495f65"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-012",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-013",
@@ -1169,10 +1218,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-013",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-013",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-e057f7a35eefea",
+        "R-2099cb3950dd4c",
+        "R-2a78a87fd8d242"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-013",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     },
     {
       "task_id": "ECR228-014",
@@ -1259,41 +1312,21 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "ECR228-014",
       "set_id": "bounded-2.2.8-economic-retry",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.8-economic-retry/ECR228-014",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-8a35f746b79251",
+        "R-42f3d1cb08ad8c",
+        "R-cd6dc69cfa83e3"
+      ],
+      "result_page": "sets/bounded-2.2.8-economic-retry.md#ecr228-014",
+      "result_data": "results/bounded-2.2.8-economic-retry.json"
     }
   ],
   "result_summary": {
-    "set_id": "bounded-2.2.8-economic-retry",
-    "source_set": "bounded-2.2.8-economic-retry",
     "entries": 14,
-    "structured_result_records": 0,
-    "task_ids_with_structured_results": 0,
-    "task_ids_without_structured_results": [
-      "ECR228-001",
-      "ECR228-002",
-      "ECR228-003",
-      "ECR228-004",
-      "ECR228-005",
-      "ECR228-006",
-      "ECR228-007",
-      "ECR228-008",
-      "ECR228-009",
-      "ECR228-010",
-      "ECR228-011",
-      "ECR228-012",
-      "ECR228-013",
-      "ECR228-014"
-    ],
-    "historical_reports": [
-      {
-        "file": "results/bounded-2.2.8-economic-retry/RESULTS_2_2_8_ECONOMIC_RETRY_JA.md",
-        "source_report": "bounded-2.2.8-economic-retry/RESULTS_2_2_8_ECONOMIC_RETRY_JA.md",
-        "source_sha256": "ec1fbae128debb33754203accec708821a796a5cdd80c113458d67b11ac78ad2"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 14,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 42
   }
 }

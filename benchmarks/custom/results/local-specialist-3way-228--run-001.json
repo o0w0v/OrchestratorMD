@@ -1,0 +1,1070 @@
+{
+  "format_version": 2,
+  "set_id": "local-specialist-3way-228--run-001",
+  "entries": {
+    "LS3W228-001": [
+      {
+        "result_id": "R-ad309a78f5d692",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-001",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the permitted worker region. It returns direct child PIDs in input order, preserves duplicates, and treats parent 0 as an ordinary value. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 33037,
+              "cached_input_tokens": 14464,
+              "output_tokens": 278,
+              "uncached_input_tokens": 18573,
+              "total_tokens": 33315
+            },
+            "credits": 1.07047,
+            "wall_seconds": 18.812999999994645
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-001/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "32733ea2e496b0f6ba855d8f5e6b5d10129d223a9cc900e00ada2a6afe60c9cf",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "f2492098df90d891aa997121856b2639697ff43530f0f26a0429c13b95f1efa4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-002": [
+      {
+        "result_id": "R-e60761a7f65f42",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-002",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "All mandatory checks and scope guards passed. The diff preserves the required signature and collects owned source strings exactly when execution.changed is true, preserving order, empty strings, and duplicates.",
+            "usage": {
+              "input_tokens": 32922,
+              "cached_input_tokens": 26496,
+              "output_tokens": 274,
+              "uncached_input_tokens": 6426,
+              "total_tokens": 33196
+            },
+            "credits": 0.52228,
+            "wall_seconds": 13.671999999991385
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-002/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "90d625b1576ebed16ea165fec0fe6b530063a7ed2a8be3068fdbec228bb46264",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "e9a740e8ab98d29f5321d674087b1371d0a5f5be2354406567a4643771660997",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-003": [
+      {
+        "result_id": "R-6cc89c71aef835",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-003",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff stays within the declared region and collects owned intent IDs only for Deny policies, preserving order, duplicates, and blank IDs. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 33485,
+              "cached_input_tokens": 14464,
+              "output_tokens": 379,
+              "uncached_input_tokens": 19021,
+              "total_tokens": 33864
+            },
+            "credits": 1.11812,
+            "wall_seconds": 16.29700000002049
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-003/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "bfd62a96b7c12b0d9004ab422618d0cf340251970953dd5e982eeed4f02ae60b",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "7205bd15c88a1de13d5a74677ee8e0601a3fa43236240f3a187aef0d25d0f51d",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-004": [
+      {
+        "result_id": "R-e754f4a1bcbc5a",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-004",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The change returns each warning’s UTF-8 byte length in order without filtering or trimming. The diff stays within the permitted region, and all mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 32522,
+              "cached_input_tokens": 26496,
+              "output_tokens": 269,
+              "uncached_input_tokens": 6026,
+              "total_tokens": 32791
+            },
+            "credits": 0.50103,
+            "wall_seconds": 13.10999999998603
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-004/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "45a4ff14a7d9e132c3a648d258bfc05011c9dca14b8dc98acd94cba77ea91ef9",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "bad5690487af87466ad54f3628ccdfcbcc3081b2084be94377af469da5da0715",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-005": [
+      {
+        "result_id": "R-26b20f973ca7b3",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-005",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the allowed region and collects targets from present High-risk proposals in record order, preserving duplicates. All mandatory checks and the Host scope guard passed.",
+            "usage": {
+              "input_tokens": 33343,
+              "cached_input_tokens": 14464,
+              "output_tokens": 277,
+              "uncached_input_tokens": 18879,
+              "total_tokens": 33620
+            },
+            "credits": 1.08552,
+            "wall_seconds": 13.578000000008615
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-005/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "78f08d101128649025421247b84968c194fe0684730ce28eb02827888dcb851a",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "fb03869ff996e65cfbcd328f4a62badc372232a1f177d9c54d1f915a6c93e472",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-006": [
+      {
+        "result_id": "R-41a0fa071f4a42",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-006",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and scope and returns exactly the zero-based indices where execution is present and verification is absent. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 33169,
+              "cached_input_tokens": 26496,
+              "output_tokens": 243,
+              "uncached_input_tokens": 6673,
+              "total_tokens": 33412
+            },
+            "credits": 0.52688,
+            "wall_seconds": 15.530999999988126
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-006/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "941ecb4ff99c5ad7c0fb3895968b40a6028436e8becce535cc3ef6bcfdd5b67b",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "f99e2cdad9ff5810c43487d618579cf146f5a7e30b6c11c6c4fcedb44624773b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-007": [
+      {
+        "result_id": "R-4db994fd9b1f17",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-007",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff implements maximum minus minimum rss_kib across all observed processes, including zero values, and returns zero for empty or single-process input. It stays within the permitted region, and all mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 33039,
+              "cached_input_tokens": 14464,
+              "output_tokens": 281,
+              "uncached_input_tokens": 18575,
+              "total_tokens": 33320
+            },
+            "credits": 1.07132,
+            "wall_seconds": 12.46799999999348
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-007/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "f5f90ce8da43128c0c63714dff0fc37700bea205b1fd501d62dadfd04aeb8038",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "439569830ed6a1177ff6b9f99dadc5f88293e80ad38c1dc591b774c4f3823455",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-008": [
+      {
+        "result_id": "R-0d7ff9652ac795",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-008",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff computes the required saturating difference, preserves the function signature, and stays within the declared editable region. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 33151,
+              "cached_input_tokens": 14464,
+              "output_tokens": 341,
+              "uncached_input_tokens": 18687,
+              "total_tokens": 33492
+            },
+            "credits": 1.09192,
+            "wall_seconds": 23.09399999998277
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-008/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "0a7e441963862c9479957274125538861ab04a592f698be92630bc2066591ba0",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "fc7ac67ba7f430da159af5b65016f07455147edfc9eee7aa96a708929f5bf69f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-009": [
+      {
+        "result_id": "R-314aea8e08c8d7",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-009",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and sums every record’s u128 elapsed_ms with saturating_add. Empty input returns zero. All mandatory checks and scope guards passed, and no remaining contract defect is evident.",
+            "usage": {
+              "input_tokens": 32915,
+              "cached_input_tokens": 14464,
+              "output_tokens": 257,
+              "uncached_input_tokens": 18451,
+              "total_tokens": 33172
+            },
+            "credits": 1.05912,
+            "wall_seconds": 13.35899999999674
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-009/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "15d06e8a439201baf7a785289ead271043ecb1e1e53fe19c9ed412c5321d05cd",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "7a93f72486485270a9424d8035796bd826cf97c783241205de1c00c0876ecb85",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-010": [
+      {
+        "result_id": "R-fc1efc2e049b1e",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-010",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "All mandatory checks and scope guards passed. The candidate handles zero total memory, clamps available memory, and computes the floored percentage with overflow-safe u128 arithmetic.",
+            "usage": {
+              "input_tokens": 32901,
+              "cached_input_tokens": 26496,
+              "output_tokens": 391,
+              "uncached_input_tokens": 6405,
+              "total_tokens": 33292
+            },
+            "credits": 0.55048,
+            "wall_seconds": 15.21799999999348
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-010/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "5aaf92d8e9adff1f64dbcaf2195f3c5f015a76e1de441b74c7ee83266ac2fc7d",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "754d16c036a662a8170468edfc60320c9179a855965834c634f15bd8eab9912a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-011": [
+      {
+        "result_id": "R-9f5084dc0a7f33",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-011",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and sums every constraint string’s UTF-8 byte length with saturating addition. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32497,
+              "cached_input_tokens": 14464,
+              "output_tokens": 261,
+              "uncached_input_tokens": 18033,
+              "total_tokens": 32758
+            },
+            "credits": 1.03922,
+            "wall_seconds": 13.23399999999674
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-011/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "450e94058fa6d8ac7ab9e63f2dc6ba769e0af81cb9a95611e5bc04a5fe6c6c37",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "6db50a8c836598f923e0b61f6784dbeb75250d9d70cf6673faa0d48eb50c61d8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-012": [
+      {
+        "result_id": "R-dc8894aa23492d",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-012",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff implements the contract: it considers only records with an event, computes saturating ages, and returns their minimum or None. The signature and edit scope are preserved, and every mandatory validation and scope check passed.",
+            "usage": {
+              "input_tokens": 32958,
+              "cached_input_tokens": 12032,
+              "output_tokens": 225,
+              "uncached_input_tokens": 20926,
+              "total_tokens": 33183
+            },
+            "credits": 1.16271,
+            "wall_seconds": 20.96799999999348
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-012/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "c2c086407960fd845aa684da1a5fd55b6fe0deaf3ddd904d8204433d6c75ea2a",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "85c4908b9f9fe59885fcdffdc599101745e0d656e6e8d919ac8e23877c6507d1",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-013": [
+      {
+        "result_id": "R-25373c114b8d08",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-013",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff forwards record.verification.as_ref() to the existing formatter and returns its String. It preserves the required signature and stays within the declared region. All mandatory checks and Host scope guards passed.",
+            "usage": {
+              "input_tokens": 33190,
+              "cached_input_tokens": 0,
+              "output_tokens": 286,
+              "uncached_input_tokens": 33190,
+              "total_tokens": 33476
+            },
+            "credits": 1.731,
+            "wall_seconds": 13.312999999994645
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-013/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "b0c4672b205facc47d3cca9b9eec5476bd0dce55809c23366564f00870cfa25f",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "546973e6a89e43c86e2a9c0dd11686f22186d810fa675e871aec04aee61ed3cc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-014": [
+      {
+        "result_id": "R-4bd02c40f6293c",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-014",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and passes the u128 elapsed_ms value directly to ls3_whole_seconds. The change is within the declared marker region, and all mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 33179,
+              "cached_input_tokens": 14464,
+              "output_tokens": 257,
+              "uncached_input_tokens": 18715,
+              "total_tokens": 33436
+            },
+            "credits": 1.07232,
+            "wall_seconds": 12.23399999999674
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-014/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "f5066541bb8fe4225593994c20910bce84ba5052a78403a065c0ceebcde1c53d",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "a14a975414e0f9d84d15443aede1a206f8ee91c5ead08006de80e6d17d1f04e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-015": [
+      {
+        "result_id": "R-691411f2e8d784",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-015",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the declared worker region, preserves the required signature, returns an owned \"missing\" when the proposal is absent, and delegates the proposal’s boolean to ls3_reversible_caption. All mandatory checks and Host scope guards passed.",
+            "usage": {
+              "input_tokens": 33366,
+              "cached_input_tokens": 26496,
+              "output_tokens": 320,
+              "uncached_input_tokens": 6870,
+              "total_tokens": 33686
+            },
+            "credits": 0.55598,
+            "wall_seconds": 24.04700000002049
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-015/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "61ed57cf29b4d9c0bb328edd4842d8274d23e77de30c7f17122a1381948bda71",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "3ffb1a42ada09b1cb801d70967d9e8d86461968c3dc5cc6906459eb87f8397e5",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-016": [
+      {
+        "result_id": "R-05578d15cbb424",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-016",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff makes the exact required predicate call within the allowed region, preserves the signature and surrounding code, and all mandatory validation and scope checks passed. No concrete contract or scope defect remains.",
+            "usage": {
+              "input_tokens": 33180,
+              "cached_input_tokens": 26496,
+              "output_tokens": 254,
+              "uncached_input_tokens": 6684,
+              "total_tokens": 33434
+            },
+            "credits": 0.53018,
+            "wall_seconds": 17.469000000011874
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-016/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "636111198185c10cc1d828fb36ae4db3c0b4299cdba7de79bb2a34b8979dcb84",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "e26cdb9c3ea3e9f10cf0084d078ee808321870050436b5471fb095b0eca8a189",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-017": [
+      {
+        "result_id": "R-d40cc5576ff7ce",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-017",
+        "stage": "EXECUTION_STATE",
+        "condition": "scope=baseline_stop",
+        "status": "STOPPED_HOST_FIXTURE_ERROR",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "LS3W228-017",
+          "status": "STOPPED_HOST_FIXTURE_ERROR",
+          "reason": "INCONCLUSIVE"
+        },
+        "source_file": "BASELINE_STOP_SUMMARY.json",
+        "validation_pass": null,
+        "source_sha256": "d1ddbc363e385bae56db12e3d64a9f1310d1da74f68941a10de3f8c0be8f8298",
+        "json_pointer": "/blocked_Task",
+        "reported_task_id": "LS3W228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bcea66ac98bb611d91b59358f79d99c1974aed64b6fb09262997c5f66ac5a8df",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-018": [
+      {
+        "result_id": "R-56a8485aed5ab3",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-018",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature, returns zero for a missing proposal, and delegates a present proposal’s evidence to ls3_evidence_bytes. All mandatory checks and the Host scope guard passed; no concrete contract or scope defect remains.",
+            "usage": {
+              "input_tokens": 33420,
+              "cached_input_tokens": 26496,
+              "output_tokens": 307,
+              "uncached_input_tokens": 6924,
+              "total_tokens": 33727
+            },
+            "credits": 0.55543,
+            "wall_seconds": 28.453000000008615
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-018/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "f72a76f0eafb0ab792920ed0b7d72ffcfb08db9eafea9ec6a218b3bb9911c9b9",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "902e423274940ab849fe06dda61b6becbc8f338ee34f7b5c409069c9a582b0af",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-019": [
+      {
+        "result_id": "R-38cffe66404218",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-019",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and scope, and formats both usage fields as full unsigned decimal values in the exact receipt with one trailing LF. All mandatory checks and the Host scope guard passed.",
+            "usage": {
+              "input_tokens": 32826,
+              "cached_input_tokens": 26496,
+              "output_tokens": 296,
+              "uncached_input_tokens": 6330,
+              "total_tokens": 33122
+            },
+            "credits": 0.52298,
+            "wall_seconds": 13.062000000005355
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-019/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "a004fb7f488ab1ffa08ca07861ca701e9bf8069d07b6b2a4ef008c6fe9deb398",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "43c31eae1a7ba295434c46a99c9264ddb3a3cf2b653d7bbdd852edeffbbed992",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-020": [
+      {
+        "result_id": "R-a773ebdb8d9b04",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-020",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and returns the exact receipt based on whether state.warnings is empty. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32639,
+              "cached_input_tokens": 26496,
+              "output_tokens": 274,
+              "uncached_input_tokens": 6143,
+              "total_tokens": 32913
+            },
+            "credits": 0.50813,
+            "wall_seconds": 21.421999999991385
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-020/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "0996626f68035694e30397bfb93249696e481abf141493912bd48ed850d90829",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "e03274936e78c36c91af534bfd0f5a43de3179fc2f3e87f284974de495d65840",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-021": [
+      {
+        "result_id": "R-095abb444960ff",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-021",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and changes only the declared worker region. It returns the exact LF-terminated receipt for all three states, including a nonempty vector containing empty strings. All mandatory checks and Host scope guards passed.",
+            "usage": {
+              "input_tokens": 33017,
+              "cached_input_tokens": 26496,
+              "output_tokens": 302,
+              "uncached_input_tokens": 6521,
+              "total_tokens": 33319
+            },
+            "credits": 0.53403,
+            "wall_seconds": 26.5
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-021/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "3b758faeb2389984a9937d071232e85c414b6a0855964c684ecc613d22028a14",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "0d533a9e0497e535124e3ac6030b2f0d811df9b94ab2dae70764b314f1c8518a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-022": [
+      {
+        "result_id": "R-33c5dbc45f599b",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-022",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff stays within the declared marker, preserves the required signature, and returns the exact LF-terminated receipt. String::len() counts UTF-8 bytes, including zero for an empty scope. The receipt does not depend on passed or detail. All mandatory checks and Host scope guards passed.",
+            "usage": {
+              "input_tokens": 32924,
+              "cached_input_tokens": 26496,
+              "output_tokens": 314,
+              "uncached_input_tokens": 6428,
+              "total_tokens": 33238
+            },
+            "credits": 0.53238,
+            "wall_seconds": 24.85899999999674
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-022/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "635774ece08e93e68bc6b6dfc7fc65a4a3d56ad25cab483e6f6a64d77f88e0fc",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "a5cac98765aa16bfc49ece503f8b83f0f8316e9e0eb516adbd1e6e309374211c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-023": [
+      {
+        "result_id": "R-3fd7c41278113d",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-023",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff stays within the declared region and returns the exact receipt using UTF-8 byte lengths and one trailing LF. All mandatory validation and scope checks passed; no concrete contract defect remains.",
+            "usage": {
+              "input_tokens": 32873,
+              "cached_input_tokens": 14464,
+              "output_tokens": 284,
+              "uncached_input_tokens": 18409,
+              "total_tokens": 33157
+            },
+            "credits": 1.06377,
+            "wall_seconds": 16.515999999974156
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-023/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "977301fc903252d3386821ec4418c7078ea5c4f89dae8e3d1bd4eb9281417b85",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "4dccd3da5b8afa8c0c1f919dadcbd53fcdf5085aaba5c700faf726752a68f22a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LS3W228-024": [
+      {
+        "result_id": "R-df4b410a12cdb9",
+        "entry_key": "local-specialist-3way-228--run-001/LS3W228-024",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff preserves the required signature and changes only the declared marker interior. The receipt depends solely on processes_truncated and returns the exact required string for each value. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32601,
+              "cached_input_tokens": 26496,
+              "output_tokens": 234,
+              "uncached_input_tokens": 6105,
+              "total_tokens": 32835
+            },
+            "credits": 0.49623,
+            "wall_seconds": 14.35899999999674
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LS3W228-024/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "868891b3b6c67c9a8c87ade7afb21fc28ca763b843748cca6dfb10b462a1b3cc",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "89c8b06d8aa9e19c85b801f55393e1d2c301057bb9f972d12680f818d0fe4977",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/local-specialist-3way-228--run-001/RESULTS_BASELINE_STOP_JA.md",
+      "source_report": "local-specialist-3way-228/run-001/RESULTS_BASELINE_STOP_JA.md",
+      "source_sha256": "6bf5e72329d1463bcc42cf11a1afcaf99fc004b46405a41aedeeedd7920b838a",
+      "scope": "SAME_RUN"
+    },
+    {
+      "path": "reports/local-specialist-3way-228--run-001/RESULTS_LOCAL_3WAY_JA.md",
+      "source_report": "local-specialist-3way-228/run-001/RESULTS_LOCAL_3WAY_JA.md",
+      "source_sha256": "b00f7d0519e571a8c9218e21939b9bc4ed780d9c2676f0b6f104ab654e50fd71",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 24,
+    "linked_entries": 24,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 24
+  }
+}

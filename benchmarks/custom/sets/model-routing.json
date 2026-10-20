@@ -1,5 +1,6 @@
 {
   "set_id": "model-routing",
+  "display_name": "小規模なPython・HTML・構造化回答のモデル比較",
   "entry_count": 30,
   "tasks": [
     {
@@ -92,10 +93,14 @@
       },
       "dataset_entry_id": "AGENTIC_CODING-01",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/AGENTIC_CODING-01",
-      "fixture_file_count": 4,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-8252131bc3e82c",
+        "R-319441cb1b6024",
+        "R-cff808c9faf023"
+      ],
+      "result_page": "sets/model-routing.md#agentic_coding-01",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "AGENTIC_CODING-02",
@@ -166,10 +171,14 @@
       },
       "dataset_entry_id": "AGENTIC_CODING-02",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/AGENTIC_CODING-02",
-      "fixture_file_count": 4,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-0d4469566ccd00",
+        "R-401c3154ab8348",
+        "R-3871f173e98d73"
+      ],
+      "result_page": "sets/model-routing.md#agentic_coding-02",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "AGENTIC_CODING-03",
@@ -239,10 +248,14 @@
       },
       "dataset_entry_id": "AGENTIC_CODING-03",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/AGENTIC_CODING-03",
-      "fixture_file_count": 4,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-0d7a153ee92f8a",
+        "R-bd0504d4ee5f4e",
+        "R-1f68ee8266ebb5"
+      ],
+      "result_page": "sets/model-routing.md#agentic_coding-03",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "BOUNDED_LOGIC-01",
@@ -341,10 +354,14 @@
       },
       "dataset_entry_id": "BOUNDED_LOGIC-01",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/BOUNDED_LOGIC-01",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-b4c932cced6b92",
+        "R-e2ef092a2453c8",
+        "R-8b10272702320a"
+      ],
+      "result_page": "sets/model-routing.md#bounded_logic-01",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "BOUNDED_LOGIC-02",
@@ -405,10 +422,14 @@
       },
       "dataset_entry_id": "BOUNDED_LOGIC-02",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/BOUNDED_LOGIC-02",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-84420b56c20a98",
+        "R-74134be36667b6",
+        "R-0807e9c8274ab0"
+      ],
+      "result_page": "sets/model-routing.md#bounded_logic-02",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "BOUNDED_LOGIC-03",
@@ -489,10 +510,14 @@
       },
       "dataset_entry_id": "BOUNDED_LOGIC-03",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/BOUNDED_LOGIC-03",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-37a5694fe3531b",
+        "R-4210d72a148a8f",
+        "R-f09cdbb3ce2b24"
+      ],
+      "result_page": "sets/model-routing.md#bounded_logic-03",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "DEBUGGING-01",
@@ -546,10 +571,14 @@
       },
       "dataset_entry_id": "DEBUGGING-01",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/DEBUGGING-01",
-      "fixture_file_count": 2,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-8d119b749b0cbc",
+        "R-6595566003dbfd",
+        "R-d4cd52424b8933"
+      ],
+      "result_page": "sets/model-routing.md#debugging-01",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "DEBUGGING-02",
@@ -626,10 +655,14 @@
       },
       "dataset_entry_id": "DEBUGGING-02",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/DEBUGGING-02",
-      "fixture_file_count": 2,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-fb90ccdf67b238",
+        "R-96a0d30d27d593",
+        "R-531ad032d1ff9b"
+      ],
+      "result_page": "sets/model-routing.md#debugging-02",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "DEBUGGING-03",
@@ -697,10 +730,14 @@
       },
       "dataset_entry_id": "DEBUGGING-03",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/DEBUGGING-03",
-      "fixture_file_count": 2,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-587fcff19563ec",
+        "R-e32b148324c152",
+        "R-69dfb87742edbc"
+      ],
+      "result_page": "sets/model-routing.md#debugging-03",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "ERROR_ANALYSIS-01",
@@ -740,10 +777,14 @@
       "edit_regions": {},
       "dataset_entry_id": "ERROR_ANALYSIS-01",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/ERROR_ANALYSIS-01",
-      "fixture_file_count": 0,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-9749a2bc19ed41",
+        "R-6b15567afa4a0f",
+        "R-b3ada26137daeb"
+      ],
+      "result_page": "sets/model-routing.md#error_analysis-01",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "ERROR_ANALYSIS-02",
@@ -783,10 +824,14 @@
       "edit_regions": {},
       "dataset_entry_id": "ERROR_ANALYSIS-02",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/ERROR_ANALYSIS-02",
-      "fixture_file_count": 0,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-ffc4b01f96f5a4",
+        "R-d78166f1a75ee2",
+        "R-1b680fb18adf28"
+      ],
+      "result_page": "sets/model-routing.md#error_analysis-02",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "ERROR_ANALYSIS-03",
@@ -826,10 +871,14 @@
       "edit_regions": {},
       "dataset_entry_id": "ERROR_ANALYSIS-03",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/ERROR_ANALYSIS-03",
-      "fixture_file_count": 0,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-b1cb965c553535",
+        "R-31bb87a3122167",
+        "R-09c95ce7c2c1d8"
+      ],
+      "result_page": "sets/model-routing.md#error_analysis-03",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "MECHANICAL_CODE-01",
@@ -886,10 +935,14 @@
       },
       "dataset_entry_id": "MECHANICAL_CODE-01",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/MECHANICAL_CODE-01",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-17c8f4b1c11493",
+        "R-32607c09927c7a",
+        "R-ad2c5b72dd08d3"
+      ],
+      "result_page": "sets/model-routing.md#mechanical_code-01",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "MECHANICAL_CODE-02",
@@ -954,10 +1007,14 @@
       },
       "dataset_entry_id": "MECHANICAL_CODE-02",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/MECHANICAL_CODE-02",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-776c7cb0beca26",
+        "R-3f4b2ac133a4d6",
+        "R-b398d340b5bf1f"
+      ],
+      "result_page": "sets/model-routing.md#mechanical_code-02",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "MECHANICAL_CODE-03",
@@ -1011,10 +1068,14 @@
       },
       "dataset_entry_id": "MECHANICAL_CODE-03",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/MECHANICAL_CODE-03",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-0dc73abe10165a",
+        "R-7348a5a8a438eb",
+        "R-cac4e4be11eb1f"
+      ],
+      "result_page": "sets/model-routing.md#mechanical_code-03",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "REPO_EDIT-01",
@@ -1068,10 +1129,14 @@
       },
       "dataset_entry_id": "REPO_EDIT-01",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/REPO_EDIT-01",
-      "fixture_file_count": 4,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-91f0f0b7252fdc",
+        "R-c9e76ae1ae84a4",
+        "R-b30468aa2da9d1"
+      ],
+      "result_page": "sets/model-routing.md#repo_edit-01",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "REPO_EDIT-02",
@@ -1131,10 +1196,14 @@
       },
       "dataset_entry_id": "REPO_EDIT-02",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/REPO_EDIT-02",
-      "fixture_file_count": 4,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-1bed3efe9922cc",
+        "R-605871bb4b1d1a",
+        "R-b9f035d34d6c37"
+      ],
+      "result_page": "sets/model-routing.md#repo_edit-02",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "REPO_EDIT-03",
@@ -1193,10 +1262,14 @@
       },
       "dataset_entry_id": "REPO_EDIT-03",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/REPO_EDIT-03",
-      "fixture_file_count": 4,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-e93157c93ed5df",
+        "R-ba8eb100a3bbf1",
+        "R-87f71b8c958f68"
+      ],
+      "result_page": "sets/model-routing.md#repo_edit-03",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "SPECIFICATION-01",
@@ -1227,10 +1300,14 @@
       "edit_regions": {},
       "dataset_entry_id": "SPECIFICATION-01",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/SPECIFICATION-01",
-      "fixture_file_count": 0,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-db48c890b3d346",
+        "R-92f89ae583c93d",
+        "R-c3b16255a61080"
+      ],
+      "result_page": "sets/model-routing.md#specification-01",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "SPECIFICATION-02",
@@ -1261,10 +1338,14 @@
       "edit_regions": {},
       "dataset_entry_id": "SPECIFICATION-02",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/SPECIFICATION-02",
-      "fixture_file_count": 0,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-dbbaf2992460ff",
+        "R-062cc34b1732d2",
+        "R-0efc165854817e"
+      ],
+      "result_page": "sets/model-routing.md#specification-02",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "SPECIFICATION-03",
@@ -1294,10 +1375,14 @@
       "edit_regions": {},
       "dataset_entry_id": "SPECIFICATION-03",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/SPECIFICATION-03",
-      "fixture_file_count": 0,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-dda9314e49729d",
+        "R-b9994af66f0403",
+        "R-bd913cf038a720"
+      ],
+      "result_page": "sets/model-routing.md#specification-03",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "SPECIFICATION-04",
@@ -1359,10 +1444,14 @@
       "edit_regions": {},
       "dataset_entry_id": "SPECIFICATION-04",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/SPECIFICATION-04",
-      "fixture_file_count": 0,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-e8f6139128de1f",
+        "R-e22b0a08ee62e2",
+        "R-8add2102fbb558"
+      ],
+      "result_page": "sets/model-routing.md#specification-04",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "SPECIFICATION-05",
@@ -1429,10 +1518,14 @@
       "edit_regions": {},
       "dataset_entry_id": "SPECIFICATION-05",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/SPECIFICATION-05",
-      "fixture_file_count": 0,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-549b108ed8bbc3",
+        "R-0744444836c399",
+        "R-4b5940860f98ca"
+      ],
+      "result_page": "sets/model-routing.md#specification-05",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "SPECIFICATION-06",
@@ -1490,10 +1583,14 @@
       "edit_regions": {},
       "dataset_entry_id": "SPECIFICATION-06",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/SPECIFICATION-06",
-      "fixture_file_count": 0,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-63e84933e20def",
+        "R-c5c8271259cd86",
+        "R-31e61358ecad05"
+      ],
+      "result_page": "sets/model-routing.md#specification-06",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "TEMPLATE_UI-01",
@@ -1548,10 +1645,14 @@
       },
       "dataset_entry_id": "TEMPLATE_UI-01",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/TEMPLATE_UI-01",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-8d9dfa889fc37e",
+        "R-2671c9f2f343f3",
+        "R-d756ecb83c5927"
+      ],
+      "result_page": "sets/model-routing.md#template_ui-01",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "TEMPLATE_UI-02",
@@ -1604,10 +1705,14 @@
       },
       "dataset_entry_id": "TEMPLATE_UI-02",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/TEMPLATE_UI-02",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-792054e8d7fb34",
+        "R-0083d466ec7f94",
+        "R-617221cffe18c9"
+      ],
+      "result_page": "sets/model-routing.md#template_ui-02",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "TEMPLATE_UI-03",
@@ -1661,10 +1766,14 @@
       },
       "dataset_entry_id": "TEMPLATE_UI-03",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/TEMPLATE_UI-03",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-e8c0831c1d6207",
+        "R-9ed830848be743",
+        "R-7bc633f7d165ba"
+      ],
+      "result_page": "sets/model-routing.md#template_ui-03",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "UNIT_TEST_GENERATION-01",
@@ -1732,10 +1841,14 @@
       },
       "dataset_entry_id": "UNIT_TEST_GENERATION-01",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/UNIT_TEST_GENERATION-01",
-      "fixture_file_count": 2,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-147db257ab079e",
+        "R-0099a374b723ec",
+        "R-789c8b37931de9"
+      ],
+      "result_page": "sets/model-routing.md#unit_test_generation-01",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "UNIT_TEST_GENERATION-02",
@@ -1796,10 +1909,14 @@
       },
       "dataset_entry_id": "UNIT_TEST_GENERATION-02",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/UNIT_TEST_GENERATION-02",
-      "fixture_file_count": 2,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-00ce4ffba541e6",
+        "R-43ac187768f3b0",
+        "R-fd8350fe40f9cf"
+      ],
+      "result_page": "sets/model-routing.md#unit_test_generation-02",
+      "result_data": "results/model-routing.json"
     },
     {
       "task_id": "UNIT_TEST_GENERATION-03",
@@ -1862,20 +1979,21 @@
       },
       "dataset_entry_id": "UNIT_TEST_GENERATION-03",
       "set_id": "model-routing",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/model-routing/UNIT_TEST_GENERATION-03",
-      "fixture_file_count": 2,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-48bf823037ec3f",
+        "R-337f4c44d0a8be",
+        "R-302569f9d146bd"
+      ],
+      "result_page": "sets/model-routing.md#unit_test_generation-03",
+      "result_data": "results/model-routing.json"
     }
   ],
   "result_summary": {
-    "set_id": "model-routing",
-    "source_set": "model-routing",
     "entries": 30,
-    "structured_result_records": 90,
-    "task_ids_with_structured_results": 30,
-    "task_ids_without_structured_results": [],
-    "historical_reports": [],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 30,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 90
   }
 }

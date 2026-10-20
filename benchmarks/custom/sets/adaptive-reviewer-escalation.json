@@ -1,5 +1,6 @@
 {
   "set_id": "adaptive-reviewer-escalation",
+  "display_name": "レビュー判断と追加レビューの比較",
   "entry_count": 8,
   "tasks": [
     {
@@ -28,10 +29,14 @@
       "edit_regions": {},
       "dataset_entry_id": "ARE-001",
       "set_id": "adaptive-reviewer-escalation",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-001",
-      "fixture_file_count": 30,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-5ea2f441bc22e2",
+        "R-1d79642bea170d",
+        "R-26a822ebf458c7"
+      ],
+      "result_page": "sets/adaptive-reviewer-escalation.md#are-001",
+      "result_data": "results/adaptive-reviewer-escalation.json"
     },
     {
       "task_id": "ARE-002",
@@ -59,10 +64,14 @@
       "edit_regions": {},
       "dataset_entry_id": "ARE-002",
       "set_id": "adaptive-reviewer-escalation",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-002",
-      "fixture_file_count": 30,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-e2ee0f1c8e8a6e",
+        "R-95a36107197f2e",
+        "R-880fd7a71db92e"
+      ],
+      "result_page": "sets/adaptive-reviewer-escalation.md#are-002",
+      "result_data": "results/adaptive-reviewer-escalation.json"
     },
     {
       "task_id": "ARE-003",
@@ -90,10 +99,14 @@
       "edit_regions": {},
       "dataset_entry_id": "ARE-003",
       "set_id": "adaptive-reviewer-escalation",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-003",
-      "fixture_file_count": 30,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-66ec43808b47bd",
+        "R-1bbd263a590a46",
+        "R-ae91a68c814802"
+      ],
+      "result_page": "sets/adaptive-reviewer-escalation.md#are-003",
+      "result_data": "results/adaptive-reviewer-escalation.json"
     },
     {
       "task_id": "ARE-004",
@@ -121,10 +134,14 @@
       "edit_regions": {},
       "dataset_entry_id": "ARE-004",
       "set_id": "adaptive-reviewer-escalation",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-004",
-      "fixture_file_count": 30,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-0d3e4954bdd039",
+        "R-ca547d218acdea",
+        "R-701ae3cadc96c7"
+      ],
+      "result_page": "sets/adaptive-reviewer-escalation.md#are-004",
+      "result_data": "results/adaptive-reviewer-escalation.json"
     },
     {
       "task_id": "ARE-005",
@@ -152,10 +169,14 @@
       "edit_regions": {},
       "dataset_entry_id": "ARE-005",
       "set_id": "adaptive-reviewer-escalation",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-005",
-      "fixture_file_count": 30,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-c53e4f5f25561c",
+        "R-47fea7446c8dac",
+        "R-db650a879ebacf"
+      ],
+      "result_page": "sets/adaptive-reviewer-escalation.md#are-005",
+      "result_data": "results/adaptive-reviewer-escalation.json"
     },
     {
       "task_id": "ARE-006",
@@ -183,10 +204,14 @@
       "edit_regions": {},
       "dataset_entry_id": "ARE-006",
       "set_id": "adaptive-reviewer-escalation",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-006",
-      "fixture_file_count": 30,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-0944bb0a7fab3b",
+        "R-91b5e9f0cdfb68",
+        "R-dc27fb701f86ea"
+      ],
+      "result_page": "sets/adaptive-reviewer-escalation.md#are-006",
+      "result_data": "results/adaptive-reviewer-escalation.json"
     },
     {
       "task_id": "ARE-007",
@@ -214,10 +239,14 @@
       "edit_regions": {},
       "dataset_entry_id": "ARE-007",
       "set_id": "adaptive-reviewer-escalation",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-007",
-      "fixture_file_count": 30,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-21c3575b53c098",
+        "R-03e17400c4379b",
+        "R-5a9dc89d5480fc"
+      ],
+      "result_page": "sets/adaptive-reviewer-escalation.md#are-007",
+      "result_data": "results/adaptive-reviewer-escalation.json"
     },
     {
       "task_id": "ARE-008",
@@ -245,35 +274,21 @@
       "edit_regions": {},
       "dataset_entry_id": "ARE-008",
       "set_id": "adaptive-reviewer-escalation",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-008",
-      "fixture_file_count": 30,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-615dcc1b94b6a5",
+        "R-84ac5a6b5735d7",
+        "R-908af1b5f9393e"
+      ],
+      "result_page": "sets/adaptive-reviewer-escalation.md#are-008",
+      "result_data": "results/adaptive-reviewer-escalation.json"
     }
   ],
   "result_summary": {
-    "set_id": "adaptive-reviewer-escalation",
-    "source_set": "adaptive-reviewer-escalation",
     "entries": 8,
-    "structured_result_records": 0,
-    "task_ids_with_structured_results": 0,
-    "task_ids_without_structured_results": [
-      "ARE-001",
-      "ARE-002",
-      "ARE-003",
-      "ARE-004",
-      "ARE-005",
-      "ARE-006",
-      "ARE-007",
-      "ARE-008"
-    ],
-    "historical_reports": [
-      {
-        "file": "results/adaptive-reviewer-escalation/RESULTS_JA.md",
-        "source_report": "adaptive-reviewer-escalation/RESULTS_JA.md",
-        "source_sha256": "b43bd83e6eec024307b7f56e9b7df6f24fee7c51b0ae345b46a26219d052e10f"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 8,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 24
   }
 }

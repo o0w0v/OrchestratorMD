@@ -1,0 +1,156 @@
+{
+  "format_version": 2,
+  "set_id": "bounded-v2.2.6-body-contract--offline",
+  "entries": {
+    "S226-SAVED-001": [
+      {
+        "result_id": "R-d7eebe90ac827f",
+        "entry_key": "bounded-v2.2.6-body-contract--offline/S226-SAVED-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "S226-SAVED-001",
+          "status": "ESCALATE",
+          "reason": "CANDIDATE_SYNTAX_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "9a0e4cec8a6d66b468558397fc78405ef0eecca76747772c3ed52505b82e7915",
+          "first_pass": false,
+          "repair_pass": false,
+          "duration_seconds": 2.547,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 4051,
+            "ollama_output_tokens": 270,
+            "ollama_cache_tokens": 872,
+            "ollama_duration_seconds": 28.3059148
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": true,
+            "reference_input_tokens": null,
+            "model_input_tokens": 4051,
+            "model_output_tokens": 270,
+            "Worker_seconds": 2.547
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/S226-SAVED-001/result.json",
+        "validation_pass": null,
+        "source_sha256": "7533ed21f61a85c2653b4856c7ab873cd3e224684825b76314c1ac7aa831ee71",
+        "json_pointer": "",
+        "reported_task_id": "S226-SAVED-001",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "3d9f97bb6d78c184afb9b0bf07a850dca545da52f81b2903da9f0b7915379140",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "S226-SAVED-003": [
+      {
+        "result_id": "R-4a7e7834ad30b4",
+        "entry_key": "bounded-v2.2.6-body-contract--offline/S226-SAVED-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=qwen3-coder-next:latest",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "S226-SAVED-003",
+          "status": "ESCALATE",
+          "reason": "GENERATION_CONTRACT_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "DEBUGGING",
+          "model": "qwen3-coder-next:latest",
+          "protocol": "fixed_slot",
+          "base_content_id": "1ac9d58eb17301678abdc5d0421c8c93c89886a8a9e132343e2987ab86ce09c9",
+          "duration_seconds": 4.421,
+          "repair_attempted": false,
+          "first_pass": null,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 880,
+            "ollama_output_tokens": 148,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 52.3333507
+          },
+          "metrics": {
+            "First_PASS": null,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 880,
+            "model_output_tokens": 148,
+            "Worker_seconds": 4.421
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/S226-SAVED-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "35c86ce017695c7a38363b2c9a91f3961010b3d5c8fa4fe2c5d3175c82ce043c",
+        "json_pointer": "",
+        "reported_task_id": "S226-SAVED-003",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "0c9ccb9482bf743813baa264f0954ba58342b8d30f989b4b71d6de0ad5171712",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "qwen3-coder-next:latest"
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/bounded-v2.2.6-body-contract--offline/RESULTS_JA.md",
+      "source_report": "bounded-v2.2.6-body-contract/RESULTS_JA.md",
+      "source_sha256": "a8203d5e417a82079fb310a2c690dd809511d4f416db9144b05cc77154fce1fe",
+      "scope": "SAME_EXPERIMENT_CONTEXT"
+    }
+  ],
+  "summary": {
+    "entries": 2,
+    "linked_entries": 2,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 2
+  }
+}

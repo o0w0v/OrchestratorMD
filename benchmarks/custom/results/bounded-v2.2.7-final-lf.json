@@ -1,0 +1,1042 @@
+{
+  "format_version": 2,
+  "set_id": "bounded-v2.2.7-final-lf",
+  "entries": {
+    "LF227-001": [
+      {
+        "result_id": "R-0593bd4b3c3013",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LF227-001",
+          "protocol": "fixed_slot",
+          "group": "LF_RESCUED_ACCEPTED",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "LF_CANONICALIZATION_APPLIED": true,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": true,
+          "local_adopted": true,
+          "FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 909,
+            "ollama_output_tokens": 40,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 7.7469515
+          },
+          "CODEX_ONLY_CREDITS": 3.83517,
+          "LOCAL_ROUTED_CREDITS": 1.7365599999999999,
+          "CREDITS_SAVED": 2.0986100000000003,
+          "CREDIT_REDUCTION_RATE": 0.5472012974653014,
+          "SHARED_PLANNER_CREDITS": 1.21448,
+          "SHARED_PLANNER_KNOWN_METERED_CREDITS": 1.21448,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.62069,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 0.52208,
+          "LOCAL_WORKER_WALL": 57.719,
+          "LOCAL_HOST_VALIDATION_SECONDS": 38.766,
+          "CODEX_ONLY_HOST_VALIDATION_SECONDS": 46.79700000000594,
+          "CLEAN_HANDOFF_HOST_VALIDATION_SECONDS": 0,
+          "CODEX_ONLY_EXECUTOR_REVIEW_VALIDATION_WALL": 117.04799999999523,
+          "LOCAL_ROUTED_WORKER_EXECUTOR_REVIEW_VALIDATION_WALL": 79.43799999999732,
+          "CLI_PHASE_WALL_SECONDS": {
+            "planner": 32.953000000008615
+          }
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "b67d4203eff7538987571e6bdc390cd43f33997b6a2d37c869f6273c74eb7b0e",
+        "json_pointer": "/0",
+        "reported_task_id": "LF227-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "16817fadff7a81f4a9042faafc9fecf3ac7bee096dc421d013fb99db438feb69",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-ce2aa1ed7339cb",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-001",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff implements the frozen contract: it returns every sampled row’s nonzero PID when parent_pid is zero, preserving order and duplicates without using RSS or changing the input. All mandatory checks and the Host scope guard passed.",
+            "usage": {
+              "input_tokens": 32265,
+              "cached_input_tokens": 14464,
+              "output_tokens": 273,
+              "uncached_input_tokens": 17801,
+              "total_tokens": 32538
+            },
+            "credits": 1.03062,
+            "wall_seconds": 15.140999999988708
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LF227-001/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "8785f1d2555cd8457c6c0b4f887c5f538cd4c0be1f6d5b869ec741babc6ed376",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "16817fadff7a81f4a9042faafc9fecf3ac7bee096dc421d013fb99db438feb69",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LF227-002": [
+      {
+        "result_id": "R-5685bac4345fab",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LF227-002",
+          "protocol": "fixed_slot",
+          "group": "LF_RESCUED_ACCEPTED",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "LF_CANONICALIZATION_APPLIED": true,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": true,
+          "local_adopted": true,
+          "FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 911,
+            "ollama_output_tokens": 31,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 2.6483134
+          },
+          "CODEX_ONLY_CREDITS": null,
+          "LOCAL_ROUTED_CREDITS": null,
+          "CREDITS_SAVED": 1.7578399999999998,
+          "CREDIT_REDUCTION_RATE": null,
+          "SHARED_PLANNER_CREDITS": null,
+          "SHARED_PLANNER_KNOWN_METERED_CREDITS": 1.14948,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.3119199999999998,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 0.55408,
+          "LOCAL_WORKER_WALL": 48.359,
+          "LOCAL_HOST_VALIDATION_SECONDS": 38.01500000000001,
+          "CODEX_ONLY_HOST_VALIDATION_SECONDS": 52.812999999994645,
+          "CLEAN_HANDOFF_HOST_VALIDATION_SECONDS": 0,
+          "CODEX_ONLY_EXECUTOR_REVIEW_VALIDATION_WALL": 147.92299999998068,
+          "LOCAL_ROUTED_WORKER_EXECUTOR_REVIEW_VALIDATION_WALL": 70.54699999999465,
+          "CLI_PHASE_WALL_SECONDS": {
+            "planner": 40.90600000001723
+          }
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "b67d4203eff7538987571e6bdc390cd43f33997b6a2d37c869f6273c74eb7b0e",
+        "json_pointer": "/1",
+        "reported_task_id": "LF227-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d064f68c061bb5ae3c2e50d893f7d834ee54787acf195e35efc1c9493f2e0f91",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-af68d07bd78561",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-002",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff converts each u64 RSS value to u128 before summing, so every row contributes to the exact total without u64 overflow. The change is within the allowed marker, and all mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 32225,
+              "cached_input_tokens": 26496,
+              "output_tokens": 341,
+              "uncached_input_tokens": 5729,
+              "total_tokens": 32566
+            },
+            "credits": 0.50418,
+            "wall_seconds": 17.156999999991967
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LF227-002/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "beb8e914727187421e93f7120091ede6e603fc9fcddc4a65769b7fa264b7bf6e",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d064f68c061bb5ae3c2e50d893f7d834ee54787acf195e35efc1c9493f2e0f91",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LF227-003": [
+      {
+        "result_id": "R-4ba0844f50e381",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LF227-003",
+          "protocol": "fixed_slot",
+          "group": "RAW_PASS_ACCEPTED",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "LF_CANONICALIZATION_APPLIED": false,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "local_adopted": true,
+          "FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 975,
+            "ollama_output_tokens": 40,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 3.4092259
+          },
+          "CODEX_ONLY_CREDITS": 3.51162,
+          "LOCAL_ROUTED_CREDITS": 1.68656,
+          "CREDITS_SAVED": 1.8250600000000001,
+          "CREDIT_REDUCTION_RATE": 0.519720243078693,
+          "SHARED_PLANNER_CREDITS": 1.17578,
+          "SHARED_PLANNER_KNOWN_METERED_CREDITS": 1.17578,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.33584,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 0.51078,
+          "LOCAL_WORKER_WALL": 50.047,
+          "LOCAL_HOST_VALIDATION_SECONDS": 38.986999999999995,
+          "CODEX_ONLY_HOST_VALIDATION_SECONDS": 52.85900000001129,
+          "CLEAN_HANDOFF_HOST_VALIDATION_SECONDS": 0,
+          "CODEX_ONLY_EXECUTOR_REVIEW_VALIDATION_WALL": 144.9220000000205,
+          "LOCAL_ROUTED_WORKER_EXECUTOR_REVIEW_VALIDATION_WALL": 67.85999999999464,
+          "CLI_PHASE_WALL_SECONDS": {
+            "planner": 30.75
+          }
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "b67d4203eff7538987571e6bdc390cd43f33997b6a2d37c869f6273c74eb7b0e",
+        "json_pointer": "/2",
+        "reported_task_id": "LF227-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b9fa42652e5260d10611a3ee9c3c0ca4bf0c75089760ac3747dc9b1d0757b559",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-afc93a5c0cd50f",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-003",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate returns each warning’s UTF-8 byte length in order, preserves state, and changes only the allowed marker region. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32436,
+              "cached_input_tokens": 14464,
+              "output_tokens": 277,
+              "uncached_input_tokens": 17972,
+              "total_tokens": 32713
+            },
+            "credits": 1.04017,
+            "wall_seconds": 17.03200000000652
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LF227-003/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "729da34415b60b97967545de195c02a038d57d82e93b2c24bd4a22a72b204d6f",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "b9fa42652e5260d10611a3ee9c3c0ca4bf0c75089760ac3747dc9b1d0757b559",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LF227-004": [
+      {
+        "result_id": "R-cf35dbf5de2986",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LF227-004",
+          "protocol": "fixed_slot",
+          "group": "CLEAN_HANDOFF",
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "LF_CANONICALIZATION_APPLIED": false,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "local_adopted": false,
+          "FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 934,
+            "ollama_output_tokens": 68,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 5.266787
+          },
+          "CODEX_ONLY_CREDITS": 4.10405,
+          "LOCAL_ROUTED_CREDITS": null,
+          "CREDITS_SAVED": null,
+          "CREDIT_REDUCTION_RATE": null,
+          "SHARED_PLANNER_CREDITS": 1.18413,
+          "SHARED_PLANNER_KNOWN_METERED_CREDITS": 1.18413,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.91992,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": null,
+          "LOCAL_WORKER_WALL": 39.829,
+          "LOCAL_HOST_VALIDATION_SECONDS": 27.421999999999997,
+          "CODEX_ONLY_HOST_VALIDATION_SECONDS": 51.625,
+          "CLEAN_HANDOFF_HOST_VALIDATION_SECONDS": 51.64100000000326,
+          "CODEX_ONLY_EXECUTOR_REVIEW_VALIDATION_WALL": 145.01600000000326,
+          "LOCAL_ROUTED_WORKER_EXECUTOR_REVIEW_VALIDATION_WALL": 181.954,
+          "CLI_PHASE_WALL_SECONDS": {
+            "planner": 30.218999999997322
+          }
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "b67d4203eff7538987571e6bdc390cd43f33997b6a2d37c869f6273c74eb7b0e",
+        "json_pointer": "/3",
+        "reported_task_id": "LF227-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b65a5db5a6780e207faaa861d408ae192a8a941e152f6354e0a0660b9654bbda",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-48a2cb21276194",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-004",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff implements the frozen contract with exact, overflow-safe integer arithmetic. All mandatory checks and scope guards passed, and the packet shows no concrete remaining defect.",
+            "usage": {
+              "input_tokens": 32381,
+              "cached_input_tokens": 26496,
+              "output_tokens": 292,
+              "uncached_input_tokens": 5885,
+              "total_tokens": 32673
+            },
+            "credits": 0.49973,
+            "wall_seconds": 16.593999999997322
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LF227-004/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "8b31bf8ee47aed45e36d11ca2aca7d719c402d5d577ce25c0f930388c4709617",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "b65a5db5a6780e207faaa861d408ae192a8a941e152f6354e0a0660b9654bbda",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LF227-005": [
+      {
+        "result_id": "R-c2d7265b2d0c8d",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LF227-005",
+          "protocol": "agentic",
+          "group": "CLEAN_HANDOFF",
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "LF_CANONICALIZATION_APPLIED": false,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "local_adopted": false,
+          "FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 2403,
+            "ollama_output_tokens": 266,
+            "ollama_cache_tokens": 574,
+            "ollama_duration_seconds": 20.5233651
+          },
+          "CODEX_ONLY_CREDITS": 3.19761,
+          "LOCAL_ROUTED_CREDITS": 3.67565,
+          "CREDITS_SAVED": -0.47804,
+          "CREDIT_REDUCTION_RATE": -0.14949915718302106,
+          "SHARED_PLANNER_CREDITS": 1.30622,
+          "SHARED_PLANNER_KNOWN_METERED_CREDITS": 1.30622,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 1.89139,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 2.36943,
+          "LOCAL_WORKER_WALL": 59.859,
+          "LOCAL_HOST_VALIDATION_SECONDS": 28.656,
+          "CODEX_ONLY_HOST_VALIDATION_SECONDS": 53.5,
+          "CLEAN_HANDOFF_HOST_VALIDATION_SECONDS": 53.14099999998871,
+          "CODEX_ONLY_EXECUTOR_REVIEW_VALIDATION_WALL": 126.90699999999197,
+          "LOCAL_ROUTED_WORKER_EXECUTOR_REVIEW_VALIDATION_WALL": 213.73399999998546,
+          "CLI_PHASE_WALL_SECONDS": {
+            "planner": 29.828000000008615
+          }
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "b67d4203eff7538987571e6bdc390cd43f33997b6a2d37c869f6273c74eb7b0e",
+        "json_pointer": "/4",
+        "reported_task_id": "LF227-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0c8b424dbdd61125ab74920a4088125e99f795d5d8dfdbc7d0590021bb35efcf",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-fcc39778a937d3",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-005",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff implements consecutive runs using exact message equality, preserves order and input, and leaves sample_count_control unchanged. All mandatory validation and scope checks passed. No concrete contract or scope defect remains.",
+            "usage": {
+              "input_tokens": 32376,
+              "cached_input_tokens": 26496,
+              "output_tokens": 233,
+              "uncached_input_tokens": 5880,
+              "total_tokens": 32609
+            },
+            "credits": 0.48473,
+            "wall_seconds": 13.485000000000582
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LF227-005/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "61e99622aeb137309c58df0c0da4c0a16c8d29c0ae1b459e9e9eef32cc6e6072",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "0c8b424dbdd61125ab74920a4088125e99f795d5d8dfdbc7d0590021bb35efcf",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LF227-006": [
+      {
+        "result_id": "R-2fdf4f650994dc",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-006",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LF227-006",
+          "protocol": "agentic",
+          "group": "CLEAN_HANDOFF",
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "LF_CANONICALIZATION_APPLIED": false,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "local_adopted": false,
+          "FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 2746,
+            "ollama_output_tokens": 164,
+            "ollama_cache_tokens": 671,
+            "ollama_duration_seconds": 13.3142653
+          },
+          "CODEX_ONLY_CREDITS": 4.143560000000001,
+          "LOCAL_ROUTED_CREDITS": null,
+          "CREDITS_SAVED": null,
+          "CREDIT_REDUCTION_RATE": null,
+          "SHARED_PLANNER_CREDITS": 1.20968,
+          "SHARED_PLANNER_KNOWN_METERED_CREDITS": 1.20968,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.9338800000000003,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": null,
+          "LOCAL_WORKER_WALL": 61.188,
+          "LOCAL_HOST_VALIDATION_SECONDS": 34.64,
+          "CODEX_ONLY_HOST_VALIDATION_SECONDS": 50.5,
+          "CLEAN_HANDOFF_HOST_VALIDATION_SECONDS": 52.812999999994645,
+          "CODEX_ONLY_EXECUTOR_REVIEW_VALIDATION_WALL": 127.375,
+          "LOCAL_ROUTED_WORKER_EXECUTOR_REVIEW_VALIDATION_WALL": 259.0019999999985,
+          "CLI_PHASE_WALL_SECONDS": {
+            "planner": 32.421999999991385
+          }
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "b67d4203eff7538987571e6bdc390cd43f33997b6a2d37c869f6273c74eb7b0e",
+        "json_pointer": "/5",
+        "reported_task_id": "LF227-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "08ccdbc35d965ef80684d21bddb21312b611752901d8c0d17d29f3b03f5d90bf",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-751abb11fb9258",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-006",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff implements the required labels for None, Some(0), and positive counts, including exact unsigned decimal formatting. It changes only the permitted function body, and all mandatory validation and scope checks pass.",
+            "usage": {
+              "input_tokens": 32731,
+              "cached_input_tokens": 14464,
+              "output_tokens": 232,
+              "uncached_input_tokens": 18267,
+              "total_tokens": 32963
+            },
+            "credits": 1.04367,
+            "wall_seconds": 15.76600000000326
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LF227-006/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "d5cb4bfe950546d18e3ab4348237ceaa327474b21899c77694d9329b1dcc6078",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "08ccdbc35d965ef80684d21bddb21312b611752901d8c0d17d29f3b03f5d90bf",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LF227-007": [
+      {
+        "result_id": "R-4936ce850270e2",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LF227-007",
+          "protocol": "agentic",
+          "group": "CLEAN_HANDOFF",
+          "Local_status": "ESCALATE",
+          "Local_reason": "FORMAT_UNSUPPORTED_NORMALIZATION",
+          "LF_CANONICALIZATION_APPLIED": false,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "local_adopted": false,
+          "FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 2747,
+            "ollama_output_tokens": 162,
+            "ollama_cache_tokens": 665,
+            "ollama_duration_seconds": 13.2185028
+          },
+          "CODEX_ONLY_CREDITS": null,
+          "LOCAL_ROUTED_CREDITS": 3.62441,
+          "CREDITS_SAVED": null,
+          "CREDIT_REDUCTION_RATE": null,
+          "SHARED_PLANNER_CREDITS": 1.22473,
+          "SHARED_PLANNER_KNOWN_METERED_CREDITS": 1.22473,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": null,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 2.39968,
+          "LOCAL_WORKER_WALL": 22.843,
+          "LOCAL_HOST_VALIDATION_SECONDS": 0,
+          "CODEX_ONLY_HOST_VALIDATION_SECONDS": 54.40600000000268,
+          "CLEAN_HANDOFF_HOST_VALIDATION_SECONDS": 54.203000000008615,
+          "CODEX_ONLY_EXECUTOR_REVIEW_VALIDATION_WALL": 151.96899999999732,
+          "LOCAL_ROUTED_WORKER_EXECUTOR_REVIEW_VALIDATION_WALL": 174.87400000001725,
+          "CLI_PHASE_WALL_SECONDS": {
+            "planner": 42.562999999994645
+          }
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "b67d4203eff7538987571e6bdc390cd43f33997b6a2d37c869f6273c74eb7b0e",
+        "json_pointer": "/6",
+        "reported_task_id": "LF227-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "84759ccee463bf36cb92faff412d043d908df7d9436d2c334d3993f8f5b15fc0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-766a7415415968",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-007",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The scan returns the last index with the maximum observed_unix_ms, including zero and u128::MAX, and returns None for an empty slice. The diff stays within the allowed region, preserves sample_count_control, and all mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 32902,
+              "cached_input_tokens": 0,
+              "output_tokens": 337,
+              "uncached_input_tokens": 32902,
+              "total_tokens": 33239
+            },
+            "credits": 1.72935,
+            "wall_seconds": 21.906000000002678
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LF227-007/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "edfb930801c1f3d26513fbc520338fc0d6e3b23afbb6fe2ff90de23240dd63fd",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "84759ccee463bf36cb92faff412d043d908df7d9436d2c334d3993f8f5b15fc0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LF227-008": [
+      {
+        "result_id": "R-e1f39de996c162",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LF227-008",
+          "protocol": "agentic",
+          "group": "RAW_PASS_ACCEPTED",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "LF_CANONICALIZATION_APPLIED": false,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "local_adopted": true,
+          "FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 2976,
+            "ollama_output_tokens": 156,
+            "ollama_cache_tokens": 662,
+            "ollama_duration_seconds": 12.9057302
+          },
+          "CODEX_ONLY_CREDITS": 2.8758500000000002,
+          "LOCAL_ROUTED_CREDITS": null,
+          "CREDITS_SAVED": null,
+          "CREDIT_REDUCTION_RATE": null,
+          "SHARED_PLANNER_CREDITS": 0.64163,
+          "SHARED_PLANNER_KNOWN_METERED_CREDITS": 0.64163,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.23422,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": null,
+          "LOCAL_WORKER_WALL": 62.391,
+          "LOCAL_HOST_VALIDATION_SECONDS": 33.187,
+          "CODEX_ONLY_HOST_VALIDATION_SECONDS": 54.39100000000326,
+          "CLEAN_HANDOFF_HOST_VALIDATION_SECONDS": 0,
+          "CODEX_ONLY_EXECUTOR_REVIEW_VALIDATION_WALL": 145.1420000000071,
+          "LOCAL_ROUTED_WORKER_EXECUTOR_REVIEW_VALIDATION_WALL": 85.78300000000709,
+          "CLI_PHASE_WALL_SECONDS": {
+            "planner": 42.09300000000803
+          }
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "b67d4203eff7538987571e6bdc390cd43f33997b6a2d37c869f6273c74eb7b0e",
+        "json_pointer": "/7",
+        "reported_task_id": "LF227-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3503392b905eaafd8be0c7501ebc001adabdbeb022adcb76e7f2e715731ab576",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-e265c7d767ce57",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-008",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff implements the frozen contract: it returns sources only for present, failed verifications while preserving order, duplicates, empty strings, and input records. All mandatory checks and the Host scope guard passed.",
+            "usage": {
+              "input_tokens": 33058,
+              "cached_input_tokens": 14464,
+              "output_tokens": 241,
+              "uncached_input_tokens": 18594,
+              "total_tokens": 33299
+            },
+            "credits": 1.06227,
+            "wall_seconds": 15.360000000000582
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LF227-008/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "ae3300549e27e5d3bd25c79da35b9d516890846043c27ae473c4ba5a1a3acdab",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "3503392b905eaafd8be0c7501ebc001adabdbeb022adcb76e7f2e715731ab576",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LF227-009": [
+      {
+        "result_id": "R-1a627a5c645c7f",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LF227-009",
+          "protocol": "fixed_slot",
+          "group": "CLEAN_HANDOFF",
+          "Local_status": "ESCALATE",
+          "Local_reason": "LINT_REPAIR_NOT_ELIGIBLE",
+          "LF_CANONICALIZATION_APPLIED": true,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "local_adopted": false,
+          "FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1187,
+            "ollama_output_tokens": 35,
+            "ollama_cache_tokens": 52,
+            "ollama_duration_seconds": 3.2327958
+          },
+          "CODEX_ONLY_CREDITS": 3.84881,
+          "LOCAL_ROUTED_CREDITS": 3.95284,
+          "CREDITS_SAVED": -0.10403000000000029,
+          "CREDIT_REDUCTION_RATE": -0.027029133680280475,
+          "SHARED_PLANNER_CREDITS": 1.30693,
+          "SHARED_PLANNER_KNOWN_METERED_CREDITS": 1.30693,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": 2.54188,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 2.64591,
+          "LOCAL_WORKER_WALL": 47.031,
+          "LOCAL_HOST_VALIDATION_SECONDS": 36.42,
+          "CODEX_ONLY_HOST_VALIDATION_SECONDS": 53.5,
+          "CLEAN_HANDOFF_HOST_VALIDATION_SECONDS": 53.54700000000594,
+          "CODEX_ONLY_EXECUTOR_REVIEW_VALIDATION_WALL": 125.15600000000268,
+          "LOCAL_ROUTED_WORKER_EXECUTOR_REVIEW_VALIDATION_WALL": 257.07700000001665,
+          "CLI_PHASE_WALL_SECONDS": {
+            "planner": 48.63999999999942
+          }
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "b67d4203eff7538987571e6bdc390cd43f33997b6a2d37c869f6273c74eb7b0e",
+        "json_pointer": "/8",
+        "reported_task_id": "LF227-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "39acbec3ee4643cc6e707315895a1727fbe2d30134fef4024628d53151c5d4f0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-91dce822e4e87c",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-009",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the declared marker region. It returns qualifying risks in proposal order, includes equal risks and duplicates, and leaves proposals untouched. All mandatory validation and scope checks passed; no concrete contract defect remains.",
+            "usage": {
+              "input_tokens": 32700,
+              "cached_input_tokens": 26496,
+              "output_tokens": 291,
+              "uncached_input_tokens": 6204,
+              "total_tokens": 32991
+            },
+            "credits": 0.51543,
+            "wall_seconds": 17.875
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LF227-009/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "f243493be29f8e1f4d5c4c87325e52955ad5cf7954e6768d48c2fb6056d81a74",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "39acbec3ee4643cc6e707315895a1727fbe2d30134fef4024628d53151c5d4f0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LF227-010": [
+      {
+        "result_id": "R-6bfdbc95d301a6",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-010",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LF227-010",
+          "protocol": "fixed_slot",
+          "group": "RAW_PASS_ACCEPTED",
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "LF_CANONICALIZATION_APPLIED": false,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "CANONICALIZED_LOCAL_FIRST_PASS": false,
+          "local_adopted": true,
+          "FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 631,
+            "ollama_output_tokens": 25,
+            "ollama_cache_tokens": 89,
+            "ollama_duration_seconds": 2.2036286
+          },
+          "CODEX_ONLY_CREDITS": null,
+          "LOCAL_ROUTED_CREDITS": 1.79196,
+          "CREDITS_SAVED": null,
+          "CREDIT_REDUCTION_RATE": null,
+          "SHARED_PLANNER_CREDITS": 1.27023,
+          "SHARED_PLANNER_KNOWN_METERED_CREDITS": 1.27023,
+          "CODEX_ONLY_EXECUTOR_REVIEW_CREDITS": null,
+          "LOCAL_ROUTED_EXECUTOR_REVIEW_CREDITS": 0.52173,
+          "LOCAL_WORKER_WALL": 48.531,
+          "LOCAL_HOST_VALIDATION_SECONDS": 38.688,
+          "CODEX_ONLY_HOST_VALIDATION_SECONDS": 50.796999999991385,
+          "CLEAN_HANDOFF_HOST_VALIDATION_SECONDS": 0,
+          "CODEX_ONLY_EXECUTOR_REVIEW_VALIDATION_WALL": 148.5779999999795,
+          "LOCAL_ROUTED_WORKER_EXECUTOR_REVIEW_VALIDATION_WALL": 77.24999999999733,
+          "CLI_PHASE_WALL_SECONDS": {
+            "planner": 42.25
+          }
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "b67d4203eff7538987571e6bdc390cd43f33997b6a2d37c869f6273c74eb7b0e",
+        "json_pointer": "/9",
+        "reported_task_id": "LF227-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "df3c4ae9282f06be4a92f33928d7f54b30e379631b34c93b5ef47fbc7a7a5477",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-739913a32cdfec",
+        "entry_key": "bounded-v2.2.7-final-lf/LF227-010",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The one-line change returns the last index with an exact, case-sensitive match. It preserves the signature and stays within the allowed region. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 32054,
+              "cached_input_tokens": 26496,
+              "output_tokens": 281,
+              "uncached_input_tokens": 5558,
+              "total_tokens": 32335
+            },
+            "credits": 0.48063,
+            "wall_seconds": 28.843999999997322
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/LF227-010/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "5df61383455156a85ec8cc9729d2c6df3195ad67157afd01f9b57cc758a561f0",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "df3c4ae9282f06be4a92f33928d7f54b30e379631b34c93b5ef47fbc7a7a5477",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/bounded-v2.2.7-final-lf/RESULTS_BOUNDED_2_2_7_LF_JA.md",
+      "source_report": "bounded-v2.2.7-final-lf/RESULTS_BOUNDED_2_2_7_LF_JA.md",
+      "source_sha256": "3e7d56808d396577a62fe1cd792bd1f52b7844e5523ddf10c31779baec545bd3",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 10,
+    "linked_entries": 10,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 20
+  }
+}

@@ -1,0 +1,949 @@
+{
+  "format_version": 2,
+  "set_id": "adaptive-reviewer-escalation",
+  "entries": {
+    "ARE-001": [
+      {
+        "result_id": "R-5ea2f441bc22e2",
+        "entry_key": "adaptive-reviewer-escalation/ARE-001",
+        "stage": "REVIEW",
+        "condition": "review_arm=always61",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.15451,
+          "usage": {
+            "input_tokens": 35389,
+            "cached_input_tokens": 15104,
+            "output_tokens": 410,
+            "uncached_input_tokens": 20285,
+            "total_tokens": 35799
+          },
+          "wall_seconds": 32.09400000000096,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/0/arms/always61",
+        "reported_task_id": "ARE-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d821acd6fc92a9ae4bd58282228408c6dabd1d8bbd35650b758bbffb8cb6173e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1d79642bea170d",
+        "entry_key": "adaptive-reviewer-escalation/ARE-001",
+        "stage": "REVIEW",
+        "condition": "review_arm=primary",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.16576,
+          "usage": {
+            "input_tokens": 34428,
+            "cached_input_tokens": 14592,
+            "output_tokens": 404,
+            "uncached_input_tokens": 19836,
+            "total_tokens": 34832
+          },
+          "wall_seconds": 25.17199999999866,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/0/arms/primary",
+        "reported_task_id": "ARE-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d821acd6fc92a9ae4bd58282228408c6dabd1d8bbd35650b758bbffb8cb6173e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-26a822ebf458c7",
+        "entry_key": "adaptive-reviewer-escalation/ARE-001",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "final_validation": "validation-01",
+          "passed": true
+        },
+        "source_file": "runs/ARE-001/result.json",
+        "validation_pass": true,
+        "source_sha256": "b9163365d60d6d891feae1d69f386aa068e56122908845005cef4e5605b902cb",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d821acd6fc92a9ae4bd58282228408c6dabd1d8bbd35650b758bbffb8cb6173e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "ARE-002": [
+      {
+        "result_id": "R-e2ee0f1c8e8a6e",
+        "entry_key": "adaptive-reviewer-escalation/ARE-002",
+        "stage": "REVIEW",
+        "condition": "review_arm=always61",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.13206,
+          "usage": {
+            "input_tokens": 35195,
+            "cached_input_tokens": 15104,
+            "output_tokens": 359,
+            "uncached_input_tokens": 20091,
+            "total_tokens": 35554
+          },
+          "wall_seconds": 22.82800000000134,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/1/arms/always61",
+        "reported_task_id": "ARE-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "9287c45a1a4aec3afd5a987c7f61121afca989dd20f5f0ab6c297591e25d0319",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-95a36107197f2e",
+        "entry_key": "adaptive-reviewer-escalation/ARE-002",
+        "stage": "REVIEW",
+        "condition": "review_arm=primary",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.15321,
+          "usage": {
+            "input_tokens": 34227,
+            "cached_input_tokens": 14592,
+            "output_tokens": 394,
+            "uncached_input_tokens": 19635,
+            "total_tokens": 34621
+          },
+          "wall_seconds": 19.82800000000134,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/1/arms/primary",
+        "reported_task_id": "ARE-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "9287c45a1a4aec3afd5a987c7f61121afca989dd20f5f0ab6c297591e25d0319",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-880fd7a71db92e",
+        "entry_key": "adaptive-reviewer-escalation/ARE-002",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "final_validation": "validation-01",
+          "passed": true
+        },
+        "source_file": "runs/ARE-002/result.json",
+        "validation_pass": true,
+        "source_sha256": "5bccb3b8025a3a1cea8eaab5d764c5bc38bd72569ec5d241f64d978e3d611d17",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "9287c45a1a4aec3afd5a987c7f61121afca989dd20f5f0ab6c297591e25d0319",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "ARE-003": [
+      {
+        "result_id": "R-66ec43808b47bd",
+        "entry_key": "adaptive-reviewer-escalation/ARE-003",
+        "stage": "REVIEW",
+        "condition": "review_arm=always61",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.14676,
+          "usage": {
+            "input_tokens": 35719,
+            "cached_input_tokens": 15104,
+            "output_tokens": 313,
+            "uncached_input_tokens": 20615,
+            "total_tokens": 36032
+          },
+          "wall_seconds": 26.98399999999674,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/2/arms/always61",
+        "reported_task_id": "ARE-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "397f68227e9078c5a49e7032015c976d33d32d6cbf8553eae089de668cd8dbf9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1bbd263a590a46",
+        "entry_key": "adaptive-reviewer-escalation/ARE-003",
+        "stage": "REVIEW",
+        "condition": "review_arm=primary",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 0.58676,
+          "usage": {
+            "input_tokens": 34297,
+            "cached_input_tokens": 26752,
+            "output_tokens": 303,
+            "uncached_input_tokens": 7545,
+            "total_tokens": 34600
+          },
+          "wall_seconds": 20.7809999999954,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/2/arms/primary",
+        "reported_task_id": "ARE-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "397f68227e9078c5a49e7032015c976d33d32d6cbf8553eae089de668cd8dbf9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-ae91a68c814802",
+        "entry_key": "adaptive-reviewer-escalation/ARE-003",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "final_validation": "validation-01",
+          "passed": true
+        },
+        "source_file": "runs/ARE-003/result.json",
+        "validation_pass": true,
+        "source_sha256": "2e495292adaa400c662cbc3dfb0f67255bdb00a845b718e29578f3d6fd41373e",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "397f68227e9078c5a49e7032015c976d33d32d6cbf8553eae089de668cd8dbf9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "ARE-004": [
+      {
+        "result_id": "R-0d3e4954bdd039",
+        "entry_key": "adaptive-reviewer-escalation/ARE-004",
+        "stage": "REVIEW",
+        "condition": "review_arm=always61",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.13706,
+          "usage": {
+            "input_tokens": 35235,
+            "cached_input_tokens": 15104,
+            "output_tokens": 371,
+            "uncached_input_tokens": 20131,
+            "total_tokens": 35606
+          },
+          "wall_seconds": 27.75,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/3/arms/always61",
+        "reported_task_id": "ARE-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "17aeaf145e7d0f62f58c283d93c4e292fa5bf3fef0744c59af0bd3dddcafe771",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-ca547d218acdea",
+        "entry_key": "adaptive-reviewer-escalation/ARE-004",
+        "stage": "REVIEW",
+        "condition": "review_arm=primary",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 0.58631,
+          "usage": {
+            "input_tokens": 34228,
+            "cached_input_tokens": 26752,
+            "output_tokens": 315,
+            "uncached_input_tokens": 7476,
+            "total_tokens": 34543
+          },
+          "wall_seconds": 19.14100000000326,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/3/arms/primary",
+        "reported_task_id": "ARE-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "17aeaf145e7d0f62f58c283d93c4e292fa5bf3fef0744c59af0bd3dddcafe771",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-701ae3cadc96c7",
+        "entry_key": "adaptive-reviewer-escalation/ARE-004",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "final_validation": "validation-01",
+          "passed": true
+        },
+        "source_file": "runs/ARE-004/result.json",
+        "validation_pass": true,
+        "source_sha256": "d39abe9a052426df5bf9d5a68cbd574e8abdb70d2874ee89f399e811671c96ac",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "17aeaf145e7d0f62f58c283d93c4e292fa5bf3fef0744c59af0bd3dddcafe771",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "ARE-005": [
+      {
+        "result_id": "R-c53e4f5f25561c",
+        "entry_key": "adaptive-reviewer-escalation/ARE-005",
+        "stage": "REVIEW",
+        "condition": "review_arm=always61",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.13421,
+          "usage": {
+            "input_tokens": 35228,
+            "cached_input_tokens": 15104,
+            "output_tokens": 361,
+            "uncached_input_tokens": 20124,
+            "total_tokens": 35589
+          },
+          "wall_seconds": 25.56300000000192,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/4/arms/always61",
+        "reported_task_id": "ARE-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "1ec6f7fbf031016aefaa3ffcd596b1eaddb533e62bc44d40d8c247394ee786bf",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-47fea7446c8dac",
+        "entry_key": "adaptive-reviewer-escalation/ARE-005",
+        "stage": "REVIEW",
+        "condition": "review_arm=primary",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 0.63321,
+          "usage": {
+            "input_tokens": 34301,
+            "cached_input_tokens": 26752,
+            "output_tokens": 488,
+            "uncached_input_tokens": 7549,
+            "total_tokens": 34789
+          },
+          "wall_seconds": 22.843999999997322,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/4/arms/primary",
+        "reported_task_id": "ARE-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "1ec6f7fbf031016aefaa3ffcd596b1eaddb533e62bc44d40d8c247394ee786bf",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-db650a879ebacf",
+        "entry_key": "adaptive-reviewer-escalation/ARE-005",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "final_validation": "validation-02",
+          "passed": true
+        },
+        "source_file": "runs/ARE-005/result.json",
+        "validation_pass": true,
+        "source_sha256": "3151dbc23b4fd6848e50cb215388998a177be1b3179faf9300e70c01924f937e",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "1ec6f7fbf031016aefaa3ffcd596b1eaddb533e62bc44d40d8c247394ee786bf",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "ARE-006": [
+      {
+        "result_id": "R-0944bb0a7fab3b",
+        "entry_key": "adaptive-reviewer-escalation/ARE-006",
+        "stage": "REVIEW",
+        "condition": "review_arm=always61",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.18881,
+          "usage": {
+            "input_tokens": 36025,
+            "cached_input_tokens": 15104,
+            "output_tokens": 420,
+            "uncached_input_tokens": 20921,
+            "total_tokens": 36445
+          },
+          "wall_seconds": 27.0,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/5/arms/always61",
+        "reported_task_id": "ARE-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a0644120425528a28b7151fc5fe993dbd9ca145add6c082701fdc77ec1f5f65",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-91b5e9f0cdfb68",
+        "entry_key": "adaptive-reviewer-escalation/ARE-006",
+        "stage": "REVIEW",
+        "condition": "review_arm=primary",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 0.64171,
+          "usage": {
+            "input_tokens": 34581,
+            "cached_input_tokens": 26752,
+            "output_tokens": 466,
+            "uncached_input_tokens": 7829,
+            "total_tokens": 35047
+          },
+          "wall_seconds": 24.514999999999418,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/5/arms/primary",
+        "reported_task_id": "ARE-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7a0644120425528a28b7151fc5fe993dbd9ca145add6c082701fdc77ec1f5f65",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-dc27fb701f86ea",
+        "entry_key": "adaptive-reviewer-escalation/ARE-006",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "final_validation": "validation-01",
+          "passed": true
+        },
+        "source_file": "runs/ARE-006/result.json",
+        "validation_pass": true,
+        "source_sha256": "ce30beb0a64632a41c51b629e320c1a061af99d0a274d9f230353580a0f336d6",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "7a0644120425528a28b7151fc5fe993dbd9ca145add6c082701fdc77ec1f5f65",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "ARE-007": [
+      {
+        "result_id": "R-21c3575b53c098",
+        "entry_key": "adaptive-reviewer-escalation/ARE-007",
+        "stage": "REVIEW",
+        "condition": "review_arm=always61",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.14726,
+          "usage": {
+            "input_tokens": 35429,
+            "cached_input_tokens": 15104,
+            "output_tokens": 373,
+            "uncached_input_tokens": 20325,
+            "total_tokens": 35802
+          },
+          "wall_seconds": 25.56199999999808,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/6/arms/always61",
+        "reported_task_id": "ARE-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "601458aed4db2cc0dcd1f5bc50b9d740f17bab36a81a6a47bfdc1568b1485876",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-03e17400c4379b",
+        "entry_key": "adaptive-reviewer-escalation/ARE-007",
+        "stage": "REVIEW",
+        "condition": "review_arm=primary",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 0.60026,
+          "usage": {
+            "input_tokens": 34472,
+            "cached_input_tokens": 26752,
+            "output_tokens": 322,
+            "uncached_input_tokens": 7720,
+            "total_tokens": 34794
+          },
+          "wall_seconds": 19.389999999999418,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/6/arms/primary",
+        "reported_task_id": "ARE-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "601458aed4db2cc0dcd1f5bc50b9d740f17bab36a81a6a47bfdc1568b1485876",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-5a9dc89d5480fc",
+        "entry_key": "adaptive-reviewer-escalation/ARE-007",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "final_validation": "validation-01",
+          "passed": true
+        },
+        "source_file": "runs/ARE-007/result.json",
+        "validation_pass": true,
+        "source_sha256": "aa0ae41970f43d1efee89f82ea7716c8e762b53959e258b4f82d9d81630a472e",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "601458aed4db2cc0dcd1f5bc50b9d740f17bab36a81a6a47bfdc1568b1485876",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ],
+    "ARE-008": [
+      {
+        "result_id": "R-615dcc1b94b6a5",
+        "entry_key": "adaptive-reviewer-escalation/ARE-008",
+        "stage": "REVIEW",
+        "condition": "review_arm=always61",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.12811,
+          "usage": {
+            "input_tokens": 35181,
+            "cached_input_tokens": 15104,
+            "output_tokens": 346,
+            "uncached_input_tokens": 20077,
+            "total_tokens": 35527
+          },
+          "wall_seconds": 22.890999999995984,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/7/arms/always61",
+        "reported_task_id": "ARE-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3694d5b9ed1fe6756e721b8f606c021f864da8695cf826c0ea023b3387c0a645",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-84ac5a6b5735d7",
+        "entry_key": "adaptive-reviewer-escalation/ARE-008",
+        "stage": "REVIEW",
+        "condition": "review_arm=primary",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "VALID_DEFECT_DETECTION": false,
+          "FALSE_NEGATIVE": 0,
+          "FALSE_POSITIVE": 0,
+          "EXPLANATION_CORRECT": true,
+          "credits": 1.12896,
+          "usage": {
+            "input_tokens": 34212,
+            "cached_input_tokens": 14592,
+            "output_tokens": 300,
+            "uncached_input_tokens": 19620,
+            "total_tokens": 34512
+          },
+          "wall_seconds": 20.45300000000134,
+          "strict_quality_pass": true,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "summaries/cases.json",
+        "validation_pass": null,
+        "source_sha256": "58efbbedcd597b93316b683e5c36fb0b3b4beed7f986328daf62cff296aa8e23",
+        "json_pointer": "/7/arms/primary",
+        "reported_task_id": "ARE-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3694d5b9ed1fe6756e721b8f606c021f864da8695cf826c0ea023b3387c0a645",
+          "reported_task_sha256": null
+        },
+        "source_priority": 85,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-908af1b5f9393e",
+        "entry_key": "adaptive-reviewer-escalation/ARE-008",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "final_validation": "validation-01",
+          "passed": true
+        },
+        "source_file": "runs/ARE-008/result.json",
+        "validation_pass": true,
+        "source_sha256": "8e85c40229368a35df87b1583818062b252ccbbf9e60666b942341d8ca69053c",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "3694d5b9ed1fe6756e721b8f606c021f864da8695cf826c0ea023b3387c0a645",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [
+    {
+      "source_file": "summaries/cases.json",
+      "json_pointer": "/8/arms/primary",
+      "task_id": "ARE-009",
+      "reason": "AMBIGUOUS_OR_UNRELATED"
+    },
+    {
+      "source_file": "summaries/cases.json",
+      "json_pointer": "/8/arms/always61",
+      "task_id": "ARE-009",
+      "reason": "AMBIGUOUS_OR_UNRELATED"
+    },
+    {
+      "source_file": "summaries/cases.json",
+      "json_pointer": "/8/arms/secondary",
+      "task_id": "ARE-009",
+      "reason": "AMBIGUOUS_OR_UNRELATED"
+    },
+    {
+      "source_file": "summaries/cases.json",
+      "json_pointer": "/9/arms/primary",
+      "task_id": "ARE-010",
+      "reason": "AMBIGUOUS_OR_UNRELATED"
+    },
+    {
+      "source_file": "summaries/cases.json",
+      "json_pointer": "/9/arms/always61",
+      "task_id": "ARE-010",
+      "reason": "AMBIGUOUS_OR_UNRELATED"
+    },
+    {
+      "source_file": "summaries/cases.json",
+      "json_pointer": "/9/arms/secondary",
+      "task_id": "ARE-010",
+      "reason": "AMBIGUOUS_OR_UNRELATED"
+    },
+    {
+      "source_file": "summaries/cases.json",
+      "json_pointer": "/10/arms/primary",
+      "task_id": "ARE-011",
+      "reason": "AMBIGUOUS_OR_UNRELATED"
+    },
+    {
+      "source_file": "summaries/cases.json",
+      "json_pointer": "/10/arms/always61",
+      "task_id": "ARE-011",
+      "reason": "AMBIGUOUS_OR_UNRELATED"
+    },
+    {
+      "source_file": "summaries/cases.json",
+      "json_pointer": "/10/arms/secondary",
+      "task_id": "ARE-011",
+      "reason": "AMBIGUOUS_OR_UNRELATED"
+    }
+  ],
+  "reports": [
+    {
+      "path": "reports/adaptive-reviewer-escalation/RESULTS_JA.md",
+      "source_report": "adaptive-reviewer-escalation/RESULTS_JA.md",
+      "source_sha256": "b43bd83e6eec024307b7f56e9b7df6f24fee7c51b0ae345b46a26219d052e10f",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 8,
+    "linked_entries": 8,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 24
+  }
+}

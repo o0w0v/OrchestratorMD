@@ -1,0 +1,1002 @@
+{
+  "format_version": 2,
+  "set_id": "protocol-improvement-v2.1",
+  "entries": {
+    "A-001": [
+      {
+        "result_id": "R-14364d6af88884",
+        "entry_key": "protocol-improvement-v2.1/A-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "group": "A",
+          "condition": "full",
+          "task_id": "PILOT-002",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "final_pass": false,
+          "repair_invoked": true,
+          "repair_success": false,
+          "generation_calls": 2,
+          "worker_duration_seconds": 123.109,
+          "usage": {
+            "ollama_input_tokens": 4538,
+            "ollama_output_tokens": 1250,
+            "ollama_cache_tokens": 1453,
+            "ollama_duration_seconds": 32.507457
+          },
+          "codex_repair_loc": 0
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": false,
+        "source_sha256": "15ed69c09d40536288d746dbb645bc5ffe04482be6ccba86f827cef54cef9b04",
+        "json_pointer": "/1",
+        "reported_task_id": "PILOT-002",
+        "binding": {
+          "method": "SET_AND_UNIQUE_TASK_ID",
+          "expected_task_sha256": "5fb12ade7874cd229cac0726f329cc20891e78bff5188f616342c9b9a7f4b10f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-971f553c36ddb4",
+        "entry_key": "protocol-improvement-v2.1/A-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "group": "A",
+          "condition": "saved_candidate_repair",
+          "task_id": "PILOT-002",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "final_pass": false,
+          "repair_invoked": true,
+          "repair_success": false,
+          "generation_calls": 1,
+          "worker_duration_seconds": 78.063,
+          "usage": {
+            "ollama_input_tokens": 1966,
+            "ollama_output_tokens": 625,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 27.6850465
+          },
+          "codex_repair_loc": 0
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": false,
+        "source_sha256": "15ed69c09d40536288d746dbb645bc5ffe04482be6ccba86f827cef54cef9b04",
+        "json_pointer": "/0",
+        "reported_task_id": "PILOT-002",
+        "binding": {
+          "method": "SET_AND_UNIQUE_TASK_ID",
+          "expected_task_sha256": "5fb12ade7874cd229cac0726f329cc20891e78bff5188f616342c9b9a7f4b10f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-daba12844deb70",
+        "entry_key": "protocol-improvement-v2.1/A-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "results_condition=A1-SAVED / model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-002",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "UNIT_TEST_GENERATION",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "654ecf6bd60ebb2e5f4115dc106fa063aa1700cdb15858f544baeaab245ef7b9",
+          "first_pass": false,
+          "repair_pass": false,
+          "duration_seconds": 78.063,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 1966,
+            "ollama_output_tokens": 625,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 27.6850465
+          }
+        },
+        "source_file": "results/A1-SAVED/result.json",
+        "validation_pass": null,
+        "source_sha256": "e42fbf9c7c22aa1734ae1fd7c5b1875bf844418912a9cab14b0d145f331c23eb",
+        "json_pointer": "",
+        "reported_task_id": "PILOT-002",
+        "binding": {
+          "method": "EXPLICIT_ENTRY_KEY",
+          "expected_task_sha256": "5fb12ade7874cd229cac0726f329cc20891e78bff5188f616342c9b9a7f4b10f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-21580d353aa77c",
+        "entry_key": "protocol-improvement-v2.1/A-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "results_condition=A2-FULL / model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-002",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "UNIT_TEST_GENERATION",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "654ecf6bd60ebb2e5f4115dc106fa063aa1700cdb15858f544baeaab245ef7b9",
+          "first_pass": false,
+          "repair_pass": false,
+          "duration_seconds": 123.109,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 4538,
+            "ollama_output_tokens": 1250,
+            "ollama_cache_tokens": 1453,
+            "ollama_duration_seconds": 32.507457
+          }
+        },
+        "source_file": "results/A2-FULL/result.json",
+        "validation_pass": null,
+        "source_sha256": "7fc79d3a4d98befb5ad575a92e56a211c4a57b95cddd6e05920b4f51efcc0bfb",
+        "json_pointer": "",
+        "reported_task_id": "PILOT-002",
+        "binding": {
+          "method": "EXPLICIT_ENTRY_KEY",
+          "expected_task_sha256": "5fb12ade7874cd229cac0726f329cc20891e78bff5188f616342c9b9a7f4b10f",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "A-002": [
+      {
+        "result_id": "R-bd272a8a9726cd",
+        "entry_key": "protocol-improvement-v2.1/A-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "group": "A",
+          "condition": "full",
+          "task_id": "PEX-A02",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "final_pass": false,
+          "repair_invoked": true,
+          "repair_success": false,
+          "generation_calls": 2,
+          "worker_duration_seconds": 68.266,
+          "usage": {
+            "ollama_input_tokens": 6283,
+            "ollama_output_tokens": 884,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 24.9172901
+          },
+          "codex_repair_loc": 0
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": false,
+        "source_sha256": "15ed69c09d40536288d746dbb645bc5ffe04482be6ccba86f827cef54cef9b04",
+        "json_pointer": "/2",
+        "reported_task_id": "PEX-A02",
+        "binding": {
+          "method": "SET_AND_UNIQUE_TASK_ID",
+          "expected_task_sha256": "1a294a4e1f25c020b8a8964eafa149e90790df99da0e402e2566c0352b4bd9ef",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-93490fd7e31c25",
+        "entry_key": "protocol-improvement-v2.1/A-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PEX-A02",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "UNIT_TEST_GENERATION",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "c1250d941dd3fc2dfac7263d57ee812dffc37a6df54fcd389f0f1945f4d12a00",
+          "first_pass": false,
+          "repair_pass": false,
+          "duration_seconds": 68.266,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 6283,
+            "ollama_output_tokens": 884,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 24.9172901
+          }
+        },
+        "source_file": "results/A-002/result.json",
+        "validation_pass": null,
+        "source_sha256": "6ea30df50db0b03129acb74d94349d38806e3972e0599deae5a586d03aa73189",
+        "json_pointer": "",
+        "reported_task_id": "PEX-A02",
+        "binding": {
+          "method": "EXPLICIT_ENTRY_KEY",
+          "expected_task_sha256": "1a294a4e1f25c020b8a8964eafa149e90790df99da0e402e2566c0352b4bd9ef",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "A-003": [
+      {
+        "result_id": "R-956aafda6bf5f9",
+        "entry_key": "protocol-improvement-v2.1/A-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "group": "A",
+          "condition": "full",
+          "task_id": "PEX-A03",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "final_pass": false,
+          "repair_invoked": true,
+          "repair_success": false,
+          "generation_calls": 2,
+          "worker_duration_seconds": 61.625,
+          "usage": {
+            "ollama_input_tokens": 5343,
+            "ollama_output_tokens": 558,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 16.998815
+          },
+          "codex_repair_loc": 0
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": false,
+        "source_sha256": "15ed69c09d40536288d746dbb645bc5ffe04482be6ccba86f827cef54cef9b04",
+        "json_pointer": "/3",
+        "reported_task_id": "PEX-A03",
+        "binding": {
+          "method": "SET_AND_UNIQUE_TASK_ID",
+          "expected_task_sha256": "4c54a5485a6a004360f9235e0d0e99c19ceb7aa7ad39afdb6301105d7adc4609",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-ebf4d27f6b185d",
+        "entry_key": "protocol-improvement-v2.1/A-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PEX-A03",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "UNIT_TEST_GENERATION",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "0a0fbf0b5f32a36a088ebfa8c4f7319f8c7efd0f8733b289e8139b8b3f309f5d",
+          "first_pass": false,
+          "repair_pass": false,
+          "duration_seconds": 61.625,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 5343,
+            "ollama_output_tokens": 558,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 16.998815
+          }
+        },
+        "source_file": "results/A-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "333375ede80a1fda12037830b36933846d6b6f0b636009671add0a8f4fcf5516",
+        "json_pointer": "",
+        "reported_task_id": "PEX-A03",
+        "binding": {
+          "method": "EXPLICIT_ENTRY_KEY",
+          "expected_task_sha256": "4c54a5485a6a004360f9235e0d0e99c19ceb7aa7ad39afdb6301105d7adc4609",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "B-001": [
+      {
+        "result_id": "R-1fa3a286bc22e7",
+        "entry_key": "protocol-improvement-v2.1/B-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "group": "B",
+          "condition": "full",
+          "task_id": "PILOT-005",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "final_pass": true,
+          "repair_invoked": false,
+          "repair_success": null,
+          "generation_calls": 2,
+          "worker_duration_seconds": 28.266,
+          "usage": {
+            "ollama_input_tokens": 2395,
+            "ollama_output_tokens": 258,
+            "ollama_cache_tokens": 410,
+            "ollama_duration_seconds": 7.9262992
+          },
+          "codex_repair_loc": 0
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": true,
+        "source_sha256": "15ed69c09d40536288d746dbb645bc5ffe04482be6ccba86f827cef54cef9b04",
+        "json_pointer": "/4",
+        "reported_task_id": "PILOT-005",
+        "binding": {
+          "method": "SET_AND_UNIQUE_TASK_ID",
+          "expected_task_sha256": "07e34372182ca8fdc721f09fec297df22ae516df27d3cf7724c9e6e8f90ec7e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-370cc70eef4076",
+        "entry_key": "protocol-improvement-v2.1/B-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-005",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "26d4e308fa51f3d3c0dd111a6ba041fa533cca4302f917b4d85c9d011504056a",
+          "first_pass": true,
+          "tested_content_id": "bcaf3944622a8ee608912bd409543efa93d597e97e9fa8a48f75a23efcce22b7",
+          "duration_seconds": 28.266,
+          "repair_attempted": false,
+          "usage": {
+            "ollama_input_tokens": 2395,
+            "ollama_output_tokens": 258,
+            "ollama_cache_tokens": 410,
+            "ollama_duration_seconds": 7.9262992
+          },
+          "repair_pass": null
+        },
+        "source_file": "results/B-001/result.json",
+        "validation_pass": null,
+        "source_sha256": "eb8bfc251e76abc3d7237df978a21552ab5816796a2d82f42a87ed8657f258d3",
+        "json_pointer": "",
+        "reported_task_id": "PILOT-005",
+        "binding": {
+          "method": "EXPLICIT_ENTRY_KEY",
+          "expected_task_sha256": "07e34372182ca8fdc721f09fec297df22ae516df27d3cf7724c9e6e8f90ec7e8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "B-002": [
+      {
+        "result_id": "R-4c9d1dbcc926d2",
+        "entry_key": "protocol-improvement-v2.1/B-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "group": "B",
+          "condition": "full",
+          "task_id": "PILOT-004",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "final_pass": true,
+          "repair_invoked": true,
+          "repair_success": true,
+          "generation_calls": 4,
+          "worker_duration_seconds": 54.765,
+          "usage": {
+            "ollama_input_tokens": 13490,
+            "ollama_output_tokens": 860,
+            "ollama_cache_tokens": 7571,
+            "ollama_duration_seconds": 26.4914425
+          },
+          "codex_repair_loc": 0
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": true,
+        "source_sha256": "15ed69c09d40536288d746dbb645bc5ffe04482be6ccba86f827cef54cef9b04",
+        "json_pointer": "/5",
+        "reported_task_id": "PILOT-004",
+        "binding": {
+          "method": "SET_AND_UNIQUE_TASK_ID",
+          "expected_task_sha256": "f2187d7e162f6b42a4ac28f19983c02fd173293c038244bcd6df0c4a8fabc0dc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-2b59934539c558",
+        "entry_key": "protocol-improvement-v2.1/B-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-004",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "4c670e6db7b29114f90a712671fbb39c12ca7bc36514ee81dc2d3525809977ae",
+          "first_pass": false,
+          "repair_pass": true,
+          "tested_content_id": "d161b54834bf5652082868ef8d053c7f9443a9d937ad27f2cb4586dd7d5a171b",
+          "duration_seconds": 54.765,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 13490,
+            "ollama_output_tokens": 860,
+            "ollama_cache_tokens": 7571,
+            "ollama_duration_seconds": 26.4914425
+          }
+        },
+        "source_file": "results/B-002/result.json",
+        "validation_pass": null,
+        "source_sha256": "74abd97fe11415918d6510680d020c4356694ec1e18386307ad96f1b9018b8d5",
+        "json_pointer": "",
+        "reported_task_id": "PILOT-004",
+        "binding": {
+          "method": "EXPLICIT_ENTRY_KEY",
+          "expected_task_sha256": "f2187d7e162f6b42a4ac28f19983c02fd173293c038244bcd6df0c4a8fabc0dc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "B-003": [
+      {
+        "result_id": "R-4351b583499e26",
+        "entry_key": "protocol-improvement-v2.1/B-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "group": "B",
+          "condition": "full",
+          "task_id": "PEX-B03",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "status": "ESCALATE",
+          "reason": "SCOPE_VIOLATION",
+          "final_pass": false,
+          "repair_invoked": false,
+          "repair_success": null,
+          "generation_calls": 1,
+          "worker_duration_seconds": 5.469,
+          "usage": {
+            "ollama_input_tokens": 447,
+            "ollama_output_tokens": 179,
+            "ollama_cache_tokens": 22,
+            "ollama_duration_seconds": 4.8900718
+          },
+          "codex_repair_loc": 0
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": false,
+        "source_sha256": "15ed69c09d40536288d746dbb645bc5ffe04482be6ccba86f827cef54cef9b04",
+        "json_pointer": "/6",
+        "reported_task_id": "PEX-B03",
+        "binding": {
+          "method": "SET_AND_UNIQUE_TASK_ID",
+          "expected_task_sha256": "6cbf0b441a79a21697340f3ae9ac951078b7424231842a31b71d94546d5c10f2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-09405aeecfe1a3",
+        "entry_key": "protocol-improvement-v2.1/B-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PEX-B03",
+          "status": "ESCALATE",
+          "reason": "SCOPE_VIOLATION",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "5c778e9b581d67c1bbffd73f6a738463abe7bcc4aa0f57a27c40e8fee7afc9cd",
+          "duration_seconds": 5.469,
+          "repair_attempted": false,
+          "usage": {
+            "ollama_input_tokens": 447,
+            "ollama_output_tokens": 179,
+            "ollama_cache_tokens": 22,
+            "ollama_duration_seconds": 4.8900718
+          },
+          "first_pass": null,
+          "repair_pass": null
+        },
+        "source_file": "results/B-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "66363ca9cade733c89f2655d2c5fd49671cd6042d8d207b1c227b1d1937daa7b",
+        "json_pointer": "",
+        "reported_task_id": "PEX-B03",
+        "binding": {
+          "method": "EXPLICIT_ENTRY_KEY",
+          "expected_task_sha256": "6cbf0b441a79a21697340f3ae9ac951078b7424231842a31b71d94546d5c10f2",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "C-001": [
+      {
+        "result_id": "R-7481d65da8b8e2",
+        "entry_key": "protocol-improvement-v2.1/C-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "group": "C",
+          "condition": "full",
+          "task_id": "PILOT-007",
+          "model": "gemma4:26b",
+          "protocol": "reasoning",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "final_pass": false,
+          "repair_invoked": true,
+          "repair_success": false,
+          "generation_calls": 2,
+          "worker_duration_seconds": 24.86,
+          "usage": {
+            "ollama_input_tokens": 2668,
+            "ollama_output_tokens": 918,
+            "ollama_cache_tokens": 42,
+            "ollama_duration_seconds": 24.4242017
+          },
+          "codex_repair_loc": 0
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": false,
+        "source_sha256": "15ed69c09d40536288d746dbb645bc5ffe04482be6ccba86f827cef54cef9b04",
+        "json_pointer": "/7",
+        "reported_task_id": "PILOT-007",
+        "binding": {
+          "method": "SET_AND_UNIQUE_TASK_ID",
+          "expected_task_sha256": "99808c993ecf62f61fe7feef890158ad4f693d5f4c7bc25d9b1557116013878c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-5cb60ffaa7fd18",
+        "entry_key": "protocol-improvement-v2.1/C-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PILOT-007",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "ERROR_ANALYSIS",
+          "model": "gemma4:26b",
+          "protocol": "reasoning",
+          "base_content_id": "6760863747cc7e05b218035003c72bf8fd5e36b343fa0301f4329645432eda65",
+          "first_pass": false,
+          "repair_pass": false,
+          "duration_seconds": 24.86,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 2668,
+            "ollama_output_tokens": 918,
+            "ollama_cache_tokens": 42,
+            "ollama_duration_seconds": 24.4242017
+          }
+        },
+        "source_file": "results/C-001/result.json",
+        "validation_pass": null,
+        "source_sha256": "07201a561fb7f49b09f214a7b158b1d234c439da8034373cc8d7111c7dc8ab51",
+        "json_pointer": "",
+        "reported_task_id": "PILOT-007",
+        "binding": {
+          "method": "EXPLICIT_ENTRY_KEY",
+          "expected_task_sha256": "99808c993ecf62f61fe7feef890158ad4f693d5f4c7bc25d9b1557116013878c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "C-002": [
+      {
+        "result_id": "R-cec1140c515f68",
+        "entry_key": "protocol-improvement-v2.1/C-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "group": "C",
+          "condition": "full",
+          "task_id": "PEX-C02",
+          "model": "gemma4:26b",
+          "protocol": "reasoning",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "final_pass": false,
+          "repair_invoked": true,
+          "repair_success": false,
+          "generation_calls": 2,
+          "worker_duration_seconds": 23.594,
+          "usage": {
+            "ollama_input_tokens": 1549,
+            "ollama_output_tokens": 987,
+            "ollama_cache_tokens": 73,
+            "ollama_duration_seconds": 22.9213197
+          },
+          "codex_repair_loc": 0
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": false,
+        "source_sha256": "15ed69c09d40536288d746dbb645bc5ffe04482be6ccba86f827cef54cef9b04",
+        "json_pointer": "/8",
+        "reported_task_id": "PEX-C02",
+        "binding": {
+          "method": "SET_AND_UNIQUE_TASK_ID",
+          "expected_task_sha256": "c5c9480f5b090f452de9f60dca870fdd37ac5eeb79b02a6aee404e980710d2f0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-143a6a2604c9e8",
+        "entry_key": "protocol-improvement-v2.1/C-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PEX-C02",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "ERROR_ANALYSIS",
+          "model": "gemma4:26b",
+          "protocol": "reasoning",
+          "base_content_id": "205999591dbd964ee2b3a83e6b463595d13b33f88ea65daf751f572f7fa21b40",
+          "first_pass": false,
+          "repair_pass": false,
+          "duration_seconds": 23.594,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 1549,
+            "ollama_output_tokens": 987,
+            "ollama_cache_tokens": 73,
+            "ollama_duration_seconds": 22.9213197
+          }
+        },
+        "source_file": "results/C-002/result.json",
+        "validation_pass": null,
+        "source_sha256": "95bcb61e8a15096c8647e60cb7a1f87c97c3ea62ac55dd8c5b48d3c39ff2c52c",
+        "json_pointer": "",
+        "reported_task_id": "PEX-C02",
+        "binding": {
+          "method": "EXPLICIT_ENTRY_KEY",
+          "expected_task_sha256": "c5c9480f5b090f452de9f60dca870fdd37ac5eeb79b02a6aee404e980710d2f0",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "C-003": [
+      {
+        "result_id": "R-b1d5569d4a783f",
+        "entry_key": "protocol-improvement-v2.1/C-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "group": "C",
+          "condition": "full",
+          "task_id": "PEX-C03",
+          "model": "gemma4:26b",
+          "protocol": "reasoning",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "final_pass": false,
+          "repair_invoked": true,
+          "repair_success": false,
+          "generation_calls": 2,
+          "worker_duration_seconds": 22.14,
+          "usage": {
+            "ollama_input_tokens": 1442,
+            "ollama_output_tokens": 888,
+            "ollama_cache_tokens": 103,
+            "ollama_duration_seconds": 21.5058338
+          },
+          "codex_repair_loc": 0
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": false,
+        "source_sha256": "15ed69c09d40536288d746dbb645bc5ffe04482be6ccba86f827cef54cef9b04",
+        "json_pointer": "/9",
+        "reported_task_id": "PEX-C03",
+        "binding": {
+          "method": "SET_AND_UNIQUE_TASK_ID",
+          "expected_task_sha256": "eb2ae4a792a77467f191408c9b2765a5fa20dea43678dc134292c915b6f109c4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-7806b87952c5b2",
+        "entry_key": "protocol-improvement-v2.1/C-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "PEX-C03",
+          "status": "ESCALATE",
+          "reason": "ATTEMPTS_EXHAUSTED",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "ERROR_ANALYSIS",
+          "model": "gemma4:26b",
+          "protocol": "reasoning",
+          "base_content_id": "205999591dbd964ee2b3a83e6b463595d13b33f88ea65daf751f572f7fa21b40",
+          "first_pass": false,
+          "repair_pass": false,
+          "duration_seconds": 22.14,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 1442,
+            "ollama_output_tokens": 888,
+            "ollama_cache_tokens": 103,
+            "ollama_duration_seconds": 21.5058338
+          }
+        },
+        "source_file": "results/C-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "03631a14183da6b0ad44348d516cfb3d13df6742b067c7893f834fad346ef9e1",
+        "json_pointer": "",
+        "reported_task_id": "PEX-C03",
+        "binding": {
+          "method": "EXPLICIT_ENTRY_KEY",
+          "expected_task_sha256": "eb2ae4a792a77467f191408c9b2765a5fa20dea43678dc134292c915b6f109c4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/protocol-improvement-v2.1/RESULTS_JA.md",
+      "source_report": "protocol-improvement-v2.1/RESULTS_JA.md",
+      "source_sha256": "80b5b1b4cdacc50f89daa387a76f456655889fa2088de019dfee4df0c65d304d",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 9,
+    "linked_entries": 9,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 20
+  }
+}

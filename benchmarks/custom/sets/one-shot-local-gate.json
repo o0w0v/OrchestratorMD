@@ -1,5 +1,6 @@
 {
   "set_id": "one-shot-local-gate",
+  "display_name": "ローカルモデルの初回実装の検証",
   "entry_count": 8,
   "tasks": [
     {
@@ -86,10 +87,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "OSL-001",
       "set_id": "one-shot-local-gate",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/one-shot-local-gate/OSL-001",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-75dc752f3a2a6c",
+        "R-0381cd3a71803b"
+      ],
+      "result_page": "sets/one-shot-local-gate.md#osl-001",
+      "result_data": "results/one-shot-local-gate.json"
     },
     {
       "task_id": "OSL-002",
@@ -175,10 +179,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "OSL-002",
       "set_id": "one-shot-local-gate",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/one-shot-local-gate/OSL-002",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-64ad3dc3f8ea17",
+        "R-f4655185a569de"
+      ],
+      "result_page": "sets/one-shot-local-gate.md#osl-002",
+      "result_data": "results/one-shot-local-gate.json"
     },
     {
       "task_id": "OSL-003",
@@ -264,10 +271,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "OSL-003",
       "set_id": "one-shot-local-gate",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/one-shot-local-gate/OSL-003",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-20fc0c4864dbf5",
+        "R-1e2e52144ab81d"
+      ],
+      "result_page": "sets/one-shot-local-gate.md#osl-003",
+      "result_data": "results/one-shot-local-gate.json"
     },
     {
       "task_id": "OSL-004",
@@ -353,10 +363,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "OSL-004",
       "set_id": "one-shot-local-gate",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/one-shot-local-gate/OSL-004",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-136c0dc1ca63bf",
+        "R-fa187917c89723"
+      ],
+      "result_page": "sets/one-shot-local-gate.md#osl-004",
+      "result_data": "results/one-shot-local-gate.json"
     },
     {
       "task_id": "OSL-005",
@@ -442,10 +455,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "OSL-005",
       "set_id": "one-shot-local-gate",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/one-shot-local-gate/OSL-005",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-cd3d4ae853c3b3",
+        "R-975980e2aba2d7"
+      ],
+      "result_page": "sets/one-shot-local-gate.md#osl-005",
+      "result_data": "results/one-shot-local-gate.json"
     },
     {
       "task_id": "OSL-006",
@@ -531,10 +547,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "OSL-006",
       "set_id": "one-shot-local-gate",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/one-shot-local-gate/OSL-006",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-62a32398ed0660",
+        "R-e0453a056cbadc"
+      ],
+      "result_page": "sets/one-shot-local-gate.md#osl-006",
+      "result_data": "results/one-shot-local-gate.json"
     },
     {
       "task_id": "OSL-007",
@@ -621,10 +640,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "OSL-007",
       "set_id": "one-shot-local-gate",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/one-shot-local-gate/OSL-007",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-4b15f254b7f52b",
+        "R-a20a4b4b814058"
+      ],
+      "result_page": "sets/one-shot-local-gate.md#osl-007",
+      "result_data": "results/one-shot-local-gate.json"
     },
     {
       "task_id": "OSL-008",
@@ -711,26 +733,20 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "OSL-008",
       "set_id": "one-shot-local-gate",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/one-shot-local-gate/OSL-008",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-33fe33aab59cb5",
+        "R-21fb172c57b6ce"
+      ],
+      "result_page": "sets/one-shot-local-gate.md#osl-008",
+      "result_data": "results/one-shot-local-gate.json"
     }
   ],
   "result_summary": {
-    "set_id": "one-shot-local-gate",
-    "source_set": "one-shot-local-gate",
     "entries": 8,
-    "structured_result_records": 16,
-    "task_ids_with_structured_results": 8,
-    "task_ids_without_structured_results": [],
-    "historical_reports": [
-      {
-        "file": "results/one-shot-local-gate/RESULTS_JA.md",
-        "source_report": "one-shot-local-gate/RESULTS_JA.md",
-        "source_sha256": "289e111739a948b493057f9af2c552ca17c59ed287eef81731fb87a9af487e3f"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 8,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 16
   }
 }

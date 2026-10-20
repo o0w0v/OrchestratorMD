@@ -1,0 +1,4206 @@
+{
+  "format_version": 2,
+  "set_id": "bounded-2.2.8-limited-economic-shadow",
+  "entries": {
+    "LES228-001": [
+      {
+        "result_id": "R-6a15877c530c8a",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-001",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-001",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.74843,
+          "actual_usage": {
+            "input_tokens": 160857,
+            "cached_input_tokens": 107776,
+            "uncached_input_tokens": 53081,
+            "output_tokens": 2222,
+            "total_tokens": 163079
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46453,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16757,
+                "output_tokens": 792,
+                "total_tokens": 47245
+              },
+              "credits": 1.18433,
+              "wall_seconds": 27.030999999988126
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32519,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18055,
+                "output_tokens": 274,
+                "total_tokens": 32793
+              },
+              "credits": 1.04357,
+              "wall_seconds": 13.203000000008615
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 135.34399999998277,
+          "Host_validation_wall": 49.79700000002049,
+          "Host_formatter_seconds": 0.7340000000258442,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/0",
+        "reported_task_id": "LES228-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "ba4750cde758b77c197d2a1eebef275ca69320b07b8c50b386480af868eb3b5c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-fcc6349b020ad0",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-001",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-001",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 135.34399999998277
+        },
+        "source_file": "outcomes/LES228-001.json",
+        "validation_pass": null,
+        "source_sha256": "b3f9f1adc2b56108fb6bfb1fc7806ec67d0cb28441327739adf35671a9e604d4",
+        "json_pointer": "",
+        "reported_task_id": "LES228-001",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "ba4750cde758b77c197d2a1eebef275ca69320b07b8c50b386480af868eb3b5c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-002": [
+      {
+        "result_id": "R-0972a2a720d288",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-002",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-002",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 4.7684999999999995,
+          "actual_usage": {
+            "input_tokens": 179183,
+            "cached_input_tokens": 107520,
+            "uncached_input_tokens": 71663,
+            "output_tokens": 2591,
+            "total_tokens": 181774
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46460,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16764,
+                "output_tokens": 937,
+                "total_tokens": 47397
+              },
+              "credits": 1.22093,
+              "wall_seconds": 24.780999999988126
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32492,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18028,
+                "output_tokens": 324,
+                "total_tokens": 32816
+              },
+              "credits": 1.05472,
+              "wall_seconds": 14.280999999988126
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1000,
+            "ollama_output_tokens": 28,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 9.8671672
+          },
+          "LOCAL_GATE_WALL": 59.953,
+          "TOTAL_WORKFLOW_WALL": 204.68799999999464,
+          "Host_validation_wall": 85.87499999999348,
+          "Host_formatter_seconds": 2.168999999994412,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/1",
+        "reported_task_id": "LES228-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "a1ea4a8e9be067cc8e6c99dfcaa0c27439ef330072206a9bc05c361570c4f6c3",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-f8803a68513bc1",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-002",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-002",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 59.953,
+            "usage": {
+              "ollama_input_tokens": 1000,
+              "ollama_output_tokens": 28,
+              "ollama_cache_tokens": 0,
+              "ollama_duration_seconds": 9.8671672
+            },
+            "task_id": "LES228-002",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 204.68799999999464
+        },
+        "source_file": "outcomes/LES228-002.json",
+        "validation_pass": null,
+        "source_sha256": "a2d7e2b3f847c6fbcdfb926e242f45af21a1b944bcd925277d5a836ec57fee75",
+        "json_pointer": "",
+        "reported_task_id": "LES228-002",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "a1ea4a8e9be067cc8e6c99dfcaa0c27439ef330072206a9bc05c361570c4f6c3",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-003": [
+      {
+        "result_id": "R-693b11ffa1959f",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-003",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-003",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.35663,
+          "actual_usage": {
+            "input_tokens": 250848,
+            "cached_input_tokens": 224256,
+            "uncached_input_tokens": 26592,
+            "output_tokens": 3623,
+            "total_tokens": 254471
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 61376,
+                "cached_input_tokens": 56448,
+                "uncached_input_tokens": 4928,
+                "output_tokens": 782,
+                "total_tokens": 62158
+              },
+              "credits": 0.72414,
+              "wall_seconds": 28.609000000025844
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32530,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6034,
+                "output_tokens": 330,
+                "total_tokens": 32860
+              },
+              "credits": 0.51668,
+              "wall_seconds": 12.530999999988126
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 979,
+            "ollama_output_tokens": 53,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 4.2553213
+          },
+          "LOCAL_GATE_WALL": 49.922,
+          "TOTAL_WORKFLOW_WALL": 205.88999999998487,
+          "Host_validation_wall": 83.06200000002585,
+          "Host_formatter_seconds": 1.9699999999720603,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/2",
+        "reported_task_id": "LES228-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "cb8e3ce01c17a86975632ceed504cf7c6c1f2dab3036247cf6d024e5a522d6b9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-d549ca9cf07559",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-003",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-003",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 49.922,
+            "usage": {
+              "ollama_input_tokens": 979,
+              "ollama_output_tokens": 53,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 4.2553213
+            },
+            "task_id": "LES228-003",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 205.88999999998487
+        },
+        "source_file": "outcomes/LES228-003.json",
+        "validation_pass": null,
+        "source_sha256": "24cd58b8c15ccd075bac271f47c98cbd1c854a293c3d782d57d2c84c6e1ca9de",
+        "json_pointer": "",
+        "reported_task_id": "LES228-003",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "cb8e3ce01c17a86975632ceed504cf7c6c1f2dab3036247cf6d024e5a522d6b9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-004": [
+      {
+        "result_id": "R-cfb98cd5cc3da4",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-004",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-004",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.8893199999999997,
+          "actual_usage": {
+            "input_tokens": 181189,
+            "cached_input_tokens": 126464,
+            "uncached_input_tokens": 54725,
+            "output_tokens": 2083,
+            "total_tokens": 183272
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46432,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16736,
+                "output_tokens": 787,
+                "total_tokens": 47219
+              },
+              "credits": 1.18203,
+              "wall_seconds": 27.546000000002095
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32849,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18385,
+                "output_tokens": 292,
+                "total_tokens": 33141
+              },
+              "credits": 1.06457,
+              "wall_seconds": 14.578000000008615
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1233,
+            "ollama_output_tokens": 92,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 7.3393817
+          },
+          "LOCAL_GATE_WALL": 47.219,
+          "TOTAL_WORKFLOW_WALL": 189.03100000001723,
+          "Host_validation_wall": 79.32900000000535,
+          "Host_formatter_seconds": 2.5310000000172295,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/3",
+        "reported_task_id": "LES228-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "5dfcea521e6ee5364b0f55d8c64502f73a52b8cd4487823705ae00fa5fea0834",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-33a54989dc15df",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-004",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-004",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 47.219,
+            "usage": {
+              "ollama_input_tokens": 1233,
+              "ollama_output_tokens": 92,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 7.3393817
+            },
+            "task_id": "LES228-004",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 189.03100000001723
+        },
+        "source_file": "outcomes/LES228-004.json",
+        "validation_pass": null,
+        "source_sha256": "702c5cd6719aa89f23b27e355a0e6d5fa2e9a08b23caaf1358a9fdcd7d671f7d",
+        "json_pointer": "",
+        "reported_task_id": "LES228-004",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "5dfcea521e6ee5364b0f55d8c64502f73a52b8cd4487823705ae00fa5fea0834",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-005": [
+      {
+        "result_id": "R-7197d22a26e2d3",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-005",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-005",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.2376,
+          "actual_usage": {
+            "input_tokens": 78961,
+            "cached_input_tokens": 44160,
+            "uncached_input_tokens": 34801,
+            "output_tokens": 1107,
+            "total_tokens": 80068
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46385,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16689,
+                "output_tokens": 810,
+                "total_tokens": 47195
+              },
+              "credits": 1.18543,
+              "wall_seconds": 26.78200000000652
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32576,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18112,
+                "output_tokens": 297,
+                "total_tokens": 32873
+              },
+              "credits": 1.05217,
+              "wall_seconds": 15.85899999999674
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 909,
+            "ollama_output_tokens": 33,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 2.8549253
+          },
+          "LOCAL_GATE_WALL": 54.625,
+          "TOTAL_WORKFLOW_WALL": 101.375,
+          "Host_validation_wall": 37.015,
+          "Host_formatter_seconds": 0.8430000000225846,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/4",
+        "reported_task_id": "LES228-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d2c26ec5c8da90b62f43513bec10aa833c63ada8dfdca20a2d522eaf2e5b755e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-f143f9384b418b",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-005",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-005",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 54.625,
+            "usage": {
+              "ollama_input_tokens": 909,
+              "ollama_output_tokens": 33,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 2.8549253
+            },
+            "task_id": "LES228-005",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff formats available_kib and total_kib as the exact unsigned decimal pair with one LF, preserves the sample, and stays within the declared marker. All mandatory checks and scope guards passed; no concrete contract or scope defect remains.",
+            "usage": {
+              "input_tokens": 32576,
+              "cached_input_tokens": 14464,
+              "output_tokens": 297,
+              "uncached_input_tokens": 18112,
+              "total_tokens": 32873
+            },
+            "credits": 1.05217,
+            "wall_seconds": 15.85899999999674
+          },
+          "total_wall_seconds": 101.375,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/LES228-005.json",
+        "validation_pass": null,
+        "source_sha256": "a98570c737ae08f9d5992fc242c4c6bb72b7bb99e44841a694174a76aec57165",
+        "json_pointer": "",
+        "reported_task_id": "LES228-005",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d2c26ec5c8da90b62f43513bec10aa833c63ada8dfdca20a2d522eaf2e5b755e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-006": [
+      {
+        "result_id": "R-3a0ce582ec9439",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-006",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-006",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.3088000000000006,
+          "actual_usage": {
+            "input_tokens": 177914,
+            "cached_input_tokens": 136320,
+            "uncached_input_tokens": 41594,
+            "output_tokens": 2190,
+            "total_tokens": 180104
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46468,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16772,
+                "output_tokens": 706,
+                "total_tokens": 47174
+              },
+              "credits": 1.16358,
+              "wall_seconds": 23.875
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32512,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18048,
+                "output_tokens": 319,
+                "total_tokens": 32831
+              },
+              "credits": 1.05447,
+              "wall_seconds": 14.328000000008615
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 135.18799999999464,
+          "Host_validation_wall": 52.280999999988126,
+          "Host_formatter_seconds": 1.5000000000291038,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/5",
+        "reported_task_id": "LES228-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "5f670aae7dbebf76731fcfa75dfb6d56be8f1581d5229b9e44a1ac3af7b39378",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-98a2d27cd278d7",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-006",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-006",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 135.18799999999464
+        },
+        "source_file": "outcomes/LES228-006.json",
+        "validation_pass": null,
+        "source_sha256": "e4d1f848a9d30235357342da37f15e18dd439861541a7636f7326f49e12f76a0",
+        "json_pointer": "",
+        "reported_task_id": "LES228-006",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "5f670aae7dbebf76731fcfa75dfb6d56be8f1581d5229b9e44a1ac3af7b39378",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-007": [
+      {
+        "result_id": "R-2fcbc91620c2fa",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-007",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-007",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 4.57328,
+          "actual_usage": {
+            "input_tokens": 185462,
+            "cached_input_tokens": 122496,
+            "uncached_input_tokens": 62966,
+            "output_tokens": 3250,
+            "total_tokens": 188712
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46323,
+                "cached_input_tokens": 27392,
+                "uncached_input_tokens": 18931,
+                "output_tokens": 1021,
+                "total_tokens": 47344
+              },
+              "credits": 1.33876,
+              "wall_seconds": 32.03100000001723
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32595,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6099,
+                "output_tokens": 308,
+                "total_tokens": 32903
+              },
+              "credits": 0.51443,
+              "wall_seconds": 16.17200000002049
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1150,
+            "ollama_output_tokens": 48,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 4.2362776
+          },
+          "LOCAL_GATE_WALL": 47.031,
+          "TOTAL_WORKFLOW_WALL": 209.0,
+          "Host_validation_wall": 80.46699999999348,
+          "Host_formatter_seconds": 2.107000000018161,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/6",
+        "reported_task_id": "LES228-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "66f83d899d4eaf8fdc20b2f445ce1a872e1195e18ae7895a1cf49dff69165a75",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-bbd717a1864d6e",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-007",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-007",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 47.031,
+            "usage": {
+              "ollama_input_tokens": 1150,
+              "ollama_output_tokens": 48,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 4.2362776
+            },
+            "task_id": "LES228-007",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 209.0
+        },
+        "source_file": "outcomes/LES228-007.json",
+        "validation_pass": null,
+        "source_sha256": "d7ce09339c58f4027288c733de2f346b4608c41ce6a3039294f4985145a6536b",
+        "json_pointer": "",
+        "reported_task_id": "LES228-007",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "66f83d899d4eaf8fdc20b2f445ce1a872e1195e18ae7895a1cf49dff69165a75",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-008": [
+      {
+        "result_id": "R-c0e9aa4a8ed900",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-008",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-008",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.8851999999999998,
+          "actual_usage": {
+            "input_tokens": 181234,
+            "cached_input_tokens": 131200,
+            "uncached_input_tokens": 50034,
+            "output_tokens": 2910,
+            "total_tokens": 184144
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46381,
+                "cached_input_tokens": 41728,
+                "uncached_input_tokens": 4653,
+                "output_tokens": 693,
+                "total_tokens": 47074
+              },
+              "credits": 0.61454,
+              "wall_seconds": 23.85899999999674
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32810,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6314,
+                "output_tokens": 278,
+                "total_tokens": 33088
+              },
+              "credits": 0.51768,
+              "wall_seconds": 13.703000000008615
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1223,
+            "ollama_output_tokens": 79,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 6.3835393
+          },
+          "LOCAL_GATE_WALL": 48.578,
+          "TOTAL_WORKFLOW_WALL": 183.75,
+          "Host_validation_wall": 79.06399999998604,
+          "Host_formatter_seconds": 2.5450000000128057,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/7",
+        "reported_task_id": "LES228-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bfbb7df8440a92df7e51eb4dceeed6a7be63cde95624df03a9c03c26153f697a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-69a49d662528d8",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-008",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-008",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 48.578,
+            "usage": {
+              "ollama_input_tokens": 1223,
+              "ollama_output_tokens": 79,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 6.3835393
+            },
+            "task_id": "LES228-008",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 183.75
+        },
+        "source_file": "outcomes/LES228-008.json",
+        "validation_pass": null,
+        "source_sha256": "76b8a7a358aca872a5ee5b02898e0877f820a7a5c2528ede480d74e25645332b",
+        "json_pointer": "",
+        "reported_task_id": "LES228-008",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "bfbb7df8440a92df7e51eb4dceeed6a7be63cde95624df03a9c03c26153f697a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-009": [
+      {
+        "result_id": "R-4788c8c0001d65",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-009",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-009",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.77878,
+          "actual_usage": {
+            "input_tokens": 178493,
+            "cached_input_tokens": 148736,
+            "uncached_input_tokens": 29757,
+            "output_tokens": 2189,
+            "total_tokens": 180682
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46303,
+                "cached_input_tokens": 41728,
+                "uncached_input_tokens": 4575,
+                "output_tokens": 752,
+                "total_tokens": 47055
+              },
+              "credits": 0.62539,
+              "wall_seconds": 30.530999999988126
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32713,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6217,
+                "output_tokens": 266,
+                "total_tokens": 32979
+              },
+              "credits": 0.50983,
+              "wall_seconds": 12.577999999979511
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1221,
+            "ollama_output_tokens": 16,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 2.0677082
+          },
+          "LOCAL_GATE_WALL": 44.125,
+          "TOTAL_WORKFLOW_WALL": 191.68700000000536,
+          "Host_validation_wall": 79.907,
+          "Host_formatter_seconds": 2.2829999999376014,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/8",
+        "reported_task_id": "LES228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "aaed04c057785d62001dc9c1d38a3bbe1883034abe082fefa17e1408bc84b2e9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-4199f7d2c3e439",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-009",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-009",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 44.125,
+            "usage": {
+              "ollama_input_tokens": 1221,
+              "ollama_output_tokens": 16,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 2.0677082
+            },
+            "task_id": "LES228-009",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 191.68700000000536
+        },
+        "source_file": "outcomes/LES228-009.json",
+        "validation_pass": null,
+        "source_sha256": "82a07287cd96a9bad63b6a9a0a2303e46e455168057394da54f2d88097340afe",
+        "json_pointer": "",
+        "reported_task_id": "LES228-009",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "aaed04c057785d62001dc9c1d38a3bbe1883034abe082fefa17e1408bc84b2e9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-010": [
+      {
+        "result_id": "R-49b9fbfa5fcb82",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-010",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-010",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.50855,
+          "actual_usage": {
+            "input_tokens": 182003,
+            "cached_input_tokens": 138880,
+            "uncached_input_tokens": 43123,
+            "output_tokens": 2632,
+            "total_tokens": 184635
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46493,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4637,
+                "output_tokens": 872,
+                "total_tokens": 47365
+              },
+              "credits": 0.65913,
+              "wall_seconds": 29.453000000008615
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32784,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18320,
+                "output_tokens": 268,
+                "total_tokens": 33052
+              },
+              "credits": 1.05532,
+              "wall_seconds": 13.78200000000652
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1204,
+            "ollama_output_tokens": 61,
+            "ollama_cache_tokens": 89,
+            "ollama_duration_seconds": 5.1606938
+          },
+          "LOCAL_GATE_WALL": 46.391,
+          "TOTAL_WORKFLOW_WALL": 193.45300000000861,
+          "Host_validation_wall": 77.28200000000326,
+          "Host_formatter_seconds": 2.1880000000237487,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/9",
+        "reported_task_id": "LES228-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "ea07950183766debcaf1aeca6a81f3ff308f39e1cc6c57e676f7a072421cf40e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-593e24a8a21b76",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-010",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-010",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 46.391,
+            "usage": {
+              "ollama_input_tokens": 1204,
+              "ollama_output_tokens": 61,
+              "ollama_cache_tokens": 89,
+              "ollama_duration_seconds": 5.1606938
+            },
+            "task_id": "LES228-010",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 193.45300000000861
+        },
+        "source_file": "outcomes/LES228-010.json",
+        "validation_pass": null,
+        "source_sha256": "549f1f65f4534388fc1057d4a320665a46c6deffc1b9b7486f72697a7c8f56ec",
+        "json_pointer": "",
+        "reported_task_id": "LES228-010",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "ea07950183766debcaf1aeca6a81f3ff308f39e1cc6c57e676f7a072421cf40e",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-011": [
+      {
+        "result_id": "R-b97e65bfdfcd1a",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-011",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-011",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.5209699999999997,
+          "actual_usage": {
+            "input_tokens": 177994,
+            "cached_input_tokens": 130944,
+            "uncached_input_tokens": 47050,
+            "output_tokens": 2055,
+            "total_tokens": 180049
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46434,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16738,
+                "output_tokens": 921,
+                "total_tokens": 47355
+              },
+              "credits": 1.21563,
+              "wall_seconds": 28.312000000005355
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32834,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18370,
+                "output_tokens": 239,
+                "total_tokens": 33073
+              },
+              "credits": 1.05057,
+              "wall_seconds": 13.10899999999674
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 127.48399999999674,
+          "Host_validation_wall": 52.765999999974156,
+          "Host_formatter_seconds": 0.9839999999676365,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/10",
+        "reported_task_id": "LES228-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "67d313ef7e0955abebb21630801c2dc940fac74239763060653f6b4a64101b60",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1af4bb09076461",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-011",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-011",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 127.48399999999674
+        },
+        "source_file": "outcomes/LES228-011.json",
+        "validation_pass": null,
+        "source_sha256": "ebe0983eef2f7867f1967ff7aee0a08cae8babff7779c2aa1ad3f77086d53a83",
+        "json_pointer": "",
+        "reported_task_id": "LES228-011",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "67d313ef7e0955abebb21630801c2dc940fac74239763060653f6b4a64101b60",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-012": [
+      {
+        "result_id": "R-ba20602c9940e2",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-012",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-012",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 4.63755,
+          "actual_usage": {
+            "input_tokens": 215188,
+            "cached_input_tokens": 151680,
+            "uncached_input_tokens": 63508,
+            "output_tokens": 2815,
+            "total_tokens": 218003
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46381,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4525,
+                "output_tokens": 721,
+                "total_tokens": 47102
+              },
+              "credits": 0.61578,
+              "wall_seconds": 22.875
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32640,
+                "cached_input_tokens": 12032,
+                "uncached_input_tokens": 20608,
+                "output_tokens": 279,
+                "total_tokens": 32919
+              },
+              "credits": 1.16031,
+              "wall_seconds": 15.687000000005355
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1160,
+            "ollama_output_tokens": 80,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 10.5595152
+          },
+          "LOCAL_GATE_WALL": 52.625,
+          "TOTAL_WORKFLOW_WALL": 197.48499999998603,
+          "Host_validation_wall": 78.62399999999349,
+          "Host_formatter_seconds": 2.640999999974156,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/11",
+        "reported_task_id": "LES228-012",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "da5d53b5bfa1e2030b725e12d0a95f80f88ac2d7f625642cab206ac9b7a80680",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-082ef5aafa41e9",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-012",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-012",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 52.625,
+            "usage": {
+              "ollama_input_tokens": 1160,
+              "ollama_output_tokens": 80,
+              "ollama_cache_tokens": 0,
+              "ollama_duration_seconds": 10.5595152
+            },
+            "task_id": "LES228-012",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 197.48499999998603
+        },
+        "source_file": "outcomes/LES228-012.json",
+        "validation_pass": null,
+        "source_sha256": "ae77d1a3cec891f381be78c3ec3b5e5bbc596ce8e83871c00c34250a90adb443",
+        "json_pointer": "",
+        "reported_task_id": "LES228-012",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "da5d53b5bfa1e2030b725e12d0a95f80f88ac2d7f625642cab206ac9b7a80680",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-013": [
+      {
+        "result_id": "R-804633a1ead51e",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-013",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-013",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.2706499999999998,
+          "actual_usage": {
+            "input_tokens": 79240,
+            "cached_input_tokens": 65280,
+            "uncached_input_tokens": 13960,
+            "output_tokens": 985,
+            "total_tokens": 80225
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46406,
+                "cached_input_tokens": 38784,
+                "uncached_input_tokens": 7622,
+                "output_tokens": 678,
+                "total_tokens": 47084
+              },
+              "credits": 0.74452,
+              "wall_seconds": 28.0
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32834,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6338,
+                "output_tokens": 307,
+                "total_tokens": 33141
+              },
+              "credits": 0.52613,
+              "wall_seconds": 14.687999999994645
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 935,
+            "ollama_output_tokens": 25,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 2.3226426
+          },
+          "LOCAL_GATE_WALL": 53.516,
+          "TOTAL_WORKFLOW_WALL": 100.46900000001187,
+          "Host_validation_wall": 36.34400000000001,
+          "Host_formatter_seconds": 0.8290000000270084,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/12",
+        "reported_task_id": "LES228-013",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "82522bdb3a12ae7a64a9e180a3d700b94e1c3addf813b01207acd80a9150f093",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-ae64f007ea10d8",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-013",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-013",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": true,
+            "duration_seconds": 53.516,
+            "usage": {
+              "ollama_input_tokens": 935,
+              "ollama_output_tokens": 25,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 2.3226426
+            },
+            "task_id": "LES228-013",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate counts each row with event: Some independently, leaves records unchanged, and changes only the allowed region. All mandatory checks and Host scope guards passed.",
+            "usage": {
+              "input_tokens": 32834,
+              "cached_input_tokens": 26496,
+              "output_tokens": 307,
+              "uncached_input_tokens": 6338,
+              "total_tokens": 33141
+            },
+            "credits": 0.52613,
+            "wall_seconds": 14.687999999994645
+          },
+          "total_wall_seconds": 100.46900000001187,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/LES228-013.json",
+        "validation_pass": null,
+        "source_sha256": "731e9b1430e90387bb47e6153643bb1d63cc5aee15ec20f4bdb5b21cb4e5bd31",
+        "json_pointer": "",
+        "reported_task_id": "LES228-013",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "82522bdb3a12ae7a64a9e180a3d700b94e1c3addf813b01207acd80a9150f093",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-014": [
+      {
+        "result_id": "R-6758047c2e6fe4",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-014",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-014",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.79837,
+          "actual_usage": {
+            "input_tokens": 79060,
+            "cached_input_tokens": 56064,
+            "uncached_input_tokens": 22996,
+            "output_tokens": 1473,
+            "total_tokens": 80533
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46290,
+                "cached_input_tokens": 29568,
+                "uncached_input_tokens": 16722,
+                "output_tokens": 752,
+                "total_tokens": 47042
+              },
+              "credits": 1.17194,
+              "wall_seconds": 19.60899999999674
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32770,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6274,
+                "output_tokens": 721,
+                "total_tokens": 33491
+              },
+              "credits": 0.62643,
+              "wall_seconds": 20.625
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 875,
+            "ollama_output_tokens": 44,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 3.5472885
+          },
+          "LOCAL_GATE_WALL": 55.922,
+          "TOTAL_WORKFLOW_WALL": 100.51599999997416,
+          "Host_validation_wall": 37.515,
+          "Host_formatter_seconds": 0.8589999999967404,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/13",
+        "reported_task_id": "LES228-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b748989837a866ef6eddb6a916f95236a8f52ea611f997bd5e27b7914a8d75b8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-d71754732ab466",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-014",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-014",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": true,
+            "duration_seconds": 55.922,
+            "usage": {
+              "ollama_input_tokens": 875,
+              "ollama_output_tokens": 44,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 3.5472885
+            },
+            "task_id": "LES228-014",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff is confined to the allowed region and correctly returns ordered indices of evidence that is empty after Unicode whitespace trimming. All mandatory checks and scope guards pass.",
+            "usage": {
+              "input_tokens": 32770,
+              "cached_input_tokens": 26496,
+              "output_tokens": 721,
+              "uncached_input_tokens": 6274,
+              "total_tokens": 33491
+            },
+            "credits": 0.62643,
+            "wall_seconds": 20.625
+          },
+          "total_wall_seconds": 100.51599999997416,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/LES228-014.json",
+        "validation_pass": null,
+        "source_sha256": "5cdc0ee9b2f1356c1e2b0b8d064639ab68e01cb91f39ce38f74488fc7bc3ed72",
+        "json_pointer": "",
+        "reported_task_id": "LES228-014",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "b748989837a866ef6eddb6a916f95236a8f52ea611f997bd5e27b7914a8d75b8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-015": [
+      {
+        "result_id": "R-cdbb0706ef1d5d",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-015",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-015",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.5385299999999997,
+          "actual_usage": {
+            "input_tokens": 79236,
+            "cached_input_tokens": 38656,
+            "uncached_input_tokens": 40580,
+            "output_tokens": 1265,
+            "total_tokens": 80501
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46409,
+                "cached_input_tokens": 26624,
+                "uncached_input_tokens": 19785,
+                "output_tokens": 954,
+                "total_tokens": 47363
+              },
+              "credits": 1.36087,
+              "wall_seconds": 29.889999999984866
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32827,
+                "cached_input_tokens": 12032,
+                "uncached_input_tokens": 20795,
+                "output_tokens": 311,
+                "total_tokens": 33138
+              },
+              "credits": 1.17766,
+              "wall_seconds": 13.21899999998277
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 951,
+            "ollama_output_tokens": 64,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 5.0252112
+          },
+          "LOCAL_GATE_WALL": 57.016,
+          "TOTAL_WORKFLOW_WALL": 104.45300000000861,
+          "Host_validation_wall": 37.172000000000004,
+          "Host_formatter_seconds": 0.8729999999923166,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/14",
+        "reported_task_id": "LES228-015",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b87ec6d322849ed26ea92f36dfece52b7fa7fdee9b71fa24429cde6630b8044c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-f6736c714bea9e",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-015",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-015",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 57.016,
+            "usage": {
+              "ollama_input_tokens": 951,
+              "ollama_output_tokens": 64,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 5.0252112
+            },
+            "task_id": "LES228-015",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate returns owned copies of exactly distinct warning strings in first-seen order, preserves state, and changes only the allowed region. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32827,
+              "cached_input_tokens": 12032,
+              "output_tokens": 311,
+              "uncached_input_tokens": 20795,
+              "total_tokens": 33138
+            },
+            "credits": 1.17766,
+            "wall_seconds": 13.21899999998277
+          },
+          "total_wall_seconds": 104.45300000000861,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/LES228-015.json",
+        "validation_pass": null,
+        "source_sha256": "2125cedbd8606e4a4431e3d4c83aa42c63009560c43d3006725ac3458cb7b7a7",
+        "json_pointer": "",
+        "reported_task_id": "LES228-015",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "b87ec6d322849ed26ea92f36dfece52b7fa7fdee9b71fa24429cde6630b8044c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-016": [
+      {
+        "result_id": "R-fdc99e9bce86b1",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-016",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-016",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.40444,
+          "actual_usage": {
+            "input_tokens": 159569,
+            "cached_input_tokens": 112128,
+            "uncached_input_tokens": 47441,
+            "output_tokens": 1887,
+            "total_tokens": 161456
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46308,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4452,
+                "output_tokens": 718,
+                "total_tokens": 47026
+              },
+              "credits": 0.61138,
+              "wall_seconds": 25.062000000005355
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32507,
+                "cached_input_tokens": 0,
+                "uncached_input_tokens": 32507,
+                "output_tokens": 262,
+                "total_tokens": 32769
+              },
+              "credits": 1.69085,
+              "wall_seconds": 12.469000000011874
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1182,
+            "ollama_output_tokens": 46,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 3.9567887
+          },
+          "LOCAL_GATE_WALL": 45.672,
+          "TOTAL_WORKFLOW_WALL": 176.0779999999795,
+          "Host_validation_wall": 80.87499999999466,
+          "Host_formatter_seconds": 2.297999999980675,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/15",
+        "reported_task_id": "LES228-016",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c8a7f7e3271c099620e76d6fb837e7315f2cea6094728a6636609dd6f124c0cd",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-9dd21f3bd0e269",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-016",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-016",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 45.672,
+            "usage": {
+              "ollama_input_tokens": 1182,
+              "ollama_output_tokens": 46,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 3.9567887
+            },
+            "task_id": "LES228-016",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 176.0779999999795
+        },
+        "source_file": "outcomes/LES228-016.json",
+        "validation_pass": null,
+        "source_sha256": "4c81e94cdb4f34980302cb7c4e26d1a60a0f27a4fefd7bbc9edfb1e2e0e38a92",
+        "json_pointer": "",
+        "reported_task_id": "LES228-016",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "c8a7f7e3271c099620e76d6fb837e7315f2cea6094728a6636609dd6f124c0cd",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-017": [
+      {
+        "result_id": "R-1a909065f40cf2",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-017",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-017",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.18436,
+          "actual_usage": {
+            "input_tokens": 79079,
+            "cached_input_tokens": 68352,
+            "uncached_input_tokens": 10727,
+            "output_tokens": 1225,
+            "total_tokens": 80304
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46458,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4602,
+                "output_tokens": 877,
+                "total_tokens": 47335
+              },
+              "credits": 0.65863,
+              "wall_seconds": 20.062000000005355
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32621,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6125,
+                "output_tokens": 348,
+                "total_tokens": 32969
+              },
+              "credits": 0.52573,
+              "wall_seconds": 15.812000000005355
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 929,
+            "ollama_output_tokens": 56,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 4.3557201
+          },
+          "LOCAL_GATE_WALL": 54.156,
+          "TOTAL_WORKFLOW_WALL": 94.39000000001397,
+          "Host_validation_wall": 34.89,
+          "Host_formatter_seconds": 0.8589999999967404,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/16",
+        "reported_task_id": "LES228-017",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "fcbd38ece6c9a2853c47a001159ff2b5f3e1080db058ee26e3cc98796386917a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-cc0832f3cfbc09",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-017",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-017",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 54.156,
+            "usage": {
+              "ollama_input_tokens": 929,
+              "ollama_output_tokens": 56,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 4.3557201
+            },
+            "task_id": "LES228-017",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The change converts the full u128 elapsed_ms value to microseconds, returning None exactly when multiplication would overflow. It preserves zero and the boundary value, ignores other fields, and stays within the declared region. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 32621,
+              "cached_input_tokens": 26496,
+              "output_tokens": 348,
+              "uncached_input_tokens": 6125,
+              "total_tokens": 32969
+            },
+            "credits": 0.52573,
+            "wall_seconds": 15.812000000005355
+          },
+          "total_wall_seconds": 94.39000000001397,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/LES228-017.json",
+        "validation_pass": null,
+        "source_sha256": "e3fb58cf4d4c08f0bfdbf386cbdda0a4db227c353fc7befd7edc4c2aca1a1174",
+        "json_pointer": "",
+        "reported_task_id": "LES228-017",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "fcbd38ece6c9a2853c47a001159ff2b5f3e1080db058ee26e3cc98796386917a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-018": [
+      {
+        "result_id": "R-997767434655d7",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-018",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-018",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.92029,
+          "actual_usage": {
+            "input_tokens": 78920,
+            "cached_input_tokens": 50688,
+            "uncached_input_tokens": 28232,
+            "output_tokens": 1021,
+            "total_tokens": 79941
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46343,
+                "cached_input_tokens": 26624,
+                "uncached_input_tokens": 19719,
+                "output_tokens": 812,
+                "total_tokens": 47155
+              },
+              "credits": 1.32207,
+              "wall_seconds": 28.203000000008615
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32577,
+                "cached_input_tokens": 24064,
+                "uncached_input_tokens": 8513,
+                "output_tokens": 209,
+                "total_tokens": 32786
+              },
+              "credits": 0.59822,
+              "wall_seconds": 12.328000000008615
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 877,
+            "ollama_output_tokens": 56,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 4.3601253
+          },
+          "LOCAL_GATE_WALL": 56.031,
+          "TOTAL_WORKFLOW_WALL": 100.75,
+          "Host_validation_wall": 36.842,
+          "Host_formatter_seconds": 0.7799999999988358,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/17",
+        "reported_task_id": "LES228-018",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "417cc0af4c556640915c6be961185288aa6db2d06fd9ceb1a99fe4ef3575efc1",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-5907655220be57",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-018",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-018",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 56.031,
+            "usage": {
+              "ollama_input_tokens": 877,
+              "ollama_output_tokens": 56,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 4.3601253
+            },
+            "task_id": "LES228-018",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the permitted region and returns the required value for every valid range, including zero used or zero available, without narrowing or wrapping. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32577,
+              "cached_input_tokens": 24064,
+              "output_tokens": 209,
+              "uncached_input_tokens": 8513,
+              "total_tokens": 32786
+            },
+            "credits": 0.59822,
+            "wall_seconds": 12.328000000008615
+          },
+          "total_wall_seconds": 100.75,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/LES228-018.json",
+        "validation_pass": null,
+        "source_sha256": "1f6c4f2aa4e293ab80c3578217bec74d270d61d413cf2d792357a23957855618",
+        "json_pointer": "",
+        "reported_task_id": "LES228-018",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "417cc0af4c556640915c6be961185288aa6db2d06fd9ceb1a99fe4ef3575efc1",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-019": [
+      {
+        "result_id": "R-ce2b08ef7bbd78",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-019",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-019",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.21401,
+          "actual_usage": {
+            "input_tokens": 79557,
+            "cached_input_tokens": 68352,
+            "uncached_input_tokens": 11205,
+            "output_tokens": 1248,
+            "total_tokens": 80805
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46469,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4613,
+                "output_tokens": 950,
+                "total_tokens": 47419
+              },
+              "credits": 0.67743,
+              "wall_seconds": 30.71799999999348
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33088,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6592,
+                "output_tokens": 298,
+                "total_tokens": 33386
+              },
+              "credits": 0.53658,
+              "wall_seconds": 15.73499999998603
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": true,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1226,
+            "ollama_output_tokens": 51,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 4.3187049
+          },
+          "LOCAL_GATE_WALL": 57.375,
+          "TOTAL_WORKFLOW_WALL": 108.26600000000326,
+          "Host_validation_wall": 37.688,
+          "Host_formatter_seconds": 1.0789999999979045,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/18",
+        "reported_task_id": "LES228-019",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "ec96a8fabd5c4ad8c4e3c77f20d1f717683545147d86dce92085a05e2352e110",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-d04b3195f2d7b3",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-019",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-019",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": true,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 57.375,
+            "usage": {
+              "ollama_input_tokens": 1226,
+              "ollama_output_tokens": 51,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 4.3187049
+            },
+            "task_id": "LES228-019",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff sums every process RSS value as u128, preserves state and scope, and all mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 33088,
+              "cached_input_tokens": 26496,
+              "output_tokens": 298,
+              "uncached_input_tokens": 6592,
+              "total_tokens": 33386
+            },
+            "credits": 0.53658,
+            "wall_seconds": 15.73499999998603
+          },
+          "total_wall_seconds": 108.26600000000326,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/LES228-019.json",
+        "validation_pass": null,
+        "source_sha256": "9d5f0cb9cc6d6012be558af646454c381ab0d576289cf4f8f1b963ace97de352",
+        "json_pointer": "",
+        "reported_task_id": "LES228-019",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "ec96a8fabd5c4ad8c4e3c77f20d1f717683545147d86dce92085a05e2352e110",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-020": [
+      {
+        "result_id": "R-10919237f6f6ca",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-020",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-020",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.3959200000000003,
+          "actual_usage": {
+            "input_tokens": 176335,
+            "cached_input_tokens": 154624,
+            "uncached_input_tokens": 21711,
+            "output_tokens": 2149,
+            "total_tokens": 178484
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46368,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4512,
+                "output_tokens": 912,
+                "total_tokens": 47280
+              },
+              "credits": 0.66288,
+              "wall_seconds": 27.796000000002095
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 31990,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 5494,
+                "output_tokens": 303,
+                "total_tokens": 32293
+              },
+              "credits": 0.48293,
+              "wall_seconds": 14.203000000008615
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 134.03200000000652,
+          "Host_validation_wall": 52.264999999984866,
+          "Host_formatter_seconds": 1.360000000015134,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/19",
+        "reported_task_id": "LES228-020",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "85ac32ee8e2c761beff85a40c8484c8e88294ae8f9cc1f9fafc8586646a89ca8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c7aba689d6a42d",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-020",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-020",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 134.03200000000652
+        },
+        "source_file": "outcomes/LES228-020.json",
+        "validation_pass": null,
+        "source_sha256": "7a58890e51654286eb8945b9e2b17a48fd04c6f9e08ba356248c10682dccd98f",
+        "json_pointer": "",
+        "reported_task_id": "LES228-020",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "85ac32ee8e2c761beff85a40c8484c8e88294ae8f9cc1f9fafc8586646a89ca8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-021": [
+      {
+        "result_id": "R-3ebef05e3766bf",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-021",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-021",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.8865800000000004,
+          "actual_usage": {
+            "input_tokens": 178724,
+            "cached_input_tokens": 145536,
+            "uncached_input_tokens": 33188,
+            "output_tokens": 1998,
+            "total_tokens": 180722
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46603,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16907,
+                "output_tokens": 739,
+                "total_tokens": 47342
+              },
+              "credits": 1.17858,
+              "wall_seconds": 23.875
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32911,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6415,
+                "output_tokens": 258,
+                "total_tokens": 33169
+              },
+              "credits": 0.51773,
+              "wall_seconds": 15.421999999991385
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 2931,
+            "ollama_output_tokens": 130,
+            "ollama_cache_tokens": 542,
+            "ollama_duration_seconds": 10.8580234
+          },
+          "LOCAL_GATE_WALL": 58.797,
+          "TOTAL_WORKFLOW_WALL": 197.15700000000652,
+          "Host_validation_wall": 80.48200000000327,
+          "Host_formatter_seconds": 7.609000000025844,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/20",
+        "reported_task_id": "LES228-021",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e10b4e7e635fb2994be79efd774519ce701463a642f08187777cced57662fca3",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-e321b0277d091d",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-021",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-021",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 58.797,
+            "usage": {
+              "ollama_input_tokens": 2931,
+              "ollama_output_tokens": 130,
+              "ollama_cache_tokens": 542,
+              "ollama_duration_seconds": 10.8580234
+            },
+            "task_id": "LES228-021",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 197.15700000000652
+        },
+        "source_file": "outcomes/LES228-021.json",
+        "validation_pass": null,
+        "source_sha256": "bb825eea6d1868e64c308a2e844a3dd6a1e51f16247d6b8c12be4217ce533aae",
+        "json_pointer": "",
+        "reported_task_id": "LES228-021",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "e10b4e7e635fb2994be79efd774519ce701463a642f08187777cced57662fca3",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-022": [
+      {
+        "result_id": "R-6802d205c3acba",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-022",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-022",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.3008100000000002,
+          "actual_usage": {
+            "input_tokens": 179052,
+            "cached_input_tokens": 141312,
+            "uncached_input_tokens": 37740,
+            "output_tokens": 2829,
+            "total_tokens": 181881
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46491,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4635,
+                "output_tokens": 982,
+                "total_tokens": 47473
+              },
+              "credits": 0.68653,
+              "wall_seconds": 29.312999999994645
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32729,
+                "cached_input_tokens": 24064,
+                "uncached_input_tokens": 8665,
+                "output_tokens": 311,
+                "total_tokens": 33040
+              },
+              "credits": 0.63132,
+              "wall_seconds": 14.98399999999674
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 142.60999999998603,
+          "Host_validation_wall": 51.921999999991385,
+          "Host_formatter_seconds": 1.6239999999816064,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/21",
+        "reported_task_id": "LES228-022",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3ebd2a2aaec4053a523b335e93215a5c010417e5257378c84a549333fcd05610",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-bb71af1d5c43e7",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-022",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-022",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 142.60999999998603
+        },
+        "source_file": "outcomes/LES228-022.json",
+        "validation_pass": null,
+        "source_sha256": "104bffe9cc7e86dd588a25ecb1bd040fc6409917547b19a645150af5bac0ad50",
+        "json_pointer": "",
+        "reported_task_id": "LES228-022",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "3ebd2a2aaec4053a523b335e93215a5c010417e5257378c84a549333fcd05610",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-023": [
+      {
+        "result_id": "R-97bf997831154d",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-023",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-023",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.41256,
+          "actual_usage": {
+            "input_tokens": 178586,
+            "cached_input_tokens": 156672,
+            "uncached_input_tokens": 21914,
+            "output_tokens": 2134,
+            "total_tokens": 180720
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46553,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4697,
+                "output_tokens": 877,
+                "total_tokens": 47430
+              },
+              "credits": 0.66338,
+              "wall_seconds": 26.530999999988126
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32923,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6427,
+                "output_tokens": 214,
+                "total_tokens": 33137
+              },
+              "credits": 0.50733,
+              "wall_seconds": 10.921000000002095
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 2949,
+            "ollama_output_tokens": 135,
+            "ollama_cache_tokens": 485,
+            "ollama_duration_seconds": 15.4687318
+          },
+          "LOCAL_GATE_WALL": 66.64,
+          "TOTAL_WORKFLOW_WALL": 200.90599999998813,
+          "Host_validation_wall": 82.60800000000536,
+          "Host_formatter_seconds": 4.422999999951571,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/22",
+        "reported_task_id": "LES228-023",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "9f06ecdb2bef11a21004d7a29959e1b4b61b2615df4f928696928a9578754dc4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-90b3c8698d7820",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-023",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-023",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 66.64,
+            "usage": {
+              "ollama_input_tokens": 2949,
+              "ollama_output_tokens": 135,
+              "ollama_cache_tokens": 485,
+              "ollama_duration_seconds": 15.4687318
+            },
+            "task_id": "LES228-023",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 200.90599999998813
+        },
+        "source_file": "outcomes/LES228-023.json",
+        "validation_pass": null,
+        "source_sha256": "30d6950645003db8b7e993d3749a632a32c553a541d194a3161e44644142605e",
+        "json_pointer": "",
+        "reported_task_id": "LES228-023",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "9f06ecdb2bef11a21004d7a29959e1b4b61b2615df4f928696928a9578754dc4",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-024": [
+      {
+        "result_id": "R-5f739eb7c51ed8",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-024",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-024",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.1144000000000003,
+          "actual_usage": {
+            "input_tokens": 222164,
+            "cached_input_tokens": 195840,
+            "uncached_input_tokens": 26324,
+            "output_tokens": 3276,
+            "total_tokens": 225440
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46660,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4804,
+                "output_tokens": 1019,
+                "total_tokens": 47679
+              },
+              "credits": 0.70423,
+              "wall_seconds": 29.54700000002049
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32991,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6495,
+                "output_tokens": 285,
+                "total_tokens": 33276
+              },
+              "credits": 0.52848,
+              "wall_seconds": 13.203000000008615
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 2983,
+            "ollama_output_tokens": 179,
+            "ollama_cache_tokens": 643,
+            "ollama_duration_seconds": 14.5005586
+          },
+          "LOCAL_GATE_WALL": 60.531,
+          "TOTAL_WORKFLOW_WALL": 210.48399999999674,
+          "Host_validation_wall": 80.87400000001513,
+          "Host_formatter_seconds": 4.85999999998603,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/23",
+        "reported_task_id": "LES228-024",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "f781697e0a1664ddb772680f90dfb057d27e42c3bfb89e56b48155deae26e6ff",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-3301a8818d50a8",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-024",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-024",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 60.531,
+            "usage": {
+              "ollama_input_tokens": 2983,
+              "ollama_output_tokens": 179,
+              "ollama_cache_tokens": 643,
+              "ollama_duration_seconds": 14.5005586
+            },
+            "task_id": "LES228-024",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 210.48399999999674
+        },
+        "source_file": "outcomes/LES228-024.json",
+        "validation_pass": null,
+        "source_sha256": "cc0b23a0691490f44f9980b607fd6dd927a612b82a96721b43e4b6e3f639e81f",
+        "json_pointer": "",
+        "reported_task_id": "LES228-024",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "f781697e0a1664ddb772680f90dfb057d27e42c3bfb89e56b48155deae26e6ff",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-025": [
+      {
+        "result_id": "R-1389c47acb96c5",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-025",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-025",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 2.2585,
+          "actual_usage": {
+            "input_tokens": 179817,
+            "cached_input_tokens": 161280,
+            "uncached_input_tokens": 18537,
+            "output_tokens": 2101,
+            "total_tokens": 181918
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46564,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4708,
+                "output_tokens": 718,
+                "total_tokens": 47282
+              },
+              "credits": 0.62418,
+              "wall_seconds": 18.73499999998603
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32949,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6453,
+                "output_tokens": 286,
+                "total_tokens": 33235
+              },
+              "credits": 0.52663,
+              "wall_seconds": 29.59399999998277
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 2923,
+            "ollama_output_tokens": 136,
+            "ollama_cache_tokens": 640,
+            "ollama_duration_seconds": 11.3704936
+          },
+          "LOCAL_GATE_WALL": 58.704,
+          "TOTAL_WORKFLOW_WALL": 246.95300000000861,
+          "Host_validation_wall": 78.35899999998277,
+          "Host_formatter_seconds": 7.046999999991385,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/24",
+        "reported_task_id": "LES228-025",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "60a2d7d904e16eecc64ec33beb9d000a839cf3a9679045cd47ebbafff10e8c0b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1559a3c618f122",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-025",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-025",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 58.704,
+            "usage": {
+              "ollama_input_tokens": 2923,
+              "ollama_output_tokens": 136,
+              "ollama_cache_tokens": 640,
+              "ollama_duration_seconds": 11.3704936
+            },
+            "task_id": "LES228-025",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 246.95300000000861
+        },
+        "source_file": "outcomes/LES228-025.json",
+        "validation_pass": null,
+        "source_sha256": "000f3dbcd8c615d3d91783f29481c9ba2058dff1632b372f48cc74f5e73b69a9",
+        "json_pointer": "",
+        "reported_task_id": "LES228-025",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "60a2d7d904e16eecc64ec33beb9d000a839cf3a9679045cd47ebbafff10e8c0b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-026": [
+      {
+        "result_id": "R-701bfdfdbaf138",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-026",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-026",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.18992,
+          "actual_usage": {
+            "input_tokens": 79625,
+            "cached_input_tokens": 68224,
+            "uncached_input_tokens": 11401,
+            "output_tokens": 1115,
+            "total_tokens": 80740
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46461,
+                "cached_input_tokens": 41728,
+                "uncached_input_tokens": 4733,
+                "output_tokens": 707,
+                "total_tokens": 47168
+              },
+              "credits": 0.62204,
+              "wall_seconds": 24.10999999998603
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33164,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6668,
+                "output_tokens": 408,
+                "total_tokens": 33572
+              },
+              "credits": 0.56788,
+              "wall_seconds": 19.328000000008615
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1228,
+            "ollama_output_tokens": 44,
+            "ollama_cache_tokens": 52,
+            "ollama_duration_seconds": 3.9082717
+          },
+          "LOCAL_GATE_WALL": 54.641,
+          "TOTAL_WORKFLOW_WALL": 102.46900000001187,
+          "Host_validation_wall": 35.686,
+          "Host_formatter_seconds": 0.7960000000020955,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/25",
+        "reported_task_id": "LES228-026",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0aa4765f80da81003ba89870b220a3842f1fd63b67caba2b439dd0d04e2a133c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-0dc7ba72bf37e9",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-026",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-026",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": true,
+            "duration_seconds": 54.641,
+            "usage": {
+              "ollama_input_tokens": 1228,
+              "ollama_output_tokens": 44,
+              "ollama_cache_tokens": 52,
+              "ollama_duration_seconds": 3.9082717
+            },
+            "task_id": "LES228-026",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate delegates both Some(count) and None to shadow_count_caption, reads only established_tcp_connections, and changes only the allowed region. All mandatory validation and scope checks pass.",
+            "usage": {
+              "input_tokens": 33164,
+              "cached_input_tokens": 26496,
+              "output_tokens": 408,
+              "uncached_input_tokens": 6668,
+              "total_tokens": 33572
+            },
+            "credits": 0.56788,
+            "wall_seconds": 19.328000000008615
+          },
+          "total_wall_seconds": 102.46900000001187,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/LES228-026.json",
+        "validation_pass": null,
+        "source_sha256": "39f6c0bfe9e7bc2b8d3f5cf33d150d6365947ff2da97a5d23d31b5f65a872fe5",
+        "json_pointer": "",
+        "reported_task_id": "LES228-026",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "0aa4765f80da81003ba89870b220a3842f1fd63b67caba2b439dd0d04e2a133c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-027": [
+      {
+        "result_id": "R-20cd99b3b559bb",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-027",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-027",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.1935099999999998,
+          "actual_usage": {
+            "input_tokens": 79697,
+            "cached_input_tokens": 68352,
+            "uncached_input_tokens": 11345,
+            "output_tokens": 1138,
+            "total_tokens": 80835
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46513,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4657,
+                "output_tokens": 792,
+                "total_tokens": 47305
+              },
+              "credits": 0.64013,
+              "wall_seconds": 25.687999999994645
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33184,
+                "cached_input_tokens": 26496,
+                "uncached_input_tokens": 6688,
+                "output_tokens": 346,
+                "total_tokens": 33530
+              },
+              "credits": 0.55338,
+              "wall_seconds": 14.14100000000326
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1226,
+            "ollama_output_tokens": 56,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 4.7787818
+          },
+          "LOCAL_GATE_WALL": 56.734,
+          "TOTAL_WORKFLOW_WALL": 101.03100000001723,
+          "Host_validation_wall": 36.70399999999999,
+          "Host_formatter_seconds": 0.9680000000225846,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/26",
+        "reported_task_id": "LES228-027",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d6948a468dc50870eb6956311effe9440d7aede5ed06923910f1f67731e871b8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-0303ac8f365ffd",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-027",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-027",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": true,
+            "duration_seconds": 56.734,
+            "usage": {
+              "ollama_input_tokens": 1226,
+              "ollama_output_tokens": 56,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 4.7787818
+            },
+            "task_id": "LES228-027",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff uses the protected helper for every warning and collects its Some values in input order, preserving duplicates and case. The state, helper, and protected source remain unchanged. All mandatory checks and scope guards passed.",
+            "usage": {
+              "input_tokens": 33184,
+              "cached_input_tokens": 26496,
+              "output_tokens": 346,
+              "uncached_input_tokens": 6688,
+              "total_tokens": 33530
+            },
+            "credits": 0.55338,
+            "wall_seconds": 14.14100000000326
+          },
+          "total_wall_seconds": 101.03100000001723,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/LES228-027.json",
+        "validation_pass": null,
+        "source_sha256": "0f853298c98473828f117c7e8fd41e7fdb4d318e47d93530e29309f64ff4681f",
+        "json_pointer": "",
+        "reported_task_id": "LES228-027",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d6948a468dc50870eb6956311effe9440d7aede5ed06923910f1f67731e871b8",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-028": [
+      {
+        "result_id": "R-9e3a797cbd9ec8",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-028",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-028",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 1.7631999999999999,
+          "actual_usage": {
+            "input_tokens": 79962,
+            "cached_input_tokens": 56320,
+            "uncached_input_tokens": 23642,
+            "output_tokens": 1198,
+            "total_tokens": 81160
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46582,
+                "cached_input_tokens": 41856,
+                "uncached_input_tokens": 4726,
+                "output_tokens": 835,
+                "total_tokens": 47417
+              },
+              "credits": 0.65433,
+              "wall_seconds": 35.937000000005355
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 33380,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18916,
+                "output_tokens": 363,
+                "total_tokens": 33743
+              },
+              "credits": 1.10887,
+              "wall_seconds": 10.875
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "PASS",
+          "Local_reason": "TARGETED_CHECKS_PASSED",
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": true,
+          "LF_LOCAL_FIRST_PASS": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": true,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1514,
+            "ollama_output_tokens": 21,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 2.5615493
+          },
+          "LOCAL_GATE_WALL": 54.453,
+          "TOTAL_WORKFLOW_WALL": 105.73399999999674,
+          "Host_validation_wall": 37.297000000000004,
+          "Host_formatter_seconds": 0.8589999999676365,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/27",
+        "reported_task_id": "LES228-028",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "b778fb80ccb9a3db1c66882a003e215b5c7da3c340de64ff16be50ed569099cc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-9c3cc5c72d055d",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-028",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": true,
+        "metrics": {
+          "task_id": "LES228-028",
+          "arm": "shadow",
+          "Local": {
+            "status": "PASS",
+            "reason": "TARGETED_CHECKS_PASSED",
+            "failure_domain": null,
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": true,
+            "duration_seconds": 54.453,
+            "usage": {
+              "ollama_input_tokens": 1514,
+              "ollama_output_tokens": 21,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 2.5615493
+            },
+            "task_id": "LES228-028",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "PASS"
+          },
+          "LOCAL_ADOPTED": true,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "Local_review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate calls the protected helper with available_kib, including u64::MAX. The diff stays within the declared region, and all mandatory validation and scope checks pass.",
+            "usage": {
+              "input_tokens": 33380,
+              "cached_input_tokens": 14464,
+              "output_tokens": 363,
+              "uncached_input_tokens": 18916,
+              "total_tokens": 33743
+            },
+            "credits": 1.10887,
+            "wall_seconds": 10.875
+          },
+          "total_wall_seconds": 105.73399999999674,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "outcomes/LES228-028.json",
+        "validation_pass": null,
+        "source_sha256": "c8a59b41fd82d3f03cd25cd9a5c6257d48506da35264cba1994e51d397ede535",
+        "json_pointer": "",
+        "reported_task_id": "LES228-028",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "b778fb80ccb9a3db1c66882a003e215b5c7da3c340de64ff16be50ed569099cc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-029": [
+      {
+        "result_id": "R-794d48d2bcab2d",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-029",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": "COMPLETE",
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-029",
+          "arm": "shadow",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 5.04838,
+          "actual_usage": {
+            "input_tokens": 330037,
+            "cached_input_tokens": 274816,
+            "uncached_input_tokens": 55221,
+            "output_tokens": 3653,
+            "total_tokens": 333690
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46371,
+                "cached_input_tokens": 41728,
+                "uncached_input_tokens": 4643,
+                "output_tokens": 760,
+                "total_tokens": 47131
+              },
+              "credits": 0.63079,
+              "wall_seconds": 24.92200000002049
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32777,
+                "cached_input_tokens": 24064,
+                "uncached_input_tokens": 8713,
+                "output_tokens": 307,
+                "total_tokens": 33084
+              },
+              "credits": 0.63272,
+              "wall_seconds": 13.125
+            }
+          },
+          "Local_attempted": true,
+          "Local_status": "ESCALATE",
+          "Local_reason": "CODE_FAILURE",
+          "Local_failure_domain": "worker",
+          "RAW_LOCAL_FIRST_PASS": false,
+          "LF_CANONICALIZATION_APPLIED": false,
+          "LF_LOCAL_FIRST_PASS": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": true,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "Local_usage": {
+            "ollama_input_tokens": 1158,
+            "ollama_output_tokens": 72,
+            "ollama_cache_tokens": 90,
+            "ollama_duration_seconds": 5.848898
+          },
+          "LOCAL_GATE_WALL": 48.125,
+          "TOTAL_WORKFLOW_WALL": 255.375,
+          "Host_validation_wall": 110.76399999999138,
+          "Host_formatter_seconds": 3.7489999999816064,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/28",
+        "reported_task_id": "LES228-029",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d677d5f0a27ce45347a35d72c79b44ff300b363c340237924e7f7b90645afe3a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-8d98a142d5defd",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-029",
+        "stage": "WORKFLOW",
+        "condition": "arm=shadow",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-029",
+          "arm": "shadow",
+          "Local": {
+            "status": "ESCALATE",
+            "reason": "CODE_FAILURE",
+            "failure_domain": "worker",
+            "raw_local_first_pass": false,
+            "canonicalized_local_first_pass": false,
+            "duration_seconds": 48.125,
+            "usage": {
+              "ollama_input_tokens": 1158,
+              "ollama_output_tokens": 72,
+              "ollama_cache_tokens": 90,
+              "ollama_duration_seconds": 5.848898
+            },
+            "task_id": "LES228-029",
+            "cuda": false,
+            "backend_crash": false,
+            "gpu_query_timeout": false,
+            "Local_attempted": true,
+            "final_status": "ESCALATE"
+          },
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 255.375
+        },
+        "source_file": "outcomes/LES228-029.json",
+        "validation_pass": null,
+        "source_sha256": "77a7611adba494441f4bce746914c822eea8c0844b2c5a4e0598314e2d1ab33c",
+        "json_pointer": "",
+        "reported_task_id": "LES228-029",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d677d5f0a27ce45347a35d72c79b44ff300b363c340237924e7f7b90645afe3a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "LES228-030": [
+      {
+        "result_id": "R-0fd5e83f496842",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-030",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": "COMPLETE",
+        "local_status": "NOT_APPLICABLE",
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-030",
+          "arm": "control",
+          "status": "COMPLETE",
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "accounting_complete": true,
+          "ACTUAL_CODEX_CREDITS_USED": 3.55566,
+          "actual_usage": {
+            "input_tokens": 177760,
+            "cached_input_tokens": 129152,
+            "uncached_input_tokens": 48608,
+            "output_tokens": 1918,
+            "total_tokens": 179678
+          },
+          "phase_usage": {
+            "planner": {
+              "usage": {
+                "input_tokens": 46441,
+                "cached_input_tokens": 29696,
+                "uncached_input_tokens": 16745,
+                "output_tokens": 726,
+                "total_tokens": 47167
+              },
+              "credits": 1.16723,
+              "wall_seconds": 21.14100000000326
+            },
+            "review": {
+              "usage": {
+                "input_tokens": 32635,
+                "cached_input_tokens": 14464,
+                "uncached_input_tokens": 18171,
+                "output_tokens": 250,
+                "total_tokens": 32885
+              },
+              "credits": 1.04337,
+              "wall_seconds": 16.687999999994645
+            }
+          },
+          "Local_attempted": false,
+          "Local_status": "NOT_APPLICABLE",
+          "Local_reason": null,
+          "Local_failure_domain": null,
+          "RAW_LOCAL_FIRST_PASS": null,
+          "LF_CANONICALIZATION_APPLIED": null,
+          "LF_LOCAL_FIRST_PASS": null,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "LOCAL_FIRST_FAIL": false,
+          "LOCAL_ADOPTED": false,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "LOCAL_GATE_WALL": null,
+          "TOTAL_WORKFLOW_WALL": 129.98399999999674,
+          "Host_validation_wall": 51.719000000011874,
+          "Host_formatter_seconds": 1.2669999999634456,
+          "CUDA": false,
+          "backend_crash": false,
+          "GPU_query_timeout": false
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "33ad9ee30015a27f327204d12a015afb4950be0f017c66d53be3f2c49a0ff730",
+        "json_pointer": "/29",
+        "reported_task_id": "LES228-030",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "47db675f6475c370231dcc4574658019f9b1afe4e430e28003a6d6ab2adcf4d1",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-30c299edd72c0b",
+        "entry_key": "bounded-2.2.8-limited-economic-shadow/LES228-030",
+        "stage": "WORKFLOW",
+        "condition": "arm=control",
+        "status": null,
+        "local_status": null,
+        "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+        "review": null,
+        "local_adopted": false,
+        "metrics": {
+          "task_id": "LES228-030",
+          "arm": "control",
+          "LOCAL_ADOPTED": false,
+          "LOCAL_VALIDATION_FALSE_GREEN": 0,
+          "FINAL_PIPELINE_FALSE_GREEN": 0,
+          "final_quality": "MANDATORY_PASS_AND_ACCEPT_NO_CHANGE",
+          "total_wall_seconds": 129.98399999999674
+        },
+        "source_file": "outcomes/LES228-030.json",
+        "validation_pass": null,
+        "source_sha256": "a8842b685fea5cdc87d8b417aa52d02896d2f02a7d291afddad91b734490a053",
+        "json_pointer": "",
+        "reported_task_id": "LES228-030",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "47db675f6475c370231dcc4574658019f9b1afe4e430e28003a6d6ab2adcf4d1",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/bounded-2.2.8-limited-economic-shadow/RESULTS_LIMITED_SHADOW_JA.md",
+      "source_report": "bounded-2.2.8-limited-economic-shadow/RESULTS_LIMITED_SHADOW_JA.md",
+      "source_sha256": "baed649214a2225f4d256e1f0e38827c682cc7355246c7bafef636cdf06a9366",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 30,
+    "linked_entries": 30,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 60
+  }
+}

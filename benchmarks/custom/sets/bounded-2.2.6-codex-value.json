@@ -1,5 +1,6 @@
 {
   "set_id": "bounded-2.2.6-codex-value",
+  "display_name": "実装・検証手順の比較 / bounded-2.2.6-codex-value",
   "entry_count": 5,
   "tasks": [
     {
@@ -86,10 +87,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "CVB-001",
       "set_id": "bounded-2.2.6-codex-value",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.6-codex-value/CVB-001",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-fb7c07216055e1",
+        "R-cd1fef1e93675e"
+      ],
+      "result_page": "sets/bounded-2.2.6-codex-value.md#cvb-001",
+      "result_data": "results/bounded-2.2.6-codex-value.json"
     },
     {
       "task_id": "CVB-002",
@@ -175,10 +179,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "CVB-002",
       "set_id": "bounded-2.2.6-codex-value",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.6-codex-value/CVB-002",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-51b8a6a31cf956",
+        "R-baf06b723395c9"
+      ],
+      "result_page": "sets/bounded-2.2.6-codex-value.md#cvb-002",
+      "result_data": "results/bounded-2.2.6-codex-value.json"
     },
     {
       "task_id": "CVB-003",
@@ -265,10 +272,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "CVB-003",
       "set_id": "bounded-2.2.6-codex-value",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.6-codex-value/CVB-003",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-b9856ec2488c29",
+        "R-ae717759f3757f"
+      ],
+      "result_page": "sets/bounded-2.2.6-codex-value.md#cvb-003",
+      "result_data": "results/bounded-2.2.6-codex-value.json"
     },
     {
       "task_id": "CVB-004",
@@ -355,10 +365,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "CVB-004",
       "set_id": "bounded-2.2.6-codex-value",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.6-codex-value/CVB-004",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-1767e792d0966b",
+        "R-4e6dce2e434c62"
+      ],
+      "result_page": "sets/bounded-2.2.6-codex-value.md#cvb-004",
+      "result_data": "results/bounded-2.2.6-codex-value.json"
     },
     {
       "task_id": "CVB-005",
@@ -444,42 +457,19 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "CVB-005",
       "set_id": "bounded-2.2.6-codex-value",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-2.2.6-codex-value/CVB-005",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-e11bd189f2c11d"
+      ],
+      "result_page": "sets/bounded-2.2.6-codex-value.md#cvb-005",
+      "result_data": "results/bounded-2.2.6-codex-value.json"
     }
   ],
   "result_summary": {
-    "set_id": "bounded-2.2.6-codex-value",
-    "source_set": "bounded-2.2.6-codex-value",
     "entries": 5,
-    "structured_result_records": 0,
-    "task_ids_with_structured_results": 0,
-    "task_ids_without_structured_results": [
-      "CVB-001",
-      "CVB-002",
-      "CVB-003",
-      "CVB-004",
-      "CVB-005"
-    ],
-    "historical_reports": [
-      {
-        "file": "results/bounded-2.2.6-codex-value/RESULTS_A_COMPLETION_JA.md",
-        "source_report": "bounded-2.2.6-codex-value/RESULTS_A_COMPLETION_JA.md",
-        "source_sha256": "4f8f7e6795660790f68de48fa463a3873414c4e1c48c2406adc4b8aecafb81cb"
-      },
-      {
-        "file": "results/bounded-2.2.6-codex-value/RESULTS_CODEX_BASELINE_JA.md",
-        "source_report": "bounded-2.2.6-codex-value/RESULTS_CODEX_BASELINE_JA.md",
-        "source_sha256": "0c84749920f0f315f1914fce2df465a8b3f6a854ff404e071247bc550fc35a81"
-      },
-      {
-        "file": "results/bounded-2.2.6-codex-value/RESULTS_JA.md",
-        "source_report": "bounded-2.2.6-codex-value/RESULTS_JA.md",
-        "source_sha256": "d0c864f9cefefb4caaaee39c74f219440d3839385c657b0d37c0c58e5dbfc017"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 5,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 9
   }
 }

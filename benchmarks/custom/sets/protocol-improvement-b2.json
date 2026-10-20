@@ -1,5 +1,6 @@
 {
   "set_id": "protocol-improvement-b2",
+  "display_name": "実装・検証手順の比較 / protocol-improvement-b2",
   "entry_count": 5,
   "tasks": [
     {
@@ -88,10 +89,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "B2-001",
       "set_id": "protocol-improvement-b2",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/protocol-improvement-b2/B2-001",
-      "fixture_file_count": 29,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-ef22f618b2202a",
+        "R-7f19c05abbaf5c"
+      ],
+      "result_page": "sets/protocol-improvement-b2.md#b2-001",
+      "result_data": "results/protocol-improvement-b2.json"
     },
     {
       "task_id": "B2-002",
@@ -173,10 +177,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "B2-002",
       "set_id": "protocol-improvement-b2",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/protocol-improvement-b2/B2-002",
-      "fixture_file_count": 29,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-64ee904ee87c8e",
+        "R-219afbcb2d1a19"
+      ],
+      "result_page": "sets/protocol-improvement-b2.md#b2-002",
+      "result_data": "results/protocol-improvement-b2.json"
     },
     {
       "task_id": "B2-003",
@@ -258,10 +265,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "B2-003",
       "set_id": "protocol-improvement-b2",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/protocol-improvement-b2/B2-003",
-      "fixture_file_count": 29,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-c4502833ac34fb",
+        "R-ccae456b5a9c4f"
+      ],
+      "result_page": "sets/protocol-improvement-b2.md#b2-003",
+      "result_data": "results/protocol-improvement-b2.json"
     },
     {
       "task_id": "B2-004",
@@ -343,10 +353,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "B2-004",
       "set_id": "protocol-improvement-b2",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/protocol-improvement-b2/B2-004",
-      "fixture_file_count": 28,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-4fa14796403f7f",
+        "R-4c7a66682fa503"
+      ],
+      "result_page": "sets/protocol-improvement-b2.md#b2-004",
+      "result_data": "results/protocol-improvement-b2.json"
     },
     {
       "task_id": "B2-005",
@@ -422,26 +435,20 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "B2-005",
       "set_id": "protocol-improvement-b2",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/protocol-improvement-b2/B2-005",
-      "fixture_file_count": 28,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-1ac648f20b3c77",
+        "R-a8a3a50e004183"
+      ],
+      "result_page": "sets/protocol-improvement-b2.md#b2-005",
+      "result_data": "results/protocol-improvement-b2.json"
     }
   ],
   "result_summary": {
-    "set_id": "protocol-improvement-b2",
-    "source_set": "protocol-improvement-b2",
     "entries": 5,
-    "structured_result_records": 13,
-    "task_ids_with_structured_results": 5,
-    "task_ids_without_structured_results": [],
-    "historical_reports": [
-      {
-        "file": "results/protocol-improvement-b2/RESULTS_JA.md",
-        "source_report": "protocol-improvement-b2/RESULTS_JA.md",
-        "source_sha256": "9dfc093da612570aee2cbc30376b25123fbae8201dc4135fc5cce5c68599e3ce"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 5,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 10
   }
 }

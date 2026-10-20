@@ -1,0 +1,336 @@
+{
+  "format_version": 2,
+  "set_id": "bounded-v2.2.6-body-contract--live",
+  "entries": {
+    "S226-001": [
+      {
+        "result_id": "R-a704fe9237d95d",
+        "entry_key": "bounded-v2.2.6-body-contract--live/S226-001",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "S226-001",
+          "status": "ESCALATE",
+          "reason": "GENERATION_CONTRACT_FAILURE",
+          "first_pass": null,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 880,
+            "ollama_output_tokens": 169,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 52.2397853
+          },
+          "worker_seconds": 57.531
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "5c60c55ad266e584107862a8623974eb00d8ed89d00b0a1e77c51e8d217bc273",
+        "json_pointer": "/runs/0",
+        "reported_task_id": "S226-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "62e8cb65433f58e2887637f0ca4d0cc096072d0fa79b0f5f8cca78455d5dcc11",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-f530491f50626e",
+        "entry_key": "bounded-v2.2.6-body-contract--live/S226-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=qwen3-coder-next:latest",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "S226-001",
+          "status": "ESCALATE",
+          "reason": "GENERATION_CONTRACT_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "DEBUGGING",
+          "model": "qwen3-coder-next:latest",
+          "protocol": "fixed_slot",
+          "base_content_id": "1ac9d58eb17301678abdc5d0421c8c93c89886a8a9e132343e2987ab86ce09c9",
+          "duration_seconds": 57.531,
+          "repair_attempted": false,
+          "first_pass": null,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 880,
+            "ollama_output_tokens": 169,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 52.2397853
+          },
+          "metrics": {
+            "First_PASS": null,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 880,
+            "model_output_tokens": 169,
+            "Worker_seconds": 57.531
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/S226-001/result.json",
+        "validation_pass": null,
+        "source_sha256": "f61721231ca08916624a8fe0249b31c7efa94ef9db1a5a3b51572fdf5d0b121c",
+        "json_pointer": "",
+        "reported_task_id": "S226-001",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "62e8cb65433f58e2887637f0ca4d0cc096072d0fa79b0f5f8cca78455d5dcc11",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "qwen3-coder-next:latest"
+      }
+    ],
+    "S226-002": [
+      {
+        "result_id": "R-a2891cfb29c429",
+        "entry_key": "bounded-v2.2.6-body-contract--live/S226-002",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "S226-002",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "first_pass": true,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 837,
+            "ollama_output_tokens": 56,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 24.5860888
+          },
+          "worker_seconds": 76.75
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "5c60c55ad266e584107862a8623974eb00d8ed89d00b0a1e77c51e8d217bc273",
+        "json_pointer": "/runs/1",
+        "reported_task_id": "S226-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "7b615d2a06f2dba690a2246341508c2e43d60fcc8629b682058d7dd6815c1f09",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-3815d477044fc8",
+        "entry_key": "bounded-v2.2.6-body-contract--live/S226-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "S226-002",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "ea0a687509a4792834d8a359352ad736dbe78426d3b72e2c6125ef37dff3c8f8",
+          "first_pass": true,
+          "tested_content_id": "4e2e5d934ad81467c2ef77c70df0261417c2f667c8cb931cd2582c550702565b",
+          "duration_seconds": 76.75,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 837,
+            "ollama_output_tokens": 56,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 24.5860888
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 837,
+            "model_output_tokens": 56,
+            "Worker_seconds": 76.75
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/S226-002/result.json",
+        "validation_pass": null,
+        "source_sha256": "61064757fd3a5647a62eadba8360863e363c339b81cdd3058d911728053d8698",
+        "json_pointer": "",
+        "reported_task_id": "S226-002",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "7b615d2a06f2dba690a2246341508c2e43d60fcc8629b682058d7dd6815c1f09",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "S226-003": [
+      {
+        "result_id": "R-64695ed8234fbd",
+        "entry_key": "bounded-v2.2.6-body-contract--live/S226-003",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "S226-003",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "first_pass": true,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 3673,
+            "ollama_output_tokens": 192,
+            "ollama_cache_tokens": 657,
+            "ollama_duration_seconds": 7.8587679
+          },
+          "worker_seconds": 52.281
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "5c60c55ad266e584107862a8623974eb00d8ed89d00b0a1e77c51e8d217bc273",
+        "json_pointer": "/runs/2",
+        "reported_task_id": "S226-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "240330ae68e898f5431950b20ad546f245cf80779908c926730578030fc92ec9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-bf1720a0d433f5",
+        "entry_key": "bounded-v2.2.6-body-contract--live/S226-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.6",
+          "task_id": "S226-003",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "907e340d6720024aeede1463621aeb77cf2c33d193e079b37abdc9d9b9646d32",
+          "first_pass": true,
+          "tested_content_id": "32306095fd846d7b1ca688333482b2a7753e603fe33c9be17e6b23d32b77b557",
+          "duration_seconds": 52.281,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 3673,
+            "ollama_output_tokens": 192,
+            "ollama_cache_tokens": 657,
+            "ollama_duration_seconds": 7.8587679
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 3673,
+            "model_output_tokens": 192,
+            "Worker_seconds": 52.281
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/S226-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "53a89640e93e1d7c06106178a89ae1aec0685f0e4d878a21a7d2d9efc8390a70",
+        "json_pointer": "",
+        "reported_task_id": "S226-003",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "240330ae68e898f5431950b20ad546f245cf80779908c926730578030fc92ec9",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/bounded-v2.2.6-body-contract--live/RESULTS_JA.md",
+      "source_report": "bounded-v2.2.6-body-contract/RESULTS_JA.md",
+      "source_sha256": "a8203d5e417a82079fb310a2c690dd809511d4f416db9144b05cc77154fce1fe",
+      "scope": "SAME_EXPERIMENT_CONTEXT"
+    }
+  ],
+  "summary": {
+    "entries": 3,
+    "linked_entries": 3,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 6
+  }
+}

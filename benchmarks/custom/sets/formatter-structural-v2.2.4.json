@@ -1,5 +1,6 @@
 {
   "set_id": "formatter-structural-v2.2.4",
+  "display_name": "実装・検証手順の比較 / formatter-structural-v2.2.4",
   "entry_count": 4,
   "tasks": [
     {
@@ -86,10 +87,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "F224-001",
       "set_id": "formatter-structural-v2.2.4",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/formatter-structural-v2.2.4/F224-001",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-3c61461ea8246d",
+        "R-9403b12b1ed5b5",
+        "R-22eefe56dadc39"
+      ],
+      "result_page": "sets/formatter-structural-v2.2.4.md#f224-001",
+      "result_data": "results/formatter-structural-v2.2.4.json"
     },
     {
       "task_id": "F224-002",
@@ -169,10 +174,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "F224-002",
       "set_id": "formatter-structural-v2.2.4",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/formatter-structural-v2.2.4/F224-002",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "formatter-guard-v2.2.2/F222-002"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-6300d7aa942283",
+        "R-0c1a235edddf63",
+        "R-63f489fd75e0a1"
+      ],
+      "result_page": "sets/formatter-structural-v2.2.4.md#f224-002",
+      "result_data": "results/formatter-structural-v2.2.4.json"
     },
     {
       "task_id": "F224-003",
@@ -253,10 +262,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "F224-003",
       "set_id": "formatter-structural-v2.2.4",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/formatter-structural-v2.2.4/F224-003",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "formatter-guard-v2.2.2/F222-001"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-6e12b30453740a",
+        "R-92c197b4970b1d",
+        "R-1f092f2323ce50"
+      ],
+      "result_page": "sets/formatter-structural-v2.2.4.md#f224-003",
+      "result_data": "results/formatter-structural-v2.2.4.json"
     },
     {
       "task_id": "F224-004",
@@ -336,26 +349,21 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "F224-004",
       "set_id": "formatter-structural-v2.2.4",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/formatter-structural-v2.2.4/F224-004",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "formatter-guard-v2.2.2/F222-003"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-3d3913a6aa7717",
+        "R-56a19cf3fbfe88",
+        "R-1cac7bb49dc57e"
+      ],
+      "result_page": "sets/formatter-structural-v2.2.4.md#f224-004",
+      "result_data": "results/formatter-structural-v2.2.4.json"
     }
   ],
   "result_summary": {
-    "set_id": "formatter-structural-v2.2.4",
-    "source_set": "formatter-structural-v2.2.4",
     "entries": 4,
-    "structured_result_records": 4,
-    "task_ids_with_structured_results": 4,
-    "task_ids_without_structured_results": [],
-    "historical_reports": [
-      {
-        "file": "results/formatter-structural-v2.2.4/RESULTS_JA.md",
-        "source_report": "formatter-structural-v2.2.4/RESULTS_JA.md",
-        "source_sha256": "7094d5bb43853393770609f414bc9bc73cb0635975ab696a22382ea33b8b7e06"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 4,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 12
   }
 }

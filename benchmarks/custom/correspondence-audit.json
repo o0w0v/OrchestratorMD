@@ -1,0 +1,42 @@
+{
+  "source_record_ownership_and_pointers": "PASS",
+  "no_cross_run_report_substitution": "PASS",
+  "original_task_definition_hashes_checked": 619,
+  "task_to_result_links": "PASS",
+  "adaptive_review_and_validation_regression": "PASS",
+  "entry_alias_regression": "PASS",
+  "continuous_soak_crosscheck": {
+    "tasks": 52,
+    "local_adopted": 51
+  },
+  "full_pilot_crosscheck": {
+    "tasks": 13,
+    "review_accepted": 8
+  },
+  "task_entries": 619,
+  "entries_with_individual_records": 607,
+  "unconfirmed_entries": [
+    "gemma26-memory-headroom-228--run-001/LS3W228-001",
+    "gemma26-memory-headroom-228--run-001/LS3W228-003",
+    "gemma26-memory-headroom-228--run-001/LS3W228-004",
+    "gemma26-memory-headroom-228--run-001/LS3W228-007",
+    "gemma26-memory-headroom-228--run-001/LS3W228-009",
+    "gemma26-memory-headroom-228--run-001/LS3W228-011",
+    "gemma26-memory-headroom-228--run-001/LS3W228-014",
+    "gemma26-memory-headroom-228--run-001/LS3W228-015",
+    "gemma26-memory-headroom-228--run-001/LS3W228-017",
+    "gemma26-memory-headroom-228--run-001/LS3W228-020",
+    "gemma26-memory-headroom-228--run-001/LS3W228-021",
+    "gemma26-memory-headroom-228--run-001/LS3W228-023"
+  ],
+  "result_records": 1926,
+  "original_result_source_files_checked": 690,
+  "binding_counts": {
+    "SET_AND_ENTRY_ID": 1304,
+    "ENTRY_DIRECTORY": 512,
+    "HASH_MATCH": 90,
+    "SET_AND_UNIQUE_TASK_ID": 10,
+    "EXPLICIT_ENTRY_KEY": 10
+  },
+  "model_evaluation_rerun": false
+}

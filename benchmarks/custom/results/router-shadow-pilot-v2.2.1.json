@@ -1,0 +1,2312 @@
+{
+  "format_version": 2,
+  "set_id": "router-shadow-pilot-v2.2.1",
+  "entries": {
+    "P221R-001": [
+      {
+        "result_id": "R-b15831d9c7c5a1",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-001",
+          "local_status": "PASS",
+          "failure_domain": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/0",
+        "reported_task_id": "P221R-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3acbdb4b741d5ce2352c1a325d50a8fa4a8e8a9dc786ac6e2a851e9afabeed49",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-2a9a873d2d7ad4",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-001",
+          "group": "fixed_slot",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "local_status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "repair_invoked": false,
+          "repair_pass": null,
+          "false_green": false,
+          "codex_repair_loc": 0,
+          "worker_seconds": 65.531,
+          "validation_seconds": 39.565,
+          "input_tokens": 696,
+          "output_tokens": 39,
+          "cache_tokens": 0,
+          "ollama_seconds": 13.9185482,
+          "review_wall_seconds": 14.139361,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/0",
+        "reported_task_id": "P221R-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3acbdb4b741d5ce2352c1a325d50a8fa4a8e8a9dc786ac6e2a851e9afabeed49",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-de3645085026ed",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-001",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-001/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-001",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "first_pass": true,
+          "repair_pass": null,
+          "duration_seconds": 65.531,
+          "usage": {
+            "ollama_input_tokens": 696,
+            "ollama_output_tokens": 39,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 13.9185482
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-001/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/0",
+        "reported_task_id": "P221R-001",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3acbdb4b741d5ce2352c1a325d50a8fa4a8e8a9dc786ac6e2a851e9afabeed49",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-13736cf51faf03",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-001",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-001",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "b484c81e67f8803f89f71f3a30ee61d747bad6f34d53e5e9a11275b76ae0fa0c",
+          "first_pass": true,
+          "tested_content_id": "825596bdb4df955875af4ee5bdafcc5a5130f331385221e2303d0507b2920c98",
+          "duration_seconds": 65.531,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 696,
+            "ollama_output_tokens": 39,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 13.9185482
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 696,
+            "model_output_tokens": 39,
+            "Worker_seconds": 65.531
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-001/result.json",
+        "validation_pass": null,
+        "source_sha256": "3985c9b8f2aa9ca11ef5bbeab9c22e0007f44a8b074f208899c9cb324ff7e1e2",
+        "json_pointer": "",
+        "reported_task_id": "P221R-001",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "3acbdb4b741d5ce2352c1a325d50a8fa4a8e8a9dc786ac6e2a851e9afabeed49",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-002": [
+      {
+        "result_id": "R-a4a93d0ee7d201",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-002",
+          "local_status": "PASS",
+          "failure_domain": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/1",
+        "reported_task_id": "P221R-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "593b8153c35677e7a6c9f4fe023aa5a2a6e032142fd883279deb17450b834771",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-48f15ab4c653ce",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-002",
+          "group": "fixed_slot",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "local_status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "repair_invoked": false,
+          "repair_pass": null,
+          "false_green": false,
+          "codex_repair_loc": 0,
+          "worker_seconds": 43.234,
+          "validation_seconds": 33.203,
+          "input_tokens": 749,
+          "output_tokens": 93,
+          "cache_tokens": 0,
+          "ollama_seconds": 2.7944193,
+          "review_wall_seconds": 41.667173,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/1",
+        "reported_task_id": "P221R-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "593b8153c35677e7a6c9f4fe023aa5a2a6e032142fd883279deb17450b834771",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-dbcb668f942887",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-002",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-002/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-002",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "first_pass": true,
+          "repair_pass": null,
+          "duration_seconds": 43.234,
+          "usage": {
+            "ollama_input_tokens": 749,
+            "ollama_output_tokens": 93,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.7944193
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-002/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/1",
+        "reported_task_id": "P221R-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "593b8153c35677e7a6c9f4fe023aa5a2a6e032142fd883279deb17450b834771",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-73e8d74612155c",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-002",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-002",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "a565d6380cec32cb8bc6a6a42d7d70a2f956d82ab70e81ebfc688ddbe0e9ed1a",
+          "first_pass": true,
+          "tested_content_id": "cb0085d8813af3db6688c1d145534d2b6e2183ea2d47878765f7a45be71ab8e3",
+          "duration_seconds": 43.234,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 749,
+            "ollama_output_tokens": 93,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.7944193
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 749,
+            "model_output_tokens": 93,
+            "Worker_seconds": 43.234
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-002/result.json",
+        "validation_pass": null,
+        "source_sha256": "fa759805dfc27585491c6b6624863ad0d238f4f3907811e1a9f22a1d7f351ccb",
+        "json_pointer": "",
+        "reported_task_id": "P221R-002",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "593b8153c35677e7a6c9f4fe023aa5a2a6e032142fd883279deb17450b834771",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-003": [
+      {
+        "result_id": "R-fbcdd36f137e85",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "ACCEPT_WITH_MINOR_FIX",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-003",
+          "local_status": "ESCALATE",
+          "failure_domain": "worker",
+          "review_classification": "ACCEPT_WITH_MINOR_FIX"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/2",
+        "reported_task_id": "P221R-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "aefbf0cd7f0a3d85f53d0f54f260e991d389e7096bc12b4c8104b75eecc73a4b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-98dcec3940ce01",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "ACCEPT_WITH_MINOR_FIX",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-003",
+          "group": "fixed_slot",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "local_status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "repair_invoked": false,
+          "repair_pass": null,
+          "false_green": false,
+          "codex_repair_loc": 2,
+          "worker_seconds": 44.328,
+          "validation_seconds": 36.171,
+          "input_tokens": 722,
+          "output_tokens": 25,
+          "cache_tokens": 0,
+          "ollama_seconds": 1.7051471,
+          "review_wall_seconds": 394.13115,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_WITH_MINOR_FIX"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/2",
+        "reported_task_id": "P221R-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "aefbf0cd7f0a3d85f53d0f54f260e991d389e7096bc12b4c8104b75eecc73a4b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-669fce61f41e20",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-003",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-003/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-003",
+          "status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "first_pass": false,
+          "repair_pass": null,
+          "duration_seconds": 44.328,
+          "usage": {
+            "ollama_input_tokens": 722,
+            "ollama_output_tokens": 25,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 1.7051471
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-003/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/2",
+        "reported_task_id": "P221R-003",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "aefbf0cd7f0a3d85f53d0f54f260e991d389e7096bc12b4c8104b75eecc73a4b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-e87a9ced0b90eb",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-003",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-003",
+          "status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "07745dce3c8ef471a94b04b5dbc6428255c265fa78f2d1d413dd06d836bbd217",
+          "first_pass": false,
+          "duration_seconds": 44.328,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 722,
+            "ollama_output_tokens": 25,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 1.7051471
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 722,
+            "model_output_tokens": 25,
+            "Worker_seconds": 44.328
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-003/result.json",
+        "validation_pass": null,
+        "source_sha256": "8678473381d2667d1b00ce146aef2c5bd25cc22398826cbcb6a4f850333e0d9b",
+        "json_pointer": "",
+        "reported_task_id": "P221R-003",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "aefbf0cd7f0a3d85f53d0f54f260e991d389e7096bc12b4c8104b75eecc73a4b",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-004": [
+      {
+        "result_id": "R-c8ea969812ab7c",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "ACCEPT_WITH_MINOR_FIX",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-004",
+          "local_status": "ESCALATE",
+          "failure_domain": "worker",
+          "review_classification": "ACCEPT_WITH_MINOR_FIX"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/3",
+        "reported_task_id": "P221R-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "13cb3c8b23a6c060d99f256de0565282f3adef0bd1553b0d49e0009f46ef6030",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-f2c9a0d05c9fd9",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "ACCEPT_WITH_MINOR_FIX",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-004",
+          "group": "fixed_slot",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "local_status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "repair_invoked": true,
+          "repair_pass": false,
+          "false_green": false,
+          "codex_repair_loc": 2,
+          "worker_seconds": 68.422,
+          "validation_seconds": 43.453,
+          "input_tokens": 7717,
+          "output_tokens": 238,
+          "cache_tokens": 1092,
+          "ollama_seconds": 10.2491655,
+          "review_wall_seconds": 352.45802,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_WITH_MINOR_FIX"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/3",
+        "reported_task_id": "P221R-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "13cb3c8b23a6c060d99f256de0565282f3adef0bd1553b0d49e0009f46ef6030",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-b9235a2f5c0295",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-004",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-004/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-004",
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "first_pass": false,
+          "repair_pass": false,
+          "duration_seconds": 68.422,
+          "usage": {
+            "ollama_input_tokens": 7717,
+            "ollama_output_tokens": 238,
+            "ollama_cache_tokens": 1092,
+            "ollama_duration_seconds": 10.2491655
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-004/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/3",
+        "reported_task_id": "P221R-004",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "13cb3c8b23a6c060d99f256de0565282f3adef0bd1553b0d49e0009f46ef6030",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-4e2d03ac054e30",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-004",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-004",
+          "status": "ESCALATE",
+          "reason": "CODE_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "551d7c3bd03cca26d4d3cf327e7aaa7d0a2fa1a8674306c0ef20de011eb5f68d",
+          "first_pass": false,
+          "repair_pass": false,
+          "duration_seconds": 68.422,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 7717,
+            "ollama_output_tokens": 238,
+            "ollama_cache_tokens": 1092,
+            "ollama_duration_seconds": 10.2491655
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": true,
+            "reference_input_tokens": null,
+            "model_input_tokens": 7717,
+            "model_output_tokens": 238,
+            "Worker_seconds": 68.422
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-004/result.json",
+        "validation_pass": null,
+        "source_sha256": "441a0b2eabec767f660301aa94387c131be87fa713c82cf03164a9f1f297905f",
+        "json_pointer": "",
+        "reported_task_id": "P221R-004",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "13cb3c8b23a6c060d99f256de0565282f3adef0bd1553b0d49e0009f46ef6030",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-005": [
+      {
+        "result_id": "R-6c90ee4ef404db",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-005",
+          "local_status": "PASS",
+          "failure_domain": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/4",
+        "reported_task_id": "P221R-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "944ebcdeac798aaa72a10d3f56dfbe25a3d33419b4e24f2c9534d0a365218e80",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1bd427668a5a84",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-005",
+          "group": "fixed_slot",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "local_status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": false,
+          "repair_invoked": true,
+          "repair_pass": true,
+          "false_green": false,
+          "codex_repair_loc": 0,
+          "worker_seconds": 75.64,
+          "validation_seconds": 51.765,
+          "input_tokens": 5321,
+          "output_tokens": 166,
+          "cache_tokens": 732,
+          "ollama_seconds": 8.0211106,
+          "review_wall_seconds": 17.342268,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/4",
+        "reported_task_id": "P221R-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "944ebcdeac798aaa72a10d3f56dfbe25a3d33419b4e24f2c9534d0a365218e80",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-8bdf9c007d6139",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-005",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-005/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-005",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "first_pass": false,
+          "repair_pass": true,
+          "duration_seconds": 75.64,
+          "usage": {
+            "ollama_input_tokens": 5321,
+            "ollama_output_tokens": 166,
+            "ollama_cache_tokens": 732,
+            "ollama_duration_seconds": 8.0211106
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-005/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/4",
+        "reported_task_id": "P221R-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "944ebcdeac798aaa72a10d3f56dfbe25a3d33419b4e24f2c9534d0a365218e80",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-38b510a66ef234",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-005",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-005",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 2,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "REPO_EDIT",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "ab17d77211e04bba9f462ffcac881c93044ba41249274c4abb2e09120822ff94",
+          "first_pass": false,
+          "repair_pass": true,
+          "tested_content_id": "bf9a043a3b6b9487736822dfc695c695cbf1d50dad0fa754601c070a0dedf95e",
+          "duration_seconds": 75.64,
+          "repair_attempted": true,
+          "usage": {
+            "ollama_input_tokens": 5321,
+            "ollama_output_tokens": 166,
+            "ollama_cache_tokens": 732,
+            "ollama_duration_seconds": 8.0211106
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": true,
+            "reference_input_tokens": null,
+            "model_input_tokens": 5321,
+            "model_output_tokens": 166,
+            "Worker_seconds": 75.64
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-005/result.json",
+        "validation_pass": null,
+        "source_sha256": "1a01b72e3f5cfd57352dad73fadebd7bc748815643011d0bba8b2b13af2cfe61",
+        "json_pointer": "",
+        "reported_task_id": "P221R-005",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "944ebcdeac798aaa72a10d3f56dfbe25a3d33419b4e24f2c9534d0a365218e80",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-006": [
+      {
+        "result_id": "R-61cde0dd4eeb0f",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-006",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "ACCEPT_WITH_MINOR_FIX",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-006",
+          "local_status": "ESCALATE",
+          "failure_domain": "worker",
+          "review_classification": "ACCEPT_WITH_MINOR_FIX"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/5",
+        "reported_task_id": "P221R-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e55a218a8b927994e72695f3e22dc0bfeb11514afa7f07daa91f29d7714b3dec",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-bd9f41247c7e5b",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-006",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "ACCEPT_WITH_MINOR_FIX",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-006",
+          "group": "fixed_slot",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "local_status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "repair_invoked": false,
+          "repair_pass": null,
+          "false_green": false,
+          "codex_repair_loc": 3,
+          "worker_seconds": 46.75,
+          "validation_seconds": 37.609,
+          "input_tokens": 1302,
+          "output_tokens": 38,
+          "cache_tokens": 0,
+          "ollama_seconds": 2.6411406,
+          "review_wall_seconds": 116.211804,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_WITH_MINOR_FIX"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/5",
+        "reported_task_id": "P221R-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e55a218a8b927994e72695f3e22dc0bfeb11514afa7f07daa91f29d7714b3dec",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-eb67de9606b9f4",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-006",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-006/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-006",
+          "status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "first_pass": false,
+          "repair_pass": null,
+          "duration_seconds": 46.75,
+          "usage": {
+            "ollama_input_tokens": 1302,
+            "ollama_output_tokens": 38,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.6411406
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-006/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/5",
+        "reported_task_id": "P221R-006",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "e55a218a8b927994e72695f3e22dc0bfeb11514afa7f07daa91f29d7714b3dec",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-f498cb3f4ba4d1",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-006",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-006",
+          "status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "MECHANICAL_CODE",
+          "model": "gemma4:26b",
+          "protocol": "fixed_slot",
+          "base_content_id": "0fc7c6bd256904d80d1a263c939d049aaa15b9bd937db19b0d13784216375f9f",
+          "first_pass": false,
+          "duration_seconds": 46.75,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 1302,
+            "ollama_output_tokens": 38,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 2.6411406
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 1302,
+            "model_output_tokens": 38,
+            "Worker_seconds": 46.75
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-006/result.json",
+        "validation_pass": null,
+        "source_sha256": "0189df00e7979d6628ecdc3e45abf20da6f6197ad00bc04c86276573bbd79988",
+        "json_pointer": "",
+        "reported_task_id": "P221R-006",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "e55a218a8b927994e72695f3e22dc0bfeb11514afa7f07daa91f29d7714b3dec",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-007": [
+      {
+        "result_id": "R-32d2984a333eff",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-007",
+          "local_status": "PASS",
+          "failure_domain": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/6",
+        "reported_task_id": "P221R-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d0a9ec9e1706057df2c266789491f9730970db3c19c027d70b8faecfcfce5d8a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-db2cc92f417fd1",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-007",
+          "group": "stateful",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "local_status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "repair_invoked": false,
+          "repair_pass": null,
+          "false_green": false,
+          "codex_repair_loc": 0,
+          "worker_seconds": 51.531,
+          "validation_seconds": 37.765,
+          "input_tokens": 3615,
+          "output_tokens": 164,
+          "cache_tokens": 554,
+          "ollama_seconds": 6.0470439,
+          "review_wall_seconds": 21.979139,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/6",
+        "reported_task_id": "P221R-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d0a9ec9e1706057df2c266789491f9730970db3c19c027d70b8faecfcfce5d8a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-b49efc697526e7",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-007",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-007/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-007",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "first_pass": true,
+          "repair_pass": null,
+          "duration_seconds": 51.531,
+          "usage": {
+            "ollama_input_tokens": 3615,
+            "ollama_output_tokens": 164,
+            "ollama_cache_tokens": 554,
+            "ollama_duration_seconds": 6.0470439
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-007/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/7",
+        "reported_task_id": "P221R-007",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d0a9ec9e1706057df2c266789491f9730970db3c19c027d70b8faecfcfce5d8a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-64c02e2be84196",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-007",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-007",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "22672856b84753704b1746aa96cca0287ce735ad48f0b3e19eaead7a0f5f9eb7",
+          "first_pass": true,
+          "tested_content_id": "b2e3d3ba9ad3b117851c6bacb08cc02944f75d9e95fb3ddbc531465a4daf3f5d",
+          "duration_seconds": 51.531,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 3615,
+            "ollama_output_tokens": 164,
+            "ollama_cache_tokens": 554,
+            "ollama_duration_seconds": 6.0470439
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 3615,
+            "model_output_tokens": 164,
+            "Worker_seconds": 51.531
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-007/result.json",
+        "validation_pass": null,
+        "source_sha256": "0913c383d0ab15513800b41b051e5580f2aa01b3043ba45721495a7698f6f18c",
+        "json_pointer": "",
+        "reported_task_id": "P221R-007",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d0a9ec9e1706057df2c266789491f9730970db3c19c027d70b8faecfcfce5d8a",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-008": [
+      {
+        "result_id": "R-0f043625648fcd",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "ACCEPT_WITH_MINOR_FIX",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-008",
+          "local_status": "ESCALATE",
+          "failure_domain": "worker",
+          "review_classification": "ACCEPT_WITH_MINOR_FIX"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/7",
+        "reported_task_id": "P221R-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "70b0d1503305188a3501fdcec5911741aece9b9829d56bbcf51d2c34141822a7",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-c2a706ab726196",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "ACCEPT_WITH_MINOR_FIX",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-008",
+          "group": "stateful",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "local_status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "repair_invoked": false,
+          "repair_pass": null,
+          "false_green": false,
+          "codex_repair_loc": 3,
+          "worker_seconds": 46.25,
+          "validation_seconds": 34.484,
+          "input_tokens": 2925,
+          "output_tokens": 129,
+          "cache_tokens": 597,
+          "ollama_seconds": 4.9009626,
+          "review_wall_seconds": 71.989899,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_WITH_MINOR_FIX"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/7",
+        "reported_task_id": "P221R-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "70b0d1503305188a3501fdcec5911741aece9b9829d56bbcf51d2c34141822a7",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-3aea637c51cb8e",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-008",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-008/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-008",
+          "status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "first_pass": false,
+          "repair_pass": null,
+          "duration_seconds": 46.25,
+          "usage": {
+            "ollama_input_tokens": 2925,
+            "ollama_output_tokens": 129,
+            "ollama_cache_tokens": 597,
+            "ollama_duration_seconds": 4.9009626
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-008/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/8",
+        "reported_task_id": "P221R-008",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "70b0d1503305188a3501fdcec5911741aece9b9829d56bbcf51d2c34141822a7",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-f944e4187d22c7",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-008",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-008",
+          "status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "675d1dc00be7c4b6a69a13c543f006568615375067f6e77d65adcb13fb766031",
+          "first_pass": false,
+          "duration_seconds": 46.25,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 2925,
+            "ollama_output_tokens": 129,
+            "ollama_cache_tokens": 597,
+            "ollama_duration_seconds": 4.9009626
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 2925,
+            "model_output_tokens": 129,
+            "Worker_seconds": 46.25
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-008/result.json",
+        "validation_pass": null,
+        "source_sha256": "796309a7c35ac203bfc6b28e5b3fd7e9124d09c4c0f9bcc8149fca9cca4fa2de",
+        "json_pointer": "",
+        "reported_task_id": "P221R-008",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "70b0d1503305188a3501fdcec5911741aece9b9829d56bbcf51d2c34141822a7",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-009": [
+      {
+        "result_id": "R-fb6f0eda99d0a3",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-009",
+          "local_status": "PASS",
+          "failure_domain": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/8",
+        "reported_task_id": "P221R-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bb17c08e3c565b44288c9592780cfc7b0b074fa10bb47ba694810f02d61735bc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-895d04d9b4094a",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-009",
+          "group": "stateful",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "local_status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "repair_invoked": false,
+          "repair_pass": null,
+          "false_green": false,
+          "codex_repair_loc": 0,
+          "worker_seconds": 46.109,
+          "validation_seconds": 32.452,
+          "input_tokens": 3459,
+          "output_tokens": 174,
+          "cache_tokens": 628,
+          "ollama_seconds": 6.2667222,
+          "review_wall_seconds": 30.286527,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/8",
+        "reported_task_id": "P221R-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bb17c08e3c565b44288c9592780cfc7b0b074fa10bb47ba694810f02d61735bc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-bd0497372ef0f3",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-009",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-009/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-009",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "first_pass": true,
+          "repair_pass": null,
+          "duration_seconds": 46.109,
+          "usage": {
+            "ollama_input_tokens": 3459,
+            "ollama_output_tokens": 174,
+            "ollama_cache_tokens": 628,
+            "ollama_duration_seconds": 6.2667222
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-009/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/9",
+        "reported_task_id": "P221R-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bb17c08e3c565b44288c9592780cfc7b0b074fa10bb47ba694810f02d61735bc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-630dba9f3ffdad",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-009",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-009",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "5b3f2990618d286c173bb1944392a9899435e109fbe6dc5921ace650615b22f6",
+          "first_pass": true,
+          "tested_content_id": "48617ccd6e42ac774cfca2c84afb0b42dc12f257526e65cee474fedb6678bfc7",
+          "duration_seconds": 46.109,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 3459,
+            "ollama_output_tokens": 174,
+            "ollama_cache_tokens": 628,
+            "ollama_duration_seconds": 6.2667222
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 3459,
+            "model_output_tokens": 174,
+            "Worker_seconds": 46.109
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-009/result.json",
+        "validation_pass": null,
+        "source_sha256": "66379e41bcbc39b41a4a53f8bb40ac1055943a2675cf99cb86b299c8d84e08ec",
+        "json_pointer": "",
+        "reported_task_id": "P221R-009",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "bb17c08e3c565b44288c9592780cfc7b0b074fa10bb47ba694810f02d61735bc",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-010": [
+      {
+        "result_id": "R-c872ffe0c5c1f0",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-010",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "ACCEPT_WITH_MINOR_FIX",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-010",
+          "local_status": "ESCALATE",
+          "failure_domain": "worker",
+          "review_classification": "ACCEPT_WITH_MINOR_FIX"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/9",
+        "reported_task_id": "P221R-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3a8575a7c6bd852598279adfe55fe92bf4646c0497f0c2875807f218bb37e838",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-7cb659c10d433d",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-010",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "ACCEPT_WITH_MINOR_FIX",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-010",
+          "group": "stateful",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "local_status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "first_pass": false,
+          "repair_invoked": false,
+          "repair_pass": null,
+          "false_green": false,
+          "codex_repair_loc": 2,
+          "worker_seconds": 47.953,
+          "validation_seconds": 36.579,
+          "input_tokens": 2599,
+          "output_tokens": 122,
+          "cache_tokens": 614,
+          "ollama_seconds": 4.4477385,
+          "review_wall_seconds": 45.852128,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_WITH_MINOR_FIX"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/9",
+        "reported_task_id": "P221R-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3a8575a7c6bd852598279adfe55fe92bf4646c0497f0c2875807f218bb37e838",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-71f1539b5befe2",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-010",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-010/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-010",
+          "status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "first_pass": false,
+          "repair_pass": null,
+          "duration_seconds": 47.953,
+          "usage": {
+            "ollama_input_tokens": 2599,
+            "ollama_output_tokens": 122,
+            "ollama_cache_tokens": 614,
+            "ollama_duration_seconds": 4.4477385
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-010/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/10",
+        "reported_task_id": "P221R-010",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "3a8575a7c6bd852598279adfe55fe92bf4646c0497f0c2875807f218bb37e838",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-e6a8669076519d",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-010",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-010",
+          "status": "ESCALATE",
+          "reason": "VALIDATION_FAILURE",
+          "failure_domain": "worker",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "18886d00e9f91f84c77045a795f75c0e7d9206935aa668958095e0091f50e71b",
+          "first_pass": false,
+          "duration_seconds": 47.953,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 2599,
+            "ollama_output_tokens": 122,
+            "ollama_cache_tokens": 614,
+            "ollama_duration_seconds": 4.4477385
+          },
+          "metrics": {
+            "First_PASS": false,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 2599,
+            "model_output_tokens": 122,
+            "Worker_seconds": 47.953
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-010/result.json",
+        "validation_pass": null,
+        "source_sha256": "a7fa8a6d4c88055a2d7910bbf57c0712e90afd9e31a75cf736e00a54e7906261",
+        "json_pointer": "",
+        "reported_task_id": "P221R-010",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "3a8575a7c6bd852598279adfe55fe92bf4646c0497f0c2875807f218bb37e838",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-011": [
+      {
+        "result_id": "R-c194efb9319a81",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-011",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "REJECT",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-011",
+          "local_status": "ESCALATE",
+          "failure_domain": "host",
+          "review_classification": "REJECT"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/10",
+        "reported_task_id": "P221R-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bf60ea548a3155dddfd8e9c39d3136171857cfabaa3d06a25cd2c7ef78de618c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-fa4252759addc2",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-011",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": "REJECT",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-011",
+          "group": "stateful",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "local_status": "ESCALATE",
+          "reason": "FORMAT_SCOPE_VIOLATION",
+          "failure_domain": "host",
+          "first_pass": null,
+          "repair_invoked": false,
+          "repair_pass": null,
+          "false_green": false,
+          "codex_repair_loc": 0,
+          "worker_seconds": 10.281,
+          "validation_seconds": 0,
+          "input_tokens": 3821,
+          "output_tokens": 210,
+          "cache_tokens": 680,
+          "ollama_seconds": 6.944569,
+          "review_wall_seconds": 204.072357,
+          "active_review_seconds": null,
+          "review_classification": "REJECT"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/10",
+        "reported_task_id": "P221R-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bf60ea548a3155dddfd8e9c39d3136171857cfabaa3d06a25cd2c7ef78de618c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-a85862fc462006",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-011",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-011/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-011",
+          "status": "ESCALATE",
+          "reason": "FORMAT_SCOPE_VIOLATION",
+          "failure_domain": "host",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "first_pass": null,
+          "repair_pass": null,
+          "duration_seconds": 10.281,
+          "usage": {
+            "ollama_input_tokens": 3821,
+            "ollama_output_tokens": 210,
+            "ollama_cache_tokens": 680,
+            "ollama_duration_seconds": 6.944569
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-011/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/11",
+        "reported_task_id": "P221R-011",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "bf60ea548a3155dddfd8e9c39d3136171857cfabaa3d06a25cd2c7ef78de618c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-3babcb943cddcc",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-011",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "ESCALATE",
+        "local_status": "ESCALATE",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-011",
+          "status": "ESCALATE",
+          "reason": "FORMAT_SCOPE_VIOLATION",
+          "failure_domain": "host",
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "AGENTIC_CODING",
+          "model": "gemma4:26b",
+          "protocol": "agentic",
+          "base_content_id": "d41f4b409002370a1f9d42c12057b700638d36e119706e1c30a66a91fd89a3c3",
+          "duration_seconds": 10.281,
+          "repair_attempted": false,
+          "first_pass": null,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 3821,
+            "ollama_output_tokens": 210,
+            "ollama_cache_tokens": 680,
+            "ollama_duration_seconds": 6.944569
+          },
+          "metrics": {
+            "First_PASS": null,
+            "Local_final_PASS": false,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 3821,
+            "model_output_tokens": 210,
+            "Worker_seconds": 10.281
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-011/result.json",
+        "validation_pass": null,
+        "source_sha256": "05eb2f6c7d59c122be8eceb72dce83e6fb7a62b3e7b321aacaccd497b4ea8aa2",
+        "json_pointer": "",
+        "reported_task_id": "P221R-011",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "bf60ea548a3155dddfd8e9c39d3136171857cfabaa3d06a25cd2c7ef78de618c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-012": [
+      {
+        "result_id": "R-d84d4fe35ade57",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-012",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-012",
+          "local_status": null,
+          "failure_domain": null
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/11",
+        "reported_task_id": "P221R-012",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0c1f2eb4971bcdd4e086ca040fa632ec2e05cb42d045349c9a64215b425bcf81",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-4b1a7cffaa46db",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-012",
+        "stage": "EXECUTION_STATE",
+        "condition": "記録に条件の明記なし",
+        "status": "NOT_RUN",
+        "local_status": null,
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-012",
+          "status": "NOT_RUN"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/unstarted/0",
+        "reported_task_id": "P221R-012",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "0c1f2eb4971bcdd4e086ca040fa632ec2e05cb42d045349c9a64215b425bcf81",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": null
+      }
+    ],
+    "P221R-013": [
+      {
+        "result_id": "R-8f0e59ae6d82e9",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-013",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-013",
+          "local_status": "PASS",
+          "failure_domain": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/12",
+        "reported_task_id": "P221R-013",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "316ffb287e4bb21f80f9f487e0fa142466eb3f54c8a7fe5a9a1674df10e1c996",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-a23925ce2fd45f",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-013",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": null,
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-013",
+          "group": "reasoning",
+          "model": "gemma4:26b",
+          "protocol": "reasoning",
+          "local_status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "first_pass": true,
+          "repair_invoked": false,
+          "repair_pass": null,
+          "false_green": false,
+          "codex_repair_loc": 0,
+          "worker_seconds": 7.484,
+          "validation_seconds": 0,
+          "input_tokens": 2569,
+          "output_tokens": 56,
+          "cache_tokens": 0,
+          "ollama_seconds": 5.6904669,
+          "review_wall_seconds": 14.719373,
+          "active_review_seconds": null,
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "metrics/task-metrics.json",
+        "validation_pass": null,
+        "source_sha256": "0b5ec5b0051dccc96ff3fd5b925abb63de3ddc07ffa53fcf7d1ae9e30afe4e71",
+        "json_pointer": "/11",
+        "reported_task_id": "P221R-013",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "316ffb287e4bb21f80f9f487e0fa142466eb3f54c8a7fe5a9a1674df10e1c996",
+          "reported_task_sha256": null
+        },
+        "source_priority": 80,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-3e4ba11eeb2641",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-013",
+        "stage": "VALIDATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": null,
+        "final_quality": null,
+        "review": "workspace/records/router-v2.2/P221R-013/review.json",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-013",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "model": "gemma4:26b",
+          "protocol": "reasoning",
+          "first_pass": true,
+          "repair_pass": null,
+          "duration_seconds": 7.484,
+          "usage": {
+            "ollama_input_tokens": 2569,
+            "ollama_output_tokens": 56,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 5.6904669
+          },
+          "review_classification": "workspace/records/router-v2.2/P221R-013/review.json"
+        },
+        "source_file": "run-history.json",
+        "validation_pass": null,
+        "source_sha256": "2b5c530b9185c97d8002ff7abf8153833b8abbd5b8a9b60db4bd048dcf21ccff",
+        "json_pointer": "/runs/6",
+        "reported_task_id": "P221R-013",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "316ffb287e4bb21f80f9f487e0fa142466eb3f54c8a7fe5a9a1674df10e1c996",
+          "reported_task_sha256": null
+        },
+        "source_priority": 75,
+        "reported_model": "gemma4:26b"
+      },
+      {
+        "result_id": "R-ede70f49403421",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-013",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "model=gemma4:26b",
+        "status": "PASS",
+        "local_status": "PASS",
+        "final_quality": null,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "profile_version": "2.2.1",
+          "task_id": "P221R-013",
+          "status": "PASS",
+          "reason": "TARGETED_CHECKS_PASSED",
+          "failure_domain": null,
+          "attempts": 1,
+          "codex_modified_code": null,
+          "codex_repair_loc": null,
+          "codex_tokens": {
+            "review": {
+              "input": null,
+              "output": null
+            }
+          },
+          "net_codex_tokens_saved": null,
+          "task_type": "ERROR_ANALYSIS",
+          "model": "gemma4:26b",
+          "protocol": "reasoning",
+          "base_content_id": "1792347081ca44f9b9e8d86b5baeee21ab0fa9362a0b41b4140ba0a9a1f0f286",
+          "first_pass": true,
+          "tested_content_id": "1792347081ca44f9b9e8d86b5baeee21ab0fa9362a0b41b4140ba0a9a1f0f286",
+          "duration_seconds": 7.484,
+          "repair_attempted": false,
+          "repair_pass": null,
+          "usage": {
+            "ollama_input_tokens": 2569,
+            "ollama_output_tokens": 56,
+            "ollama_cache_tokens": 0,
+            "ollama_duration_seconds": 5.6904669
+          },
+          "metrics": {
+            "First_PASS": true,
+            "Local_final_PASS": true,
+            "FALSE_GREEN": null,
+            "Codex_repair_LOC": null,
+            "repair_invoked": false,
+            "reference_input_tokens": null,
+            "model_input_tokens": 2569,
+            "model_output_tokens": 56,
+            "Worker_seconds": 7.484
+          }
+        },
+        "source_file": "workspace/records/router-v2.2/P221R-013/result.json",
+        "validation_pass": null,
+        "source_sha256": "0728b52117f7ee4236aeb32cb8c69ab6ff38f8ee3658ce7e0684e9445df2f40f",
+        "json_pointer": "",
+        "reported_task_id": "P221R-013",
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "316ffb287e4bb21f80f9f487e0fa142466eb3f54c8a7fe5a9a1674df10e1c996",
+          "reported_task_sha256": null
+        },
+        "source_priority": 60,
+        "reported_model": "gemma4:26b"
+      }
+    ],
+    "P221R-014": [
+      {
+        "result_id": "R-46af9c5af312d8",
+        "entry_key": "router-shadow-pilot-v2.2.1/P221R-014",
+        "stage": "LOCAL_IMPLEMENTATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "CODEX_ONLY",
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "P221R-014",
+          "local_status": null,
+          "failure_domain": null,
+          "review_classification": "CODEX_ONLY"
+        },
+        "source_file": "metrics/all-task-outcomes.json",
+        "validation_pass": null,
+        "source_sha256": "7b14ebd1c00d46bf9c0e8b009881b16b81ce8f205705e4520ef067848edf347a",
+        "json_pointer": "/13",
+        "reported_task_id": "P221R-014",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "4a74911d81dcdcff453bc38041f1ebdd0791eb150e46f0d88eea462259eeb014",
+          "reported_task_sha256": null
+        },
+        "source_priority": 82,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/router-shadow-pilot-v2.2.1/RESULTS_JA.md",
+      "source_report": "router-shadow-pilot-v2.2.1/RESULTS_JA.md",
+      "source_sha256": "3a7ee08fd6fd9212b321bf51ee203744bc17bd325687a8c87209a63bff537736",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 14,
+    "linked_entries": 14,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 51
+  }
+}

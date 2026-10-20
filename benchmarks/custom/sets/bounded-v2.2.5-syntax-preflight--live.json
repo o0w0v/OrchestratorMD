@@ -1,5 +1,6 @@
 {
   "set_id": "bounded-v2.2.5-syntax-preflight--live",
+  "display_name": "実装・検証手順の比較 / bounded-v2.2.5-syntax-preflight / live",
   "entry_count": 3,
   "tasks": [
     {
@@ -86,10 +87,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "S225-001",
       "set_id": "bounded-v2.2.5-syntax-preflight--live",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-v2.2.5-syntax-preflight--live/S225-001",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-5455d2326cfaf2",
+        "R-051cd65a54f9e3"
+      ],
+      "result_page": "sets/bounded-v2.2.5-syntax-preflight--live.md#s225-001",
+      "result_data": "results/bounded-v2.2.5-syntax-preflight--live.json"
     },
     {
       "task_id": "S225-002",
@@ -175,10 +179,13 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "S225-002",
       "set_id": "bounded-v2.2.5-syntax-preflight--live",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-v2.2.5-syntax-preflight--live/S225-002",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-2515546c2db963",
+        "R-ffd1edbbf7178c"
+      ],
+      "result_page": "sets/bounded-v2.2.5-syntax-preflight--live.md#s225-002",
+      "result_data": "results/bounded-v2.2.5-syntax-preflight--live.json"
     },
     {
       "task_id": "S225-003",
@@ -265,30 +272,20 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "S225-003",
       "set_id": "bounded-v2.2.5-syntax-preflight--live",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/bounded-v2.2.5-syntax-preflight--live/S225-003",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": null
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-fe0751458dd1fe",
+        "R-bc4c9af79fa147"
+      ],
+      "result_page": "sets/bounded-v2.2.5-syntax-preflight--live.md#s225-003",
+      "result_data": "results/bounded-v2.2.5-syntax-preflight--live.json"
     }
   ],
   "result_summary": {
-    "set_id": "bounded-v2.2.5-syntax-preflight--live",
-    "source_set": "bounded-v2.2.5-syntax-preflight/live",
     "entries": 3,
-    "structured_result_records": 0,
-    "task_ids_with_structured_results": 0,
-    "task_ids_without_structured_results": [
-      "S225-001",
-      "S225-002",
-      "S225-003"
-    ],
-    "historical_reports": [
-      {
-        "file": "results/bounded-v2.2.5-syntax-preflight--live/RESULTS_JA.md",
-        "source_report": "bounded-v2.2.5-syntax-preflight/RESULTS_JA.md",
-        "source_sha256": "4a12107966f41c1a3ca5ba9b5ced4a83de1049258ed7714c497971c3c73541a0"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 3,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 6
   }
 }

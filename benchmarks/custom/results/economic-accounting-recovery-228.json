@@ -1,0 +1,334 @@
+{
+  "format_version": 2,
+  "set_id": "economic-accounting-recovery-228",
+  "entries": {
+    "ECR228-002": [
+      {
+        "result_id": "R-ba69b2bc0bd896",
+        "entry_key": "economic-accounting-recovery-228/ECR228-002",
+        "stage": "WORKFLOW",
+        "condition": "recovery_arm=A",
+        "status": null,
+        "local_status": null,
+        "final_quality": true,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "ECR228-002",
+          "final_quality_pass": true,
+          "credits": 4.30415,
+          "measurement": "independent_replication",
+          "new_Local_inference_calls": 0
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "8c0e3d3c6ae53a8a8a9c637e1d03e9f8e945f8ce295dad77790687c97103b5b0",
+        "json_pointer": "/0/A_quality_PASS",
+        "reported_task_id": "ECR228-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c38fa4ed83f14c5489ca28df65439e1c8e71d8ee3b826bf317296dd37e11de61",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-912ce82eb99ae3",
+        "entry_key": "economic-accounting-recovery-228/ECR228-002",
+        "stage": "WORKFLOW",
+        "condition": "recovery_arm=B",
+        "status": null,
+        "local_status": null,
+        "final_quality": true,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "ECR228-002",
+          "final_quality_pass": true,
+          "credits": 4.64601,
+          "measurement": "independent_replication",
+          "new_Local_inference_calls": 0
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "8c0e3d3c6ae53a8a8a9c637e1d03e9f8e945f8ce295dad77790687c97103b5b0",
+        "json_pointer": "/0/B_quality_PASS",
+        "reported_task_id": "ECR228-002",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "c38fa4ed83f14c5489ca28df65439e1c8e71d8ee3b826bf317296dd37e11de61",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-5e13ce0aabac94",
+        "entry_key": "economic-accounting-recovery-228/ECR228-002",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff changes only the declared region. It renders each Option<usize> independently and exactly as specified, preserves state, and all mandatory checks and scope guards pass.",
+            "usage": {
+              "input_tokens": 33246,
+              "cached_input_tokens": 26496,
+              "output_tokens": 336,
+              "uncached_input_tokens": 6750,
+              "total_tokens": 33582
+            },
+            "credits": 0.55398,
+            "wall_seconds": 19.827999999994063
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-002/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "33bb7441b1fc7b46f4e424218b48408cc8446cb12bcf6384bcc6b14731bd3583",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "c38fa4ed83f14c5489ca28df65439e1c8e71d8ee3b826bf317296dd37e11de61",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-005": [
+      {
+        "result_id": "R-a6004c2d6ae4e0",
+        "entry_key": "economic-accounting-recovery-228/ECR228-005",
+        "stage": "WORKFLOW",
+        "condition": "recovery_arm=A",
+        "status": null,
+        "local_status": null,
+        "final_quality": true,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "ECR228-005",
+          "final_quality_pass": true,
+          "credits": 5.19664,
+          "measurement": "independent_replication",
+          "new_Local_inference_calls": 0
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "8c0e3d3c6ae53a8a8a9c637e1d03e9f8e945f8ce295dad77790687c97103b5b0",
+        "json_pointer": "/1/A_quality_PASS",
+        "reported_task_id": "ECR228-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d336d1a70282536dabe73625f4b958bb45d986c05e7fa57ff65c90c55c58d78c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-1d3f574fec5bc4",
+        "entry_key": "economic-accounting-recovery-228/ECR228-005",
+        "stage": "WORKFLOW",
+        "condition": "recovery_arm=B",
+        "status": null,
+        "local_status": null,
+        "final_quality": true,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "ECR228-005",
+          "final_quality_pass": true,
+          "credits": 6.72499,
+          "measurement": "independent_replication",
+          "new_Local_inference_calls": 0
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "8c0e3d3c6ae53a8a8a9c637e1d03e9f8e945f8ce295dad77790687c97103b5b0",
+        "json_pointer": "/1/B_quality_PASS",
+        "reported_task_id": "ECR228-005",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "d336d1a70282536dabe73625f4b958bb45d986c05e7fa57ff65c90c55c58d78c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-e435d2be7c02be",
+        "entry_key": "economic-accounting-recovery-228/ECR228-005",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-02/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The candidate returns the required u64 excess for every row in order. Saturating subtraction gives zero at or below the inclusive allowance and the exact difference above it. All mandatory validation and scope checks passed.",
+            "usage": {
+              "input_tokens": 32435,
+              "cached_input_tokens": 14464,
+              "output_tokens": 257,
+              "uncached_input_tokens": 17971,
+              "total_tokens": 32692
+            },
+            "credits": 1.03512,
+            "wall_seconds": 16.093000000008033
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-005/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "b07d75d44a59f22ef5fcfa5aac820be89dc4ba3324d6db9b76ffd55cffccbebd",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "d336d1a70282536dabe73625f4b958bb45d986c05e7fa57ff65c90c55c58d78c",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ],
+    "ECR228-009": [
+      {
+        "result_id": "R-73ba3d3100ccda",
+        "entry_key": "economic-accounting-recovery-228/ECR228-009",
+        "stage": "WORKFLOW",
+        "condition": "recovery_arm=A",
+        "status": null,
+        "local_status": null,
+        "final_quality": true,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "ECR228-009",
+          "final_quality_pass": true,
+          "credits": 2.89719,
+          "measurement": "independent_replication",
+          "new_Local_inference_calls": 0
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "8c0e3d3c6ae53a8a8a9c637e1d03e9f8e945f8ce295dad77790687c97103b5b0",
+        "json_pointer": "/2/A_quality_PASS",
+        "reported_task_id": "ECR228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "1f0bb8be1ce286af4d6d021a432fe20d99aa61944e641aef38600d3c3d603f71",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-b82704d9e2b4c9",
+        "entry_key": "economic-accounting-recovery-228/ECR228-009",
+        "stage": "WORKFLOW",
+        "condition": "recovery_arm=B",
+        "status": null,
+        "local_status": null,
+        "final_quality": true,
+        "review": null,
+        "local_adopted": null,
+        "metrics": {
+          "task_id": "ECR228-009",
+          "final_quality_pass": true,
+          "credits": 3.96697,
+          "measurement": "independent_replication",
+          "new_Local_inference_calls": 0
+        },
+        "source_file": "task-results.json",
+        "validation_pass": null,
+        "source_sha256": "8c0e3d3c6ae53a8a8a9c637e1d03e9f8e945f8ce295dad77790687c97103b5b0",
+        "json_pointer": "/2/B_quality_PASS",
+        "reported_task_id": "ECR228-009",
+        "binding": {
+          "method": "SET_AND_ENTRY_ID",
+          "expected_task_sha256": "1f0bb8be1ce286af4d6d021a432fe20d99aa61944e641aef38600d3c3d603f71",
+          "reported_task_sha256": null
+        },
+        "source_priority": 90,
+        "reported_model": null
+      },
+      {
+        "result_id": "R-20df81ac6072ac",
+        "entry_key": "economic-accounting-recovery-228/ECR228-009",
+        "stage": "VALIDATION",
+        "condition": "記録に条件の明記なし",
+        "status": null,
+        "local_status": null,
+        "final_quality": null,
+        "review": "ACCEPT_NO_CHANGE",
+        "local_adopted": null,
+        "metrics": {
+          "passed": true,
+          "classification": "ACCEPT_NO_CHANGE",
+          "final_validation": "validation-01/summary.json",
+          "review": {
+            "classification": "ACCEPT_NO_CHANGE",
+            "reason": "The diff makes the required full-width, inclusive comparison within the declared region. All mandatory validation and scope checks passed, and the packet shows no remaining contract or scope defect.",
+            "usage": {
+              "input_tokens": 32663,
+              "cached_input_tokens": 14464,
+              "output_tokens": 243,
+              "uncached_input_tokens": 18199,
+              "total_tokens": 32906
+            },
+            "credits": 1.04302,
+            "wall_seconds": 15.546999999991385
+          },
+          "review_classification": "ACCEPT_NO_CHANGE"
+        },
+        "source_file": "codex/B/ECR228-009/RESULT.json",
+        "validation_pass": true,
+        "source_sha256": "606f4d75ffcd04b67eabec0cdef70fb16d94eae629d9565c316780caa91b90bc",
+        "json_pointer": "",
+        "reported_task_id": null,
+        "binding": {
+          "method": "ENTRY_DIRECTORY",
+          "expected_task_sha256": "1f0bb8be1ce286af4d6d021a432fe20d99aa61944e641aef38600d3c3d603f71",
+          "reported_task_sha256": null
+        },
+        "source_priority": 70,
+        "reported_model": null
+      }
+    ]
+  },
+  "unassociated_records": [],
+  "reports": [
+    {
+      "path": "reports/economic-accounting-recovery-228/RESULTS_ACCOUNTING_RECOVERY_JA.md",
+      "source_report": "economic-accounting-recovery-228/RESULTS_ACCOUNTING_RECOVERY_JA.md",
+      "source_sha256": "c9ffc234e18b3ce6d3d919d51246144610d260922ffe7ccd515fd634c54100a3",
+      "scope": "SAME_RUN"
+    }
+  ],
+  "summary": {
+    "entries": 3,
+    "linked_entries": 3,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 9
+  }
+}

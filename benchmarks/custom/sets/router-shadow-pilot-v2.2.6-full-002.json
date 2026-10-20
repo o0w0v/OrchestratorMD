@@ -1,5 +1,6 @@
 {
   "set_id": "router-shadow-pilot-v2.2.6-full-002",
+  "display_name": "実装委譲の検証 / 手順-v2.2.6-full-002",
   "entry_count": 14,
   "tasks": [
     {
@@ -86,10 +87,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-001",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-001",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "bounded-v2.2.5-syntax-preflight--live/S225-001"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-2f471265f6316b",
+        "R-c3170e723a0de1",
+        "R-62b619166181cb"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-001",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-002",
@@ -176,10 +181,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-002",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-002",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "bounded-v2.2.5-syntax-preflight--live/S225-003"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-0d752e6b2da3c7",
+        "R-05c42df6556c84",
+        "R-5c83e50ed7e735"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-002",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-003",
@@ -265,10 +274,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-003",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-003",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "bounded-v2.2.6-body-contract--live/S226-001"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-e94e55585ae948",
+        "R-6f54c56013a6df",
+        "R-a29a5b9928dfe0"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-003",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-004",
@@ -354,10 +367,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-004",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-004",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "bounded-v2.2.5-syntax-preflight--live/S225-002"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-d8139db749e02c",
+        "R-6141b3e7abb47e",
+        "R-341ee95fa90f2b"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-004",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-005",
@@ -415,10 +432,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-005",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-005",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": "router-shadow-pilot-v2.2.4/P224-005"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-0fc900d6f36cf2",
+        "R-f03fe24eee7a6d",
+        "R-876e4ab76cb620"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-005",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-006",
@@ -505,10 +526,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-006",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-006",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "router-shadow-pilot-v2.2.4/P224-006"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-030992da9ecbbe",
+        "R-ffcc0530ed7c4c",
+        "R-6b283285ab9cfe"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-006",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-007",
@@ -594,10 +619,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-007",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-007",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "router-shadow-pilot-v2.2.4/P224-007"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-7ce4e7f38b6f83",
+        "R-c36c2c7452bb72",
+        "R-1017428544247f"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-007",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-008",
@@ -684,10 +713,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-008",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-008",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "router-shadow-pilot-v2.2.4/P224-008"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-dc2e536865e39b",
+        "R-a5d52c550cacf3",
+        "R-897bc0408c4b7e"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-008",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-009",
@@ -773,10 +806,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-009",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-009",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "router-shadow-pilot-v2.2.4/P224-009"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-3e9adf52fe7de7",
+        "R-98ce8815eb1553",
+        "R-bdee32b7b379f5"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-009",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-010",
@@ -863,10 +900,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-010",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-010",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "router-shadow-pilot-v2.2.4/P224-010"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-5b091558d0b234",
+        "R-0469e4cf2c626c",
+        "R-b841b3df0fd662"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-010",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-011",
@@ -952,10 +993,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-011",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-011",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "router-shadow-pilot-v2.2.4/P224-011"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-09000e215267f6",
+        "R-2cb51bdf0010eb",
+        "R-59e504cdb75c6d"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-011",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-012",
@@ -1042,10 +1087,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-012",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-012",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "router-shadow-pilot-v2.2.4/P224-012"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-401353b122fa48",
+        "R-8aba3a59f79576",
+        "R-1d2291f041af34"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-012",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-013",
@@ -1095,10 +1144,12 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-013",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-013",
-      "fixture_file_count": 1,
-      "same_exact_contract_as": "router-shadow-pilot-v2.2.4/P224-013"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-6a45cfc80ef2a8"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-013",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     },
     {
       "task_id": "P224-014",
@@ -1184,28 +1235,21 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "P224-014",
       "set_id": "router-shadow-pilot-v2.2.6-full-002",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/router-shadow-pilot-v2.2.6-full-002/P224-014",
-      "fixture_file_count": 27,
-      "same_exact_contract_as": "router-shadow-pilot-v2.2.4/P224-014"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-b5594df52f2fe1",
+        "R-dfb791f2cbb938",
+        "R-272999d2b6a2c1"
+      ],
+      "result_page": "sets/router-shadow-pilot-v2.2.6-full-002.md#p224-014",
+      "result_data": "results/router-shadow-pilot-v2.2.6-full-002.json"
     }
   ],
   "result_summary": {
-    "set_id": "router-shadow-pilot-v2.2.6-full-002",
-    "source_set": "router-shadow-pilot-v2.2.6-full-002",
     "entries": 14,
-    "structured_result_records": 26,
-    "task_ids_with_structured_results": 13,
-    "task_ids_without_structured_results": [
-      "P224-013"
-    ],
-    "historical_reports": [
-      {
-        "file": "results/router-shadow-pilot-v2.2.6-full-002/RESULTS_JA.md",
-        "source_report": "router-shadow-pilot-v2.2.6-full-002/RESULTS_JA.md",
-        "source_sha256": "ce3a614863dc1ddab5e2ec78de143df478bb05c263e33314114d66e651b12fd3"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 14,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 40
   }
 }

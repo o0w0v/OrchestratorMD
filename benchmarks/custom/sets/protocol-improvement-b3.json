@@ -1,5 +1,6 @@
 {
   "set_id": "protocol-improvement-b3",
+  "display_name": "実装・検証手順の比較 / protocol-improvement-b3",
   "entry_count": 3,
   "tasks": [
     {
@@ -82,10 +83,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "B3-003",
       "set_id": "protocol-improvement-b3",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/protocol-improvement-b3/B3-003",
-      "fixture_file_count": 29,
-      "same_exact_contract_as": "protocol-improvement-b2/B2-003"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-5de450aee6e3fb",
+        "R-0da38ffdc2ecac",
+        "R-e1df37700d19c0"
+      ],
+      "result_page": "sets/protocol-improvement-b3.md#b3-003",
+      "result_data": "results/protocol-improvement-b3.json"
     },
     {
       "task_id": "B3-004",
@@ -167,10 +172,14 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "B3-004",
       "set_id": "protocol-improvement-b3",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/protocol-improvement-b3/B3-004",
-      "fixture_file_count": 28,
-      "same_exact_contract_as": "protocol-improvement-b2/B2-004"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-315f95d6f6b862",
+        "R-693f8ca81159ca",
+        "R-7279d6468d3705"
+      ],
+      "result_page": "sets/protocol-improvement-b3.md#b3-004",
+      "result_data": "results/protocol-improvement-b3.json"
     },
     {
       "task_id": "B3-005",
@@ -246,26 +255,21 @@
       "max_diff_loc": 80,
       "dataset_entry_id": "B3-005",
       "set_id": "protocol-improvement-b3",
-      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
-      "bundle_path": "sets/protocol-improvement-b3/B3-005",
-      "fixture_file_count": 28,
-      "same_exact_contract_as": "protocol-improvement-b2/B2-005"
+      "historical_result": "RESULTS_LINKED",
+      "result_ids": [
+        "R-6b2946d2c515c2",
+        "R-a1a9dc5c181388",
+        "R-8b4d109a588172"
+      ],
+      "result_page": "sets/protocol-improvement-b3.md#b3-005",
+      "result_data": "results/protocol-improvement-b3.json"
     }
   ],
   "result_summary": {
-    "set_id": "protocol-improvement-b3",
-    "source_set": "protocol-improvement-b3",
     "entries": 3,
-    "structured_result_records": 6,
-    "task_ids_with_structured_results": 3,
-    "task_ids_without_structured_results": [],
-    "historical_reports": [
-      {
-        "file": "results/protocol-improvement-b3/RESULTS_JA.md",
-        "source_report": "protocol-improvement-b3/RESULTS_JA.md",
-        "source_sha256": "a27336a09af102b8ce7c2bdfa39a76998eba65132609a33a7128dd1e429c755a"
-      }
-    ],
-    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    "linked_entries": 3,
+    "unconfirmed_entries": 0,
+    "revision_mismatch_entries": 0,
+    "result_records": 9
   }
 }

@@ -1,0 +1,13 @@
+{
+  "set_id": "gemma26-memory-headroom-228--run-001",
+  "scope": "SETUP_CONTEXT_NOT_PER_TASK_RESULT",
+  "source_file": "arms/A/STOP.json",
+  "source_sha256": "454e3a499b7045a42ab3c46a948868f4b553ffecf67cd25be9bc8f988edc0ad8",
+  "fields": {
+    "timestamp": "2026-10-06T19:15:22.639234+00:00",
+    "action": "fresh",
+    "exception": "AssertionError('Requested FA/KV/context not proven in actual backend logs')",
+    "no_implicit_retry": true,
+    "no_restart": true
+  }
+}
