@@ -2,7 +2,7 @@
 
 [課題一覧](INDEX.md) から個別の入力を開けます。MultiPL-EのRust問題20件とMulti-SWE-benchのRust問題10件です。`official-30` はこの選定集合の名前であり、提供元による認定や全問題の実施を意味しません。
 
-`prompts/` は製品に渡せるMarkdown、`tasks/` は同じ公開入力の構造化JSONです。問題文とMulti-SWEのbase commitは固定した課題定義に基づきます。Markdownには共通の実施指示を追加しています。`results-template.csv` は新たな比較試験用の記録表で、初期状態はすべて `NOT_RUN` です。このデータセットには公式課題の評価結果を収録していません。
+`prompts/` は製品に渡せるMarkdown、`tasks/` は同じ公開入力の構造化JSONです。問題文とMulti-SWEのbase commitは固定した課題定義に基づきます。Markdownには共通の実施指示を追加しています。`results-template.csv` は新たな比較試験用の記録表で、初期状態はすべて `NOT_RUN` です。入力データと分離して、[A/B workflow実測結果](results/2026-10-21-gemma26-router/README.md)を収録しています（29採点/30、判定INCONCLUSIVE）。
 
 ## 実施方法
 

@@ -21,7 +21,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "732d668d91c7dd5059d8c6d8d53a64b2000fe7b49a23b9ba2e08f185d6c45d41"
+      "sha256": "ee4ed738e7c2d30eced08d8611fdc1d9a8408a93eacb463e22766f3e5bbd68a3"
     },
     {
       "path": "benchmarks/custom/CORRESPONDENCE_AUDIT.md",
@@ -853,7 +853,7 @@
     },
     {
       "path": "benchmarks/official-30/README.md",
-      "sha256": "e0970e00d264a9fb59912ed9dc355249de005529e7ac6df8ef9987544c6f5ab6"
+      "sha256": "3c59bd1d91a6430f7ab988020388a9a38f5c38742b914118d8d8bd4e79154390"
     },
     {
       "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",
@@ -1032,6 +1032,34 @@
       "sha256": "305fa26283e881c5b8636fe23b473d8b2d9cdb55e7bd15ce48f2398f86941466"
     },
     {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/ACCOUNTING_RECONCILIATION.json",
+      "sha256": "611d0c3fd342cc5d4ea1615b337504c4296ee76920c4eb5608599eb59ad4e0ec"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/FINAL_BENCHMARK_RESULT.json",
+      "sha256": "52279ef7b05daa2dec61142f71b2a5276b93c9291d4853f41e89c77fed833090"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/PUBLICATION_MANIFEST.json",
+      "sha256": "a195235e567bfea6ca8305f1673541c5a629ce2a0c773eee9c03ffd84c5f8e07"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/README.md",
+      "sha256": "fd2963573c7974cef4370875e61d16e9a724e1fcbb9f813c022fa1917bcfbc9d"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/RESULTS_JA.md",
+      "sha256": "04d04e3ff94e8092dd0b6084df795e8b8d97fb309f46fd1f2530a5671c488718"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/SAFE_FAILURE_PROJECTION.json",
+      "sha256": "a89f438e6f8e1e6081479204acfd4eaab9564c0c90681ab15a2b91b84547aa7a"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/TASK_AB_RESULTS.csv",
+      "sha256": "c65843c8ade7765d48f56894c992f816fcded60fb7ec981e89385bb86bd8bf65"
+    },
+    {
       "path": "benchmarks/official-30/source-pins.json",
       "sha256": "91f219848592d9605dc76ce69d2d1fd179491ead3769621f72471c949f39e0be"
     },
@@ -1155,5 +1183,6 @@
       "path": "benchmarks/official-30/tasks/tokio-rs__tracing-2897.json",
       "sha256": "ed0f8aecd841fa166f6c58da7f25dbaa37fe5198e3a901eb9130b92895b996a2"
     }
-  ]
+  ],
+  "official_result_revision": "2026-10-21-gemma26-router"
 }
