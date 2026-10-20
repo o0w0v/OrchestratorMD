@@ -1,0 +1,203 @@
+{
+  "set_id": "bounded-v2.2.6-body-contract--offline-final",
+  "entry_count": 2,
+  "tasks": [
+    {
+      "task_id": "S226-SAVED-001",
+      "task_type": "REPO_EDIT",
+      "goal": "CLI telemetryを改行しないescaped一行として表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement telemetry_line(warning: &str) -> String: escape each backslash as two backslashes, LF as literal backslash-n, CR as backslash-r, TAB as backslash-t. Preserve all other Unicode characters and spaces exactly, with no trimming or extra prefix. Empty input returns empty. Process original characters once, without re-escaping newly inserted escape characters. Only individual CLI display changes; audit/source input is unchanged.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement telemetry_line(warning: &str) -> String: escape each backslash as two backslashes, LF as literal backslash-n, CR as backslash-r, TAB as backslash-t.",
+        "Preserve all other Unicode characters and spaces exactly, with no trimming or extra prefix. Empty input returns empty. Process original characters once, without re-escaping newly inserted escape characters. Only individual CLI display changes; audit/source input is unchanged.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement telemetry_line(warning: &str) -> String: escape each backslash as two backslashes, LF as literal backslash-n, CR as backslash-r, TAB as backslash-t.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Preserve all other Unicode characters and spaces exactly, with no trimming or extra prefix. Empty input returns empty. Process original characters once, without re-escaping newly inserted escape characters. Only individual CLI display changes; audit/source input is unchanged.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P224-001/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/P224-001/crates/ncos-cli/src/main.rs": [
+          "telemetry_line"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "S226-SAVED-001",
+      "set_id": "bounded-v2.2.6-body-contract--offline-final",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-v2.2.6-body-contract--offline-final/S226-SAVED-001",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "bounded-v2.2.5-syntax-preflight--live/S225-001"
+    },
+    {
+      "task_id": "S226-SAVED-003",
+      "task_type": "DEBUGGING",
+      "goal": "TCP inventoryが非data行の01を誤countする不具合",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Debug count_established_tcp(text: &str) -> usize. Count a line iff it has at least four whitespace-separated fields, the first is one or more ASCII decimal digits followed by exactly one colon, and the fourth is exactly 01. Do not validate the address fields; IPv4/IPv6 opaque fields and extra columns are accepted. Preserve duplicates, leading whitespace and CRLF. Reject headers, empty slots, signed/non-ASCII/malformed slot numbers and other states. This fixes one data-row predicate, not the observer or a whole network parser.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Debug count_established_tcp(text: &str) -> usize. Count a line iff it has at least four whitespace-separated fields, the first is one or more ASCII decimal digits followed by exactly one colon, and the fourth is exactly 01.",
+        "Do not validate the address fields; IPv4/IPv6 opaque fields and extra columns are accepted. Preserve duplicates, leading whitespace and CRLF. Reject headers, empty slots, signed/non-ASCII/malformed slot numbers and other states. This fixes one data-row predicate, not the observer or a whole network parser.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Debug count_established_tcp(text: &str) -> usize. Count a line iff it has at least four whitespace-separated fields, the first is one or more ASCII decimal digits followed by exactly one colon, and the fourth is exactly 01.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Do not validate the address fields; IPv4/IPv6 opaque fields and extra columns are accepted. Preserve duplicates, leading whitespace and CRLF. Reject headers, empty slots, signed/non-ASCII/malformed slot numbers and other states. This fixes one data-row predicate, not the observer or a whole network parser.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P224-003/crates/ncos-observer-linux/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/P224-003/crates/ncos-observer-linux/src/lib.rs": [
+          "tcp_established_count"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "S226-SAVED-003",
+      "set_id": "bounded-v2.2.6-body-contract--offline-final",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-v2.2.6-body-contract--offline-final/S226-SAVED-003",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "bounded-v2.2.6-body-contract--live/S226-001"
+    }
+  ],
+  "result_summary": {
+    "set_id": "bounded-v2.2.6-body-contract--offline-final",
+    "source_set": "bounded-v2.2.6-body-contract/offline-final",
+    "entries": 2,
+    "structured_result_records": 0,
+    "task_ids_with_structured_results": 0,
+    "task_ids_without_structured_results": [
+      "S226-SAVED-001",
+      "S226-SAVED-003"
+    ],
+    "historical_reports": [
+      {
+        "file": "results/bounded-v2.2.6-body-contract--offline-final/RESULTS_JA.md",
+        "source_report": "bounded-v2.2.6-body-contract/RESULTS_JA.md",
+        "source_sha256": "a8203d5e417a82079fb310a2c690dd809511d4f416db9144b05cc77154fce1fe"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

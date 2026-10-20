@@ -1,0 +1,361 @@
+{
+  "set_id": "formatter-guard-v2.2.2",
+  "entry_count": 4,
+  "tasks": [
+    {
+      "task_id": "F222-001",
+      "task_type": "AGENTIC_CODING",
+      "goal": "memory evidenceへ観測RSSのsaturating合計",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate memory pressure evidence. Keep its original first string unchanged; always append a second string observed_rss_kib=N where N is the saturating sum of rss_kib of all current state.processes. Empty processes yields 0. Include every entry, including duplicate PIDs. Saturate at u64::MAX; do not sort/mutate snapshot. Preserve memory threshold and all HighLoad behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate memory pressure evidence. Keep its original first string unchanged; always append a second string observed_rss_kib=N where N is the saturating sum of rss_kib of all current state.processes.",
+        "Empty processes yields 0. Include every entry, including duplicate PIDs. Saturate at u64::MAX; do not sort/mutate snapshot. Preserve memory threshold and all HighLoad behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate memory pressure evidence. Keep its original first string unchanged; always append a second string observed_rss_kib=N where N is the saturating sum of rss_kib of all current state.processes.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Empty processes yields 0. Include every entry, including duplicate PIDs. Saturate at u64::MAX; do not sort/mutate snapshot. Preserve memory threshold and all HighLoad behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/F222-001/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/F222-001/crates/ncos-events/src/lib.rs": [
+          "memory_evidence",
+          "load_evidence"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "F222-001",
+      "set_id": "formatter-guard-v2.2.2",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/formatter-guard-v2.2.2/F222-001",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "F222-002",
+      "task_type": "REPO_EDIT",
+      "goal": "CLI evidenceの空要素省略表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement evidence_line(entries: &[String]) -> String. Omit empty or whitespace-only entries, join retained entries with exactly one separator \" | \". Preserve order, duplicates and original nonempty strings including surrounding spaces/Unicode; do not mutate input. Empty/all-blank input returns (none).",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement evidence_line(entries: &[String]) -> String. Omit empty or whitespace-only entries, join retained entries with exactly one separator \" | \".",
+        "Preserve order, duplicates and original nonempty strings including surrounding spaces/Unicode; do not mutate input. Empty/all-blank input returns (none).",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement evidence_line(entries: &[String]) -> String. Omit empty or whitespace-only entries, join retained entries with exactly one separator \" | \".",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Preserve order, duplicates and original nonempty strings including surrounding spaces/Unicode; do not mutate input. Empty/all-blank input returns (none).",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/F222-002/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/F222-002/crates/ncos-cli/src/main.rs": [
+          "evidence_line"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "F222-002",
+      "set_id": "formatter-guard-v2.2.2",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/formatter-guard-v2.2.2/F222-002",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "F222-003",
+      "task_type": "REPO_EDIT",
+      "goal": "CLI process inventoryの下限表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement process_inventory(count: usize, truncated: bool) -> String. Return decimal count followed by + exactly when truncated=true; otherwise decimal count only. This marks a lower bound, not an exact total. Preserve zero and usize::MAX; do not change other CLI output or audit behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement process_inventory(count: usize, truncated: bool) -> String. Return decimal count followed by + exactly when truncated=true; otherwise decimal count only.",
+        "This marks a lower bound, not an exact total. Preserve zero and usize::MAX; do not change other CLI output or audit behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement process_inventory(count: usize, truncated: bool) -> String. Return decimal count followed by + exactly when truncated=true; otherwise decimal count only.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "This marks a lower bound, not an exact total. Preserve zero and usize::MAX; do not change other CLI output or audit behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/F222-003/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/F222-003/crates/ncos-cli/src/main.rs": [
+          "process_inventory"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "F222-003",
+      "set_id": "formatter-guard-v2.2.2",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/formatter-guard-v2.2.2/F222-003",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "F222-004",
+      "task_type": "AGENTIC_CODING",
+      "goal": "HighLoad evidenceへ観測process件数を別要素として追加",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate HighLoad evidence. Preserve the original first evidence string and append a second string observed_processes=N, counting all current state.processes entries including duplicates. Empty processes yields zero. Preserve event ID, target, threshold, memory evidence, order and snapshot; no mutation or authority changes.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate HighLoad evidence. Preserve the original first evidence string and append a second string observed_processes=N, counting all current state.processes entries including duplicates.",
+        "Empty processes yields zero. Preserve event ID, target, threshold, memory evidence, order and snapshot; no mutation or authority changes.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate HighLoad evidence. Preserve the original first evidence string and append a second string observed_processes=N, counting all current state.processes entries including duplicates.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Empty processes yields zero. Preserve event ID, target, threshold, memory evidence, order and snapshot; no mutation or authority changes.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/F222-004/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/F222-004/crates/ncos-events/src/lib.rs": [
+          "memory_evidence",
+          "load_evidence"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "F222-004",
+      "set_id": "formatter-guard-v2.2.2",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/formatter-guard-v2.2.2/F222-004",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "formatter-guard-v2.2.2",
+    "source_set": "formatter-guard-v2.2.2",
+    "entries": 4,
+    "structured_result_records": 0,
+    "task_ids_with_structured_results": 0,
+    "task_ids_without_structured_results": [
+      "F222-001",
+      "F222-002",
+      "F222-003",
+      "F222-004"
+    ],
+    "historical_reports": [
+      {
+        "file": "results/formatter-guard-v2.2.2/RESULTS_JA.md",
+        "source_report": "formatter-guard-v2.2.2/RESULTS_JA.md",
+        "source_sha256": "a704331f307e41fa90e14e6907cb452149186e158e8911c9c962de9b41f81018"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

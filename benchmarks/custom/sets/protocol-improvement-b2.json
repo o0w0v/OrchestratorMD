@@ -1,0 +1,447 @@
+{
+  "set_id": "protocol-improvement-b2",
+  "entry_count": 5,
+  "tasks": [
+    {
+      "task_id": "B2-001",
+      "task_type": "REPO_EDIT",
+      "goal": "Support the conventional ncos inspect --help spelling with exactly the existing global help output, without observation.",
+      "interface": "CLI arguments: [] and [--help] continue working. [inspect,--help] succeeds identically. Unknown command or extra options remain errors. Locate the appropriate argument handling.",
+      "constraints": [
+        "One responsibility. Preserve public interfaces, dependencies, fixed tests and dry-run authority.",
+        "Return Rust region/body contents only; do not emit enclosing signatures or Host markers."
+      ],
+      "acceptance_cases": [
+        "No arguments retain the exact existing successful help output.",
+        "--help retains exact successful output without observation.",
+        "inspect --help returns the same exact help without observation.",
+        "Unknown command, extra help flags and duplicate flags remain errors.",
+        "Existing inspect --demo --repeat remains dry-run and produces both passes.",
+        "Existing targeted regression tests remain passing.",
+        "Workspace rustfmt remains clean.",
+        "Impacted crate clippy with warnings denied remains clean.",
+        "Only the declared body changes; public signatures, all other source, tests, dependencies and Git identity remain fixed."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "AC-1",
+          "criterion_text": "No arguments retain the exact existing successful help output.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-2",
+          "criterion_text": "--help retains exact successful output without observation.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-3",
+          "criterion_text": "inspect --help returns the same exact help without observation.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-4",
+          "criterion_text": "Unknown command, extra help flags and duplicate flags remain errors.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-5",
+          "criterion_text": "Existing inspect --demo --repeat remains dry-run and produces both passes.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-REGRESSION",
+          "criterion_text": "Existing targeted regression tests remain passing.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-FORMAT",
+          "criterion_text": "Workspace rustfmt remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "AC-LINT",
+          "criterion_text": "Impacted crate clippy with warnings denied remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "AC-SCOPE",
+          "criterion_text": "Only the declared body changes; public signatures, all other source, tests, dependencies and Git identity remain fixed.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All acceptance-specific checks, targeted regression, format, clippy and Host source guard pass."
+      ],
+      "allowed_files": [
+        "crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "original_task_id": "PILOT-005",
+      "edit_regions": {
+        "crates/ncos-cli/src/main.rs": [
+          "cli_help"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "B2-001",
+      "set_id": "protocol-improvement-b2",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-b2/B2-001",
+      "fixture_file_count": 29,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "B2-002",
+      "task_type": "REPO_EDIT",
+      "goal": "Find where memory-pressure evidence is built and append a two-decimal available_percent for CLI/audit readability.",
+      "interface": "Preserve Event id/kind/target, existing threshold behavior and raw KiB evidence. Required single evidence string: available_kib=N; total_kib=T; available_percent=P.PP. Percentage is 100 * available / total.",
+      "constraints": [
+        "One responsibility. Preserve public interfaces, dependencies, fixed tests and dry-run authority.",
+        "Return Rust region/body contents only; do not emit enclosing signatures or Host markers."
+      ],
+      "acceptance_cases": [
+        "Append available_percent=100*available/total with two decimals, retaining raw KiB prefix and one evidence string.",
+        "Retain Event id/kind/target.",
+        "Retain strict memory threshold, zero-total and large-u64 behavior.",
+        "Existing HighLoad detection/evidence remains unchanged.",
+        "Existing targeted regression tests remain passing.",
+        "Workspace rustfmt remains clean.",
+        "Impacted crate clippy with warnings denied remains clean.",
+        "Only the declared body changes; public signatures, all other source, tests, dependencies and Git identity remain fixed."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "AC-1",
+          "criterion_text": "Append available_percent=100*available/total with two decimals, retaining raw KiB prefix and one evidence string.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-2",
+          "criterion_text": "Retain Event id/kind/target.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-3",
+          "criterion_text": "Retain strict memory threshold, zero-total and large-u64 behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-4",
+          "criterion_text": "Existing HighLoad detection/evidence remains unchanged.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-REGRESSION",
+          "criterion_text": "Existing targeted regression tests remain passing.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-FORMAT",
+          "criterion_text": "Workspace rustfmt remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "AC-LINT",
+          "criterion_text": "Impacted crate clippy with warnings denied remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "AC-SCOPE",
+          "criterion_text": "Only the declared body changes; public signatures, all other source, tests, dependencies and Git identity remain fixed.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All acceptance-specific checks, targeted regression, format, clippy and Host source guard pass."
+      ],
+      "allowed_files": [
+        "crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "original_task_id": "PILOT-004",
+      "edit_regions": {
+        "crates/ncos-events/src/lib.rs": [
+          "event_detect"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "B2-002",
+      "set_id": "protocol-improvement-b2",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-b2/B2-002",
+      "fixture_file_count": 29,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "B2-003",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Append load_per_cpu with two decimals to high-load evidence for CLI/audit readability.",
+      "interface": "Find the high-load event builder. Preserve its existing trigger, IDs, kind, target, evidence prefix and event ordering; append \"; load_per_cpu=<ratio>\".",
+      "constraints": [
+        "One responsibility. Preserve public interfaces, dependencies, fixed tests and dry-run authority.",
+        "Return Rust region/body contents only; do not emit enclosing signatures or Host markers."
+      ],
+      "acceptance_cases": [
+        "Append load_per_cpu=load/CPUs with two decimals and retain the evidence prefix.",
+        "Retain HighLoad id/kind/target.",
+        "Retain strict threshold, zero-CPU and non-finite-load rejection.",
+        "Memory event remains first with unchanged evidence when both events exist.",
+        "Existing targeted regression tests remain passing.",
+        "Workspace rustfmt remains clean.",
+        "Impacted crate clippy with warnings denied remains clean.",
+        "Only the declared body changes; public signatures, all other source, tests, dependencies and Git identity remain fixed."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "AC-1",
+          "criterion_text": "Append load_per_cpu=load/CPUs with two decimals and retain the evidence prefix.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-2",
+          "criterion_text": "Retain HighLoad id/kind/target.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-3",
+          "criterion_text": "Retain strict threshold, zero-CPU and non-finite-load rejection.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-4",
+          "criterion_text": "Memory event remains first with unchanged evidence when both events exist.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-REGRESSION",
+          "criterion_text": "Existing targeted regression tests remain passing.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-FORMAT",
+          "criterion_text": "Workspace rustfmt remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "AC-LINT",
+          "criterion_text": "Impacted crate clippy with warnings denied remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "AC-SCOPE",
+          "criterion_text": "Only the declared body changes; public signatures, all other source, tests, dependencies and Git identity remain fixed.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All acceptance-specific checks, targeted regression, format, clippy and Host source guard pass."
+      ],
+      "allowed_files": [
+        "crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "original_task_id": "PEX-B03",
+      "edit_regions": {
+        "crates/ncos-events/src/lib.rs": [
+          "load_evidence"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "B2-003",
+      "set_id": "protocol-improvement-b2",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-b2/B2-003",
+      "fixture_file_count": 29,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "B2-004",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Include snapshot process count in the audit summary for an anomaly-free inspection.",
+      "interface": "Find the no-anomaly audit summary producer. Only append ; processes=N to its existing reason, using the observed snapshot. Retain all behavior and public signatures.",
+      "constraints": [
+        "One responsibility. Preserve public interfaces, dependencies, fixed tests and dry-run authority.",
+        "Return Rust region/body contents only; do not emit enclosing signatures or Host markers."
+      ],
+      "acceptance_cases": [
+        "No-anomaly audit short_reason is exactly No anomaly candidates; model asleep; processes=N for snapshot process count N.",
+        "Preserve returned snapshot, one fast-path record and all record fields; no provider call/token reservation.",
+        "Anomalous input retains the existing event, source, reason and provider behavior.",
+        "Invalid intent is still rejected before any provider call.",
+        "Existing targeted regression tests remain passing.",
+        "Workspace rustfmt remains clean.",
+        "Impacted crate clippy with warnings denied remains clean.",
+        "Only the declared body changes; public signatures, all other source, tests, dependencies and Git identity remain fixed."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "AC-1",
+          "criterion_text": "No-anomaly audit short_reason is exactly No anomaly candidates; model asleep; processes=N for snapshot process count N.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-2",
+          "criterion_text": "Preserve returned snapshot, one fast-path record and all record fields; no provider call/token reservation.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-3",
+          "criterion_text": "Anomalous input retains the existing event, source, reason and provider behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-4",
+          "criterion_text": "Invalid intent is still rejected before any provider call.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-REGRESSION",
+          "criterion_text": "Existing targeted regression tests remain passing.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-FORMAT",
+          "criterion_text": "Workspace rustfmt remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "AC-LINT",
+          "criterion_text": "Impacted crate clippy with warnings denied remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "AC-SCOPE",
+          "criterion_text": "Only the declared body changes; public signatures, all other source, tests, dependencies and Git identity remain fixed.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All acceptance-specific checks, targeted regression, format, clippy and Host source guard pass."
+      ],
+      "allowed_files": [
+        "crates/ncos-agent/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "original_task_id": null,
+      "edit_regions": {
+        "crates/ncos-agent/src/lib.rs": [
+          "audit_summary"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "B2-004",
+      "set_id": "protocol-improvement-b2",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-b2/B2-004",
+      "fixture_file_count": 28,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "B2-005",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Include the current event target in the reusable skill proposal reason for audit readability.",
+      "interface": "Locate the reusable skill report constructor, not the mock provider. Append ; target=T to its existing reason. Keep fixed proposal authority/target and exact current evidence; preserve unsupported-intent rejection.",
+      "constraints": [
+        "One responsibility. Preserve public interfaces, dependencies, fixed tests and dry-run authority.",
+        "Return Rust region/body contents only; do not emit enclosing signatures or Host markers."
+      ],
+      "acceptance_cases": [
+        "Reusable skill reason is exactly Verified report template with current evidence; target=T using the current event target T.",
+        "Retain fixed Report/system/Report/Low/reversible fields and exact current evidence.",
+        "Unsupported goal or constraints continue returning None.",
+        "Existing targeted regression tests remain passing.",
+        "Workspace rustfmt remains clean.",
+        "Impacted crate clippy with warnings denied remains clean.",
+        "Only the declared body changes; public signatures, all other source, tests, dependencies and Git identity remain fixed."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "AC-1",
+          "criterion_text": "Reusable skill reason is exactly Verified report template with current evidence; target=T using the current event target T.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-2",
+          "criterion_text": "Retain fixed Report/system/Report/Low/reversible fields and exact current evidence.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-3",
+          "criterion_text": "Unsupported goal or constraints continue returning None.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-REGRESSION",
+          "criterion_text": "Existing targeted regression tests remain passing.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "AC-FORMAT",
+          "criterion_text": "Workspace rustfmt remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "AC-LINT",
+          "criterion_text": "Impacted crate clippy with warnings denied remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "AC-SCOPE",
+          "criterion_text": "Only the declared body changes; public signatures, all other source, tests, dependencies and Git identity remain fixed.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All acceptance-specific checks, targeted regression, format, clippy and Host source guard pass."
+      ],
+      "allowed_files": [
+        "crates/ncos-skills/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "original_task_id": null,
+      "edit_regions": {
+        "crates/ncos-skills/src/lib.rs": [
+          "skill_reason"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "B2-005",
+      "set_id": "protocol-improvement-b2",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-b2/B2-005",
+      "fixture_file_count": 28,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "protocol-improvement-b2",
+    "source_set": "protocol-improvement-b2",
+    "entries": 5,
+    "structured_result_records": 13,
+    "task_ids_with_structured_results": 5,
+    "task_ids_without_structured_results": [],
+    "historical_reports": [
+      {
+        "file": "results/protocol-improvement-b2/RESULTS_JA.md",
+        "source_report": "protocol-improvement-b2/RESULTS_JA.md",
+        "source_sha256": "9dfc093da612570aee2cbc30376b25123fbae8201dc4135fc5cce5c68599e3ce"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

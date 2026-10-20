@@ -1,0 +1,940 @@
+{
+  "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+  "entry_count": 11,
+  "tasks": [
+    {
+      "task_id": "PFT-001",
+      "task_type": "REPO_EDIT",
+      "goal": "CLIの累積inference時間を整数演算で秒表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement elapsed_seconds(ms: u128) -> String. Render elapsed milliseconds as seconds with exactly three fractional digits and suffix s: 0 => 0.000 s, 1 => 0.001 s, 1001 => 1.001 s. Use exact integer quotient/remainder by 1000, supporting all u128 including MAX without overflow or floating-point precision loss. No time reading or usage mutation.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement elapsed_seconds(ms: u128) -> String. Render elapsed milliseconds as seconds with exactly three fractional digits and suffix s: 0 => 0.000 s, 1 => 0.001 s, 1001 => 1.001 s.",
+        "Use exact integer quotient/remainder by 1000, supporting all u128 including MAX without overflow or floating-point precision loss. No time reading or usage mutation.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement elapsed_seconds(ms: u128) -> String. Render elapsed milliseconds as seconds with exactly three fractional digits and suffix s: 0 => 0.000 s, 1 => 0.001 s, 1001 => 1.001 s.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Use exact integer quotient/remainder by 1000, supporting all u128 including MAX without overflow or floating-point precision loss. No time reading or usage mutation.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PFT-001/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/PFT-001/crates/ncos-cli/src/main.rs": [
+          "elapsed_seconds"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-001",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-001",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PFT-002",
+      "task_type": "AGENTIC_CODING",
+      "goal": "重複抑制auditが現在event IDを示す",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate the deduplicated audit reason argument in Runtime::handle. Append ; event_id=ID to Duplicate kind/target in bounded session window, using the current event.id exactly. The record helper expects &str for reason: borrow a formatted String if needed. Preserve dedup key/ordering, source, cloned current event, time, usage, provider calls and every other audit reason. Do not show the first-seen event ID.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate the deduplicated audit reason argument in Runtime::handle. Append ; event_id=ID to Duplicate kind/target in bounded session window, using the current event.id exactly.",
+        "The record helper expects &str for reason: borrow a formatted String if needed. Preserve dedup key/ordering, source, cloned current event, time, usage, provider calls and every other audit reason. Do not show the first-seen event ID.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate the deduplicated audit reason argument in Runtime::handle. Append ; event_id=ID to Duplicate kind/target in bounded session window, using the current event.id exactly.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "The record helper expects &str for reason: borrow a formatted String if needed. Preserve dedup key/ordering, source, cloned current event, time, usage, provider calls and every other audit reason. Do not show the first-seen event ID.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PFT-002/crates/ncos-agent/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/PFT-002/crates/ncos-agent/src/lib.rs": [
+          "duplicate_reason",
+          "idle_reason"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-002",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-002",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PFT-003",
+      "task_type": "REPO_EDIT",
+      "goal": "CLIに実行結果DryRun/Blockedの固定labelを表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement execution_label(status: &ncos_core::ExecutionStatus) -> &'static str: DryRun returns DRY_RUN, Blocked returns BLOCKED. This labels recorded execution status only; never derive it from policy, change execution, or use debug-format/heap allocation. Keep record.detail and all audit bytes unchanged.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement execution_label(status: &ncos_core::ExecutionStatus) -> &'static str: DryRun returns DRY_RUN, Blocked returns BLOCKED.",
+        "This labels recorded execution status only; never derive it from policy, change execution, or use debug-format/heap allocation. Keep record.detail and all audit bytes unchanged.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement execution_label(status: &ncos_core::ExecutionStatus) -> &'static str: DryRun returns DRY_RUN, Blocked returns BLOCKED.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "This labels recorded execution status only; never derive it from policy, change execution, or use debug-format/heap allocation. Keep record.detail and all audit bytes unchanged.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PFT-003/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/PFT-003/crates/ncos-cli/src/main.rs": [
+          "execution_label"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-003",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-003",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PFT-004",
+      "task_type": "AGENTIC_CODING",
+      "goal": "MockProviderの不足token数を診断する",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate the MockProvider::propose insufficient-token error. For token_limit below 16, return exactly insufficient mock token budget: required=16; available=N; shortfall=D, where N=token_limit and D=16-token_limit. Preserve existing threshold, validation precedence, call-counter charging, overflow error, tokens_used and proposal. No authority or budget policy change; no addition of provider inference.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate the MockProvider::propose insufficient-token error. For token_limit below 16, return exactly insufficient mock token budget: required=16; available=N; shortfall=D, where N=token_limit and D=16-token_limit.",
+        "Preserve existing threshold, validation precedence, call-counter charging, overflow error, tokens_used and proposal. No authority or budget policy change; no addition of provider inference.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate the MockProvider::propose insufficient-token error. For token_limit below 16, return exactly insufficient mock token budget: required=16; available=N; shortfall=D, where N=token_limit and D=16-token_limit.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Preserve existing threshold, validation precedence, call-counter charging, overflow error, tokens_used and proposal. No authority or budget policy change; no addition of provider inference.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PFT-004/crates/ncos-agent/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/PFT-004/crates/ncos-agent/src/lib.rs": [
+          "short_budget_error",
+          "counter_error"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-004",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-004",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PFT-005",
+      "task_type": "REPO_EDIT",
+      "goal": "telemetry readのUTF-8エラーをI/O欠測と区別",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement telemetry_read_error(error: std::io::Error) -> String. If error.kind() is std::io::ErrorKind::InvalidData return telemetry invalid UTF-8, otherwise telemetry unavailable. Do not reveal the OS error message/path, retry reads, change the 65536-byte bound, or change parsers. This helper is wired solely into read_bounded error mapping.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement telemetry_read_error(error: std::io::Error) -> String. If error.kind() is std::io::ErrorKind::InvalidData return telemetry invalid UTF-8, otherwise telemetry unavailable.",
+        "Do not reveal the OS error message/path, retry reads, change the 65536-byte bound, or change parsers. This helper is wired solely into read_bounded error mapping.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement telemetry_read_error(error: std::io::Error) -> String. If error.kind() is std::io::ErrorKind::InvalidData return telemetry invalid UTF-8, otherwise telemetry unavailable.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Do not reveal the OS error message/path, retry reads, change the 65536-byte bound, or change parsers. This helper is wired solely into read_bounded error mapping.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PFT-005/crates/ncos-observer-linux/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/PFT-005/crates/ncos-observer-linux/src/lib.rs": [
+          "telemetry_read_error"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-005",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-005",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PFT-006",
+      "task_type": "AGENTIC_CODING",
+      "goal": "TCP欠測warningが失敗したIP familyを列挙",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate the TCP unavailable diagnostic helper tcp_unavailable(ipv4_failed: bool, ipv6_failed: bool) -> String. Return TCP inventory unavailable: IPv4 for (true,false), TCP inventory unavailable: IPv6 for (false,true), TCP inventory unavailable: IPv4, IPv6 for (true,true). For (false,false), retain TCP inventory unavailable. Do not alter process warnings, TCP counting, Option presence, I/O attempts or partial-inventory policy. This is one diagnostic selector.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate the TCP unavailable diagnostic helper tcp_unavailable(ipv4_failed: bool, ipv6_failed: bool) -> String. Return TCP inventory unavailable: IPv4 for (true,false), TCP inventory unavailable: IPv6 for (false,true), TCP inventory unavailable: IPv4, IPv6 for (true,true).",
+        "For (false,false), retain TCP inventory unavailable. Do not alter process warnings, TCP counting, Option presence, I/O attempts or partial-inventory policy. This is one diagnostic selector.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate the TCP unavailable diagnostic helper tcp_unavailable(ipv4_failed: bool, ipv6_failed: bool) -> String. Return TCP inventory unavailable: IPv4 for (true,false), TCP inventory unavailable: IPv6 for (false,true), TCP inventory unavailable: IPv4, IPv6 for (true,true).",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "For (false,false), retain TCP inventory unavailable. Do not alter process warnings, TCP counting, Option presence, I/O attempts or partial-inventory policy. This is one diagnostic selector.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PFT-006/crates/ncos-observer-linux/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/PFT-006/crates/ncos-observer-linux/src/lib.rs": [
+          "tcp_unavailable",
+          "process_warning"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-006",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-006",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PFT-007",
+      "task_type": "REPO_EDIT",
+      "goal": "CLI引数エラーへinspect基準のindexを追加",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement argument_error(index: usize) -> String: return exactly unknown, duplicate or incomplete argument at index N; see --help where N is index in unsigned decimal. Index is supplied by the existing parser (inspect is index 0); do not increment it or echo the argument value. Preserve all parsing rules and side effects; support 0 and usize::MAX.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement argument_error(index: usize) -> String: return exactly unknown, duplicate or incomplete argument at index N; see --help where N is index in unsigned decimal.",
+        "Index is supplied by the existing parser (inspect is index 0); do not increment it or echo the argument value. Preserve all parsing rules and side effects; support 0 and usize::MAX.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement argument_error(index: usize) -> String: return exactly unknown, duplicate or incomplete argument at index N; see --help where N is index in unsigned decimal.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Index is supplied by the existing parser (inspect is index 0); do not increment it or echo the argument value. Preserve all parsing rules and side effects; support 0 and usize::MAX.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PFT-007/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/PFT-007/crates/ncos-cli/src/main.rs": [
+          "argument_error"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-007",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-007",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PFT-008",
+      "task_type": "AGENTIC_CODING",
+      "goal": "policy評価済みauditがproposal由来を説明",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate the evaluated-proposal audit reason in Runtime::handle. Use Proposal evaluated by deterministic policy; origin=cached-template when source == skill, otherwise Proposal evaluated by deterministic policy; origin=provider. Change only this reason string argument. Preserve policy/execution/verification, original source field, provider reservation and calls, cache promotion, denied-content handling, dedup and all early-return reasons.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate the evaluated-proposal audit reason in Runtime::handle. Use Proposal evaluated by deterministic policy; origin=cached-template when source == skill, otherwise Proposal evaluated by deterministic policy; origin=provider.",
+        "Change only this reason string argument. Preserve policy/execution/verification, original source field, provider reservation and calls, cache promotion, denied-content handling, dedup and all early-return reasons.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate the evaluated-proposal audit reason in Runtime::handle. Use Proposal evaluated by deterministic policy; origin=cached-template when source == skill, otherwise Proposal evaluated by deterministic policy; origin=provider.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Change only this reason string argument. Preserve policy/execution/verification, original source field, provider reservation and calls, cache promotion, denied-content handling, dedup and all early-return reasons.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PFT-008/crates/ncos-agent/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/PFT-008/crates/ncos-agent/src/lib.rs": [
+          "evaluated_reason",
+          "duplicate_reason"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-008",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-008",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PFT-009",
+      "task_type": "DEBUGGING",
+      "goal": "proc directory識別が符号付き/zero名を受理する不具合",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Debug process_directory_pid(name: &str) -> Option<u32>, extracted unchanged from LinuxObserver directory selection. Accept iff name is nonempty ASCII decimal digits and its u32 value is nonzero. Leading zeros are permitted. Reject +1, -1, 0/00, Unicode digits, whitespace, suffixes and u32 overflow. Return None without panic. This is only directory-name selection, not /proc/status parsing or PID validation elsewhere.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Debug process_directory_pid(name: &str) -> Option<u32>, extracted unchanged from LinuxObserver directory selection. Accept iff name is nonempty ASCII decimal digits and its u32 value is nonzero. Leading zeros are permitted.",
+        "Reject +1, -1, 0/00, Unicode digits, whitespace, suffixes and u32 overflow. Return None without panic. This is only directory-name selection, not /proc/status parsing or PID validation elsewhere.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Debug process_directory_pid(name: &str) -> Option<u32>, extracted unchanged from LinuxObserver directory selection. Accept iff name is nonempty ASCII decimal digits and its u32 value is nonzero. Leading zeros are permitted.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Reject +1, -1, 0/00, Unicode digits, whitespace, suffixes and u32 overflow. Return None without panic. This is only directory-name selection, not /proc/status parsing or PID validation elsewhere.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PFT-009/crates/ncos-observer-linux/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/PFT-009/crates/ncos-observer-linux/src/lib.rs": [
+          "process_directory_pid"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-009",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-009",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PFT-010",
+      "task_type": "ERROR_ANALYSIS",
+      "goal": "Runtime constructorの固定容量と初期化契約をtyped抽出",
+      "interface": "From the supplied Runtime::new source, extract dedup_capacity, skill_capacity, report_only (PolicyEngine capabilities consist exactly of Report), usage_defaulted (ResourceUsage::default), budget_preserved (the supplied budget is stored unchanged). Return source facts only.",
+      "constraints": [
+        "Read-only exact extraction, no implementation, recommendations or assumptions."
+      ],
+      "acceptance_cases": [
+        "Extract both cache capacities and all three initialization facts exactly from Runtime::new.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Extract both cache capacities and all three initialization facts exactly from Runtime::new.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen exact assertions pass."
+      ],
+      "allowed_files": [],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": false,
+      "edit_location_known": false,
+      "answer_fields": {
+        "dedup_capacity": {
+          "type": "integer"
+        },
+        "skill_capacity": {
+          "type": "integer"
+        },
+        "report_only": {
+          "type": "boolean"
+        },
+        "usage_defaulted": {
+          "type": "boolean"
+        },
+        "budget_preserved": {
+          "type": "boolean"
+        }
+      },
+      "edit_regions": {},
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-010",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-010",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PFT-011",
+      "task_type": "SPECIFICATION",
+      "goal": "長期audit閲覧におけるrecord grouping方針を決定",
+      "interface": "Open product decision: whether a future audit viewer groups records by inspection session, event kind or time; decide human-facing tradeoffs without changing schema, retention, policy or implementing UI.",
+      "constraints": [
+        "Read-only exact extraction, no implementation, recommendations or assumptions."
+      ],
+      "acceptance_cases": [
+        "Free product specification remains Codex-owned with zero Local dispatch.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Free product specification remains Codex-owned with zero Local dispatch.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen exact assertions pass."
+      ],
+      "allowed_files": [],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": false,
+      "edit_location_known": false,
+      "answer_fields": {
+        "executor": {
+          "type": "string",
+          "enum": [
+            "codex"
+          ]
+        },
+        "automatic_dispatch": {
+          "type": "boolean"
+        }
+      },
+      "structured_extraction": false,
+      "edit_regions": {},
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PFT-011",
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.6-fresh-tasks/PFT-011",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+    "source_set": "router-shadow-pilot-v2.2.6-fresh-tasks",
+    "entries": 11,
+    "structured_result_records": 10,
+    "task_ids_with_structured_results": 10,
+    "task_ids_without_structured_results": [
+      "PFT-011"
+    ],
+    "historical_reports": [
+      {
+        "file": "results/router-shadow-pilot-v2.2.6-fresh-tasks/RESULTS_JA.md",
+        "source_report": "router-shadow-pilot-v2.2.6-fresh-tasks/RESULTS_JA.md",
+        "source_sha256": "25ca55298756a66e10457df67dad6d78e91ad062b261d3a0b257b40cd3259675"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

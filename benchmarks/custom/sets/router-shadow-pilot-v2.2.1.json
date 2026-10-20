@@ -1,0 +1,1146 @@
+{
+  "set_id": "router-shadow-pilot-v2.2.1",
+  "entry_count": 14,
+  "tasks": [
+    {
+      "task_id": "P221R-001",
+      "task_type": "REPO_EDIT",
+      "goal": "CLI process inventoryの下限表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement process_inventory(count: usize, truncated: bool) -> String. Return decimal count followed by + exactly when truncated=true; otherwise decimal count only. This marks a lower bound, not an exact total. Preserve zero and usize::MAX; do not change other CLI output or audit behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement process_inventory(count: usize, truncated: bool) -> String. Return decimal count followed by + exactly when truncated=true; otherwise decimal count only.",
+        "This marks a lower bound, not an exact total. Preserve zero and usize::MAX; do not change other CLI output or audit behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement process_inventory(count: usize, truncated: bool) -> String. Return decimal count followed by + exactly when truncated=true; otherwise decimal count only.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "This marks a lower bound, not an exact total. Preserve zero and usize::MAX; do not change other CLI output or audit behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-001/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/P221R-001/crates/ncos-cli/src/main.rs": [
+          "process_inventory"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-001",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-001",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "formatter-guard-v2.2.2/F222-003"
+    },
+    {
+      "task_id": "P221R-002",
+      "task_type": "REPO_EDIT",
+      "goal": "CLI available memory割合の整数表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement available_percent(total: u64, available: u64) -> String. For valid total>0 and available<=total, return floor(100*available/total) followed by %. Invalid ranges return unavailable. All valid u64 values including MAX must work without overflow or float rounding. Preserve other CLI/audit behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement available_percent(total: u64, available: u64) -> String. For valid total>0 and available<=total, return floor(100*available/total) followed by %.",
+        "Invalid ranges return unavailable. All valid u64 values including MAX must work without overflow or float rounding. Preserve other CLI/audit behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement available_percent(total: u64, available: u64) -> String. For valid total>0 and available<=total, return floor(100*available/total) followed by %.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Invalid ranges return unavailable. All valid u64 values including MAX must work without overflow or float rounding. Preserve other CLI/audit behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-002/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/P221R-002/crates/ncos-cli/src/main.rs": [
+          "available_percent"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-002",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-002",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "P221R-003",
+      "task_type": "REPO_EDIT",
+      "goal": "meminfo重複診断にfield名を含める",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. At duplicate memory field rejection, report duplicate MemTotal or duplicate MemAvailable according to the existing name variable. Retain first-error ordering, rejection and unknown-field behavior; all other parser diagnostics and valid output remain unchanged.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "At duplicate memory field rejection, report duplicate MemTotal or duplicate MemAvailable according to the existing name variable.",
+        "Retain first-error ordering, rejection and unknown-field behavior; all other parser diagnostics and valid output remain unchanged.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "At duplicate memory field rejection, report duplicate MemTotal or duplicate MemAvailable according to the existing name variable.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Retain first-error ordering, rejection and unknown-field behavior; all other parser diagnostics and valid output remain unchanged.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-003/crates/ncos-observer-linux/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/P221R-003/crates/ncos-observer-linux/src/lib.rs": [
+          "memory_duplicate"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-003",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-003",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "P221R-004",
+      "task_type": "REPO_EDIT",
+      "goal": "process statusのmissing field表記を一致",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. In parse_process final result assembly, missing Pid must report missing Pid and missing PPid must report missing PPid. Pid absence still wins when both are absent; zero pid remains zero pid. Keep Process fields, default absent RSS=0, and all preceding validation unchanged.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "In parse_process final result assembly, missing Pid must report missing Pid and missing PPid must report missing PPid.",
+        "Pid absence still wins when both are absent; zero pid remains zero pid. Keep Process fields, default absent RSS=0, and all preceding validation unchanged.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "In parse_process final result assembly, missing Pid must report missing Pid and missing PPid must report missing PPid.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Pid absence still wins when both are absent; zero pid remains zero pid. Keep Process fields, default absent RSS=0, and all preceding validation unchanged.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-004/crates/ncos-observer-linux/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/P221R-004/crates/ncos-observer-linux/src/lib.rs": [
+          "missing_process_field"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-004",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-004",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "P221R-005",
+      "task_type": "REPO_EDIT",
+      "goal": "CLI evidenceの空要素省略表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement evidence_line(entries: &[String]) -> String. Omit empty or whitespace-only entries, join retained entries with exactly one separator \" | \". Preserve order, duplicates and original nonempty strings including surrounding spaces/Unicode; do not mutate input. Empty/all-blank input returns (none).",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement evidence_line(entries: &[String]) -> String. Omit empty or whitespace-only entries, join retained entries with exactly one separator \" | \".",
+        "Preserve order, duplicates and original nonempty strings including surrounding spaces/Unicode; do not mutate input. Empty/all-blank input returns (none).",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement evidence_line(entries: &[String]) -> String. Omit empty or whitespace-only entries, join retained entries with exactly one separator \" | \".",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Preserve order, duplicates and original nonempty strings including surrounding spaces/Unicode; do not mutate input. Empty/all-blank input returns (none).",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-005/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/P221R-005/crates/ncos-cli/src/main.rs": [
+          "evidence_line"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-005",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-005",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "formatter-guard-v2.2.2/F222-002"
+    },
+    {
+      "task_id": "P221R-006",
+      "task_type": "MECHANICAL_CODE",
+      "goal": "mock report reasonへevent kindを追加",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. In report_for_event reason, append ; kind=K to Mock analysis: review the observed resource candidate, using the Debug spelling of event.kind. Retain report action, system target, capability, low risk, reversibility and the exact cloned event evidence. No permission or execution-policy changes.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "In report_for_event reason, append ; kind=K to Mock analysis: review the observed resource candidate, using the Debug spelling of event.kind.",
+        "Retain report action, system target, capability, low risk, reversibility and the exact cloned event evidence. No permission or execution-policy changes.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "In report_for_event reason, append ; kind=K to Mock analysis: review the observed resource candidate, using the Debug spelling of event.kind.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Retain report action, system target, capability, low risk, reversibility and the exact cloned event evidence. No permission or execution-policy changes.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-006/crates/ncos-agent/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/P221R-006/crates/ncos-agent/src/lib.rs": [
+          "mock_reason"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-006",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-006",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "P221R-007",
+      "task_type": "AGENTIC_CODING",
+      "goal": "anomaly-free auditへprocess数を追加",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate the no-anomaly inspect audit record. Its short_reason must be No anomaly candidates; model asleep; processes=N where N is the observed snapshot process count. Keep source fast-path, timestamp, returned snapshot and exactly one record; do not invoke provider or alter anomaly/invalid-intent paths.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate the no-anomaly inspect audit record. Its short_reason must be No anomaly candidates; model asleep; processes=N where N is the observed snapshot process count.",
+        "Keep source fast-path, timestamp, returned snapshot and exactly one record; do not invoke provider or alter anomaly/invalid-intent paths.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate the no-anomaly inspect audit record. Its short_reason must be No anomaly candidates; model asleep; processes=N where N is the observed snapshot process count.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Keep source fast-path, timestamp, returned snapshot and exactly one record; do not invoke provider or alter anomaly/invalid-intent paths.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-007/crates/ncos-agent/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/P221R-007/crates/ncos-agent/src/lib.rs": [
+          "healthy_audit",
+          "mock_reason"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-007",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-007",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "router-shadow-pilot-v2.2/P22-007"
+    },
+    {
+      "task_id": "P221R-008",
+      "task_type": "AGENTIC_CODING",
+      "goal": "skill template reasonへ現在のevidence件数",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate report template construction. Set reason to Verified report template with current evidence; evidence_count=N where N counts current event evidence entries, including duplicate entries. Keep unsupported-intent rejection, report action/system target/low risk/capability/reversibility and exact current evidence unchanged.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate report template construction. Set reason to Verified report template with current evidence; evidence_count=N where N counts current event evidence entries, including duplicate entries.",
+        "Keep unsupported-intent rejection, report action/system target/low risk/capability/reversibility and exact current evidence unchanged.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate report template construction. Set reason to Verified report template with current evidence; evidence_count=N where N counts current event evidence entries, including duplicate entries.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Keep unsupported-intent rejection, report action/system target/low risk/capability/reversibility and exact current evidence unchanged.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-008/crates/ncos-skills/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/P221R-008/crates/ncos-skills/src/lib.rs": [
+          "template_diagnostic",
+          "skill_cache"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-008",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-008",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "router-shadow-pilot-v2.2/P22-008"
+    },
+    {
+      "task_id": "P221R-009",
+      "task_type": "AGENTIC_CODING",
+      "goal": "HighLoad evidenceへthreshold超過量を表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Find the HighLoad diagnostic evidence. Append ; excess_load=X to the existing single evidence string, with X=load_one-2*logical_cpus formatted to two decimal places. Keep original load_one and logical_cpus values/formatting, strict threshold and finite/zero guards, event identity/order and memory evidence unchanged.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Find the HighLoad diagnostic evidence. Append ; excess_load=X to the existing single evidence string, with X=load_one-2*logical_cpus formatted to two decimal places.",
+        "Keep original load_one and logical_cpus values/formatting, strict threshold and finite/zero guards, event identity/order and memory evidence unchanged.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Find the HighLoad diagnostic evidence. Append ; excess_load=X to the existing single evidence string, with X=load_one-2*logical_cpus formatted to two decimal places.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Keep original load_one and logical_cpus values/formatting, strict threshold and finite/zero guards, event identity/order and memory evidence unchanged.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-009/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/P221R-009/crates/ncos-events/src/lib.rs": [
+          "memory_evidence",
+          "load_evidence"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-009",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-009",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "P221R-010",
+      "task_type": "AGENTIC_CODING",
+      "goal": "process重複ID診断でPidとPPidを区別",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate duplicate process-ID rejection. Report duplicate Pid or duplicate PPid based on the repeated field. Preserve duplicate RSS wording, first-error ordering, validation and returned fields. Unknown repeated fields remain ignored.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate duplicate process-ID rejection. Report duplicate Pid or duplicate PPid based on the repeated field.",
+        "Preserve duplicate RSS wording, first-error ordering, validation and returned fields. Unknown repeated fields remain ignored.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate duplicate process-ID rejection. Report duplicate Pid or duplicate PPid based on the repeated field.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Preserve duplicate RSS wording, first-error ordering, validation and returned fields. Unknown repeated fields remain ignored.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-010/crates/ncos-observer-linux/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/P221R-010/crates/ncos-observer-linux/src/lib.rs": [
+          "duplicate_id",
+          "duplicate_rss"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-010",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-010",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "P221R-011",
+      "task_type": "AGENTIC_CODING",
+      "goal": "memory evidenceへ観測RSSのsaturating合計",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate memory pressure evidence. Keep its original first string unchanged; always append a second string observed_rss_kib=N where N is the saturating sum of rss_kib of all current state.processes. Empty processes yields 0. Include every entry, including duplicate PIDs. Saturate at u64::MAX; do not sort/mutate snapshot. Preserve memory threshold and all HighLoad behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate memory pressure evidence. Keep its original first string unchanged; always append a second string observed_rss_kib=N where N is the saturating sum of rss_kib of all current state.processes.",
+        "Empty processes yields 0. Include every entry, including duplicate PIDs. Saturate at u64::MAX; do not sort/mutate snapshot. Preserve memory threshold and all HighLoad behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate memory pressure evidence. Keep its original first string unchanged; always append a second string observed_rss_kib=N where N is the saturating sum of rss_kib of all current state.processes.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Empty processes yields 0. Include every entry, including duplicate PIDs. Saturate at u64::MAX; do not sort/mutate snapshot. Preserve memory threshold and all HighLoad behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-011/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/P221R-011/crates/ncos-events/src/lib.rs": [
+          "memory_evidence",
+          "load_evidence"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-011",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-011",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "formatter-guard-v2.2.2/F222-001"
+    },
+    {
+      "task_id": "P221R-012",
+      "task_type": "DEBUGGING",
+      "goal": "diskstats inventoryで空行とmalformed rowを除外",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Fix disk_inventory_rows(text: &str) -> usize, extracted from the existing .lines().count() disk inventory bug. Count rows with at least three whitespace-delimited tokens: major, minor, device. major and minor must each be nonempty ASCII decimal digits fitting u32. Device is any nonempty token. Ignore blank, missing-field, signed, Unicode-digit or overflowing identifiers. Ignore remaining payload columns; count duplicate valid rows separately. Do not implement a full diskstats parser.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Fix disk_inventory_rows(text: &str) -> usize, extracted from the existing .lines().count() disk inventory bug. Count rows with at least three whitespace-delimited tokens: major, minor, device.",
+        "major and minor must each be nonempty ASCII decimal digits fitting u32. Device is any nonempty token. Ignore blank, missing-field, signed, Unicode-digit or overflowing identifiers. Ignore remaining payload columns; count duplicate valid rows separately. Do not implement a full diskstats parser.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Fix disk_inventory_rows(text: &str) -> usize, extracted from the existing .lines().count() disk inventory bug. Count rows with at least three whitespace-delimited tokens: major, minor, device.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "major and minor must each be nonempty ASCII decimal digits fitting u32. Device is any nonempty token. Ignore blank, missing-field, signed, Unicode-digit or overflowing identifiers. Ignore remaining payload columns; count duplicate valid rows separately. Do not implement a full diskstats parser.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/P221R-012/crates/ncos-observer-linux/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/P221R-012/crates/ncos-observer-linux/src/lib.rs": [
+          "disk_inventory_rows"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-012",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-012",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "P221R-013",
+      "task_type": "ERROR_ANALYSIS",
+      "goal": "Observerのbounded inventory limitsをsourceから抽出",
+      "interface": "From read_bounded and LinuxObserver::observe, extract read take limit, accepted text byte limit, maximum enumerated directory entries, and maximum collected processes. Distinguish the take limit from the accepted size limit.",
+      "constraints": [
+        "Read-only exact typed source extraction; no changes or speculative recommendations."
+      ],
+      "acceptance_cases": [
+        "Extract the four bounds from their respective call sites exactly, without confusing read cap, accepted bytes and collection limits.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Extract the four bounds from their respective call sites exactly, without confusing read cap, accepted bytes and collection limits.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All exact assertions pass."
+      ],
+      "allowed_files": [],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": false,
+      "edit_location_known": false,
+      "answer_fields": {
+        "read_limit_bytes": {
+          "type": "integer"
+        },
+        "max_text_bytes": {
+          "type": "integer"
+        },
+        "max_directory_entries": {
+          "type": "integer"
+        },
+        "max_processes": {
+          "type": "integer"
+        }
+      },
+      "edit_regions": {},
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-013",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-013",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "P221R-014",
+      "task_type": "SPECIFICATION",
+      "goal": "Partial process inventoryのユーザー向け表示要件を決定",
+      "interface": "An open product choice, not typed source extraction. Codex must choose acceptance meaning for partial counts and unavailable telemetry; no implementation is delegated.",
+      "constraints": [
+        "Read-only exact typed source extraction; no changes or speculative recommendations."
+      ],
+      "acceptance_cases": [
+        "Free specification with normal risk must remain Codex-owned, with zero Local dispatch.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Free specification with normal risk must remain Codex-owned, with zero Local dispatch.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All exact assertions pass."
+      ],
+      "allowed_files": [],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": false,
+      "edit_location_known": false,
+      "answer_fields": {
+        "executor": {
+          "type": "string",
+          "enum": [
+            "codex"
+          ]
+        },
+        "automatic_dispatch": {
+          "type": "boolean"
+        }
+      },
+      "structured_extraction": false,
+      "edit_regions": {},
+      "max_diff_loc": 80,
+      "dataset_entry_id": "P221R-014",
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/router-shadow-pilot-v2.2.1/P221R-014",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "router-shadow-pilot-v2.2.1",
+    "source_set": "router-shadow-pilot-v2.2.1",
+    "entries": 14,
+    "structured_result_records": 0,
+    "task_ids_with_structured_results": 0,
+    "task_ids_without_structured_results": [
+      "P221R-001",
+      "P221R-002",
+      "P221R-003",
+      "P221R-004",
+      "P221R-005",
+      "P221R-006",
+      "P221R-007",
+      "P221R-008",
+      "P221R-009",
+      "P221R-010",
+      "P221R-011",
+      "P221R-012",
+      "P221R-013",
+      "P221R-014"
+    ],
+    "historical_reports": [
+      {
+        "file": "results/router-shadow-pilot-v2.2.1/RESULTS_JA.md",
+        "source_report": "router-shadow-pilot-v2.2.1/RESULTS_JA.md",
+        "source_sha256": "3a7ee08fd6fd9212b321bf51ee203744bc17bd325687a8c87209a63bff537736"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

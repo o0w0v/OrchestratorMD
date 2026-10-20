@@ -1,0 +1,1097 @@
+{
+  "sets": [
+    {
+      "set_id": "adaptive-reviewer-escalation",
+      "source_set": "adaptive-reviewer-escalation",
+      "entries": 8,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "ARE-001",
+        "ARE-002",
+        "ARE-003",
+        "ARE-004",
+        "ARE-005",
+        "ARE-006",
+        "ARE-007",
+        "ARE-008"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/adaptive-reviewer-escalation/RESULTS_JA.md",
+          "source_report": "adaptive-reviewer-escalation/RESULTS_JA.md",
+          "source_sha256": "b43bd83e6eec024307b7f56e9b7df6f24fee7c51b0ae345b46a26219d052e10f"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-2.2.6-codex-value",
+      "source_set": "bounded-2.2.6-codex-value",
+      "entries": 5,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "CVB-001",
+        "CVB-002",
+        "CVB-003",
+        "CVB-004",
+        "CVB-005"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-2.2.6-codex-value/RESULTS_A_COMPLETION_JA.md",
+          "source_report": "bounded-2.2.6-codex-value/RESULTS_A_COMPLETION_JA.md",
+          "source_sha256": "4f8f7e6795660790f68de48fa463a3873414c4e1c48c2406adc4b8aecafb81cb"
+        },
+        {
+          "file": "results/bounded-2.2.6-codex-value/RESULTS_CODEX_BASELINE_JA.md",
+          "source_report": "bounded-2.2.6-codex-value/RESULTS_CODEX_BASELINE_JA.md",
+          "source_sha256": "0c84749920f0f315f1914fce2df465a8b3f6a854ff404e071247bc550fc35a81"
+        },
+        {
+          "file": "results/bounded-2.2.6-codex-value/RESULTS_JA.md",
+          "source_report": "bounded-2.2.6-codex-value/RESULTS_JA.md",
+          "source_sha256": "d0c864f9cefefb4caaaee39c74f219440d3839385c657b0d37c0c58e5dbfc017"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-2.2.7-economic-confirmation",
+      "source_set": "bounded-2.2.7-economic-confirmation",
+      "entries": 14,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "ECC227-001",
+        "ECC227-002",
+        "ECC227-003",
+        "ECC227-004",
+        "ECC227-005",
+        "ECC227-006",
+        "ECC227-007",
+        "ECC227-008",
+        "ECC227-009",
+        "ECC227-010",
+        "ECC227-011",
+        "ECC227-012",
+        "ECC227-013",
+        "ECC227-014"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-2.2.7-economic-confirmation/RESULTS_2_2_7_ECONOMIC_CONFIRMATION_JA.md",
+          "source_report": "bounded-2.2.7-economic-confirmation/RESULTS_2_2_7_ECONOMIC_CONFIRMATION_JA.md",
+          "source_sha256": "edf4a52466ffcf7744c761c8bb76d4c420988638a6b34a04d2da466c2df1d894"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-2.2.8-economic-retry",
+      "source_set": "bounded-2.2.8-economic-retry",
+      "entries": 14,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "ECR228-001",
+        "ECR228-002",
+        "ECR228-003",
+        "ECR228-004",
+        "ECR228-005",
+        "ECR228-006",
+        "ECR228-007",
+        "ECR228-008",
+        "ECR228-009",
+        "ECR228-010",
+        "ECR228-011",
+        "ECR228-012",
+        "ECR228-013",
+        "ECR228-014"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-2.2.8-economic-retry/RESULTS_2_2_8_ECONOMIC_RETRY_JA.md",
+          "source_report": "bounded-2.2.8-economic-retry/RESULTS_2_2_8_ECONOMIC_RETRY_JA.md",
+          "source_sha256": "ec1fbae128debb33754203accec708821a796a5cdd80c113458d67b11ac78ad2"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-2.2.8-limited-economic-shadow",
+      "source_set": "bounded-2.2.8-limited-economic-shadow",
+      "entries": 30,
+      "structured_result_records": 84,
+      "task_ids_with_structured_results": 30,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/bounded-2.2.8-limited-economic-shadow/RESULTS_LIMITED_SHADOW_JA.md",
+          "source_report": "bounded-2.2.8-limited-economic-shadow/RESULTS_LIMITED_SHADOW_JA.md",
+          "source_sha256": "baed649214a2225f4d256e1f0e38827c682cc7355246c7bafef636cdf06a9366"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-v2.2.5-syntax-preflight--live",
+      "source_set": "bounded-v2.2.5-syntax-preflight/live",
+      "entries": 3,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "S225-001",
+        "S225-002",
+        "S225-003"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-v2.2.5-syntax-preflight--live/RESULTS_JA.md",
+          "source_report": "bounded-v2.2.5-syntax-preflight/RESULTS_JA.md",
+          "source_sha256": "4a12107966f41c1a3ca5ba9b5ced4a83de1049258ed7714c497971c3c73541a0"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-v2.2.5-syntax-preflight--offline",
+      "source_set": "bounded-v2.2.5-syntax-preflight/offline",
+      "entries": 1,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "S225-SAVED-001"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-v2.2.5-syntax-preflight--offline/RESULTS_JA.md",
+          "source_report": "bounded-v2.2.5-syntax-preflight/RESULTS_JA.md",
+          "source_sha256": "4a12107966f41c1a3ca5ba9b5ced4a83de1049258ed7714c497971c3c73541a0"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-v2.2.6-body-contract--live",
+      "source_set": "bounded-v2.2.6-body-contract/live",
+      "entries": 3,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "S226-001",
+        "S226-002",
+        "S226-003"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-v2.2.6-body-contract--live/RESULTS_JA.md",
+          "source_report": "bounded-v2.2.6-body-contract/RESULTS_JA.md",
+          "source_sha256": "a8203d5e417a82079fb310a2c690dd809511d4f416db9144b05cc77154fce1fe"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-v2.2.6-body-contract--offline",
+      "source_set": "bounded-v2.2.6-body-contract/offline",
+      "entries": 2,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "S226-SAVED-001",
+        "S226-SAVED-003"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-v2.2.6-body-contract--offline/RESULTS_JA.md",
+          "source_report": "bounded-v2.2.6-body-contract/RESULTS_JA.md",
+          "source_sha256": "a8203d5e417a82079fb310a2c690dd809511d4f416db9144b05cc77154fce1fe"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-v2.2.6-body-contract--offline-final",
+      "source_set": "bounded-v2.2.6-body-contract/offline-final",
+      "entries": 2,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "S226-SAVED-001",
+        "S226-SAVED-003"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-v2.2.6-body-contract--offline-final/RESULTS_JA.md",
+          "source_report": "bounded-v2.2.6-body-contract/RESULTS_JA.md",
+          "source_sha256": "a8203d5e417a82079fb310a2c690dd809511d4f416db9144b05cc77154fce1fe"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-v2.2.6-body-contract--offline-verified",
+      "source_set": "bounded-v2.2.6-body-contract/offline-verified",
+      "entries": 2,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "S226-SAVED-001",
+        "S226-SAVED-003"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-v2.2.6-body-contract--offline-verified/RESULTS_JA.md",
+          "source_report": "bounded-v2.2.6-body-contract/RESULTS_JA.md",
+          "source_sha256": "a8203d5e417a82079fb310a2c690dd809511d4f416db9144b05cc77154fce1fe"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-v2.2.7-final-lf",
+      "source_set": "bounded-v2.2.7-final-lf",
+      "entries": 10,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "LF227-001",
+        "LF227-002",
+        "LF227-003",
+        "LF227-004",
+        "LF227-005",
+        "LF227-006",
+        "LF227-007",
+        "LF227-008",
+        "LF227-009",
+        "LF227-010"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-v2.2.7-final-lf/RESULTS_BOUNDED_2_2_7_LF_JA.md",
+          "source_report": "bounded-v2.2.7-final-lf/RESULTS_BOUNDED_2_2_7_LF_JA.md",
+          "source_sha256": "3e7d56808d396577a62fe1cd792bd1f52b7844e5523ddf10c31779baec545bd3"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "bounded-v2.2.8-candidate-parse",
+      "source_set": "bounded-v2.2.8-candidate-parse",
+      "entries": 4,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "PAR228-001",
+        "PAR228-002",
+        "PAR228-003",
+        "PAR228-004"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/bounded-v2.2.8-candidate-parse/RESULTS_JA.md",
+          "source_report": "bounded-v2.2.8-candidate-parse/RESULTS_JA.md",
+          "source_sha256": "a1c40ebc0e6db2b27f40e96a2663bdb0d0db9950c0a267bb95373614d4657a1c"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "economic-accounting-recovery-228",
+      "source_set": "economic-accounting-recovery-228",
+      "entries": 3,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "ECR228-002",
+        "ECR228-005",
+        "ECR228-009"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/economic-accounting-recovery-228/RESULTS_ACCOUNTING_RECOVERY_JA.md",
+          "source_report": "economic-accounting-recovery-228/RESULTS_ACCOUNTING_RECOVERY_JA.md",
+          "source_sha256": "c9ffc234e18b3ce6d3d919d51246144610d260922ffe7ccd515fd634c54100a3"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "family-gated-local-router-228",
+      "source_set": "family-gated-local-router-228",
+      "entries": 36,
+      "structured_result_records": 88,
+      "task_ids_with_structured_results": 36,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.before-table-fix.md",
+          "source_report": "family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.before-table-fix.md",
+          "source_sha256": "c52e66b014fd6e00b121ff9a832ae66819274235f8fb3ff44ca1af392325283a"
+        },
+        {
+          "file": "results/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.md",
+          "source_report": "family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.md",
+          "source_sha256": "1f90d3f11ed01cd0e7a46f632b7e175cba678c13df7b7dbafa57cbe39b5cab94"
+        },
+        {
+          "file": "results/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.original.md",
+          "source_report": "family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.original.md",
+          "source_sha256": "b861e808e459faab93db781d61518814d33acb4d4acbcba972c1eb75bc03e5ed"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "final-lf-replay",
+      "source_set": "final-lf-replay",
+      "entries": 5,
+      "structured_result_records": 5,
+      "task_ids_with_structured_results": 5,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/final-lf-replay/RESULTS_FINAL_LF_REPLAY_JA.md",
+          "source_report": "final-lf-replay/RESULTS_FINAL_LF_REPLAY_JA.md",
+          "source_sha256": "33dda89fd29856c80ab959a893fad617aa4b5210cec339088b0493705c5fa81c"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "formatter-guard-v2.2.2",
+      "source_set": "formatter-guard-v2.2.2",
+      "entries": 4,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "F222-001",
+        "F222-002",
+        "F222-003",
+        "F222-004"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/formatter-guard-v2.2.2/RESULTS_JA.md",
+          "source_report": "formatter-guard-v2.2.2/RESULTS_JA.md",
+          "source_sha256": "a704331f307e41fa90e14e6907cb452149186e158e8911c9c962de9b41f81018"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "formatter-structural-v2.2.4",
+      "source_set": "formatter-structural-v2.2.4",
+      "entries": 4,
+      "structured_result_records": 4,
+      "task_ids_with_structured_results": 4,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/formatter-structural-v2.2.4/RESULTS_JA.md",
+          "source_report": "formatter-structural-v2.2.4/RESULTS_JA.md",
+          "source_sha256": "7094d5bb43853393770609f414bc9bc73cb0635975ab696a22382ea33b8b7e06"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "gemma26-continuous-backend-soak-v2--run-002",
+      "source_set": "gemma26-continuous-backend-soak-v2/run-002",
+      "entries": 52,
+      "structured_result_records": 156,
+      "task_ids_with_structured_results": 52,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/gemma26-continuous-backend-soak-v2--run-002/RESULTS_JA.md",
+          "source_report": "gemma26-continuous-backend-soak-v2/run-002/RESULTS_JA.md",
+          "source_sha256": "399b5c124f4eada8c2b6dc23c9d2cc185d46a23fa22e1c353dede2c2afbffab0"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "gemma26-memory-headroom-228--run-001",
+      "source_set": "gemma26-memory-headroom-228/run-001",
+      "entries": 12,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "LS3W228-001",
+        "LS3W228-003",
+        "LS3W228-004",
+        "LS3W228-007",
+        "LS3W228-009",
+        "LS3W228-011",
+        "LS3W228-014",
+        "LS3W228-015",
+        "LS3W228-017",
+        "LS3W228-020",
+        "LS3W228-021",
+        "LS3W228-023"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/gemma26-memory-headroom-228--run-001/RESULTS_GEMMA26_MEMORY_MICROBENCH_JA.md",
+          "source_report": "gemma26-memory-headroom-228/run-004/RESULTS_GEMMA26_MEMORY_MICROBENCH_JA.md",
+          "source_sha256": "dd47e635ca679baba31b2ea3780b923dedc9167fa469aaee24e52b357382995f"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "gemma26-memory-headroom-228--run-002",
+      "source_set": "gemma26-memory-headroom-228/run-002",
+      "entries": 12,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "LS3W228-001",
+        "LS3W228-003",
+        "LS3W228-004",
+        "LS3W228-007",
+        "LS3W228-009",
+        "LS3W228-011",
+        "LS3W228-014",
+        "LS3W228-015",
+        "LS3W228-017",
+        "LS3W228-020",
+        "LS3W228-021",
+        "LS3W228-023"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/gemma26-memory-headroom-228--run-002/RESULTS_GEMMA26_MEMORY_MICROBENCH_JA.md",
+          "source_report": "gemma26-memory-headroom-228/run-004/RESULTS_GEMMA26_MEMORY_MICROBENCH_JA.md",
+          "source_sha256": "dd47e635ca679baba31b2ea3780b923dedc9167fa469aaee24e52b357382995f"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "gemma26-memory-headroom-228--run-003",
+      "source_set": "gemma26-memory-headroom-228/run-003",
+      "entries": 12,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "LS3W228-001",
+        "LS3W228-003",
+        "LS3W228-004",
+        "LS3W228-007",
+        "LS3W228-009",
+        "LS3W228-011",
+        "LS3W228-014",
+        "LS3W228-015",
+        "LS3W228-017",
+        "LS3W228-020",
+        "LS3W228-021",
+        "LS3W228-023"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/gemma26-memory-headroom-228--run-003/RESULTS_GEMMA26_MEMORY_MICROBENCH_JA.md",
+          "source_report": "gemma26-memory-headroom-228/run-004/RESULTS_GEMMA26_MEMORY_MICROBENCH_JA.md",
+          "source_sha256": "dd47e635ca679baba31b2ea3780b923dedc9167fa469aaee24e52b357382995f"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "gemma26-memory-headroom-228--run-004",
+      "source_set": "gemma26-memory-headroom-228/run-004",
+      "entries": 12,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "LS3W228-001",
+        "LS3W228-003",
+        "LS3W228-004",
+        "LS3W228-007",
+        "LS3W228-009",
+        "LS3W228-011",
+        "LS3W228-014",
+        "LS3W228-015",
+        "LS3W228-017",
+        "LS3W228-020",
+        "LS3W228-021",
+        "LS3W228-023"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/gemma26-memory-headroom-228--run-004/RESULTS_GEMMA26_MEMORY_MICROBENCH_JA.md",
+          "source_report": "gemma26-memory-headroom-228/run-004/RESULTS_GEMMA26_MEMORY_MICROBENCH_JA.md",
+          "source_sha256": "dd47e635ca679baba31b2ea3780b923dedc9167fa469aaee24e52b357382995f"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "gemma26-memory-headroom-phase2--run-001",
+      "source_set": "gemma26-memory-headroom-phase2/run-001",
+      "entries": 12,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "LS3W228-001",
+        "LS3W228-003",
+        "LS3W228-004",
+        "LS3W228-007",
+        "LS3W228-009",
+        "LS3W228-011",
+        "LS3W228-014",
+        "LS3W228-015",
+        "LS3W228-017",
+        "LS3W228-020",
+        "LS3W228-021",
+        "LS3W228-023"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/gemma26-memory-headroom-phase2--run-001/RESULTS_JA.md",
+          "source_report": "gemma26-memory-headroom-phase2/run-001/RESULTS_JA.md",
+          "source_sha256": "8dd307fe602c7d6e24dd4a5502d5680445863349b0ace2cc17ed56027a488283"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "gemma26-production-like-soak-228--run-001",
+      "source_set": "gemma26-production-like-soak-228/run-001",
+      "entries": 64,
+      "structured_result_records": 230,
+      "task_ids_with_structured_results": 64,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/gemma26-production-like-soak-228--run-001/RESULTS_GEMMA26_SOAK_JA.md",
+          "source_report": "gemma26-production-like-soak-228/run-001/RESULTS_GEMMA26_SOAK_JA.md",
+          "source_sha256": "bf1571f2818b62fbd5b28bcbcd8cfa22de2c1ac731a6c3e85eea102b9a3c4751"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "local-specialist-3way-228--run-001",
+      "source_set": "local-specialist-3way-228/run-001",
+      "entries": 24,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "LS3W228-001",
+        "LS3W228-002",
+        "LS3W228-003",
+        "LS3W228-004",
+        "LS3W228-005",
+        "LS3W228-006",
+        "LS3W228-007",
+        "LS3W228-008",
+        "LS3W228-009",
+        "LS3W228-010",
+        "LS3W228-011",
+        "LS3W228-012",
+        "LS3W228-013",
+        "LS3W228-014",
+        "LS3W228-015",
+        "LS3W228-016",
+        "LS3W228-017",
+        "LS3W228-018",
+        "LS3W228-019",
+        "LS3W228-020",
+        "LS3W228-021",
+        "LS3W228-022",
+        "LS3W228-023",
+        "LS3W228-024"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/local-specialist-3way-228--run-001/RESULTS_BASELINE_STOP_JA.md",
+          "source_report": "local-specialist-3way-228/run-001/RESULTS_BASELINE_STOP_JA.md",
+          "source_sha256": "6bf5e72329d1463bcc42cf11a1afcaf99fc004b46405a41aedeeedd7920b838a"
+        },
+        {
+          "file": "results/local-specialist-3way-228--run-001/RESULTS_LOCAL_3WAY_JA.md",
+          "source_report": "local-specialist-3way-228/run-001/RESULTS_LOCAL_3WAY_JA.md",
+          "source_sha256": "b00f7d0519e571a8c9218e21939b9bc4ed780d9c2676f0b6f104ab654e50fd71"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "local-specialist-3way-228--run-002",
+      "source_set": "local-specialist-3way-228/run-002",
+      "entries": 24,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "LS3W228-001",
+        "LS3W228-002",
+        "LS3W228-003",
+        "LS3W228-004",
+        "LS3W228-005",
+        "LS3W228-006",
+        "LS3W228-007",
+        "LS3W228-008",
+        "LS3W228-009",
+        "LS3W228-010",
+        "LS3W228-011",
+        "LS3W228-012",
+        "LS3W228-013",
+        "LS3W228-014",
+        "LS3W228-015",
+        "LS3W228-016",
+        "LS3W228-017",
+        "LS3W228-018",
+        "LS3W228-019",
+        "LS3W228-020",
+        "LS3W228-021",
+        "LS3W228-022",
+        "LS3W228-023",
+        "LS3W228-024"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/local-specialist-3way-228--run-002/RESULTS_LOCAL_3WAY_JA.md",
+          "source_report": "local-specialist-3way-228/run-002/RESULTS_LOCAL_3WAY_JA.md",
+          "source_sha256": "c5541363e48d84f0a37b4fbc976ca19c73afcd519912dd04f3ecbfc7911992bf"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "local-specialist-3way-228--run-003",
+      "source_set": "local-specialist-3way-228/run-003",
+      "entries": 24,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "LS3W228-001",
+        "LS3W228-002",
+        "LS3W228-003",
+        "LS3W228-004",
+        "LS3W228-005",
+        "LS3W228-006",
+        "LS3W228-007",
+        "LS3W228-008",
+        "LS3W228-009",
+        "LS3W228-010",
+        "LS3W228-011",
+        "LS3W228-012",
+        "LS3W228-013",
+        "LS3W228-014",
+        "LS3W228-015",
+        "LS3W228-016",
+        "LS3W228-017",
+        "LS3W228-018",
+        "LS3W228-019",
+        "LS3W228-020",
+        "LS3W228-021",
+        "LS3W228-022",
+        "LS3W228-023",
+        "LS3W228-024"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/local-specialist-3way-228--run-003/RESULTS_LOCAL_3WAY_JA.md",
+          "source_report": "local-specialist-3way-228/run-003/RESULTS_LOCAL_3WAY_JA.md",
+          "source_sha256": "381b404e55437ae30563014772e0dbcd688f381350736ef99be63b6e9f054aac"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "local-specialist-economics",
+      "source_set": "local-specialist-economics",
+      "entries": 14,
+      "structured_result_records": 15,
+      "task_ids_with_structured_results": 14,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_DEVELOPMENT_JA.md",
+          "source_report": "local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_DEVELOPMENT_JA.md",
+          "source_sha256": "5eb7a355705d18da6ee607987bbedef62a2c0b8ac2a67ca3b66166d9f8bab242"
+        },
+        {
+          "file": "results/local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_FINAL_JA.md",
+          "source_report": "local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_FINAL_JA.md",
+          "source_sha256": "141d3ae3b56e6fdba8ce8df4f185f202a53cd5d391906fbf4d30a08235ec9f87"
+        },
+        {
+          "file": "results/local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_JA.md",
+          "source_report": "local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_JA.md",
+          "source_sha256": "c148c7336c615e3713bd971dc16c20db7c32f41bc3b6b4fe61d58a89f2d0d4d6"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "model-routing",
+      "source_set": "model-routing",
+      "entries": 30,
+      "structured_result_records": 90,
+      "task_ids_with_structured_results": 30,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "one-shot-local-gate",
+      "source_set": "one-shot-local-gate",
+      "entries": 8,
+      "structured_result_records": 16,
+      "task_ids_with_structured_results": 8,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/one-shot-local-gate/RESULTS_JA.md",
+          "source_report": "one-shot-local-gate/RESULTS_JA.md",
+          "source_sha256": "289e111739a948b493057f9af2c552ca17c59ed287eef81731fb87a9af487e3f"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "protocol-improvement-b2",
+      "source_set": "protocol-improvement-b2",
+      "entries": 5,
+      "structured_result_records": 13,
+      "task_ids_with_structured_results": 5,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/protocol-improvement-b2/RESULTS_JA.md",
+          "source_report": "protocol-improvement-b2/RESULTS_JA.md",
+          "source_sha256": "9dfc093da612570aee2cbc30376b25123fbae8201dc4135fc5cce5c68599e3ce"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "protocol-improvement-b3",
+      "source_set": "protocol-improvement-b3",
+      "entries": 3,
+      "structured_result_records": 6,
+      "task_ids_with_structured_results": 3,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/protocol-improvement-b3/RESULTS_JA.md",
+          "source_report": "protocol-improvement-b3/RESULTS_JA.md",
+          "source_sha256": "a27336a09af102b8ce7c2bdfa39a76998eba65132609a33a7128dd1e429c755a"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "protocol-improvement-b4",
+      "source_set": "protocol-improvement-b4",
+      "entries": 3,
+      "structured_result_records": 6,
+      "task_ids_with_structured_results": 3,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/protocol-improvement-b4/RESULTS_JA.md",
+          "source_report": "protocol-improvement-b4/RESULTS_JA.md",
+          "source_sha256": "bbf3fdd6447f57bf1c6ebdd363162d051f8c2d8eaed40c07868dd98bd091c07c"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "protocol-improvement-b5",
+      "source_set": "protocol-improvement-b5",
+      "entries": 3,
+      "structured_result_records": 6,
+      "task_ids_with_structured_results": 3,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/protocol-improvement-b5/RESULTS_JA.md",
+          "source_report": "protocol-improvement-b5/RESULTS_JA.md",
+          "source_sha256": "2d5c12f030266f51409da1c7eedc567ff3de8f3f45bf23716adebc16240a5b16"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "protocol-improvement-v2.1",
+      "source_set": "protocol-improvement-v2.1",
+      "entries": 9,
+      "structured_result_records": 24,
+      "task_ids_with_structured_results": 9,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/protocol-improvement-v2.1/RESULTS_JA.md",
+          "source_report": "protocol-improvement-v2.1/RESULTS_JA.md",
+          "source_sha256": "80b5b1b4cdacc50f89daa387a76f456655889fa2088de019dfee4df0c65d304d"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "role-separated-codex-routing",
+      "source_set": "role-separated-codex-routing",
+      "entries": 8,
+      "structured_result_records": 54,
+      "task_ids_with_structured_results": 8,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/role-separated-codex-routing/RESULTS_ROLE_ROUTING_JA.md",
+          "source_report": "role-separated-codex-routing/RESULTS_ROLE_ROUTING_JA.md",
+          "source_sha256": "d53421e74ad5d6341a0e693a73a67f4fa5fb1d7ad7f0b8251c422d3e31bd3e63"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot",
+      "source_set": "router-shadow-pilot",
+      "entries": 9,
+      "structured_result_records": 8,
+      "task_ids_with_structured_results": 4,
+      "task_ids_without_structured_results": [
+        "PILOT-001",
+        "PILOT-004",
+        "PILOT-005",
+        "PILOT-006",
+        "PILOT-007"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot/RESULTS_JA.md",
+          "source_sha256": "228d4ba1fe5002ee88fa5436030475f780c40c94524c5a8498e86c0c550bf9d9"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot-v2.1",
+      "source_set": "router-shadow-pilot-v2.1",
+      "entries": 8,
+      "structured_result_records": 8,
+      "task_ids_with_structured_results": 8,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot-v2.1/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot-v2.1/RESULTS_JA.md",
+          "source_sha256": "7f60aad4e1b0c50ea11c25605945fa0a6c5db5a11e51ce4fac5bc4a25c9c6bd4"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot-v2.2",
+      "source_set": "router-shadow-pilot-v2.2",
+      "entries": 12,
+      "structured_result_records": 13,
+      "task_ids_with_structured_results": 12,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot-v2.2/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot-v2.2/RESULTS_JA.md",
+          "source_sha256": "d3701c82dba4c1c3e1ac00e215699f596b172328796d756cbb29dc03a18fd52a"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot-v2.2.1",
+      "source_set": "router-shadow-pilot-v2.2.1",
+      "entries": 14,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "P221R-001",
+        "P221R-002",
+        "P221R-003",
+        "P221R-004",
+        "P221R-005",
+        "P221R-006",
+        "P221R-007",
+        "P221R-008",
+        "P221R-009",
+        "P221R-010",
+        "P221R-011",
+        "P221R-012",
+        "P221R-013",
+        "P221R-014"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot-v2.2.1/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot-v2.2.1/RESULTS_JA.md",
+          "source_sha256": "3a7ee08fd6fd9212b321bf51ee203744bc17bd325687a8c87209a63bff537736"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot-v2.2.3",
+      "source_set": "router-shadow-pilot-v2.2.3",
+      "entries": 14,
+      "structured_result_records": 0,
+      "task_ids_with_structured_results": 0,
+      "task_ids_without_structured_results": [
+        "P223-001",
+        "P223-002",
+        "P223-003",
+        "P223-004",
+        "P223-005",
+        "P223-006",
+        "P223-007",
+        "P223-008",
+        "P223-009",
+        "P223-010",
+        "P223-011",
+        "P223-012",
+        "P223-013",
+        "P223-014"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot-v2.2.3/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot-v2.2.3/RESULTS_JA.md",
+          "source_sha256": "7726f078ff973f968cda215940dc4516fc53a30f53bcdcdc8012e517bd4dc85c"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot-v2.2.4",
+      "source_set": "router-shadow-pilot-v2.2.4",
+      "entries": 14,
+      "structured_result_records": 15,
+      "task_ids_with_structured_results": 14,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot-v2.2.4/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot-v2.2.4/RESULTS_JA.md",
+          "source_sha256": "120d3f34f973cdfe816244ccbaf81c8e2eff68f89bdbc599252c804f53c92a5a"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot-v2.2.4-fresh-001",
+      "source_set": "router-shadow-pilot-v2.2.4-fresh-001",
+      "entries": 14,
+      "structured_result_records": 1,
+      "task_ids_with_structured_results": 1,
+      "task_ids_without_structured_results": [
+        "P224-002",
+        "P224-003",
+        "P224-004",
+        "P224-005",
+        "P224-006",
+        "P224-007",
+        "P224-008",
+        "P224-009",
+        "P224-010",
+        "P224-011",
+        "P224-012",
+        "P224-013",
+        "P224-014"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot-v2.2.4-fresh-001/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot-v2.2.4-fresh-001/RESULTS_JA.md",
+          "source_sha256": "3679cb41a4207185be272d7168171bc4499ed699da9d5eeeaf540f2135338ba1"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot-v2.2.5-full",
+      "source_set": "router-shadow-pilot-v2.2.5-full",
+      "entries": 14,
+      "structured_result_records": 3,
+      "task_ids_with_structured_results": 3,
+      "task_ids_without_structured_results": [
+        "P224-004",
+        "P224-005",
+        "P224-006",
+        "P224-007",
+        "P224-008",
+        "P224-009",
+        "P224-010",
+        "P224-011",
+        "P224-012",
+        "P224-013",
+        "P224-014"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot-v2.2.5-full/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot-v2.2.5-full/RESULTS_JA.md",
+          "source_sha256": "097c887647e62ae74e5f9f9d7962fcd8ad55e3ff20ad09d6e11bcf2f4a2d2fd1"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "source_set": "router-shadow-pilot-v2.2.6-fresh-tasks",
+      "entries": 11,
+      "structured_result_records": 10,
+      "task_ids_with_structured_results": 10,
+      "task_ids_without_structured_results": [
+        "PFT-011"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot-v2.2.6-fresh-tasks/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot-v2.2.6-fresh-tasks/RESULTS_JA.md",
+          "source_sha256": "25ca55298756a66e10457df67dad6d78e91ad062b261d3a0b257b40cd3259675"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot-v2.2.6-full",
+      "source_set": "router-shadow-pilot-v2.2.6-full",
+      "entries": 14,
+      "structured_result_records": 14,
+      "task_ids_with_structured_results": 14,
+      "task_ids_without_structured_results": [],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot-v2.2.6-full/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot-v2.2.6-full/RESULTS_JA.md",
+          "source_sha256": "88161c6731e9b082de792d8e10fdec04c50fb607ec901651345dc2ddb2d266c9"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    },
+    {
+      "set_id": "router-shadow-pilot-v2.2.6-full-002",
+      "source_set": "router-shadow-pilot-v2.2.6-full-002",
+      "entries": 14,
+      "structured_result_records": 26,
+      "task_ids_with_structured_results": 13,
+      "task_ids_without_structured_results": [
+        "P224-013"
+      ],
+      "historical_reports": [
+        {
+          "file": "results/router-shadow-pilot-v2.2.6-full-002/RESULTS_JA.md",
+          "source_report": "router-shadow-pilot-v2.2.6-full-002/RESULTS_JA.md",
+          "source_sha256": "ce3a614863dc1ddab5e2ec78de143df478bb05c263e33314114d66e651b12fd3"
+        }
+      ],
+      "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+    }
+  ],
+  "record_count": 895
+}

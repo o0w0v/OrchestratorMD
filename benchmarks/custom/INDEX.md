@@ -1,0 +1,54 @@
+# 独自課題セット一覧
+
+48セット・619エントリ（改訂・再利用分を含む）。各JSONで個別課題を閲覧でき、初期コードとテストはZIPから取り出せます。
+
+| セット | 件数 | 課題定義 | 構造化結果の対応task_id数 | 過去レポート |
+| --- | ---: | --- | ---: | ---: |
+| adaptive-reviewer-escalation | 8 | [JSON](sets/adaptive-reviewer-escalation.json) | 0 | 1 |
+| bounded-2.2.6-codex-value | 5 | [JSON](sets/bounded-2.2.6-codex-value.json) | 0 | 3 |
+| bounded-2.2.7-economic-confirmation | 14 | [JSON](sets/bounded-2.2.7-economic-confirmation.json) | 0 | 1 |
+| bounded-2.2.8-economic-retry | 14 | [JSON](sets/bounded-2.2.8-economic-retry.json) | 0 | 1 |
+| bounded-2.2.8-limited-economic-shadow | 30 | [JSON](sets/bounded-2.2.8-limited-economic-shadow.json) | 30 | 1 |
+| bounded-v2.2.5-syntax-preflight/live | 3 | [JSON](sets/bounded-v2.2.5-syntax-preflight--live.json) | 0 | 1 |
+| bounded-v2.2.5-syntax-preflight/offline | 1 | [JSON](sets/bounded-v2.2.5-syntax-preflight--offline.json) | 0 | 1 |
+| bounded-v2.2.6-body-contract/live | 3 | [JSON](sets/bounded-v2.2.6-body-contract--live.json) | 0 | 1 |
+| bounded-v2.2.6-body-contract/offline | 2 | [JSON](sets/bounded-v2.2.6-body-contract--offline.json) | 0 | 1 |
+| bounded-v2.2.6-body-contract/offline-final | 2 | [JSON](sets/bounded-v2.2.6-body-contract--offline-final.json) | 0 | 1 |
+| bounded-v2.2.6-body-contract/offline-verified | 2 | [JSON](sets/bounded-v2.2.6-body-contract--offline-verified.json) | 0 | 1 |
+| bounded-v2.2.7-final-lf | 10 | [JSON](sets/bounded-v2.2.7-final-lf.json) | 0 | 1 |
+| bounded-v2.2.8-candidate-parse | 4 | [JSON](sets/bounded-v2.2.8-candidate-parse.json) | 0 | 1 |
+| economic-accounting-recovery-228 | 3 | [JSON](sets/economic-accounting-recovery-228.json) | 0 | 1 |
+| family-gated-local-router-228 | 36 | [JSON](sets/family-gated-local-router-228.json) | 36 | 3 |
+| final-lf-replay | 5 | [JSON](sets/final-lf-replay.json) | 5 | 1 |
+| formatter-guard-v2.2.2 | 4 | [JSON](sets/formatter-guard-v2.2.2.json) | 0 | 1 |
+| formatter-structural-v2.2.4 | 4 | [JSON](sets/formatter-structural-v2.2.4.json) | 4 | 1 |
+| gemma26-continuous-backend-soak-v2/run-002 | 52 | [JSON](sets/gemma26-continuous-backend-soak-v2--run-002.json) | 52 | 1 |
+| gemma26-memory-headroom-228/run-001 | 12 | [JSON](sets/gemma26-memory-headroom-228--run-001.json) | 0 | 1 |
+| gemma26-memory-headroom-228/run-002 | 12 | [JSON](sets/gemma26-memory-headroom-228--run-002.json) | 0 | 1 |
+| gemma26-memory-headroom-228/run-003 | 12 | [JSON](sets/gemma26-memory-headroom-228--run-003.json) | 0 | 1 |
+| gemma26-memory-headroom-228/run-004 | 12 | [JSON](sets/gemma26-memory-headroom-228--run-004.json) | 0 | 1 |
+| gemma26-memory-headroom-phase2/run-001 | 12 | [JSON](sets/gemma26-memory-headroom-phase2--run-001.json) | 0 | 1 |
+| gemma26-production-like-soak-228/run-001 | 64 | [JSON](sets/gemma26-production-like-soak-228--run-001.json) | 64 | 1 |
+| local-specialist-3way-228/run-001 | 24 | [JSON](sets/local-specialist-3way-228--run-001.json) | 0 | 2 |
+| local-specialist-3way-228/run-002 | 24 | [JSON](sets/local-specialist-3way-228--run-002.json) | 0 | 1 |
+| local-specialist-3way-228/run-003 | 24 | [JSON](sets/local-specialist-3way-228--run-003.json) | 0 | 1 |
+| local-specialist-economics | 14 | [JSON](sets/local-specialist-economics.json) | 14 | 3 |
+| model-routing | 30 | [JSON](sets/model-routing.json) | 30 | 0 |
+| one-shot-local-gate | 8 | [JSON](sets/one-shot-local-gate.json) | 8 | 1 |
+| protocol-improvement-b2 | 5 | [JSON](sets/protocol-improvement-b2.json) | 5 | 1 |
+| protocol-improvement-b3 | 3 | [JSON](sets/protocol-improvement-b3.json) | 3 | 1 |
+| protocol-improvement-b4 | 3 | [JSON](sets/protocol-improvement-b4.json) | 3 | 1 |
+| protocol-improvement-b5 | 3 | [JSON](sets/protocol-improvement-b5.json) | 3 | 1 |
+| protocol-improvement-v2.1 | 9 | [JSON](sets/protocol-improvement-v2.1.json) | 9 | 1 |
+| role-separated-codex-routing | 8 | [JSON](sets/role-separated-codex-routing.json) | 8 | 1 |
+| router-shadow-pilot | 9 | [JSON](sets/router-shadow-pilot.json) | 4 | 1 |
+| router-shadow-pilot-v2.1 | 8 | [JSON](sets/router-shadow-pilot-v2.1.json) | 8 | 1 |
+| router-shadow-pilot-v2.2 | 12 | [JSON](sets/router-shadow-pilot-v2.2.json) | 12 | 1 |
+| router-shadow-pilot-v2.2.1 | 14 | [JSON](sets/router-shadow-pilot-v2.2.1.json) | 0 | 1 |
+| router-shadow-pilot-v2.2.3 | 14 | [JSON](sets/router-shadow-pilot-v2.2.3.json) | 0 | 1 |
+| router-shadow-pilot-v2.2.4 | 14 | [JSON](sets/router-shadow-pilot-v2.2.4.json) | 14 | 1 |
+| router-shadow-pilot-v2.2.4-fresh-001 | 14 | [JSON](sets/router-shadow-pilot-v2.2.4-fresh-001.json) | 1 | 1 |
+| router-shadow-pilot-v2.2.5-full | 14 | [JSON](sets/router-shadow-pilot-v2.2.5-full.json) | 3 | 1 |
+| router-shadow-pilot-v2.2.6-fresh-tasks | 11 | [JSON](sets/router-shadow-pilot-v2.2.6-fresh-tasks.json) | 10 | 1 |
+| router-shadow-pilot-v2.2.6-full | 14 | [JSON](sets/router-shadow-pilot-v2.2.6-full.json) | 14 | 1 |
+| router-shadow-pilot-v2.2.6-full-002 | 14 | [JSON](sets/router-shadow-pilot-v2.2.6-full-002.json) | 13 | 1 |

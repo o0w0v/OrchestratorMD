@@ -1,0 +1,296 @@
+{
+  "set_id": "economic-accounting-recovery-228",
+  "entry_count": 3,
+  "tasks": [
+    {
+      "task_id": "ECR228-002",
+      "task_type": "REPO_EDIT",
+      "goal": "Render sampled disk and service availability as an exact nullable receipt",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return exactly disks=VALUE;services=VALUE followed by one LF. Each VALUE is unsigned decimal for Some(count), or the lowercase word unknown for None. No spaces, CR, quotes or extra fields. Some(0) is known zero. Preserve usize::MAX without narrowing. Use disk_count/service_count only; do not infer counts from other state fields. Preserve state.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return exactly disks=VALUE;services=VALUE followed by one LF. Each VALUE is unsigned decimal for Some(count), or the lowercase word unknown for None. No spaces, CR, quotes or extra fields.",
+        "Some(0) is known zero. Preserve usize::MAX without narrowing. Use disk_count/service_count only; do not infer counts from other state fields. Preserve state.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return exactly disks=VALUE;services=VALUE followed by one LF. Each VALUE is unsigned decimal for Some(count), or the lowercase word unknown for None. No spaces, CR, quotes or extra fields.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Some(0) is known zero. Preserve usize::MAX without narrowing. Use disk_count/service_count only; do not infer counts from other state fields. Preserve state.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/ECR228-002/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "STRICT_OUTPUT",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/ECR228-002/crates/ncos-events/src/lib.rs": [
+          "sample_inventory_receipt"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "ECR228-002",
+      "set_id": "economic-accounting-recovery-228",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/economic-accounting-recovery-228/ECR228-002",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "bounded-2.2.8-economic-retry/ECR228-002"
+    },
+    {
+      "task_id": "ECR228-005",
+      "task_type": "REPO_EDIT",
+      "goal": "Compute per-observation RSS excess above an inclusive allowance",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return one u64 per process row: rss_kib minus allowance if strictly above, otherwise zero. Preserve order and duplicates. Do not aggregate, filter, wrap subtraction or narrow. Ignore pid/parent_pid; use full u64 domain and preserve rows. Empty returns empty.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return one u64 per process row: rss_kib minus allowance if strictly above, otherwise zero. Preserve order and duplicates. Do not aggregate, filter, wrap subtraction or narrow.",
+        "Ignore pid/parent_pid; use full u64 domain and preserve rows. Empty returns empty.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return one u64 per process row: rss_kib minus allowance if strictly above, otherwise zero. Preserve order and duplicates. Do not aggregate, filter, wrap subtraction or narrow.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Ignore pid/parent_pid; use full u64 domain and preserve rows. Empty returns empty.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/ECR228-005/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "SEMANTIC_EDIT",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/ECR228-005/crates/ncos-events/src/lib.rs": [
+          "rss_excess_column"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "ECR228-005",
+      "set_id": "economic-accounting-recovery-228",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/economic-accounting-recovery-228/ECR228-005",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "bounded-2.2.8-economic-retry/ECR228-005"
+    },
+    {
+      "task_id": "ECR228-009",
+      "task_type": "REPO_EDIT",
+      "goal": "Remove audit latency narrowing while keeping inclusive budget equality",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return true iff full u128 usage.elapsed_ms is less than or equal to u64 budget.max_latency_ms converted losslessly. Equality is within the allowance. Do not narrow elapsed_ms, saturate it, or consult token/call/model fields. Preserve both inputs. Values above u64::MAX must return false for any budget.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return true iff full u128 usage.elapsed_ms is less than or equal to u64 budget.max_latency_ms converted losslessly. Equality is within the allowance.",
+        "Do not narrow elapsed_ms, saturate it, or consult token/call/model fields. Preserve both inputs. Values above u64::MAX must return false for any budget.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return true iff full u128 usage.elapsed_ms is less than or equal to u64 budget.max_latency_ms converted losslessly. Equality is within the allowance.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Do not narrow elapsed_ms, saturate it, or consult token/call/model fields. Preserve both inputs. Values above u64::MAX must return false for any budget.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/ECR228-009/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "DEBUGGING",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/ECR228-009/crates/ncos-events/src/lib.rs": [
+          "audit_latency_within_limit"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "ECR228-009",
+      "set_id": "economic-accounting-recovery-228",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/economic-accounting-recovery-228/ECR228-009",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "bounded-2.2.8-economic-retry/ECR228-009"
+    }
+  ],
+  "result_summary": {
+    "set_id": "economic-accounting-recovery-228",
+    "source_set": "economic-accounting-recovery-228",
+    "entries": 3,
+    "structured_result_records": 0,
+    "task_ids_with_structured_results": 0,
+    "task_ids_without_structured_results": [
+      "ECR228-002",
+      "ECR228-005",
+      "ECR228-009"
+    ],
+    "historical_reports": [
+      {
+        "file": "results/economic-accounting-recovery-228/RESULTS_ACCOUNTING_RECOVERY_JA.md",
+        "source_report": "economic-accounting-recovery-228/RESULTS_ACCOUNTING_RECOVERY_JA.md",
+        "source_sha256": "c9ffc234e18b3ce6d3d919d51246144610d260922ffe7ccd515fd634c54100a3"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

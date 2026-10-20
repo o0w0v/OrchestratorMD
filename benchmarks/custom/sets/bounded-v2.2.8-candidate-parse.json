@@ -1,0 +1,361 @@
+{
+  "set_id": "bounded-v2.2.8-candidate-parse",
+  "entry_count": 4,
+  "tasks": [
+    {
+      "task_id": "PAR228-001",
+      "task_type": "REPO_EDIT",
+      "goal": "Count zero-RSS process observations",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Count process rows whose rss_kib is exactly zero. Count duplicate rows independently, include pid zero, ignore pid/parent_pid. Preserve rows. Empty input returns zero.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Count process rows whose rss_kib is exactly zero. Count duplicate rows independently, include pid zero, ignore pid/parent_pid. Preserve rows. Empty input returns zero.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Count process rows whose rss_kib is exactly zero. Count duplicate rows independently, include pid zero, ignore pid/parent_pid. Preserve rows. Empty input returns zero.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PAR228-001/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/PAR228-001/crates/ncos-events/src/lib.rs": [
+          "zero_rss_process_count"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PAR228-001",
+      "set_id": "bounded-v2.2.8-candidate-parse",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-v2.2.8-candidate-parse/PAR228-001",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PAR228-002",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Locate first audit row with nonempty source",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return first index whose source String has at least one UTF-8 byte. Whitespace-only source qualifies; do not trim. Ignore every other field, preserve order/records and parse_control_count. Empty/all-empty returns None.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return first index whose source String has at least one UTF-8 byte. Whitespace-only source qualifies; do not trim. Ignore every other field, preserve order/records and parse_control_count. Empty/all-empty returns None.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return first index whose source String has at least one UTF-8 byte. Whitespace-only source qualifies; do not trim. Ignore every other field, preserve order/records and parse_control_count. Empty/all-empty returns None.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PAR228-002/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/PAR228-002/crates/ncos-events/src/lib.rs": [
+          "first_nonempty_source_index",
+          "parse_control_count"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PAR228-002",
+      "set_id": "bounded-v2.2.8-candidate-parse",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-v2.2.8-candidate-parse/PAR228-002",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PAR228-003",
+      "task_type": "REPO_EDIT",
+      "goal": "Read warning byte length by sampled row index",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return Some(UTF-8 byte length) for the indexed warning; Some(0) for an existing empty warning. Out-of-bounds including usize::MAX returns None. No trimming or scalar count; preserve warnings.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return Some(UTF-8 byte length) for the indexed warning; Some(0) for an existing empty warning. Out-of-bounds including usize::MAX returns None. No trimming or scalar count; preserve warnings.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return Some(UTF-8 byte length) for the indexed warning; Some(0) for an existing empty warning. Out-of-bounds including usize::MAX returns None. No trimming or scalar count; preserve warnings.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PAR228-003/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/PAR228-003/crates/ncos-events/src/lib.rs": [
+          "warning_bytes_at"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PAR228-003",
+      "set_id": "bounded-v2.2.8-candidate-parse",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-v2.2.8-candidate-parse/PAR228-003",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PAR228-004",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Locate last audit row with a verification result",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return LAST index having a present verification, regardless of passed bool/scope/detail. Missing verification does not qualify. Preserve rows and parse_control_count; empty/all-missing returns None.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return LAST index having a present verification, regardless of passed bool/scope/detail. Missing verification does not qualify. Preserve rows and parse_control_count; empty/all-missing returns None.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return LAST index having a present verification, regardless of passed bool/scope/detail. Missing verification does not qualify. Preserve rows and parse_control_count; empty/all-missing returns None.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/PAR228-004/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/PAR228-004/crates/ncos-events/src/lib.rs": [
+          "last_verified_record_index",
+          "parse_control_count"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "PAR228-004",
+      "set_id": "bounded-v2.2.8-candidate-parse",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-v2.2.8-candidate-parse/PAR228-004",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "bounded-v2.2.8-candidate-parse",
+    "source_set": "bounded-v2.2.8-candidate-parse",
+    "entries": 4,
+    "structured_result_records": 0,
+    "task_ids_with_structured_results": 0,
+    "task_ids_without_structured_results": [
+      "PAR228-001",
+      "PAR228-002",
+      "PAR228-003",
+      "PAR228-004"
+    ],
+    "historical_reports": [
+      {
+        "file": "results/bounded-v2.2.8-candidate-parse/RESULTS_JA.md",
+        "source_report": "bounded-v2.2.8-candidate-parse/RESULTS_JA.md",
+        "source_sha256": "a1c40ebc0e6db2b27f40e96a2663bdb0d0db9950c0a267bb95373614d4657a1c"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

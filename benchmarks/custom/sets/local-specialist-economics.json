@@ -1,0 +1,1280 @@
+{
+  "set_id": "local-specialist-economics",
+  "entry_count": 14,
+  "tasks": [
+    {
+      "task_id": "LSE-001",
+      "task_type": "REPO_EDIT",
+      "goal": "Escape event identity for pipe-delimited audit export",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return id|target with exactly one literal pipe separator. Independently escape percent as %25, pipe as %7C, CR as %0D and LF as %0A in both original strings; all other characters unchanged. One pass only, never double-escape generated percent sequences. Empty strings are valid. Preserve Unicode, whitespace, kind and evidence; no trimming, newline or extra text.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return id|target with exactly one literal pipe separator. Independently escape percent as %25, pipe as %7C, CR as %0D and LF as %0A in both original strings; all other characters unchanged. One pass only, never double-escape generated percent sequences.",
+        "Empty strings are valid. Preserve Unicode, whitespace, kind and evidence; no trimming, newline or extra text.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return id|target with exactly one literal pipe separator. Independently escape percent as %25, pipe as %7C, CR as %0D and LF as %0A in both original strings; all other characters unchanged. One pass only, never double-escape generated percent sequences.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Empty strings are valid. Preserve Unicode, whitespace, kind and evidence; no trimming, newline or extra text.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-001/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-001/crates/ncos-events/src/lib.rs": [
+          "event_export_key"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-001",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-001",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "LSE-002",
+      "task_type": "REPO_EDIT",
+      "goal": "List recorded blocked proposal targets",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return proposal.target for each record with a present proposal and a present execution whose status is Blocked. Preserve row order and duplicates, including empty targets. Ignore policy, event and execution.changed. Clone target strings without mutating any record; missing proposal or execution and DryRun execution are omitted.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return proposal.target for each record with a present proposal and a present execution whose status is Blocked. Preserve row order and duplicates, including empty targets. Ignore policy, event and execution.changed.",
+        "Clone target strings without mutating any record; missing proposal or execution and DryRun execution are omitted.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return proposal.target for each record with a present proposal and a present execution whose status is Blocked. Preserve row order and duplicates, including empty targets. Ignore policy, event and execution.changed.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Clone target strings without mutating any record; missing proposal or execution and DryRun execution are omitted.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-002/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-002/crates/ncos-events/src/lib.rs": [
+          "blocked_proposal_targets"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-002",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-002",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "LSE-003",
+      "task_type": "REPO_EDIT",
+      "goal": "Summarize sample warnings with stable empty/nonempty groups",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return (nonempty warnings in original order, number of exactly empty warning strings). Preserve duplicates and whitespace-only warnings; empty means byte length zero, not trimmed empty. Use only state.warnings; do not mutate state, deduplicate, infer errors or consult processes_truncated.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return (nonempty warnings in original order, number of exactly empty warning strings). Preserve duplicates and whitespace-only warnings; empty means byte length zero, not trimmed empty.",
+        "Use only state.warnings; do not mutate state, deduplicate, infer errors or consult processes_truncated.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return (nonempty warnings in original order, number of exactly empty warning strings). Preserve duplicates and whitespace-only warnings; empty means byte length zero, not trimmed empty.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Use only state.warnings; do not mutate state, deduplicate, infer errors or consult processes_truncated.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-003/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-003/crates/ncos-events/src/lib.rs": [
+          "warning_partition"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-003",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-003",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "LSE-004",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Replace repeated event keys in their first-seen display positions",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Each (kind,target) exact pair owns its first-seen output position. A later matching pair replaces that entire stored Event with the later clone, without changing slot order. Distinct kinds sharing a target are separate keys. Do not merge evidence, sort, refresh positions, or mutate input. Empty input returns empty. Preserve sampled_warning_total behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Each (kind,target) exact pair owns its first-seen output position. A later matching pair replaces that entire stored Event with the later clone, without changing slot order. Distinct kinds sharing a target are separate keys.",
+        "Do not merge evidence, sort, refresh positions, or mutate input. Empty input returns empty. Preserve sampled_warning_total behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Each (kind,target) exact pair owns its first-seen output position. A later matching pair replaces that entire stored Event with the later clone, without changing slot order. Distinct kinds sharing a target are separate keys.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Do not merge evidence, sort, refresh positions, or mutate input. Empty input returns empty. Preserve sampled_warning_total behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-004/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/LSE-004/crates/ncos-events/src/lib.rs": [
+          "latest_event_slots",
+          "warning_total"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-004",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-004",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "LSE-005",
+      "task_type": "REPO_EDIT",
+      "goal": "Remove overflow in rounded-up audit elapsed seconds",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Fix the existing overflow while preserving ceil(elapsed_ms/1000) for every u128 input, including u128::MAX. Integer exact result, no floats or saturating numerator that loses a final second. Zero returns zero; exact multiples do not round up. Preserve the signature and all surrounding behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Fix the existing overflow while preserving ceil(elapsed_ms/1000) for every u128 input, including u128::MAX. Integer exact result, no floats or saturating numerator that loses a final second.",
+        "Zero returns zero; exact multiples do not round up. Preserve the signature and all surrounding behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Fix the existing overflow while preserving ceil(elapsed_ms/1000) for every u128 input, including u128::MAX. Integer exact result, no floats or saturating numerator that loses a final second.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Zero returns zero; exact multiples do not round up. Preserve the signature and all surrounding behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-005/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-005/crates/ncos-events/src/lib.rs": [
+          "elapsed_seconds_ceil"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-005",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-005",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "LSE-006",
+      "task_type": "REPO_EDIT",
+      "goal": "Compute affordable future recorded calls from two independent limits",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return the smaller of remaining inference-call slots and floor(remaining token allowance/tokens_per_call). Subtraction saturates independently. Zero per-call token price imposes no token limit, so only remaining call slots apply. Ignore latency and preferred model class. Use only supplied counters, never grant execution authority or mutate them. Avoid overflow/narrowing for every u64/u32 input.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return the smaller of remaining inference-call slots and floor(remaining token allowance/tokens_per_call). Subtraction saturates independently. Zero per-call token price imposes no token limit, so only remaining call slots apply.",
+        "Ignore latency and preferred model class. Use only supplied counters, never grant execution authority or mutate them. Avoid overflow/narrowing for every u64/u32 input.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return the smaller of remaining inference-call slots and floor(remaining token allowance/tokens_per_call). Subtraction saturates independently. Zero per-call token price imposes no token limit, so only remaining call slots apply.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Ignore latency and preferred model class. Use only supplied counters, never grant execution authority or mutate them. Avoid overflow/narrowing for every u64/u32 input.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-006/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-006/crates/ncos-events/src/lib.rs": [
+          "affordable_calls"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-006",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-006",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "LSE-007",
+      "task_type": "REPO_EDIT",
+      "goal": "Consolidate risk rendering through the existing helper",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact before->after lowercase risk rendering for every Risk pair. Refactor the two duplicated match tables to the existing protected risk_word helper for both values. No match expression or duplicate risk-label literals may remain inside the editable body. Do not change the helper, interface, markers or other source.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact before->after lowercase risk rendering for every Risk pair. Refactor the two duplicated match tables to the existing protected risk_word helper for both values.",
+        "No match expression or duplicate risk-label literals may remain inside the editable body. Do not change the helper, interface, markers or other source.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact before->after lowercase risk rendering for every Risk pair. Refactor the two duplicated match tables to the existing protected risk_word helper for both values.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "No match expression or duplicate risk-label literals may remain inside the editable body. Do not change the helper, interface, markers or other source.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-007/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-007/crates/ncos-events/src/lib.rs": [
+          "risk_transition"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-007",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-007",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "LSE-008",
+      "task_type": "REPO_EDIT",
+      "goal": "Serialize a process sample as an exact line manifest",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Emit each supplied row as pid@parent_pid=rss_kib followed by one LF, unsigned decimal with no leading zeros or spaces. Preserve input order and duplicate rows; include zero values. Empty slice returns empty string. No headers, units, CR, sorting, truncation or input mutation. Include the final LF for nonempty input.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Emit each supplied row as pid@parent_pid=rss_kib followed by one LF, unsigned decimal with no leading zeros or spaces. Preserve input order and duplicate rows; include zero values. Empty slice returns empty string.",
+        "No headers, units, CR, sorting, truncation or input mutation. Include the final LF for nonempty input.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Emit each supplied row as pid@parent_pid=rss_kib followed by one LF, unsigned decimal with no leading zeros or spaces. Preserve input order and duplicate rows; include zero values. Empty slice returns empty string.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "No headers, units, CR, sorting, truncation or input mutation. Include the final LF for nonempty input.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-008/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-008/crates/ncos-events/src/lib.rs": [
+          "process_manifest"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-008",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-008",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "final-lf-replay/LSE-008"
+    },
+    {
+      "task_id": "LSE-009",
+      "task_type": "REPO_EDIT",
+      "goal": "Collect dry-run proposals lacking successful verification",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return a clone of the entire proposal for each record with proposal present, execution present with DryRun status, and verification absent or passed=false. Preserve order and duplicates; Blocked or absent execution is omitted. Ignore execution.changed, policy, event and verification.scope/detail. Preserve all proposal fields and input records.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return a clone of the entire proposal for each record with proposal present, execution present with DryRun status, and verification absent or passed=false. Preserve order and duplicates; Blocked or absent execution is omitted.",
+        "Ignore execution.changed, policy, event and verification.scope/detail. Preserve all proposal fields and input records.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return a clone of the entire proposal for each record with proposal present, execution present with DryRun status, and verification absent or passed=false. Preserve order and duplicates; Blocked or absent execution is omitted.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Ignore execution.changed, policy, event and verification.scope/detail. Preserve all proposal fields and input records.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-009/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-009/crates/ncos-events/src/lib.rs": [
+          "pending_verification_proposals"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-009",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-009",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "final-lf-replay/LSE-009"
+    },
+    {
+      "task_id": "LSE-010",
+      "task_type": "REPO_EDIT",
+      "goal": "Separate sampled process IDs with self-parent anomalies",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return PIDs for rows whose pid equals parent_pid and pid is nonzero. Preserve original order and duplicates. A 0/0 sentinel row is not an anomaly. Do not infer graph cycles, ancestors, missing parents or deduplicate; this is a direct sample projection. Do not mutate input.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return PIDs for rows whose pid equals parent_pid and pid is nonzero. Preserve original order and duplicates. A 0/0 sentinel row is not an anomaly.",
+        "Do not infer graph cycles, ancestors, missing parents or deduplicate; this is a direct sample projection. Do not mutate input.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return PIDs for rows whose pid equals parent_pid and pid is nonzero. Preserve original order and duplicates. A 0/0 sentinel row is not an anomaly.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Do not infer graph cycles, ancestors, missing parents or deduplicate; this is a direct sample projection. Do not mutate input.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-010/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-010/crates/ncos-events/src/lib.rs": [
+          "self_parent_sample"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-010",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-010",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "final-lf-replay/LSE-010"
+    },
+    {
+      "task_id": "LSE-011",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Preview cooldown admissions without refreshing rejected timestamps",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return one boolean per input timestamp. First timestamp is accepted. Later timestamps are accepted only when >= last accepted timestamp and their elapsed difference >= gap. Only accepted timestamps update the remembered timestamp; rejected or backward observations do not. Gap zero accepts equal/forward times but still rejects backward ones. Empty input -> empty. Avoid overflow at u128::MAX; no clock query, global state or input mutation. Preserve sampled_warning_total behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return one boolean per input timestamp. First timestamp is accepted. Later timestamps are accepted only when >= last accepted timestamp and their elapsed difference >= gap. Only accepted timestamps update the remembered timestamp; rejected or backward observations do not.",
+        "Gap zero accepts equal/forward times but still rejects backward ones. Empty input -> empty. Avoid overflow at u128::MAX; no clock query, global state or input mutation. Preserve sampled_warning_total behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return one boolean per input timestamp. First timestamp is accepted. Later timestamps are accepted only when >= last accepted timestamp and their elapsed difference >= gap. Only accepted timestamps update the remembered timestamp; rejected or backward observations do not.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Gap zero accepts equal/forward times but still rejects backward ones. Empty input -> empty. Avoid overflow at u128::MAX; no clock query, global state or input mutation. Preserve sampled_warning_total behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-011/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/LSE-011/crates/ncos-events/src/lib.rs": [
+          "cooldown_preview",
+          "warning_total"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-011",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-011",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "final-lf-replay/LSE-011"
+    },
+    {
+      "task_id": "LSE-012",
+      "task_type": "REPO_EDIT",
+      "goal": "Preserve signed TCP sample decreases and unknown samples",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Fix the existing loss of negative change. Return after-before as signed i128 when both samples are Some, including decreases and equal values. None in either position returns None. No saturation, wrapping, float conversion or interpreting unknown as zero. Full usize range must be representable exactly. This is a display delta only.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Fix the existing loss of negative change. Return after-before as signed i128 when both samples are Some, including decreases and equal values. None in either position returns None.",
+        "No saturation, wrapping, float conversion or interpreting unknown as zero. Full usize range must be representable exactly. This is a display delta only.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Fix the existing loss of negative change. Return after-before as signed i128 when both samples are Some, including decreases and equal values. None in either position returns None.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "No saturation, wrapping, float conversion or interpreting unknown as zero. Full usize range must be representable exactly. This is a display delta only.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-012/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-012/crates/ncos-events/src/lib.rs": [
+          "tcp_sample_delta"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-012",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-012",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": "final-lf-replay/LSE-012"
+    },
+    {
+      "task_id": "LSE-013",
+      "task_type": "REPO_EDIT",
+      "goal": "Select an ordered evidence prefix under a byte allowance",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return the largest prefix length whose cumulative byte lengths do not exceed capacity. Stop at the first item that does not fit; never skip it to include later small items. Zero-length items consume no capacity and count if reached. Use exact unsigned accounting without overflow, including usize::MAX entries/capacity. Empty input -> 0. Do not reorder or mutate lengths.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return the largest prefix length whose cumulative byte lengths do not exceed capacity. Stop at the first item that does not fit; never skip it to include later small items. Zero-length items consume no capacity and count if reached.",
+        "Use exact unsigned accounting without overflow, including usize::MAX entries/capacity. Empty input -> 0. Do not reorder or mutate lengths.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return the largest prefix length whose cumulative byte lengths do not exceed capacity. Stop at the first item that does not fit; never skip it to include later small items. Zero-length items consume no capacity and count if reached.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Use exact unsigned accounting without overflow, including usize::MAX entries/capacity. Empty input -> 0. Do not reorder or mutate lengths.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-013/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-013/crates/ncos-events/src/lib.rs": [
+          "evidence_prefix_len"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-013",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-013",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "LSE-014",
+      "task_type": "REPO_EDIT",
+      "goal": "Centralize paired action display labels",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact [left, right] rendering for every action pair, using the protected action_word helper for both labels instead of duplicated match tables. No match expression or duplicate label literals inside the editable body. Preserve protected helper/interface/source. This is display only, never execute any action.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact [left, right] rendering for every action pair, using the protected action_word helper for both labels instead of duplicated match tables.",
+        "No match expression or duplicate label literals inside the editable body. Preserve protected helper/interface/source. This is display only, never execute any action.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact [left, right] rendering for every action pair, using the protected action_word helper for both labels instead of duplicated match tables.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "No match expression or duplicate label literals inside the editable body. Preserve protected helper/interface/source. This is display only, never execute any action.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/LSE-014/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/LSE-014/crates/ncos-events/src/lib.rs": [
+          "action_pair"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "LSE-014",
+      "set_id": "local-specialist-economics",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/local-specialist-economics/LSE-014",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "local-specialist-economics",
+    "source_set": "local-specialist-economics",
+    "entries": 14,
+    "structured_result_records": 15,
+    "task_ids_with_structured_results": 14,
+    "task_ids_without_structured_results": [],
+    "historical_reports": [
+      {
+        "file": "results/local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_DEVELOPMENT_JA.md",
+        "source_report": "local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_DEVELOPMENT_JA.md",
+        "source_sha256": "5eb7a355705d18da6ee607987bbedef62a2c0b8ac2a67ca3b66166d9f8bab242"
+      },
+      {
+        "file": "results/local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_FINAL_JA.md",
+        "source_report": "local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_FINAL_JA.md",
+        "source_sha256": "141d3ae3b56e6fdba8ce8df4f185f202a53cd5d391906fbf4d30a08235ec9f87"
+      },
+      {
+        "file": "results/local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_JA.md",
+        "source_report": "local-specialist-economics/RESULTS_LOCAL_SPECIALIST_ECONOMICS_JA.md",
+        "source_sha256": "c148c7336c615e3713bd971dc16c20db7c32f41bc3b6b4fe61d58a89f2d0d4d6"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

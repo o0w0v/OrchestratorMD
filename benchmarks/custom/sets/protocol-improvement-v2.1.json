@@ -1,0 +1,429 @@
+{
+  "set_id": "protocol-improvement-v2.1",
+  "entry_count": 9,
+  "tasks": [
+    {
+      "task_id": "PILOT-002",
+      "task_type": "UNIT_TEST_GENERATION",
+      "goal": "Add regression coverage that duplicate events do not refresh the FIFO deduplication window.",
+      "interface": "Implement only pilot_dedup_duplicate_does_not_refresh() test body. Event has id, kind, target, evidence; Deduplicator::new and EventFilter::accept are existing APIs.",
+      "constraints": [
+        "One behavior only; retain interfaces, acceptance tests, dependencies and dry-run authority.",
+        "Rust code must pass rustfmt and clippy; never regenerate markers or full files."
+      ],
+      "acceptance_cases": [
+        "capacity 2: accept A and B, reject duplicate A, insert C, B still rejected and A accepted after eviction",
+        "same kind but different target is a distinct key",
+        "capacity zero accepts the same event repeatedly"
+      ],
+      "done_when": [
+        "All fixed targeted tests and lint pass without changes outside declared bodies."
+      ],
+      "allowed_files": [
+        "crates/ncos-events/tests/pilot.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "crates/ncos-events/tests/pilot.rs": [
+          "dedup_test"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "A-001",
+      "set_id": "protocol-improvement-v2.1",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-v2.1/A-001",
+      "fixture_file_count": 29,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PEX-A02",
+      "task_type": "UNIT_TEST_GENERATION",
+      "goal": "Add cache regression coverage that duplicate remember calls do not refresh FIFO order.",
+      "interface": "Implement only protocol_cache_fifo test body using MemorySkills::new, SkillStore::remember/lookup and SkillKey { goal, kind }.",
+      "constraints": [
+        "One behavior only; retain interfaces, acceptance tests, dependencies and dry-run authority.",
+        "Rust code must pass rustfmt and clippy; never regenerate markers or full files."
+      ],
+      "acceptance_cases": [
+        "Capacity 2: remember A, B, duplicate A, then C; A is evicted while B and C remain.",
+        "Keys with equal goal but different EventKind remain distinct.",
+        "Capacity zero retains no key."
+      ],
+      "done_when": [
+        "All fixed targeted tests and lint pass without changes outside declared bodies."
+      ],
+      "allowed_files": [
+        "crates/ncos-skills/tests/protocol.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "crates/ncos-skills/tests/protocol.rs": [
+          "generated_test"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "A-002",
+      "set_id": "protocol-improvement-v2.1",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-v2.1/A-002",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PEX-A03",
+      "task_type": "UNIT_TEST_GENERATION",
+      "goal": "Add regression coverage for the KiB parser lexical and u64 boundaries.",
+      "interface": "Implement only protocol_kib_boundaries test body; parse_kib_value(&str) -> Result<u64, String> is unchanged.",
+      "constraints": [
+        "One behavior only; retain interfaces, acceptance tests, dependencies and dry-run authority.",
+        "Rust code must pass rustfmt and clippy; never regenerate markers or full files."
+      ],
+      "acceptance_cases": [
+        "Whitespace and leading zeros are accepted: \"  0007 kB\\t\" -> 7.",
+        "18446744073709551615 kB is accepted; 18446744073709551616 kB returns overflow.",
+        "+1 kB returns invalid number; 1 KB returns invalid unit.",
+        "1 MB extra returns extra tokens before unit validation."
+      ],
+      "done_when": [
+        "All fixed targeted tests and lint pass without changes outside declared bodies."
+      ],
+      "allowed_files": [
+        "crates/ncos-observer-linux/tests/protocol.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "crates/ncos-observer-linux/tests/protocol.rs": [
+          "generated_test"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "A-003",
+      "set_id": "protocol-improvement-v2.1",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-v2.1/A-003",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PILOT-005",
+      "task_type": "REPO_EDIT",
+      "goal": "Support the conventional ncos inspect --help spelling with exactly the existing global help output, without observation.",
+      "interface": "CLI arguments: [] and [--help] continue working. [inspect,--help] succeeds identically. Unknown command or extra options remain errors. Locate the appropriate argument handling.",
+      "constraints": [
+        "One behavior only; retain interfaces, acceptance tests, dependencies and dry-run authority.",
+        "Rust code must pass rustfmt and clippy; never regenerate markers or full files."
+      ],
+      "acceptance_cases": [
+        "inspect --help equals --help and succeeds",
+        "other --help fails",
+        "inspect --help --execute fails"
+      ],
+      "done_when": [
+        "All fixed targeted tests and lint pass without changes outside declared bodies."
+      ],
+      "allowed_files": [
+        "crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "crates/ncos-cli/src/main.rs": [
+          "cli_help",
+          "cli_args"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "B-001",
+      "set_id": "protocol-improvement-v2.1",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-v2.1/B-001",
+      "fixture_file_count": 28,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PILOT-004",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Find where memory-pressure evidence is built and append a two-decimal available_percent for CLI/audit readability.",
+      "interface": "Preserve Event id/kind/target, existing threshold behavior and raw KiB evidence. Required single evidence string: available_kib=N; total_kib=T; available_percent=P.PP. Percentage is 100 * available / total.",
+      "constraints": [
+        "One behavior only; retain interfaces, acceptance tests, dependencies and dry-run authority.",
+        "Rust code must pass rustfmt and clippy; never regenerate markers or full files."
+      ],
+      "acceptance_cases": [
+        {
+          "total": 100,
+          "available": 9,
+          "expected_suffix": "available_percent=9.00"
+        },
+        {
+          "total": 100,
+          "available": 0,
+          "expected_suffix": "available_percent=0.00"
+        },
+        {
+          "total": 100,
+          "available": 10,
+          "expected": "no event"
+        },
+        {
+          "total": 0,
+          "available": 0,
+          "expected": "no event"
+        }
+      ],
+      "done_when": [
+        "All fixed targeted tests and lint pass without changes outside declared bodies."
+      ],
+      "allowed_files": [
+        "crates/ncos-events/src/lib.rs",
+        "crates/ncos-observer-linux/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "crates/ncos-events/src/lib.rs": [
+          "event_detect"
+        ],
+        "crates/ncos-observer-linux/src/lib.rs": [
+          "memory_parse"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "B-002",
+      "set_id": "protocol-improvement-v2.1",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-v2.1/B-002",
+      "fixture_file_count": 28,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PEX-B03",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Append load_per_cpu with two decimals to high-load evidence for CLI/audit readability.",
+      "interface": "Find the high-load event builder. Preserve its existing trigger, IDs, kind, target, evidence prefix and event ordering; append \"; load_per_cpu=<ratio>\".",
+      "constraints": [
+        "One behavior only; retain interfaces, acceptance tests, dependencies and dry-run authority.",
+        "Rust code must pass rustfmt and clippy; never regenerate markers or full files."
+      ],
+      "acceptance_cases": [
+        "load=9, CPUs=4 -> suffix load_per_cpu=2.25; load=3, CPUs=1 -> 3.00.",
+        "Threshold equality, zero CPU count and non-finite load still produce no HighLoad event."
+      ],
+      "done_when": [
+        "All fixed targeted tests and lint pass without changes outside declared bodies."
+      ],
+      "allowed_files": [
+        "crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "crates/ncos-events/src/lib.rs": [
+          "load_evidence"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "B-003",
+      "set_id": "protocol-improvement-v2.1",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-v2.1/B-003",
+      "fixture_file_count": 28,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PILOT-007",
+      "task_type": "ERROR_ANALYSIS",
+      "goal": "Extract the existing event deduplication and skill cache behavior into a typed maintenance summary.",
+      "interface": "Return exact typed keys: event_key, skill_key, duplicate_refreshes_fifo, zero_capacity_accepts_event, skills_rebind_evidence. Read the existing implementations; no edits.",
+      "constraints": [
+        "One behavior only; retain interfaces, acceptance tests, dependencies and dry-run authority.",
+        "Rust code must pass rustfmt and clippy; never regenerate markers or full files."
+      ],
+      "acceptance_cases": [
+        "Describe the actual keys, duplicate ordering, capacity-zero behavior and current evidence rebinding."
+      ],
+      "done_when": [
+        "All fixed targeted tests and lint pass without changes outside declared bodies."
+      ],
+      "allowed_files": [],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": false,
+      "edit_location_known": false,
+      "answer_fields": {
+        "event_key": {
+          "type": "string",
+          "enum": [
+            "kind_target",
+            "event_id",
+            "kind_only"
+          ]
+        },
+        "skill_key": {
+          "type": "string",
+          "enum": [
+            "goal_kind",
+            "target",
+            "event_id"
+          ]
+        },
+        "duplicate_refreshes_fifo": {
+          "type": "boolean"
+        },
+        "zero_capacity_accepts_event": {
+          "type": "boolean"
+        },
+        "skills_rebind_evidence": {
+          "type": "boolean"
+        }
+      },
+      "edit_regions": {},
+      "max_diff_loc": 80,
+      "dataset_entry_id": "C-001",
+      "set_id": "protocol-improvement-v2.1",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-v2.1/C-001",
+      "fixture_file_count": 2,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PEX-C02",
+      "task_type": "ERROR_ANALYSIS",
+      "goal": "Extract five lexical and numeric facts about the existing KiB value parser.",
+      "interface": "Return the exact five typed fields declared in answer_fields; describe existing code only.",
+      "constraints": [
+        "One behavior only; retain interfaces, acceptance tests, dependencies and dry-run authority.",
+        "Rust code must pass rustfmt and clippy; never regenerate markers or full files."
+      ],
+      "acceptance_cases": [
+        "All five facts reflect the cited implementation."
+      ],
+      "done_when": [
+        "All fixed targeted tests and lint pass without changes outside declared bodies."
+      ],
+      "allowed_files": [],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": false,
+      "edit_location_known": false,
+      "answer_fields": {
+        "unit": {
+          "type": "string",
+          "enum": [
+            "kB",
+            "KB",
+            "MB"
+          ]
+        },
+        "integer_type": {
+          "type": "string",
+          "enum": [
+            "u32",
+            "u64",
+            "i64"
+          ]
+        },
+        "leading_plus_accepted": {
+          "type": "boolean"
+        },
+        "extra_tokens_checked_before_unit": {
+          "type": "boolean"
+        },
+        "overflow_returns_error": {
+          "type": "boolean"
+        }
+      },
+      "edit_regions": {},
+      "max_diff_loc": 80,
+      "dataset_entry_id": "C-002",
+      "set_id": "protocol-improvement-v2.1",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-v2.1/C-002",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "PEX-C03",
+      "task_type": "ERROR_ANALYSIS",
+      "goal": "Extract five facts about HighLoad event generation and its ordering relative to memory events.",
+      "interface": "Return the exact five typed fields declared in answer_fields; describe existing code only.",
+      "constraints": [
+        "One behavior only; retain interfaces, acceptance tests, dependencies and dry-run authority.",
+        "Rust code must pass rustfmt and clippy; never regenerate markers or full files."
+      ],
+      "acceptance_cases": [
+        "All five facts reflect the cited implementation."
+      ],
+      "done_when": [
+        "All fixed targeted tests and lint pass without changes outside declared bodies."
+      ],
+      "allowed_files": [],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": false,
+      "edit_location_known": false,
+      "answer_fields": {
+        "load_comparison": {
+          "type": "string",
+          "enum": [
+            "strict_gt",
+            "greater_or_equal",
+            "equal"
+          ]
+        },
+        "load_multiplier": {
+          "type": "integer"
+        },
+        "zero_cpu_load_event": {
+          "type": "boolean"
+        },
+        "non_finite_load_event": {
+          "type": "boolean"
+        },
+        "memory_event_precedes_load": {
+          "type": "boolean"
+        }
+      },
+      "edit_regions": {},
+      "max_diff_loc": 80,
+      "dataset_entry_id": "C-003",
+      "set_id": "protocol-improvement-v2.1",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/protocol-improvement-v2.1/C-003",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "protocol-improvement-v2.1",
+    "source_set": "protocol-improvement-v2.1",
+    "entries": 9,
+    "structured_result_records": 24,
+    "task_ids_with_structured_results": 9,
+    "task_ids_without_structured_results": [],
+    "historical_reports": [
+      {
+        "file": "results/protocol-improvement-v2.1/RESULTS_JA.md",
+        "source_report": "protocol-improvement-v2.1/RESULTS_JA.md",
+        "source_sha256": "80b5b1b4cdacc50f89daa387a76f456655889fa2088de019dfee4df0c65d304d"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

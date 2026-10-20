@@ -1,0 +1,3278 @@
+{
+  "set_id": "family-gated-local-router-228",
+  "entry_count": 36,
+  "tasks": [
+    {
+      "task_id": "FGR228-001",
+      "task_type": "REPO_EDIT",
+      "goal": "Render policy decision as a three-state audit receipt",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn policy_outcome_receipt(record: &ncos_core::AuditRecord) -> String. Return policy=allow, policy=deny, policy=confirm, or policy=missing followed by exactly one LF according to optional policy decision. Ignore reason and preserve input.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn policy_outcome_receipt(record: &ncos_core::AuditRecord) -> String.",
+        "Return policy=allow, policy=deny, policy=confirm, or policy=missing followed by exactly one LF according to optional policy decision. Ignore reason and preserve input.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn policy_outcome_receipt(record: &ncos_core::AuditRecord) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return policy=allow, policy=deny, policy=confirm, or policy=missing followed by exactly one LF according to optional policy decision. Ignore reason and preserve input.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-001/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "RECEIPT",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-001/crates/ncos-events/src/lib.rs": [
+          "policy_outcome_receipt"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-001",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-001",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-002",
+      "task_type": "REPO_EDIT",
+      "goal": "Render action proposal presence and target byte length",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn proposal_size_receipt(record: &ncos_core::AuditRecord) -> String. None proposal returns proposal=missing plus LF. Some proposal returns target_bytes=N plus LF using UTF-8 byte length, including empty and Unicode target. No other fields or changes.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn proposal_size_receipt(record: &ncos_core::AuditRecord) -> String.",
+        "None proposal returns proposal=missing plus LF. Some proposal returns target_bytes=N plus LF using UTF-8 byte length, including empty and Unicode target. No other fields or changes.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn proposal_size_receipt(record: &ncos_core::AuditRecord) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "None proposal returns proposal=missing plus LF. Some proposal returns target_bytes=N plus LF using UTF-8 byte length, including empty and Unicode target. No other fields or changes.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-002/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "RECEIPT",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-002/crates/ncos-events/src/lib.rs": [
+          "proposal_size_receipt"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-002",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-002",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-003",
+      "task_type": "REPO_EDIT",
+      "goal": "Render dry-run execution status without inferring verification",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn execution_mode_receipt(record: &ncos_core::AuditRecord) -> String. Return execution=dry-run, execution=blocked, or execution=missing plus exactly LF based only on optional execution.status. changed/detail must not alter it.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn execution_mode_receipt(record: &ncos_core::AuditRecord) -> String.",
+        "Return execution=dry-run, execution=blocked, or execution=missing plus exactly LF based only on optional execution.status. changed/detail must not alter it.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn execution_mode_receipt(record: &ncos_core::AuditRecord) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return execution=dry-run, execution=blocked, or execution=missing plus exactly LF based only on optional execution.status. changed/detail must not alter it.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-003/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "RECEIPT",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-003/crates/ncos-events/src/lib.rs": [
+          "execution_mode_receipt"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-003",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-003",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-004",
+      "task_type": "REPO_EDIT",
+      "goal": "Render audit schema version in an exact receipt",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn schema_version_receipt(record: &ncos_core::AuditRecord) -> String. Return schema_version=N plus LF using full unsigned schema_version decimal, including zero and u32::MAX. No validation or other fields.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn schema_version_receipt(record: &ncos_core::AuditRecord) -> String.",
+        "Return schema_version=N plus LF using full unsigned schema_version decimal, including zero and u32::MAX. No validation or other fields.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn schema_version_receipt(record: &ncos_core::AuditRecord) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return schema_version=N plus LF using full unsigned schema_version decimal, including zero and u32::MAX. No validation or other fields.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-004/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "RECEIPT",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-004/crates/ncos-events/src/lib.rs": [
+          "schema_version_receipt"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-004",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-004",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-005",
+      "task_type": "REPO_EDIT",
+      "goal": "Render requester UTF-8 byte length in an exact receipt",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn requester_length_receipt(record: &ncos_core::AuditRecord) -> String. Return requester_bytes=N plus exactly one LF, N UTF-8 byte length of intent.requested_by. Empty and Unicode supported, no trimming/escaping or input changes.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn requester_length_receipt(record: &ncos_core::AuditRecord) -> String.",
+        "Return requester_bytes=N plus exactly one LF, N UTF-8 byte length of intent.requested_by. Empty and Unicode supported, no trimming/escaping or input changes.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn requester_length_receipt(record: &ncos_core::AuditRecord) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return requester_bytes=N plus exactly one LF, N UTF-8 byte length of intent.requested_by. Empty and Unicode supported, no trimming/escaping or input changes.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-005/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "RECEIPT",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-005/crates/ncos-events/src/lib.rs": [
+          "requester_length_receipt"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-005",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-005",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-006",
+      "task_type": "REPO_EDIT",
+      "goal": "Render logical CPU sample count without treating zero as missing",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn cpu_inventory_receipt(state: &SystemState) -> String. Return logical_cpus=N plus exactly one LF from logical_cpus including zero and usize::MAX. No load calculations; preserve state.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn cpu_inventory_receipt(state: &SystemState) -> String.",
+        "Return logical_cpus=N plus exactly one LF from logical_cpus including zero and usize::MAX. No load calculations; preserve state.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn cpu_inventory_receipt(state: &SystemState) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return logical_cpus=N plus exactly one LF from logical_cpus including zero and usize::MAX. No load calculations; preserve state.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-006/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "RECEIPT",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-006/crates/ncos-events/src/lib.rs": [
+          "cpu_inventory_receipt"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-006",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-006",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-007",
+      "task_type": "REPO_EDIT",
+      "goal": "Borrow last nonempty audit short reason without trimming",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn last_audit_reason(records: &[ncos_core::AuditRecord]) -> Option<&str>. Return borrowed short_reason from last row whose short_reason is nonempty. Whitespace is nonempty. Preserve Unicode/order; None if absent. Pointer must refer to original string.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn last_audit_reason(records: &[ncos_core::AuditRecord]) -> Option<&str>.",
+        "Return borrowed short_reason from last row whose short_reason is nonempty. Whitespace is nonempty. Preserve Unicode/order; None if absent. Pointer must refer to original string.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn last_audit_reason(records: &[ncos_core::AuditRecord]) -> Option<&str>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return borrowed short_reason from last row whose short_reason is nonempty. Whitespace is nonempty. Preserve Unicode/order; None if absent. Pointer must refer to original string.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-007/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "BORROW",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-007/crates/ncos-events/src/lib.rs": [
+          "last_audit_reason"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-007",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-007",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-008",
+      "task_type": "REPO_EDIT",
+      "goal": "Borrow identifiers of unusual connection events in order",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn unusual_event_ids(events: &[ncos_core::Event]) -> Vec<&str>. Return borrowed id slices only for UnusualConnection events. Keep order, duplicates and empty IDs; no cloning/trimming.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn unusual_event_ids(events: &[ncos_core::Event]) -> Vec<&str>.",
+        "Return borrowed id slices only for UnusualConnection events. Keep order, duplicates and empty IDs; no cloning/trimming.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn unusual_event_ids(events: &[ncos_core::Event]) -> Vec<&str>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return borrowed id slices only for UnusualConnection events. Keep order, duplicates and empty IDs; no cloning/trimming.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-008/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "BORROW",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-008/crates/ncos-events/src/lib.rs": [
+          "unusual_event_ids"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-008",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-008",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-009",
+      "task_type": "REPO_EDIT",
+      "goal": "Borrow first nonempty constraint of an intent",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn first_present_constraint(intent: &ncos_core::Intent) -> Option<&str>. Return borrowed first nonempty constraints entry. Whitespace counts as present; do not trim, clone or deduplicate. None if absent.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn first_present_constraint(intent: &ncos_core::Intent) -> Option<&str>.",
+        "Return borrowed first nonempty constraints entry. Whitespace counts as present; do not trim, clone or deduplicate. None if absent.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn first_present_constraint(intent: &ncos_core::Intent) -> Option<&str>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return borrowed first nonempty constraints entry. Whitespace counts as present; do not trim, clone or deduplicate. None if absent.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-009/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "BORROW",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-009/crates/ncos-events/src/lib.rs": [
+          "first_present_constraint"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-009",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-009",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-010",
+      "task_type": "REPO_EDIT",
+      "goal": "Borrow proposal target only when its risk is low",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn low_risk_proposal_target(proposal: &ncos_core::ActionProposal) -> Option<&str>. Return borrowed target for Risk::Low, including empty target, otherwise None for Medium/High. Ignore reversible/action; preserve input.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn low_risk_proposal_target(proposal: &ncos_core::ActionProposal) -> Option<&str>.",
+        "Return borrowed target for Risk::Low, including empty target, otherwise None for Medium/High. Ignore reversible/action; preserve input.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn low_risk_proposal_target(proposal: &ncos_core::ActionProposal) -> Option<&str>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return borrowed target for Risk::Low, including empty target, otherwise None for Medium/High. Ignore reversible/action; preserve input.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-010/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "BORROW",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-010/crates/ncos-events/src/lib.rs": [
+          "low_risk_proposal_target"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-010",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-010",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-011",
+      "task_type": "REPO_EDIT",
+      "goal": "Borrow scope of first passing audit verification",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn first_passing_scope(records: &[ncos_core::AuditRecord]) -> Option<&str>. Return borrowed verification.scope from first Some(passed=true). Skip missing/failed, preserve empty/Unicode scope, None if absent.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn first_passing_scope(records: &[ncos_core::AuditRecord]) -> Option<&str>.",
+        "Return borrowed verification.scope from first Some(passed=true). Skip missing/failed, preserve empty/Unicode scope, None if absent.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn first_passing_scope(records: &[ncos_core::AuditRecord]) -> Option<&str>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return borrowed verification.scope from first Some(passed=true). Skip missing/failed, preserve empty/Unicode scope, None if absent.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-011/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "BORROW",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-011/crates/ncos-events/src/lib.rs": [
+          "first_passing_scope"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-011",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-011",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-012",
+      "task_type": "REPO_EDIT",
+      "goal": "Borrow all denied audit policy reasons in recorded order",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn denied_policy_reasons(records: &[ncos_core::AuditRecord]) -> Vec<&str>. Return borrowed policy.reason for Decision::Deny only, preserving order, empty values and duplicates. Missing/Allow/RequireConfirmation are excluded.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn denied_policy_reasons(records: &[ncos_core::AuditRecord]) -> Vec<&str>.",
+        "Return borrowed policy.reason for Decision::Deny only, preserving order, empty values and duplicates. Missing/Allow/RequireConfirmation are excluded.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn denied_policy_reasons(records: &[ncos_core::AuditRecord]) -> Vec<&str>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return borrowed policy.reason for Decision::Deny only, preserving order, empty values and duplicates. Missing/Allow/RequireConfirmation are excluded.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-012/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "BORROW",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-012/crates/ncos-events/src/lib.rs": [
+          "denied_policy_reasons"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-012",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-012",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-013",
+      "task_type": "REPO_EDIT",
+      "goal": "Collect root process IDs including duplicate samples",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn root_process_ids(state: &SystemState) -> Vec<u32>. Return pids for processes with parent_pid == 0, in input order. Keep duplicates and pid zero; ignore rss/truncation; preserve state.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn root_process_ids(state: &SystemState) -> Vec<u32>.",
+        "Return pids for processes with parent_pid == 0, in input order. Keep duplicates and pid zero; ignore rss/truncation; preserve state.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn root_process_ids(state: &SystemState) -> Vec<u32>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return pids for processes with parent_pid == 0, in input order. Keep duplicates and pid zero; ignore rss/truncation; preserve state.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-013/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "COLLECTION",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-013/crates/ncos-events/src/lib.rs": [
+          "root_process_ids"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-013",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-013",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-014",
+      "task_type": "REPO_EDIT",
+      "goal": "Collect indices of nonempty warning entries",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn present_warning_indices(state: &SystemState) -> Vec<usize>. Return indices whose warning is not empty. Whitespace counts as nonempty; preserve index order/duplicates and state.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn present_warning_indices(state: &SystemState) -> Vec<usize>.",
+        "Return indices whose warning is not empty. Whitespace counts as nonempty; preserve index order/duplicates and state.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn present_warning_indices(state: &SystemState) -> Vec<usize>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return indices whose warning is not empty. Whitespace counts as nonempty; preserve index order/duplicates and state.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-014/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "COLLECTION",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-014/crates/ncos-events/src/lib.rs": [
+          "present_warning_indices"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-014",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-014",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-015",
+      "task_type": "REPO_EDIT",
+      "goal": "Collect owned target values for suspicious process events",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn suspicious_process_targets(events: &[ncos_core::Event]) -> Vec<String>. Return owned target clones for SuspiciousProcess events only, preserving order, empty values and duplicates. Other kinds excluded; preserve source.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn suspicious_process_targets(events: &[ncos_core::Event]) -> Vec<String>.",
+        "Return owned target clones for SuspiciousProcess events only, preserving order, empty values and duplicates. Other kinds excluded; preserve source.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn suspicious_process_targets(events: &[ncos_core::Event]) -> Vec<String>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return owned target clones for SuspiciousProcess events only, preserving order, empty values and duplicates. Other kinds excluded; preserve source.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-015/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "COLLECTION",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-015/crates/ncos-events/src/lib.rs": [
+          "suspicious_process_targets"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-015",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-015",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-016",
+      "task_type": "REPO_EDIT",
+      "goal": "Collect record indices with passing verification",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn passing_verification_indices(records: &[ncos_core::AuditRecord]) -> Vec<usize>. Return indices of Some(passed=true) verification. Missing/false excluded; preserve order; no inference from execution/policy.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn passing_verification_indices(records: &[ncos_core::AuditRecord]) -> Vec<usize>.",
+        "Return indices of Some(passed=true) verification. Missing/false excluded; preserve order; no inference from execution/policy.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn passing_verification_indices(records: &[ncos_core::AuditRecord]) -> Vec<usize>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return indices of Some(passed=true) verification. Missing/false excluded; preserve order; no inference from execution/policy.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-016/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "COLLECTION",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-016/crates/ncos-events/src/lib.rs": [
+          "passing_verification_indices"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-016",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-016",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-017",
+      "task_type": "REPO_EDIT",
+      "goal": "Flatten nonempty event evidence without deduplication",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn present_evidence_items(events: &[ncos_core::Event]) -> Vec<String>. Flatten all event evidence in event/entry order, excluding exactly empty strings only. Whitespace retained; clone owned Strings, preserve duplicates/input.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn present_evidence_items(events: &[ncos_core::Event]) -> Vec<String>.",
+        "Flatten all event evidence in event/entry order, excluding exactly empty strings only. Whitespace retained; clone owned Strings, preserve duplicates/input.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn present_evidence_items(events: &[ncos_core::Event]) -> Vec<String>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Flatten all event evidence in event/entry order, excluding exactly empty strings only. Whitespace retained; clone owned Strings, preserve duplicates/input.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-017/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "COLLECTION",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-017/crates/ncos-events/src/lib.rs": [
+          "present_evidence_items"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-017",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-017",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-018",
+      "task_type": "REPO_EDIT",
+      "goal": "Collect distinct nonzero parent PIDs in first-seen order",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn unique_nonzero_parents(state: &SystemState) -> Vec<u32>. Return distinct nonzero parent_pid values in first-seen order. Do not sort; ignore child PID/RSS; retain u32::MAX; preserve state.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn unique_nonzero_parents(state: &SystemState) -> Vec<u32>.",
+        "Return distinct nonzero parent_pid values in first-seen order. Do not sort; ignore child PID/RSS; retain u32::MAX; preserve state.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn unique_nonzero_parents(state: &SystemState) -> Vec<u32>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return distinct nonzero parent_pid values in first-seen order. Do not sort; ignore child PID/RSS; retain u32::MAX; preserve state.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-018/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "COLLECTION",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-018/crates/ncos-events/src/lib.rs": [
+          "unique_nonzero_parents"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-018",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-018",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-019",
+      "task_type": "REPO_EDIT",
+      "goal": "Convert clamped used memory to saturating byte count",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn used_memory_bytes(sample: &ncos_core::Memory) -> u64. Compute total_kib saturating_sub available_kib, then saturating multiply by 1024. Invalid available>total gives zero. Preserve sample.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn used_memory_bytes(sample: &ncos_core::Memory) -> u64.",
+        "Compute total_kib saturating_sub available_kib, then saturating multiply by 1024. Invalid available>total gives zero. Preserve sample.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn used_memory_bytes(sample: &ncos_core::Memory) -> u64.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Compute total_kib saturating_sub available_kib, then saturating multiply by 1024. Invalid available>total gives zero. Preserve sample.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-019/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "NUMERIC",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-019/crates/ncos-events/src/lib.rs": [
+          "used_memory_bytes"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-019",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-019",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-020",
+      "task_type": "REPO_EDIT",
+      "goal": "Find maximum RSS observation including an empty sample",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn maximum_sample_rss(state: &SystemState) -> u64. Return maximum process rss_kib, zero for empty. No sum, truncation adjustment or PID filtering; preserve state.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn maximum_sample_rss(state: &SystemState) -> u64.",
+        "Return maximum process rss_kib, zero for empty. No sum, truncation adjustment or PID filtering; preserve state.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn maximum_sample_rss(state: &SystemState) -> u64.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return maximum process rss_kib, zero for empty. No sum, truncation adjustment or PID filtering; preserve state.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-020/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "NUMERIC",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-020/crates/ncos-events/src/lib.rs": [
+          "maximum_sample_rss"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-020",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-020",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-021",
+      "task_type": "REPO_EDIT",
+      "goal": "Count intent constraint entries across audit records",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn audit_constraint_count(records: &[ncos_core::AuditRecord]) -> usize. Sum all intent.constraints.len() with saturating usize addition. Empty strings and duplicate entries count. Zero for empty records; preserve rows.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn audit_constraint_count(records: &[ncos_core::AuditRecord]) -> usize.",
+        "Sum all intent.constraints.len() with saturating usize addition. Empty strings and duplicate entries count. Zero for empty records; preserve rows.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn audit_constraint_count(records: &[ncos_core::AuditRecord]) -> usize.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Sum all intent.constraints.len() with saturating usize addition. Empty strings and duplicate entries count. Zero for empty records; preserve rows.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-021/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "NUMERIC",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-021/crates/ncos-events/src/lib.rs": [
+          "audit_constraint_count"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-021",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-021",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-022",
+      "task_type": "REPO_EDIT",
+      "goal": "Detect observed inference calls strictly above budget",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn inference_calls_over_budget(usage: &ncos_core::ResourceUsage, budget: &ncos_core::ResourceBudget) -> bool. Return true iff inference_calls > max_inference_calls. Equality and zero/zero are false. Ignore other token/latency/class fields.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn inference_calls_over_budget(usage: &ncos_core::ResourceUsage, budget: &ncos_core::ResourceBudget) -> bool.",
+        "Return true iff inference_calls > max_inference_calls. Equality and zero/zero are false. Ignore other token/latency/class fields.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn inference_calls_over_budget(usage: &ncos_core::ResourceUsage, budget: &ncos_core::ResourceBudget) -> bool.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return true iff inference_calls > max_inference_calls. Equality and zero/zero are false. Ignore other token/latency/class fields.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-022/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "NUMERIC",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-022/crates/ncos-events/src/lib.rs": [
+          "inference_calls_over_budget"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-022",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-022",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-023",
+      "task_type": "REPO_EDIT",
+      "goal": "Compute nonnegative age of an audit observation",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn audit_observation_age(record: &ncos_core::AuditRecord, now_ms: u128) -> u128. Return now_ms saturating_sub observed_unix_ms. Future observation age is zero; preserve full u128, ignore usage.elapsed_ms.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn audit_observation_age(record: &ncos_core::AuditRecord, now_ms: u128) -> u128.",
+        "Return now_ms saturating_sub observed_unix_ms. Future observation age is zero; preserve full u128, ignore usage.elapsed_ms.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn audit_observation_age(record: &ncos_core::AuditRecord, now_ms: u128) -> u128.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return now_ms saturating_sub observed_unix_ms. Future observation age is zero; preserve full u128, ignore usage.elapsed_ms.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-023/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "NUMERIC",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-023/crates/ncos-events/src/lib.rs": [
+          "audit_observation_age"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-023",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-023",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-024",
+      "task_type": "REPO_EDIT",
+      "goal": "Find minimum available memory over stored observations",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn minimum_available_kib(states: &[SystemState]) -> Option<u64>. Return Some(min memory.available_kib) for nonempty states, None for empty. Retain zero and invalid available>total sample without clamping.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn minimum_available_kib(states: &[SystemState]) -> Option<u64>.",
+        "Return Some(min memory.available_kib) for nonempty states, None for empty. Retain zero and invalid available>total sample without clamping.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn minimum_available_kib(states: &[SystemState]) -> Option<u64>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return Some(min memory.available_kib) for nonempty states, None for empty. Retain zero and invalid available>total sample without clamping.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-024/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "NUMERIC",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-024/crates/ncos-events/src/lib.rs": [
+          "minimum_available_kib"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-024",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-024",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-025",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Locate first blocked execution record index",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn first_blocked_record_index(records: &[ncos_core::AuditRecord]) -> Option<usize>. Return index of first Some execution with status Blocked. Ignore changed flag; skip missing/DryRun; None if absent. Preserve unrelated CPU control behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn first_blocked_record_index(records: &[ncos_core::AuditRecord]) -> Option<usize>.",
+        "Return index of first Some execution with status Blocked. Ignore changed flag; skip missing/DryRun; None if absent. Preserve unrelated CPU control behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn first_blocked_record_index(records: &[ncos_core::AuditRecord]) -> Option<usize>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return index of first Some execution with status Blocked. Ignore changed flag; skip missing/DryRun; None if absent. Preserve unrelated CPU control behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-025/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "business_category": "DISCOVERY",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/FGR228-025/crates/ncos-events/src/lib.rs": [
+          "first_blocked_record_index",
+          "fgr_unrelated_cpu_sample"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-025",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-025",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-026",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Locate all event indices matching exact target",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn matching_target_indices(events: &[ncos_core::Event], target: &str) -> Vec<usize>. Return indices where event.target exactly equals target, no trimming/case folding. Keep all matches across kinds; empty/Unicode valid. Preserve unrelated CPU behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn matching_target_indices(events: &[ncos_core::Event], target: &str) -> Vec<usize>.",
+        "Return indices where event.target exactly equals target, no trimming/case folding. Keep all matches across kinds; empty/Unicode valid. Preserve unrelated CPU behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn matching_target_indices(events: &[ncos_core::Event], target: &str) -> Vec<usize>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return indices where event.target exactly equals target, no trimming/case folding. Keep all matches across kinds; empty/Unicode valid. Preserve unrelated CPU behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-026/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "business_category": "DISCOVERY",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/FGR228-026/crates/ncos-events/src/lib.rs": [
+          "matching_target_indices",
+          "fgr_unrelated_cpu_sample"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-026",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-026",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-027",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Count explicitly failed audit verifications",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn failed_verification_count(records: &[ncos_core::AuditRecord]) -> usize. Count only Some verification with passed=false. Missing does not count; ignore policy/execution. Preserve unrelated CPU behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn failed_verification_count(records: &[ncos_core::AuditRecord]) -> usize.",
+        "Count only Some verification with passed=false. Missing does not count; ignore policy/execution. Preserve unrelated CPU behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn failed_verification_count(records: &[ncos_core::AuditRecord]) -> usize.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Count only Some verification with passed=false. Missing does not count; ignore policy/execution. Preserve unrelated CPU behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-027/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "business_category": "DISCOVERY",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/FGR228-027/crates/ncos-events/src/lib.rs": [
+          "failed_verification_count",
+          "fgr_unrelated_cpu_sample"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-027",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-027",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-028",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Locate last nonempty warning index in a sample",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn last_present_warning_index(state: &SystemState) -> Option<usize>. Return last index with nonempty warning; whitespace is nonempty, None if absent. Preserve unrelated CPU behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn last_present_warning_index(state: &SystemState) -> Option<usize>.",
+        "Return last index with nonempty warning; whitespace is nonempty, None if absent. Preserve unrelated CPU behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn last_present_warning_index(state: &SystemState) -> Option<usize>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return last index with nonempty warning; whitespace is nonempty, None if absent. Preserve unrelated CPU behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-028/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "business_category": "DISCOVERY",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/FGR228-028/crates/ncos-events/src/lib.rs": [
+          "last_present_warning_index",
+          "fgr_unrelated_cpu_sample"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-028",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-028",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-029",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Count observations within an inclusive freshness window",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn fresh_observation_count(states: &[SystemState], now_ms: u128, max_age_ms: u128) -> usize. Count states with observed_unix_ms <= now_ms and now_ms-observed_unix_ms <= max_age_ms. Future timestamps excluded, boundary included, no overflow. Preserve unrelated CPU behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn fresh_observation_count(states: &[SystemState], now_ms: u128, max_age_ms: u128) -> usize.",
+        "Count states with observed_unix_ms <= now_ms and now_ms-observed_unix_ms <= max_age_ms. Future timestamps excluded, boundary included, no overflow. Preserve unrelated CPU behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn fresh_observation_count(states: &[SystemState], now_ms: u128, max_age_ms: u128) -> usize.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Count states with observed_unix_ms <= now_ms and now_ms-observed_unix_ms <= max_age_ms. Future timestamps excluded, boundary included, no overflow. Preserve unrelated CPU behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-029/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "business_category": "DISCOVERY",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/FGR228-029/crates/ncos-events/src/lib.rs": [
+          "fresh_observation_count",
+          "fgr_unrelated_cpu_sample"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-029",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-029",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-030",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Select first process PID having highest RSS",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn highest_rss_process_pid(state: &SystemState) -> Option<u32>. Return PID of process with largest rss_kib, first input wins ties (including all zero). None if no processes; do not sort input. Preserve unrelated CPU behavior.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn highest_rss_process_pid(state: &SystemState) -> Option<u32>.",
+        "Return PID of process with largest rss_kib, first input wins ties (including all zero). None if no processes; do not sort input. Preserve unrelated CPU behavior.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn highest_rss_process_pid(state: &SystemState) -> Option<u32>.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return PID of process with largest rss_kib, first input wins ties (including all zero). None if no processes; do not sort input. Preserve unrelated CPU behavior.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-030/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "business_category": "DISCOVERY",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/FGR228-030/crates/ncos-events/src/lib.rs": [
+          "highest_rss_process_pid",
+          "fgr_unrelated_cpu_sample"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-030",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-030",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-031",
+      "task_type": "REPO_EDIT",
+      "goal": "Delegate optional disk inventory rendering to protected formatter",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn disk_inventory_caption(state: &SystemState) -> String. Return protected fgr_optional_count on disk_count for all inputs. None -> n/a, Some(n) -> unsigned decimal. No inline duplicate conversion or other fields.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn disk_inventory_caption(state: &SystemState) -> String.",
+        "Return protected fgr_optional_count on disk_count for all inputs. None -> n/a, Some(n) -> unsigned decimal. No inline duplicate conversion or other fields.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn disk_inventory_caption(state: &SystemState) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return protected fgr_optional_count on disk_count for all inputs. None -> n/a, Some(n) -> unsigned decimal. No inline duplicate conversion or other fields.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-031/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "ADAPTER",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-031/crates/ncos-events/src/lib.rs": [
+          "disk_inventory_caption"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-031",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-031",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-032",
+      "task_type": "REPO_EDIT",
+      "goal": "Delegate process RSS byte conversion to protected saturation helper",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn process_rss_bytes(process: &ncos_core::Process) -> u64. Return protected fgr_sat_bytes on rss_kib, saturating at u64::MAX. No inline multiplication/cast or parent/PID use.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn process_rss_bytes(process: &ncos_core::Process) -> u64.",
+        "Return protected fgr_sat_bytes on rss_kib, saturating at u64::MAX. No inline multiplication/cast or parent/PID use.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn process_rss_bytes(process: &ncos_core::Process) -> u64.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return protected fgr_sat_bytes on rss_kib, saturating at u64::MAX. No inline multiplication/cast or parent/PID use.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-032/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "ADAPTER",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-032/crates/ncos-events/src/lib.rs": [
+          "process_rss_bytes"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-032",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-032",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-033",
+      "task_type": "REPO_EDIT",
+      "goal": "Delegate event kind display tag to protected classifier",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn event_kind_caption(event: &ncos_core::Event) -> String. Call protected fgr_kind_tag on event.kind and return owned String from that tag. Do not inline classification; target/evidence ignored.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn event_kind_caption(event: &ncos_core::Event) -> String.",
+        "Call protected fgr_kind_tag on event.kind and return owned String from that tag. Do not inline classification; target/evidence ignored.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn event_kind_caption(event: &ncos_core::Event) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Call protected fgr_kind_tag on event.kind and return owned String from that tag. Do not inline classification; target/evidence ignored.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-033/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "ADAPTER",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-033/crates/ncos-events/src/lib.rs": [
+          "event_kind_caption"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-033",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-033",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-034",
+      "task_type": "REPO_EDIT",
+      "goal": "Delegate compact reason rendering to protected whitespace helper",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn compact_audit_reason(record: &ncos_core::AuditRecord) -> String. Return protected fgr_compact_text on short_reason. Helper collapses Unicode whitespace to one ASCII space and strips ends. Do not reimplement inline.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn compact_audit_reason(record: &ncos_core::AuditRecord) -> String.",
+        "Return protected fgr_compact_text on short_reason. Helper collapses Unicode whitespace to one ASCII space and strips ends. Do not reimplement inline.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn compact_audit_reason(record: &ncos_core::AuditRecord) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return protected fgr_compact_text on short_reason. Helper collapses Unicode whitespace to one ASCII space and strips ends. Do not reimplement inline.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-034/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "ADAPTER",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-034/crates/ncos-events/src/lib.rs": [
+          "compact_audit_reason"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-034",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-034",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-035",
+      "task_type": "REPO_EDIT",
+      "goal": "Delegate raw memory pair display to protected presentation helper",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn memory_observation_caption(state: &SystemState) -> String. Return protected fgr_memory_label applied to state.memory. It displays total_kib:available_kib decimal without clamping. Do not duplicate formatting or inspect other fields.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn memory_observation_caption(state: &SystemState) -> String.",
+        "Return protected fgr_memory_label applied to state.memory. It displays total_kib:available_kib decimal without clamping. Do not duplicate formatting or inspect other fields.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn memory_observation_caption(state: &SystemState) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Return protected fgr_memory_label applied to state.memory. It displays total_kib:available_kib decimal without clamping. Do not duplicate formatting or inspect other fields.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-035/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "ADAPTER",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-035/crates/ncos-events/src/lib.rs": [
+          "memory_observation_caption"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-035",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-035",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "FGR228-036",
+      "task_type": "REPO_EDIT",
+      "goal": "Delegate intent risk label to protected risk presentation helper",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Preserve exact signature: pub fn intent_risk_caption(intent: &ncos_core::Intent) -> String. Call protected fgr_risk_label on risk_budget and convert returned static slice to owned String. No inline match, no inference from goal/constraints.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Preserve exact signature: pub fn intent_risk_caption(intent: &ncos_core::Intent) -> String.",
+        "Call protected fgr_risk_label on risk_budget and convert returned static slice to owned String. No inline match, no inference from goal/constraints.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Preserve exact signature: pub fn intent_risk_caption(intent: &ncos_core::Intent) -> String.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Call protected fgr_risk_label on risk_budget and convert returned static slice to owned String. No inline match, no inference from goal/constraints.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/FGR228-036/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "business_category": "ADAPTER",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/FGR228-036/crates/ncos-events/src/lib.rs": [
+          "intent_risk_caption"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "FGR228-036",
+      "set_id": "family-gated-local-router-228",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/family-gated-local-router-228/FGR228-036",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "family-gated-local-router-228",
+    "source_set": "family-gated-local-router-228",
+    "entries": 36,
+    "structured_result_records": 88,
+    "task_ids_with_structured_results": 36,
+    "task_ids_without_structured_results": [],
+    "historical_reports": [
+      {
+        "file": "results/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.before-table-fix.md",
+        "source_report": "family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.before-table-fix.md",
+        "source_sha256": "c52e66b014fd6e00b121ff9a832ae66819274235f8fb3ff44ca1af392325283a"
+      },
+      {
+        "file": "results/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.md",
+        "source_report": "family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.md",
+        "source_sha256": "1f90d3f11ed01cd0e7a46f632b7e175cba678c13df7b7dbafa57cbe39b5cab94"
+      },
+      {
+        "file": "results/family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.original.md",
+        "source_report": "family-gated-local-router-228/RESULTS_FAMILY_ROUTER_JA.original.md",
+        "source_sha256": "b861e808e459faab93db781d61518814d33acb4d4acbcba972c1eb75bc03e5ed"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

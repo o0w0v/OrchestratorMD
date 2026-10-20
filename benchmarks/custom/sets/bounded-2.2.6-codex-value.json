@@ -1,0 +1,485 @@
+{
+  "set_id": "bounded-2.2.6-codex-value",
+  "entry_count": 5,
+  "tasks": [
+    {
+      "task_id": "CVB-001",
+      "task_type": "REPO_EDIT",
+      "goal": "CLIに観測process sampleのPID範囲を表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement pid_range(&[ncos_core::Process]) -> String. Empty returns none; otherwise return min..max in unsigned decimal, including singleton N..N. Use the minimum and maximum pid across the entire possibly unsorted sample. Do not sort/mutate the slice or infer unsampled processes. Ignore parent_pid and rss_kib. Handle duplicates, zero and u32::MAX as supplied numeric snapshot values.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement pid_range(&[ncos_core::Process]) -> String. Empty returns none; otherwise return min..max in unsigned decimal, including singleton N..N. Use the minimum and maximum pid across the entire possibly unsorted sample.",
+        "Do not sort/mutate the slice or infer unsampled processes. Ignore parent_pid and rss_kib. Handle duplicates, zero and u32::MAX as supplied numeric snapshot values.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement pid_range(&[ncos_core::Process]) -> String. Empty returns none; otherwise return min..max in unsigned decimal, including singleton N..N. Use the minimum and maximum pid across the entire possibly unsorted sample.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Do not sort/mutate the slice or infer unsampled processes. Ignore parent_pid and rss_kib. Handle duplicates, zero and u32::MAX as supplied numeric snapshot values.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/CVB-001/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/CVB-001/crates/ncos-cli/src/main.rs": [
+          "pid_range"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "CVB-001",
+      "set_id": "bounded-2.2.6-codex-value",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-2.2.6-codex-value/CVB-001",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "CVB-002",
+      "task_type": "REPO_EDIT",
+      "goal": "CLIにauditのpolicy disposition件数を集約表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Implement policy_overview(&[ncos_core::AuditRecord]) -> String. Count Some(policy).decision Allow, Deny, RequireConfirmation and absent policy separately. Return exactly allow=A; deny=D; confirm=C; unevaluated=U in that order, including zeros. Count each input record once including duplicate records. Do not derive policy from proposal/execution/verification/source, mutate records, evaluate policy, or change audit serialization.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Implement policy_overview(&[ncos_core::AuditRecord]) -> String. Count Some(policy).decision Allow, Deny, RequireConfirmation and absent policy separately. Return exactly allow=A; deny=D; confirm=C; unevaluated=U in that order, including zeros.",
+        "Count each input record once including duplicate records. Do not derive policy from proposal/execution/verification/source, mutate records, evaluate policy, or change audit serialization.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Implement policy_overview(&[ncos_core::AuditRecord]) -> String. Count Some(policy).decision Allow, Deny, RequireConfirmation and absent policy separately. Return exactly allow=A; deny=D; confirm=C; unevaluated=U in that order, including zeros.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Count each input record once including duplicate records. Do not derive policy from proposal/execution/verification/source, mutate records, evaluate policy, or change audit serialization.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/CVB-002/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/CVB-002/crates/ncos-cli/src/main.rs": [
+          "policy_overview"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "CVB-002",
+      "set_id": "bounded-2.2.6-codex-value",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-2.2.6-codex-value/CVB-002",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "CVB-003",
+      "task_type": "AGENTIC_CODING",
+      "goal": "MemoryPressure evidenceにsample内未観測parent件数を追記",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate only MemoryPressure evidence. Preserve its first evidence string exactly; append a second string parent_unobserved=N. When processes_truncated is false, N counts process rows whose nonzero parent_pid does not equal any pid in the sample. Count rows, not distinct parents. Ignore parent_pid=0. When processes_truncated is true append parent_unobserved=unknown instead. Do not infer an orphan or failure: this is sample visibility only. Preserve detection thresholds, event identity/target, HighLoad evidence and process order/data.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate only MemoryPressure evidence. Preserve its first evidence string exactly; append a second string parent_unobserved=N. When processes_truncated is false, N counts process rows whose nonzero parent_pid does not equal any pid in the sample. Count rows, not distinct parents. Ignore parent_pid=0.",
+        "When processes_truncated is true append parent_unobserved=unknown instead. Do not infer an orphan or failure: this is sample visibility only. Preserve detection thresholds, event identity/target, HighLoad evidence and process order/data.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate only MemoryPressure evidence. Preserve its first evidence string exactly; append a second string parent_unobserved=N. When processes_truncated is false, N counts process rows whose nonzero parent_pid does not equal any pid in the sample. Count rows, not distinct parents. Ignore parent_pid=0.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "When processes_truncated is true append parent_unobserved=unknown instead. Do not infer an orphan or failure: this is sample visibility only. Preserve detection thresholds, event identity/target, HighLoad evidence and process order/data.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/CVB-003/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/CVB-003/crates/ncos-events/src/lib.rs": [
+          "memory_evidence",
+          "load_evidence"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "CVB-003",
+      "set_id": "bounded-2.2.6-codex-value",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-2.2.6-codex-value/CVB-003",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "CVB-004",
+      "task_type": "AGENTIC_CODING",
+      "goal": "provider-rejected auditに保持済みreservationを表示",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate the provider-rejected audit reason in Runtime::handle. Change exactly its reason argument to Provider failed or exceeded resource contract; charged_calls=C; reserved_tokens=T using self.usage.inference_calls and self.usage.reserved_tokens at rejection time. The record helper takes &str. Preserve charges on provider error or over-budget response, no retries/refund, source/event/time and all other reasons. Do not log provider error text, infer actual tokens or alter authority/eligibility.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate the provider-rejected audit reason in Runtime::handle. Change exactly its reason argument to Provider failed or exceeded resource contract; charged_calls=C; reserved_tokens=T using self.usage.inference_calls and self.usage.reserved_tokens at rejection time.",
+        "The record helper takes &str. Preserve charges on provider error or over-budget response, no retries/refund, source/event/time and all other reasons. Do not log provider error text, infer actual tokens or alter authority/eligibility.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate the provider-rejected audit reason in Runtime::handle. Change exactly its reason argument to Provider failed or exceeded resource contract; charged_calls=C; reserved_tokens=T using self.usage.inference_calls and self.usage.reserved_tokens at rejection time.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "The record helper takes &str. Preserve charges on provider error or over-budget response, no retries/refund, source/event/time and all other reasons. Do not log provider error text, infer actual tokens or alter authority/eligibility.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/CVB-004/crates/ncos-agent/src/lib.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/CVB-004/crates/ncos-agent/src/lib.rs": [
+          "provider_rejected_reason",
+          "budget_reason"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "CVB-004",
+      "set_id": "bounded-2.2.6-codex-value",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-2.2.6-codex-value/CVB-004",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "CVB-005",
+      "task_type": "DEBUGGING",
+      "goal": "bounded telemetry readerのUTF-8境界によるsize診断誤分類を修正",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Debug read_bounded(&Path) -> Result<String,String>. Files over 65536 bytes must return telemetry size limit exceeded, even if the bounded prefix splits a multibyte UTF-8 character. Current read_to_string before size check wrongly reports telemetry unavailable. Read at most 65537 bytes (not the whole file). At size <=65536 return exact valid UTF-8 including empty/NUL; invalid UTF-8 or open/read failure returns telemetry unavailable. No retries, lossy decoding, file writes, dependencies, or changes elsewhere.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Debug read_bounded(&Path) -> Result<String,String>. Files over 65536 bytes must return telemetry size limit exceeded, even if the bounded prefix splits a multibyte UTF-8 character. Current read_to_string before size check wrongly reports telemetry unavailable.",
+        "Read at most 65537 bytes (not the whole file). At size <=65536 return exact valid UTF-8 including empty/NUL; invalid UTF-8 or open/read failure returns telemetry unavailable. No retries, lossy decoding, file writes, dependencies, or changes elsewhere.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Debug read_bounded(&Path) -> Result<String,String>. Files over 65536 bytes must return telemetry size limit exceeded, even if the bounded prefix splits a multibyte UTF-8 character. Current read_to_string before size check wrongly reports telemetry unavailable.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Read at most 65537 bytes (not the whole file). At size <=65536 return exact valid UTF-8 including empty/NUL; invalid UTF-8 or open/read failure returns telemetry unavailable. No retries, lossy decoding, file writes, dependencies, or changes elsewhere.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/CVB-005/crates/ncos-observer-linux/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/CVB-005/crates/ncos-observer-linux/src/lib.rs": [
+          "bounded_reader"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "CVB-005",
+      "set_id": "bounded-2.2.6-codex-value",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/bounded-2.2.6-codex-value/CVB-005",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "bounded-2.2.6-codex-value",
+    "source_set": "bounded-2.2.6-codex-value",
+    "entries": 5,
+    "structured_result_records": 0,
+    "task_ids_with_structured_results": 0,
+    "task_ids_without_structured_results": [
+      "CVB-001",
+      "CVB-002",
+      "CVB-003",
+      "CVB-004",
+      "CVB-005"
+    ],
+    "historical_reports": [
+      {
+        "file": "results/bounded-2.2.6-codex-value/RESULTS_A_COMPLETION_JA.md",
+        "source_report": "bounded-2.2.6-codex-value/RESULTS_A_COMPLETION_JA.md",
+        "source_sha256": "4f8f7e6795660790f68de48fa463a3873414c4e1c48c2406adc4b8aecafb81cb"
+      },
+      {
+        "file": "results/bounded-2.2.6-codex-value/RESULTS_CODEX_BASELINE_JA.md",
+        "source_report": "bounded-2.2.6-codex-value/RESULTS_CODEX_BASELINE_JA.md",
+        "source_sha256": "0c84749920f0f315f1914fce2df465a8b3f6a854ff404e071247bc550fc35a81"
+      },
+      {
+        "file": "results/bounded-2.2.6-codex-value/RESULTS_JA.md",
+        "source_report": "bounded-2.2.6-codex-value/RESULTS_JA.md",
+        "source_sha256": "d0c864f9cefefb4caaaee39c74f219440d3839385c657b0d37c0c58e5dbfc017"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

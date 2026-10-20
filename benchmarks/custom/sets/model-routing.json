@@ -1,0 +1,1881 @@
+{
+  "set_id": "model-routing",
+  "entry_count": 30,
+  "tasks": [
+    {
+      "task_id": "AGENTIC_CODING-01",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Batch report loses trailing items. Include full and final partial batches; size <=0 raises ValueError even if input empty. Locate the implementation using search and read tools, edit minimally, then run targeted tests. Use raw failures for at most one repair.",
+      "interface": "report.report(*args); underlying def split_batches(items: list[int], size: int) -> list[list[int]]:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            2
+          ],
+          "expected": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5
+            ]
+          ]
+        },
+        {
+          "args": [
+            [
+              1,
+              2
+            ],
+            2
+          ],
+          "expected": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            [
+              1
+            ],
+            0
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            [],
+            -1
+          ],
+          "raises": "ValueError"
+        }
+      ],
+      "allowed_files": [
+        "helpers.py"
+      ],
+      "regions": {
+        "helpers.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 14,
+      "entrypoint": "report.report",
+      "navigation": true,
+      "edit_regions": {
+        "helpers.py": "body"
+      },
+      "dataset_entry_id": "AGENTIC_CODING-01",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/AGENTIC_CODING-01",
+      "fixture_file_count": 4,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "AGENTIC_CODING-02",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Report picks lowest score, ties use earliest input occurrence; empty input returns None; no mutation. Locate the implementation using search and read tools, edit minimally, then run targeted tests. Use raw failures for at most one repair.",
+      "interface": "report.report(*args); underlying def pick_min(rows: list[dict]) -> dict | None:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null
+        },
+        {
+          "args": [
+            [
+              {
+                "id": "z",
+                "score": 1
+              },
+              {
+                "id": "a",
+                "score": 1
+              }
+            ]
+          ],
+          "expected": {
+            "id": "z",
+            "score": 1
+          }
+        },
+        {
+          "args": [
+            [
+              {
+                "id": "a",
+                "score": 2
+              },
+              {
+                "id": "b",
+                "score": 1
+              }
+            ]
+          ],
+          "expected": {
+            "id": "b",
+            "score": 1
+          }
+        }
+      ],
+      "allowed_files": [
+        "helpers.py"
+      ],
+      "regions": {
+        "helpers.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 14,
+      "entrypoint": "report.report",
+      "navigation": true,
+      "edit_regions": {
+        "helpers.py": "body"
+      },
+      "dataset_entry_id": "AGENTIC_CODING-02",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/AGENTIC_CODING-02",
+      "fixture_file_count": 4,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "AGENTIC_CODING-03",
+      "task_type": "AGENTIC_CODING",
+      "goal": "Report histogram uses mathematical floor buckets, supports negative/large integers, width>0; invalid width raises even for empty input. Locate the implementation using search and read tools, edit minimally, then run targeted tests. Use raw failures for at most one repair.",
+      "interface": "report.report(*args); underlying def bucket_counts(values: list[int], width: int) -> dict[int, int]:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            [
+              -1,
+              0,
+              9,
+              10
+            ],
+            10
+          ],
+          "expected": {
+            "-1": 1,
+            "0": 2,
+            "1": 1
+          }
+        },
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": {}
+        },
+        {
+          "args": [
+            [],
+            0
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            [
+              100000000000000000001
+            ],
+            10
+          ],
+          "expected": {
+            "10000000000000000000": 1
+          }
+        }
+      ],
+      "allowed_files": [
+        "helpers.py"
+      ],
+      "regions": {
+        "helpers.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 14,
+      "entrypoint": "report.report",
+      "navigation": true,
+      "edit_regions": {
+        "helpers.py": "body"
+      },
+      "dataset_entry_id": "AGENTIC_CODING-03",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/AGENTIC_CODING-03",
+      "fixture_file_count": 4,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "BOUNDED_LOGIC-01",
+      "task_type": "BOUNDED_LOGIC",
+      "goal": "Convert a money string to cents: trim outer whitespace; ASCII digits with optional leading minus and 1 or 2 decimal digits. Reject plus, exponent, comma, missing integer, trailing dot, >2 decimals or empty. No floating point.",
+      "interface": "def cents(text: str) -> int:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            " 12.3 "
+          ],
+          "expected": 1230
+        },
+        {
+          "args": [
+            "-0.01"
+          ],
+          "expected": -1
+        },
+        {
+          "args": [
+            "001"
+          ],
+          "expected": 100
+        },
+        {
+          "args": [
+            "0"
+          ],
+          "expected": 0
+        },
+        {
+          "args": [
+            "+1"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            "1e2"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            "1.234"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            "1."
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            ".1"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            ""
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            "1,2"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            "１２"
+          ],
+          "raises": "ValueError"
+        }
+      ],
+      "allowed_files": [
+        "subject.py"
+      ],
+      "regions": {
+        "subject.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "edit_regions": {
+        "subject.py": "body"
+      },
+      "dataset_entry_id": "BOUNDED_LOGIC-01",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/BOUNDED_LOGIC-01",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "BOUNDED_LOGIC-02",
+      "task_type": "BOUNDED_LOGIC",
+      "goal": "Normalize tags by strip then casefold, discard empty strings, deduplicate preserving first occurrence. Never mutate input.",
+      "interface": "def normalize_tags(tags: list[str]) -> list[str]:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            [
+              " A ",
+              "a",
+              "",
+              "  ",
+              "B"
+            ]
+          ],
+          "expected": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "args": [
+            [
+              "Straße",
+              "STRASSE",
+              "猫"
+            ]
+          ],
+          "expected": [
+            "strasse",
+            "猫"
+          ]
+        }
+      ],
+      "allowed_files": [
+        "subject.py"
+      ],
+      "regions": {
+        "subject.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "edit_regions": {
+        "subject.py": "body"
+      },
+      "dataset_entry_id": "BOUNDED_LOGIC-02",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/BOUNDED_LOGIC-02",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "BOUNDED_LOGIC-03",
+      "task_type": "BOUNDED_LOGIC",
+      "goal": "Parse exactly ASCII YYYY-MM-DD into canonical ISO date. Calendar dates must exist; reject whitespace, unpadded digits and non-ASCII digits with ValueError.",
+      "interface": "def iso_date(text: str) -> str:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            "2024-02-29"
+          ],
+          "expected": "2024-02-29"
+        },
+        {
+          "args": [
+            "2000-02-29"
+          ],
+          "expected": "2000-02-29"
+        },
+        {
+          "args": [
+            "1900-02-29"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            "2023-02-29"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            "2024-2-09"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            " 2024-01-01"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            "2024-13-01"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            "２０２４-01-01"
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            "0000-01-01"
+          ],
+          "raises": "ValueError"
+        }
+      ],
+      "allowed_files": [
+        "subject.py"
+      ],
+      "regions": {
+        "subject.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "edit_regions": {
+        "subject.py": "body"
+      },
+      "dataset_entry_id": "BOUNDED_LOGIC-03",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/BOUNDED_LOGIC-03",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "DEBUGGING-01",
+      "task_type": "DEBUGGING",
+      "goal": "Mean incorrectly truncates fractions and does not implement empty-input ValueError. Identify cause briefly in summary and add a regression unittest that fails on original implementation.",
+      "interface": "def mean(values: list[float]) -> float:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 1.5
+        },
+        {
+          "args": [
+            []
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            [
+              -1,
+              0
+            ]
+          ],
+          "expected": -0.5
+        }
+      ],
+      "allowed_files": [
+        "subject.py",
+        "test_regression.py"
+      ],
+      "regions": {
+        "subject.py": "body",
+        "test_regression.py": "tests"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 15,
+      "edit_regions": {
+        "subject.py": "body",
+        "test_regression.py": "tests"
+      },
+      "dataset_entry_id": "DEBUGGING-01",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/DEBUGGING-01",
+      "fixture_file_count": 2,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "DEBUGGING-02",
+      "task_type": "DEBUGGING",
+      "goal": "Window should return count items from start, truncating at the list end; negative arguments raise ValueError. Identify cause briefly in summary and add a regression unittest that fails on original implementation.",
+      "interface": "def window(values: list[int], start: int, count: int) -> list[int]:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            2,
+            2
+          ],
+          "expected": [
+            2,
+            3
+          ]
+        },
+        {
+          "args": [
+            [
+              1
+            ],
+            0,
+            0
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            [
+              1
+            ],
+            4,
+            3
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            [
+              1
+            ],
+            -1,
+            2
+          ],
+          "raises": "ValueError"
+        }
+      ],
+      "allowed_files": [
+        "subject.py",
+        "test_regression.py"
+      ],
+      "regions": {
+        "subject.py": "body",
+        "test_regression.py": "tests"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 15,
+      "edit_regions": {
+        "subject.py": "body",
+        "test_regression.py": "tests"
+      },
+      "dataset_entry_id": "DEBUGGING-02",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/DEBUGGING-02",
+      "fixture_file_count": 2,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "DEBUGGING-03",
+      "task_type": "DEBUGGING",
+      "goal": "First present means first value which is not None; false/zero/empty string are present. Identify cause briefly in summary and add a regression unittest that fails on original implementation.",
+      "interface": "def first_present(values: list) -> object:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            [
+              null,
+              0,
+              2
+            ]
+          ],
+          "expected": 0
+        },
+        {
+          "args": [
+            [
+              null,
+              false,
+              2
+            ]
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            [
+              null,
+              "",
+              2
+            ]
+          ],
+          "expected": ""
+        },
+        {
+          "args": [
+            [
+              null
+            ]
+          ],
+          "expected": null
+        }
+      ],
+      "allowed_files": [
+        "subject.py",
+        "test_regression.py"
+      ],
+      "regions": {
+        "subject.py": "body",
+        "test_regression.py": "tests"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 15,
+      "edit_regions": {
+        "subject.py": "body",
+        "test_regression.py": "tests"
+      },
+      "dataset_entry_id": "DEBUGGING-03",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/DEBUGGING-03",
+      "fixture_file_count": 2,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "ERROR_ANALYSIS-01",
+      "task_type": "ERROR_ANALYSIS",
+      "goal": "Analyze this synthetic evidence only: pytest: test_retry_limit failed: assert attempts == 3; got 4. Trace: client.py:51 while attempts <= max_attempts; max_attempts=3, attempts initially0, increment after request. Transport succeeded each time.",
+      "interface": "Structured diagnosis",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [],
+      "allowed_files": [],
+      "regions": {},
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "answer_contract": {
+        "primary_cause": [
+          "off_by_one",
+          "missing_dependency",
+          "premature_truncation",
+          "network_timeout"
+        ],
+        "relevant_component": [
+          "client.retry_loop",
+          "environment.dependencies",
+          "price.cents",
+          "database.pool"
+        ],
+        "recommended_next_action": [
+          "fix_loop_bound_and_add_regression",
+          "install_declared_dependency_then_rerun",
+          "parse_decimal_exactly_and_add_fraction_regression",
+          "increase_network_timeout"
+        ]
+      },
+      "edit_regions": {},
+      "dataset_entry_id": "ERROR_ANALYSIS-01",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/ERROR_ANALYSIS-01",
+      "fixture_file_count": 0,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "ERROR_ANALYSIS-02",
+      "task_type": "ERROR_ANALYSIS",
+      "goal": "Analyze this synthetic evidence only: test_import FAILED before collection: ModuleNotFoundError: No module named 'widgetlib'. pip show widgetlib: Package(s) not found. requirements.txt lists widgetlib==1.2.0. No application function executed.",
+      "interface": "Structured diagnosis",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [],
+      "allowed_files": [],
+      "regions": {},
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "answer_contract": {
+        "primary_cause": [
+          "off_by_one",
+          "missing_dependency",
+          "premature_truncation",
+          "network_timeout"
+        ],
+        "relevant_component": [
+          "client.retry_loop",
+          "environment.dependencies",
+          "price.cents",
+          "database.pool"
+        ],
+        "recommended_next_action": [
+          "fix_loop_bound_and_add_regression",
+          "install_declared_dependency_then_rerun",
+          "parse_decimal_exactly_and_add_fraction_regression",
+          "increase_network_timeout"
+        ]
+      },
+      "edit_regions": {},
+      "dataset_entry_id": "ERROR_ANALYSIS-02",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/ERROR_ANALYSIS-02",
+      "fixture_file_count": 0,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "ERROR_ANALYSIS-03",
+      "task_type": "ERROR_ANALYSIS",
+      "goal": "Analyze this synthetic evidence only: pytest test_price: expected 1230 cents, actual 1200. Trace price.py: return int(float(text))*100; input '12.30'. No network or DB activity. The public contract requires exact decimal cents.",
+      "interface": "Structured diagnosis",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [],
+      "allowed_files": [],
+      "regions": {},
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "answer_contract": {
+        "primary_cause": [
+          "off_by_one",
+          "missing_dependency",
+          "premature_truncation",
+          "network_timeout"
+        ],
+        "relevant_component": [
+          "client.retry_loop",
+          "environment.dependencies",
+          "price.cents",
+          "database.pool"
+        ],
+        "recommended_next_action": [
+          "fix_loop_bound_and_add_regression",
+          "install_declared_dependency_then_rerun",
+          "parse_decimal_exactly_and_add_fraction_regression",
+          "increase_network_timeout"
+        ]
+      },
+      "edit_regions": {},
+      "dataset_entry_id": "ERROR_ANALYSIS-03",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/ERROR_ANALYSIS-03",
+      "fixture_file_count": 0,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "MECHANICAL_CODE-01",
+      "task_type": "MECHANICAL_CODE",
+      "goal": "Format nonnegative integer seconds as unbounded hours:MM:SS (hours at least two digits). Reject negative values with ValueError.",
+      "interface": "def format_duration(seconds: int) -> str:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": "00:00:00"
+        },
+        {
+          "args": [
+            59
+          ],
+          "expected": "00:00:59"
+        },
+        {
+          "args": [
+            3661
+          ],
+          "expected": "01:01:01"
+        },
+        {
+          "args": [
+            360000
+          ],
+          "expected": "100:00:00"
+        },
+        {
+          "args": [
+            -1
+          ],
+          "raises": "ValueError"
+        }
+      ],
+      "allowed_files": [
+        "subject.py"
+      ],
+      "regions": {
+        "subject.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "edit_regions": {
+        "subject.py": "body"
+      },
+      "dataset_entry_id": "MECHANICAL_CODE-01",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/MECHANICAL_CODE-01",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "MECHANICAL_CODE-02",
+      "task_type": "MECHANICAL_CODE",
+      "goal": "Map input rows to dictionaries with id and name only, preserving order; missing/None name becomes empty string. Never mutate input.",
+      "interface": "def map_rows(rows: list[dict]) -> list[dict]:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "name": "A",
+                "extra": 4
+              },
+              {
+                "id": 2
+              },
+              {
+                "id": 3,
+                "name": null
+              }
+            ]
+          ],
+          "expected": [
+            {
+              "id": 1,
+              "name": "A"
+            },
+            {
+              "id": 2,
+              "name": ""
+            },
+            {
+              "id": 3,
+              "name": ""
+            }
+          ]
+        }
+      ],
+      "allowed_files": [
+        "subject.py"
+      ],
+      "regions": {
+        "subject.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "edit_regions": {
+        "subject.py": "body"
+      },
+      "dataset_entry_id": "MECHANICAL_CODE-02",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/MECHANICAL_CODE-02",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "MECHANICAL_CODE-03",
+      "task_type": "MECHANICAL_CODE",
+      "goal": "Return compact JSON of a mapping, with lexically sorted keys, Unicode preserved, and no whitespace outside strings.",
+      "interface": "def compact_json(value: dict) -> str:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            {}
+          ],
+          "expected": "{}"
+        },
+        {
+          "args": [
+            {
+              "z": 2,
+              "a": "日本"
+            }
+          ],
+          "expected": "{\"a\":\"日本\",\"z\":2}"
+        },
+        {
+          "args": [
+            {
+              "b": [
+                true,
+                null
+              ],
+              "a": "a b"
+            }
+          ],
+          "expected": "{\"a\":\"a b\",\"b\":[true,null]}"
+        }
+      ],
+      "allowed_files": [
+        "subject.py"
+      ],
+      "regions": {
+        "subject.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "edit_regions": {
+        "subject.py": "body"
+      },
+      "dataset_entry_id": "MECHANICAL_CODE-03",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/MECHANICAL_CODE-03",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "REPO_EDIT-01",
+      "task_type": "REPO_EDIT",
+      "goal": "Count distinct exact strings in report; preserve case distinctions. Locate the implementation using search and read tools, edit minimally, then run targeted tests. Use raw failures for at most one repair.",
+      "interface": "report.report(*args); underlying def distinct_count(values: list[str]) -> int:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            [
+              "a",
+              "a",
+              "b"
+            ]
+          ],
+          "expected": 2
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "args": [
+            [
+              "A",
+              "a"
+            ]
+          ],
+          "expected": 2
+        }
+      ],
+      "allowed_files": [
+        "helpers.py"
+      ],
+      "regions": {
+        "helpers.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 14,
+      "entrypoint": "report.report",
+      "navigation": true,
+      "edit_regions": {
+        "helpers.py": "body"
+      },
+      "dataset_entry_id": "REPO_EDIT-01",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/REPO_EDIT-01",
+      "fixture_file_count": 4,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "REPO_EDIT-02",
+      "task_type": "REPO_EDIT",
+      "goal": "Report keeps rows at or after cutoff, including equality; no mutation. Locate the implementation using search and read tools, edit minimally, then run targeted tests. Use raw failures for at most one repair.",
+      "interface": "report.report(*args); underlying def retain_recent(rows: list[dict], cutoff: int) -> list[dict]:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            [
+              {
+                "time": 3
+              },
+              {
+                "time": 4
+              },
+              {
+                "time": 5
+              }
+            ],
+            4
+          ],
+          "expected": [
+            {
+              "time": 4
+            },
+            {
+              "time": 5
+            }
+          ]
+        },
+        {
+          "args": [
+            [],
+            4
+          ],
+          "expected": []
+        }
+      ],
+      "allowed_files": [
+        "helpers.py"
+      ],
+      "regions": {
+        "helpers.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 14,
+      "entrypoint": "report.report",
+      "navigation": true,
+      "edit_regions": {
+        "helpers.py": "body"
+      },
+      "dataset_entry_id": "REPO_EDIT-02",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/REPO_EDIT-02",
+      "fixture_file_count": 4,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "REPO_EDIT-03",
+      "task_type": "REPO_EDIT",
+      "goal": "Report uses unknown for absent, None or empty name. Locate the implementation using search and read tools, edit minimally, then run targeted tests. Use raw failures for at most one repair.",
+      "interface": "report.report(*args); underlying def display_name(row: dict) -> str:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            {}
+          ],
+          "expected": "unknown"
+        },
+        {
+          "args": [
+            {
+              "name": null
+            }
+          ],
+          "expected": "unknown"
+        },
+        {
+          "args": [
+            {
+              "name": ""
+            }
+          ],
+          "expected": "unknown"
+        },
+        {
+          "args": [
+            {
+              "name": "Ada"
+            }
+          ],
+          "expected": "Ada"
+        }
+      ],
+      "allowed_files": [
+        "helpers.py"
+      ],
+      "regions": {
+        "helpers.py": "body"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 14,
+      "entrypoint": "report.report",
+      "navigation": true,
+      "edit_regions": {
+        "helpers.py": "body"
+      },
+      "dataset_entry_id": "REPO_EDIT-03",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/REPO_EDIT-03",
+      "fixture_file_count": 4,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "SPECIFICATION-01",
+      "task_type": "SPECIFICATION",
+      "goal": "For normalize_tags(tags), strip then casefold, remove blanks and duplicates preserving first occurrence. No input mutation, dependencies or network. Implement only subject.py, <=80 changed LOC. Write acceptance cases for [], [' A ', 'a', 'B'], ['Straße', 'STRASSE'].",
+      "interface": "normalize_tags(tags)",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [],
+      "allowed_files": [],
+      "regions": {},
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "answer_contract": {
+        "requirements": {
+          "strip": "Extract the value from request",
+          "casefold": "Extract the value from request",
+          "deduplicate": "Extract the value from request",
+          "order": "Extract the value from request"
+        },
+        "constraints": "array of no_* constraint strings",
+        "acceptance_cases": "array of {input, expected}; exceptions encoded raises:ValueError",
+        "task_specification": "{allowed_files, interface (without def/types), max_diff_loc}"
+      },
+      "edit_regions": {},
+      "dataset_entry_id": "SPECIFICATION-01",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/SPECIFICATION-01",
+      "fixture_file_count": 0,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "SPECIFICATION-02",
+      "task_type": "SPECIFICATION",
+      "goal": "For page(items, index, size), index is ZERO based. Slice starting at index*size, truncate at end; index<0 or size<=0 raises ValueError, including empty inputs. No mutation, dependencies or network. subject.py only, <=80 LOC. Cases: [[1,2,3],0,2], [[1,2,3],1,2], [[],0,2], [[],0,0].",
+      "interface": "page(items, index, size)",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [],
+      "allowed_files": [],
+      "regions": {},
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "answer_contract": {
+        "requirements": {
+          "index_base": "Extract the value from request",
+          "partial_page": "Extract the value from request",
+          "negative_index": "Extract the value from request",
+          "nonpositive_size": "Extract the value from request"
+        },
+        "constraints": "array of no_* constraint strings",
+        "acceptance_cases": "array of {input, expected}; exceptions encoded raises:ValueError",
+        "task_specification": "{allowed_files, interface (without def/types), max_diff_loc}"
+      },
+      "edit_regions": {},
+      "dataset_entry_id": "SPECIFICATION-02",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/SPECIFICATION-02",
+      "fixture_file_count": 0,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "SPECIFICATION-03",
+      "task_type": "SPECIFICATION",
+      "goal": "For expires(now, deadline), expiration begins at equality (now>=deadline). Integers only by contract; no runtime type validation. No mutation, dependencies or network. subject.py only, <=80 LOC. Cases [9,10], [10,10], [11,10], [-2,-1].",
+      "interface": "expires(now, deadline)",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [],
+      "allowed_files": [],
+      "regions": {},
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "answer_contract": {
+        "requirements": {
+          "boundary": "Extract the value from request",
+          "integer_contract": "Extract the value from request",
+          "runtime_type_validation": "Extract the value from request"
+        },
+        "constraints": "array of no_* constraint strings",
+        "acceptance_cases": "array of {input, expected}; exceptions encoded raises:ValueError",
+        "task_specification": "{allowed_files, interface (without def/types), max_diff_loc}"
+      },
+      "edit_regions": {},
+      "dataset_entry_id": "SPECIFICATION-03",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/SPECIFICATION-03",
+      "fixture_file_count": 0,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "SPECIFICATION-04",
+      "task_type": "SPECIFICATION",
+      "goal": "For normalize_tags(tags), strip then casefold, remove blanks and duplicates preserving first occurrence. No input mutation, dependencies or network. Implement only subject.py, <=80 changed LOC. Write acceptance cases for [], [' A ', 'a', 'B'], ['Straße', 'STRASSE']. This is specification extraction for a FUTURE implementation, not permission to edit now. task_specification.allowed_files describes that future implementation in the request, NOT this extraction task's empty editable-file list. Extract ONLY domain constraints stated in the request, NOT general worker/system rules. Acceptance input and expected values must be actual JSON values, never JSON encoded into strings. Use the canonical vocabulary declared in answer_contract; do not invent synonymous labels.",
+      "interface": "normalize_tags(tags)",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [],
+      "allowed_files": [],
+      "regions": {},
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "answer_contract": {
+        "requirements": {
+          "strip": {
+            "type": "boolean"
+          },
+          "casefold": {
+            "type": "boolean"
+          },
+          "deduplicate": {
+            "type": "boolean"
+          },
+          "order": {
+            "enum": [
+              "first_occurrence",
+              "last_occurrence",
+              "sorted"
+            ],
+            "meaning": "which ordering the request specifies"
+          }
+        },
+        "constraints": {
+          "type": "array of strings",
+          "vocabulary": [
+            "no_mutation",
+            "no_dependencies",
+            "no_network",
+            "no_logging",
+            "no_persistence"
+          ],
+          "rule": "Include exactly the domain constraints stated in the request; order irrelevant."
+        },
+        "acceptance_cases": {
+          "type": "array of {input, expected}",
+          "rule": "Use requested inputs in requested order, as JSON arrays (not stringified arrays). Expected values use native JSON; an exception is the string raises:ValueError."
+        },
+        "task_specification": {
+          "allowed_files": "Future implementation scope from request",
+          "interface": "Copy the interface field exactly (without def or types)",
+          "max_diff_loc": "Integer changed-line budget from request"
+        }
+      },
+      "source_task_id": "SPECIFICATION-01",
+      "edit_regions": {},
+      "dataset_entry_id": "SPECIFICATION-04",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/SPECIFICATION-04",
+      "fixture_file_count": 0,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "SPECIFICATION-05",
+      "task_type": "SPECIFICATION",
+      "goal": "For page(items, index, size), index is ZERO based. Slice starting at index*size, truncate at end; index<0 or size<=0 raises ValueError, including empty inputs. No mutation, dependencies or network. subject.py only, <=80 LOC. Cases: [[1,2,3],0,2], [[1,2,3],1,2], [[],0,2], [[],0,0]. This is specification extraction for a FUTURE implementation, not permission to edit now. task_specification.allowed_files describes that future implementation in the request, NOT this extraction task's empty editable-file list. Extract ONLY domain constraints stated in the request, NOT general worker/system rules. Acceptance input and expected values must be actual JSON values, never JSON encoded into strings. Use the canonical vocabulary declared in answer_contract; do not invent synonymous labels.",
+      "interface": "page(items, index, size)",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [],
+      "allowed_files": [],
+      "regions": {},
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "answer_contract": {
+        "requirements": {
+          "index_base": {
+            "type": "integer"
+          },
+          "partial_page": {
+            "type": "boolean"
+          },
+          "negative_index": {
+            "enum": [
+              "ValueError",
+              "clamp",
+              "ignore"
+            ],
+            "meaning": "invalid-input behavior; use bare exception name here"
+          },
+          "nonpositive_size": {
+            "enum": [
+              "ValueError",
+              "clamp",
+              "ignore"
+            ],
+            "meaning": "invalid-input behavior; use bare exception name here"
+          }
+        },
+        "constraints": {
+          "type": "array of strings",
+          "vocabulary": [
+            "no_mutation",
+            "no_dependencies",
+            "no_network",
+            "no_logging",
+            "no_persistence"
+          ],
+          "rule": "Include exactly the domain constraints stated in the request; order irrelevant."
+        },
+        "acceptance_cases": {
+          "type": "array of {input, expected}",
+          "rule": "Use requested inputs in requested order, as JSON arrays (not stringified arrays). Expected values use native JSON; an exception is the string raises:ValueError."
+        },
+        "task_specification": {
+          "allowed_files": "Future implementation scope from request",
+          "interface": "Copy the interface field exactly (without def or types)",
+          "max_diff_loc": "Integer changed-line budget from request"
+        }
+      },
+      "source_task_id": "SPECIFICATION-02",
+      "edit_regions": {},
+      "dataset_entry_id": "SPECIFICATION-05",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/SPECIFICATION-05",
+      "fixture_file_count": 0,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "SPECIFICATION-06",
+      "task_type": "SPECIFICATION",
+      "goal": "For expires(now, deadline), expiration begins at equality (now>=deadline). Integers only by contract; no runtime type validation. No mutation, dependencies or network. subject.py only, <=80 LOC. Cases [9,10], [10,10], [11,10], [-2,-1]. This is specification extraction for a FUTURE implementation, not permission to edit now. task_specification.allowed_files describes that future implementation in the request, NOT this extraction task's empty editable-file list. Extract ONLY domain constraints stated in the request, NOT general worker/system rules. Acceptance input and expected values must be actual JSON values, never JSON encoded into strings. Use the canonical vocabulary declared in answer_contract; do not invent synonymous labels.",
+      "interface": "expires(now, deadline)",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [],
+      "allowed_files": [],
+      "regions": {},
+      "max_diff_loc": 80,
+      "estimated_loc": 12,
+      "answer_contract": {
+        "requirements": {
+          "boundary": {
+            "enum": [
+              "inclusive",
+              "exclusive"
+            ],
+            "meaning": "whether equality is expired"
+          },
+          "integer_contract": {
+            "type": "boolean"
+          },
+          "runtime_type_validation": {
+            "type": "boolean"
+          }
+        },
+        "constraints": {
+          "type": "array of strings",
+          "vocabulary": [
+            "no_mutation",
+            "no_dependencies",
+            "no_network",
+            "no_logging",
+            "no_persistence"
+          ],
+          "rule": "Include exactly the domain constraints stated in the request; order irrelevant."
+        },
+        "acceptance_cases": {
+          "type": "array of {input, expected}",
+          "rule": "Use requested inputs in requested order, as JSON arrays (not stringified arrays). Expected values use native JSON; an exception is the string raises:ValueError."
+        },
+        "task_specification": {
+          "allowed_files": "Future implementation scope from request",
+          "interface": "Copy the interface field exactly (without def or types)",
+          "max_diff_loc": "Integer changed-line budget from request"
+        }
+      },
+      "source_task_id": "SPECIFICATION-03",
+      "edit_regions": {},
+      "dataset_entry_id": "SPECIFICATION-06",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/SPECIFICATION-06",
+      "fixture_file_count": 0,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "TEMPLATE_UI-01",
+      "task_type": "TEMPLATE_UI",
+      "goal": "Render a form with POST method; label for=email, required input id=email name=email type=email, submit button text Subscribe. No scripts/external resources.",
+      "interface": "HTML fragment in content region",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "tag": "form",
+          "attrs": {
+            "method": "post"
+          }
+        },
+        {
+          "tag": "label",
+          "attrs": {
+            "for": "email"
+          }
+        },
+        {
+          "tag": "input",
+          "attrs": {
+            "id": "email",
+            "name": "email",
+            "type": "email",
+            "required": null
+          }
+        },
+        {
+          "tag": "button",
+          "attrs": {
+            "type": "submit"
+          },
+          "text": "Subscribe"
+        }
+      ],
+      "allowed_files": [
+        "template.html"
+      ],
+      "regions": {
+        "template.html": "content"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 8,
+      "edit_regions": {
+        "template.html": "content"
+      },
+      "dataset_entry_id": "TEMPLATE_UI-01",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/TEMPLATE_UI-01",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "TEMPLATE_UI-02",
+      "task_type": "TEMPLATE_UI",
+      "goal": "Render semantic table with caption Inventory, headers Item and Qty using th scope=col; body row Pen / 3; no scripts/external resources.",
+      "interface": "HTML fragment in content region",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "tag": "caption",
+          "text": "Inventory"
+        },
+        {
+          "tag": "th",
+          "attrs": {
+            "scope": "col"
+          },
+          "text": "Item"
+        },
+        {
+          "tag": "th",
+          "attrs": {
+            "scope": "col"
+          },
+          "text": "Qty"
+        },
+        {
+          "tag": "td",
+          "text": "Pen"
+        },
+        {
+          "tag": "td",
+          "text": "3"
+        }
+      ],
+      "allowed_files": [
+        "template.html"
+      ],
+      "regions": {
+        "template.html": "content"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 8,
+      "edit_regions": {
+        "template.html": "content"
+      },
+      "dataset_entry_id": "TEMPLATE_UI-02",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/TEMPLATE_UI-02",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "TEMPLATE_UI-03",
+      "task_type": "TEMPLATE_UI",
+      "goal": "Render pagination nav aria-label=Pagination with span aria-current=page text 2, link href=?page=1 text Previous, link href=?page=3 text Next. No scripts/external resources.",
+      "interface": "HTML fragment in content region",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "tag": "nav",
+          "attrs": {
+            "aria-label": "Pagination"
+          }
+        },
+        {
+          "tag": "span",
+          "attrs": {
+            "aria-current": "page"
+          },
+          "text": "2"
+        },
+        {
+          "tag": "a",
+          "attrs": {
+            "href": "?page=1"
+          },
+          "text": "Previous"
+        },
+        {
+          "tag": "a",
+          "attrs": {
+            "href": "?page=3"
+          },
+          "text": "Next"
+        }
+      ],
+      "allowed_files": [
+        "template.html"
+      ],
+      "regions": {
+        "template.html": "content"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 8,
+      "edit_regions": {
+        "template.html": "content"
+      },
+      "dataset_entry_id": "TEMPLATE_UI-03",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/TEMPLATE_UI-03",
+      "fixture_file_count": 1,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "UNIT_TEST_GENERATION-01",
+      "task_type": "UNIT_TEST_GENERATION",
+      "goal": "Write unittest methods covering ALL supplied acceptance cases for clamp. Tests must pass on correct implementation and detect behavior regressions.",
+      "interface": "def clamp(value: int, low: int, high: int) -> int:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            -2,
+            0,
+            5
+          ],
+          "expected": 0
+        },
+        {
+          "args": [
+            9,
+            0,
+            5
+          ],
+          "expected": 5
+        },
+        {
+          "args": [
+            3,
+            0,
+            5
+          ],
+          "expected": 3
+        },
+        {
+          "args": [
+            2,
+            2,
+            2
+          ],
+          "expected": 2
+        },
+        {
+          "args": [
+            0,
+            5,
+            2
+          ],
+          "raises": "ValueError"
+        }
+      ],
+      "allowed_files": [
+        "test_subject.py"
+      ],
+      "regions": {
+        "test_subject.py": "tests"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 25,
+      "subject_region": "body",
+      "edit_regions": {
+        "test_subject.py": "tests"
+      },
+      "dataset_entry_id": "UNIT_TEST_GENERATION-01",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/UNIT_TEST_GENERATION-01",
+      "fixture_file_count": 2,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "UNIT_TEST_GENERATION-02",
+      "task_type": "UNIT_TEST_GENERATION",
+      "goal": "Write unittest methods covering ALL supplied acceptance cases for unique. Tests must pass on correct implementation and detect behavior regressions.",
+      "interface": "def unique(values: list[int]) -> list[int]:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            [
+              3,
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": [
+            3,
+            1,
+            2
+          ]
+        },
+        {
+          "args": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ]
+        }
+      ],
+      "allowed_files": [
+        "test_subject.py"
+      ],
+      "regions": {
+        "test_subject.py": "tests"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 25,
+      "subject_region": "body",
+      "edit_regions": {
+        "test_subject.py": "tests"
+      },
+      "dataset_entry_id": "UNIT_TEST_GENERATION-02",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/UNIT_TEST_GENERATION-02",
+      "fixture_file_count": 2,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "UNIT_TEST_GENERATION-03",
+      "task_type": "UNIT_TEST_GENERATION",
+      "goal": "Write unittest methods covering ALL supplied acceptance cases for divide. Tests must pass on correct implementation and detect behavior regressions.",
+      "interface": "def divide_up(n: int, d: int) -> int:",
+      "constraints": [
+        "One behavior; preserve signatures and all non-marker bytes",
+        "No dependencies, file/network/process access, or test weakening",
+        "At most 80 added+deleted lines; minimal region edits"
+      ],
+      "acceptance_cases": [
+        {
+          "args": [
+            0,
+            3
+          ],
+          "expected": 0
+        },
+        {
+          "args": [
+            6,
+            3
+          ],
+          "expected": 2
+        },
+        {
+          "args": [
+            7,
+            3
+          ],
+          "expected": 3
+        },
+        {
+          "args": [
+            -1,
+            3
+          ],
+          "raises": "ValueError"
+        },
+        {
+          "args": [
+            1,
+            0
+          ],
+          "raises": "ValueError"
+        }
+      ],
+      "allowed_files": [
+        "test_subject.py"
+      ],
+      "regions": {
+        "test_subject.py": "tests"
+      },
+      "max_diff_loc": 80,
+      "estimated_loc": 25,
+      "subject_region": "body",
+      "edit_regions": {
+        "test_subject.py": "tests"
+      },
+      "dataset_entry_id": "UNIT_TEST_GENERATION-03",
+      "set_id": "model-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/model-routing/UNIT_TEST_GENERATION-03",
+      "fixture_file_count": 2,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "model-routing",
+    "source_set": "model-routing",
+    "entries": 30,
+    "structured_result_records": 90,
+    "task_ids_with_structured_results": 30,
+    "task_ids_without_structured_results": [],
+    "historical_reports": [],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

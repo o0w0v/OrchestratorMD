@@ -1,0 +1,274 @@
+{
+  "set_id": "role-separated-codex-routing",
+  "entry_count": 8,
+  "tasks": [
+    {
+      "task_id": "RSP-001",
+      "title": "Clamped sample-page bounds",
+      "request": "Implement benchmark_view::page_bounds(total, offset, limit) for an in-memory table. Return the half-open start/end indices, clamp an offset beyond the table to total, and clamp the end without integer overflow. Zero limit is an empty page. Preserve the function signature. This is index calculation only.",
+      "global_constraints": "No dependencies, serialization schema, authorization, runtime provider, network, filesystem side effects, or live execution may be added. Preserve all initial public interfaces, existing behavior and tests. Modify only the task's declared implementation files. New helpers must be private unless an existing scaffold declares otherwise. All functions are projections of supplied in-memory data. Never infer that incomplete observations establish absence in the real system.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "low",
+      "category": "simple bounded edit",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "RSP-001",
+      "set_id": "role-separated-codex-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/role-separated-codex-routing/RSP-001",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "RSP-002",
+      "title": "Inventory presence mask",
+      "request": "Implement benchmark_view::inventory_presence(&SystemState) -> u8. Presence, not magnitude, determines the bits: disks bit 0, services bit 1, established TCP count bit 2. Some(0) is observed and sets its bit; None leaves it clear. No other state changes the mask; no higher bits. Do not claim unknown inventory is zero.",
+      "global_constraints": "No dependencies, serialization schema, authorization, runtime provider, network, filesystem side effects, or live execution may be added. Preserve all initial public interfaces, existing behavior and tests. Modify only the task's declared implementation files. New helpers must be private unless an existing scaffold declares otherwise. All functions are projections of supplied in-memory data. Never infer that incomplete observations establish absence in the real system.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "low",
+      "category": "simple bounded edit",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "RSP-002",
+      "set_id": "role-separated-codex-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/role-separated-codex-routing/RSP-002",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "RSP-003",
+      "title": "Conservative process sample change list",
+      "request": "Complete sample_delta and its unique-row index helper. Report PID additions/removals and RSS changes between two supplied samples in ascending PID order. Any PID repeated in either sample is ambiguous and must be excluded from ALL output lists, including the opposite side. Added is after-only, but suppress the whole added list when the before sample is truncated. Removed is before-only, but suppress it when the after sample is truncated. RSS changes for a PID present uniquely on both sides remain reportable regardless of truncation; tuple is (pid, before_rss, after_rss). Parent-only differences do not count. Do not mutate inputs or infer process lifetime/PID-reuse identity. Preserve SampleDelta and both signatures.",
+      "global_constraints": "No dependencies, serialization schema, authorization, runtime provider, network, filesystem side effects, or live execution may be added. Preserve all initial public interfaces, existing behavior and tests. Modify only the task's declared implementation files. New helpers must be private unless an existing scaffold declares otherwise. All functions are projections of supplied in-memory data. Never infer that incomplete observations establish absence in the real system.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs",
+        "crates/ncos-core/src/benchmark_view/index.rs"
+      ],
+      "risk": "normal",
+      "category": "semantic multi-step edit",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "RSP-003",
+      "set_id": "role-separated-codex-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/role-separated-codex-routing/RSP-003",
+      "fixture_file_count": 31,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "RSP-004",
+      "title": "Filtered chronological audit page",
+      "request": "Implement audit_indices(records, minimum_time, sources, offset, limit) returning ORIGINAL record indices for a display page. Select timestamp >= minimum_time and exact source membership (empty source list means all). Then sort selected rows by timestamp ascending with original order preserved for equal timestamps. ONLY THEN apply offset/limit, safely handling usize::MAX. Preserve duplicates and input order in the source. Wire selection::eligible into the pipeline; it implements only the filtering predicate. Do not alter AuditRecord, filter policy decisions, or authorize actions.",
+      "global_constraints": "No dependencies, serialization schema, authorization, runtime provider, network, filesystem side effects, or live execution may be added. Preserve all initial public interfaces, existing behavior and tests. Modify only the task's declared implementation files. New helpers must be private unless an existing scaffold declares otherwise. All functions are projections of supplied in-memory data. Never infer that incomplete observations establish absence in the real system.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs",
+        "crates/ncos-core/src/benchmark_view/selection.rs"
+      ],
+      "risk": "normal",
+      "category": "semantic multi-step edit",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "RSP-004",
+      "set_id": "role-separated-codex-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/role-separated-codex-routing/RSP-004",
+      "fixture_file_count": 31,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "RSP-005",
+      "title": "Top-RSS sample ranking regression",
+      "request": "The ranked_pids helper sometimes shows the smallest RSS entries and ignores a large entry near the end of a sample. Repair it: rank ALL supplied process rows by RSS descending, tie-break PID ascending, then take at most limit and return their PIDs. Keep duplicate rows and preserve the input. Limit zero is empty and very large limits return all rows. No signed conversion/negation of u64 RSS; maximum values are valid.",
+      "global_constraints": "No dependencies, serialization schema, authorization, runtime provider, network, filesystem side effects, or live execution may be added. Preserve all initial public interfaces, existing behavior and tests. Modify only the task's declared implementation files. New helpers must be private unless an existing scaffold declares otherwise. All functions are projections of supplied in-memory data. Never infer that incomplete observations establish absence in the real system.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "normal",
+      "category": "debugging",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "RSP-005",
+      "set_id": "role-separated-codex-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/role-separated-codex-routing/RSP-005",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "RSP-006",
+      "title": "Preview session dedup decisions from repository contract",
+      "request": "Implement benchmark_view::preview_dedup(events, capacity) returning the accepted original indices for a new independent dedup session. Match the repository's CURRENT EventFilter/Deduplicator and documented bounded session semantics, including duplicate hits, eviction, evidence/id changes and capacity zero. Obtain those rules from docs/ARCHITECTURE.md and the existing source. Do not change the actual Deduplicator or add global state. This helper is a preview only and does not infer or dispatch anything.",
+      "global_constraints": "No dependencies, serialization schema, authorization, runtime provider, network, filesystem side effects, or live execution may be added. Preserve all initial public interfaces, existing behavior and tests. Modify only the task's declared implementation files. New helpers must be private unless an existing scaffold declares otherwise. All functions are projections of supplied in-memory data. Never infer that incomplete observations establish absence in the real system.",
+      "allowed_files": [
+        "crates/ncos-events/src/benchmark_view.rs"
+      ],
+      "risk": "normal",
+      "category": "repo evidence interpretation",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "RSP-006",
+      "set_id": "role-separated-codex-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/role-separated-codex-routing/RSP-006",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "RSP-007",
+      "title": "Shared optional-inventory label formatter",
+      "request": "Refactor the two existing benchmark_view label functions to share exactly one private formatting helper named format_count(label: &str, value: Option<usize>) -> String. Preserve disk_label/service_label signatures and byte-for-byte behavior: disks=N / services=N for known counts including zero, disks=unknown / services=unknown for None. Both public functions must delegate to format_count. Do not add public APIs, macros, global state, or change unrelated crate behavior.",
+      "global_constraints": "No dependencies, serialization schema, authorization, runtime provider, network, filesystem side effects, or live execution may be added. Preserve all initial public interfaces, existing behavior and tests. Modify only the task's declared implementation files. New helpers must be private unless an existing scaffold declares otherwise. All functions are projections of supplied in-memory data. Never infer that incomplete observations establish absence in the real system.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "normal",
+      "category": "interface-preserving refactor",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": "format_count_delegation",
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "RSP-007",
+      "set_id": "role-separated-codex-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/role-separated-codex-routing/RSP-007",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "RSP-008",
+      "title": "Bounded ancestry projection with ambiguous rows",
+      "request": "Complete the supplied three-file ancestry projection. It is an observed sample graph, not a security detector. Build parent facts independent of row order; any repeated PID is ambiguous even when both rows are equal. Starting at start, append each uniquely observed PID at most once, following parent_pid. PID 0 is a root marker and must never be appended. Missing/ambiguous/revisited next PIDs stop with Missing(pid)/Ambiguous(pid)/Cycle(pid). End at parent 0 with Root. max_nodes bounds appended nodes: zero returns empty Limit; after appending the last permitted node return Root if its parent is 0, otherwise Limit, without inspecting the next node. Do not impose another hidden depth cap. Preserve Trace/Stop and all scaffold interfaces, do not mutate input. A single unsplit Local edit would cross three implementation files and index/traversal responsibilities: assess the Codex/Local boundary and decomposition explicitly; no actual Local execution is authorized.",
+      "global_constraints": "No dependencies, serialization schema, authorization, runtime provider, network, filesystem side effects, or live execution may be added. Preserve all initial public interfaces, existing behavior and tests. Modify only the task's declared implementation files. New helpers must be private unless an existing scaffold declares otherwise. All functions are projections of supplied in-memory data. Never infer that incomplete observations establish absence in the real system.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs",
+        "crates/ncos-core/src/benchmark_view/index.rs",
+        "crates/ncos-core/src/benchmark_view/walk.rs"
+      ],
+      "risk": "normal",
+      "category": "Codex boundary candidate",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "RSP-008",
+      "set_id": "role-separated-codex-routing",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/role-separated-codex-routing/RSP-008",
+      "fixture_file_count": 32,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "role-separated-codex-routing",
+    "source_set": "role-separated-codex-routing",
+    "entries": 8,
+    "structured_result_records": 54,
+    "task_ids_with_structured_results": 8,
+    "task_ids_without_structured_results": [],
+    "historical_reports": [
+      {
+        "file": "results/role-separated-codex-routing/RESULTS_ROLE_ROUTING_JA.md",
+        "source_report": "role-separated-codex-routing/RESULTS_ROLE_ROUTING_JA.md",
+        "source_sha256": "d53421e74ad5d6341a0e693a73a67f4fa5fb1d7ad7f0b8251c422d3e31bd3e63"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

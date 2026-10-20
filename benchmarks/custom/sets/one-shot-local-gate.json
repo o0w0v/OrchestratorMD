@@ -1,0 +1,736 @@
+{
+  "set_id": "one-shot-local-gate",
+  "entry_count": 8,
+  "tasks": [
+    {
+      "task_id": "OSL-001",
+      "task_type": "REPO_EDIT",
+      "goal": "Audit event inventory",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return exactly memory=M; load=L; process=P; parent=C; connection=N; none=U. Count each AuditRecord by its present event kind MemoryPressure, HighLoad, SuspiciousProcess, SuspiciousParentChild, UnusualConnection, or absent event. Count duplicate rows independently. Counts must cover any representable slice length; ignore source, policy and proposal. Preserve inputs and do not run event detection.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return exactly memory=M; load=L; process=P; parent=C; connection=N; none=U. Count each AuditRecord by its present event kind MemoryPressure, HighLoad, SuspiciousProcess, SuspiciousParentChild, UnusualConnection, or absent event. Count duplicate rows independently.",
+        "Counts must cover any representable slice length; ignore source, policy and proposal. Preserve inputs and do not run event detection.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return exactly memory=M; load=L; process=P; parent=C; connection=N; none=U. Count each AuditRecord by its present event kind MemoryPressure, HighLoad, SuspiciousProcess, SuspiciousParentChild, UnusualConnection, or absent event. Count duplicate rows independently.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Counts must cover any representable slice length; ignore source, policy and proposal. Preserve inputs and do not run event detection.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/OSL-001/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/OSL-001/crates/ncos-cli/src/main.rs": [
+          "event_inventory"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "OSL-001",
+      "set_id": "one-shot-local-gate",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/one-shot-local-gate/OSL-001",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "OSL-002",
+      "task_type": "REPO_EDIT",
+      "goal": "Remaining recorded reservation capacity",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return calls=C; tokens=T from budget maximums minus recorded usage, saturating independently at zero. Use max_inference_calls/inference_calls and max_tokens/reserved_tokens. Exact unsigned decimal; include zeros. This is a display only, not permission to infer. Ignore elapsed_ms, latency limits, preferred model class. Do not change budget or usage.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return calls=C; tokens=T from budget maximums minus recorded usage, saturating independently at zero. Use max_inference_calls/inference_calls and max_tokens/reserved_tokens. Exact unsigned decimal; include zeros.",
+        "This is a display only, not permission to infer. Ignore elapsed_ms, latency limits, preferred model class. Do not change budget or usage.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return calls=C; tokens=T from budget maximums minus recorded usage, saturating independently at zero. Use max_inference_calls/inference_calls and max_tokens/reserved_tokens. Exact unsigned decimal; include zeros.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "This is a display only, not permission to infer. Ignore elapsed_ms, latency limits, preferred model class. Do not change budget or usage.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/OSL-002/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/OSL-002/crates/ncos-cli/src/main.rs": [
+          "budget_remaining"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "OSL-002",
+      "set_id": "one-shot-local-gate",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/one-shot-local-gate/OSL-002",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "OSL-003",
+      "task_type": "REPO_EDIT",
+      "goal": "Warning Unicode preview",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return value unchanged when its Unicode scalar-value count is at most limit. Otherwise return its first limit Unicode scalar values followed by exactly one ellipsis character U+2026. The ellipsis is extra and does not count toward limit. No byte slicing, normalization, trimming, grapheme assumptions or input mutation. Empty input stays empty even at zero limit; nonempty zero-limit input returns only ellipsis. usize::MAX must not overflow.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return value unchanged when its Unicode scalar-value count is at most limit. Otherwise return its first limit Unicode scalar values followed by exactly one ellipsis character U+2026. The ellipsis is extra and does not count toward limit.",
+        "No byte slicing, normalization, trimming, grapheme assumptions or input mutation. Empty input stays empty even at zero limit; nonempty zero-limit input returns only ellipsis. usize::MAX must not overflow.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return value unchanged when its Unicode scalar-value count is at most limit. Otherwise return its first limit Unicode scalar values followed by exactly one ellipsis character U+2026. The ellipsis is extra and does not count toward limit.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "No byte slicing, normalization, trimming, grapheme assumptions or input mutation. Empty input stays empty even at zero limit; nonempty zero-limit input returns only ellipsis. usize::MAX must not overflow.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/OSL-003/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/OSL-003/crates/ncos-cli/src/main.rs": [
+          "warning_preview"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "OSL-003",
+      "set_id": "one-shot-local-gate",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/one-shot-local-gate/OSL-003",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "OSL-004",
+      "task_type": "REPO_EDIT",
+      "goal": "Distinct event target inventory",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return a compact JSON array of distinct nonempty event.target strings from present events, in first occurrence order. Use exact case-sensitive full-string equality; whitespace-only targets are nonempty. Omit absent events. Empty input returns []. Proper JSON escaping for Unicode, quotes, backslashes and control characters is required. Preserve input and do not inspect proposal.target, event.id, or event kind to decide inclusion. No extra formatting spaces outside strings.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return a compact JSON array of distinct nonempty event.target strings from present events, in first occurrence order. Use exact case-sensitive full-string equality; whitespace-only targets are nonempty. Omit absent events. Empty input returns [].",
+        "Proper JSON escaping for Unicode, quotes, backslashes and control characters is required. Preserve input and do not inspect proposal.target, event.id, or event kind to decide inclusion. No extra formatting spaces outside strings.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return a compact JSON array of distinct nonempty event.target strings from present events, in first occurrence order. Use exact case-sensitive full-string equality; whitespace-only targets are nonempty. Omit absent events. Empty input returns [].",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Proper JSON escaping for Unicode, quotes, backslashes and control characters is required. Preserve input and do not inspect proposal.target, event.id, or event kind to decide inclusion. No extra formatting spaces outside strings.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/OSL-004/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/OSL-004/crates/ncos-cli/src/main.rs": [
+          "event_targets"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "OSL-004",
+      "set_id": "one-shot-local-gate",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/one-shot-local-gate/OSL-004",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "OSL-005",
+      "task_type": "REPO_EDIT",
+      "goal": "Peak recorded latency by audit source",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Group records by exact source string and take maximum usage.elapsed_ms for each source, not a sum or final row. Return compact JSON array of [source, unsigned-number] pairs sorted by Rust string Ord ascending. Empty source is a valid group, empty input returns []. Do not narrow u128 values, convert them to floating point or stringify numbers. Preserve input. No missing-event filtering or wall-clock query.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Group records by exact source string and take maximum usage.elapsed_ms for each source, not a sum or final row. Return compact JSON array of [source, unsigned-number] pairs sorted by Rust string Ord ascending. Empty source is a valid group, empty input returns [].",
+        "Do not narrow u128 values, convert them to floating point or stringify numbers. Preserve input. No missing-event filtering or wall-clock query.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Group records by exact source string and take maximum usage.elapsed_ms for each source, not a sum or final row. Return compact JSON array of [source, unsigned-number] pairs sorted by Rust string Ord ascending. Empty source is a valid group, empty input returns [].",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Do not narrow u128 values, convert them to floating point or stringify numbers. Preserve input. No missing-event filtering or wall-clock query.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/OSL-005/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/OSL-005/crates/ncos-cli/src/main.rs": [
+          "latency_by_source"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "OSL-005",
+      "set_id": "one-shot-local-gate",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/one-shot-local-gate/OSL-005",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "OSL-006",
+      "task_type": "REPO_EDIT",
+      "goal": "Process sample RSS distribution",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Return zero=Z; sub_mib=S; at_least_mib=L. Count sample rows with rss_kib == 0, 1..1023 inclusive, and >=1024, respectively. Count repeated PID rows separately; never sum RSS or treat zero as invalid. Counts must cover any representable slice length. Ignore pid/parent_pid, preserve order and input, no extrapolation to unobserved processes.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Return zero=Z; sub_mib=S; at_least_mib=L. Count sample rows with rss_kib == 0, 1..1023 inclusive, and >=1024, respectively. Count repeated PID rows separately; never sum RSS or treat zero as invalid.",
+        "Counts must cover any representable slice length. Ignore pid/parent_pid, preserve order and input, no extrapolation to unobserved processes.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Return zero=Z; sub_mib=S; at_least_mib=L. Count sample rows with rss_kib == 0, 1..1023 inclusive, and >=1024, respectively. Count repeated PID rows separately; never sum RSS or treat zero as invalid.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "Counts must cover any representable slice length. Ignore pid/parent_pid, preserve order and input, no extrapolation to unobserved processes.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/OSL-006/crates/ncos-cli/src/main.rs"
+      ],
+      "risk": "low",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": true,
+      "edit_regions": {
+        "units/OSL-006/crates/ncos-cli/src/main.rs": [
+          "rss_buckets"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "OSL-006",
+      "set_id": "one-shot-local-gate",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/one-shot-local-gate/OSL-006",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "OSL-007",
+      "task_type": "AGENTIC_CODING",
+      "goal": "MemoryPressure sampled root-row evidence",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate MemoryPressure evidence only. Preserve its first evidence string and append sampled_root_rows=N, counting every process row with parent_pid == 0. Duplicate PIDs count as rows. A zero PID is not special. This measures only the supplied sample, even if processes_truncated is true. Do not infer system-wide roots, or alter thresholds, event identity/kind/target, HighLoad evidence or inputs.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate MemoryPressure evidence only. Preserve its first evidence string and append sampled_root_rows=N, counting every process row with parent_pid == 0. Duplicate PIDs count as rows. A zero PID is not special.",
+        "This measures only the supplied sample, even if processes_truncated is true. Do not infer system-wide roots, or alter thresholds, event identity/kind/target, HighLoad evidence or inputs.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate MemoryPressure evidence only. Preserve its first evidence string and append sampled_root_rows=N, counting every process row with parent_pid == 0. Duplicate PIDs count as rows. A zero PID is not special.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "This measures only the supplied sample, even if processes_truncated is true. Do not infer system-wide roots, or alter thresholds, event identity/kind/target, HighLoad evidence or inputs.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/OSL-007/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/OSL-007/crates/ncos-events/src/lib.rs": [
+          "memory_evidence",
+          "load_evidence"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "OSL-007",
+      "set_id": "one-shot-local-gate",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/one-shot-local-gate/OSL-007",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "OSL-008",
+      "task_type": "AGENTIC_CODING",
+      "goal": "HighLoad memory sample availability evidence",
+      "interface": "Preserve existing signatures, surrounding source and all protected tests. Locate HighLoad evidence only. Preserve the first evidence string and append memory_sample=unavailable when memory.total_kib==0, otherwise memory_sample=inconsistent when available_kib>total_kib, otherwise memory_sample=present. The zero-total rule has priority. No change to load thresholds, event id/kind/target, MemoryPressure behavior/evidence or input. This is sample consistency, not a new memory-pressure detector.",
+      "constraints": [
+        "Single responsibility. No dependency/public API/authority changes. Do not change any other behavior."
+      ],
+      "acceptance_cases": [
+        "Locate HighLoad evidence only. Preserve the first evidence string and append memory_sample=unavailable when memory.total_kib==0, otherwise memory_sample=inconsistent when available_kib>total_kib, otherwise memory_sample=present. The zero-total rule has priority.",
+        "No change to load thresholds, event id/kind/target, MemoryPressure behavior/evidence or input. This is sample consistency, not a new memory-pressure detector.",
+        "Existing workspace behavior remains valid.",
+        "Rust formatting remains clean.",
+        "No clippy warnings.",
+        "All workspace tests remain valid.",
+        "Workspace type checking succeeds.",
+        "Workspace build succeeds.",
+        "Only declared editable regions change; protected source and tests remain identical."
+      ],
+      "acceptance_criteria": [
+        {
+          "criterion_id": "BEHAVIOR-1",
+          "criterion_text": "Locate HighLoad evidence only. Preserve the first evidence string and append memory_sample=unavailable when memory.total_kib==0, otherwise memory_sample=inconsistent when available_kib>total_kib, otherwise memory_sample=present. The zero-total rule has priority.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "BEHAVIOR-2",
+          "criterion_text": "No change to load thresholds, event id/kind/target, MemoryPressure behavior/evidence or input. This is sample consistency, not a new memory-pressure detector.",
+          "category": "functional"
+        },
+        {
+          "criterion_id": "REGRESSION",
+          "criterion_text": "Existing workspace behavior remains valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "FORMAT",
+          "criterion_text": "Rust formatting remains clean.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "CLIPPY",
+          "criterion_text": "No clippy warnings.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-TEST",
+          "criterion_text": "All workspace tests remain valid.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-CHECK",
+          "criterion_text": "Workspace type checking succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "WORKSPACE-BUILD",
+          "criterion_text": "Workspace build succeeds.",
+          "category": "quality"
+        },
+        {
+          "criterion_id": "SCOPE",
+          "criterion_text": "Only declared editable regions change; protected source and tests remain identical.",
+          "category": "structural"
+        }
+      ],
+      "done_when": [
+        "All frozen mandatory checks and Host scope guards pass."
+      ],
+      "allowed_files": [
+        "units/OSL-008/crates/ncos-events/src/lib.rs"
+      ],
+      "risk": "normal",
+      "complexity": "small",
+      "edit_required": true,
+      "edit_location_known": false,
+      "edit_regions": {
+        "units/OSL-008/crates/ncos-events/src/lib.rs": [
+          "memory_evidence",
+          "load_evidence"
+        ]
+      },
+      "max_diff_loc": 80,
+      "dataset_entry_id": "OSL-008",
+      "set_id": "one-shot-local-gate",
+      "historical_result": "STRUCTURED_EVIDENCE_INCLUDED",
+      "bundle_path": "sets/one-shot-local-gate/OSL-008",
+      "fixture_file_count": 27,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "one-shot-local-gate",
+    "source_set": "one-shot-local-gate",
+    "entries": 8,
+    "structured_result_records": 16,
+    "task_ids_with_structured_results": 8,
+    "task_ids_without_structured_results": [],
+    "historical_reports": [
+      {
+        "file": "results/one-shot-local-gate/RESULTS_JA.md",
+        "source_report": "one-shot-local-gate/RESULTS_JA.md",
+        "source_sha256": "289e111739a948b493057f9af2c552ca17c59ed287eef81731fb87a9af487e3f"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}

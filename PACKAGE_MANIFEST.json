@@ -1,8 +1,11 @@
 {
   "snapshot_date_jst": "2026-10-20",
   "source_chat_title": "Create repository AGENTS.md",
-  "task_count": 30,
-  "results_included": false,
+  "custom_task_sets": 48,
+  "custom_task_entries": 619,
+  "official_selected_tasks": 30,
+  "historical_custom_results_included": true,
+  "model_evaluation_rerun": false,
   "files": [
     {
       "path": ".gitattributes",
@@ -13,8 +16,244 @@
       "sha256": "2e0439a4ae851c15c735d9fe048a5604affb7c6e826bb9bfd3531330258d20e5"
     },
     {
+      "path": "LICENSE",
+      "sha256": "0b35eaef92e97aa6b0b1155740765dfbf7684076112bd3be0df850f6739eb827"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5cdf62137c0e42720ac5d2f441660b036343bce672b689d4f84075a5f545718b"
+    },
+    {
+      "path": "benchmarks/custom/INDEX.md",
+      "sha256": "2f15f2d83081a8f986c6337f2edb5f85b4982ee158b9ecfe06b97089d28fb3d6"
+    },
+    {
+      "path": "benchmarks/custom/README.md",
+      "sha256": "080bfdc96a763f400547778a5aa860acf1e2ba7998aac07957ef094df1563e90"
+    },
+    {
+      "path": "benchmarks/custom/UPLOAD_MANIFEST.json",
+      "sha256": "cd712b3b10ece76e1cc76e1360b36e80cd7e05f433edddcca1a828345c9595b9"
+    },
+    {
+      "path": "benchmarks/custom/historical-results.csv",
+      "sha256": "04adf7b1488e41d91e08746ccf0197ec57ea575ac268f8fb482c3823168e1591"
+    },
+    {
+      "path": "benchmarks/custom/result-coverage.json",
+      "sha256": "a03a2589151ac779925a8e57131a2d6bb91885de6a1d87ec8a48ce5d48fcdd98"
+    },
+    {
+      "path": "benchmarks/custom/results-template.csv",
+      "sha256": "1ee7a84226a3e614c79f3dde4aa968db2956a45fd54488f42a643c534c9893f9"
+    },
+    {
+      "path": "benchmarks/custom/sets/adaptive-reviewer-escalation.json",
+      "sha256": "644987d8d8dcb173b4b061410a8d3204a22a94df2d46db67fe34d5660614ce2c"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-2.2.6-codex-value.json",
+      "sha256": "65b5859eebd32e192ee1813d4358882938124c46fdd4c58f8dc2817039771214"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-2.2.7-economic-confirmation.json",
+      "sha256": "24adc7dc22c6b2737fc57d8c407f1d2837f9149ae761cd20d68189ca2db92716"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-2.2.8-economic-retry.json",
+      "sha256": "18cdc9290b777b3def6ab2173aec4da1394d7357e7aa5212f60f009f61eb85d8"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-2.2.8-limited-economic-shadow.json",
+      "sha256": "6b7513b90df09bbcc08dc6a4b0c3fe64ae5a2328c70f26c2d41979518d72edea"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.5-syntax-preflight--live.json",
+      "sha256": "486ceaf51c6bb1085660a8fbce46e91eb7283541c7e42a0c3005eb545acc8a43"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.5-syntax-preflight--offline.json",
+      "sha256": "f83da2dab2805e6f56009a5e8643338de27e6ee13bf457d64fc97c2283de9794"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--live.json",
+      "sha256": "45016d4de37c417e288de7ef28971a4c80b5a6d3a18cbbaaf8cca5242fcae201"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--offline-final.json",
+      "sha256": "220833266b1540b4f8d93c93f23d4efbe143e11126345e8801220e83f52b811c"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--offline-verified.json",
+      "sha256": "f862960af6fbada30e537321bd0191a983ea7eede848ca9c17a7dbb0e8440d5a"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.6-body-contract--offline.json",
+      "sha256": "a2fdabf4388ed19c1c39969e3bde5202fee142e9d6d75b341945db8319c6724e"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.7-final-lf.json",
+      "sha256": "80a2ba4e8cc1661cd055208d7ee9dc993ea6ef3e4961054de14ed7cdb78cdd88"
+    },
+    {
+      "path": "benchmarks/custom/sets/bounded-v2.2.8-candidate-parse.json",
+      "sha256": "d65afc1ba05b4ca4eec72861f926ef1ac83f1f6c8fba66162c56e3e439e6bc8f"
+    },
+    {
+      "path": "benchmarks/custom/sets/economic-accounting-recovery-228.json",
+      "sha256": "6b4143958e728ed9d03e70f8ca1dab93baa0f4253b42919434d4823da69444a3"
+    },
+    {
+      "path": "benchmarks/custom/sets/family-gated-local-router-228.json",
+      "sha256": "4c7ed605768e8e0ddd30fece75dcffd72caf2debadf5dd89b15bcdb5a6b0f52d"
+    },
+    {
+      "path": "benchmarks/custom/sets/final-lf-replay.json",
+      "sha256": "6146a354fde39ce30621adfdc4052b2e76dfca877326de8b2ec48788ac282d9b"
+    },
+    {
+      "path": "benchmarks/custom/sets/formatter-guard-v2.2.2.json",
+      "sha256": "6087454b9c86e0268e83b60528c79b3205b98a8b809036392dfdeabb9606e3bd"
+    },
+    {
+      "path": "benchmarks/custom/sets/formatter-structural-v2.2.4.json",
+      "sha256": "08f63bc8daa60dcdaec151a454f0d7b09aaaf35c9953e99a07ef82acd320d72a"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-continuous-backend-soak-v2--run-002.json",
+      "sha256": "790457a3767a1ee5731ccfcc986ee7e70666dd7c0c3b40b23c9ddfb30c4caa62"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-001.json",
+      "sha256": "712e784578c93a26f8ddb5474e517d945a4341b54e49d5603b1c790b87cb50c7"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-002.json",
+      "sha256": "99fcaf6796fee95c2fd2c465c8a8d8b8e6b23dace9d65d15dc548f758312b77a"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-003.json",
+      "sha256": "8fe92eca1a86aad16ed87a46caf194797c4e236fff36b4a03f88f6336dcf8a33"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-memory-headroom-228--run-004.json",
+      "sha256": "6d2c72046cc67caadee58bc4fd6333702e1cbc338b352f278d568bb06d780f1a"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-memory-headroom-phase2--run-001.json",
+      "sha256": "a995e0c2d202cca80b2c5e34602691e65e7b5bf707273d7b91510d9b22dca2be"
+    },
+    {
+      "path": "benchmarks/custom/sets/gemma26-production-like-soak-228--run-001.json",
+      "sha256": "8bb2c32182c50c51f00b61617fd53ca62abafd1ea0f8225f2e4fb4e48ef5c2ef"
+    },
+    {
+      "path": "benchmarks/custom/sets/local-specialist-3way-228--run-001.json",
+      "sha256": "bedc697fc0b8d15edd14ef7b6e5784d89a262a043c77ba7c40be1130c626ddb1"
+    },
+    {
+      "path": "benchmarks/custom/sets/local-specialist-3way-228--run-002.json",
+      "sha256": "5c3358adeef02ec817d9b15ddd180c9b77b8d741cfe4001b5aec544c81051d3f"
+    },
+    {
+      "path": "benchmarks/custom/sets/local-specialist-3way-228--run-003.json",
+      "sha256": "2d3b2e71682fc999bd1a415e8d3064cfa45bc53acf416b203c3be628df38ea55"
+    },
+    {
+      "path": "benchmarks/custom/sets/local-specialist-economics.json",
+      "sha256": "9173075ac581465055dbb0cc33d51cdd17d288f6260cea2eea2c323bc9ac623a"
+    },
+    {
+      "path": "benchmarks/custom/sets/model-routing.json",
+      "sha256": "cb2245292b1200ba4d40e1a33077f159f1f7239912356898ad67a63668bae96c"
+    },
+    {
+      "path": "benchmarks/custom/sets/one-shot-local-gate.json",
+      "sha256": "06b8b3691faa184e1a93522a1552494a46b3a2fc9db4c84324cc01c920721c82"
+    },
+    {
+      "path": "benchmarks/custom/sets/protocol-improvement-b2.json",
+      "sha256": "b5cedb63e32bfe208ad679dd26a384e3767bba2bbd1a4b348561b0aa633d5545"
+    },
+    {
+      "path": "benchmarks/custom/sets/protocol-improvement-b3.json",
+      "sha256": "ccab3c702ca6c5a130c0a6cb6efa1ff0f2dd2ecae9353adaaabacd15b87a31fb"
+    },
+    {
+      "path": "benchmarks/custom/sets/protocol-improvement-b4.json",
+      "sha256": "2824b61eae8ac5a066da0f7cc65a7903d88c2a153793c27d56677f1a45b468a3"
+    },
+    {
+      "path": "benchmarks/custom/sets/protocol-improvement-b5.json",
+      "sha256": "eaf64199c8e38d6b982b2571a6cd0089982a6d466401314f4fc5b538849011a0"
+    },
+    {
+      "path": "benchmarks/custom/sets/protocol-improvement-v2.1.json",
+      "sha256": "280c59f371c9281304b90fab49e291f2dae5151ffe7bcfdf3a845f9c761fe82c"
+    },
+    {
+      "path": "benchmarks/custom/sets/role-separated-codex-routing.json",
+      "sha256": "1440b7eafb522df36a2cacb94bea5d64be3c552f42f8a249f8e4590bff817022"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.1.json",
+      "sha256": "680918d2f116168a8770e3890208b9f7cbe479e4224ec08c3d64b461be21a10e"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.1.json",
+      "sha256": "8431361cc76f83f5356c316725df5c8a7c0c8a8bd501de69b9265a41b80be1cb"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.3.json",
+      "sha256": "d9eb0ed520d3a84ef17d6fafce3a89a98d2994b805dabbab9cc2ea96862b55f3"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.4-fresh-001.json",
+      "sha256": "73fc14947fb7c0979f91bd688d93bb00fa30adfcd8421c14ba9fc3ca55f6b7d1"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.4.json",
+      "sha256": "ec6b99974feae3453bb5dfe1f9873161c6485d2f4a1a42c7660f8fba8a6440ea"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.5-full.json",
+      "sha256": "27cf2a2c119e5f474bc712d9ac64e52bc59300f7812da2859ccf647a64d8b27a"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.6-fresh-tasks.json",
+      "sha256": "3bcc9ee6abcb44c67e55d462b281217a91881bce5fe61eb9649d0410373ea00d"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.6-full-002.json",
+      "sha256": "39d446e4abfe1015ee78bffadd77d4f845044cf37c1020a39bebcc61dba60be8"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.6-full.json",
+      "sha256": "75f3eb7a28252007c1448a1812b0b2b914f1485dd2e3dd7163ff546e2f243290"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot-v2.2.json",
+      "sha256": "2fce65617ae5bf0b2062f5ecf29fbee14db0ce249f2389010e0b7cf018fc10fb"
+    },
+    {
+      "path": "benchmarks/custom/sets/router-shadow-pilot.json",
+      "sha256": "008554e5a9795059f6fe0ec5b97c666def6ed4e0a161c95bd4005d8cf758d3e5"
+    },
+    {
+      "path": "benchmarks/custom/synthetic-task-bundle.zip",
+      "sha256": "234671bb6c4f5924f3cb700e6b41e030c07eacac3e10a5967f6c680eb352752b"
+    },
+    {
       "path": "benchmarks/official-30/INDEX.md",
       "sha256": "4d7e893a187b01d61adde243be250c05cc5273650ad145cefa66f7593a5df886"
+    },
+    {
+      "path": "benchmarks/official-30/README.md",
+      "sha256": "4f01896e0d95d4c393084110b84a95de6252bbec28c53122f08d31a3df5bf7e7"
+    },
+    {
+      "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",
+      "sha256": "f40754fdf68a6ce8af074ee09ca5304dd36d0568d39c30acc5c1d3ad3fba18e1"
     },
     {
       "path": "benchmarks/official-30/licenses/multi_swe-LICENSE",
@@ -67,10 +306,6 @@
     {
       "path": "benchmarks/official-30/prompts/BurntSushi__ripgrep-2626.md",
       "sha256": "0ee41da58c06f3579c4fcfe571b96dd616cd74a6d24c1c0e7cef8fc46b4efdfd"
-    },
-    {
-      "path": "benchmarks/official-30/prompts/clap-rs__clap-5873.md",
-      "sha256": "c3840c959fe8785f9cfb701f03aface7058f1ba97c1025618c776889dc0ade8d"
     },
     {
       "path": "benchmarks/official-30/prompts/HumanEval_109_move_one_ball.md",
@@ -153,6 +388,10 @@
       "sha256": "3a8abf75c6f5b628fd17a4ae2c9f590a8404c64df931e65b2f795d86d10cd63e"
     },
     {
+      "path": "benchmarks/official-30/prompts/clap-rs__clap-5873.md",
+      "sha256": "c3840c959fe8785f9cfb701f03aface7058f1ba97c1025618c776889dc0ade8d"
+    },
+    {
       "path": "benchmarks/official-30/prompts/nushell__nushell-13870.md",
       "sha256": "84c859199ecd8196111fde234213dc306b82b437b463ee692eb7ec8facc0c812"
     },
@@ -185,10 +424,6 @@
       "sha256": "b7c6f4be6e8c6c102a162495932e431fedbcb44a8320dda0c40b42b4a6959e37"
     },
     {
-      "path": "benchmarks/official-30/README.md",
-      "sha256": "4f01896e0d95d4c393084110b84a95de6252bbec28c53122f08d31a3df5bf7e7"
-    },
-    {
       "path": "benchmarks/official-30/results-template.csv",
       "sha256": "305fa26283e881c5b8636fe23b473d8b2d9cdb55e7bd15ce48f2398f86941466"
     },
@@ -199,10 +434,6 @@
     {
       "path": "benchmarks/official-30/tasks/BurntSushi__ripgrep-2626.json",
       "sha256": "81723f72cb1e6b1529d55b06a3ef6cf072dc8d8ef812b7fd55302a160754f1d8"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/clap-rs__clap-5873.json",
-      "sha256": "6156477929be10414dafc0d0c74c9452da84f40a80f04c89ef3a2a32dcae4ac5"
     },
     {
       "path": "benchmarks/official-30/tasks/HumanEval_109_move_one_ball.json",
@@ -285,6 +516,10 @@
       "sha256": "407eced831f674f8491be555a5a49e0a9e31663eaa27c983fdc9443ef9fd6628"
     },
     {
+      "path": "benchmarks/official-30/tasks/clap-rs__clap-5873.json",
+      "sha256": "6156477929be10414dafc0d0c74c9452da84f40a80f04c89ef3a2a32dcae4ac5"
+    },
+    {
       "path": "benchmarks/official-30/tasks/nushell__nushell-13870.json",
       "sha256": "2eed5523c46f106458417084ed18ef07773090c38fdb1c20191b0cfb3cde75ac"
     },
@@ -315,18 +550,6 @@
     {
       "path": "benchmarks/official-30/tasks/tokio-rs__tracing-2897.json",
       "sha256": "ed0f8aecd841fa166f6c58da7f25dbaa37fe5198e3a901eb9130b92895b996a2"
-    },
-    {
-      "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",
-      "sha256": "f40754fdf68a6ce8af074ee09ca5304dd36d0568d39c30acc5c1d3ad3fba18e1"
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "0b35eaef92e97aa6b0b1155740765dfbf7684076112bd3be0df850f6739eb827"
-    },
-    {
-      "path": "README.md",
-      "sha256": "26ba3bffbdfa13415aab1c8f9afdad4218043de78655a2e35a8c605ab84b29b2"
     }
   ]
 }

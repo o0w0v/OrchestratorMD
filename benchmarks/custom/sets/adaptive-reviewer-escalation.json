@@ -1,0 +1,279 @@
+{
+  "set_id": "adaptive-reviewer-escalation",
+  "entry_count": 8,
+  "tasks": [
+    {
+      "task_id": "ARE-001",
+      "title": "Memory occupancy gauge in basis points",
+      "request": "Implement memory_basis_points(&Memory) -> Option<u16>. Return None if total is zero or available > total. Otherwise round used/total * 10000 to nearest integer, exact halves upward, without overflow for every u64 input. Range 0..=10000. This is a display gauge, not an event threshold or policy decision.",
+      "global_constraints": "Pure projections of supplied in-memory data only. No authority, dependencies, schema changes, I/O or runtime provider changes. Preserve initial public interfaces. Edit only benchmark_view.rs; helpers private. Never alter tests or metadata.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "low",
+      "category": "pure business projection",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "ARE-001",
+      "set_id": "adaptive-reviewer-escalation",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-001",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "ARE-002",
+      "title": "Consecutive audit source run compression",
+      "request": "Implement source_runs(records) returning consecutive equal-source runs as (source, start_index, end_exclusive). Preserve chronological input order, include empty source strings, compare case-sensitively. Nonadjacent equal sources remain separate. Empty input -> empty result. No sorting or deduplication across runs.",
+      "global_constraints": "Pure projections of supplied in-memory data only. No authority, dependencies, schema changes, I/O or runtime provider changes. Preserve initial public interfaces. Edit only benchmark_view.rs; helpers private. Never alter tests or metadata.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "normal",
+      "category": "pure business projection",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "ARE-002",
+      "set_id": "adaptive-reviewer-escalation",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-002",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "ARE-003",
+      "title": "Observed direct-child RSS totals",
+      "request": "Implement child_rss_by_parent(rows) as ascending parent PID -> sum of RSS in supplied child rows. Exclude self-parent rows and parent_pid=0. Count duplicate rows separately because this is a row aggregate, not PID identity resolution. Saturate u64 additions. Include a parent with zero total if a matching zero-RSS row exists. Do not infer missing processes, traverse ancestors or mutate input.",
+      "global_constraints": "Pure projections of supplied in-memory data only. No authority, dependencies, schema changes, I/O or runtime provider changes. Preserve initial public interfaces. Edit only benchmark_view.rs; helpers private. Never alter tests or metadata.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "normal",
+      "category": "pure business projection",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "ARE-003",
+      "set_id": "adaptive-reviewer-escalation",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-003",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "ARE-004",
+      "title": "Occurrence-aware shared evidence",
+      "request": "Implement shared_evidence(left, right). Return the multiset intersection of exact UTF-8 strings, in left occurrence order. A right occurrence can be consumed at most once. No trim, case folding, sorting, or input modification. Empty string is a normal value. Output each value min(left_count,right_count) times.",
+      "global_constraints": "Pure projections of supplied in-memory data only. No authority, dependencies, schema changes, I/O or runtime provider changes. Preserve initial public interfaces. Edit only benchmark_view.rs; helpers private. Never alter tests or metadata.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "normal",
+      "category": "pure business projection",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "ARE-004",
+      "set_id": "adaptive-reviewer-escalation",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-004",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "ARE-005",
+      "title": "Nearest-rank recorded latency percentile",
+      "request": "Implement latency_percentile(samples, percentile). Empty input or percentile outside 1..=100 -> None. Otherwise sort a private copy of u128 latency samples and return nearest-rank: 1-based ceil(percentile * N / 100). Retain duplicate samples; do not interpolate, narrow u128, or change original input. No overflow in rank calculation.",
+      "global_constraints": "Pure projections of supplied in-memory data only. No authority, dependencies, schema changes, I/O or runtime provider changes. Preserve initial public interfaces. Edit only benchmark_view.rs; helpers private. Never alter tests or metadata.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "low",
+      "category": "pure business projection",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "ARE-005",
+      "set_id": "adaptive-reviewer-escalation",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-005",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "ARE-006",
+      "title": "Stable event grouping with merged exact evidence",
+      "request": "Implement merge_events(events) for a display-only projection. Group by (id, kind, target) exact equality, not by id alone. Groups appear at first occurrence position. For each group, retain unique exact evidence strings in first-seen order across all matching events, including removing duplicates within its first row. Preserve first row id/kind/target. Empty input empty. No policy changes or mutation of input.",
+      "global_constraints": "Pure projections of supplied in-memory data only. No authority, dependencies, schema changes, I/O or runtime provider changes. Preserve initial public interfaces. Edit only benchmark_view.rs; helpers private. Never alter tests or metadata.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "normal",
+      "category": "pure business projection",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "ARE-006",
+      "set_id": "adaptive-reviewer-escalation",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-006",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "ARE-007",
+      "title": "Latest intent verification projection",
+      "request": "Implement latest_verification(records, intent_id) -> Option<bool>. Match exact intent.id. Select the row with greatest observed_unix_ms, breaking equal timestamps toward the last input row. Then project selected row.verification.passed; if the selected row has no verification return None, even when older rows were verified. No match -> None. Input need not be sorted. This is display data, not authorization.",
+      "global_constraints": "Pure projections of supplied in-memory data only. No authority, dependencies, schema changes, I/O or runtime provider changes. Preserve initial public interfaces. Edit only benchmark_view.rs; helpers private. Never alter tests or metadata.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "normal",
+      "category": "pure business projection",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "ARE-007",
+      "set_id": "adaptive-reviewer-escalation",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-007",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    },
+    {
+      "task_id": "ARE-008",
+      "title": "Observation freshness with explicit future clock state",
+      "request": "Implement freshness(observed_ms, now_ms, ttl_ms) returning Future for observed > now; otherwise Fresh if age <= ttl_ms inclusive, else Stale. ttl_ms is u64 but timestamps u128; never narrow age. ttl zero means only identical timestamps are Fresh. No wall clock reads and no expiry policy changes.",
+      "global_constraints": "Pure projections of supplied in-memory data only. No authority, dependencies, schema changes, I/O or runtime provider changes. Preserve initial public interfaces. Edit only benchmark_view.rs; helpers private. Never alter tests or metadata.",
+      "allowed_files": [
+        "crates/ncos-core/src/benchmark_view.rs"
+      ],
+      "risk": "low",
+      "category": "pure business projection",
+      "max_diff_loc": 260,
+      "quality_contract": [
+        "acceptance",
+        "targeted regression",
+        "fmt",
+        "clippy",
+        "workspace test",
+        "check",
+        "build",
+        "scope/hash guard"
+      ],
+      "structural": null,
+      "test_note": "Protected common acceptance is independent of your proposed acceptance. No task-specific test edits.",
+      "edit_regions": {},
+      "dataset_entry_id": "ARE-008",
+      "set_id": "adaptive-reviewer-escalation",
+      "historical_result": "REPORT_ONLY_OR_NOT_IMPORTED",
+      "bundle_path": "sets/adaptive-reviewer-escalation/ARE-008",
+      "fixture_file_count": 30,
+      "same_exact_contract_as": null
+    }
+  ],
+  "result_summary": {
+    "set_id": "adaptive-reviewer-escalation",
+    "source_set": "adaptive-reviewer-escalation",
+    "entries": 8,
+    "structured_result_records": 0,
+    "task_ids_with_structured_results": 0,
+    "task_ids_without_structured_results": [
+      "ARE-001",
+      "ARE-002",
+      "ARE-003",
+      "ARE-004",
+      "ARE-005",
+      "ARE-006",
+      "ARE-007",
+      "ARE-008"
+    ],
+    "historical_reports": [
+      {
+        "file": "results/adaptive-reviewer-escalation/RESULTS_JA.md",
+        "source_report": "adaptive-reviewer-escalation/RESULTS_JA.md",
+        "source_sha256": "b43bd83e6eec024307b7f56e9b7df6f24fee7c51b0ae345b46a26219d052e10f"
+      }
+    ],
+    "note": "Multiple records may describe stages or models for the same task. No latest outcome or PASS is inferred. Missing structured results mean NOT_IMPORTED, not NOT_RUN or FAIL."
+  }
+}
