@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-21T17:08:02.779149+00:00",
+  "source_files": {
+    "FOUR_ARM_AGGREGATE.json": "b754eed766625c0f1ab291d13bef34d27eee9303007a07bb9045b4d4e4448d58",
+    "TASK_ARM_RESULTS.json": "69fa81edc2c1a1f0e47cc7547baabf35dfd86cc59d948959688192050125df1a",
+    "UNIQUE_USAGE.json": "277a964488e06cc8c198f19b4383d40d8b490ac7cf00ae48d163bf665d67d545",
+    "RESULTS_JA.md": "9b6144933eb7537d76ccbecee026122967c7b3843945f6331dced62ab883e979"
+  },
+  "terminal_sha256": "07d4983f5463da945645ba6df6490585efc93f5b2de8ece2c19a0915008ced57",
+  "old_results_modified": false,
+  "unique_184_task_arm_pairs": true,
+  "unique_471_usage_rows": true,
+  "codex_actual_spend_reconciled": true,
+  "unknown_quality_preserved": [
+    {
+      "task_id": "GSOAK228-003",
+      "arm": "S1",
+      "status": "INFRA_ERROR",
+      "resolved": null
+    },
+    {
+      "task_id": "GSOAK228-010",
+      "arm": "S1",
+      "status": "INFRA_ERROR",
+      "resolved": null
+    },
+    {
+      "task_id": "GSOAK228-060",
+      "arm": "A1",
+      "status": "INFRA_ERROR",
+      "resolved": null
+    },
+    {
+      "task_id": "GSOAK228-022",
+      "arm": "A1",
+      "status": "TERMINAL",
+      "resolved": null
+    }
+  ],
+  "official_benchmark": false,
+  "source_change": "report only; frozen model/protocol/scoring unchanged"
+}
