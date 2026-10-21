@@ -1,0 +1,264 @@
+{
+  "arms": {
+    "S0": {
+      "frozen_tasks": 46,
+      "resolved": 42,
+      "failed": 4,
+      "unmeasured": 0,
+      "quality_pass_rate": 0.9130434782608695,
+      "quality_lower_bound": 0.9130434782608695,
+      "quality_upper_bound": 0.9130434782608695,
+      "credits": "153.97206",
+      "credits_per_resolved": "3.666001428571428571428571429",
+      "tokens": {
+        "input_tokens": "8155848",
+        "cached_input_tokens": "6410752",
+        "uncached_input_tokens": "1745096",
+        "output_tokens": "138654",
+        "total_tokens": "8294502"
+      },
+      "adopted": 0,
+      "fallback": 0
+    },
+    "S1": {
+      "frozen_tasks": 46,
+      "resolved": 44,
+      "failed": 0,
+      "unmeasured": 2,
+      "quality_pass_rate": null,
+      "quality_lower_bound": 0.9565217391304348,
+      "quality_upper_bound": 1.0,
+      "credits": "88.04747",
+      "credits_per_resolved": "2.001078863636363636363636364",
+      "tokens": {
+        "input_tokens": "4194654",
+        "cached_input_tokens": "3062144",
+        "uncached_input_tokens": "1132510",
+        "output_tokens": "64445",
+        "total_tokens": "4259099"
+      },
+      "adopted": 37,
+      "fallback": 7
+    },
+    "A0": {
+      "frozen_tasks": 46,
+      "resolved": 46,
+      "failed": 0,
+      "unmeasured": 0,
+      "quality_pass_rate": 1.0,
+      "quality_lower_bound": 1.0,
+      "quality_upper_bound": 1.0,
+      "credits": "698.50445",
+      "credits_per_resolved": "15.18487934782608695652173913",
+      "tokens": {
+        "input_tokens": "7142310",
+        "cached_input_tokens": "5265408",
+        "uncached_input_tokens": "1876902",
+        "output_tokens": "78115",
+        "total_tokens": "7220425"
+      },
+      "adopted": 0,
+      "fallback": 0
+    },
+    "A1": {
+      "frozen_tasks": 46,
+      "resolved": 44,
+      "failed": 0,
+      "unmeasured": 2,
+      "quality_pass_rate": null,
+      "quality_lower_bound": 0.9565217391304348,
+      "quality_upper_bound": 1.0,
+      "credits": "454.16090",
+      "credits_per_resolved": "10.32183863636363636363636364",
+      "tokens": {
+        "input_tokens": "4062589",
+        "cached_input_tokens": "2758656",
+        "uncached_input_tokens": "1303933",
+        "output_tokens": "47369",
+        "total_tokens": "4109958"
+      },
+      "adopted": 38,
+      "fallback": 6
+    }
+  },
+  "comparisons": {
+    "A0_vs_S0": {
+      "credits": {
+        "counts": {
+          "BOTH_RESOLVED": 42,
+          "FIRST_ONLY": 4,
+          "SECOND_ONLY": 0,
+          "NEITHER": 0,
+          "UNMEASURED": 0
+        },
+        "first_cost": "698.50445",
+        "baseline_cost": "153.97206",
+        "reduction_percent": "-353.6566244551121807424022254",
+        "quality_regressions": [],
+        "frozen_denominator": 46,
+        "paired_quality_measured": true
+      },
+      "total_tokens": {
+        "counts": {
+          "BOTH_RESOLVED": 42,
+          "FIRST_ONLY": 4,
+          "SECOND_ONLY": 0,
+          "NEITHER": 0,
+          "UNMEASURED": 0
+        },
+        "first_cost": "7220425",
+        "baseline_cost": "8294502",
+        "reduction_percent": "12.94926446458147818880506630",
+        "quality_regressions": [],
+        "frozen_denominator": 46,
+        "paired_quality_measured": true
+      }
+    },
+    "S1_vs_S0": {
+      "credits": {
+        "counts": {
+          "BOTH_RESOLVED": 40,
+          "FIRST_ONLY": 4,
+          "SECOND_ONLY": 0,
+          "NEITHER": 0,
+          "UNMEASURED": 2
+        },
+        "first_cost": "88.04747",
+        "baseline_cost": "153.97206",
+        "reduction_percent": "42.81594336011351669906864921",
+        "quality_regressions": [],
+        "frozen_denominator": 46,
+        "paired_quality_measured": false
+      },
+      "total_tokens": {
+        "counts": {
+          "BOTH_RESOLVED": 40,
+          "FIRST_ONLY": 4,
+          "SECOND_ONLY": 0,
+          "NEITHER": 0,
+          "UNMEASURED": 2
+        },
+        "first_cost": "4259099",
+        "baseline_cost": "8294502",
+        "reduction_percent": "48.65154050237132982787875631",
+        "quality_regressions": [],
+        "frozen_denominator": 46,
+        "paired_quality_measured": false
+      }
+    },
+    "A1_vs_A0": {
+      "credits": {
+        "counts": {
+          "BOTH_RESOLVED": 44,
+          "FIRST_ONLY": 0,
+          "SECOND_ONLY": 0,
+          "NEITHER": 0,
+          "UNMEASURED": 2
+        },
+        "first_cost": "454.16090",
+        "baseline_cost": "698.50445",
+        "reduction_percent": "34.98095824586371640152041981",
+        "quality_regressions": [],
+        "frozen_denominator": 46,
+        "paired_quality_measured": false
+      },
+      "total_tokens": {
+        "counts": {
+          "BOTH_RESOLVED": 44,
+          "FIRST_ONLY": 0,
+          "SECOND_ONLY": 0,
+          "NEITHER": 0,
+          "UNMEASURED": 2
+        },
+        "first_cost": "4109958",
+        "baseline_cost": "7220425",
+        "reduction_percent": "43.07872459031151213398103297",
+        "quality_regressions": [],
+        "frozen_denominator": 46,
+        "paired_quality_measured": false
+      }
+    },
+    "A1_vs_S1": {
+      "credits": {
+        "counts": {
+          "BOTH_RESOLVED": 42,
+          "FIRST_ONLY": 0,
+          "SECOND_ONLY": 0,
+          "NEITHER": 0,
+          "UNMEASURED": 4
+        },
+        "first_cost": "454.16090",
+        "baseline_cost": "88.04747",
+        "reduction_percent": "-415.8136855039673485223368712",
+        "quality_regressions": [],
+        "frozen_denominator": 46,
+        "paired_quality_measured": false
+      },
+      "total_tokens": {
+        "counts": {
+          "BOTH_RESOLVED": 42,
+          "FIRST_ONLY": 0,
+          "SECOND_ONLY": 0,
+          "NEITHER": 0,
+          "UNMEASURED": 4
+        },
+        "first_cost": "4109958",
+        "baseline_cost": "4259099",
+        "reduction_percent": "3.501703059731647468161693353",
+        "quality_regressions": [],
+        "frozen_denominator": 46,
+        "paired_quality_measured": false
+      }
+    }
+  },
+  "ACTUAL_STUDY_SPEND": {
+    "input_tokens": "19549299",
+    "cached_input_tokens": "14624640",
+    "uncached_input_tokens": "4924659",
+    "output_tokens": "263477",
+    "total_tokens": "19812776",
+    "credits": "1130.65392"
+  },
+  "known_credits_subtotal": "1130.65392",
+  "comparison_workflow_cost": {
+    "S0": {
+      "input_tokens": "8155848",
+      "cached_input_tokens": "6410752",
+      "uncached_input_tokens": "1745096",
+      "output_tokens": "138654",
+      "total_tokens": "8294502",
+      "credits": "153.97206"
+    },
+    "S1": {
+      "input_tokens": "4194654",
+      "cached_input_tokens": "3062144",
+      "uncached_input_tokens": "1132510",
+      "output_tokens": "64445",
+      "total_tokens": "4259099",
+      "credits": "88.04747"
+    },
+    "A0": {
+      "input_tokens": "7142310",
+      "cached_input_tokens": "5265408",
+      "uncached_input_tokens": "1876902",
+      "output_tokens": "78115",
+      "total_tokens": "7220425",
+      "credits": "698.50445"
+    },
+    "A1": {
+      "input_tokens": "4062589",
+      "cached_input_tokens": "2758656",
+      "uncached_input_tokens": "1303933",
+      "output_tokens": "47369",
+      "total_tokens": "4109958",
+      "credits": "454.16090"
+    }
+  },
+  "credit_values_are_rate_calculations_not_balance_observations": true,
+  "preparation_credits": "3.96430",
+  "total_project_credits": null,
+  "Local_tokens_are_separate": true,
+  "old_results_included": true,
+  "old_run": "phase-r-002",
+  "reused_usage_deduplicated": true
+}
