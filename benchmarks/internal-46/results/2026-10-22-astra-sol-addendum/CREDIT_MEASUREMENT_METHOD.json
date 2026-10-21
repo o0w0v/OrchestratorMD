@@ -1,0 +1,44 @@
+{
+  "classification": "NATIVE_USAGE_TIMES_FROZEN_OFFICIAL_STANDARD_CREDIT_RATE",
+  "invoice_or_account_actual_debit_credits": null,
+  "invoice_debit_not_available": true,
+  "API_USD_billing": false,
+  "credits_are_not_claimed_as_account_statement_measurement": true,
+  "formula": "((input-cached)*input_rate + cached*cached_rate + output*output_rate)/1000000",
+  "frozen_pricing": {
+    "url": "https://learn.chatgpt.com/docs/pricing.md",
+    "fetched_at": "2026-10-20T22:03:17.753839+00:00",
+    "raw_sha256": "e3e0a5ac79441fac79cf1e50d31c0bdbd8d27e0f30452a8307f87ab64495bdf3",
+    "unit": "credits per 1M tokens",
+    "speed": "Standard",
+    "rates": {
+      "gpt-6-sol": {
+        "input": 50,
+        "cached": 5,
+        "output": 250
+      },
+      "gpt-6-astra": {
+        "input": 250,
+        "cached": 25,
+        "output": 1250
+      }
+    },
+    "verified_html_table_rows": {
+      "GPT-6 Astra": [
+        "GPT-6 Astra",
+        "250 credits",
+        "25 credits",
+        "1,250 credits"
+      ],
+      "GPT-6 Sol": [
+        "GPT-6 Sol",
+        "50 credits",
+        "5 credits",
+        "250 credits"
+      ]
+    },
+    "API_USD": false,
+    "recheck_before_Phase_R": true
+  },
+  "prior_reports_or_raw_usage_changed": false
+}
