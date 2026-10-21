@@ -1202,7 +1202,47 @@
     {
       "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/RECOVERY_008_PROGRESS_JA.md",
       "sha256": "dd30a036d38bd83b1acad1fb75555f62221cf964ef081be591f4241925b2fb9b"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/RESULTS_JA.md",
+      "sha256": "585cd44d21b3ab6c116c10ddf056dbd54ce1babf7f6abea3d390970934a3c1ad"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/FOUR_ARM_AGGREGATE.json",
+      "sha256": "b754eed766625c0f1ab291d13bef34d27eee9303007a07bb9045b4d4e4448d58"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/TOKEN_ACCOUNTING.json",
+      "sha256": "2bb38201782808bd6691cbea1a53c7432d88fd8e5e647f25b6b4324d60f245a2"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/TASK_ARM_RESULTS.csv",
+      "sha256": "2533f6d68c1a4b28bdd5a39611354cca62dd95a09637624a0483cff740c3ccfa"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/CODEX_SESSION_USAGE.csv",
+      "sha256": "1add50b6ac3a56e4adfd91751e76e990fc580660f5d84bffbb09c46e25e68983"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/LOCAL_MODEL_USAGE.csv",
+      "sha256": "a2cd76ef09661d5d89e2bcc7ba5e112bce13ceac8d38873c8c5301f75af62a6f"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/PRESERVATION_AND_CHECKS.json",
+      "sha256": "d198a5b6155e26f6b237869a52a8e1f7c2802ec80fa352a556dcf0be808c25b0"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/PACKAGE_MANIFEST.json",
+      "sha256": "45fee9d0684fc7c5203bc6abd17f675b241bf7c1afb8bdf83377ca36b6cdea4a"
     }
   ],
-  "official_result_revision": "2026-10-21-gemma26-router"
+  "official_result_revision": "2026-10-21-gemma26-router",
+  "internal_46_final_revision": {
+    "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/RESULTS_JA.md",
+    "tasks": 46,
+    "arms": 4,
+    "terminal_dispositions": 184,
+    "official_benchmark": false,
+    "quality_unmeasured": 4
+  }
 }
