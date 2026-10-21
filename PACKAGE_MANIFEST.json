@@ -16,32 +16,12 @@
       "sha256": "2e0439a4ae851c15c735d9fe048a5604affb7c6e826bb9bfd3531330258d20e5"
     },
     {
-      "path": "LICENSE",
-      "sha256": "0b35eaef92e97aa6b0b1155740765dfbf7684076112bd3be0df850f6739eb827"
-    },
-    {
-      "path": "README.md",
-      "sha256": "ee4ed738e7c2d30eced08d8611fdc1d9a8408a93eacb463e22766f3e5bbd68a3"
+      "path": "benchmarks/custom/catalog.json",
+      "sha256": "dd1064c7b56e9643f2d47f7ab1cd600b88248ec292a63d4cc75099bdfb2fe7b2"
     },
     {
       "path": "benchmarks/custom/CORRESPONDENCE_AUDIT.md",
       "sha256": "3a114b30385c57ea4946625fa8853e203dee5e677086087bc9c0178011d972c6"
-    },
-    {
-      "path": "benchmarks/custom/INDEX.md",
-      "sha256": "d4b518a260dc42aa5ca3729c26ad89bd671d113cf9b2f773700694ecc5125b6e"
-    },
-    {
-      "path": "benchmarks/custom/README.md",
-      "sha256": "ab49bbb108505956a297c829556cb9733ad298144e0e9d9a735c61cfa093d79f"
-    },
-    {
-      "path": "benchmarks/custom/UPLOAD_MANIFEST.json",
-      "sha256": "decfa9dbf8b4600bdbb6748399899969ae0fba422862ffb9b0756e71c6244ce5"
-    },
-    {
-      "path": "benchmarks/custom/catalog.json",
-      "sha256": "dd1064c7b56e9643f2d47f7ab1cd600b88248ec292a63d4cc75099bdfb2fe7b2"
     },
     {
       "path": "benchmarks/custom/correspondence-audit.json",
@@ -50,6 +30,14 @@
     {
       "path": "benchmarks/custom/historical-results.csv",
       "sha256": "dddbcc1a82437ec75bd7a6375a6b035ba58fc39def50065211151adcc897e9bd"
+    },
+    {
+      "path": "benchmarks/custom/INDEX.md",
+      "sha256": "d4b518a260dc42aa5ca3729c26ad89bd671d113cf9b2f773700694ecc5125b6e"
+    },
+    {
+      "path": "benchmarks/custom/README.md",
+      "sha256": "ab49bbb108505956a297c829556cb9733ad298144e0e9d9a735c61cfa093d79f"
     },
     {
       "path": "benchmarks/custom/reports/adaptive-reviewer-escalation/RESULTS_JA.md",
@@ -848,16 +836,12 @@
       "sha256": "1766304d1fd9df63f34f26f93324009db30ab699578c4bb357e9e2738b84881c"
     },
     {
+      "path": "benchmarks/custom/UPLOAD_MANIFEST.json",
+      "sha256": "decfa9dbf8b4600bdbb6748399899969ae0fba422862ffb9b0756e71c6244ce5"
+    },
+    {
       "path": "benchmarks/official-30/INDEX.md",
       "sha256": "4d7e893a187b01d61adde243be250c05cc5273650ad145cefa66f7593a5df886"
-    },
-    {
-      "path": "benchmarks/official-30/README.md",
-      "sha256": "3c59bd1d91a6430f7ab988020388a9a38f5c38742b914118d8d8bd4e79154390"
-    },
-    {
-      "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",
-      "sha256": "f40754fdf68a6ce8af074ee09ca5304dd36d0568d39c30acc5c1d3ad3fba18e1"
     },
     {
       "path": "benchmarks/official-30/licenses/multi_swe-LICENSE",
@@ -912,6 +896,10 @@
       "sha256": "0ee41da58c06f3579c4fcfe571b96dd616cd74a6d24c1c0e7cef8fc46b4efdfd"
     },
     {
+      "path": "benchmarks/official-30/prompts/clap-rs__clap-5873.md",
+      "sha256": "c3840c959fe8785f9cfb701f03aface7058f1ba97c1025618c776889dc0ade8d"
+    },
+    {
       "path": "benchmarks/official-30/prompts/HumanEval_109_move_one_ball.md",
       "sha256": "37a2a9e76dee9c7a64e0f64d34d4d72cdcf4180f4058a74ab5ca0bf7ca309803"
     },
@@ -920,16 +908,16 @@
       "sha256": "4e85ad6320caa1979f71462e7e59e99518734977ebdace57b3c48f0d7e066d57"
     },
     {
+      "path": "benchmarks/official-30/prompts/HumanEval_13_greatest_common_divisor.md",
+      "sha256": "a48b1949cace27e81b6789c01196448d7d3db6b4a5ead368983527448d72dc63"
+    },
+    {
       "path": "benchmarks/official-30/prompts/HumanEval_132_is_nested.md",
       "sha256": "e97cdd867220b0ffadf3e092b0a73bbb5c70eec8b2088257fb0d0fb8e3e1812c"
     },
     {
       "path": "benchmarks/official-30/prompts/HumanEval_135_can_arrange.md",
       "sha256": "a37ff80f211281de4199db0913863d53c9b90a2badbc541df705f9174a92ed2b"
-    },
-    {
-      "path": "benchmarks/official-30/prompts/HumanEval_13_greatest_common_divisor.md",
-      "sha256": "a48b1949cace27e81b6789c01196448d7d3db6b4a5ead368983527448d72dc63"
     },
     {
       "path": "benchmarks/official-30/prompts/HumanEval_146_specialFilter.md",
@@ -984,16 +972,12 @@
       "sha256": "c3a5875430a8a9120524431fa9d1b28df9635b20b6d00ee0d65af40bff8de71e"
     },
     {
-      "path": "benchmarks/official-30/prompts/HumanEval_99_closest_integer.md",
-      "sha256": "de2819a298a699ed968101ed5c8961e468faf559ac8e9eb6a4cac529fa953c44"
-    },
-    {
       "path": "benchmarks/official-30/prompts/HumanEval_9_rolling_max.md",
       "sha256": "3a8abf75c6f5b628fd17a4ae2c9f590a8404c64df931e65b2f795d86d10cd63e"
     },
     {
-      "path": "benchmarks/official-30/prompts/clap-rs__clap-5873.md",
-      "sha256": "c3840c959fe8785f9cfb701f03aface7058f1ba97c1025618c776889dc0ade8d"
+      "path": "benchmarks/official-30/prompts/HumanEval_99_closest_integer.md",
+      "sha256": "de2819a298a699ed968101ed5c8961e468faf559ac8e9eb6a4cac529fa953c44"
     },
     {
       "path": "benchmarks/official-30/prompts/nushell__nushell-13870.md",
@@ -1028,8 +1012,16 @@
       "sha256": "b7c6f4be6e8c6c102a162495932e431fedbcb44a8320dda0c40b42b4a6959e37"
     },
     {
+      "path": "benchmarks/official-30/README.md",
+      "sha256": "3c59bd1d91a6430f7ab988020388a9a38f5c38742b914118d8d8bd4e79154390"
+    },
+    {
       "path": "benchmarks/official-30/results-template.csv",
       "sha256": "305fa26283e881c5b8636fe23b473d8b2d9cdb55e7bd15ce48f2398f86941466"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/STATUS_JA.md",
+      "sha256": "e03110b4e4db1d22cd4a23124390a3e04a24bd4153c48c051e7043ef74677f4d"
     },
     {
       "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/ACCOUNTING_RECONCILIATION.json",
@@ -1068,6 +1060,10 @@
       "sha256": "81723f72cb1e6b1529d55b06a3ef6cf072dc8d8ef812b7fd55302a160754f1d8"
     },
     {
+      "path": "benchmarks/official-30/tasks/clap-rs__clap-5873.json",
+      "sha256": "6156477929be10414dafc0d0c74c9452da84f40a80f04c89ef3a2a32dcae4ac5"
+    },
+    {
       "path": "benchmarks/official-30/tasks/HumanEval_109_move_one_ball.json",
       "sha256": "43e0db6026f4e2e6e90690d7f24295d5eadb45774fd5637e05e4bad68f5ba7c9"
     },
@@ -1076,16 +1072,16 @@
       "sha256": "3263ceb46c8e3f5631e07a7f5a9eed7c781f9efd2d6cac0fd027a1980051d010"
     },
     {
+      "path": "benchmarks/official-30/tasks/HumanEval_13_greatest_common_divisor.json",
+      "sha256": "9c366718fe8926b14226990ac58298482d783c5868a218ed8803d2f8d837ab86"
+    },
+    {
       "path": "benchmarks/official-30/tasks/HumanEval_132_is_nested.json",
       "sha256": "e31215d9d10927e29aee44e99a4e7c6a9f50d3e877df2eb7821cbcb029875f86"
     },
     {
       "path": "benchmarks/official-30/tasks/HumanEval_135_can_arrange.json",
       "sha256": "f6339087deca57d8725355ddf4589c52d5464c1f85252fda5b7d7b5d859eb9c7"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_13_greatest_common_divisor.json",
-      "sha256": "9c366718fe8926b14226990ac58298482d783c5868a218ed8803d2f8d837ab86"
     },
     {
       "path": "benchmarks/official-30/tasks/HumanEval_146_specialFilter.json",
@@ -1140,16 +1136,12 @@
       "sha256": "ab7832af8b3f0680b1a9ddb97364548dd10ea2c470ca46d6a88c2b73b24411d8"
     },
     {
-      "path": "benchmarks/official-30/tasks/HumanEval_99_closest_integer.json",
-      "sha256": "4f2460c25b2f1d162cc048a56a5e0ea118c24504fa736f727bd4f365243733d6"
-    },
-    {
       "path": "benchmarks/official-30/tasks/HumanEval_9_rolling_max.json",
       "sha256": "407eced831f674f8491be555a5a49e0a9e31663eaa27c983fdc9443ef9fd6628"
     },
     {
-      "path": "benchmarks/official-30/tasks/clap-rs__clap-5873.json",
-      "sha256": "6156477929be10414dafc0d0c74c9452da84f40a80f04c89ef3a2a32dcae4ac5"
+      "path": "benchmarks/official-30/tasks/HumanEval_99_closest_integer.json",
+      "sha256": "4f2460c25b2f1d162cc048a56a5e0ea118c24504fa736f727bd4f365243733d6"
     },
     {
       "path": "benchmarks/official-30/tasks/nushell__nushell-13870.json",
@@ -1182,6 +1174,18 @@
     {
       "path": "benchmarks/official-30/tasks/tokio-rs__tracing-2897.json",
       "sha256": "ed0f8aecd841fa166f6c58da7f25dbaa37fe5198e3a901eb9130b92895b996a2"
+    },
+    {
+      "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",
+      "sha256": "f40754fdf68a6ce8af074ee09ca5304dd36d0568d39c30acc5c1d3ad3fba18e1"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0b35eaef92e97aa6b0b1155740765dfbf7684076112bd3be0df850f6739eb827"
+    },
+    {
+      "path": "README.md",
+      "sha256": "ee4ed738e7c2d30eced08d8611fdc1d9a8408a93eacb463e22766f3e5bbd68a3"
     }
   ],
   "official_result_revision": "2026-10-21-gemma26-router"
