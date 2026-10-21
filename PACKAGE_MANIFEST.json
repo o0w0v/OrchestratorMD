@@ -1258,6 +1258,10 @@
     {
       "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/PACKAGE_MANIFEST.json",
       "sha256": "6dddd9ce402e0e3fccca39617f9d4971774c4462aa0edb4f08d49e8820c324e2"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/OFFICIAL_DIRECT_CONTINUATION_PROGRESS_JA.md",
+      "sha256": "9e0cd212add4c7173f9bab622fa44ca0bfca7c5c95d7d47c6035c6e8e5dc8748"
     }
   ],
   "official_result_revision": "2026-10-21-gemma26-router",
@@ -1269,5 +1273,14 @@
     "official_benchmark": false,
     "quality_unmeasured": 4,
     "addendum_path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/FINAL_TECHNICAL_ADDENDUM_JA.md"
+  },
+  "external_astra_sol_continuation": {
+    "status": "DIRECT_CONTINUING_LOCAL_PAUSED",
+    "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/OFFICIAL_DIRECT_CONTINUATION_PROGRESS_JA.md",
+    "Local_attempts_at_retained_stop": 9,
+    "retained_Host_unknowns": 2,
+    "Local_unattempted_pending": 6,
+    "original30_identity_unchanged": true,
+    "official_new_Astra_scoring_complete": false
   }
 }
