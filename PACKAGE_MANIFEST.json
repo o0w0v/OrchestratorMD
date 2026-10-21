@@ -1234,6 +1234,30 @@
     {
       "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/PACKAGE_MANIFEST.json",
       "sha256": "45fee9d0684fc7c5203bc6abd17f675b241bf7c1afb8bdf83377ca36b6cdea4a"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/FINAL_TECHNICAL_ADDENDUM_JA.md",
+      "sha256": "42c9eb32cd5214694161be281557512a7e97cc6e267b38ebf3a11a9c09d1de16"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/PAIRED_COMPARISONS.csv",
+      "sha256": "e922ebe2e61bccffb50bf628d774984d535380f0e09cd9cbf155c8835af11e07"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/QUALITY_DIFFERENCES.json",
+      "sha256": "55e553a8ca7081f5c3795a39fbfcad0d1811b91c7474a3d9dff26642e501fdf6"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/WALL_TIME_SUMMARY.json",
+      "sha256": "9fa9caa11a359f1674f903c4326f97644d69d7007bca71caf69ce2772636fe0c"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/CREDIT_MEASUREMENT_METHOD.json",
+      "sha256": "679099d6fa16744095a55695bbd9b849032fceb32cd0b8d42435c9e7ffcc7212"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/PACKAGE_MANIFEST.json",
+      "sha256": "6dddd9ce402e0e3fccca39617f9d4971774c4462aa0edb4f08d49e8820c324e2"
     }
   ],
   "official_result_revision": "2026-10-21-gemma26-router",
@@ -1243,6 +1267,7 @@
     "arms": 4,
     "terminal_dispositions": 184,
     "official_benchmark": false,
-    "quality_unmeasured": 4
+    "quality_unmeasured": 4,
+    "addendum_path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/FINAL_TECHNICAL_ADDENDUM_JA.md"
   }
 }
