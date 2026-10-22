@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "task_id": "HumanEval_13_greatest_common_divisor",
+      "arm": "A",
+      "official_status": "SyntaxError",
+      "compiler_stderr_present": true,
+      "Rust_error_codes": [
+        "E0599"
+      ],
+      "compiler_stderr_sha256": "8df497e68a8664f321a2279932ecb0a2fd5f2569fa4775e32febddce3b4d6e09",
+      "raw_result_sha256": "cfba58d2a7bc0094d2514ef18d082444272afe176ed32400457bc7523b8ddff0",
+      "private_stderr_or_source_returned": false
+    },
+    {
+      "task_id": "HumanEval_99_closest_integer",
+      "arm": "B",
+      "official_status": "SyntaxError",
+      "compiler_stderr_present": true,
+      "Rust_error_codes": [
+        "E0599"
+      ],
+      "compiler_stderr_sha256": "8a84db263afb86965235084698074815c088be12938d7ccf7b9986f20068c7d4",
+      "raw_result_sha256": "cfc1ef9b48ba4e739ffe99d1e5c91161c284f9145d8aae20f98dc30967e68aee",
+      "private_stderr_or_source_returned": false
+    }
+  ],
+  "private_stderr_or_source_returned": false,
+  "projection_fields": "fixed Rust compiler error codes only; no raw stderr/program/tests",
+  "primary_result_sha256": "6eb03383af0dbd67e7e7949d7041e0a781ae899a11860344142930f1a20234f7",
+  "new_AI_calls": 0
+}
