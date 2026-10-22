@@ -279,6 +279,7 @@ Astra＋Gemma26の検証では、15件のうち7件が自動チェックで不�
 - [公式30課題のAstra/Sol 4構成最終評価](../../benchmarks/official-30/results/2026-10-22-astra-sol-final/RESULTS_JA.md)
 - [公式30課題の発表用要約](../../benchmarks/official-30/results/2026-10-22-astra-sol-final/PRESENTATION_BRIEF_JA.md)
 - [公式30課題でのGemma不採用理由（Astra側）](../../benchmarks/official-30/results/2026-10-22-astra-sol-final/LOCAL_ROUTING_RESULTS.json)
+- [関連研究と次のアクション：振り分け・分割・手順の再利用](2026-10-related-research-and-next-actions.md)
 - [開発・委譲ルール](../../AGENTS.md)
 
 ---
