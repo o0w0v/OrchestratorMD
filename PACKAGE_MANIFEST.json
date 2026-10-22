@@ -1144,6 +1144,14 @@
       "sha256": "1c5b2469f1a2c6eca1449175e4d5e09c39163c6ceac5546ef9d8061269f39cde"
     },
     {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_PROGRESS_JA.md",
+      "sha256": "fb95beefe397b9fecf5320591412a8837c0c66aff9065ef78d4503485a5a021a"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_SNAPSHOT.json",
+      "sha256": "f857ed967d88b148f15af7b75931831ecab4ef15317811b0c384c70429f6ffea"
+    },
+    {
       "path": "benchmarks/official-30/source-pins.json",
       "sha256": "91f219848592d9605dc76ce69d2d1fd179491ead3769621f72471c949f39e0be"
     },
@@ -1320,5 +1328,17 @@
     "old_results_unchanged": true,
     "Host_classification_overlay": "EXPERIMENT_ONLY",
     "official_Astra_scored": false
+  },
+  "external_recovery021": {
+    "status": "MULTIPL_HOST_WORKFLOWS_COMPLETE_SWE_RUNNING_OFFICIAL_QUALITY_PENDING",
+    "progress_path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_PROGRESS_JA.md",
+    "MultiPL_E_Host_A": 20,
+    "MultiPL_E_Host_B": 20,
+    "Local_attempts": 15,
+    "Local_adopted": 4,
+    "Local_repair": 0,
+    "Astra_eligible_15_credit_reduction_percent": "-3.183851000004231031229241503",
+    "official_Astra_quality": null,
+    "old_results_unchanged": true
   }
 }
