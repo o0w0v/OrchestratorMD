@@ -1286,6 +1286,14 @@
     {
       "path": "README.md",
       "sha256": "ee4ed738e7c2d30eced08d8611fdc1d9a8408a93eacb463e22766f3e5bbd68a3"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery022/PROGRESS022_JA.md",
+      "sha256": "00caa34b6883537f63ab20e42f8f53726adaab2bbbceef05974a2d6fccce0d76"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery022/PROGRESS022_SNAPSHOT.json",
+      "sha256": "e1bc2cb5fc7a19031a2a8369c53ccba48d7c1f0a3054ea24384c24d67d9ba487"
     }
   ],
   "official_result_revision": "2026-10-21-gemma26-router",
@@ -1340,5 +1348,19 @@
     "Astra_eligible_15_credit_reduction_percent": "-3.183851000004231031229241503",
     "official_Astra_quality": null,
     "old_results_unchanged": true
+  },
+  "external_recovery022": {
+    "status": "OFFICIAL_QUALITY_PENDING_SWE_RUNNING",
+    "old_Sol_reexecuted": 0,
+    "Local_generations": 15,
+    "Local_repair": 0,
+    "Host_and_review_accepted": 44,
+    "workflow_failed": 5,
+    "not_terminal": 11,
+    "strict_Astra_Credits": null,
+    "known_Astra_Credits": "1271.59330",
+    "source_commit": "1929a1fed1b15effd649fb719d20880b3e27cd7f",
+    "old_results_unchanged": true,
+    "benchmark_success_claimed": false
   }
 }
