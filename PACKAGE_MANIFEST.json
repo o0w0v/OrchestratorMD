@@ -1137,11 +1137,11 @@
     },
     {
       "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_PROGRESS_JA.md",
-      "sha256": "8902f6854c6fb348f0899557a4ffb07051f62ad9fa4618374a04692b61b4a8db"
+      "sha256": "641c2b0ae83e596100986fb1c2af26fcde2ee5d9f773bae32d3f6cb57b45487e"
     },
     {
       "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_SNAPSHOT.json",
-      "sha256": "1c5b2469f1a2c6eca1449175e4d5e09c39163c6ceac5546ef9d8061269f39cde"
+      "sha256": "3a3c6fa3efd4c3579fa13b61f2a9f65d2bad1a4836c50b95fc5415e1d1584844"
     },
     {
       "path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_PROGRESS_JA.md",
@@ -1285,7 +1285,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "ee4ed738e7c2d30eced08d8611fdc1d9a8408a93eacb463e22766f3e5bbd68a3"
+      "sha256": "602c6c196c505c5661241852700c3be28ca3b0b1a337013a6a1d16ec512f3a8c"
     },
     {
       "path": "benchmarks/official-30/results/2026-10-22-recovery022/PROGRESS022_JA.md",
@@ -1426,6 +1426,14 @@
     {
       "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/WORKFLOW_TIMING.csv",
       "sha256": "f94c450aeede9722f9e8cdbda45011b3bff7007f8021c025bdb51042823ccc22"
+    },
+    {
+      "path": "PORTABLE_EXECUTION_READINESS_JA.md",
+      "sha256": "c2db4bdb751ab493d8018145aae433c9528b5743369e97fe7acb7ff4f3b5ae59"
+    },
+    {
+      "path": "docs/presentations/2026-10-codex-local-llm-delegation.md",
+      "sha256": "315150a36a4d8bd9a97c7d65f218d19eab1fb3d7738cd168299f07f7c36e5354"
     }
   ],
   "official_result_revision": "2026-10-21-gemma26-router",
@@ -1537,5 +1545,29 @@
     "Production_Router_modified": false,
     "old_results_or_STOPs_overwritten": false,
     "source_commit": "41913dd9868366895b0335988df73e72d5020a4f"
+  },
+  "portable_execution_readiness": {
+    "path": "PORTABLE_EXECUTION_READINESS_JA.md",
+    "status": "PORTABLE_RUNTIME_PACKAGE_INCOMPLETE",
+    "scope": "Availability of portable Codex plus Gemma runtime, not exact benchmark environment reproduction",
+    "changes": "documentation and hash metadata only",
+    "rejected_input_archive_or_environment_snapshot_published": false,
+    "old_results_or_Production_modified": false,
+    "hash_metadata_corrections": [
+      {
+        "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_PROGRESS_JA.md",
+        "previous_expected_sha256": "8902f6854c6fb348f0899557a4ffb07051f62ad9fa4618374a04692b61b4a8db",
+        "observed_public_sha256": "641c2b0ae83e596100986fb1c2af26fcde2ee5d9f773bae32d3f6cb57b45487e",
+        "reason": "Previous metadata used CRLF hash for published LF bytes",
+        "artifact_bytes_changed": false
+      },
+      {
+        "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_SNAPSHOT.json",
+        "previous_expected_sha256": "1c5b2469f1a2c6eca1449175e4d5e09c39163c6ceac5546ef9d8061269f39cde",
+        "observed_public_sha256": "3a3c6fa3efd4c3579fa13b61f2a9f65d2bad1a4836c50b95fc5415e1d1584844",
+        "reason": "Previous metadata used CRLF hash for published LF bytes",
+        "artifact_bytes_changed": false
+      }
+    ]
   }
 }
