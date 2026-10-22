@@ -1136,6 +1136,14 @@
       "sha256": "c65843c8ade7765d48f56894c992f816fcded60fb7ec981e89385bb86bd8bf65"
     },
     {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_PROGRESS_JA.md",
+      "sha256": "8902f6854c6fb348f0899557a4ffb07051f62ad9fa4618374a04692b61b4a8db"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_SNAPSHOT.json",
+      "sha256": "1c5b2469f1a2c6eca1449175e4d5e09c39163c6ceac5546ef9d8061269f39cde"
+    },
+    {
       "path": "benchmarks/official-30/source-pins.json",
       "sha256": "91f219848592d9605dc76ce69d2d1fd179491ead3769621f72471c949f39e0be"
     },
@@ -1302,5 +1310,15 @@
     "Local_paused": true,
     "official_scored": false,
     "old_results_unchanged": true
+  },
+  "external_recovery018": {
+    "status": "LOCAL_GENERATIONS_FROZEN_CLOUD_COMPLETION_REAUTH_PENDING",
+    "progress_path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_PROGRESS_JA.md",
+    "Local_attempts": 15,
+    "Local_Host_PASS": 8,
+    "Local_repair": 0,
+    "old_results_unchanged": true,
+    "Host_classification_overlay": "EXPERIMENT_ONLY",
+    "official_Astra_scored": false
   }
 }
