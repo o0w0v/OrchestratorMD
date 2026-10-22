@@ -1,0 +1,72 @@
+{
+  "public_candidate_observations": [
+    {
+      "task_id": "HumanEval_13_greatest_common_divisor",
+      "arm": "A",
+      "Actor_Cargo_edition": "2021",
+      "missing_associated_or_method_names_in_public_body": [
+        "try_from"
+      ],
+      "original_body_sha256": "9421db3505703c5ad85c692a5422cff481543475e36b555a99ccdd3bb728e789"
+    },
+    {
+      "task_id": "HumanEval_99_closest_integer",
+      "arm": "B",
+      "Actor_Cargo_edition": "2021",
+      "missing_associated_or_method_names_in_public_body": [
+        "try_from"
+      ],
+      "original_body_sha256": "628116d04c34e25c3d5ee1b7b7139f5e60ee812ba66da611144d97bfdb981aa0"
+    }
+  ],
+  "public_compile_only_comparison": [
+    {
+      "task_id": "HumanEval_13_greatest_common_divisor",
+      "arm": "A",
+      "compile_comparison": {
+        "official_default": {
+          "exit": 1,
+          "Rust_error_codes": [
+            "E0599"
+          ]
+        },
+        "explicit_2021": {
+          "exit": 0,
+          "Rust_error_codes": []
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_99_closest_integer",
+      "arm": "B",
+      "compile_comparison": {
+        "official_default": {
+          "exit": 1,
+          "Rust_error_codes": [
+            "E0599"
+          ]
+        },
+        "explicit_2021": {
+          "exit": 0,
+          "Rust_error_codes": []
+        }
+      }
+    }
+  ],
+  "official_compile_argv": [
+    "rustc",
+    "<source>",
+    "-o",
+    "<output>"
+  ],
+  "official_explicit_edition_flag": false,
+  "official_harness_source_sha256": "c75ea5cdab9c32724abe97a1cc848000c3c53280cdc07192e2e04b37d08623cf",
+  "image_id": "sha256:2cb4fcd74d89d149f7a3feb177f7d8169cef390a7ea7951c9b84e7ff59ea26cc",
+  "private_tests_or_gold_returned": false,
+  "private_tests_used_in_probe": false,
+  "synthetic_framing_not_a_benchmark_completion": true,
+  "binaries_executed": false,
+  "primary_results_or_official_compiler_flags_changed": false,
+  "new_AI_calls": 0,
+  "warning": "Compile-only success under another edition is not an official resolved result. Do not modify official evaluator flags."
+}
