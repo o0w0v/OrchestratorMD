@@ -64,3 +64,8 @@ LocalのPASSはユニット検証の通過を表します。採用までには�
 独自課題の検証結果は過去の実験記録です。別製品で再評価するための空のCSVも用意しています。小規模な課題群の結果を、他の環境でも同じ効果が得られる保証としては扱いません。
 
 ライセンスは [LICENSE](LICENSE)、第三者の公式課題については [出典とライセンス](benchmarks/official-30/THIRD_PARTY_NOTICES.md) を参照してください。公開ファイルのSHA-256は [PACKAGE_MANIFEST.json](PACKAGE_MANIFEST.json) に記録しています。
+
+## 別PCでの実行について
+
+現状の公開物だけではCodex＋Gemmaの実行系を起動できません。[配布状況と不足する実装・セットアップ手順](PORTABLE_EXECUTION_READINESS_JA.md)を参照してください。研究用benchmarkの完全再現とは分けて確認しています。
+
