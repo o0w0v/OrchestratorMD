@@ -1,0 +1,38 @@
+{
+  "at_utc": "2026-10-22T03:18:33.640866+00:00",
+  "status": "MULTIPL_HOST_WORKFLOWS_COMPLETE_SWE_RUNNING_OFFICIAL_QUALITY_PENDING",
+  "frozen_tasks": 30,
+  "original_Sol_reexecuted": 0,
+  "MultiPL_E_Host_A": 20,
+  "MultiPL_E_Host_B": 20,
+  "Local_generations": 15,
+  "Local_repair": 0,
+  "Local_Host_PASS": 8,
+  "Local_adopted_by_independent_Astra_review": 4,
+  "Local_clean_fallback": 11,
+  "Astra_eligible_15_credits": {
+    "Codex_only": "271.80135",
+    "Gemma_router": "280.45510",
+    "credits_saved": "-8.65375",
+    "reduction_percent": "-3.183851000004231031229241503",
+    "official_quality": null
+  },
+  "old_Sol_eligible_15_reference": {
+    "Codex_only": "75.49859",
+    "Gemma_router": "68.16259",
+    "reduction_percent": "9.716737756294521526825865225",
+    "official_resolved_each": 13,
+    "reexecuted": false
+  },
+  "current_Host_accepted_A": 21,
+  "current_Host_accepted_B": 21,
+  "full30_official_Astra_results": null,
+  "strict_Astra_total_credits": null,
+  "retained_capacity_missing_invocations": 1,
+  "old_STOPS_changed": false,
+  "new_source_commit": "7501b3dc9d03a7a8db3371ad59be63a357278faa",
+  "new_execution_freeze_sha256": "161e499d62f42600740e6d7b97745791325727455a55bddf798206651d1d77bf",
+  "full30_no_model_control_flow_PASS": true,
+  "unresolved_environment_task": "tokio-rs__tracing-2897",
+  "goal_confirmed": false
+}
