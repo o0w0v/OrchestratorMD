@@ -1,0 +1,98 @@
+{
+  "Local_native_counters": {
+    "CUDA_ERROR": {
+      "strict_count": 0,
+      "observed_values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scope": "15 frozen Local code-generation calls only"
+    },
+    "INFRA_ERROR": {
+      "strict_count": 0,
+      "observed_values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scope": "15 frozen Local code-generation calls only"
+    },
+    "scope_failures": {
+      "strict_count": 0,
+      "observed_values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scope": "15 frozen Local code-generation calls only"
+    },
+    "Host_failures": {
+      "strict_count": 2,
+      "observed_values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scope": "15 frozen Local code-generation calls only"
+    }
+  },
+  "backend_crash_count": null,
+  "GPU_query_timeout_count": null,
+  "peak_VRAM": null,
+  "minimum_free_VRAM": null,
+  "missing_telemetry_not_estimated_as_zero": true,
+  "global_Host_STOPs": null,
+  "global_Host_STOP_note": "Multiple immutable recovery STOPs retained; Local counters do not describe the whole study.",
+  "old_HOST_FORMAT_ERROR_results": 2,
+  "old_result_changed": false,
+  "new_AI_calls": 0
+}
