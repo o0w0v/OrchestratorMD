@@ -1,0 +1,29 @@
+{
+  "selected_at": "2026-10-22T05:47:11.164088+00:00",
+  "purpose": "Evaluator-only diagnosis of a frozen Host validation baseline compiler blocker; not a workflow adoption or primary benchmark rerun.",
+  "task_id": "tokio-rs__bytes-732",
+  "selected_arm": "B",
+  "selected_attempt": 4,
+  "selection_rule": "Last B candidate; all non-Clippy checks PASS; sole unwaived diagnostic exactly matches baseline E0554 in an unchanged, non-editable benchmark file.",
+  "selected_before_official_results": true,
+  "model_calls": 0,
+  "Local_calls": 0,
+  "Codex_calls": 0,
+  "additional_official_evaluator_cases": 1,
+  "fee_credits": 0,
+  "download_install": 0,
+  "primary_workflow_or_scoring_changed": false,
+  "Actor_feedback": false,
+  "require_generation_frozen_and_Guest_auth_removed": true,
+  "require_primary_scoring_finished": true,
+  "timeout_seconds": 2100,
+  "additional_disk_estimate_GiB": 4,
+  "files": {
+    "score_diagnostic_control023.py": "dcd87365430bdaea1de5e31576715ed4b4f4707d008a077dc85a847b05870e1c",
+    "CONTROL_PACKET.json": "f0e683d12cdb1aa49238db93e8084f347ce5aa40fc198d0b96683efb6779667a"
+  },
+  "source_scorer_sha256": "b4ec6ab93ed14c778e788938eb657f0a27fc325de5ca7fce5b31ad4a8faca3bf",
+  "native_role_terminal_sha256": "05775e940fc76b5292d0f24c8966ffcf25f951628e4a65aa4da1f4bf7bafabc8",
+  "validation_sha256": "67b06b02697c53df3df18e8f01f72a112a8c2c1afb1922f202f7f4f33534dc1a",
+  "public_baseline_sha256": "89767606140cf01bdd3cbd8ce8fd43117c89b24de7f25424a8ab6b60df6945ed"
+}
