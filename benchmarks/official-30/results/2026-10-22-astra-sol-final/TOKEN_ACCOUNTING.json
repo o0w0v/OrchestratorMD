@@ -1,0 +1,42 @@
+{
+  "ACTUAL_STUDY_SPEND": {
+    "new_Astra_only": {
+      "known_subtotal": "1983.67855",
+      "unknown_invocation_residuals": [
+        "d497c5df-b9ac-4911-9d7b-d9d425ee5df9"
+      ],
+      "strict_total": null
+    },
+    "historical_Sol_original_spend_not_recharged": {
+      "known_subtotal": "636.06445",
+      "unknown_invocation_residuals": [],
+      "strict_total": "636.06445"
+    },
+    "Shared_Planner_counted_once": true,
+    "preparation_root_usage": null,
+    "preparation_status": "UNMEASURED_DO_NOT_ESTIMATE",
+    "validation_new_AI_calls": 0,
+    "separate_pre_provider_TLS_invocation_retained": 1
+  },
+  "COMPARISON_WORKFLOW_COST": "full Shared Planner per arm, see FOUR_ARM_RESULTS groups; includes failures",
+  "actual_Astra_CLI_invocations_in_role_registry": 161,
+  "actual_Astra_usage_rows": 163,
+  "missing_usage_rows": 3,
+  "unknown_native_invocations": [
+    "d497c5df-b9ac-4911-9d7b-d9d425ee5df9"
+  ],
+  "Astra_shared_Planner_cost": {
+    "known_subtotal": "294.00060",
+    "unknown_invocation_residuals": [
+      "d497c5df-b9ac-4911-9d7b-d9d425ee5df9"
+    ],
+    "strict_total": null
+  },
+  "credits_basis": "actual native usage multiplied by frozen official Standard credit rates, not observed account debit",
+  "JPY": null,
+  "NET_PROJECT_SAVINGS": null,
+  "cached_input_included_in_input": true,
+  "reasoning_output_included_in_output": true,
+  "Local_tokens_are_not_Codex_saved_tokens": true,
+  "historical_source_sha256": "0b6c3c6c4c1a1c22599be3f4d2bbe2fa7c15d984daf6a3a772628b08f11cc650"
+}
