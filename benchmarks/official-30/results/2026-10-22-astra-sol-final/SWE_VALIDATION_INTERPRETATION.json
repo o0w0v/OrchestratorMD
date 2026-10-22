@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-10-22T06:49:56.516746+00:00",
+  "classification": "HOST_PUBLIC_VALIDATION_BASELINE_COMPILER_BLOCKER",
+  "task_id": "tokio-rs__bytes-732",
+  "code": "E0554",
+  "baseline_primary_file": "benches/bytes_mut.rs",
+  "file_outside_actor_edit_scope": true,
+  "baseline_message": "`#![feature]` may not be used on the stable release channel",
+  "validation_or_official_scoring_modified": false,
+  "primary_results_rewritten": false,
+  "diagnostic_status": "SELECTED_REJECTED_CANDIDATE_ALSO_OFFICIAL_FAIL",
+  "selected_candidate_official_resolved": false,
+  "diagnostic_AI_calls": 0,
+  "diagnostic_Codex_Credits": 0,
+  "root_preparation_AI_usage": null,
+  "no_imputed_workflow_adoption_or_credit_savings": true,
+  "public_baseline_observation_sha256": "442009ad4f1d4d6c2f755f255751408d605485ce0f6bf728c6d291f8a467c5ec",
+  "pre_registered_control_freeze_sha256": "01b2d603454d57f4827a32aa56593b879fb97d860d06e2461cdd9829712db7ed",
+  "primary_report_sha256": "4975cc58d81613ad4ec2e25bcb3687b80d764e5f933231f54c0dcd3acdc3113e",
+  "diagnostic_result_sha256": "84c7bc6b085e2e5625641b73cfc6f2525fd5c46ba4225f19fa4c13523bf601e9"
+}

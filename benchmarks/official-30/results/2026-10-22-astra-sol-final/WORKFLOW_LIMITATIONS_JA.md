@@ -1,0 +1,14 @@
+# Workflow比較の解釈上の制約
+
+この評価はモデル単体の能力順位ではなく、固定した計画・実装・Host検証・独立レビュー・fallbackを含むworkflow比較である。
+
+- SWE10課題は事前のscope判定によりLocal対象外。Gemmaを使わないDirect経路同士の費用差を、Gemmaの委譲効果とは解釈しない。全30の集計と事前Local適格15の集計を併記する。
+- 公開mandatory Clippyでは凍結済みのbaseline waiverを適用する。モデルへ返す検証summaryの件数上限も凍結したままであり、長い診断列では追加の阻害lintがsummary外となる可能性がある。途中でpromptやdiagnostic packingを改善していない。Host経路の制限もworkflow結果の一部であり、モデル一般のcoding能力へ置き換えない。
+- 自armの再試行上限、Reviewerの拒否、共有PlannerのJSON契約失敗も、実際に発生した費用とworkflow品質へ含める。JSON未完の具体的原因をcontext不足やproviderのバグと断定しない。
+- 失敗したLocal候補をclean Executorへ見せない。Localの独立Reviewer採用以外はclean fallbackとする。Local候補がHost PASSだったことだけで、公式テストへの正しさは主張しない。
+- 元のSolデータは今回再実行していない。Astraとの比較には日付、cache、実行順、Host分類overlay、回復による中断がある。同時期に無作為化したモデル一般比較ではない。
+- capacity失敗の欠測usageは残す。未知費用が両armに共通の場合に相殺できるのは差額のみであり、率やCredits/解決課題を捏造しない。
+- Tracing-2897は環境未測定として元30分母に保持する。これを除いた29課題の実測と、全30件の厳密な品質維持の主張を区別する。
+- Guest認証ファイル削除の実測と、OpenAIアカウント側のOAuth失効確認は別。後者は未検証である。旧Sandbox Gateを研究用VMの実行完了から遡ってPASSに変更しない。
+
+Production Router、bounded2.2.8の原本、公式Task・tests・scoringは変更していない。旧STOP・raw usage・無効出力は保全し、回復runだけの成功を実験全体の障害なしとは表現しない。

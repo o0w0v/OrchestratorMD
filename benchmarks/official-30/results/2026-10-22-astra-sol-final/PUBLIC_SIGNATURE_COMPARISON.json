@@ -1,0 +1,779 @@
+{
+  "rows": [
+    {
+      "task_id": "HumanEval_4_mean_absolute_deviation",
+      "official_public_signature": {
+        "header": "fn mean_absolute_deviation(numbers: Vec<f64>) -> f64 {",
+        "parameter_bindings": [
+          {
+            "name": "numbers",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn mean_absolute_deviation(numbers: Vec<f64>) -> f64 {",
+          "parameter_bindings": [
+            {
+              "name": "numbers",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "013ec961ec768ac8cf5f7509ce85557419372f8bf7c22ff8e6ba4e4e08fec027",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn mean_absolute_deviation(numbers: Vec<f64>) -> f64 {",
+          "parameter_bindings": [
+            {
+              "name": "numbers",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "b6ce2fdacf57fa7cbeaca4a34126a453d7c8574cdd6b736526094546a20223fe",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_9_rolling_max",
+      "official_public_signature": {
+        "header": "fn rolling_max(numbers: Vec<isize>) -> Vec<isize> {",
+        "parameter_bindings": [
+          {
+            "name": "numbers",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn rolling_max(numbers: Vec<isize>) -> Vec<isize> {",
+          "parameter_bindings": [
+            {
+              "name": "numbers",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "e1aa7ec6696365e8fdb64c0543dbbdc2c33577f3571dfbf0533a22b5a5ae217f",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn rolling_max(numbers: Vec<isize>) -> Vec<isize> {",
+          "parameter_bindings": [
+            {
+              "name": "numbers",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "f94c420ef36f4c53f3b0515a78b7e9bfc90efb52dae24b043207c99ec68638ff",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_11_string_xor",
+      "official_public_signature": {
+        "header": "fn string_xor(a: String, b: String) -> String {",
+        "parameter_bindings": [
+          {
+            "name": "a",
+            "mutable": false
+          },
+          {
+            "name": "b",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn string_xor(a: String, b: String) -> String {",
+          "parameter_bindings": [
+            {
+              "name": "a",
+              "mutable": false
+            },
+            {
+              "name": "b",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "af58d7783c35fcef5a2d9cbcb64be6c02416bf1a6245979192833dd199cdd39a",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn string_xor(a: String, b: String) -> String {",
+          "parameter_bindings": [
+            {
+              "name": "a",
+              "mutable": false
+            },
+            {
+              "name": "b",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "c47e3c7f4121fe874559b78de9d38dff19d55de85190933910d5d934f01d36ac",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_13_greatest_common_divisor",
+      "official_public_signature": {
+        "header": "fn greatest_common_divisor(a: isize, b: isize) -> isize {",
+        "parameter_bindings": [
+          {
+            "name": "a",
+            "mutable": false
+          },
+          {
+            "name": "b",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn greatest_common_divisor(a: isize, b: isize) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "a",
+              "mutable": false
+            },
+            {
+              "name": "b",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "466b599d6d1bb60d98fd39fd75eed0ab8b57b6bfb3d894f576a7ec75e644a215",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn greatest_common_divisor(a: isize, b: isize) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "a",
+              "mutable": false
+            },
+            {
+              "name": "b",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "52201e95a7699e534991658308a5d32e471fc743348b29b94f784554e1d4f4fe",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_18_how_many_times",
+      "official_public_signature": {
+        "header": "fn how_many_times(string: String, substring: String) -> isize {",
+        "parameter_bindings": [
+          {
+            "name": "string",
+            "mutable": false
+          },
+          {
+            "name": "substring",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn how_many_times(string: String, substring: String) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "string",
+              "mutable": false
+            },
+            {
+              "name": "substring",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "2c0a9c51095b240781c3105c00c5a43e438d0de2880d11724a8a0ff1e11d32da",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn how_many_times(string: String, substring: String) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "string",
+              "mutable": false
+            },
+            {
+              "name": "substring",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "af4be683db0b388ae22cfb2c6b49a8be7087c7f9b48dd320bb630bb3149f08ee",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_30_get_positive",
+      "official_public_signature": {
+        "header": "fn get_positive(l: Vec<isize>) -> Vec<isize> {",
+        "parameter_bindings": [
+          {
+            "name": "l",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn get_positive(l: Vec<isize>) -> Vec<isize> {",
+          "parameter_bindings": [
+            {
+              "name": "l",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "faa15bc80fef61628382b793fc097a16f28396d8166d21fd72e789da3b1c826c",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn get_positive(l: Vec<isize>) -> Vec<isize> {",
+          "parameter_bindings": [
+            {
+              "name": "l",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "cb8d491e1310357d131157f73548e70969ad90973e07796451a57661d5265ca9",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_34_unique",
+      "official_public_signature": {
+        "header": "fn unique(l: Vec<isize>) -> Vec<isize> {",
+        "parameter_bindings": [
+          {
+            "name": "l",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn unique(l: Vec<isize>) -> Vec<isize> {",
+          "parameter_bindings": [
+            {
+              "name": "l",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "92d10071288c3ddff9434ac49d49677d3131daf7489ccea733a373ce975d2ee3",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn unique(l: Vec<isize>) -> Vec<isize> {",
+          "parameter_bindings": [
+            {
+              "name": "l",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "92d10071288c3ddff9434ac49d49677d3131daf7489ccea733a373ce975d2ee3",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_51_remove_vowels",
+      "official_public_signature": {
+        "header": "fn remove_vowels(text: String) -> String {",
+        "parameter_bindings": [
+          {
+            "name": "text",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn remove_vowels(text: String) -> String {",
+          "parameter_bindings": [
+            {
+              "name": "text",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "e375c6c9f9c44371fdec14976d5177db3f0e3f4eb85ae7701db5c2a462170be8",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn remove_vowels(text: String) -> String {",
+          "parameter_bindings": [
+            {
+              "name": "text",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "e375c6c9f9c44371fdec14976d5177db3f0e3f4eb85ae7701db5c2a462170be8",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_55_fib",
+      "official_public_signature": {
+        "header": "fn fib(n: isize) -> isize {",
+        "parameter_bindings": [
+          {
+            "name": "n",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn fib(n: isize) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "n",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "db6f28364e75b4ce65846f50bb5c605f31e04a059ecd480e4cd7c447dc99c905",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn fib(n: isize) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "n",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "db6f28364e75b4ce65846f50bb5c605f31e04a059ecd480e4cd7c447dc99c905",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_61_correct_bracketing",
+      "official_public_signature": {
+        "header": "fn correct_bracketing(brackets: String) -> bool {",
+        "parameter_bindings": [
+          {
+            "name": "brackets",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn correct_bracketing(brackets: String) -> bool {",
+          "parameter_bindings": [
+            {
+              "name": "brackets",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "4d26bdf68f155ba12c8698cd135140f407d77d2e8b1406adc7f447b239eb61ae",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn correct_bracketing(brackets: String) -> bool {",
+          "parameter_bindings": [
+            {
+              "name": "brackets",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "4d26bdf68f155ba12c8698cd135140f407d77d2e8b1406adc7f447b239eb61ae",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_62_derivative",
+      "official_public_signature": {
+        "header": "fn derivative(xs: Vec<isize>) -> Vec<isize> {",
+        "parameter_bindings": [
+          {
+            "name": "xs",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn derivative(xs: Vec<isize>) -> Vec<isize> {",
+          "parameter_bindings": [
+            {
+              "name": "xs",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "9c5c9bc53f48513dde2a506267389b12ff23891577000822ab432504f0e7f17e",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn derivative(xs: Vec<isize>) -> Vec<isize> {",
+          "parameter_bindings": [
+            {
+              "name": "xs",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "9c5c9bc53f48513dde2a506267389b12ff23891577000822ab432504f0e7f17e",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_67_fruit_distribution",
+      "official_public_signature": {
+        "header": "fn fruit_distribution(s: String, n: isize) -> isize {",
+        "parameter_bindings": [
+          {
+            "name": "s",
+            "mutable": false
+          },
+          {
+            "name": "n",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn fruit_distribution(s: String, n: isize) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "s",
+              "mutable": false
+            },
+            {
+              "name": "n",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "89023e92f889c4aee975296104474533fe18f5273b395a5b8a22c3e017a277ed",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn fruit_distribution(s: String, n: isize) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "s",
+              "mutable": false
+            },
+            {
+              "name": "n",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "89023e92f889c4aee975296104474533fe18f5273b395a5b8a22c3e017a277ed",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_83_starts_one_ends",
+      "official_public_signature": {
+        "header": "fn starts_one_ends(n: isize) -> isize {",
+        "parameter_bindings": [
+          {
+            "name": "n",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn starts_one_ends(n: isize) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "n",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "8be3362fbcbe5d1ceae9e2f709b9a50114c4f7af84f8a8ea6d23de090f4e67c3",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn starts_one_ends(n: isize) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "n",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "79a00b44a13c0c27fc588b5f82f4605550d6d4aa8c7d04baacc3df86f4a4895f",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_99_closest_integer",
+      "official_public_signature": {
+        "header": "fn closest_integer(value: String) -> isize {",
+        "parameter_bindings": [
+          {
+            "name": "value",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn closest_integer(value: String) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "value",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "426bd0a1939a209319358330eb8f8309b87f8518dfd2d18d8c0d470e314b4731",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn closest_integer(value: String) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "value",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "d3d446d6bb3aa257d62102f2f7d7b8935e627769b3dfb3b85e67b288c99a8a20",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_109_move_one_ball",
+      "official_public_signature": {
+        "header": "fn move_one_ball(arr: Vec<isize>) -> bool {",
+        "parameter_bindings": [
+          {
+            "name": "arr",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn move_one_ball(arr: Vec<isize>) -> bool {",
+          "parameter_bindings": [
+            {
+              "name": "arr",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "6a5841953b4a98978796b149c933bc3fe8fddf2ecd640e5b708cb0659df0c4be",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn move_one_ball(arr: Vec<isize>) -> bool {",
+          "parameter_bindings": [
+            {
+              "name": "arr",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "9dc0697a561191889b1715cc19a01f38dada85358551370aa413af514bdf80d2",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_132_is_nested",
+      "official_public_signature": {
+        "header": "fn is_nested(string: String) -> bool {",
+        "parameter_bindings": [
+          {
+            "name": "string",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn is_nested(string: String) -> bool {",
+          "parameter_bindings": [
+            {
+              "name": "string",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "f23efdf3affd9e66105943a7acc2d768d17f97d1cb0e93ca38e0ccb44b48c3b5",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn is_nested(string: String) -> bool {",
+          "parameter_bindings": [
+            {
+              "name": "string",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "3577f0addc84d2d42827d71ffc19f09841c11f948fd2d746e8433f5655ac87f8",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_135_can_arrange",
+      "official_public_signature": {
+        "header": "fn can_arrange(arr: Vec<isize>) -> isize {",
+        "parameter_bindings": [
+          {
+            "name": "arr",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn can_arrange(arr: Vec<isize>) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "arr",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "77b2f0084c3a10d291a4e0b9b48a0a3fe3c21ae2860c0736a0b1dd4089726a7d",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn can_arrange(arr: Vec<isize>) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "arr",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "d3809a26e6e76aabbe0c42ec8a7331a29b953a6ed31b14c3e48ffd1dc7b9e0dd",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_146_specialFilter",
+      "official_public_signature": {
+        "header": "fn specialFilter(nums: Vec<isize>) -> isize {",
+        "parameter_bindings": [
+          {
+            "name": "nums",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn specialFilter(nums: Vec<isize>) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "nums",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "b5935a24e172760fd6425b4de6cde3174c00bd3d22e61bcbbfa0aac59797467b",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn specialFilter(nums: Vec<isize>) -> isize {",
+          "parameter_bindings": [
+            {
+              "name": "nums",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "ecc4c53a0f0ba7ebefb120d7465ed7df885a1187bfc1f262ff32306c875c39cc",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_156_int_to_mini_roman",
+      "official_public_signature": {
+        "header": "fn int_to_mini_roman(number: isize) -> String {",
+        "parameter_bindings": [
+          {
+            "name": "number",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn int_to_mini_roman(number: isize) -> String {",
+          "parameter_bindings": [
+            {
+              "name": "number",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "fe49dcd3736733502aa92d8f7249d69c8347f25614a35456ab777f58502a8029",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn int_to_mini_roman(number: isize) -> String {",
+          "parameter_bindings": [
+            {
+              "name": "number",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "c51dca5ba5bc752aed7657cc7ac5cb99816c390eaa69d5cb81787a112cb38440",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval_158_find_max",
+      "official_public_signature": {
+        "header": "fn find_max(words: Vec<String>) -> String {",
+        "parameter_bindings": [
+          {
+            "name": "words",
+            "mutable": false
+          }
+        ]
+      },
+      "Actor_public_signatures": {
+        "A": {
+          "header": "fn find_max(words: Vec<String>) -> String {",
+          "parameter_bindings": [
+            {
+              "name": "words",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "5b7aae110ba0596704cdb814141d5940c9de314f0a906e377d2d033915afa0b0",
+          "parameter_bindings_equal_to_official": true
+        },
+        "B": {
+          "header": "fn find_max(words: Vec<String>) -> String {",
+          "parameter_bindings": [
+            {
+              "name": "words",
+              "mutable": false
+            }
+          ],
+          "public_source_sha256": "e5bb0efaba8a19c8b015d031031bd3b12af174028e3e478cb70fb0e8061cb0a9",
+          "parameter_bindings_equal_to_official": true
+        }
+      }
+    }
+  ],
+  "public_prompt_columns_only": [
+    "name",
+    "prompt"
+  ],
+  "private_tests_or_gold_returned": false,
+  "diagnostic_only_not_a_safety_equivalence_gate": true,
+  "primary_results_changed": false
+}

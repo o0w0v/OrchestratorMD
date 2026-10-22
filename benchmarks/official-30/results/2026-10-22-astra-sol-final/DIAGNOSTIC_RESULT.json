@@ -1,0 +1,21 @@
+{
+  "status": "SELECTED_REJECTED_CANDIDATE_ALSO_OFFICIAL_FAIL",
+  "task_id": "tokio-rs__bytes-732",
+  "selected_arm": "B",
+  "selected_attempt": 4,
+  "official_candidate_resolved": false,
+  "primary_workflow_result_changed": false,
+  "primary_credit_or_adoption_metrics_changed": false,
+  "Reviewer_not_run_for_control": true,
+  "new_AI_calls": 0,
+  "new_Codex_Credits": 0,
+  "Actor_feedback": false,
+  "official_scoring_source_unchanged": true,
+  "raw_result_sha256": "ddefdd486cb066864798ad4713b43b737ea90295fa56ff11bd45eecc7a239cee",
+  "control_freeze_sha256": "01b2d603454d57f4827a32aa56593b879fb97d860d06e2461cdd9829712db7ed",
+  "primary_result_hashes_before_and_after": {
+    "official-multipl/OFFICIAL_MULTIPL_RESULTS.json": "6eb03383af0dbd67e7e7949d7041e0a781ae899a11860344142930f1a20234f7",
+    "official-swe/OFFICIAL_SWE_RESULTS.json": "3571b97dfe844765802bf30d80c4c01ec5befffa8e6b5f142c2b3395b28198a5"
+  },
+  "scope": "One pre-selected candidate only; no general model or Host false-negative rate claim."
+}

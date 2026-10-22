@@ -1,0 +1,60 @@
+{
+  "compiler_versions": [
+    {
+      "label": "official_MultiPL_E",
+      "image_id": "sha256:2cb4fcd74d89d149f7a3feb177f7d8169cef390a7ea7951c9b84e7ff59ea26cc",
+      "exit": 0,
+      "rustc_version": "rustc 1.75.0 (82e1608df 2023-12-21) (built from a source tarball)\nbinary: rustc\ncommit-hash: 82e1608dfa6e0b5569232559e3d385fea5a93112\ncommit-date: 2023-12-21\nhost: x86_64-unknown-linux-gnu\nrelease: 1.75.0\nLLVM version: 17.0.6\n",
+      "network": "none",
+      "rootfs_read_only": true,
+      "Host_or_secret_mounts": false,
+      "model_calls": 0
+    },
+    {
+      "label": "Host_public_checker",
+      "image_id": "sha256:b37cdca50f24f1c83844db8804c5b1b3f0bf15c5c2daa3b5fd63a1b8f5bb05d3",
+      "exit": 0,
+      "rustc_version": "rustc 1.85.0 (4d91de4e4 2025-02-17)\nbinary: rustc\ncommit-hash: 4d91de4e48198da2e33413efdcd9cd2cc0c46688\ncommit-date: 2025-02-17\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.0\nLLVM version: 19.1.7\n",
+      "network": "none",
+      "rootfs_read_only": true,
+      "Host_or_secret_mounts": false,
+      "model_calls": 0
+    }
+  ],
+  "compile_failures": [
+    {
+      "task_id": "HumanEval_13_greatest_common_divisor",
+      "arm": "A",
+      "official_status": "SyntaxError",
+      "compiler_stderr_present": true,
+      "Rust_error_codes": [
+        "E0599"
+      ],
+      "compiler_stderr_sha256": "8df497e68a8664f321a2279932ecb0a2fd5f2569fa4775e32febddce3b4d6e09",
+      "raw_result_sha256": "cfba58d2a7bc0094d2514ef18d082444272afe176ed32400457bc7523b8ddff0",
+      "private_stderr_or_source_returned": false,
+      "missing_method_names_also_present_in_public_candidate": [],
+      "unknown_private_identifiers_returned": false
+    },
+    {
+      "task_id": "HumanEval_99_closest_integer",
+      "arm": "B",
+      "official_status": "SyntaxError",
+      "compiler_stderr_present": true,
+      "Rust_error_codes": [
+        "E0599"
+      ],
+      "compiler_stderr_sha256": "8a84db263afb86965235084698074815c088be12938d7ccf7b9986f20068c7d4",
+      "raw_result_sha256": "cfc1ef9b48ba4e739ffe99d1e5c91161c284f9145d8aae20f98dc30967e68aee",
+      "private_stderr_or_source_returned": false,
+      "missing_method_names_also_present_in_public_candidate": [],
+      "unknown_private_identifiers_returned": false
+    }
+  ],
+  "all_20_function_headers_exact_match": true,
+  "private_tests_or_gold_returned": false,
+  "primary_results_or_candidates_changed": false,
+  "new_AI_calls": 0,
+  "additional_pinned_image_version_calls": 2,
+  "image_download_or_install": 0
+}

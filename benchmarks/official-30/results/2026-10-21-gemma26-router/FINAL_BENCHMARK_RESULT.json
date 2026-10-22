@@ -1,0 +1,116 @@
+{
+  "decision": "INCONCLUSIVE",
+  "at": "2026-10-20T21:36:08.133352+00:00",
+  "frozen_tasks": 30,
+  "terminal_dispositions": 30,
+  "officially_measured_pairs": 29,
+  "environment_blocked": [
+    "tokio-rs__tracing-2897"
+  ],
+  "A_resolved": 21,
+  "B_resolved": 21,
+  "same_resolved_task_set": true,
+  "full30_resolved_rate": null,
+  "planned30_resolved_lower_bound_each": 0.7,
+  "planned30_resolved_upper_bound_each": 0.7333333333333333,
+  "paired_credits": {
+    "A": "358.35012",
+    "B": "335.19033"
+  },
+  "paired_credits_saved": "23.15979",
+  "paired_credit_reduction_percent": "6.462894445242546591026675253",
+  "paired_credits_per_resolved": {
+    "A": "17.06429142857142857142857143",
+    "B": "15.96144428571428571428571429"
+  },
+  "paired_total_tokens": {
+    "A": 25807856,
+    "B": 25652929
+  },
+  "paired_total_token_reduction_percent": "0.6003094561593958056802548805",
+  "final_pipeline_false_green": {
+    "A": 3,
+    "B": 4
+  },
+  "false_green_task_ids": {
+    "A": [
+      "HumanEval_4_mean_absolute_deviation",
+      "HumanEval_99_closest_integer",
+      "BurntSushi__ripgrep-2626"
+    ],
+    "B": [
+      "HumanEval_4_mean_absolute_deviation",
+      "HumanEval_99_closest_integer",
+      "BurntSushi__ripgrep-2626",
+      "nushell__nushell-13870"
+    ]
+  },
+  "Local_attempts": 15,
+  "Local_adopted": 6,
+  "Local_fallback_tasks": 9,
+  "Local_adopted_official_false_green": 0,
+  "Local_input_tokens": 9489,
+  "Local_output_tokens": 1381,
+  "Local_repairs": 0,
+  "CUDA_in_Local_results": 0,
+  "eligible_and_direct_economics": {
+    "LOCAL_ELIGIBLE": {
+      "frozen_tasks": 15,
+      "paired_tasks": 15,
+      "cost": {
+        "A": {
+          "tasks": 15,
+          "official_resolved": 13,
+          "credits": "75.49859",
+          "credits_per_resolved": "5.807583846153846153846153846",
+          "input_tokens": 4084732,
+          "output_tokens": 114063,
+          "total_tokens": 4198795
+        },
+        "B": {
+          "tasks": 15,
+          "official_resolved": 13,
+          "credits": "68.16259",
+          "credits_per_resolved": "5.243276153846153846153846154",
+          "input_tokens": 3580846,
+          "output_tokens": 95525,
+          "total_tokens": 3676371
+        },
+        "credits_saved": "7.33600",
+        "credit_reduction_percent": "9.716737756294521526825865225"
+      }
+    },
+    "DIRECT": {
+      "frozen_tasks": 15,
+      "paired_tasks": 14,
+      "cost": {
+        "A": {
+          "tasks": 14,
+          "official_resolved": 8,
+          "credits": "282.85153",
+          "credits_per_resolved": "35.35644125",
+          "input_tokens": 21284787,
+          "output_tokens": 324274,
+          "total_tokens": 21609061
+        },
+        "B": {
+          "tasks": 14,
+          "official_resolved": 8,
+          "credits": "267.02774",
+          "credits_per_resolved": "33.3784675",
+          "input_tokens": 21691546,
+          "output_tokens": 285012,
+          "total_tokens": 21976558
+        },
+        "credits_saved": "15.82379",
+        "credit_reduction_percent": "5.594380203635454968194798168"
+      }
+    }
+  },
+  "aggregate_savings_not_all_causally_attributed_to_Gemma": true,
+  "complete_project_net_savings": null,
+  "Production_Router_changed": false,
+  "new_model_generation_or_evaluator_retry_in_closeout": 0,
+  "old_evidence_hash_postcheck": true,
+  "account_side_auth_revocation": "UNVERIFIED_USER_ACCOUNT_STEP"
+}

@@ -1,0 +1,119 @@
+{
+  "rows": [
+    {
+      "task_id": "BurntSushi__ripgrep-2626",
+      "public_baseline_record_available": true,
+      "clippy_record_available": true,
+      "clippy_native_exit": 101,
+      "non_Clippy_compiler_errors": [],
+      "source_sha256": "b6a9032a5c3e3251737ac8d3891de9ba3681bf3483693a6c000e3e7335bd1430",
+      "stdout_sha256": "6242dab562005ec7d5de176a87e77b64dd9595cd5044eb1e30b8025b960790da",
+      "frozen_policy_never_waives_non_Clippy_error": true
+    },
+    {
+      "task_id": "clap-rs__clap-5873",
+      "public_baseline_record_available": true,
+      "clippy_record_available": true,
+      "clippy_native_exit": 0,
+      "non_Clippy_compiler_errors": [],
+      "source_sha256": "27c80790ddd13a23a9879d6b0679c2ab206259ac95fe16d8befdf849a6eebf30",
+      "stdout_sha256": "155cf27367e4402b4a86fc500a1bc3c59c0ac0a1d04bdde80dbcd3d4df2a2626",
+      "frozen_policy_never_waives_non_Clippy_error": true
+    },
+    {
+      "task_id": "nushell__nushell-13870",
+      "public_baseline_record_available": true,
+      "clippy_record_available": true,
+      "clippy_native_exit": 0,
+      "non_Clippy_compiler_errors": [],
+      "source_sha256": "3728e786e693eb51439a6f627ec94f817c32108c877b5430539b2f70bf6dbd5b",
+      "stdout_sha256": "21b8da477b7dfeefc3060e06420722756575505d1d9a8f6aa001b00006d4b4b5",
+      "frozen_policy_never_waives_non_Clippy_error": true
+    },
+    {
+      "task_id": "rayon-rs__rayon-986",
+      "public_baseline_record_available": true,
+      "clippy_record_available": true,
+      "clippy_native_exit": 101,
+      "non_Clippy_compiler_errors": [],
+      "source_sha256": "fed6dfb56ea42f17432ec1d43984364b39baa9a247563c03dcc4a813b3d64e9d",
+      "stdout_sha256": "0a42653ef7b5d8fb48a0b687345dabf6def022074b2ccd51776a5df021e232bd",
+      "frozen_policy_never_waives_non_Clippy_error": true
+    },
+    {
+      "task_id": "serde-rs__serde-2798",
+      "public_baseline_record_available": true,
+      "clippy_record_available": true,
+      "clippy_native_exit": 101,
+      "non_Clippy_compiler_errors": [],
+      "source_sha256": "9f0043f5031db65d694ed58ed425502994ebfc0183aca890df2bb4a206f89247",
+      "stdout_sha256": "3dfd0000e084aff9a7ca06c75dc3e60626dc138fb03c45d12637537d5920a9e7",
+      "frozen_policy_never_waives_non_Clippy_error": true
+    },
+    {
+      "task_id": "sharkdp__bat-3189",
+      "public_baseline_record_available": true,
+      "clippy_record_available": true,
+      "clippy_native_exit": 0,
+      "non_Clippy_compiler_errors": [],
+      "source_sha256": "f407258beea4b74d74c663ab19068d8ba2cce84ead4b89df036af89eab86c318",
+      "stdout_sha256": "fc62681c4fc9af716ba75789daea8748b1d7d60a624953460f98f072b0dafe7e",
+      "frozen_policy_never_waives_non_Clippy_error": true
+    },
+    {
+      "task_id": "sharkdp__fd-1394",
+      "public_baseline_record_available": true,
+      "clippy_record_available": true,
+      "clippy_native_exit": 0,
+      "non_Clippy_compiler_errors": [],
+      "source_sha256": "bd409bfd5076042d908fb934f5653d76f7e58b2a286ff708c0af22a2688693a6",
+      "stdout_sha256": "7599b365d21363c55d0ff7b3f4723fa4d0dbeefc0656ddb1b7110310ee627081",
+      "frozen_policy_never_waives_non_Clippy_error": true
+    },
+    {
+      "task_id": "tokio-rs__bytes-732",
+      "public_baseline_record_available": true,
+      "clippy_record_available": true,
+      "clippy_native_exit": 101,
+      "non_Clippy_compiler_errors": [
+        {
+          "code": "E0554",
+          "message": "`#![feature]` may not be used on the stable release channel",
+          "primary_public_files": [
+            "benches/bytes_mut.rs"
+          ],
+          "all_primary_files_outside_allowed_edit_scope": true,
+          "diagnostic_sha256": "861056140a6383e8a61fac3264badf77c2c188751c794fa654f227a061ae42aa"
+        }
+      ],
+      "source_sha256": "89767606140cf01bdd3cbd8ce8fd43117c89b24de7f25424a8ab6b60df6945ed",
+      "stdout_sha256": "b63e03be399b55759d46d09190273d435b9a816f71fbaa08dcb5a5d1f74e1ddf",
+      "frozen_policy_never_waives_non_Clippy_error": true
+    },
+    {
+      "task_id": "tokio-rs__tokio-7124",
+      "public_baseline_record_available": true,
+      "clippy_record_available": true,
+      "clippy_native_exit": 0,
+      "non_Clippy_compiler_errors": [],
+      "source_sha256": "aa474c581a983949de9d4be6c2e569dedcc24c66a1cf32cf1772996736f8b5e4",
+      "stdout_sha256": "20f9ec762b5aeaaad29b6a716864d0327c1c1081ec8a4621a2c837c8a7900754",
+      "frozen_policy_never_waives_non_Clippy_error": true
+    },
+    {
+      "task_id": "tokio-rs__tracing-2897",
+      "public_baseline_record_available": true,
+      "clippy_record_available": true,
+      "clippy_native_exit": 0,
+      "non_Clippy_compiler_errors": [],
+      "source_sha256": "5c0bb45c29e56f005c0ff48d64cae9e69b2c236b62f6e1d2e5ed31b8f57a702d",
+      "stdout_sha256": "4b04f1480b9f331c46a8d70fcd41c48ad3e91b9e54304df521dfd32a1ab88271",
+      "frozen_policy_never_waives_non_Clippy_error": true
+    }
+  ],
+  "model_calls": 0,
+  "validation_or_scoring_changed": false,
+  "raw_results_reclassified_or_overwritten": false,
+  "source_validator_sha256": "21cf15fa34dff611aaa059a4a7936a4558b209548f8fbf124ef5ed9bd2063679",
+  "interpretation": "Public validation configuration blockers are distinct from candidate-specific coding failures. Primary workflow dispositions and all paid usage remain unchanged."
+}

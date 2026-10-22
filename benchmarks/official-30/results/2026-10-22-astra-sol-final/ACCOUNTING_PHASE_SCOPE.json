@@ -1,0 +1,104 @@
+{
+  "measured_scope": "New Astra role-registry actual native invocations, each Shared Planner record once; no workflow-arm duplication.",
+  "phase_assignment": "Whole invocation assigned to retry if any native record is flagged retry/failed or has an error/failed/incomplete event; original metadata unchanged.",
+  "phases": {
+    "BENCHMARK_EXECUTION": {
+      "native_usage_rows": 129,
+      "native_invocations": 129,
+      "totals": {
+        "credits": {
+          "known_subtotal": "1280.49330",
+          "strict_total": "1280.49330",
+          "unknown_invocation_residuals": []
+        },
+        "input_tokens": {
+          "known_subtotal": "14606003",
+          "strict_total": "14606003",
+          "unknown_invocation_residuals": []
+        },
+        "cached_input_tokens": {
+          "known_subtotal": "11849472",
+          "strict_total": "11849472",
+          "unknown_invocation_residuals": []
+        },
+        "uncached_input_tokens": {
+          "known_subtotal": "2756531",
+          "strict_total": "2756531",
+          "unknown_invocation_residuals": []
+        },
+        "output_tokens": {
+          "known_subtotal": "236099",
+          "strict_total": "236099",
+          "unknown_invocation_residuals": []
+        },
+        "total_tokens": {
+          "known_subtotal": "14842102",
+          "strict_total": "14842102",
+          "unknown_invocation_residuals": []
+        }
+      }
+    },
+    "BENCHMARK_RETRY": {
+      "native_usage_rows": 34,
+      "native_invocations": 32,
+      "totals": {
+        "credits": {
+          "known_subtotal": "703.18525",
+          "strict_total": null,
+          "unknown_invocation_residuals": [
+            "d497c5df-b9ac-4911-9d7b-d9d425ee5df9"
+          ]
+        },
+        "input_tokens": {
+          "known_subtotal": "9502284",
+          "strict_total": null,
+          "unknown_invocation_residuals": [
+            "d497c5df-b9ac-4911-9d7b-d9d425ee5df9"
+          ]
+        },
+        "cached_input_tokens": {
+          "known_subtotal": "8129920",
+          "strict_total": null,
+          "unknown_invocation_residuals": [
+            "d497c5df-b9ac-4911-9d7b-d9d425ee5df9"
+          ]
+        },
+        "uncached_input_tokens": {
+          "known_subtotal": "1372364",
+          "strict_total": null,
+          "unknown_invocation_residuals": [
+            "d497c5df-b9ac-4911-9d7b-d9d425ee5df9"
+          ]
+        },
+        "output_tokens": {
+          "known_subtotal": "125477",
+          "strict_total": null,
+          "unknown_invocation_residuals": [
+            "d497c5df-b9ac-4911-9d7b-d9d425ee5df9"
+          ]
+        },
+        "total_tokens": {
+          "known_subtotal": "9627761",
+          "strict_total": null,
+          "unknown_invocation_residuals": [
+            "d497c5df-b9ac-4911-9d7b-d9d425ee5df9"
+          ]
+        }
+      }
+    }
+  },
+  "BENCHMARK_PREPARATION": {
+    "root_AI_tokens": null,
+    "complete_phase_credits": null,
+    "status": "UNMEASURED_DO_NOT_ESTIMATE"
+  },
+  "BENCHMARK_VALIDATION": {
+    "pure_evaluator_child_AI_calls": 0,
+    "pure_evaluator_child_AI_tokens": 0,
+    "pure_evaluator_child_AI_credits": 0,
+    "root_analysis_AI_tokens": null,
+    "complete_phase_credits": null
+  },
+  "root_preparation_and_result_review_are_not_claimed_free": true,
+  "complete_project_net_savings": null
+}

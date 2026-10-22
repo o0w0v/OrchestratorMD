@@ -1,0 +1,65 @@
+{
+  "rows": [
+    {
+      "task_id": "HumanEval_4_mean_absolute_deviation",
+      "arm": "A",
+      "status": "Exception",
+      "compiler_error_codes": [],
+      "TryFrom_mentioned": false,
+      "trait_not_in_scope": false,
+      "assertion_failure": true,
+      "raw_result_sha256": "edeced631975aedf4f1d607483bea17e87a27245b23ccf09c3498500205102c4",
+      "private_source_expected_values_or_raw_output_exported": false
+    },
+    {
+      "task_id": "HumanEval_99_closest_integer",
+      "arm": "A",
+      "status": "SyntaxError",
+      "compiler_error_codes": [
+        "E0599"
+      ],
+      "TryFrom_mentioned": true,
+      "trait_not_in_scope": true,
+      "assertion_failure": false,
+      "raw_result_sha256": "40f58aee212623514c3ffff12d51753571c0c7608d498dc0b90ba2ba76cbe1cb",
+      "private_source_expected_values_or_raw_output_exported": false
+    },
+    {
+      "task_id": "HumanEval_4_mean_absolute_deviation",
+      "arm": "B",
+      "status": "Exception",
+      "compiler_error_codes": [],
+      "TryFrom_mentioned": false,
+      "trait_not_in_scope": false,
+      "assertion_failure": true,
+      "raw_result_sha256": "6ea7c3b971a79dc26064393846ccb3e94ea5b40c7a9fbcff10e182efd23d28fa",
+      "private_source_expected_values_or_raw_output_exported": false
+    },
+    {
+      "task_id": "HumanEval_99_closest_integer",
+      "arm": "B",
+      "status": "SyntaxError",
+      "compiler_error_codes": [
+        "E0599"
+      ],
+      "TryFrom_mentioned": true,
+      "trait_not_in_scope": true,
+      "assertion_failure": false,
+      "raw_result_sha256": "fe023e8c75d477fc783dff2e7f099003955ff3deb4c4f249087d2c6d4ab0be14",
+      "private_source_expected_values_or_raw_output_exported": false
+    }
+  ],
+  "official_Rust_evaluator_source_sha256": "c75ea5cdab9c32724abe97a1cc848000c3c53280cdc07192e2e04b37d08623cf",
+  "official_compiler_argv_shape": [
+    "rustc",
+    "<source>",
+    "-o",
+    "<binary>"
+  ],
+  "official_argv_has_edition_flag": false,
+  "actor_template_Cargo_edition": "2021",
+  "closest_integer_classification": "OFFICIAL_COMPILER_CONTEXT_COMPATIBILITY_FAILURE_E0599_TRYFROM",
+  "mean_deviation_classification": "OFFICIAL_ASSERTION_FAILURE; detailed private assertion not exported",
+  "official_scores_unchanged": true,
+  "new_generation_or_scoring_retry": 0
+}

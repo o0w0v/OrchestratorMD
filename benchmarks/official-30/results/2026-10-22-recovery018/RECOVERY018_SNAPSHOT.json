@@ -1,0 +1,175 @@
+{
+  "at_utc": "2026-10-22T01:48:04.265748+00:00",
+  "status": "LOCAL_GENERATION_COMPLETE_CLOUD_COMPLETION_REAUTH_PENDING",
+  "frozen_tasks": 30,
+  "original_Sol_results_reexecuted": 0,
+  "Astra_MultiPL_Host_terminal_A": 20,
+  "Astra_MultiPL_Host_terminal_B": 12,
+  "Local_attempts": 15,
+  "Local_Host_PASS": 8,
+  "Local_repair_count": 0,
+  "Local_rows": [
+    {
+      "task_id": "HumanEval_11_string_xor",
+      "native_status": "ESCALATE",
+      "native_reason": "FORMAT_UNSUPPORTED_NORMALIZATION",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_135_can_arrange",
+      "native_status": "PASS",
+      "native_reason": "TARGETED_CHECKS_PASSED",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": true,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_13_greatest_common_divisor",
+      "native_status": "PASS",
+      "native_reason": "TARGETED_CHECKS_PASSED",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_156_int_to_mini_roman",
+      "native_status": "PASS",
+      "native_reason": "TARGETED_CHECKS_PASSED",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": true,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_158_find_max",
+      "native_status": "ESCALATE",
+      "native_reason": "LINT_REPAIR_NOT_ELIGIBLE",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": true,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_18_how_many_times",
+      "native_status": "ESCALATE",
+      "native_reason": "LINT_REPAIR_NOT_ELIGIBLE",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_30_get_positive",
+      "native_status": "PASS",
+      "native_reason": "TARGETED_CHECKS_PASSED",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_34_unique",
+      "native_status": "PASS",
+      "native_reason": "TARGETED_CHECKS_PASSED",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_4_mean_absolute_deviation",
+      "native_status": "PASS",
+      "native_reason": "TARGETED_CHECKS_PASSED",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_51_remove_vowels",
+      "native_status": "ESCALATE",
+      "native_reason": "HOST_FORMAT_ERROR",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_55_fib",
+      "native_status": "ESCALATE",
+      "native_reason": "HOST_FORMAT_ERROR",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_61_correct_bracketing",
+      "native_status": "PASS",
+      "native_reason": "TARGETED_CHECKS_PASSED",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": true,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_62_derivative",
+      "native_status": "ESCALATE",
+      "native_reason": "LINT_REPAIR_NOT_ELIGIBLE",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": true,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_99_closest_integer",
+      "native_status": "ESCALATE",
+      "native_reason": "CANDIDATE_SYNTAX_FAILURE",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": true,
+      "old_raw_result_unchanged": true
+    },
+    {
+      "task_id": "HumanEval_9_rolling_max",
+      "native_status": "PASS",
+      "native_reason": "TARGETED_CHECKS_PASSED",
+      "code_generations": 1,
+      "repair_count": 0,
+      "pending_independent_review": false,
+      "pending_clean_Executor": false,
+      "old_raw_result_unchanged": true
+    }
+  ],
+  "new_native_classification_overlay": true,
+  "overlay_changes_production": false,
+  "old_Host_STOPs_rewritten": false,
+  "offline_completion_tests": 40,
+  "offline_classifier_tests": 21,
+  "Worker_regression_tests": 275,
+  "official_Astra_results": null,
+  "strict_Astra_credits": null,
+  "retained_capacity_invocations_with_missing_usage": 1,
+  "quality_or_economic_goal_confirmed": false,
+  "local_source_commit": "33c2e49945ee3084ac5c97e35c1d9d0cb1450ba7",
+  "execution_freeze_sha256": "4a54fc7eaec83c2bb7bc9f9013a76984a42d101b03849063f4ce6ed7b77967a5"
+}

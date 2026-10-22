@@ -16,32 +16,12 @@
       "sha256": "2e0439a4ae851c15c735d9fe048a5604affb7c6e826bb9bfd3531330258d20e5"
     },
     {
-      "path": "LICENSE",
-      "sha256": "0b35eaef92e97aa6b0b1155740765dfbf7684076112bd3be0df850f6739eb827"
-    },
-    {
-      "path": "README.md",
-      "sha256": "732d668d91c7dd5059d8c6d8d53a64b2000fe7b49a23b9ba2e08f185d6c45d41"
+      "path": "benchmarks/custom/catalog.json",
+      "sha256": "dd1064c7b56e9643f2d47f7ab1cd600b88248ec292a63d4cc75099bdfb2fe7b2"
     },
     {
       "path": "benchmarks/custom/CORRESPONDENCE_AUDIT.md",
       "sha256": "3a114b30385c57ea4946625fa8853e203dee5e677086087bc9c0178011d972c6"
-    },
-    {
-      "path": "benchmarks/custom/INDEX.md",
-      "sha256": "d4b518a260dc42aa5ca3729c26ad89bd671d113cf9b2f773700694ecc5125b6e"
-    },
-    {
-      "path": "benchmarks/custom/README.md",
-      "sha256": "ab49bbb108505956a297c829556cb9733ad298144e0e9d9a735c61cfa093d79f"
-    },
-    {
-      "path": "benchmarks/custom/UPLOAD_MANIFEST.json",
-      "sha256": "decfa9dbf8b4600bdbb6748399899969ae0fba422862ffb9b0756e71c6244ce5"
-    },
-    {
-      "path": "benchmarks/custom/catalog.json",
-      "sha256": "dd1064c7b56e9643f2d47f7ab1cd600b88248ec292a63d4cc75099bdfb2fe7b2"
     },
     {
       "path": "benchmarks/custom/correspondence-audit.json",
@@ -50,6 +30,14 @@
     {
       "path": "benchmarks/custom/historical-results.csv",
       "sha256": "dddbcc1a82437ec75bd7a6375a6b035ba58fc39def50065211151adcc897e9bd"
+    },
+    {
+      "path": "benchmarks/custom/INDEX.md",
+      "sha256": "d4b518a260dc42aa5ca3729c26ad89bd671d113cf9b2f773700694ecc5125b6e"
+    },
+    {
+      "path": "benchmarks/custom/README.md",
+      "sha256": "ab49bbb108505956a297c829556cb9733ad298144e0e9d9a735c61cfa093d79f"
     },
     {
       "path": "benchmarks/custom/reports/adaptive-reviewer-escalation/RESULTS_JA.md",
@@ -848,16 +836,68 @@
       "sha256": "1766304d1fd9df63f34f26f93324009db30ab699578c4bb357e9e2738b84881c"
     },
     {
+      "path": "benchmarks/custom/UPLOAD_MANIFEST.json",
+      "sha256": "decfa9dbf8b4600bdbb6748399899969ae0fba422862ffb9b0756e71c6244ce5"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/CREDIT_MEASUREMENT_METHOD.json",
+      "sha256": "679099d6fa16744095a55695bbd9b849032fceb32cd0b8d42435c9e7ffcc7212"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/FINAL_TECHNICAL_ADDENDUM_JA.md",
+      "sha256": "42c9eb32cd5214694161be281557512a7e97cc6e267b38ebf3a11a9c09d1de16"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/PACKAGE_MANIFEST.json",
+      "sha256": "6dddd9ce402e0e3fccca39617f9d4971774c4462aa0edb4f08d49e8820c324e2"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/PAIRED_COMPARISONS.csv",
+      "sha256": "e922ebe2e61bccffb50bf628d774984d535380f0e09cd9cbf155c8835af11e07"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/QUALITY_DIFFERENCES.json",
+      "sha256": "55e553a8ca7081f5c3795a39fbfcad0d1811b91c7474a3d9dff26642e501fdf6"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/WALL_TIME_SUMMARY.json",
+      "sha256": "9fa9caa11a359f1674f903c4326f97644d69d7007bca71caf69ce2772636fe0c"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/CODEX_SESSION_USAGE.csv",
+      "sha256": "1add50b6ac3a56e4adfd91751e76e990fc580660f5d84bffbb09c46e25e68983"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/FOUR_ARM_AGGREGATE.json",
+      "sha256": "b754eed766625c0f1ab291d13bef34d27eee9303007a07bb9045b4d4e4448d58"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/LOCAL_MODEL_USAGE.csv",
+      "sha256": "a2cd76ef09661d5d89e2bcc7ba5e112bce13ceac8d38873c8c5301f75af62a6f"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/PACKAGE_MANIFEST.json",
+      "sha256": "45fee9d0684fc7c5203bc6abd17f675b241bf7c1afb8bdf83377ca36b6cdea4a"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/PRESERVATION_AND_CHECKS.json",
+      "sha256": "d198a5b6155e26f6b237869a52a8e1f7c2802ec80fa352a556dcf0be808c25b0"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/RESULTS_JA.md",
+      "sha256": "585cd44d21b3ab6c116c10ddf056dbd54ce1babf7f6abea3d390970934a3c1ad"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/TASK_ARM_RESULTS.csv",
+      "sha256": "2533f6d68c1a4b28bdd5a39611354cca62dd95a09637624a0483cff740c3ccfa"
+    },
+    {
+      "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/TOKEN_ACCOUNTING.json",
+      "sha256": "2bb38201782808bd6691cbea1a53c7432d88fd8e5e647f25b6b4324d60f245a2"
+    },
+    {
       "path": "benchmarks/official-30/INDEX.md",
       "sha256": "4d7e893a187b01d61adde243be250c05cc5273650ad145cefa66f7593a5df886"
-    },
-    {
-      "path": "benchmarks/official-30/README.md",
-      "sha256": "e0970e00d264a9fb59912ed9dc355249de005529e7ac6df8ef9987544c6f5ab6"
-    },
-    {
-      "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",
-      "sha256": "f40754fdf68a6ce8af074ee09ca5304dd36d0568d39c30acc5c1d3ad3fba18e1"
     },
     {
       "path": "benchmarks/official-30/licenses/multi_swe-LICENSE",
@@ -912,6 +952,10 @@
       "sha256": "0ee41da58c06f3579c4fcfe571b96dd616cd74a6d24c1c0e7cef8fc46b4efdfd"
     },
     {
+      "path": "benchmarks/official-30/prompts/clap-rs__clap-5873.md",
+      "sha256": "c3840c959fe8785f9cfb701f03aface7058f1ba97c1025618c776889dc0ade8d"
+    },
+    {
       "path": "benchmarks/official-30/prompts/HumanEval_109_move_one_ball.md",
       "sha256": "37a2a9e76dee9c7a64e0f64d34d4d72cdcf4180f4058a74ab5ca0bf7ca309803"
     },
@@ -920,16 +964,16 @@
       "sha256": "4e85ad6320caa1979f71462e7e59e99518734977ebdace57b3c48f0d7e066d57"
     },
     {
+      "path": "benchmarks/official-30/prompts/HumanEval_13_greatest_common_divisor.md",
+      "sha256": "a48b1949cace27e81b6789c01196448d7d3db6b4a5ead368983527448d72dc63"
+    },
+    {
       "path": "benchmarks/official-30/prompts/HumanEval_132_is_nested.md",
       "sha256": "e97cdd867220b0ffadf3e092b0a73bbb5c70eec8b2088257fb0d0fb8e3e1812c"
     },
     {
       "path": "benchmarks/official-30/prompts/HumanEval_135_can_arrange.md",
       "sha256": "a37ff80f211281de4199db0913863d53c9b90a2badbc541df705f9174a92ed2b"
-    },
-    {
-      "path": "benchmarks/official-30/prompts/HumanEval_13_greatest_common_divisor.md",
-      "sha256": "a48b1949cace27e81b6789c01196448d7d3db6b4a5ead368983527448d72dc63"
     },
     {
       "path": "benchmarks/official-30/prompts/HumanEval_146_specialFilter.md",
@@ -984,16 +1028,12 @@
       "sha256": "c3a5875430a8a9120524431fa9d1b28df9635b20b6d00ee0d65af40bff8de71e"
     },
     {
-      "path": "benchmarks/official-30/prompts/HumanEval_99_closest_integer.md",
-      "sha256": "de2819a298a699ed968101ed5c8961e468faf559ac8e9eb6a4cac529fa953c44"
-    },
-    {
       "path": "benchmarks/official-30/prompts/HumanEval_9_rolling_max.md",
       "sha256": "3a8abf75c6f5b628fd17a4ae2c9f590a8404c64df931e65b2f795d86d10cd63e"
     },
     {
-      "path": "benchmarks/official-30/prompts/clap-rs__clap-5873.md",
-      "sha256": "c3840c959fe8785f9cfb701f03aface7058f1ba97c1025618c776889dc0ade8d"
+      "path": "benchmarks/official-30/prompts/HumanEval_99_closest_integer.md",
+      "sha256": "de2819a298a699ed968101ed5c8961e468faf559ac8e9eb6a4cac529fa953c44"
     },
     {
       "path": "benchmarks/official-30/prompts/nushell__nushell-13870.md",
@@ -1028,8 +1068,88 @@
       "sha256": "b7c6f4be6e8c6c102a162495932e431fedbcb44a8320dda0c40b42b4a6959e37"
     },
     {
+      "path": "benchmarks/official-30/README.md",
+      "sha256": "3c59bd1d91a6430f7ab988020388a9a38f5c38742b914118d8d8bd4e79154390"
+    },
+    {
       "path": "benchmarks/official-30/results-template.csv",
       "sha256": "305fa26283e881c5b8636fe23b473d8b2d9cdb55e7bd15ce48f2398f86941466"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/CAPACITY_ACCOUNTING_SNAPSHOT.json",
+      "sha256": "6d8acc48ac9eaed8d23042c8ecc62a216c69d01a7ab2733f8ca8bee10b48259f"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/CAPACITY_STOP_PROGRESS_JA.md",
+      "sha256": "4f0bcc215d0b6ac1a758f9e160c6c04b95d7fd7ba80a82fd450317ffdb107cb9"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/OFFICIAL_DIRECT_CONTINUATION_PROGRESS_JA.md",
+      "sha256": "9e0cd212add4c7173f9bab622fa44ca0bfca7c5c95d7d47c6035c6e8e5dc8748"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/RECOVERY_003_PROGRESS_JA.md",
+      "sha256": "fa31ef0ee776d5e145dc5dce5fb3d8f6249be0916679dfda410c0aedd8218c05"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/RECOVERY_005_PROGRESS_JA.md",
+      "sha256": "eeb536c3d0df76afebc846ca92c19fd067b43bb0f9e3ef87125742c046b234a8"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/RECOVERY_006_PROGRESS_JA.md",
+      "sha256": "a950f6bb633eb13ca6397cdf8e6df443cf0a9ce9ccc39c403f30f48060da9b70"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/RECOVERY_008_PROGRESS_JA.md",
+      "sha256": "dd30a036d38bd83b1acad1fb75555f62221cf964ef081be591f4241925b2fb9b"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/STATUS_JA.md",
+      "sha256": "e03110b4e4db1d22cd4a23124390a3e04a24bd4153c48c051e7043ef74677f4d"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/ACCOUNTING_RECONCILIATION.json",
+      "sha256": "611d0c3fd342cc5d4ea1615b337504c4296ee76920c4eb5608599eb59ad4e0ec"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/FINAL_BENCHMARK_RESULT.json",
+      "sha256": "52279ef7b05daa2dec61142f71b2a5276b93c9291d4853f41e89c77fed833090"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/PUBLICATION_MANIFEST.json",
+      "sha256": "a195235e567bfea6ca8305f1673541c5a629ce2a0c773eee9c03ffd84c5f8e07"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/README.md",
+      "sha256": "fd2963573c7974cef4370875e61d16e9a724e1fcbb9f813c022fa1917bcfbc9d"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/RESULTS_JA.md",
+      "sha256": "04d04e3ff94e8092dd0b6084df795e8b8d97fb309f46fd1f2530a5671c488718"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/SAFE_FAILURE_PROJECTION.json",
+      "sha256": "a89f438e6f8e1e6081479204acfd4eaab9564c0c90681ab15a2b91b84547aa7a"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/TASK_AB_RESULTS.csv",
+      "sha256": "c65843c8ade7765d48f56894c992f816fcded60fb7ec981e89385bb86bd8bf65"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_PROGRESS_JA.md",
+      "sha256": "8902f6854c6fb348f0899557a4ffb07051f62ad9fa4618374a04692b61b4a8db"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_SNAPSHOT.json",
+      "sha256": "1c5b2469f1a2c6eca1449175e4d5e09c39163c6ceac5546ef9d8061269f39cde"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_PROGRESS_JA.md",
+      "sha256": "fb95beefe397b9fecf5320591412a8837c0c66aff9065ef78d4503485a5a021a"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_SNAPSHOT.json",
+      "sha256": "f857ed967d88b148f15af7b75931831ecab4ef15317811b0c384c70429f6ffea"
     },
     {
       "path": "benchmarks/official-30/source-pins.json",
@@ -1040,6 +1160,10 @@
       "sha256": "81723f72cb1e6b1529d55b06a3ef6cf072dc8d8ef812b7fd55302a160754f1d8"
     },
     {
+      "path": "benchmarks/official-30/tasks/clap-rs__clap-5873.json",
+      "sha256": "6156477929be10414dafc0d0c74c9452da84f40a80f04c89ef3a2a32dcae4ac5"
+    },
+    {
       "path": "benchmarks/official-30/tasks/HumanEval_109_move_one_ball.json",
       "sha256": "43e0db6026f4e2e6e90690d7f24295d5eadb45774fd5637e05e4bad68f5ba7c9"
     },
@@ -1048,16 +1172,16 @@
       "sha256": "3263ceb46c8e3f5631e07a7f5a9eed7c781f9efd2d6cac0fd027a1980051d010"
     },
     {
+      "path": "benchmarks/official-30/tasks/HumanEval_13_greatest_common_divisor.json",
+      "sha256": "9c366718fe8926b14226990ac58298482d783c5868a218ed8803d2f8d837ab86"
+    },
+    {
       "path": "benchmarks/official-30/tasks/HumanEval_132_is_nested.json",
       "sha256": "e31215d9d10927e29aee44e99a4e7c6a9f50d3e877df2eb7821cbcb029875f86"
     },
     {
       "path": "benchmarks/official-30/tasks/HumanEval_135_can_arrange.json",
       "sha256": "f6339087deca57d8725355ddf4589c52d5464c1f85252fda5b7d7b5d859eb9c7"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_13_greatest_common_divisor.json",
-      "sha256": "9c366718fe8926b14226990ac58298482d783c5868a218ed8803d2f8d837ab86"
     },
     {
       "path": "benchmarks/official-30/tasks/HumanEval_146_specialFilter.json",
@@ -1112,16 +1236,12 @@
       "sha256": "ab7832af8b3f0680b1a9ddb97364548dd10ea2c470ca46d6a88c2b73b24411d8"
     },
     {
-      "path": "benchmarks/official-30/tasks/HumanEval_99_closest_integer.json",
-      "sha256": "4f2460c25b2f1d162cc048a56a5e0ea118c24504fa736f727bd4f365243733d6"
-    },
-    {
       "path": "benchmarks/official-30/tasks/HumanEval_9_rolling_max.json",
       "sha256": "407eced831f674f8491be555a5a49e0a9e31663eaa27c983fdc9443ef9fd6628"
     },
     {
-      "path": "benchmarks/official-30/tasks/clap-rs__clap-5873.json",
-      "sha256": "6156477929be10414dafc0d0c74c9452da84f40a80f04c89ef3a2a32dcae4ac5"
+      "path": "benchmarks/official-30/tasks/HumanEval_99_closest_integer.json",
+      "sha256": "4f2460c25b2f1d162cc048a56a5e0ea118c24504fa736f727bd4f365243733d6"
     },
     {
       "path": "benchmarks/official-30/tasks/nushell__nushell-13870.json",
@@ -1154,6 +1274,268 @@
     {
       "path": "benchmarks/official-30/tasks/tokio-rs__tracing-2897.json",
       "sha256": "ed0f8aecd841fa166f6c58da7f25dbaa37fe5198e3a901eb9130b92895b996a2"
+    },
+    {
+      "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",
+      "sha256": "f40754fdf68a6ce8af074ee09ca5304dd36d0568d39c30acc5c1d3ad3fba18e1"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0b35eaef92e97aa6b0b1155740765dfbf7684076112bd3be0df850f6739eb827"
+    },
+    {
+      "path": "README.md",
+      "sha256": "ee4ed738e7c2d30eced08d8611fdc1d9a8408a93eacb463e22766f3e5bbd68a3"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery022/PROGRESS022_JA.md",
+      "sha256": "00caa34b6883537f63ab20e42f8f53726adaab2bbbceef05974a2d6fccce0d76"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery022/PROGRESS022_SNAPSHOT.json",
+      "sha256": "e1bc2cb5fc7a19031a2a8369c53ccba48d7c1f0a3054ea24384c24d67d9ba487"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/ACCOUNTING_PHASE_SCOPE.json",
+      "sha256": "483630366b9fbd56a16e348fba27b5468ba7774f607a308edfb82e6d1a8c0731"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/ADJUDICATION_PROVENANCE.json",
+      "sha256": "88fa6411da0a48a9f37211ebbde2d1c77bbaaa5b9ab24afbb1e757b3c52c2265"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/BENCHMARK_TOKENS_AND_CREDITS_JA.md",
+      "sha256": "6860fd9d65d0e8c6845756e1601f5dff2712c1467e433fe99ade47f91803288f"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/CODEX_FAILED_CALL_USAGE_SUPPLEMENT.csv",
+      "sha256": "0ebc05065817572c1ae8193b2110df86b3c64b1a458e202aafb01b2655200fb5"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/CODEX_SESSION_USAGE.csv",
+      "sha256": "e486802aecb72c1f0302512f84261627f1081bb1c9d254aef9db4d65c40105e0"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/COMPILER_CONTEXT_DIAGNOSIS.json",
+      "sha256": "57978ea2a72c7564d97609f365bfe0f1bfcce861ab9f86ac029c175fc4ee5d72"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/CONTROL_FREEZE.json",
+      "sha256": "01b2d603454d57f4827a32aa56593b879fb97d860d06e2461cdd9829712db7ed"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/DIAGNOSTIC_RESULT.json",
+      "sha256": "84c7bc6b085e2e5625641b73cfc6f2525fd5c46ba4225f19fa4c13523bf601e9"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/FAILED_CALL_ACCOUNTING_SUPPLEMENT.json",
+      "sha256": "bd4c5ead85585ede9fbcc2740b4f10bb98d7490e7ba13c47a9ea1b2174a99ad5"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/FINAL_AUDIT.json",
+      "sha256": "48b362bfea94a51f733f7efcdeec55d0452d337f7bc97acc2d14a8b5871166c2"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/FOUR_ARM_RESULTS.json",
+      "sha256": "8376d725e0218ae305d0287eaba0c4587afe5034419b3c51e1414160ac02fcc4"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/INFRASTRUCTURE_OBSERVATIONS.json",
+      "sha256": "3f0a1fd2feefd2304a8a6d01590bbf03682f36b502eee384c026b547c20493f8"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/LOCAL_MODEL_USAGE.csv",
+      "sha256": "4c51f0a0717f993bd93fb2f38aa92d008047ad10ef8908971f53f9e300eb0308"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/LOCAL_ROUTING_MODEL_COMPARISON.json",
+      "sha256": "3f558c57ce949f6aff882173c50a772c923a4587462ba392c7269ec4d9428091"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/LOCAL_ROUTING_RESULTS.json",
+      "sha256": "8ae1e4878ed881409a331375332e83d412c7f93a388bdf6b1842236b850e4f34"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/LOCAL_USAGE_SOURCE_BINDING.json",
+      "sha256": "92077e654c0b42bc9cead71ef5acec8a4cedf9f448d399feb4d2c7d1559bc640"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/LOCAL_VALIDATION_FALSE_GREEN_AUDIT.json",
+      "sha256": "db21d61593b24270cdf833d9e668a669cc8487cff7333e824038689dffff2c37"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/OFFICIAL_COMPILER_CODE_PROJECTION.json",
+      "sha256": "53fbfb6a1a43b0a95e2ab3eae38dfc26e2a75d235c0ad90dd0314612b2044c26"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/PRESENTATION_BRIEF_JA.md",
+      "sha256": "eba55161370de726156630449184c3d1c646162a0f1ecdbc8b772442d0770601"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/PUBLIC_COMPILATION_CONTEXT_PROBE.json",
+      "sha256": "95efb7ee5576f2c34e17cf3938918e1193926ae44ad5b3220e3f4567eb76db17"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/PUBLIC_SIGNATURE_COMPARISON.json",
+      "sha256": "163513c7fcdda17e35d651da1b17ee6675180e7cc7a2f176bad0b4ef0c995fda"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/README.md",
+      "sha256": "c1efc3e34247e0a365e865175ec0f01c0e6f019a5d9ec90182e10b53e33fd67e"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/RESULTS_JA.md",
+      "sha256": "b67c62b8d1b0766b62b811b4b163ed2dfd2c81f815ee66404e497b7557b94917"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/SECONDARY_METRICS_JA.md",
+      "sha256": "75613f6e6af818d12b90346dda8c95d210c955b040f45bf00ec3261c352367f2"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/SOURCE_BINDINGS.json",
+      "sha256": "e8f0ca0b89b12ad092e6e06df64e376d13f0902e7358a95b193373fb8be01932"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/SWE_PUBLIC_BASELINE_OBSERVATIONS.json",
+      "sha256": "442009ad4f1d4d6c2f755f255751408d605485ce0f6bf728c6d291f8a467c5ec"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/SWE_VALIDATION_INTERPRETATION.json",
+      "sha256": "8a3906ac17fa9b44ad08634a5f05293d771e9346b3b708b7a1e12888f7201b41"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/SWE_VALIDATION_LIMITATION_JA.md",
+      "sha256": "08a31b06ba5624e936497cff326d35389b491bb5711b316554a640deb6c0616f"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/TASK_ARM_RESULTS.csv",
+      "sha256": "9fa7d41f70af79e8bb0e02e96230ba244e57cb7258b49015906ad03040b6d974"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/TIMING_LIMITATIONS.json",
+      "sha256": "1d70628a4dfcae935422698a11efebaa4ec6a5b78f098bb6fe250de08c7a7a98"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/TOKEN_ACCOUNTING.json",
+      "sha256": "83c9f260c9be12a1925d6c4f4d215987f301b048b07afff9ea877cb79fc453d7"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/WORKFLOW_LIMITATIONS_JA.md",
+      "sha256": "980c1fdb58958d195bf2ec71f41fcff34090f931cb013e408234dcbd16d1916e"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/WORKFLOW_TIMING.csv",
+      "sha256": "f94c450aeede9722f9e8cdbda45011b3bff7007f8021c025bdb51042823ccc22"
     }
-  ]
+  ],
+  "official_result_revision": "2026-10-21-gemma26-router",
+  "internal_46_final_revision": {
+    "path": "benchmarks/internal-46/results/2026-10-22-astra-sol/RESULTS_JA.md",
+    "tasks": 46,
+    "arms": 4,
+    "terminal_dispositions": 184,
+    "official_benchmark": false,
+    "quality_unmeasured": 4,
+    "addendum_path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/FINAL_TECHNICAL_ADDENDUM_JA.md"
+  },
+  "external_astra_sol_continuation": {
+    "status": "DIRECT_CONTINUING_LOCAL_PAUSED",
+    "path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/OFFICIAL_DIRECT_CONTINUATION_PROGRESS_JA.md",
+    "Local_attempts_at_retained_stop": 9,
+    "retained_Host_unknowns": 2,
+    "Local_unattempted_pending": 6,
+    "original30_identity_unchanged": true,
+    "official_new_Astra_scoring_complete": false
+  },
+  "external_capacity_revision": {
+    "status": "STOPPED_PROVIDER_CAPACITY_USAGE_UNMEASURED",
+    "progress_path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/CAPACITY_STOP_PROGRESS_JA.md",
+    "accounting_path": "benchmarks/official-30/results/2026-10-21-astra-sol-extension/CAPACITY_ACCOUNTING_SNAPSHOT.json",
+    "native_invocations": 49,
+    "measured_invocations": 48,
+    "failed_capacity_invocations": 1,
+    "strict_credits": null,
+    "Local_paused": true,
+    "official_scored": false,
+    "old_results_unchanged": true
+  },
+  "external_recovery018": {
+    "status": "LOCAL_GENERATIONS_FROZEN_CLOUD_COMPLETION_REAUTH_PENDING",
+    "progress_path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_PROGRESS_JA.md",
+    "Local_attempts": 15,
+    "Local_Host_PASS": 8,
+    "Local_repair": 0,
+    "old_results_unchanged": true,
+    "Host_classification_overlay": "EXPERIMENT_ONLY",
+    "official_Astra_scored": false
+  },
+  "external_recovery021": {
+    "status": "MULTIPL_HOST_WORKFLOWS_COMPLETE_SWE_RUNNING_OFFICIAL_QUALITY_PENDING",
+    "progress_path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_PROGRESS_JA.md",
+    "MultiPL_E_Host_A": 20,
+    "MultiPL_E_Host_B": 20,
+    "Local_attempts": 15,
+    "Local_adopted": 4,
+    "Local_repair": 0,
+    "Astra_eligible_15_credit_reduction_percent": "-3.183851000004231031229241503",
+    "official_Astra_quality": null,
+    "old_results_unchanged": true
+  },
+  "external_recovery022": {
+    "status": "OFFICIAL_QUALITY_PENDING_SWE_RUNNING",
+    "old_Sol_reexecuted": 0,
+    "Local_generations": 15,
+    "Local_repair": 0,
+    "Host_and_review_accepted": 44,
+    "workflow_failed": 5,
+    "not_terminal": 11,
+    "strict_Astra_Credits": null,
+    "known_Astra_Credits": "1271.59330",
+    "source_commit": "1929a1fed1b15effd649fb719d20880b3e27cd7f",
+    "old_results_unchanged": true,
+    "benchmark_success_claimed": false
+  },
+  "external_astra_sol_final_029": {
+    "status": "GENERATION_AND_OFFICIAL_SCORING_COMPLETE_WITH_RECORDED_BLOCKERS",
+    "decision": "INCONCLUSIVE",
+    "main_readout": "benchmarks/official-30/results/2026-10-22-astra-sol-final/RESULTS_JA.md",
+    "presentation_brief": "benchmarks/official-30/results/2026-10-22-astra-sol-final/PRESENTATION_BRIEF_JA.md",
+    "frozen_tasks": 30,
+    "official_measured_each_arm": 29,
+    "unmeasured_task": "tokio-rs__tracing-2897",
+    "Sol": {
+      "resolved_Codex_only": 21,
+      "resolved_Gemma_router": 21,
+      "comparison_credits_Codex_only": "358.35012",
+      "comparison_credits_Gemma_router": "335.19033",
+      "observed_credit_reduction_percent": "6.462894445242546591026675253",
+      "observed_token_reduction_percent": "0.6003094561593958056802548805",
+      "reexecuted": 0
+    },
+    "Astra": {
+      "resolved_Codex_only": 22,
+      "resolved_Gemma_router": 22,
+      "exact_router_credit_increase": "27.80155",
+      "strict_credit_reduction_percent": null,
+      "eligible15_credit_increase_percent": "3.183851000004231031229241503"
+    },
+    "final_pipeline_false_green": {
+      "S0": 3,
+      "S1": 4,
+      "A0": 2,
+      "A1": 2
+    },
+    "new_Astra_CLI_role_registry_invocations": 161,
+    "retained_pre_provider_TLS_invocations": 1,
+    "new_Astra_CLI_total": 162,
+    "new_Astra_known_rate_converted_execution_spend": "1983.67855",
+    "strict_execution_spend": null,
+    "root_preparation_and_result_review_usage": null,
+    "shared_Planner_actual_once_comparison_full_both": true,
+    "public_compiler_context_gap_confirmed": true,
+    "official_evaluator_flags_or_tests_modified": false,
+    "Production_Router_modified": false,
+    "old_results_or_STOPs_overwritten": false,
+    "source_commit": "41913dd9868366895b0335988df73e72d5020a4f"
+  }
 }

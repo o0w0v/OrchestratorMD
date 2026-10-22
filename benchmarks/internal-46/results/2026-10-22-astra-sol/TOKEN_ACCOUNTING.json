@@ -1,0 +1,68 @@
+{
+  "ACTUAL_STUDY_SPEND": {
+    "input_tokens": "19549299",
+    "cached_input_tokens": "14624640",
+    "uncached_input_tokens": "4924659",
+    "output_tokens": "263477",
+    "total_tokens": "19812776",
+    "credits": "1130.65392"
+  },
+  "COMPARISON_WORKFLOW_COST": {
+    "S0": {
+      "input_tokens": "8155848",
+      "cached_input_tokens": "6410752",
+      "uncached_input_tokens": "1745096",
+      "output_tokens": "138654",
+      "total_tokens": "8294502",
+      "credits": "153.97206"
+    },
+    "S1": {
+      "input_tokens": "4194654",
+      "cached_input_tokens": "3062144",
+      "uncached_input_tokens": "1132510",
+      "output_tokens": "64445",
+      "total_tokens": "4259099",
+      "credits": "88.04747"
+    },
+    "A0": {
+      "input_tokens": "7142310",
+      "cached_input_tokens": "5265408",
+      "uncached_input_tokens": "1876902",
+      "output_tokens": "78115",
+      "total_tokens": "7220425",
+      "credits": "698.50445"
+    },
+    "A1": {
+      "input_tokens": "4062589",
+      "cached_input_tokens": "2758656",
+      "uncached_input_tokens": "1303933",
+      "output_tokens": "47369",
+      "total_tokens": "4109958",
+      "credits": "454.16090"
+    }
+  },
+  "shared_planner_actual_credits_by_model": {
+    "S_SHARED": "43.15126",
+    "A_SHARED": "220.87970"
+  },
+  "actual_shared_planner_counted_once": true,
+  "comparison_full_shared_planner_per_arm": true,
+  "unique_codex_usage_rows": 379,
+  "local_attempts": 92,
+  "Local_tokens_strict_total": null,
+  "Local_known_subtotal": {
+    "prompt_eval_count": 110303,
+    "eval_count": 5034
+  },
+  "Local_missing_counter_rows": {
+    "prompt_eval_count": 3,
+    "eval_count": 3
+  },
+  "known_transport_preparation_credits": "3.96430",
+  "known_study_plus_measured_transport_prep_credits": "1134.61822",
+  "complete_project_preparation_credits": null,
+  "JPY": null,
+  "local_tokens_are_not_codex_tokens_saved": true,
+  "reasoning_tokens_are_output_subset_not_added": true,
+  "cached_input_is_input_subset_not_added": true
+}
