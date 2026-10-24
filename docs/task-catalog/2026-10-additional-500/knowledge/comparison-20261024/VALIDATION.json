@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-10-24T08:54:05.185998+00:00",
+  "status": "PASS",
+  "checks": {
+    "expected_arms_have_terminal": true,
+    "old_input_hashes_unchanged": true,
+    "payload_identity": true,
+    "completed_plus_accounted_aborts_equal_started": true,
+    "no_semantic_repairs": true,
+    "offline_diagnostic_preserved_primary_results": true,
+    "matched_generation_results_120": true,
+    "gpt_abort_usage_null": true,
+    "old_two_runs_generation_zero": true,
+    "current_gemma_failures_19": true,
+    "current_rescues": true,
+    "global_repairs_zero": true
+  },
+  "offline_checks_passed": 7,
+  "no_model_preflight_passed": true,
+  "new_provider_calls": 0,
+  "preparation_usage": null,
+  "preparation_credits": null
+}

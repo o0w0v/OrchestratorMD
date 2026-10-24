@@ -1,0 +1,3765 @@
+{
+  "purpose": "Evidence for per-Task delegation; no overall model ranking or automatic production adoption.",
+  "tasks": [
+    {
+      "task_id": "A500-COD-006",
+      "title": "設備予約の空き枠抽出",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 85.06199999999808,
+          "input_tokens": 296,
+          "output_tokens_including_thinking": 3195,
+          "sampled_peak_gpu_used_mib": 9906.0,
+          "sampled_min_free_gpu_mib": 146.0,
+          "sampled_peak_ollama_rss_gib": 11.858283996582031
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 67.06199999999808,
+          "input_tokens": 288,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 7370.0,
+          "sampled_min_free_gpu_mib": 2682.0,
+          "sampled_peak_ollama_rss_gib": 1.1969223022460938
+        },
+        "gptoss_medium": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 129.90600000000268,
+          "input_tokens": 328,
+          "output_tokens_including_thinking": 3849,
+          "sampled_peak_gpu_used_mib": 8911.0,
+          "sampled_min_free_gpu_mib": 1141.0,
+          "sampled_peak_ollama_rss_gib": 6.203823089599609
+        },
+        "gptoss_low": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 26.843999999997322,
+          "input_tokens": 328,
+          "output_tokens_including_thinking": 641,
+          "sampled_peak_gpu_used_mib": 8910.0,
+          "sampled_min_free_gpu_mib": 1142.0,
+          "sampled_peak_ollama_rss_gib": 6.201969146728516
+        },
+        "gptoss_high": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 192.57799999999406,
+          "input_tokens": 328,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 8911.0,
+          "sampled_min_free_gpu_mib": 1141.0,
+          "sampled_peak_ollama_rss_gib": 6.204048156738281
+        },
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 27.781999999999243,
+          "input_tokens": 298,
+          "output_tokens_including_thinking": 456,
+          "sampled_peak_gpu_used_mib": 9780.0,
+          "sampled_min_free_gpu_mib": 272.0,
+          "sampled_peak_ollama_rss_gib": 12.00201416015625
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 33.875,
+          "input_tokens": 288,
+          "output_tokens_including_thinking": 286,
+          "sampled_peak_gpu_used_mib": 9296.0,
+          "sampled_min_free_gpu_mib": 756.0,
+          "sampled_peak_ollama_rss_gib": 2.8839950561523438
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 29.32800000000134,
+          "input_tokens": 290,
+          "output_tokens_including_thinking": 814,
+          "sampled_peak_gpu_used_mib": 7834.0,
+          "sampled_min_free_gpu_mib": 2218.0,
+          "sampled_peak_ollama_rss_gib": 1.3201217651367188
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 89.36000000000058,
+          "input_tokens": 289,
+          "output_tokens_including_thinking": 282,
+          "sampled_peak_gpu_used_mib": 9751.0,
+          "sampled_min_free_gpu_mib": 301.0,
+          "sampled_peak_ollama_rss_gib": 8.497013092041016
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 85.06199999999808
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(open: (i32, i32), bookings: &[(i32, i32)], min_len: i32) -> Vec<(i32, i32)>",
+        "rules": "All intervals valid and half-open; min_len > 0. Bookings may be unsorted, overlapping, empty, or outside opening hours. Clip and union occupied intervals, return sorted maximal free intervals of at least min_len. Preserve exact boundaries."
+      },
+      "input_provenance": {
+        "contract_sha256": "307ddb9a5190840bf95af5c591a37eb4f05cb514094788d1586c049393579c69",
+        "request_sha256": "ba4ea2ab72439ac66362df5c6b7160fa224aae0cec6f4e922390699cf4a13b3a"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-008",
+      "title": "会議出席の共通可能時間",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 143.25,
+          "input_tokens": 288,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 9657.0,
+          "sampled_min_free_gpu_mib": 395.0,
+          "sampled_peak_ollama_rss_gib": 12.177864074707031
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 18.17199999999866,
+          "input_tokens": 280,
+          "output_tokens_including_thinking": 1774,
+          "sampled_peak_gpu_used_mib": 7369.0,
+          "sampled_min_free_gpu_mib": 2683.0,
+          "sampled_peak_ollama_rss_gib": 1.4931526184082031
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 159.15699999999924,
+          "input_tokens": 324,
+          "output_tokens_including_thinking": 5156,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.306728363037109
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 9.125,
+          "input_tokens": 290,
+          "output_tokens_including_thinking": 488,
+          "sampled_peak_gpu_used_mib": 9852.0,
+          "sampled_min_free_gpu_mib": 200.0,
+          "sampled_peak_ollama_rss_gib": 12.215217590332031
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 27.20300000000134,
+          "input_tokens": 274,
+          "output_tokens_including_thinking": 380,
+          "sampled_peak_gpu_used_mib": 9245.0,
+          "sampled_min_free_gpu_mib": 807.0,
+          "sampled_peak_ollama_rss_gib": 2.9284896850585938
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 22.937000000005355,
+          "input_tokens": 282,
+          "output_tokens_including_thinking": 2048,
+          "sampled_peak_gpu_used_mib": 8108.0,
+          "sampled_min_free_gpu_mib": 1944.0,
+          "sampled_peak_ollama_rss_gib": 1.3417320251464844
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "SEMANTIC_FAILURE",
+          "api_seconds": 108.09399999999732,
+          "input_tokens": 276,
+          "output_tokens_including_thinking": 425,
+          "sampled_peak_gpu_used_mib": 9695.0,
+          "sampled_min_free_gpu_mib": 357.0,
+          "sampled_peak_ollama_rss_gib": 8.467151641845703
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 159.15699999999924
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(hours: &[(i32, i32)], breaks: &[Vec<(i32, i32)>], min_len: i32) -> Vec<(i32, i32)>",
+        "rules": "Exactly three people: hours[i] and breaks[i]. All valid half-open intervals; min_len > 0. A meeting requires all three on duty and none on break. Return sorted maximal common intervals with duration >= min_len. Breaks may overlap or lie outside hours."
+      },
+      "input_provenance": {
+        "contract_sha256": "c5224fcfb9a271cbc72446d3a411efaa851edb0193433a235d16a7c753eed6fa",
+        "request_sha256": "1e226e6af3b424713a4a559377918dcb32670ed112ecf2c3b2abf8205feb18ef"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-009",
+      "title": "複数営業日にまたがる対応期限",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 142.71899999999732,
+          "input_tokens": 313,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 9659.0,
+          "sampled_min_free_gpu_mib": 393.0,
+          "sampled_peak_ollama_rss_gib": 12.551982879638672
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 62.375,
+          "input_tokens": 312,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 7370.0,
+          "sampled_min_free_gpu_mib": 2682.0,
+          "sampled_peak_ollama_rss_gib": 1.6544647216796875
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 66.5309999999954,
+          "input_tokens": 350,
+          "output_tokens_including_thinking": 2162,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.439239501953125
+        },
+        "gptoss_low": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 20.0940000000046,
+          "input_tokens": 350,
+          "output_tokens_including_thinking": 673,
+          "sampled_peak_gpu_used_mib": 8910.0,
+          "sampled_min_free_gpu_mib": 1142.0,
+          "sampled_peak_ollama_rss_gib": 6.2306671142578125
+        },
+        "gptoss_high": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 184.4690000000046,
+          "input_tokens": 350,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.360050201416016
+        },
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 8.109000000004016,
+          "input_tokens": 315,
+          "output_tokens_including_thinking": 368,
+          "sampled_peak_gpu_used_mib": 9813.0,
+          "sampled_min_free_gpu_mib": 239.0,
+          "sampled_peak_ollama_rss_gib": 12.696624755859375
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 22.375,
+          "input_tokens": 317,
+          "output_tokens_including_thinking": 308,
+          "sampled_peak_gpu_used_mib": 9551.0,
+          "sampled_min_free_gpu_mib": 501.0,
+          "sampled_peak_ollama_rss_gib": 3.047901153564453
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 10.610000000000582,
+          "input_tokens": 314,
+          "output_tokens_including_thinking": 922,
+          "sampled_peak_gpu_used_mib": 7827.0,
+          "sampled_min_free_gpu_mib": 2225.0,
+          "sampled_peak_ollama_rss_gib": 1.5118370056152344
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 82.67200000000594,
+          "input_tokens": 320,
+          "output_tokens_including_thinking": 327,
+          "sampled_peak_gpu_used_mib": 9742.0,
+          "sampled_min_free_gpu_mib": 310.0,
+          "sampled_peak_ollama_rss_gib": 8.57474136352539
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 66.5309999999954
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(start: i64, minutes: u32, open: u16, close: u16, holidays: &[u32]) -> i64",
+        "rules": "Absolute nonnegative minute clock, day0 is Monday. Open weekdays (day%7<5), except day indices in holidays. Daily [open,close), 0 <= open < close <= 1440. Consume only business minutes, moving start forward when closed. Completing exactly at close returns close, not next opening. If minutes==0 return start unchanged. Inputs small enough to terminate and arithmetic fits i64."
+      },
+      "input_provenance": {
+        "contract_sha256": "677c86011cfe90b7b88eb304a22283407394986f4be53b986128c0b24a7ae869",
+        "request_sha256": "6a7761d51726c78e9f50c33e6cddea5cfed80bfac166c14a1c89f2ba81a8dc97"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-010",
+      "title": "担当者交代を伴う当番空白検出",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 119.875,
+          "input_tokens": 291,
+          "output_tokens_including_thinking": 5313,
+          "sampled_peak_gpu_used_mib": 9655.0,
+          "sampled_min_free_gpu_mib": 397.0,
+          "sampled_peak_ollama_rss_gib": 12.828296661376953
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 62.437000000005355,
+          "input_tokens": 286,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 7370.0,
+          "sampled_min_free_gpu_mib": 2682.0,
+          "sampled_peak_ollama_rss_gib": 1.9506912231445312
+        },
+        "gptoss_medium": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 181.93800000000192,
+          "input_tokens": 337,
+          "output_tokens_including_thinking": 5981,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.50982666015625
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 27.95300000000134,
+          "input_tokens": 293,
+          "output_tokens_including_thinking": 1332,
+          "sampled_peak_gpu_used_mib": 9888.0,
+          "sampled_min_free_gpu_mib": 164.0,
+          "sampled_peak_ollama_rss_gib": 12.895740509033203
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 22.32800000000134,
+          "input_tokens": 287,
+          "output_tokens_including_thinking": 305,
+          "sampled_peak_gpu_used_mib": 9262.0,
+          "sampled_min_free_gpu_mib": 790.0,
+          "sampled_peak_ollama_rss_gib": 3.16302490234375
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 12.235000000000582,
+          "input_tokens": 288,
+          "output_tokens_including_thinking": 1060,
+          "sampled_peak_gpu_used_mib": 7837.0,
+          "sampled_min_free_gpu_mib": 2215.0,
+          "sampled_peak_ollama_rss_gib": 1.6473388671875
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 73.26599999999598,
+          "input_tokens": 287,
+          "output_tokens_including_thinking": 284,
+          "sampled_peak_gpu_used_mib": 9700.0,
+          "sampled_min_free_gpu_mib": 352.0,
+          "sampled_peak_ollama_rss_gib": 8.674297332763672
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 119.875
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(range: (i32, i32), shifts: &[(i32, i32, &str)]) -> Vec<(i32, i32, Vec<String>)>",
+        "rules": "Partition range into maximal half-open segments with identical active owner sets. Shifts valid, may overlap, repeat the same owner, or lie outside range. Clip to range; ignore empty shifts. Sort owner names lexicographically, deduplicate. Keep empty-owner segments to show gaps. Merge adjacent segments when sets equal. Empty range returns []."
+      },
+      "input_provenance": {
+        "contract_sha256": "4e54e04e9f61edfce800a8aaffa8cf13ff44cabf90789abcb9cb54469e880169",
+        "request_sha256": "dc1f1f13e81588ba8556832fbd09a8f9a643b6420e526fb266d38d8f0200752d"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-019",
+      "title": "期限優先での分割引当",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 123.03100000000268,
+          "input_tokens": 284,
+          "output_tokens_including_thinking": 5407,
+          "sampled_peak_gpu_used_mib": 9652.0,
+          "sampled_min_free_gpu_mib": 400.0,
+          "sampled_peak_ollama_rss_gib": 13.186767578125
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 7.625,
+          "input_tokens": 280,
+          "output_tokens_including_thinking": 705,
+          "sampled_peak_gpu_used_mib": 7369.0,
+          "sampled_min_free_gpu_mib": 2683.0,
+          "sampled_peak_ollama_rss_gib": 2.2455787658691406
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 59.85899999999674,
+          "input_tokens": 333,
+          "output_tokens_including_thinking": 1999,
+          "sampled_peak_gpu_used_mib": 8911.0,
+          "sampled_min_free_gpu_mib": 1141.0,
+          "sampled_peak_ollama_rss_gib": 6.66021728515625
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 8.156000000002678,
+          "input_tokens": 286,
+          "output_tokens_including_thinking": 306,
+          "sampled_peak_gpu_used_mib": 9798.0,
+          "sampled_min_free_gpu_mib": 254.0,
+          "sampled_peak_ollama_rss_gib": 13.050029754638672
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 21.468000000000757,
+          "input_tokens": 276,
+          "output_tokens_including_thinking": 296,
+          "sampled_peak_gpu_used_mib": 9606.0,
+          "sampled_min_free_gpu_mib": 446.0,
+          "sampled_peak_ollama_rss_gib": 3.270618438720703
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 5.0939999999973224,
+          "input_tokens": 282,
+          "output_tokens_including_thinking": 413,
+          "sampled_peak_gpu_used_mib": 8159.0,
+          "sampled_min_free_gpu_mib": 1893.0,
+          "sampled_peak_ollama_rss_gib": 1.7869758605957031
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 84.10899999999674,
+          "input_tokens": 288,
+          "output_tokens_including_thinking": 329,
+          "sampled_peak_gpu_used_mib": 9708.0,
+          "sampled_min_free_gpu_mib": 344.0,
+          "sampled_peak_ollama_rss_gib": 8.76144027709961
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 59.85899999999674
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 123.03100000000268
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(today: i32, lots: &[(&str, &str, i32, u32)], needed: u32) -> Result<Vec<(String, String, u32)>, String>",
+        "rules": "Each lot=(warehouse,unique lot ID,expiry day,available). Exclude expiry<today, order expiry ascending then warehouse then lot ID. Return used (warehouse,lot ID,allocated), Err(\"SHORTAGE\") if insufficient, needed=0 gives empty."
+      },
+      "input_provenance": {
+        "contract_sha256": "cdeab706b9609eeabcd357e4166915b9a6a3380e2af999344de205c97e23bac5",
+        "request_sha256": "fe24dfe2ff11b290d7ed1b20c5b55b697e2d667461e0486368fd1f3c716d1e7d"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-025",
+      "title": "同梱不可商品の箱分割",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 76.53199999999924,
+          "input_tokens": 263,
+          "output_tokens_including_thinking": 3328,
+          "sampled_peak_gpu_used_mib": 9585.0,
+          "sampled_min_free_gpu_mib": 467.0,
+          "sampled_peak_ollama_rss_gib": 13.53866958618164
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 61.93699999999808,
+          "input_tokens": 259,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 2.373767852783203
+        },
+        "gptoss_medium": {
+          "passed": false,
+          "classification": "SCHEMA_FAILURE",
+          "api_seconds": 31.828999999997905,
+          "input_tokens": 312,
+          "output_tokens_including_thinking": 1060,
+          "sampled_peak_gpu_used_mib": 8911.0,
+          "sampled_min_free_gpu_mib": 1141.0,
+          "sampled_peak_ollama_rss_gib": 6.719615936279297
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "SEMANTIC_FAILURE",
+          "api_seconds": 6.811999999998079,
+          "input_tokens": 265,
+          "output_tokens_including_thinking": 211,
+          "sampled_peak_gpu_used_mib": 9700.0,
+          "sampled_min_free_gpu_mib": 352.0,
+          "sampled_peak_ollama_rss_gib": 13.223674774169922
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 17.23399999999674,
+          "input_tokens": 254,
+          "output_tokens_including_thinking": 239,
+          "sampled_peak_gpu_used_mib": 9247.0,
+          "sampled_min_free_gpu_mib": 805.0,
+          "sampled_peak_ollama_rss_gib": 3.3756561279296875
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 3.1560000000026776,
+          "input_tokens": 261,
+          "output_tokens_including_thinking": 247,
+          "sampled_peak_gpu_used_mib": 7851.0,
+          "sampled_min_free_gpu_mib": 2201.0,
+          "sampled_peak_ollama_rss_gib": 1.9060745239257812
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 60.0,
+          "input_tokens": 267,
+          "output_tokens_including_thinking": 240,
+          "sampled_peak_gpu_used_mib": 9721.0,
+          "sampled_min_free_gpu_mib": 331.0,
+          "sampled_peak_ollama_rss_gib": 8.855445861816406
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 76.53199999999924
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(items: &[(&str, &str, u32)]) -> Result<Vec<(String, Vec<(String, u32)>)>, String>",
+        "rules": "items=(unique item ID,temperature,count). Valid temperatures COLD,ROOM. Ignore zero-count items. Return nonempty groups ordered COLD then ROOM, each preserving item order; unknown temperature gives Err(\"UNKNOWN_TEMP\") even if count zero."
+      },
+      "input_provenance": {
+        "contract_sha256": "27fd8e5aeafdbf9fbe8783dda1cb04370c4f302598f9e0aba197455db88803b0",
+        "request_sha256": "d08497d6dca25f818385c03d43bf367100b465be7bee4f56cf37e23151fea5d1"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-028",
+      "title": "時間指定に合う配送便選択",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 82.67199999999866,
+          "input_tokens": 253,
+          "output_tokens_including_thinking": 3610,
+          "sampled_peak_gpu_used_mib": 9591.0,
+          "sampled_min_free_gpu_mib": 461.0,
+          "sampled_peak_ollama_rss_gib": 13.850231170654297
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 61.95300000000134,
+          "input_tokens": 251,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 2.6682052612304688
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 32.0,
+          "input_tokens": 295,
+          "output_tokens_including_thinking": 1064,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.756694793701172
+        },
+        "gptoss_low": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 7.4689999999973224,
+          "input_tokens": 295,
+          "output_tokens_including_thinking": 247,
+          "sampled_peak_gpu_used_mib": 8910.0,
+          "sampled_min_free_gpu_mib": 1142.0,
+          "sampled_peak_ollama_rss_gib": 6.260158538818359
+        },
+        "gptoss_high": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 184.84399999999732,
+          "input_tokens": 295,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.515464782714844
+        },
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 4.735000000000582,
+          "input_tokens": 255,
+          "output_tokens_including_thinking": 152,
+          "sampled_peak_gpu_used_mib": 9695.0,
+          "sampled_min_free_gpu_mib": 357.0,
+          "sampled_peak_ollama_rss_gib": 13.37185287475586
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 12.85899999999674,
+          "input_tokens": 253,
+          "output_tokens_including_thinking": 177,
+          "sampled_peak_gpu_used_mib": 9440.0,
+          "sampled_min_free_gpu_mib": 612.0,
+          "sampled_peak_ollama_rss_gib": 3.465778350830078
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 3.186999999998079,
+          "input_tokens": 253,
+          "output_tokens_including_thinking": 247,
+          "sampled_peak_gpu_used_mib": 8125.0,
+          "sampled_min_free_gpu_mib": 1927.0,
+          "sampled_peak_ollama_rss_gib": 2.019683837890625
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 43.625,
+          "input_tokens": 253,
+          "output_tokens_including_thinking": 172,
+          "sampled_peak_gpu_used_mib": 9721.0,
+          "sampled_min_free_gpu_mib": 331.0,
+          "sampled_peak_ollama_rss_gib": 8.932849884033203
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 32.0
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 82.67199999999866
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(wanted: (i32, i32), services: &[(&str, i32, i32, u32)]) -> Vec<String>",
+        "rules": "wanted nonempty. service=(unique ID,start,end,priority). A service must contain entire wanted interval, with equal endpoints permitted. Return matching IDs priority ascending then ID."
+      },
+      "input_provenance": {
+        "contract_sha256": "79a1e74400517c9d38c6379aebc53a42ad4115a2c3cc4b4aaac466bddc44d6d4",
+        "request_sha256": "1368837baf060f912d6052ec027b8d0768dedcd57ddaefd2dcb279a7fce05097"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-030",
+      "title": "複数口配送の完了判定",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 92.10899999999674,
+          "input_tokens": 251,
+          "output_tokens_including_thinking": 3928,
+          "sampled_peak_gpu_used_mib": 9589.0,
+          "sampled_min_free_gpu_mib": 463.0,
+          "sampled_peak_ollama_rss_gib": 14.16885757446289
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 10.125,
+          "input_tokens": 249,
+          "output_tokens_including_thinking": 983,
+          "sampled_peak_gpu_used_mib": 7371.0,
+          "sampled_min_free_gpu_mib": 2681.0,
+          "sampled_peak_ollama_rss_gib": 2.9631271362304688
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 17.546000000002095,
+          "input_tokens": 310,
+          "output_tokens_including_thinking": 582,
+          "sampled_peak_gpu_used_mib": 8911.0,
+          "sampled_min_free_gpu_mib": 1141.0,
+          "sampled_peak_ollama_rss_gib": 6.793804168701172
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 5.453000000001339,
+          "input_tokens": 253,
+          "output_tokens_including_thinking": 199,
+          "sampled_peak_gpu_used_mib": 9728.0,
+          "sampled_min_free_gpu_mib": 324.0,
+          "sampled_peak_ollama_rss_gib": 13.50479507446289
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 15.110000000000582,
+          "input_tokens": 244,
+          "output_tokens_including_thinking": 207,
+          "sampled_peak_gpu_used_mib": 9595.0,
+          "sampled_min_free_gpu_mib": 457.0,
+          "sampled_peak_ollama_rss_gib": 3.5442581176757812
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 3.2030000000013388,
+          "input_tokens": 251,
+          "output_tokens_including_thinking": 248,
+          "sampled_peak_gpu_used_mib": 7858.0,
+          "sampled_min_free_gpu_mib": 2194.0,
+          "sampled_peak_ollama_rss_gib": 2.1333694458007812
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 42.18800000000192,
+          "input_tokens": 253,
+          "output_tokens_including_thinking": 165,
+          "sampled_peak_gpu_used_mib": 9380.0,
+          "sampled_min_free_gpu_mib": 672.0,
+          "sampled_peak_ollama_rss_gib": 8.997726440429688
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 17.546000000002095
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 42.18800000000192
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 92.10899999999674
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(parcels: &[(&str, bool)], delivered: &[&str]) -> String",
+        "rules": "parcels=(unique ID,cancelled). A noncancelled parcel is delivered if its ID occurs in delivered. Ignore unknown/duplicate delivery IDs. Return NO_ACTIVE if none active, COMPLETE if all active delivered, PARTIAL if some, PENDING if none."
+      },
+      "input_provenance": {
+        "contract_sha256": "39f9a84d4f177d89a44e139938c9a4d5af404a2b4e65a8ef4bf76a0c9c4f30be",
+        "request_sha256": "d58dbadf3d171696e37a30971612d5dc3dbfbfa3baaba9fdafc457780fb13e86"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-048",
+      "title": "待機者の繰上げ対象選定",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 50.25,
+          "input_tokens": 221,
+          "output_tokens_including_thinking": 2220,
+          "sampled_peak_gpu_used_mib": 9584.0,
+          "sampled_min_free_gpu_mib": 468.0,
+          "sampled_peak_ollama_rss_gib": 14.486515045166016
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 56.125,
+          "input_tokens": 215,
+          "output_tokens_including_thinking": 5563,
+          "sampled_peak_gpu_used_mib": 7371.0,
+          "sampled_min_free_gpu_mib": 2681.0,
+          "sampled_peak_ollama_rss_gib": 3.0988235473632812
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 54.68699999999808,
+          "input_tokens": 273,
+          "output_tokens_including_thinking": 1806,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.820392608642578
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 3.6569999999992433,
+          "input_tokens": 223,
+          "output_tokens_including_thinking": 128,
+          "sampled_peak_gpu_used_mib": 9727.0,
+          "sampled_min_free_gpu_mib": 325.0,
+          "sampled_peak_ollama_rss_gib": 13.641502380371094
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 12.453000000001339,
+          "input_tokens": 215,
+          "output_tokens_including_thinking": 172,
+          "sampled_peak_gpu_used_mib": 9502.0,
+          "sampled_min_free_gpu_mib": 550.0,
+          "sampled_peak_ollama_rss_gib": 3.627044677734375
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 2.312999999994645,
+          "input_tokens": 217,
+          "output_tokens_including_thinking": 170,
+          "sampled_peak_gpu_used_mib": 8166.0,
+          "sampled_min_free_gpu_mib": 1886.0,
+          "sampled_peak_ollama_rss_gib": 2.246715545654297
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 27.29699999999866,
+          "input_tokens": 214,
+          "output_tokens_including_thinking": 107,
+          "sampled_peak_gpu_used_mib": 9377.0,
+          "sampled_min_free_gpu_mib": 675.0,
+          "sampled_peak_ollama_rss_gib": 9.061397552490234
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 27.29699999999866
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 50.25
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 54.68699999999808
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(waiters: &[(&str, u32, bool)], seats: usize) -> Vec<String>",
+        "rules": "waiter=(unique ID,application sequence,cancelled). Ignore cancelled, sort by sequence then ID, take at most seats."
+      },
+      "input_provenance": {
+        "contract_sha256": "3598d2fb1f0f168251cee1236421c93e51569966407ccd8f3b27d150a02c8e81",
+        "request_sha256": "9f84a4c4591330d7e31d801c3c1b23406671e8e6d63e73f642a424104136db91"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-057",
+      "title": "交換済み部品の二重計上防止",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 115.0789999999979,
+          "input_tokens": 245,
+          "output_tokens_including_thinking": 4752,
+          "sampled_peak_gpu_used_mib": 9583.0,
+          "sampled_min_free_gpu_mib": 469.0,
+          "sampled_peak_ollama_rss_gib": 14.774303436279297
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 19.734000000004016,
+          "input_tokens": 240,
+          "output_tokens_including_thinking": 1930,
+          "sampled_peak_gpu_used_mib": 7371.0,
+          "sampled_min_free_gpu_mib": 2681.0,
+          "sampled_peak_ollama_rss_gib": 3.3806724548339844
+        },
+        "gptoss_medium": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 72.90699999999924,
+          "input_tokens": 296,
+          "output_tokens_including_thinking": 2422,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.873973846435547
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 3.8280000000013388,
+          "input_tokens": 247,
+          "output_tokens_including_thinking": 125,
+          "sampled_peak_gpu_used_mib": 9723.0,
+          "sampled_min_free_gpu_mib": 329.0,
+          "sampled_peak_ollama_rss_gib": 13.761512756347656
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 22.125,
+          "input_tokens": 242,
+          "output_tokens_including_thinking": 306,
+          "sampled_peak_gpu_used_mib": 9277.0,
+          "sampled_min_free_gpu_mib": 775.0,
+          "sampled_peak_ollama_rss_gib": 3.6980361938476562
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 2.7039999999979045,
+          "input_tokens": 242,
+          "output_tokens_including_thinking": 206,
+          "sampled_peak_gpu_used_mib": 7984.0,
+          "sampled_min_free_gpu_mib": 2068.0,
+          "sampled_peak_ollama_rss_gib": 2.356891632080078
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "SEMANTIC_FAILURE",
+          "api_seconds": 31.921000000002095,
+          "input_tokens": 245,
+          "output_tokens_including_thinking": 126,
+          "sampled_peak_gpu_used_mib": 9717.0,
+          "sampled_min_free_gpu_mib": 335.0,
+          "sampled_peak_ollama_rss_gib": 9.11031723022461
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 115.0789999999979
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(rows: &[(&str, &str, &str, u32)]) -> Vec<(String, String, u32)>",
+        "rules": "row=(work ID,equipment ID,part ID,count). Duplicate triple(work,equipment,part) repeats identical count and counts once. Aggregate per equipment+part sorted lexicographically. Different work IDs count separately."
+      },
+      "input_provenance": {
+        "contract_sha256": "dc1ecfb0811019b129928054887f508149eadd3a5285feccda5d01f15ba624ae",
+        "request_sha256": "d2792bcc1c1fc2920316c4a149c74be3589aa125d1a961a9528bfaa70170ca7c"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-060",
+      "title": "代替機切替後の稼働率",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 143.79699999999866,
+          "input_tokens": 293,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 9587.0,
+          "sampled_min_free_gpu_mib": 465.0,
+          "sampled_peak_ollama_rss_gib": 15.120429992675781
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 62.17199999999866,
+          "input_tokens": 286,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 3.536853790283203
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 99.79699999999866,
+          "input_tokens": 330,
+          "output_tokens_including_thinking": 3307,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.942142486572266
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "SEMANTIC_FAILURE",
+          "api_seconds": 11.859000000004016,
+          "input_tokens": 295,
+          "output_tokens_including_thinking": 544,
+          "sampled_peak_gpu_used_mib": 9843.0,
+          "sampled_min_free_gpu_mib": 209.0,
+          "sampled_peak_ollama_rss_gib": 14.019172668457031
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 25.860000000000582,
+          "input_tokens": 279,
+          "output_tokens_including_thinking": 354,
+          "sampled_peak_gpu_used_mib": 9272.0,
+          "sampled_min_free_gpu_mib": 780.0,
+          "sampled_peak_ollama_rss_gib": 3.79827880859375
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 4.188000000001921,
+          "input_tokens": 288,
+          "output_tokens_including_thinking": 337,
+          "sampled_peak_gpu_used_mib": 7869.0,
+          "sampled_min_free_gpu_mib": 2183.0,
+          "sampled_peak_ollama_rss_gib": 2.4683380126953125
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 107.31300000000192,
+          "input_tokens": 288,
+          "output_tokens_including_thinking": 419,
+          "sampled_peak_gpu_used_mib": 9753.0,
+          "sampled_min_free_gpu_mib": 299.0,
+          "sampled_peak_ollama_rss_gib": 9.166851043701172
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 99.79699999999866
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(assignments: &[(&str, i32, i32)], running: &[(&str, i32, i32)]) -> (u32, u32)",
+        "rules": "assignments=(machine,start,end) are valid disjoint selected-use windows; selected machine may change. running intervals valid, may overlap. Return(total assigned duration, duration where assigned machine is running). Intersect matching IDs only, union overlapping running before counting. Arithmetic fits u32."
+      },
+      "input_provenance": {
+        "contract_sha256": "7a62501e38f1bfa41f902b71026726f5a7ac52b23cd610357b7f08fdf9b5cb2b",
+        "request_sha256": "9484b1184364e083b79c16727199b12d79fe5166794923631e2c9d43fdcb5be1"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-071",
+      "title": "公開CSV列の順序変換",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 122.76599999999598,
+          "input_tokens": 243,
+          "output_tokens_including_thinking": 5325,
+          "sampled_peak_gpu_used_mib": 9582.0,
+          "sampled_min_free_gpu_mib": 470.0,
+          "sampled_peak_ollama_rss_gib": 15.484375
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 8.093000000000757,
+          "input_tokens": 236,
+          "output_tokens_including_thinking": 770,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 3.832660675048828
+        },
+        "gptoss_medium": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 21.8440000000046,
+          "input_tokens": 292,
+          "output_tokens_including_thinking": 729,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 7.030643463134766
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 6.046999999998661,
+          "input_tokens": 245,
+          "output_tokens_including_thinking": 257,
+          "sampled_peak_gpu_used_mib": 9679.0,
+          "sampled_min_free_gpu_mib": 373.0,
+          "sampled_peak_ollama_rss_gib": 14.241294860839844
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 11.796000000002095,
+          "input_tokens": 233,
+          "output_tokens_including_thinking": 165,
+          "sampled_peak_gpu_used_mib": 9271.0,
+          "sampled_min_free_gpu_mib": 781.0,
+          "sampled_peak_ollama_rss_gib": 3.9146957397460938
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 4.046999999998661,
+          "input_tokens": 238,
+          "output_tokens_including_thinking": 326,
+          "sampled_peak_gpu_used_mib": 7827.0,
+          "sampled_min_free_gpu_mib": 2225.0,
+          "sampled_peak_ollama_rss_gib": 2.5857620239257812
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 56.921000000002095,
+          "input_tokens": 241,
+          "output_tokens_including_thinking": 219,
+          "sampled_peak_gpu_used_mib": 9734.0,
+          "sampled_min_free_gpu_mib": 318.0,
+          "sampled_peak_ollama_rss_gib": 9.27469253540039
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 122.76599999999598
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(schema: &[&str], fields: &[(&str, &str)]) -> Result<Vec<String>, String>",
+        "rules": "Both key lists unique. Reject any fields key outside schema with Err(\"UNKNOWN_COLUMN\"), then any missing schema key Err(\"MISSING_COLUMN\"). Otherwise return field values in schema order. Unknown check precedes missing check."
+      },
+      "input_provenance": {
+        "contract_sha256": "ecd19dcbdf14a960e8693bbb2e2c610e5a7c956914f0fd3f95c7ce171aa7be8a",
+        "request_sha256": "1ed096b71f9f72b5dc1d463e5f13ee59c19a1b144cb0942d1f1b0255cf5e307a"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-074",
+      "title": "必須項目の欠落一覧",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 62.5,
+          "input_tokens": 223,
+          "output_tokens_including_thinking": 2748,
+          "sampled_peak_gpu_used_mib": 9581.0,
+          "sampled_min_free_gpu_mib": 471.0,
+          "sampled_peak_ollama_rss_gib": 15.825016021728516
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 1.7969999999986612,
+          "input_tokens": 217,
+          "output_tokens_including_thinking": 148,
+          "sampled_peak_gpu_used_mib": 7371.0,
+          "sampled_min_free_gpu_mib": 2681.0,
+          "sampled_peak_ollama_rss_gib": 3.9712905883789062
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 50.43800000000192,
+          "input_tokens": 275,
+          "output_tokens_including_thinking": 1680,
+          "sampled_peak_gpu_used_mib": 8911.0,
+          "sampled_min_free_gpu_mib": 1141.0,
+          "sampled_peak_ollama_rss_gib": 7.060268402099609
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 3.1719999999986612,
+          "input_tokens": 225,
+          "output_tokens_including_thinking": 76,
+          "sampled_peak_gpu_used_mib": 9679.0,
+          "sampled_min_free_gpu_mib": 373.0,
+          "sampled_peak_ollama_rss_gib": 14.273731231689453
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 10.93699999999808,
+          "input_tokens": 216,
+          "output_tokens_including_thinking": 150,
+          "sampled_peak_gpu_used_mib": 9270.0,
+          "sampled_min_free_gpu_mib": 782.0,
+          "sampled_peak_ollama_rss_gib": 3.9867591857910156
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 2.437999999994645,
+          "input_tokens": 219,
+          "output_tokens_including_thinking": 186,
+          "sampled_peak_gpu_used_mib": 7827.0,
+          "sampled_min_free_gpu_mib": 2225.0,
+          "sampled_peak_ollama_rss_gib": 2.7008438110351562
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 43.17199999999866,
+          "input_tokens": 221,
+          "output_tokens_including_thinking": 170,
+          "sampled_peak_gpu_used_mib": 9734.0,
+          "sampled_min_free_gpu_mib": 318.0,
+          "sampled_peak_ollama_rss_gib": 9.34478759765625
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 50.43800000000192
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 62.5
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(required: &[&str], fields: &[(&str, Option<&str>)]) -> Vec<String>",
+        "rules": "Required keys unique, field keys unique. Missing key,None,or trim-empty string fails. Return failing required keys in required order; unrelated empty fields ignored."
+      },
+      "input_provenance": {
+        "contract_sha256": "83a97cdecc34ca4f820758058ffabd71a5cf4a37463ed2f5642c2a9bb3d16629",
+        "request_sha256": "5b55d12dc6dfb61eaa418b74f2fb846bf8b13fab627fea1d416cefa04404d9a1"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-083",
+      "title": "比率の表示用丸め",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 127.73500000000058,
+          "input_tokens": 239,
+          "output_tokens_including_thinking": 5710,
+          "sampled_peak_gpu_used_mib": 9581.0,
+          "sampled_min_free_gpu_mib": 471.0,
+          "sampled_peak_ollama_rss_gib": 16.122905731201172
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 62.18800000000192,
+          "input_tokens": 238,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 7371.0,
+          "sampled_min_free_gpu_mib": 2681.0,
+          "sampled_peak_ollama_rss_gib": 4.080772399902344
+        },
+        "gptoss_medium": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 84.98400000000402,
+          "input_tokens": 283,
+          "output_tokens_including_thinking": 2831,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 7.111057281494141
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 18.17199999999866,
+          "input_tokens": 241,
+          "output_tokens_including_thinking": 809,
+          "sampled_peak_gpu_used_mib": 9678.0,
+          "sampled_min_free_gpu_mib": 374.0,
+          "sampled_peak_ollama_rss_gib": 14.381881713867188
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "SEMANTIC_FAILURE",
+          "api_seconds": 6.985000000000582,
+          "input_tokens": 231,
+          "output_tokens_including_thinking": 95,
+          "sampled_peak_gpu_used_mib": 9268.0,
+          "sampled_min_free_gpu_mib": 784.0,
+          "sampled_peak_ollama_rss_gib": 4.0539398193359375
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 3.437000000005355,
+          "input_tokens": 240,
+          "output_tokens_including_thinking": 267,
+          "sampled_peak_gpu_used_mib": 7823.0,
+          "sampled_min_free_gpu_mib": 2229.0,
+          "sampled_peak_ollama_rss_gib": 2.8115997314453125
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "SEMANTIC_FAILURE",
+          "api_seconds": 52.484000000004016,
+          "input_tokens": 232,
+          "output_tokens_including_thinking": 206,
+          "sampled_peak_gpu_used_mib": 9415.0,
+          "sampled_min_free_gpu_mib": 637.0,
+          "sampled_peak_ollama_rss_gib": 9.404380798339844
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 127.73500000000058
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(numerator: i32, denominator: i32, digits: u8) -> Option<String>",
+        "rules": "denominator==0=>None. digits0..=3. Format percentage numerator/denominator*100 with exactly digits decimals, rounded half away from zero, suffix %. Mathematical scaled value fits i64. Avoid negative zero in output."
+      },
+      "input_provenance": {
+        "contract_sha256": "01ad647d7929874a6c609ded07394c3d670a8233bfbb42387ae6f1c9cf026eb3",
+        "request_sha256": "b213e719428e03f66bcaa6b9a8c845572b3371f5ccbcc20d079aebeb39a32791"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-090",
+      "title": "重み付き稼働指標の集計",
+      "domain": "COD",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 104.32800000000134,
+          "input_tokens": 284,
+          "output_tokens_including_thinking": 4455,
+          "sampled_peak_gpu_used_mib": 9580.0,
+          "sampled_min_free_gpu_mib": 472.0,
+          "sampled_peak_ollama_rss_gib": 16.487876892089844
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 27.562000000005355,
+          "input_tokens": 279,
+          "output_tokens_including_thinking": 2728,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 4.372772216796875
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 72.03100000000268,
+          "input_tokens": 330,
+          "output_tokens_including_thinking": 2395,
+          "sampled_peak_gpu_used_mib": 8911.0,
+          "sampled_min_free_gpu_mib": 1141.0,
+          "sampled_peak_ollama_rss_gib": 7.188198089599609
+        },
+        "gptoss_low": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 9.390999999995984,
+          "input_tokens": 330,
+          "output_tokens_including_thinking": 313,
+          "sampled_peak_gpu_used_mib": 8910.0,
+          "sampled_min_free_gpu_mib": 1142.0,
+          "sampled_peak_ollama_rss_gib": 6.281486511230469
+        },
+        "gptoss_high": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 184.48399999999674,
+          "input_tokens": 330,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.669155120849609
+        },
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 5.828000000001339,
+          "input_tokens": 286,
+          "output_tokens_including_thinking": 247,
+          "sampled_peak_gpu_used_mib": 9671.0,
+          "sampled_min_free_gpu_mib": 381.0,
+          "sampled_peak_ollama_rss_gib": 14.713542938232422
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 18.093999999997322,
+          "input_tokens": 274,
+          "output_tokens_including_thinking": 248,
+          "sampled_peak_gpu_used_mib": 9268.0,
+          "sampled_min_free_gpu_mib": 784.0,
+          "sampled_peak_ollama_rss_gib": 4.113460540771484
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 3.3280000000013388,
+          "input_tokens": 281,
+          "output_tokens_including_thinking": 264,
+          "sampled_peak_gpu_used_mib": 7823.0,
+          "sampled_min_free_gpu_mib": 2229.0,
+          "sampled_peak_ollama_rss_gib": 2.925140380859375
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 36.32800000000134,
+          "input_tokens": 284,
+          "output_tokens_including_thinking": 143,
+          "sampled_peak_gpu_used_mib": 9747.0,
+          "sampled_min_free_gpu_mib": 305.0,
+          "sampled_peak_ollama_rss_gib": 9.422321319580078
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 36.32800000000134
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 72.03100000000268
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 104.32800000000134
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(rows: &[(&str, f64, Option<(u32, u32)>)]) -> (Option<f64>, Vec<String>)",
+        "rules": "row=(unique department,nonnegative finite weight,optional(running,total)). Valid data needs Some and total>0, running<=total. Exclude None or total0; report those department IDs in input order. Weighted mean of running/total using valid weights, renormalize by valid weight sum. If valid weight sum0 =>None."
+      },
+      "input_provenance": {
+        "contract_sha256": "cbc4755470a8a0e4446851870e65877144db79bf0fb02109e70621bfa71e74b1",
+        "request_sha256": "0d7fb3a5e01616a4948734de60acf135c1856324c7f0207906c4b144244a1c1f"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-WRK-036",
+      "title": "対応時間帯別の報告作成",
+      "domain": "WRK",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 39.7190000000046,
+          "input_tokens": 703,
+          "output_tokens_including_thinking": 1663,
+          "sampled_peak_gpu_used_mib": 9584.0,
+          "sampled_min_free_gpu_mib": 468.0,
+          "sampled_peak_ollama_rss_gib": 16.942920684814453
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 8.0,
+          "input_tokens": 694,
+          "output_tokens_including_thinking": 723,
+          "sampled_peak_gpu_used_mib": 7371.0,
+          "sampled_min_free_gpu_mib": 2681.0,
+          "sampled_peak_ollama_rss_gib": 4.564693450927734
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 21.031999999999243,
+          "input_tokens": 713,
+          "output_tokens_including_thinking": 697,
+          "sampled_peak_gpu_used_mib": 8914.0,
+          "sampled_min_free_gpu_mib": 1138.0,
+          "sampled_peak_ollama_rss_gib": 7.259586334228516
+        },
+        "gptoss_low": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 6.860000000000582,
+          "input_tokens": 713,
+          "output_tokens_including_thinking": 221,
+          "sampled_peak_gpu_used_mib": 8914.0,
+          "sampled_min_free_gpu_mib": 1138.0,
+          "sampled_peak_ollama_rss_gib": 6.3074951171875
+        },
+        "gptoss_high": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 54.89100000000326,
+          "input_tokens": 713,
+          "output_tokens_including_thinking": 1822,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.827442169189453
+        },
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 3.4530000000013388,
+          "input_tokens": 705,
+          "output_tokens_including_thinking": 46,
+          "sampled_peak_gpu_used_mib": 9679.0,
+          "sampled_min_free_gpu_mib": 373.0,
+          "sampled_peak_ollama_rss_gib": 14.99801254272461
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 4.375,
+          "input_tokens": 723,
+          "output_tokens_including_thinking": 52,
+          "sampled_peak_gpu_used_mib": 9272.0,
+          "sampled_min_free_gpu_mib": 780.0,
+          "sampled_peak_ollama_rss_gib": 4.2126617431640625
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 1.2339999999967404,
+          "input_tokens": 696,
+          "output_tokens_including_thinking": 62,
+          "sampled_peak_gpu_used_mib": 7823.0,
+          "sampled_min_free_gpu_mib": 2229.0,
+          "sampled_peak_ollama_rss_gib": 3.0403671264648438
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 14.514999999999418,
+          "input_tokens": 738,
+          "output_tokens_including_thinking": 54,
+          "sampled_peak_gpu_used_mib": 9433.0,
+          "sampled_min_free_gpu_mib": 619.0,
+          "sampled_peak_ollama_rss_gib": 9.488838195800781
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 21.031999999999243
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 39.7190000000046
+        },
+        {
+          "profile": "gptoss_high",
+          "strict_contract_pass": true,
+          "generation_seconds": 54.89100000000326
+        }
+      ],
+      "public_contract": {
+        "instruction": "営業09:00〜17:00の範囲のみ数える。時間ではなく分で報告。 原表を読み取り専用として保持。出力表は見出しを含め元IDを追える形にする。要約段落はreferenceの固定表記を使う。",
+        "issued_slot_count": 2,
+        "workflow": "Host-assisted typed slots, native export/render"
+      },
+      "input_provenance": {
+        "contract_sha256": "3c3acc646d51a3e372fd417d4ef30d6f3fc171b7f308f173b14cc69c132a180f",
+        "request_sha256": "055e9aefbaee348be05c3a48f974503da9dfeeedfaca441e727ce4e63cf644c7"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-WRK-045",
+      "title": "棚卸差異の集計と報告",
+      "domain": "WRK",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 23.406000000002678,
+          "input_tokens": 696,
+          "output_tokens_including_thinking": 1002,
+          "sampled_peak_gpu_used_mib": 9585.0,
+          "sampled_min_free_gpu_mib": 467.0,
+          "sampled_peak_ollama_rss_gib": 17.353435516357422
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 32.32800000000134,
+          "input_tokens": 685,
+          "output_tokens_including_thinking": 3036,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 4.726936340332031
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 19.640999999995984,
+          "input_tokens": 734,
+          "output_tokens_including_thinking": 654,
+          "sampled_peak_gpu_used_mib": 8913.0,
+          "sampled_min_free_gpu_mib": 1139.0,
+          "sampled_peak_ollama_rss_gib": 7.301021575927734
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 4.984000000004016,
+          "input_tokens": 698,
+          "output_tokens_including_thinking": 53,
+          "sampled_peak_gpu_used_mib": 9674.0,
+          "sampled_min_free_gpu_mib": 378.0,
+          "sampled_peak_ollama_rss_gib": 15.323139190673828
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 4.671999999998661,
+          "input_tokens": 705,
+          "output_tokens_including_thinking": 58,
+          "sampled_peak_gpu_used_mib": 9272.0,
+          "sampled_min_free_gpu_mib": 780.0,
+          "sampled_peak_ollama_rss_gib": 4.354602813720703
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 1.5159999999959837,
+          "input_tokens": 687,
+          "output_tokens_including_thinking": 79,
+          "sampled_peak_gpu_used_mib": 7822.0,
+          "sampled_min_free_gpu_mib": 2230.0,
+          "sampled_peak_ollama_rss_gib": 3.1613540649414062
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 16.29699999999866,
+          "input_tokens": 733,
+          "output_tokens_including_thinking": 61,
+          "sampled_peak_gpu_used_mib": 9414.0,
+          "sampled_min_free_gpu_mib": 638.0,
+          "sampled_peak_ollama_rss_gib": 9.609588623046875
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 19.640999999995984
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 23.406000000002678
+        },
+        {
+          "profile": "qwen35_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 32.32800000000134
+        }
+      ],
+      "public_contract": {
+        "instruction": "差異=実数−台帳。0差異は除外し、過剰と不足を別報告。 原表を読み取り専用として保持。出力表は見出しを含め元IDを追える形にする。要約段落はreferenceの固定表記を使う。",
+        "issued_slot_count": 2,
+        "workflow": "Host-assisted typed slots, native export/render"
+      },
+      "input_provenance": {
+        "contract_sha256": "3cde9fbafe477dc19b600709b6ee2fb8ca97e32e282f99ad1b1fc48c9f9b9b5c",
+        "request_sha256": "609fe0bb75dd604cb1a1e3d65c0cd6a5ee744f0b82a185b2de8160a4f83b887a"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-WRK-066",
+      "title": "候補比較の重み付き集計",
+      "domain": "WRK",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 19.922000000005937,
+          "input_tokens": 706,
+          "output_tokens_including_thinking": 897,
+          "sampled_peak_gpu_used_mib": 9586.0,
+          "sampled_min_free_gpu_mib": 466.0,
+          "sampled_peak_ollama_rss_gib": 17.751712799072266
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 65.25,
+          "input_tokens": 692,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 4.918392181396484
+        },
+        "gptoss_medium": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 21.82800000000134,
+          "input_tokens": 732,
+          "output_tokens_including_thinking": 732,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 7.3416748046875
+        },
+        "gptoss_low": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 5.265999999995984,
+          "input_tokens": 732,
+          "output_tokens_including_thinking": 162,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 6.337551116943359
+        },
+        "gptoss_high": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 72.45300000000134,
+          "input_tokens": 732,
+          "output_tokens_including_thinking": 2406,
+          "sampled_peak_gpu_used_mib": 8914.0,
+          "sampled_min_free_gpu_mib": 1138.0,
+          "sampled_peak_ollama_rss_gib": 6.894802093505859
+        },
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 7.8439999999973224,
+          "input_tokens": 708,
+          "output_tokens_including_thinking": 64,
+          "sampled_peak_gpu_used_mib": 9668.0,
+          "sampled_min_free_gpu_mib": 384.0,
+          "sampled_peak_ollama_rss_gib": 15.714813232421875
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 7.171999999998661,
+          "input_tokens": 707,
+          "output_tokens_including_thinking": 99,
+          "sampled_peak_gpu_used_mib": 9624.0,
+          "sampled_min_free_gpu_mib": 428.0,
+          "sampled_peak_ollama_rss_gib": 4.494178771972656
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 1.4539999999979045,
+          "input_tokens": 694,
+          "output_tokens_including_thinking": 80,
+          "sampled_peak_gpu_used_mib": 7822.0,
+          "sampled_min_free_gpu_mib": 2230.0,
+          "sampled_peak_ollama_rss_gib": 3.2830848693847656
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 20.95300000000134,
+          "input_tokens": 738,
+          "output_tokens_including_thinking": 79,
+          "sampled_peak_gpu_used_mib": 9399.0,
+          "sampled_min_free_gpu_mib": 653.0,
+          "sampled_peak_ollama_rss_gib": 9.730770111083984
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 19.922000000005937
+        },
+        {
+          "profile": "gptoss_high",
+          "strict_contract_pass": true,
+          "generation_seconds": 72.45300000000134
+        }
+      ],
+      "public_contract": {
+        "instruction": "必須条件false除外。得点=品質×0.6+費用×0.4、降順。 原表を読み取り専用として保持。出力表は見出しを含め元IDを追える形にする。要約段落はreferenceの固定表記を使う。",
+        "issued_slot_count": 2,
+        "workflow": "Host-assisted typed slots, native export/render"
+      },
+      "input_provenance": {
+        "contract_sha256": "402baefe8be7b1d9ee8e8cdde762d14ee84fdc713f98efcb6909aa19eee4bdaa",
+        "request_sha256": "4b789e1f6410157cae01cf0fecf7d40d182bdb82b9a85459620aef185e1fc945"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-XLS-016",
+      "title": "割引併用順の計算",
+      "domain": "XLS",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 55.76499999999942,
+          "input_tokens": 547,
+          "output_tokens_including_thinking": 2291,
+          "sampled_peak_gpu_used_mib": 9586.0,
+          "sampled_min_free_gpu_mib": 466.0,
+          "sampled_peak_ollama_rss_gib": 18.088768005371094
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 65.20300000000134,
+          "input_tokens": 539,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 5.225574493408203
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 8.593999999997322,
+          "input_tokens": 579,
+          "output_tokens_including_thinking": 282,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 7.382896423339844
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 4.76600000000326,
+          "input_tokens": 549,
+          "output_tokens_including_thinking": 46,
+          "sampled_peak_gpu_used_mib": 9672.0,
+          "sampled_min_free_gpu_mib": 380.0,
+          "sampled_peak_ollama_rss_gib": 15.853713989257812
+        },
+        "qwen14_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 5.234000000004016,
+          "input_tokens": 544,
+          "output_tokens_including_thinking": 71,
+          "sampled_peak_gpu_used_mib": 9273.0,
+          "sampled_min_free_gpu_mib": 779.0,
+          "sampled_peak_ollama_rss_gib": 4.6400146484375
+        },
+        "qwen35_9_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 1.0160000000032596,
+          "input_tokens": 541,
+          "output_tokens_including_thinking": 34,
+          "sampled_peak_gpu_used_mib": 7824.0,
+          "sampled_min_free_gpu_mib": 2228.0,
+          "sampled_peak_ollama_rss_gib": 3.4048118591308594
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 7.687999999994645,
+          "input_tokens": 564,
+          "output_tokens_including_thinking": 31,
+          "sampled_peak_gpu_used_mib": 9600.0,
+          "sampled_min_free_gpu_mib": 452.0,
+          "sampled_peak_ollama_rss_gib": 9.855621337890625
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "qwen35_9_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 1.0160000000032596
+        },
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 4.76600000000326
+        },
+        {
+          "profile": "qwen14_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 5.234000000004016
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 7.687999999994645
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 8.593999999997322
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 55.76499999999942
+        }
+      ],
+      "public_contract": {
+        "instruction": "最初に定額引、次に率引。最終額の1円未満切り捨て。順序を変えない数式。",
+        "issued_slot_count": 2,
+        "workflow": "Host-assisted typed slots, native export/render"
+      },
+      "input_provenance": {
+        "contract_sha256": "226a56fdb5b7abb1e96c08a33b2313c7c12c4cba5feefea7433bfbf330600a2b",
+        "request_sha256": "683223680085a388f8179270bdc8d830d39bfe84f244eda5af55d77c437d25bd"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-XLS-052",
+      "title": "2台帳の未一致ID抽出",
+      "domain": "XLS",
+      "historical_gemma_pass": false,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 13.281000000002678,
+          "input_tokens": 460,
+          "output_tokens_including_thinking": 592,
+          "sampled_peak_gpu_used_mib": 9585.0,
+          "sampled_min_free_gpu_mib": 467.0,
+          "sampled_peak_ollama_rss_gib": 18.436416625976562
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 25.25,
+          "input_tokens": 451,
+          "output_tokens_including_thinking": 2355,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 5.528266906738281
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 12.421999999998661,
+          "input_tokens": 494,
+          "output_tokens_including_thinking": 413,
+          "sampled_peak_gpu_used_mib": 8913.0,
+          "sampled_min_free_gpu_mib": 1139.0,
+          "sampled_peak_ollama_rss_gib": 7.411346435546875
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 3.4069999999992433,
+          "input_tokens": 462,
+          "output_tokens_including_thinking": 32,
+          "sampled_peak_gpu_used_mib": 9817.0,
+          "sampled_min_free_gpu_mib": 235.0,
+          "sampled_peak_ollama_rss_gib": 15.905231475830078
+        },
+        "qwen14_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 3.438000000001921,
+          "input_tokens": 459,
+          "output_tokens_including_thinking": 44,
+          "sampled_peak_gpu_used_mib": 9269.0,
+          "sampled_min_free_gpu_mib": 783.0,
+          "sampled_peak_ollama_rss_gib": 4.752815246582031
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "CONTENT_FAILURE",
+          "api_seconds": 1.1409999999959837,
+          "input_tokens": 453,
+          "output_tokens_including_thinking": 47,
+          "sampled_peak_gpu_used_mib": 7822.0,
+          "sampled_min_free_gpu_mib": 2230.0,
+          "sampled_peak_ollama_rss_gib": 3.520771026611328
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 9.515999999995984,
+          "input_tokens": 472,
+          "output_tokens_including_thinking": 38,
+          "sampled_peak_gpu_used_mib": 9538.0,
+          "sampled_min_free_gpu_mib": 514.0,
+          "sampled_peak_ollama_rss_gib": 9.946090698242188
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "qwen14_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 3.438000000001921
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 9.515999999995984
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 12.421999999998661
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 13.281000000002678
+        },
+        {
+          "profile": "qwen35_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 25.25
+        }
+      ],
+      "public_contract": {
+        "instruction": "追加→削除→継続順でIDを分類。 入力を変更せず、結果シートへ見出し込みで出力。",
+        "issued_slot_count": 1,
+        "workflow": "Host-assisted typed slots, native export/render"
+      },
+      "input_provenance": {
+        "contract_sha256": "e13d126aa6152a3ec80457bcb423317ed55a3189cde85d4ae89dd8769f9f5ea4",
+        "request_sha256": "d20512e654e55690a7687f0717f82e538a1094439df70f5a339bfc5a2e864f81"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-001",
+      "title": "会議枠の重複判定",
+      "domain": "COD",
+      "historical_gemma_pass": true,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 78.25,
+          "input_tokens": 244,
+          "output_tokens_including_thinking": 3413,
+          "sampled_peak_gpu_used_mib": 9585.0,
+          "sampled_min_free_gpu_mib": 467.0,
+          "sampled_peak_ollama_rss_gib": 18.69784927368164
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "SEMANTIC_FAILURE",
+          "api_seconds": 5.2810000000026776,
+          "input_tokens": 242,
+          "output_tokens_including_thinking": 484,
+          "sampled_peak_gpu_used_mib": 7374.0,
+          "sampled_min_free_gpu_mib": 2678.0,
+          "sampled_peak_ollama_rss_gib": 5.6031036376953125
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 32.68800000000192,
+          "input_tokens": 290,
+          "output_tokens_including_thinking": 1089,
+          "sampled_peak_gpu_used_mib": 8914.0,
+          "sampled_min_free_gpu_mib": 1138.0,
+          "sampled_peak_ollama_rss_gib": 7.441123962402344
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 4.7810000000026776,
+          "input_tokens": 246,
+          "output_tokens_including_thinking": 99,
+          "sampled_peak_gpu_used_mib": 9566.0,
+          "sampled_min_free_gpu_mib": 486.0,
+          "sampled_peak_ollama_rss_gib": 15.837390899658203
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "SEMANTIC_FAILURE",
+          "api_seconds": 2.8909999999959837,
+          "input_tokens": 241,
+          "output_tokens_including_thinking": 37,
+          "sampled_peak_gpu_used_mib": 9272.0,
+          "sampled_min_free_gpu_mib": 780.0,
+          "sampled_peak_ollama_rss_gib": 4.7779083251953125
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 1.75,
+          "input_tokens": 244,
+          "output_tokens_including_thinking": 115,
+          "sampled_peak_gpu_used_mib": 7824.0,
+          "sampled_min_free_gpu_mib": 2228.0,
+          "sampled_peak_ollama_rss_gib": 3.6343536376953125
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "SEMANTIC_FAILURE",
+          "api_seconds": 5.078000000001339,
+          "input_tokens": 235,
+          "output_tokens_including_thinking": 20,
+          "sampled_peak_gpu_used_mib": 9407.0,
+          "sampled_min_free_gpu_mib": 645.0,
+          "sampled_peak_ollama_rss_gib": 9.967269897460938
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 4.7810000000026776
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 32.68800000000192
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 78.25
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(a: (i32, i32), b: (i32, i32)) -> bool",
+        "rules": "Times are minutes in one day, 0 <= start <= end <= 1440. Intervals are half-open; an empty interval never overlaps. Return whether the two meetings share positive duration."
+      },
+      "input_provenance": {
+        "contract_sha256": "f79c3e57bf277ff0937d7507bc0a028891ecf6b2d4a1073ca52c11974fc1e4d4",
+        "request_sha256": "bdc2c7fb627c0f25d607969a5d25504bbaf3422fb96b9f37ff40daddf67a1ce5"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-031",
+      "title": "問い合わせ優先度の分類",
+      "domain": "COD",
+      "historical_gemma_pass": true,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 52.34399999999732,
+          "input_tokens": 211,
+          "output_tokens_including_thinking": 2406,
+          "sampled_peak_gpu_used_mib": 9585.0,
+          "sampled_min_free_gpu_mib": 467.0,
+          "sampled_peak_ollama_rss_gib": 19.002521514892578
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 9.39100000000326,
+          "input_tokens": 208,
+          "output_tokens_including_thinking": 910,
+          "sampled_peak_gpu_used_mib": 7373.0,
+          "sampled_min_free_gpu_mib": 2679.0,
+          "sampled_peak_ollama_rss_gib": 5.723423004150391
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 22.093000000000757,
+          "input_tokens": 266,
+          "output_tokens_including_thinking": 743,
+          "sampled_peak_gpu_used_mib": 8913.0,
+          "sampled_min_free_gpu_mib": 1139.0,
+          "sampled_peak_ollama_rss_gib": 7.481777191162109
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 4.719000000004598,
+          "input_tokens": 213,
+          "output_tokens_including_thinking": 102,
+          "sampled_peak_gpu_used_mib": 9597.0,
+          "sampled_min_free_gpu_mib": 455.0,
+          "sampled_peak_ollama_rss_gib": 15.844352722167969
+        },
+        "qwen14_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 7.171999999998661,
+          "input_tokens": 210,
+          "output_tokens_including_thinking": 97,
+          "sampled_peak_gpu_used_mib": 9269.0,
+          "sampled_min_free_gpu_mib": 783.0,
+          "sampled_peak_ollama_rss_gib": 4.827388763427734
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 1.9680000000007567,
+          "input_tokens": 210,
+          "output_tokens_including_thinking": 137,
+          "sampled_peak_gpu_used_mib": 7821.0,
+          "sampled_min_free_gpu_mib": 2231.0,
+          "sampled_peak_ollama_rss_gib": 3.7434539794921875
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 15.280999999995402,
+          "input_tokens": 209,
+          "output_tokens_including_thinking": 61,
+          "sampled_peak_gpu_used_mib": 9415.0,
+          "sampled_min_free_gpu_mib": 637.0,
+          "sampled_peak_ollama_rss_gib": 10.005989074707031
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 4.719000000004598
+        },
+        {
+          "profile": "qwen14_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 7.171999999998661
+        },
+        {
+          "profile": "qwen35_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 9.39100000000326
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 15.280999999995402
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 22.093000000000757
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 52.34399999999732
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(people: u32, urgent: bool) -> String",
+        "rules": "Fixed priority table: people==0 => LOW regardless urgent; people in 1..=9 => HIGH if urgent else NORMAL; people>=10 => CRITICAL if urgent else HIGH."
+      },
+      "input_provenance": {
+        "contract_sha256": "5a8c3da66a2281490f096cfdf815ef39c0e98f4e6479ec7a0172f89ddda48aa4",
+        "request_sha256": "8a4c316457f063a5afc3ca416d5660ee24f2ba79c11a4cf7ac0fe63ecf206d37"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-061",
+      "title": "差戻し中申請の抽出",
+      "domain": "COD",
+      "historical_gemma_pass": true,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 49.40699999999924,
+          "input_tokens": 218,
+          "output_tokens_including_thinking": 2104,
+          "sampled_peak_gpu_used_mib": 9586.0,
+          "sampled_min_free_gpu_mib": 466.0,
+          "sampled_peak_ollama_rss_gib": 19.288894653320312
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "OUTPUT_LIMIT",
+          "api_seconds": 62.17199999999866,
+          "input_tokens": 210,
+          "output_tokens_including_thinking": 6144,
+          "sampled_peak_gpu_used_mib": 7374.0,
+          "sampled_min_free_gpu_mib": 2678.0,
+          "sampled_peak_ollama_rss_gib": 5.855064392089844
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 11.610000000000582,
+          "input_tokens": 267,
+          "output_tokens_including_thinking": 387,
+          "sampled_peak_gpu_used_mib": 8914.0,
+          "sampled_min_free_gpu_mib": 1138.0,
+          "sampled_peak_ollama_rss_gib": 7.5128936767578125
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 3.6710000000020955,
+          "input_tokens": 220,
+          "output_tokens_including_thinking": 47,
+          "sampled_peak_gpu_used_mib": 9594.0,
+          "sampled_min_free_gpu_mib": 458.0,
+          "sampled_peak_ollama_rss_gib": 15.951446533203125
+        },
+        "qwen14_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 4.953000000001339,
+          "input_tokens": 207,
+          "output_tokens_including_thinking": 68,
+          "sampled_peak_gpu_used_mib": 9264.0,
+          "sampled_min_free_gpu_mib": 788.0,
+          "sampled_peak_ollama_rss_gib": 4.884178161621094
+        },
+        "qwen35_9_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 1.1410000000032596,
+          "input_tokens": 212,
+          "output_tokens_including_thinking": 60,
+          "sampled_peak_gpu_used_mib": 7820.0,
+          "sampled_min_free_gpu_mib": 2232.0,
+          "sampled_peak_ollama_rss_gib": 3.8522491455078125
+        },
+        "devstral24_fast": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 17.406000000002678,
+          "input_tokens": 216,
+          "output_tokens_including_thinking": 73,
+          "sampled_peak_gpu_used_mib": 9414.0,
+          "sampled_min_free_gpu_mib": 638.0,
+          "sampled_peak_ollama_rss_gib": 10.047054290771484
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 3.6710000000020955
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 11.610000000000582
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 49.40699999999924
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(rows: &[(&str, &str)]) -> Vec<String>",
+        "rules": "row=(application ID,status). Return exactly RETURNED rows in input order. Other statuses DRAFT,PENDING,CANCELLED,DONE are excluded."
+      },
+      "input_provenance": {
+        "contract_sha256": "4c006c441d219e2cc57a91d2739f30b57f28736b0bdea96fecb4449b7893ef59",
+        "request_sha256": "13cd0c00b817462d2d19a7fe003153c3d0d552f151e86f1b81cae8f85098e3db"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-091",
+      "title": "締切ちょうどの受付誤判定修正",
+      "domain": "COD",
+      "historical_gemma_pass": true,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 6.015999999995984,
+          "input_tokens": 204,
+          "output_tokens_including_thinking": 267,
+          "sampled_peak_gpu_used_mib": 9584.0,
+          "sampled_min_free_gpu_mib": 468.0,
+          "sampled_peak_ollama_rss_gib": 19.565906524658203
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 2.014999999999418,
+          "input_tokens": 202,
+          "output_tokens_including_thinking": 167,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 6.1475372314453125
+        },
+        "gptoss_medium": {
+          "passed": false,
+          "classification": "BODY_CONTRACT_FAILURE",
+          "api_seconds": 8.56199999999808,
+          "input_tokens": 265,
+          "output_tokens_including_thinking": 290,
+          "sampled_peak_gpu_used_mib": 8913.0,
+          "sampled_min_free_gpu_mib": 1139.0,
+          "sampled_peak_ollama_rss_gib": 7.540027618408203
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 2.688000000001921,
+          "input_tokens": 206,
+          "output_tokens_including_thinking": 8,
+          "sampled_peak_gpu_used_mib": 9624.0,
+          "sampled_min_free_gpu_mib": 428.0,
+          "sampled_peak_ollama_rss_gib": 16.045795440673828
+        },
+        "qwen14_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 1.1089999999967404,
+          "input_tokens": 201,
+          "output_tokens_including_thinking": 12,
+          "sampled_peak_gpu_used_mib": 9264.0,
+          "sampled_min_free_gpu_mib": 788.0,
+          "sampled_peak_ollama_rss_gib": 4.934844970703125
+        },
+        "qwen35_9_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 0.5630000000019209,
+          "input_tokens": 204,
+          "output_tokens_including_thinking": 8,
+          "sampled_peak_gpu_used_mib": 7820.0,
+          "sampled_min_free_gpu_mib": 2232.0,
+          "sampled_peak_ollama_rss_gib": 3.9587364196777344
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 2.313000000001921,
+          "input_tokens": 207,
+          "output_tokens_including_thinking": 8,
+          "sampled_peak_gpu_used_mib": 9729.0,
+          "sampled_min_free_gpu_mib": 323.0,
+          "sampled_peak_ollama_rss_gib": 10.05221939086914
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "qwen35_9_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 0.5630000000019209
+        },
+        {
+          "profile": "qwen14_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 1.1089999999967404
+        },
+        {
+          "profile": "qwen35_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 2.014999999999418
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 2.313000000001921
+        },
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 2.688000000001921
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 6.015999999995984
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(now: u32, deadline: u32) -> bool",
+        "rules": "Fix current body, not the interface. Accept strictly BEFORE deadline; exactly deadline rejects. Current faulty body: now <= deadline"
+      },
+      "input_provenance": {
+        "contract_sha256": "2d47d8e72a4cf87fca82fb1d19924daa7b422b0baa3a7b610c3becc0b76964d3",
+        "request_sha256": "5d75e058c64e6f665b6bdff5d22c264b39f6e54f0c8e4f5956127bbac327d537"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-COD-096",
+      "title": "ロット残数のoverflow修正",
+      "domain": "COD",
+      "historical_gemma_pass": true,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 17.76600000000326,
+          "input_tokens": 209,
+          "output_tokens_including_thinking": 749,
+          "sampled_peak_gpu_used_mib": 9586.0,
+          "sampled_min_free_gpu_mib": 466.0,
+          "sampled_peak_ollama_rss_gib": 19.703784942626953
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "COMPILE_FAILURE",
+          "api_seconds": 2.2810000000026776,
+          "input_tokens": 203,
+          "output_tokens_including_thinking": 184,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 6.256904602050781
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 14.390999999995984,
+          "input_tokens": 255,
+          "output_tokens_including_thinking": 490,
+          "sampled_peak_gpu_used_mib": 8913.0,
+          "sampled_min_free_gpu_mib": 1139.0,
+          "sampled_peak_ollama_rss_gib": 7.564277648925781
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 2.936999999998079,
+          "input_tokens": 211,
+          "output_tokens_including_thinking": 27,
+          "sampled_peak_gpu_used_mib": 9622.0,
+          "sampled_min_free_gpu_mib": 430.0,
+          "sampled_peak_ollama_rss_gib": 16.129955291748047
+        },
+        "qwen14_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 1.7969999999986612,
+          "input_tokens": 198,
+          "output_tokens_including_thinking": 23,
+          "sampled_peak_gpu_used_mib": 9264.0,
+          "sampled_min_free_gpu_mib": 788.0,
+          "sampled_peak_ollama_rss_gib": 4.973896026611328
+        },
+        "qwen35_9_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 0.7969999999986612,
+          "input_tokens": 205,
+          "output_tokens_including_thinking": 34,
+          "sampled_peak_gpu_used_mib": 7821.0,
+          "sampled_min_free_gpu_mib": 2231.0,
+          "sampled_peak_ollama_rss_gib": 4.063533782958984
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTRACT_TEST_PASS",
+          "api_seconds": 9.046999999998661,
+          "input_tokens": 199,
+          "output_tokens_including_thinking": 37,
+          "sampled_peak_gpu_used_mib": 9755.0,
+          "sampled_min_free_gpu_mib": 297.0,
+          "sampled_peak_ollama_rss_gib": 10.08462142944336
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "qwen35_9_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 0.7969999999986612
+        },
+        {
+          "profile": "qwen14_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 1.7969999999986612
+        },
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 2.936999999998079
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 9.046999999998661
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 14.390999999995984
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 17.76600000000326
+        }
+      ],
+      "public_contract": {
+        "signature": "pub fn solve(left: u32, returned: u32) -> Result<u32, String>",
+        "rules": "Checked addition, overflow=>Err(\"OVERFLOW\"). Current faulty body: Ok(left+returned)"
+      },
+      "input_provenance": {
+        "contract_sha256": "0d53fbdf2a9bc91b8b13b29d0292c4e6ee0156037d9910fed75951f203b8d53f",
+        "request_sha256": "f3551090bb62c326c178abbbc1c4e7ba2d701a39324627512ac1ef4b133fa134"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-PPT-041",
+      "title": "指定テーマ色の適用",
+      "domain": "PPT",
+      "historical_gemma_pass": true,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 11.765999999995984,
+          "input_tokens": 690,
+          "output_tokens_including_thinking": 478,
+          "sampled_peak_gpu_used_mib": 9585.0,
+          "sampled_min_free_gpu_mib": 467.0,
+          "sampled_peak_ollama_rss_gib": 19.752460479736328
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 6.0,
+          "input_tokens": 686,
+          "output_tokens_including_thinking": 531,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 6.367591857910156
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 6.110000000000582,
+          "input_tokens": 688,
+          "output_tokens_including_thinking": 195,
+          "sampled_peak_gpu_used_mib": 8913.0,
+          "sampled_min_free_gpu_mib": 1139.0,
+          "sampled_peak_ollama_rss_gib": 7.591766357421875
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 6.875,
+          "input_tokens": 692,
+          "output_tokens_including_thinking": 27,
+          "sampled_peak_gpu_used_mib": 9845.0,
+          "sampled_min_free_gpu_mib": 207.0,
+          "sampled_peak_ollama_rss_gib": 16.407882690429688
+        },
+        "qwen14_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 2.7819999999992433,
+          "input_tokens": 692,
+          "output_tokens_including_thinking": 31,
+          "sampled_peak_gpu_used_mib": 9593.0,
+          "sampled_min_free_gpu_mib": 459.0,
+          "sampled_peak_ollama_rss_gib": 5.015220642089844
+        },
+        "qwen35_9_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 0.9689999999973224,
+          "input_tokens": 688,
+          "output_tokens_including_thinking": 34,
+          "sampled_peak_gpu_used_mib": 7834.0,
+          "sampled_min_free_gpu_mib": 2218.0,
+          "sampled_peak_ollama_rss_gib": 4.168601989746094
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 7.593000000000757,
+          "input_tokens": 709,
+          "output_tokens_including_thinking": 27,
+          "sampled_peak_gpu_used_mib": 9408.0,
+          "sampled_min_free_gpu_mib": 644.0,
+          "sampled_peak_ollama_rss_gib": 10.120601654052734
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "qwen35_9_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 0.9689999999973224
+        },
+        {
+          "profile": "qwen14_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 2.7819999999992433
+        },
+        {
+          "profile": "qwen35_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 6.0
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 6.110000000000582
+        },
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 6.875
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 7.593000000000757
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 11.765999999995984
+        }
+      ],
+      "public_contract": {
+        "instruction": "見出しはテーマ主色、本文は標準文字色へ。警告の意味色は保持。 指定slot以外の内容は変更しない。",
+        "issued_slot_count": 2,
+        "workflow": "Host-assisted typed slots, native export/render"
+      },
+      "input_provenance": {
+        "contract_sha256": "417f8505ce6e8bb90d39435ff83db3cf027b285cb2011828f1eaac84689a33de",
+        "request_sha256": "e07d9fe413e47fc981fc2e8c997ba7f67bbdff62f7620f6565691f9b4c0ad49a"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-DOC-011",
+      "title": "見出しスタイルの適用",
+      "domain": "DOC",
+      "historical_gemma_pass": true,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 8.859000000004016,
+          "input_tokens": 527,
+          "output_tokens_including_thinking": 355,
+          "sampled_peak_gpu_used_mib": 9585.0,
+          "sampled_min_free_gpu_mib": 467.0,
+          "sampled_peak_ollama_rss_gib": 19.752460479736328
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 4.436999999998079,
+          "input_tokens": 522,
+          "output_tokens_including_thinking": 369,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 6.502613067626953
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 4.546999999998661,
+          "input_tokens": 557,
+          "output_tokens_including_thinking": 146,
+          "sampled_peak_gpu_used_mib": 8913.0,
+          "sampled_min_free_gpu_mib": 1139.0,
+          "sampled_peak_ollama_rss_gib": 7.62103271484375
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 4.969000000004598,
+          "input_tokens": 529,
+          "output_tokens_including_thinking": 21,
+          "sampled_peak_gpu_used_mib": 9569.0,
+          "sampled_min_free_gpu_mib": 483.0,
+          "sampled_peak_ollama_rss_gib": 16.665699005126953
+        },
+        "qwen14_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 2.1090000000040163,
+          "input_tokens": 527,
+          "output_tokens_including_thinking": 25,
+          "sampled_peak_gpu_used_mib": 9276.0,
+          "sampled_min_free_gpu_mib": 776.0,
+          "sampled_peak_ollama_rss_gib": 5.146343231201172
+        },
+        "qwen35_9_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 0.8589999999967404,
+          "input_tokens": 524,
+          "output_tokens_including_thinking": 28,
+          "sampled_peak_gpu_used_mib": 7867.0,
+          "sampled_min_free_gpu_mib": 2185.0,
+          "sampled_peak_ollama_rss_gib": 4.288795471191406
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 5.64100000000326,
+          "input_tokens": 539,
+          "output_tokens_including_thinking": 21,
+          "sampled_peak_gpu_used_mib": 9405.0,
+          "sampled_min_free_gpu_mib": 647.0,
+          "sampled_peak_ollama_rss_gib": 10.232784271240234
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "qwen35_9_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 0.8589999999967404
+        },
+        {
+          "profile": "qwen14_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 2.1090000000040163
+        },
+        {
+          "profile": "qwen35_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 4.436999999998079
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 4.546999999998661
+        },
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 4.969000000004598
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 5.64100000000326
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 8.859000000004016
+        }
+      ],
+      "public_contract": {
+        "instruction": "準備と実行の見出しだけHeading 1にする。本文と文言は保持。",
+        "issued_slot_count": 2,
+        "workflow": "Host-assisted typed slots, native export/render"
+      },
+      "input_provenance": {
+        "contract_sha256": "292faa90c945898d183fac6ec535a9b1af32d27ff236c288c3e9f74e3e4ea30d",
+        "request_sha256": "84b126508cec39dc47c55b06365a8e1c347e6c90ccbbd6e7faa040c3c490e000"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-XLS-001",
+      "title": "名簿の姓と名を指定列へ分離",
+      "domain": "XLS",
+      "historical_gemma_pass": true,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 10.85899999999674,
+          "input_tokens": 387,
+          "output_tokens_including_thinking": 462,
+          "sampled_peak_gpu_used_mib": 9585.0,
+          "sampled_min_free_gpu_mib": 467.0,
+          "sampled_peak_ollama_rss_gib": 19.716320037841797
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 4.328000000001339,
+          "input_tokens": 383,
+          "output_tokens_including_thinking": 367,
+          "sampled_peak_gpu_used_mib": 7372.0,
+          "sampled_min_free_gpu_mib": 2680.0,
+          "sampled_peak_ollama_rss_gib": 6.628185272216797
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 8.515999999995984,
+          "input_tokens": 427,
+          "output_tokens_including_thinking": 287,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 7.6484222412109375
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 4.344000000004598,
+          "input_tokens": 389,
+          "output_tokens_including_thinking": 40,
+          "sampled_peak_gpu_used_mib": 9569.0,
+          "sampled_min_free_gpu_mib": 483.0,
+          "sampled_peak_ollama_rss_gib": 16.86074447631836
+        },
+        "qwen14_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 3.375,
+          "input_tokens": 386,
+          "output_tokens_including_thinking": 44,
+          "sampled_peak_gpu_used_mib": 9277.0,
+          "sampled_min_free_gpu_mib": 775.0,
+          "sampled_peak_ollama_rss_gib": 5.247688293457031
+        },
+        "qwen35_9_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 0.9219999999986612,
+          "input_tokens": 385,
+          "output_tokens_including_thinking": 41,
+          "sampled_peak_gpu_used_mib": 7831.0,
+          "sampled_min_free_gpu_mib": 2221.0,
+          "sampled_peak_ollama_rss_gib": 4.4039764404296875
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 10.609000000004016,
+          "input_tokens": 395,
+          "output_tokens_including_thinking": 42,
+          "sampled_peak_gpu_used_mib": 9405.0,
+          "sampled_min_free_gpu_mib": 647.0,
+          "sampled_peak_ollama_rss_gib": 10.317806243896484
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "qwen35_9_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 0.9219999999986612
+        },
+        {
+          "profile": "qwen14_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 3.375
+        },
+        {
+          "profile": "qwen35_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 4.328000000001339
+        },
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 4.344000000004598
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 8.515999999995984
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 10.609000000004016
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 10.85899999999674
+        }
+      ],
+      "public_contract": {
+        "instruction": "原表は読み取り専用。氏名は|が姓と名の区切り。結果へID・姓・名を出す。",
+        "issued_slot_count": 1,
+        "workflow": "Host-assisted typed slots, native export/render"
+      },
+      "input_provenance": {
+        "contract_sha256": "e337cc151922aab63bf27969f6bf64aad5123a4ea41465754db8d53d6b29a2e6",
+        "request_sha256": "f9f13b9dafd3bf84700ff8bea409280b4f3ce14b496583edf6b9bfcd9741ffa3"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-XLS-011",
+      "title": "数量と単価から小計追加",
+      "domain": "XLS",
+      "historical_gemma_pass": true,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 10.593000000000757,
+          "input_tokens": 610,
+          "output_tokens_including_thinking": 459,
+          "sampled_peak_gpu_used_mib": 9585.0,
+          "sampled_min_free_gpu_mib": 467.0,
+          "sampled_peak_ollama_rss_gib": 19.601898193359375
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 4.703000000001339,
+          "input_tokens": 604,
+          "output_tokens_including_thinking": 409,
+          "sampled_peak_gpu_used_mib": 7375.0,
+          "sampled_min_free_gpu_mib": 2677.0,
+          "sampled_peak_ollama_rss_gib": 6.749439239501953
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 9.171000000002095,
+          "input_tokens": 629,
+          "output_tokens_including_thinking": 301,
+          "sampled_peak_gpu_used_mib": 8912.0,
+          "sampled_min_free_gpu_mib": 1140.0,
+          "sampled_peak_ollama_rss_gib": 7.679470062255859
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 6.171999999998661,
+          "input_tokens": 612,
+          "output_tokens_including_thinking": 37,
+          "sampled_peak_gpu_used_mib": 9622.0,
+          "sampled_min_free_gpu_mib": 430.0,
+          "sampled_peak_ollama_rss_gib": 17.072967529296875
+        },
+        "qwen14_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 3.1090000000040163,
+          "input_tokens": 608,
+          "output_tokens_including_thinking": 39,
+          "sampled_peak_gpu_used_mib": 9532.0,
+          "sampled_min_free_gpu_mib": 520.0,
+          "sampled_peak_ollama_rss_gib": 5.325870513916016
+        },
+        "qwen35_9_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 1.0160000000032596,
+          "input_tokens": 606,
+          "output_tokens_including_thinking": 43,
+          "sampled_peak_gpu_used_mib": 7833.0,
+          "sampled_min_free_gpu_mib": 2219.0,
+          "sampled_peak_ollama_rss_gib": 4.51519775390625
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 10.25,
+          "input_tokens": 625,
+          "output_tokens_including_thinking": 40,
+          "sampled_peak_gpu_used_mib": 9395.0,
+          "sampled_min_free_gpu_mib": 657.0,
+          "sampled_peak_ollama_rss_gib": 10.38455581665039
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "qwen35_9_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 1.0160000000032596
+        },
+        {
+          "profile": "qwen14_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 3.1090000000040163
+        },
+        {
+          "profile": "qwen35_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 4.703000000001339
+        },
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 6.171999999998661
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 9.171000000002095
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 10.25
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 10.593000000000757
+        }
+      ],
+      "public_contract": {
+        "instruction": "小計列へ同じ行の数量×単価の数式を入れる。数量0も計算。入力と行順を保持。",
+        "issued_slot_count": 3,
+        "workflow": "Host-assisted typed slots, native export/render"
+      },
+      "input_provenance": {
+        "contract_sha256": "1d02837c5cec597d4c76090e72ba853926abeea75042ea3fcd1d1b44dd6306c0",
+        "request_sha256": "d19a4d1ce66ebb7dfc7b4ae290b37b480ea52a5f96f93153e7df0b088811ce6f"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    },
+    {
+      "task_id": "A500-WRK-001",
+      "title": "週次件数表から報告1枚作成",
+      "domain": "WRK",
+      "historical_gemma_pass": true,
+      "profiles": {
+        "gemma26_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 12.35899999999674,
+          "input_tokens": 627,
+          "output_tokens_including_thinking": 528,
+          "sampled_peak_gpu_used_mib": 9585.0,
+          "sampled_min_free_gpu_mib": 467.0,
+          "sampled_peak_ollama_rss_gib": 19.581226348876953
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 5.546999999998661,
+          "input_tokens": 621,
+          "output_tokens_including_thinking": 483,
+          "sampled_peak_gpu_used_mib": 7375.0,
+          "sampled_min_free_gpu_mib": 2677.0,
+          "sampled_peak_ollama_rss_gib": 6.8785552978515625
+        },
+        "gptoss_medium": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 8.515999999995984,
+          "input_tokens": 630,
+          "output_tokens_including_thinking": 282,
+          "sampled_peak_gpu_used_mib": 8914.0,
+          "sampled_min_free_gpu_mib": 1138.0,
+          "sampled_peak_ollama_rss_gib": 7.7153778076171875
+        },
+        "gptoss_low": null,
+        "gptoss_high": null,
+        "gemma26_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 5.014999999999418,
+          "input_tokens": 629,
+          "output_tokens_including_thinking": 46,
+          "sampled_peak_gpu_used_mib": 9617.0,
+          "sampled_min_free_gpu_mib": 435.0,
+          "sampled_peak_ollama_rss_gib": 17.373210906982422
+        },
+        "qwen14_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 3.9219999999986612,
+          "input_tokens": 623,
+          "output_tokens_including_thinking": 50,
+          "sampled_peak_gpu_used_mib": 9262.0,
+          "sampled_min_free_gpu_mib": 790.0,
+          "sampled_peak_ollama_rss_gib": 5.444362640380859
+        },
+        "qwen35_9_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 1.187000000005355,
+          "input_tokens": 623,
+          "output_tokens_including_thinking": 53,
+          "sampled_peak_gpu_used_mib": 8059.0,
+          "sampled_min_free_gpu_mib": 1993.0,
+          "sampled_peak_ollama_rss_gib": 4.6305389404296875
+        },
+        "devstral24_fast": {
+          "passed": true,
+          "classification": "CONTENT_AND_NATIVE_PASS",
+          "api_seconds": 12.905999999995402,
+          "input_tokens": 644,
+          "output_tokens_including_thinking": 47,
+          "sampled_peak_gpu_used_mib": 9680.0,
+          "sampled_min_free_gpu_mib": 372.0,
+          "sampled_peak_ollama_rss_gib": 10.492324829101562
+        }
+      },
+      "assignment_evidence": [
+        {
+          "profile": "qwen35_9_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 1.187000000005355
+        },
+        {
+          "profile": "qwen14_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 3.9219999999986612
+        },
+        {
+          "profile": "gemma26_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 5.014999999999418
+        },
+        {
+          "profile": "qwen35_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 5.546999999998661
+        },
+        {
+          "profile": "gptoss_medium",
+          "strict_contract_pass": true,
+          "generation_seconds": 8.515999999995984
+        },
+        {
+          "profile": "gemma26_think",
+          "strict_contract_pass": true,
+          "generation_seconds": 12.35899999999674
+        },
+        {
+          "profile": "devstral24_fast",
+          "strict_contract_pass": true,
+          "generation_seconds": 12.905999999995402
+        }
+      ],
+      "public_contract": {
+        "instruction": "Excel原表から週次グラフを作る。元表は変更せず、PPTのカテゴリと件数系列だけを更新する。",
+        "issued_slot_count": 2,
+        "workflow": "Host-assisted typed slots, native export/render"
+      },
+      "input_provenance": {
+        "contract_sha256": "8efa268b6d5ce34386479361dc6201c240a96b611520fc17fe9fafcfa9e1ebbc",
+        "request_sha256": "f0a9deb999cf48898acddde7f3515dc97407efbf85e1c72170cd7e2fc56dc59c"
+      },
+      "confidence": "Observed once per profile on this exact Task; validate on unseen analogous Tasks before routing."
+    }
+  ],
+  "operation_groups": [
+    {
+      "operation": "time_intervals_calendar",
+      "task_ids": [
+        "A500-COD-006",
+        "A500-COD-008",
+        "A500-COD-009",
+        "A500-COD-010",
+        "A500-COD-060",
+        "A500-WRK-036"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 6,
+          "strict_pass": 3,
+          "output_limit": 3,
+          "mean_api_seconds": 112.40366666666644
+        },
+        "qwen35_think": {
+          "attempted": 6,
+          "strict_pass": 0,
+          "output_limit": 4,
+          "mean_api_seconds": 46.703000000000124
+        },
+        "gptoss_medium": {
+          "attempted": 6,
+          "strict_pass": 4,
+          "output_limit": 0,
+          "mean_api_seconds": 109.72683333333286
+        },
+        "gptoss_low": {
+          "attempted": 3,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 17.9326666666675
+        },
+        "gptoss_high": {
+          "attempted": 3,
+          "strict_pass": 1,
+          "output_limit": 2,
+          "mean_api_seconds": 143.97933333333398
+        },
+        "gemma26_fast": {
+          "attempted": 6,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 14.713500000001659
+        },
+        "qwen14_fast": {
+          "attempted": 6,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 22.669333333333878
+        },
+        "qwen35_9_fast": {
+          "attempted": 6,
+          "strict_pass": 0,
+          "output_limit": 1,
+          "mean_api_seconds": 13.422000000001086
+        },
+        "devstral24_fast": {
+          "attempted": 6,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 79.20333333333353
+        }
+      }
+    },
+    {
+      "operation": "collection_constraints_state",
+      "task_ids": [
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-028",
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-057",
+        "A500-XLS-052"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 7,
+          "strict_pass": 7,
+          "output_limit": 0,
+          "mean_api_seconds": 78.99342857142827
+        },
+        "qwen35_think": {
+          "attempted": 7,
+          "strict_pass": 1,
+          "output_limit": 2,
+          "mean_api_seconds": 34.67842857142906
+        },
+        "gptoss_medium": {
+          "attempted": 7,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 40.178571428570386
+        },
+        "gptoss_low": {
+          "attempted": 1,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 7.4689999999973224
+        },
+        "gptoss_high": {
+          "attempted": 1,
+          "strict_pass": 0,
+          "output_limit": 1,
+          "mean_api_seconds": 184.84399999999732
+        },
+        "gemma26_fast": {
+          "attempted": 7,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 5.149714285714643
+        },
+        "qwen14_fast": {
+          "attempted": 7,
+          "strict_pass": 1,
+          "output_limit": 0,
+          "mean_api_seconds": 14.95528571428544
+        },
+        "qwen35_9_fast": {
+          "attempted": 7,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 2.971142857141136
+        },
+        "devstral24_fast": {
+          "attempted": 7,
+          "strict_pass": 3,
+          "output_limit": 0,
+          "mean_api_seconds": 42.6651428571422
+        }
+      }
+    },
+    {
+      "operation": "numeric_rounding_formulas",
+      "task_ids": [
+        "A500-COD-083",
+        "A500-COD-090",
+        "A500-WRK-066",
+        "A500-XLS-016"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 4,
+          "strict_pass": 4,
+          "output_limit": 0,
+          "mean_api_seconds": 76.93750000000182
+        },
+        "qwen35_think": {
+          "attempted": 4,
+          "strict_pass": 0,
+          "output_limit": 3,
+          "mean_api_seconds": 55.050750000002154
+        },
+        "gptoss_medium": {
+          "attempted": 4,
+          "strict_pass": 2,
+          "output_limit": 0,
+          "mean_api_seconds": 46.85925000000134
+        },
+        "gptoss_low": {
+          "attempted": 2,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 7.328499999995984
+        },
+        "gptoss_high": {
+          "attempted": 2,
+          "strict_pass": 1,
+          "output_limit": 1,
+          "mean_api_seconds": 128.46849999999904
+        },
+        "gemma26_fast": {
+          "attempted": 4,
+          "strict_pass": 1,
+          "output_limit": 0,
+          "mean_api_seconds": 9.152500000000146
+        },
+        "qwen14_fast": {
+          "attempted": 4,
+          "strict_pass": 1,
+          "output_limit": 0,
+          "mean_api_seconds": 9.371250000000146
+        },
+        "qwen35_9_fast": {
+          "attempted": 4,
+          "strict_pass": 1,
+          "output_limit": 0,
+          "mean_api_seconds": 2.3087500000019645
+        },
+        "devstral24_fast": {
+          "attempted": 4,
+          "strict_pass": 2,
+          "output_limit": 0,
+          "mean_api_seconds": 29.363250000000335
+        }
+      }
+    },
+    {
+      "operation": "schema_mapping_validation",
+      "task_ids": [
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-WRK-045"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 3,
+          "strict_pass": 3,
+          "output_limit": 0,
+          "mean_api_seconds": 69.55733333333289
+        },
+        "qwen35_think": {
+          "attempted": 3,
+          "strict_pass": 1,
+          "output_limit": 0,
+          "mean_api_seconds": 14.072666666666919
+        },
+        "gptoss_medium": {
+          "attempted": 3,
+          "strict_pass": 2,
+          "output_limit": 0,
+          "mean_api_seconds": 30.641000000000833
+        },
+        "gptoss_low": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gptoss_high": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gemma26_fast": {
+          "attempted": 3,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 4.73433333333378
+        },
+        "qwen14_fast": {
+          "attempted": 3,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 9.134999999999613
+        },
+        "qwen35_9_fast": {
+          "attempted": 3,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 2.66699999999643
+        },
+        "devstral24_fast": {
+          "attempted": 3,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 38.796666666666475
+        }
+      }
+    },
+    {
+      "operation": "coding_positive_controls",
+      "task_ids": [
+        "A500-COD-001",
+        "A500-COD-031",
+        "A500-COD-061",
+        "A500-COD-091",
+        "A500-COD-096"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 40.75659999999916
+        },
+        "qwen35_think": {
+          "attempted": 5,
+          "strict_pass": 2,
+          "output_limit": 1,
+          "mean_api_seconds": 16.228000000001337
+        },
+        "gptoss_medium": {
+          "attempted": 5,
+          "strict_pass": 4,
+          "output_limit": 0,
+          "mean_api_seconds": 17.868799999999464
+        },
+        "gptoss_low": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gptoss_high": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gemma26_fast": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 3.7592000000018744
+        },
+        "qwen14_fast": {
+          "attempted": 5,
+          "strict_pass": 3,
+          "output_limit": 0,
+          "mean_api_seconds": 3.584399999998277
+        },
+        "qwen35_9_fast": {
+          "attempted": 5,
+          "strict_pass": 2,
+          "output_limit": 0,
+          "mean_api_seconds": 1.2438000000009197
+        },
+        "devstral24_fast": {
+          "attempted": 5,
+          "strict_pass": 3,
+          "output_limit": 0,
+          "mean_api_seconds": 9.825
+        }
+      }
+    },
+    {
+      "operation": "office_positive_controls",
+      "task_ids": [
+        "A500-PPT-041",
+        "A500-DOC-011",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-WRK-001"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 10.887199999998847
+        },
+        "qwen35_think": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 5.002999999999884
+        },
+        "gptoss_medium": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 7.371999999998661
+        },
+        "gptoss_low": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gptoss_high": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gemma26_fast": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 5.475000000001455
+        },
+        "qwen14_fast": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 3.0594000000011876
+        },
+        "qwen35_9_fast": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 0.9906000000002677
+        },
+        "devstral24_fast": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 9.399800000000686
+        }
+      }
+    }
+  ],
+  "automatic_router_change": false,
+  "read_this_first": "Only strict contract passes count. Passing exact Task does not prove broad specialty; Office is Host-assisted typed slots and native rendering, not free-form Office work.",
+  "raw_artifacts_published": false,
+  "local_full_knowledge_sha256": "59551d170c7dd64a59ed759feb043d26bcf993105fac22b917be90bbf79b77db"
+}

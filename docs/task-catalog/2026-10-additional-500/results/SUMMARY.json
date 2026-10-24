@@ -1,0 +1,626 @@
+{
+  "schema_version": 1,
+  "status": "SCREENING_COMPLETE_WITH_EVALUATION_LIMITATIONS",
+  "generated_at": "2026-10-23T21:41:08.542474+00:00",
+  "unique_tasks": 500,
+  "unique_model_invocations": 500,
+  "semantic_retries": 0,
+  "infrastructure_generation_retries": 0,
+  "raw_classifications": {
+    "CONTRACT_TEST_PASS": 85,
+    "COMPILE_FAILURE": 13,
+    "SEMANTIC_FAILURE": 2,
+    "CONTENT_AND_NATIVE_PASS_VISUAL_PENDING": 248,
+    "CONTENT_FAILURE": 151,
+    "HOST_VALIDATION_FAILURE": 1
+  },
+  "domains": {
+    "COD": {
+      "tasks": 100,
+      "raw_contract_pass": 85,
+      "diagnostic_pass": 85,
+      "host_failures": 0,
+      "input_tokens": 24568,
+      "output_tokens": 17094,
+      "model_native_seconds": 375.0210259
+    },
+    "PPT": {
+      "tasks": 100,
+      "raw_contract_pass": 78,
+      "diagnostic_pass": 78,
+      "host_failures": 0,
+      "input_tokens": 76394,
+      "output_tokens": 4175,
+      "model_native_seconds": 200.1190764
+    },
+    "XLS": {
+      "tasks": 100,
+      "raw_contract_pass": 60,
+      "diagnostic_pass": 60,
+      "host_failures": 1,
+      "input_tokens": 49970,
+      "output_tokens": 4599,
+      "model_native_seconds": 180.93450610000005
+    },
+    "DOC": {
+      "tasks": 100,
+      "raw_contract_pass": 67,
+      "diagnostic_pass": 68,
+      "host_failures": 0,
+      "input_tokens": 51943,
+      "output_tokens": 3092,
+      "model_native_seconds": 130.17406409999992
+    },
+    "WRK": {
+      "tasks": 100,
+      "raw_contract_pass": 43,
+      "diagnostic_pass": 46,
+      "host_failures": 0,
+      "input_tokens": 72979,
+      "output_tokens": 6242,
+      "model_native_seconds": 214.0121146
+    }
+  },
+  "families": {
+    "COD-F01": {
+      "name": "勤務・予約時間",
+      "tasks": 10,
+      "raw_contract_pass": 6,
+      "diagnostic_pass": 6,
+      "host_failures": 0,
+      "input_tokens": 2692,
+      "output_tokens": 3709,
+      "model_native_seconds": 108.2838399
+    },
+    "COD-F02": {
+      "name": "在庫・引当",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 2541,
+      "output_tokens": 1750,
+      "model_native_seconds": 34.4679531
+    },
+    "COD-F03": {
+      "name": "配送・荷姿",
+      "tasks": 10,
+      "raw_contract_pass": 7,
+      "diagnostic_pass": 7,
+      "host_failures": 0,
+      "input_tokens": 2531,
+      "output_tokens": 1281,
+      "model_native_seconds": 25.496252899999995
+    },
+    "COD-F04": {
+      "name": "問い合わせ対応",
+      "tasks": 10,
+      "raw_contract_pass": 10,
+      "diagnostic_pass": 10,
+      "host_failures": 0,
+      "input_tokens": 2427,
+      "output_tokens": 1493,
+      "model_native_seconds": 29.5221936
+    },
+    "COD-F05": {
+      "name": "研修・資格管理",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 2375,
+      "output_tokens": 1583,
+      "model_native_seconds": 31.313670500000008
+    },
+    "COD-F06": {
+      "name": "設備・保全",
+      "tasks": 10,
+      "raw_contract_pass": 8,
+      "diagnostic_pass": 8,
+      "host_failures": 0,
+      "input_tokens": 2355,
+      "output_tokens": 1443,
+      "model_native_seconds": 28.5970515
+    },
+    "COD-F07": {
+      "name": "申請・承認状況",
+      "tasks": 10,
+      "raw_contract_pass": 10,
+      "diagnostic_pass": 10,
+      "host_failures": 0,
+      "input_tokens": 2334,
+      "output_tokens": 1239,
+      "model_native_seconds": 25.1868854
+    },
+    "COD-F08": {
+      "name": "業務データ境界",
+      "tasks": 10,
+      "raw_contract_pass": 8,
+      "diagnostic_pass": 8,
+      "host_failures": 0,
+      "input_tokens": 2417,
+      "output_tokens": 1199,
+      "model_native_seconds": 24.337029999999995
+    },
+    "COD-F09": {
+      "name": "帳票向け集計",
+      "tasks": 10,
+      "raw_contract_pass": 8,
+      "diagnostic_pass": 8,
+      "host_failures": 0,
+      "input_tokens": 2550,
+      "output_tokens": 2650,
+      "model_native_seconds": 51.1497865
+    },
+    "COD-F10": {
+      "name": "不具合修正・回帰",
+      "tasks": 10,
+      "raw_contract_pass": 10,
+      "diagnostic_pass": 10,
+      "host_failures": 0,
+      "input_tokens": 2346,
+      "output_tokens": 747,
+      "model_native_seconds": 16.6663625
+    },
+    "DOC-F01": {
+      "name": "本文・段落の編集",
+      "tasks": 10,
+      "raw_contract_pass": 6,
+      "diagnostic_pass": 6,
+      "host_failures": 0,
+      "input_tokens": 4610,
+      "output_tokens": 340,
+      "model_native_seconds": 12.5283389
+    },
+    "DOC-F02": {
+      "name": "スタイル・ページ構成",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 5830,
+      "output_tokens": 268,
+      "model_native_seconds": 13.794067299999998
+    },
+    "DOC-F03": {
+      "name": "表・図・数式の配置",
+      "tasks": 10,
+      "raw_contract_pass": 8,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 5421,
+      "output_tokens": 251,
+      "model_native_seconds": 13.6303512
+    },
+    "DOC-F04": {
+      "name": "目次・参照・注記",
+      "tasks": 10,
+      "raw_contract_pass": 8,
+      "diagnostic_pass": 8,
+      "host_failures": 0,
+      "input_tokens": 5314,
+      "output_tokens": 393,
+      "model_native_seconds": 13.866068600000002
+    },
+    "DOC-F05": {
+      "name": "議事録・要約",
+      "tasks": 10,
+      "raw_contract_pass": 4,
+      "diagnostic_pass": 4,
+      "host_failures": 0,
+      "input_tokens": 5046,
+      "output_tokens": 376,
+      "model_native_seconds": 13.550961199999998
+    },
+    "DOC-F06": {
+      "name": "手順書・説明文",
+      "tasks": 10,
+      "raw_contract_pass": 4,
+      "diagnostic_pass": 4,
+      "host_failures": 0,
+      "input_tokens": 4959,
+      "output_tokens": 367,
+      "model_native_seconds": 13.274022200000001
+    },
+    "DOC-F07": {
+      "name": "定型文書・差込",
+      "tasks": 10,
+      "raw_contract_pass": 7,
+      "diagnostic_pass": 7,
+      "host_failures": 0,
+      "input_tokens": 5486,
+      "output_tokens": 304,
+      "model_native_seconds": 13.750293500000002
+    },
+    "DOC-F08": {
+      "name": "版管理・変更の可視化",
+      "tasks": 10,
+      "raw_contract_pass": 5,
+      "diagnostic_pass": 5,
+      "host_failures": 0,
+      "input_tokens": 5019,
+      "output_tokens": 329,
+      "model_native_seconds": 12.8125838
+    },
+    "DOC-F09": {
+      "name": "読みやすさ・出力",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 5021,
+      "output_tokens": 227,
+      "model_native_seconds": 11.237626000000002
+    },
+    "DOC-F10": {
+      "name": "既存文書の品質修正",
+      "tasks": 10,
+      "raw_contract_pass": 7,
+      "diagnostic_pass": 7,
+      "host_failures": 0,
+      "input_tokens": 5237,
+      "output_tokens": 237,
+      "model_native_seconds": 11.7297514
+    },
+    "PPT-F01": {
+      "name": "既存スライドの局所編集",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 5372,
+      "output_tokens": 304,
+      "model_native_seconds": 24.0903799
+    },
+    "PPT-F02": {
+      "name": "データのグラフ化",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 7527,
+      "output_tokens": 476,
+      "model_native_seconds": 32.2508274
+    },
+    "PPT-F03": {
+      "name": "構造図・フロー図",
+      "tasks": 10,
+      "raw_contract_pass": 8,
+      "diagnostic_pass": 8,
+      "host_failures": 0,
+      "input_tokens": 12295,
+      "output_tokens": 768,
+      "model_native_seconds": 30.9929965
+    },
+    "PPT-F04": {
+      "name": "配置・可読性",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 9343,
+      "output_tokens": 665,
+      "model_native_seconds": 22.3246963
+    },
+    "PPT-F05": {
+      "name": "テンプレート・統一",
+      "tasks": 10,
+      "raw_contract_pass": 10,
+      "diagnostic_pass": 10,
+      "host_failures": 0,
+      "input_tokens": 9702,
+      "output_tokens": 437,
+      "model_native_seconds": 19.243670800000004
+    },
+    "PPT-F06": {
+      "name": "公開資料からの要約",
+      "tasks": 10,
+      "raw_contract_pass": 5,
+      "diagnostic_pass": 5,
+      "host_failures": 0,
+      "input_tokens": 6436,
+      "output_tokens": 352,
+      "model_native_seconds": 14.2886351
+    },
+    "PPT-F07": {
+      "name": "実務向け資料",
+      "tasks": 10,
+      "raw_contract_pass": 5,
+      "diagnostic_pass": 5,
+      "host_failures": 0,
+      "input_tokens": 6819,
+      "output_tokens": 320,
+      "model_native_seconds": 14.219011099999998
+    },
+    "PPT-F08": {
+      "name": "図像・スクリーンショット",
+      "tasks": 10,
+      "raw_contract_pass": 7,
+      "diagnostic_pass": 7,
+      "host_failures": 0,
+      "input_tokens": 7168,
+      "output_tokens": 244,
+      "model_native_seconds": 14.561200599999998
+    },
+    "PPT-F09": {
+      "name": "アクセシビリティ・言語",
+      "tasks": 10,
+      "raw_contract_pass": 7,
+      "diagnostic_pass": 7,
+      "host_failures": 0,
+      "input_tokens": 5942,
+      "output_tokens": 370,
+      "model_native_seconds": 14.364827699999998
+    },
+    "PPT-F10": {
+      "name": "既存資料の品質修正",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 5790,
+      "output_tokens": 239,
+      "model_native_seconds": 13.782831
+    },
+    "WRK-F01": {
+      "name": "定例報告パッケージ",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 6565,
+      "output_tokens": 456,
+      "model_native_seconds": 16.2471624
+    },
+    "WRK-F02": {
+      "name": "会議準備・記録",
+      "tasks": 10,
+      "raw_contract_pass": 7,
+      "diagnostic_pass": 8,
+      "host_failures": 0,
+      "input_tokens": 7067,
+      "output_tokens": 592,
+      "model_native_seconds": 18.9592927
+    },
+    "WRK-F03": {
+      "name": "研修・受講運営",
+      "tasks": 10,
+      "raw_contract_pass": 7,
+      "diagnostic_pass": 7,
+      "host_failures": 0,
+      "input_tokens": 7296,
+      "output_tokens": 561,
+      "model_native_seconds": 19.267357500000003
+    },
+    "WRK-F04": {
+      "name": "問い合わせ・顧客報告",
+      "tasks": 10,
+      "raw_contract_pass": 3,
+      "diagnostic_pass": 3,
+      "host_failures": 0,
+      "input_tokens": 7307,
+      "output_tokens": 564,
+      "model_native_seconds": 21.439386599999995
+    },
+    "WRK-F05": {
+      "name": "購買・在庫の事務",
+      "tasks": 10,
+      "raw_contract_pass": 2,
+      "diagnostic_pass": 2,
+      "host_failures": 0,
+      "input_tokens": 7270,
+      "output_tokens": 602,
+      "model_native_seconds": 21.9361354
+    },
+    "WRK-F06": {
+      "name": "プロジェクト進捗",
+      "tasks": 10,
+      "raw_contract_pass": 3,
+      "diagnostic_pass": 4,
+      "host_failures": 0,
+      "input_tokens": 7682,
+      "output_tokens": 670,
+      "model_native_seconds": 23.254992
+    },
+    "WRK-F07": {
+      "name": "調査・意思決定資料",
+      "tasks": 10,
+      "raw_contract_pass": 1,
+      "diagnostic_pass": 1,
+      "host_failures": 0,
+      "input_tokens": 7270,
+      "output_tokens": 739,
+      "model_native_seconds": 23.833462100000002
+    },
+    "WRK-F08": {
+      "name": "イベント運営",
+      "tasks": 10,
+      "raw_contract_pass": 4,
+      "diagnostic_pass": 4,
+      "host_failures": 0,
+      "input_tokens": 8252,
+      "output_tokens": 793,
+      "model_native_seconds": 25.4891796
+    },
+    "WRK-F09": {
+      "name": "引継ぎ・文書管理",
+      "tasks": 10,
+      "raw_contract_pass": 4,
+      "diagnostic_pass": 4,
+      "host_failures": 0,
+      "input_tokens": 6916,
+      "output_tokens": 570,
+      "model_native_seconds": 20.9276653
+    },
+    "WRK-F10": {
+      "name": "納品・品質点検",
+      "tasks": 10,
+      "raw_contract_pass": 3,
+      "diagnostic_pass": 4,
+      "host_failures": 0,
+      "input_tokens": 7354,
+      "output_tokens": 695,
+      "model_native_seconds": 22.657480999999997
+    },
+    "XLS-F01": {
+      "name": "表の入力・整理",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 4153,
+      "output_tokens": 418,
+      "model_native_seconds": 13.677855099999999
+    },
+    "XLS-F02": {
+      "name": "計算式・数値",
+      "tasks": 10,
+      "raw_contract_pass": 9,
+      "diagnostic_pass": 9,
+      "host_failures": 0,
+      "input_tokens": 5970,
+      "output_tokens": 693,
+      "model_native_seconds": 32.04417960000001
+    },
+    "XLS-F03": {
+      "name": "照合・参照式",
+      "tasks": 10,
+      "raw_contract_pass": 8,
+      "diagnostic_pass": 8,
+      "host_failures": 0,
+      "input_tokens": 4951,
+      "output_tokens": 431,
+      "model_native_seconds": 15.371611099999999
+    },
+    "XLS-F04": {
+      "name": "集計・分析",
+      "tasks": 10,
+      "raw_contract_pass": 4,
+      "diagnostic_pass": 4,
+      "host_failures": 0,
+      "input_tokens": 4810,
+      "output_tokens": 409,
+      "model_native_seconds": 15.9387139
+    },
+    "XLS-F05": {
+      "name": "日付・時間",
+      "tasks": 10,
+      "raw_contract_pass": 3,
+      "diagnostic_pass": 3,
+      "host_failures": 0,
+      "input_tokens": 4882,
+      "output_tokens": 872,
+      "model_native_seconds": 22.6395222
+    },
+    "XLS-F06": {
+      "name": "結合・重複・差分",
+      "tasks": 10,
+      "raw_contract_pass": 4,
+      "diagnostic_pass": 4,
+      "host_failures": 0,
+      "input_tokens": 4830,
+      "output_tokens": 463,
+      "model_native_seconds": 15.601564399999997
+    },
+    "XLS-F07": {
+      "name": "グラフ・可視化",
+      "tasks": 10,
+      "raw_contract_pass": 8,
+      "diagnostic_pass": 8,
+      "host_failures": 0,
+      "input_tokens": 5073,
+      "output_tokens": 424,
+      "model_native_seconds": 14.532476899999999
+    },
+    "XLS-F08": {
+      "name": "入力制約・操作性",
+      "tasks": 10,
+      "raw_contract_pass": 5,
+      "diagnostic_pass": 5,
+      "host_failures": 0,
+      "input_tokens": 4810,
+      "output_tokens": 308,
+      "model_native_seconds": 12.581271499999998
+    },
+    "XLS-F09": {
+      "name": "書式・印刷・納品",
+      "tasks": 10,
+      "raw_contract_pass": 5,
+      "diagnostic_pass": 5,
+      "host_failures": 1,
+      "input_tokens": 5375,
+      "output_tokens": 267,
+      "model_native_seconds": 23.857458
+    },
+    "XLS-F10": {
+      "name": "既存ブックの不具合修正",
+      "tasks": 10,
+      "raw_contract_pass": 5,
+      "diagnostic_pass": 5,
+      "host_failures": 0,
+      "input_tokens": 5116,
+      "output_tokens": 314,
+      "model_native_seconds": 14.6898534
+    }
+  },
+  "planned_complexity": {
+    "基礎": {
+      "tasks": 200,
+      "raw_contract_pass": 152,
+      "diagnostic_pass": 155,
+      "host_failures": 0,
+      "input_tokens": 107479,
+      "output_tokens": 11159,
+      "model_native_seconds": 421.57135960000005
+    },
+    "複数条件": {
+      "tasks": 200,
+      "raw_contract_pass": 124,
+      "diagnostic_pass": 125,
+      "host_failures": 1,
+      "input_tokens": 108091,
+      "output_tokens": 13997,
+      "model_native_seconds": 418.8287064000001
+    },
+    "応用": {
+      "tasks": 100,
+      "raw_contract_pass": 57,
+      "diagnostic_pass": 57,
+      "host_failures": 0,
+      "input_tokens": 60284,
+      "output_tokens": 10046,
+      "model_native_seconds": 259.8607211000001
+    }
+  },
+  "local_input_tokens": 275854,
+  "local_output_tokens": 35202,
+  "model_native_seconds": 1100.2607870999998,
+  "CUDA_errors": 0,
+  "api_infra_errors": 0,
+  "gpu_query_timeouts": 0,
+  "gpu_missing_samples": 0,
+  "peak_gpu_used_mib": 9895,
+  "minimum_gpu_free_mib": 157,
+  "task_host_exception_count": 1,
+  "model_regeneration_on_host_recovery": 0,
+  "original_journal_completions": 499,
+  "closure_results": 500,
+  "full_business_pass_rate": null,
+  "independent_paid_final_review": false,
+  "codex_credit_reduction": null,
+  "preparation_codex_tokens": null,
+  "preparation_codex_credits": null,
+  "matched_baseline": false,
+  "production_or_routing_changes": false,
+  "uniformly_frozen_single_protocol": false,
+  "all_500_frozen_before_first_generation": false,
+  "batch_contracts_frozen_before_their_own_generation": true,
+  "previous_batch_outputs_seen_before_later_fixture_design": true,
+  "limits": [
+    "Synthetic convenience sample: ten related cases per family, not 500 independent real-business trials.",
+    "Broad catalog goals sometimes exercised only through a narrower typed/data representation.",
+    "Word/PPT strict exact-match false negatives and Host serialization false green observed.",
+    "Later Office batches add Host public interface capabilities. No causal comparison of revisions.",
+    "No production bounded 2.2.8 adoption, full fmt/clippy/workspace checks, GUI benchmark or Codex savings benchmark."
+  ]
+}

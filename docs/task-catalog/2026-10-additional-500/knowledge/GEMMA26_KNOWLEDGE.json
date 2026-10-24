@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "knowledge_id": "GEMMA26_SPECIALIST_KNOWLEDGE_001",
+  "created_at": "2026-10-24T07:00:27.455834+00:00",
+  "model": "gemma4:26b",
+  "digest": "08ae7ec1744bd7f451c4a530afb39d2673ad9d07a8369b8a33a3613b41212a68",
+  "quantization": "Q4_K_M",
+  "options": {
+    "num_ctx": 8192,
+    "num_predict": 2048,
+    "temperature": 0,
+    "seed": 20260926,
+    "FA": 1,
+    "KV": "f16"
+  },
+  "task_decomposition_evaluation": "OUT_OF_SCOPE",
+  "new_inference_calls": 0,
+  "all_500_data_provenance": "ADDITIONAL-500-20261024/results-001",
+  "source_summary_sha256": "f1933d54244ea0ca451df5c1f6ec314fff5103b2fd5e73af45dfa460028dc2be",
+  "source_results_sha256": "a9a64d24b53f108995efb9a546fd13a9e9a605b5d0b5ab139644c45a22fbfaa9",
+  "strengths": [
+    {
+      "id": "G26-COD-F04",
+      "capability": "問い合わせの分類・分岐を行う小関数",
+      "evidence_status": "MEASURED_ON_THIS_SCREENING",
+      "family_id": "COD-F04",
+      "raw_contract_pass": 10,
+      "n": 10,
+      "conditions": "Rust signature/type and explicit finite rules; function body only",
+      "success_ids": [
+        "A500-COD-031",
+        "A500-COD-032",
+        "A500-COD-033",
+        "A500-COD-034",
+        "A500-COD-035",
+        "A500-COD-036",
+        "A500-COD-037",
+        "A500-COD-038",
+        "A500-COD-039",
+        "A500-COD-040"
+      ],
+      "failure_ids": [],
+      "scope": "RUST_FUNCTION_BODY",
+      "required_validation": [
+        "bounded apply and protected-source/hash guards",
+        "actual compile/tests"
+      ],
+      "full_business_pass_rate": null,
+      "production_routing_authorized_by_this_entry": false
+    },
+    {
+      "id": "G26-COD-F07",
+      "capability": "申請・承認状態を扱う小関数",
+      "evidence_status": "MEASURED_ON_THIS_SCREENING",
+      "family_id": "COD-F07",
+      "raw_contract_pass": 10,
+      "n": 10,
+      "conditions": "Typed state input; one state decision or extraction",
+      "success_ids": [
+        "A500-COD-061",
+        "A500-COD-062",
+        "A500-COD-063",
+        "A500-COD-064",
+        "A500-COD-065",
+        "A500-COD-066",
+        "A500-COD-067",
+        "A500-COD-068",
+        "A500-COD-069",
+        "A500-COD-070"
+      ],
+      "failure_ids": [],
+      "scope": "RUST_FUNCTION_BODY",
+      "required_validation": [
+        "bounded apply and protected-source/hash guards",
+        "actual compile/tests"
+      ],
+      "full_business_pass_rate": null,
+      "production_routing_authorized_by_this_entry": false
+    },
+    {
+      "id": "G26-COD-F10",
+      "capability": "範囲の小さい既知不具合修正",
+      "evidence_status": "MEASURED_ON_THIS_SCREENING",
+      "family_id": "COD-F10",
+      "raw_contract_pass": 10,
+      "n": 10,
+      "conditions": "Known defect and fixed regression assertions; no free debugging",
+      "success_ids": [
+        "A500-COD-091",
+        "A500-COD-092",
+        "A500-COD-093",
+        "A500-COD-094",
+        "A500-COD-095",
+        "A500-COD-096",
+        "A500-COD-097",
+        "A500-COD-098",
+        "A500-COD-099",
+        "A500-COD-100"
+      ],
+      "failure_ids": [],
+      "scope": "RUST_FUNCTION_BODY",
+      "required_validation": [
+        "bounded apply and protected-source/hash guards",
+        "actual compile/tests"
+      ],
+      "full_business_pass_rate": null,
+      "production_routing_authorized_by_this_entry": false
+    },
+    {
+      "id": "G26-XLS-F01",
+      "capability": "表の限定された入力整理",
+      "evidence_status": "MEASURED_ON_THIS_SCREENING",
+      "family_id": "XLS-F01",
+      "raw_contract_pass": 9,
+      "n": 10,
+      "conditions": "Public typed table and issued slots; deterministic Host XLSX export",
+      "success_ids": [
+        "A500-XLS-001",
+        "A500-XLS-002",
+        "A500-XLS-003",
+        "A500-XLS-005",
+        "A500-XLS-006",
+        "A500-XLS-007",
+        "A500-XLS-008",
+        "A500-XLS-009",
+        "A500-XLS-010"
+      ],
+      "failure_ids": [
+        "A500-XLS-004"
+      ],
+      "scope": "HOST_ASSISTED_TYPED_OFFICE_SUBTASK",
+      "required_validation": [
+        "bounded apply and protected-source/hash guards",
+        "native export/readback plus recalculation/render and visual checks"
+      ],
+      "full_business_pass_rate": null,
+      "production_routing_authorized_by_this_entry": false
+    },
+    {
+      "id": "G26-XLS-F02",
+      "capability": "限定された基本計算・数式",
+      "evidence_status": "MEASURED_ON_THIS_SCREENING",
+      "family_id": "XLS-F02",
+      "raw_contract_pass": 9,
+      "n": 10,
+      "conditions": "Explicit columns/priority/rounding; native recalculation required",
+      "success_ids": [
+        "A500-XLS-011",
+        "A500-XLS-012",
+        "A500-XLS-013",
+        "A500-XLS-014",
+        "A500-XLS-015",
+        "A500-XLS-017",
+        "A500-XLS-018",
+        "A500-XLS-019",
+        "A500-XLS-020"
+      ],
+      "failure_ids": [
+        "A500-XLS-016"
+      ],
+      "scope": "HOST_ASSISTED_TYPED_OFFICE_SUBTASK",
+      "required_validation": [
+        "bounded apply and protected-source/hash guards",
+        "native export/readback plus recalculation/render and visual checks"
+      ],
+      "full_business_pass_rate": null,
+      "production_routing_authorized_by_this_entry": false
+    },
+    {
+      "id": "G26-PPT-F01",
+      "capability": "既存スライドの局所編集",
+      "evidence_status": "MEASURED_ON_THIS_SCREENING",
+      "family_id": "PPT-F01",
+      "raw_contract_pass": 9,
+      "n": 10,
+      "conditions": "Host-owned element IDs and fields; no arbitrary deck design",
+      "success_ids": [
+        "A500-PPT-001",
+        "A500-PPT-002",
+        "A500-PPT-004",
+        "A500-PPT-005",
+        "A500-PPT-006",
+        "A500-PPT-007",
+        "A500-PPT-008",
+        "A500-PPT-009",
+        "A500-PPT-010"
+      ],
+      "failure_ids": [
+        "A500-PPT-003"
+      ],
+      "scope": "HOST_ASSISTED_TYPED_OFFICE_SUBTASK",
+      "required_validation": [
+        "bounded apply and protected-source/hash guards",
+        "native export/readback plus recalculation/render and visual checks"
+      ],
+      "full_business_pass_rate": null,
+      "production_routing_authorized_by_this_entry": false
+    },
+    {
+      "id": "G26-PPT-F05",
+      "capability": "指定書式の統一",
+      "evidence_status": "MEASURED_ON_THIS_SCREENING",
+      "family_id": "PPT-F05",
+      "raw_contract_pass": 10,
+      "n": 10,
+      "conditions": "Host-issued colors/font/heading slots, not general visual judgement",
+      "success_ids": [
+        "A500-PPT-041",
+        "A500-PPT-042",
+        "A500-PPT-043",
+        "A500-PPT-044",
+        "A500-PPT-045",
+        "A500-PPT-046",
+        "A500-PPT-047",
+        "A500-PPT-048",
+        "A500-PPT-049",
+        "A500-PPT-050"
+      ],
+      "failure_ids": [],
+      "scope": "HOST_ASSISTED_TYPED_OFFICE_SUBTASK",
+      "required_validation": [
+        "bounded apply and protected-source/hash guards",
+        "native export/readback plus recalculation/render and visual checks"
+      ],
+      "full_business_pass_rate": null,
+      "production_routing_authorized_by_this_entry": false
+    },
+    {
+      "id": "G26-DOC-F02",
+      "capability": "Wordのスタイル・ページ設定",
+      "evidence_status": "MEASURED_ON_THIS_SCREENING",
+      "family_id": "DOC-F02",
+      "raw_contract_pass": 9,
+      "n": 10,
+      "conditions": "Public style names and issued metadata; native output verification required",
+      "success_ids": [
+        "A500-DOC-011",
+        "A500-DOC-012",
+        "A500-DOC-013",
+        "A500-DOC-014",
+        "A500-DOC-015",
+        "A500-DOC-016",
+        "A500-DOC-017",
+        "A500-DOC-019",
+        "A500-DOC-020"
+      ],
+      "failure_ids": [
+        "A500-DOC-018"
+      ],
+      "scope": "HOST_ASSISTED_TYPED_OFFICE_SUBTASK",
+      "required_validation": [
+        "bounded apply and protected-source/hash guards",
+        "native export/readback plus recalculation/render and visual checks"
+      ],
+      "full_business_pass_rate": null,
+      "production_routing_authorized_by_this_entry": false
+    }
+  ],
+  "weaknesses_and_exclusions": [
+    {
+      "id": "G26-W01",
+      "category": "OBSERVED_MODEL_SEMANTIC_ERRORS",
+      "capability": "区間集約・不正入力の境界",
+      "task_ids": [
+        "A500-COD-025",
+        "A500-COD-060"
+      ],
+      "note": "Compile succeeded but fixed semantic checks failed. Individual observations, not a general mathematical ability score."
+    },
+    {
+      "id": "G26-W02",
+      "category": "OBSERVED_MODEL_SEMANTIC_ERRORS",
+      "capability": "表と説明文の整合性・重み付き比較",
+      "task_ids": [
+        "A500-WRK-036",
+        "A500-WRK-045",
+        "A500-WRK-066"
+      ],
+      "note": "Concrete arithmetic or table/prose contradiction observed."
+    },
+    {
+      "id": "G26-W03",
+      "category": "OBSERVED_MODEL_SEMANTIC_ERRORS",
+      "capability": "条件順序・集合差分",
+      "task_ids": [
+        "A500-XLS-016",
+        "A500-XLS-052"
+      ],
+      "note": "Incorrect native formula outputs or wrong membership; inspect raw evidence rather than literal wording alone."
+    },
+    {
+      "id": "G26-W04",
+      "category": "MIXED_EVALUATOR_AND_MODEL_EVIDENCE",
+      "capability": "議事録・要約・手順書",
+      "family_ids": [
+        "DOC-F05",
+        "DOC-F06",
+        "PPT-F06",
+        "PPT-F07"
+      ],
+      "note": "Low raw pass counts include exact-match/contract issues. Not yet a clean model weakness benchmark."
+    },
+    {
+      "id": "G26-X01",
+      "category": "HOST_OR_CONTRACT_ISSUE_EXCLUDED",
+      "capability": "軸反映・改ページ要素型・見出し反復",
+      "task_ids": [
+        "A500-PPT-020",
+        "A500-XLS-087",
+        "A500-DOC-025"
+      ],
+      "note": "Do not seek a model replacement to fix a Host serialization defect, missing type reference or missing acceptance coverage."
+    }
+  ],
+  "generic_capability_ranking": false,
+  "local_tokens_equal_codex_savings": false,
+  "evidence_layers": [
+    "MEASURED_ON_THIS_SCREENING",
+    "HISTORICAL_DIFFERENT_PROFILE",
+    "PRIMARY_SOURCE_MODEL_CANDIDATE",
+    "UNMEASURED"
+  ],
+  "freeze_before_candidate_run": true,
+  "automatic_cross_model_fallback": false,
+  "production_policy_changed": false
+}
