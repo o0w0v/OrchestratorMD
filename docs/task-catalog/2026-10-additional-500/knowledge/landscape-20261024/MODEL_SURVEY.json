@@ -1,0 +1,766 @@
+{
+  "schema_version": "1.0",
+  "survey_date": "2026-10-24",
+  "scope": "公開一次資料に基づく26モデルの用途調査。実測ランキングではない。",
+  "evidence_policy": {
+    "PUBLISHER_MODEL_CARD": "開発元が公開した仕様・評価。独立追試ではない。",
+    "PROJECT_MEASURED": "既存の当プロジェクト測定。測定条件内の結果として維持。",
+    "CANDIDATE_ROLE": "用途から導いた次の比較候補。Gemma補完能力の実証ではない。"
+  },
+  "project_constraints": {
+    "decomposition_quality": "out_of_scope",
+    "production_router_changed": false,
+    "bounded_profile_changed": false,
+    "gemma12_dispatch_forbidden": true
+  },
+  "operation_counts": {
+    "new_model_generations": 0,
+    "model_downloads": 0,
+    "provider_benchmark_calls": 0
+  },
+  "measurement": {
+    "new_success_rates": null,
+    "new_codex_token_savings": null,
+    "preparation_codex_usage": null,
+    "preparation_codex_credits": null
+  },
+  "models": [
+    {
+      "id": "gemma26",
+      "name": "Gemma 4 26B A4B",
+      "publisher": "Google",
+      "size_label": "25.2B / active 3.8B",
+      "total_parameters_billions": 25.2,
+      "active_parameters_billions": 3.8,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "コード",
+        "推論",
+        "画像理解"
+      ],
+      "candidate_tasks_to_verify": [
+        "既存の明確な変更規則を持つTaskの基準モデル"
+      ],
+      "limitations": [
+        "今回の500件はHost補助付き。一般業務成功率や他モデルとの優劣へ拡張しない。"
+      ],
+      "sources": [
+        "https://ai.google.dev/gemma/docs/core/model_card_4"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null,
+      "project_evidence": "既存500件と過去coding評価あり。今回再実行なし",
+      "prior_inventory": "installed"
+    },
+    {
+      "id": "gemma31",
+      "name": "Gemma 4 31B",
+      "publisher": "Google",
+      "size_label": "30.7B dense",
+      "total_parameters_billions": 30.7,
+      "active_parameters_billions": null,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "推論",
+        "多言語",
+        "画像・文書理解"
+      ],
+      "candidate_tasks_to_verify": [
+        "同系列dense化で複雑な条件判断・文書理解が改善するか"
+      ],
+      "limitations": [
+        "26B MoEの上位互換とは限らない。速度とメモリも別測定。"
+      ],
+      "sources": [
+        "https://ai.google.dev/gemma/docs/core/model_card_4"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "qwen35_9",
+      "name": "Qwen3.5-9B",
+      "publisher": "Qwen",
+      "size_label": "9B dense",
+      "total_parameters_billions": 9,
+      "active_parameters_billions": null,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "画像・文書理解",
+        "推論",
+        "多言語"
+      ],
+      "candidate_tasks_to_verify": [
+        "図表やスライドからの事実抽出",
+        "短い条件推論"
+      ],
+      "limitations": [
+        "過去24件codingではGemma非採用4件を救済しなかった。視覚・Office能力はその結果から判断しない。"
+      ],
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3.5-9B"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null,
+      "project_evidence": "過去24件coding比較のみ",
+      "prior_inventory": "installed"
+    },
+    {
+      "id": "qwen36_27",
+      "name": "Qwen3.6-27B",
+      "publisher": "Qwen",
+      "size_label": "27B dense",
+      "total_parameters_billions": 27,
+      "active_parameters_billions": null,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "repository coding",
+        "frontend",
+        "agentic coding"
+      ],
+      "candidate_tasks_to_verify": [
+        "型・APIの組合せが必要な小さな修正",
+        "UI実装"
+      ],
+      "limitations": [
+        "公開agent評価はツールと長い推論込み。既存bounded 8192/2048での優位は未測定。"
+      ],
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3.6-27B"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "qwen36_35",
+      "name": "Qwen3.6-35B-A3B",
+      "publisher": "Qwen",
+      "size_label": "35B / active 3B",
+      "total_parameters_billions": 35,
+      "active_parameters_billions": 3,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "coding",
+        "agentic task",
+        "画像理解"
+      ],
+      "candidate_tasks_to_verify": [
+        "Qwen dense版との速度・正確性比較",
+        "構造化出力"
+      ],
+      "limitations": [
+        "active 3Bでも35B全体の重みを保持する必要がある。"
+      ],
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "qwen35_122",
+      "name": "Qwen3.5-122B-A10B",
+      "publisher": "Qwen",
+      "size_label": "122B / active 10B",
+      "total_parameters_billions": 122,
+      "active_parameters_billions": 10,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "推論",
+        "長文・画像理解",
+        "instruction following"
+      ],
+      "candidate_tasks_to_verify": [
+        "複数資料の条件照合",
+        "長文から根拠付き抽出"
+      ],
+      "limitations": [
+        "長いcontext上限は正確な参照能力の保証ではない。別の大容量環境候補。"
+      ],
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3.5-122B-A10B"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "qwen35_397",
+      "name": "Qwen3.5-397B-A17B",
+      "publisher": "Qwen",
+      "size_label": "397B / active 17B",
+      "total_parameters_billions": 397,
+      "active_parameters_billions": 17,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "総合推論",
+        "文書・画像理解",
+        "coding"
+      ],
+      "candidate_tasks_to_verify": [
+        "大型マルチモーダルの比較基準"
+      ],
+      "limitations": [
+        "個人GPUでの日常利用候補とは分ける。量子化・backend・運用費未検証。"
+      ],
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3.5-397B-A17B"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "gptoss20",
+      "name": "gpt-oss-20b",
+      "publisher": "OpenAI",
+      "size_label": "21B / active 3.6B",
+      "total_parameters_billions": 21,
+      "active_parameters_billions": 3.6,
+      "modalities": [
+        "text"
+      ],
+      "public_focus": [
+        "推論",
+        "数学",
+        "tool use"
+      ],
+      "candidate_tasks_to_verify": [
+        "複雑な条件分岐や計算",
+        "短い根拠付き判断"
+      ],
+      "limitations": [
+        "画像入力なし。Harmony等の公式templateが必要。thinkingを含む出力予算不足に注意。"
+      ],
+      "sources": [
+        "https://developers.openai.com/api/docs/models/gpt-oss-20b",
+        "https://developers.openai.com/cookbook/articles/gpt-oss/run-locally-ollama"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null,
+      "prior_inventory": "installed"
+    },
+    {
+      "id": "gptoss120",
+      "name": "gpt-oss-120b",
+      "publisher": "OpenAI",
+      "size_label": "117B / active 5.1B",
+      "total_parameters_billions": 117,
+      "active_parameters_billions": 5.1,
+      "modalities": [
+        "text"
+      ],
+      "public_focus": [
+        "推論",
+        "coding",
+        "tool use"
+      ],
+      "candidate_tasks_to_verify": [
+        "gpt-oss-20bで不十分な条件推論の大型対照"
+      ],
+      "limitations": [
+        "公式Ollama案内は60GB以上のVRAM/統合メモリが望ましい。画像入力なし。"
+      ],
+      "sources": [
+        "https://developers.openai.com/api/docs/models/gpt-oss-120b",
+        "https://developers.openai.com/cookbook/articles/gpt-oss/run-locally-ollama"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "qwen25coder14",
+      "name": "Qwen2.5-Coder-14B-Instruct",
+      "publisher": "Qwen",
+      "size_label": "14B dense",
+      "total_parameters_billions": 14,
+      "active_parameters_billions": null,
+      "modalities": [
+        "text"
+      ],
+      "public_focus": [
+        "code generation",
+        "code repair"
+      ],
+      "candidate_tasks_to_verify": [
+        "Gemmaが落とした既知coding例の対照"
+      ],
+      "limitations": [
+        "過去同一24件ではGemma非採用4件のうち1件で採用。一般的な補完率ではない。"
+      ],
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen2.5-Coder-14B-Instruct"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null,
+      "project_evidence": "過去24件比較でLS3W228-021のみ補完",
+      "prior_inventory": "installed"
+    },
+    {
+      "id": "qwen_coder_next",
+      "name": "Qwen3-Coder-Next",
+      "publisher": "Qwen",
+      "size_label": "80B / active 3B",
+      "total_parameters_billions": 80,
+      "active_parameters_billions": 3,
+      "modalities": [
+        "text"
+      ],
+      "public_focus": [
+        "長いcoding task",
+        "tool use",
+        "失敗からの回復"
+      ],
+      "candidate_tasks_to_verify": [
+        "debugging",
+        "複数工程を持つrepository修正の参照モデル"
+      ],
+      "limitations": [
+        "non-thinkingモデル。active 3Bを必要RAM/VRAMと混同しない。短いbounded Taskへの効果は別検証。"
+      ],
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3-Coder-Next"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null,
+      "prior_inventory": "installed"
+    },
+    {
+      "id": "devstral_small",
+      "name": "Devstral Small 2 24B",
+      "publisher": "Mistral",
+      "size_label": "24B dense",
+      "total_parameters_billions": 24,
+      "active_parameters_billions": null,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "repository探索",
+        "複数file修正",
+        "software engineering"
+      ],
+      "candidate_tasks_to_verify": [
+        "helper/interfaceをまたぐ修正",
+        "既存コードの局所debug"
+      ],
+      "limitations": [
+        "公開成績はagent scaffold込み。自由な探索を与えない現行方式では差が変わり得る。"
+      ],
+      "sources": [
+        "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null,
+      "prior_inventory": "installed"
+    },
+    {
+      "id": "devstral2",
+      "name": "Devstral 2 123B",
+      "publisher": "Mistral",
+      "size_label": "123B dense",
+      "total_parameters_billions": 123,
+      "active_parameters_billions": null,
+      "modalities": [
+        "text"
+      ],
+      "public_focus": [
+        "software engineering",
+        "repository coding"
+      ],
+      "candidate_tasks_to_verify": [
+        "Devstral Smallで残る複雑な修正の大型対照"
+      ],
+      "limitations": [
+        "モデルカードは独自license。利用条件確認と大容量環境が必要。"
+      ],
+      "sources": [
+        "https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "mistral_small4",
+      "name": "Mistral Small 4",
+      "publisher": "Mistral",
+      "size_label": "119B / active 6.5B",
+      "total_parameters_billions": 119,
+      "active_parameters_billions": 6.5,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "推論",
+        "coding",
+        "多言語・画像"
+      ],
+      "candidate_tasks_to_verify": [
+        "日本語を含む文書・コード横断Task"
+      ],
+      "limitations": [
+        "名称のSmallは軽量GPU向けを意味しない。reasoning設定も比較条件に含める。"
+      ],
+      "sources": [
+        "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "mistral_large3",
+      "name": "Mistral Large 3",
+      "publisher": "Mistral",
+      "size_label": "675B / active 41B",
+      "total_parameters_billions": 675,
+      "active_parameters_billions": 41,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "多言語",
+        "長文・検索併用",
+        "総合知識"
+      ],
+      "candidate_tasks_to_verify": [
+        "大型の長文・文書理解対照"
+      ],
+      "limitations": [
+        "検索やtool scaffoldの寄与をモデル単体能力と分離する。"
+      ],
+      "sources": [
+        "https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "deepseek4_flash",
+      "name": "DeepSeek-V4-Flash",
+      "publisher": "DeepSeek",
+      "size_label": "284B / active 13B",
+      "total_parameters_billions": 284,
+      "active_parameters_billions": 13,
+      "modalities": [
+        "text"
+      ],
+      "public_focus": [
+        "推論",
+        "coding",
+        "長文"
+      ],
+      "candidate_tasks_to_verify": [
+        "数理・ロジック・長いコードの比較基準"
+      ],
+      "limitations": [
+        "混合精度の公式重みと任意のQ4を同一視しない。小型Flashではない。"
+      ],
+      "sources": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "deepseek4_pro",
+      "name": "DeepSeek-V4-Pro",
+      "publisher": "DeepSeek",
+      "size_label": "1.6T / active 49B",
+      "total_parameters_billions": 1600,
+      "active_parameters_billions": 49,
+      "modalities": [
+        "text"
+      ],
+      "public_focus": [
+        "高度な推論",
+        "coding",
+        "長文"
+      ],
+      "candidate_tasks_to_verify": [
+        "超大型推論の参照候補"
+      ],
+      "limitations": [
+        "サーバー/複数GPU級。今回のPCで動作確認したわけではない。"
+      ],
+      "sources": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "deepseek41_flash",
+      "name": "DeepSeek-V4.1-Flash",
+      "publisher": "DeepSeek",
+      "size_label": "552B backbone / active count unresolved",
+      "total_parameters_billions": 552,
+      "active_parameters_billions": null,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "画像とテキストの推論",
+        "長文"
+      ],
+      "candidate_tasks_to_verify": [
+        "文書画像と長文を組み合わせた大型対照"
+      ],
+      "limitations": [
+        "cardに8B/16Bのactive表記があるが単一値へ集約しない。backbone値は全構成の実メモリではない。"
+      ],
+      "sources": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null,
+      "parameter_count_scope": "backbone"
+    },
+    {
+      "id": "glm47_flash",
+      "name": "GLM-4.7-Flash",
+      "publisher": "Z.ai",
+      "size_label": "30B / active 3B",
+      "total_parameters_billions": 30,
+      "active_parameters_billions": 3,
+      "modalities": [
+        "text"
+      ],
+      "public_focus": [
+        "coding",
+        "推論",
+        "tool use"
+      ],
+      "candidate_tasks_to_verify": [
+        "小さなcode修正と条件推論の別系列対照"
+      ],
+      "limitations": [
+        "公開評価は課題別に大きな生成予算を使用。2048 outputで同じ結果とは限らない。"
+      ],
+      "sources": [
+        "https://huggingface.co/zai-org/GLM-4.7-Flash"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "glm53_flash",
+      "name": "GLM-5.3-Flash",
+      "publisher": "Z.ai",
+      "size_label": "320B / active 18B",
+      "total_parameters_billions": 320,
+      "active_parameters_billions": 18,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "coding agent",
+        "推論",
+        "長文・画像"
+      ],
+      "candidate_tasks_to_verify": [
+        "大型のコード・視覚横断Task"
+      ],
+      "limitations": [
+        "Flashという名称から消費メモリを推定しない。"
+      ],
+      "sources": [
+        "https://huggingface.co/zai-org/GLM-5.3-Flash"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "glm53",
+      "name": "GLM-5.3",
+      "publisher": "Z.ai",
+      "size_label": "大型 / canonical total not verified",
+      "total_parameters_billions": null,
+      "active_parameters_billions": null,
+      "modalities": [
+        "text"
+      ],
+      "public_focus": [
+        "長時間coding",
+        "agent task",
+        "推論"
+      ],
+      "candidate_tasks_to_verify": [
+        "大型software engineeringの参考候補"
+      ],
+      "limitations": [
+        "HF表示753Bをcanonical parameter数として採用しない。GLM5.2由来の構成詳細とlicenseは別確認。"
+      ],
+      "sources": [
+        "https://huggingface.co/zai-org/GLM-5.3"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null,
+      "parameter_uncertainty": "モデルカード本文だけでは総parameter定義を確定できずnull"
+    },
+    {
+      "id": "kimi26",
+      "name": "Kimi-K2.6",
+      "publisher": "Moonshot",
+      "size_label": "1T / active 32B",
+      "total_parameters_billions": 1000,
+      "active_parameters_billions": 32,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "public_focus": [
+        "coding",
+        "knowledge work",
+        "画像理解"
+      ],
+      "candidate_tasks_to_verify": [
+        "複数資料とコードの横断Task"
+      ],
+      "limitations": [
+        "256K等のcontext仕様と当方8192条件を混同しない。"
+      ],
+      "sources": [
+        "https://huggingface.co/moonshotai/Kimi-K2.6"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "kimi3",
+      "name": "Kimi-K3",
+      "publisher": "Moonshot",
+      "size_label": "2.8T / active 104B",
+      "total_parameters_billions": 2800,
+      "active_parameters_billions": 104,
+      "modalities": [
+        "text",
+        "image",
+        "video_frames"
+      ],
+      "public_focus": [
+        "長時間coding",
+        "knowledge work",
+        "視覚推論"
+      ],
+      "candidate_tasks_to_verify": [
+        "超大型の文書・コード横断比較"
+      ],
+      "limitations": [
+        "公式の低精度構成でも巨大。通常の個人PC向け推奨ではない。独自license。"
+      ],
+      "sources": [
+        "https://huggingface.co/moonshotai/Kimi-K3"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "minimax31",
+      "name": "MiniMax-M3.1-Flash",
+      "publisher": "MiniMax",
+      "size_label": "428B / active 23B",
+      "total_parameters_billions": 428,
+      "active_parameters_billions": 23,
+      "modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "public_focus": [
+        "coding",
+        "agentic task",
+        "computer use"
+      ],
+      "candidate_tasks_to_verify": [
+        "業務手順や画面操作の大型参考候補"
+      ],
+      "limitations": [
+        "computer-use scoreはagent環境込み。Officeファイル編集や日本語業務の保証ではない。HF UIの220B表示を本文428Bより優先しない。"
+      ],
+      "sources": [
+        "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "phi4_reasoning",
+      "name": "Phi-4-reasoning-plus",
+      "publisher": "Microsoft",
+      "size_label": "14B dense",
+      "total_parameters_billions": 14,
+      "active_parameters_billions": null,
+      "modalities": [
+        "text"
+      ],
+      "public_focus": [
+        "数学",
+        "科学",
+        "code reasoning"
+      ],
+      "candidate_tasks_to_verify": [
+        "英語での計算・ロジック対照"
+      ],
+      "limitations": [
+        "主に英語向けで多言語用途を想定しないと公式に記載。日本語Officeの第一候補にはしない。"
+      ],
+      "sources": [
+        "https://huggingface.co/microsoft/Phi-4-reasoning-plus"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    },
+    {
+      "id": "glm_ocr",
+      "name": "GLM-OCR",
+      "publisher": "Z.ai",
+      "size_label": "0.5B decoder + vision; total not verified",
+      "total_parameters_billions": null,
+      "active_parameters_billions": null,
+      "modalities": [
+        "image",
+        "text"
+      ],
+      "public_focus": [
+        "文書OCR",
+        "表・数式認識",
+        "情報抽出"
+      ],
+      "candidate_tasks_to_verify": [
+        "PDF・表画像からの構造化抽出"
+      ],
+      "limitations": [
+        "layout処理を含む二段pipeline。汎用推論やOffice編集モデルではない。全体parameterは未確定。"
+      ],
+      "sources": [
+        "https://huggingface.co/zai-org/GLM-OCR"
+      ],
+      "evidence": "PUBLISHER_MODEL_CARD",
+      "our_new_generation_result": null
+    }
+  ]
+}
