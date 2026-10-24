@@ -1,0 +1,79 @@
+{
+  "version": "2026-10-24-complementarity-001",
+  "evidence_type": "MEASURED_SELECTED_KNOWN_FAILURE_DIAGNOSTIC",
+  "scope": "Same explicit request fields except model, same frozen Tasks and checks; no general accuracy claim",
+  "entries": [
+    {
+      "model": "qwen2.5-Coder:14b",
+      "current_gemma_failure_rescue_count": 1,
+      "current_gemma_failure_denominator": 19,
+      "rescued_tasks": [
+        {
+          "task_id": "A500-XLS-052",
+          "title": "2台帳の未一致ID抽出"
+        }
+      ],
+      "positive_control_pass": 8,
+      "positive_control_attempted": 10,
+      "mean_api_seconds": 11.29373333333327,
+      "sampled_ram_rss_gib": 5.444362640380859,
+      "sampled_gpu_host_total_mib": 9624.0,
+      "operational_policy_updated": false
+    },
+    {
+      "model": "qwen3.5:9b",
+      "current_gemma_failure_rescue_count": 0,
+      "current_gemma_failure_denominator": 19,
+      "rescued_tasks": [],
+      "positive_control_pass": 7,
+      "positive_control_attempted": 10,
+      "mean_api_seconds": 4.3245999999999185,
+      "sampled_ram_rss_gib": 4.6305389404296875,
+      "sampled_gpu_host_total_mib": 8166.0,
+      "operational_policy_updated": false
+    },
+    {
+      "model": "devstral-small-2:latest",
+      "current_gemma_failure_rescue_count": 4,
+      "current_gemma_failure_denominator": 19,
+      "rescued_tasks": [
+        {
+          "task_id": "A500-COD-030",
+          "title": "複数口配送の完了判定"
+        },
+        {
+          "task_id": "A500-COD-048",
+          "title": "待機者の繰上げ対象選定"
+        },
+        {
+          "task_id": "A500-COD-090",
+          "title": "重み付き稼働指標の集計"
+        },
+        {
+          "task_id": "A500-XLS-052",
+          "title": "2台帳の未一致ID抽出"
+        }
+      ],
+      "positive_control_pass": 8,
+      "positive_control_attempted": 10,
+      "mean_api_seconds": 36.79476666666669,
+      "sampled_ram_rss_gib": 10.492324829101562,
+      "sampled_gpu_host_total_mib": 9755.0,
+      "operational_policy_updated": false
+    },
+    {
+      "model": "gpt-oss:20b",
+      "current_gemma_failure_rescue_count": 0,
+      "current_gemma_failure_denominator": 0,
+      "rescued_tasks": [],
+      "positive_control_pass": 0,
+      "positive_control_attempted": 0,
+      "mean_api_seconds": null,
+      "sampled_ram_rss_gib": 6.36968994140625,
+      "sampled_gpu_host_total_mib": 9725.0,
+      "operational_policy_updated": false
+    }
+  ],
+  "production_adoption_judgment": null,
+  "minimum_hardware_requirements": null
+}
