@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "checked_on_jst": "2026-10-24",
+  "selection_basis": "Installed local models first; complementarity to measured Gemma failures, not general benchmark ranking",
+  "task_decomposition_accuracy": "OUT_OF_SCOPE",
+  "sources": [
+    {"id": "qwen35_card", "url": "https://huggingface.co/Qwen/Qwen3.5-9B", "publisher": "Qwen", "evidence": "First-party model card; reasoning, document/long-context evaluations and thinking modes", "quantized_8192_2048_equivalence": false},
+    {"id": "gptoss_card", "url": "https://developers.openai.com/api/docs/models/gpt-oss-20b", "publisher": "OpenAI", "evidence": "Official model documentation; text reasoning with low/medium/high effort"},
+    {"id": "gptoss_ollama", "url": "https://developers.openai.com/cookbook/articles/gpt-oss/run-locally-ollama", "publisher": "OpenAI", "evidence": "Official local Ollama guidance: recommended 16GB or more VRAM/unified memory for 20B and slower CPU offload"},
+    {"id": "devstral_card", "url": "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512", "publisher": "Mistral AI", "evidence": "First-party software engineering model card; original scaffold evaluation is not bounded-body performance"},
+    {"id": "codernext_card", "url": "https://huggingface.co/Qwen/Qwen3-Coder-Next", "publisher": "Qwen", "evidence": "First-party coding model card: 80B total / 3B activated; active size is not resident weight memory"}
+  ],
+  "candidates": [
+    {"model": "qwen2.5-Coder:14b", "installed": true, "registered_bytes": 8988124298, "target": ["small conditional code", "historical receipt control"], "evidence_status": "ONE_MEASURED_HISTORICAL_COMPLEMENT", "historical_rescued_task": "LS3W228-021", "candidate_successes_on_4_historical_gemma_non_adopted": 1, "additional500_result": null, "preferred_first_stage": "coding control"},
+    {"model": "qwen3.5:9b", "installed": true, "registered_bytes": 6550825550, "target": ["conditional arithmetic", "table/prose consistency", "document extraction"], "evidence_status": "PRIMARY_SOURCE_CANDIDATE_UNMEASURED_ON_THIS_WORKLOAD", "primary_sources": ["qwen35_card"], "candidate_successes_on_4_historical_gemma_non_adopted": 0, "additional500_result": null, "preferred_first_stage": "Office/logic challenger", "thinking_budget_must_be_recorded": true, "document_or_vision_capability_in_installed_runtime_verified_here": false},
+    {"model": "gpt-oss:20b", "installed": true, "registered_bytes": 13793441244, "target": ["multi-condition numeric reasoning", "fact consistency"], "evidence_status": "PRIMARY_SOURCE_CANDIDATE_UNMEASURED_ON_THIS_WORKLOAD", "primary_sources": ["gptoss_card", "gptoss_ollama"], "additional500_result": null, "preferred_first_stage": "logic challenger after runtime budget check", "image_input": false, "fits_rtx3080_10gb_entirely_on_gpu": "NOT_ESTABLISHED", "cpu_offload_and_load_cost_required": true},
+    {"model": "devstral-small-2:latest", "installed": true, "registered_bytes": 15177374099, "target": ["typed Rust implementation", "localized code repair"], "evidence_status": "PRIMARY_SOURCE_CANDIDATE_UNMEASURED_ON_THIS_WORKLOAD", "primary_sources": ["devstral_card"], "additional500_result": null, "preferred_first_stage": "coding challenger", "bounded_compatibility_and_peak_memory": "UNMEASURED"},
+    {"model": "qwen3-coder-next:latest", "installed": true, "registered_bytes": 51741611823, "target": ["debugging reference"], "evidence_status": "HISTORICAL_DIFFERENT_PROFILE_PLUS_PRIMARY_SOURCE", "primary_sources": ["codernext_card"], "additional500_result": null, "preferred_first_stage": "reserve; existing debug role retained", "small_active_parameter_count_implies_small_memory": false}
+  ],
+  "excluded_models": [{"model": "gemma4:12b", "reason": "Existing operational quarantine; no inference or probe"}],
+  "new_benchmark_model_invocations": 0,
+  "new_downloads": 0,
+  "new_provider_AI_sessions": 0,
+  "new_production_model_policy": false,
+  "automatic_cross_model_retry": false,
+  "all_primary_source_candidates_confirmed_better_than_gemma": false
+}
