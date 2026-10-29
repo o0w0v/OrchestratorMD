@@ -34,6 +34,12 @@
 
 出典：[同じ44件の説明](2026-10-codex-local-llm-delegation.md#4-実測結果--小さな仕事では効果あり)、[元46件の結果](../../benchmarks/internal-46/results/2026-10-22-astra-sol/RESULTS_JA.md)、[会計・時間の補足](../../benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/FINAL_TECHNICAL_ADDENDUM_JA.md)。
 
+### 補足：Gemmaへ再依頼して費用が増える場合（説明図）
+
+![再依頼のたびにSolで原因整理・再指示・再確認を行う場合、そのSol呼出し分のCreditsが積み重なる。](assets/2026-10-retry-cost/01-gemma-retry-overhead.svg)
+
+**図①の実測はGemma1回・repair 0で、このループを実測した結果ではない。** GemmaとHostの固定検査だけなら追加Codex Creditsは0。Solを追加で呼ぶときに、その分のCreditsが加わる。[再依頼コストの説明と適用条件](2026-10-gemma-retry-cost.md)。
+
 ## 2. タスクが明確な依頼（20件）：Sol整理 → Gemmaのみ → Sol確認
 
 ![左は未検証の依頼の明確化。右は元のSol計画からGemma-onlyで実行してSolが確認する方式。下部にSol整理とSol実作業の基準、旧17件再利用と3件追加の条件を示す。](assets/2026-10-workflow-reference/02-sol-plan-sol-vs-gemma-only.svg)
