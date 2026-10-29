@@ -1,0 +1,61 @@
+{
+  "layout_updated_JST": "2026-10-30",
+  "measurements_updated": false,
+  "new_model_calls": 0,
+  "source_evidence": "../2026-10-workflow-comparisons/COMPARISON_EVIDENCE.json",
+  "source_evidence_sha256": "cea416c49b46097bc31c3525970d722ce6d1619d423436eb14857f123b31945e",
+  "dimensions": [
+    1440,
+    1080
+  ],
+  "figures": [
+    {
+      "file": "01-fixed-rust-sol-vs-gemma.svg",
+      "title": "1. 明確なRust作業をGemmaへ任せる",
+      "sha256": "aaa0f11e74c77d8cfb141c3df079be572be414f3e678087e91ad36c9dd03bcdf",
+      "baseline": "共有Sol計画＋契約 → GPT-6 Solが実装 → Host検査＋Sol確認",
+      "quality_A": 40,
+      "quality_B": 44,
+      "n": 44,
+      "credits_A": "145.37033",
+      "credits_B": "85.70780",
+      "reduction": "41.04%"
+    },
+    {
+      "file": "02-sol-plan-sol-vs-gemma-only.svg",
+      "title": "2. Solが整理し、Gemmaが実行する",
+      "sha256": "cfe4dc999ab96a94578256f023177dec01f572999fd3e63dcba8e0c96f6f6b05",
+      "baseline": "GPT-6.1 Solが整理 → Solが実作業 → Host検査＋独立Sol確認",
+      "quality_A": 20,
+      "quality_B": 20,
+      "n": 20,
+      "credits_A": "69.99399",
+      "credits_B": "55.31062",
+      "reduction": "20.98%"
+    },
+    {
+      "file": "03-sol-direct-vs-luna-gemma.svg",
+      "title": "3. Lunaが整理し、Gemmaが実行する",
+      "sha256": "4d051381bd94058dae6e4be85a599d70a4e42a9160c73272a4120365cf7fd7f9",
+      "baseline": "GPT-6.1 Solが理解・計画・実作業を1session → Host検査＋独立Sol確認",
+      "quality_A": 20,
+      "quality_B": 20,
+      "n": 20,
+      "credits_A": "31.38868",
+      "credits_B": "16.7851495",
+      "reduction": "46.5%"
+    },
+    {
+      "file": "04-sol-direct-vs-local-gemma.svg",
+      "title": "4. Localが整理し、Gemmaが実行する",
+      "sha256": "dc335ffe1ebd79cf26f18359b95d13530bc4444a306253608977f2c8622540eb",
+      "baseline": "③と同じ：GPT-6.1 Solが理解・計画・実作業を1session → Host検査＋独立Sol確認",
+      "quality_A": 20,
+      "quality_B": 20,
+      "n": 20,
+      "credits_A": "31.38868",
+      "credits_B": "18.38004",
+      "reduction": "41.4%"
+    }
+  ]
+}
