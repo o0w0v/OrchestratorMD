@@ -1,68 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="880" viewBox="0 0 1440 880" role="img" aria-labelledby="title desc">
-<title id="title">4. 整理前の業務：Local整理 → Gemma4 26B → Sol</title>
-<desc id="desc">整理もLocalへ任せる。ただし計画の不備と必要資料の渡し忘れを検査する。 不合格は元資料からのSol実行へ引き継ぎ、再検査する。</desc>
-<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#536577"/></marker><marker id="fallback" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#b94539"/></marker><marker id="accept" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#2d8651"/></marker></defs>
-<rect width="1440" height="880" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title desc">
+<title id="title">4. 条件補足済みの業務：Local整理 → Gemma → Sol確認</title>
+<desc id="desc">Local Plannerはgpt-oss 20B / medium。Solは計画・答案の通常の手直し役ではない。 事前固定：成果物のJSON形式・Host検査・採点用期待値。両方式に同じ完全な補足を提供。 整理AIは手順・担当範囲・渡す資料を決める。出力形式やHost検査を実行中に作っていない。 計画の形式が正しくても、各工程へ必要な情報が届く保証はない。Solにも見落としはあり得る。 検査の準備・保守の全費用は実行Creditsに含めていない。Local全般の結論ではない。</desc>
+<defs>
+<marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#536577"/></marker>
+<marker id="fallback" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#b94539"/></marker>
+<marker id="accept" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#2d8651"/></marker>
+</defs>
+<rect width="1440" height="1080" fill="white"/>
 <g font-family="Yu Gothic, Meiryo, Noto Sans CJK JP, sans-serif" fill="#1e3045">
-<text x="50" y="57" font-size="32" font-weight="700" text-anchor="start" fill="#1e3045">4. 整理前の業務：Local整理 → Gemma4 26B → Sol</text>
-<text x="50" y="98" font-size="21" font-weight="400" text-anchor="start" fill="#1e3045">整理もLocalへ任せる。ただし計画の不備と必要資料の渡し忘れを検査する。</text>
-<rect x="50" y="122" width="150" height="34" rx="17" fill="#eaf1ff"/>
-<text x="65" y="146" font-size="17" font-weight="400" text-anchor="start" fill="#3565b5">クラウド</text>
-<rect x="230" y="122" width="150" height="34" rx="17" fill="#fff1dc"/>
-<text x="245" y="146" font-size="17" font-weight="400" text-anchor="start" fill="#b87416">Local</text>
-<rect x="390" y="122" width="150" height="34" rx="17" fill="#f0f3f6"/>
-<text x="405" y="146" font-size="17" font-weight="400" text-anchor="start" fill="#607183">Host検査</text>
-<rect x="585" y="122" width="250" height="34" rx="17" fill="#fff0ee"/>
-<text x="600" y="146" font-size="17" font-weight="400" text-anchor="start" fill="#b94539">破線：Solへ引継ぎ</text>
-<text x="50" y="197" font-size="21" font-weight="700" text-anchor="start" fill="#1e3045">入力：業務依頼＋添付データ＋両方式で同じ完全な補足条件</text>
-<rect x="50" y="240" width="230" height="118" rx="15" fill="#fff1dc" stroke="#b87416" stroke-width="2"/>
-<text x="165.0" y="280" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">gpt-oss 20B</text>
-<text x="165.0" y="310" font-size="20" font-weight="400" text-anchor="middle" fill="#1e3045">medium</text>
-<text x="165.0" y="340" font-size="20" font-weight="400" text-anchor="middle" fill="#1e3045">作業指示を作る</text>
-<rect x="345" y="240" width="230" height="118" rx="15" fill="#fff1dc" stroke="#b87416" stroke-width="2"/>
-<text x="460.0" y="285" font-size="22" font-weight="700" text-anchor="middle" fill="#1e3045">Gemma4 26B</text>
-<text x="460.0" y="320" font-size="18" font-weight="400" text-anchor="middle" fill="#1e3045">14件実行・13件採用</text>
-<rect x="640" y="240" width="230" height="118" rx="15" fill="#f0f3f6" stroke="#607183" stroke-width="2"/>
-<text x="755.0" y="285" font-size="22" font-weight="700" text-anchor="middle" fill="#1e3045">Hostの検査</text>
-<text x="755.0" y="320" font-size="18" font-weight="400" text-anchor="middle" fill="#1e3045">形式・変更禁止箇所</text>
-<rect x="935" y="240" width="230" height="118" rx="15" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
-<text x="1050.0" y="285" font-size="22" font-weight="700" text-anchor="middle" fill="#1e3045">GPT-6.1 Sol</text>
-<text x="1050.0" y="320" font-size="18" font-weight="400" text-anchor="middle" fill="#1e3045">別sessionで内容を確認</text>
-<rect x="1230" y="240" width="160" height="118" rx="15" fill="#e9f7ed" stroke="#2d8651" stroke-width="2"/>
-<text x="1310.0" y="285" font-size="22" font-weight="700" text-anchor="middle" fill="#1e3045">採用</text>
-<text x="1310.0" y="320" font-size="18" font-weight="400" text-anchor="middle" fill="#1e3045">変更なしで使う</text>
-<path d="M280,299 H340" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="312.5" y="281" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">指示</text>
-<path d="M575,299 H635" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="607.5" y="281" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">候補</text>
-<path d="M870,299 H930" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="902.5" y="281" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">PASS</text>
-<path d="M1165,299 H1225" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="1197.5" y="281" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">採用可</text>
-<path d="M165,358 V555 H510" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#fallback)"/>
-<text x="177" y="534" font-size="18" font-weight="700" text-anchor="start" fill="#b94539">計画不備6件</text>
-<path d="M755,358 V415 H660 V490" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#fallback)"/>
-<text x="605" y="400" font-size="18" font-weight="700" text-anchor="start" fill="#b94539">検査不合格</text>
-<path d="M1050,358 V455 H780 V490" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#fallback)"/>
-<text x="924" y="438" font-size="18" font-weight="700" text-anchor="start" fill="#b94539">レビュー拒否</text>
-<rect x="515" y="495" width="290" height="120" rx="15" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
-<text x="660.0" y="540" font-size="22" font-weight="700" text-anchor="middle" fill="#1e3045">Solで実作業</text>
-<text x="660.0" y="575" font-size="18" font-weight="400" text-anchor="middle" fill="#1e3045">元資料からやり直す</text>
-<rect x="915" y="495" width="290" height="120" rx="15" fill="#f0f3f6" stroke="#607183" stroke-width="2"/>
-<text x="1060.0" y="540" font-size="22" font-weight="700" text-anchor="middle" fill="#1e3045">Host＋別Sol</text>
-<text x="1060.0" y="575" font-size="18" font-weight="400" text-anchor="middle" fill="#1e3045">再検査・独立レビュー</text>
-<rect x="1230" y="495" width="160" height="120" rx="15" fill="#fff0ee" stroke="#b94539" stroke-width="2"/>
-<text x="1310.0" y="540" font-size="22" font-weight="700" text-anchor="middle" fill="#1e3045">不合格</text>
-<text x="1310.0" y="575" font-size="18" font-weight="400" text-anchor="middle" fill="#1e3045">結果を記録</text>
-<path d="M805,555 H910" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="860" y="536" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">別実行</text>
-<path d="M1205,555 H1225" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#fallback)"/>
-<text x="1285" y="476" font-size="16" font-weight="400" text-anchor="middle" fill="#b94539">再確認も不合格</text>
-<path d="M1060,495 V390 H1310 V363" fill="none" stroke="#2d8651" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#accept)"/>
-<text x="1260" y="383" font-size="16" font-weight="400" text-anchor="middle" fill="#2d8651">再確認に合格</text>
-<rect x="50" y="662" width="1340" height="143" rx="14" fill="#f5f8fc"/>
-<text x="73" y="698" font-size="23" font-weight="700" text-anchor="start" fill="#1e3045">同じ20業務：最終20/20正解 ／ Sol単体比 Credits 41.4%減</text>
-<text x="73" y="735" font-size="20" font-weight="400" text-anchor="start" fill="#1e3045">31.39 → 18.38 Credits ／ 平均23.9 → 149.2秒</text>
-<text x="73" y="772" font-size="20" font-weight="400" text-anchor="start" fill="#1e3045">6件は計画不備でSolへ直行。1件は必要な日付が渡らず、Solでやり直した。</text>
-<text x="50" y="846" font-size="17" font-weight="400" text-anchor="start" fill="#536577">Solは計画を手直しする係ではない。不備や不採用時は元依頼だけから別実行する。</text>
+<text x="40" y="53" font-size="30" font-weight="700" text-anchor="start" fill="#1e3045">4. 条件補足済みの業務：Local整理 → Gemma → Sol確認</text>
+<text x="40" y="91" font-size="20" font-weight="400" text-anchor="start" fill="#1e3045">Local Plannerはgpt-oss 20B / medium。Solは計画・答案の通常の手直し役ではない。</text>
+<rect x="40" y="112" width="150" height="32" rx="16" fill="#eaf1ff"/>
+<text x="54" y="135" font-size="17" font-weight="400" text-anchor="start" fill="#3565b5">クラウド</text>
+<rect x="210" y="112" width="130" height="32" rx="16" fill="#fff1dc"/>
+<text x="224" y="135" font-size="17" font-weight="400" text-anchor="start" fill="#b87416">Local</text>
+<rect x="360" y="112" width="250" height="32" rx="16" fill="#f0f3f6"/>
+<text x="374" y="135" font-size="17" font-weight="400" text-anchor="start" fill="#607183">固定準備・Host検査</text>
+<rect x="630" y="112" width="280" height="32" rx="16" fill="#fff0ee"/>
+<text x="644" y="135" font-size="17" font-weight="400" text-anchor="start" fill="#b94539">破線：別のSol実行へ</text>
+<rect x="40" y="165" width="1360" height="90" rx="13" fill="#fff9e9" stroke="#dbbf72"/>
+<text x="58" y="197" font-size="19" font-weight="700" text-anchor="start" fill="#1e3045">事前固定：成果物のJSON形式・Host検査・採点用期待値。両方式に同じ完全な補足を提供。</text>
+<text x="58" y="229" font-size="19" font-weight="400" text-anchor="start" fill="#1e3045">整理AIは手順・担当範囲・渡す資料を決める。出力形式やHost検査を実行中に作っていない。</text>
+<rect x="40" y="300" width="185" height="120" rx="14" fill="#fff1dc" stroke="#b87416" stroke-width="2"/>
+<text x="132.5" y="341.5" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">gpt-oss 20B</text>
+<text x="132.5" y="372.5" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">mediumで整理</text>
+<rect x="270" y="300" width="185" height="120" rx="14" fill="#f0f3f6" stroke="#607183" stroke-width="2"/>
+<text x="362.5" y="341.5" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">Host計画検査</text>
+<text x="362.5" y="372.5" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">参照・範囲・依存</text>
+<rect x="500" y="300" width="185" height="120" rx="14" fill="#fff1dc" stroke="#b87416" stroke-width="2"/>
+<text x="592.5" y="341.5" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">Gemma4 26B</text>
+<text x="592.5" y="372.5" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">14件実行・13件採用</text>
+<rect x="730" y="300" width="185" height="120" rx="14" fill="#f0f3f6" stroke="#607183" stroke-width="2"/>
+<text x="822.5" y="341.5" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">Host出力検査</text>
+<text x="822.5" y="372.5" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">形式・保護箇所</text>
+<rect x="960" y="300" width="185" height="120" rx="14" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
+<text x="1052.5" y="341.5" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">GPT-6.1 Sol</text>
+<text x="1052.5" y="372.5" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">1件ずつ内容確認</text>
+<rect x="1190" y="300" width="210" height="120" rx="14" fill="#e9f7ed" stroke="#2d8651" stroke-width="2"/>
+<text x="1295.0" y="341.5" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">採用</text>
+<text x="1295.0" y="372.5" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">変更なしで使う</text>
+<path d="M225,360 H265" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M455,360 H495" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M685,360 H725" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M915,360 H955" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1145,360 H1185" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M132,420 V530" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6"/>
+<text x="145" y="448" font-size="16" font-weight="700" text-anchor="start" fill="#b94539">対象外（AI判断）</text>
+<path d="M362,420 V530" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6"/>
+<text x="375" y="485" font-size="16" font-weight="700" text-anchor="start" fill="#b94539">計画不備（Host）</text>
+<path d="M822,420 V530" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6"/>
+<text x="835" y="448" font-size="16" font-weight="700" text-anchor="start" fill="#b94539">生成・検査NG</text>
+<path d="M1052,420 V530" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6"/>
+<text x="1065" y="485" font-size="16" font-weight="700" text-anchor="start" fill="#b94539">REJECT</text>
+<path d="M132,530 H1052" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6"/>
+<path d="M640,530 V585" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#fallback)"/>
+<text x="40" y="742" font-size="18" font-weight="700" text-anchor="start" fill="#536577">実測：Hostが計画不備6件を検出しSolへ。Local実行後の1件もSolへfallback。</text>
+<rect x="500" y="590" width="280" height="125" rx="14" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
+<text x="640.0" y="634.0" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">Solで実作業</text>
+<text x="640.0" y="665.0" font-size="18" font-weight="400" text-anchor="middle" fill="#1e3045">元資料から別session実行</text>
+<rect x="900" y="590" width="280" height="125" rx="14" fill="#f0f3f6" stroke="#607183" stroke-width="2"/>
+<text x="1040.0" y="634.0" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">Host＋独立Sol</text>
+<text x="1040.0" y="665.0" font-size="18" font-weight="400" text-anchor="middle" fill="#1e3045">再検査・レビュー</text>
+<rect x="1230" y="590" width="170" height="125" rx="14" fill="#fff0ee" stroke="#b94539" stroke-width="2"/>
+<text x="1315.0" y="634.0" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">不合格</text>
+<text x="1315.0" y="665.0" font-size="18" font-weight="400" text-anchor="middle" fill="#1e3045">結果を記録</text>
+<path d="M780,652 H895" fill="none" stroke="#536577" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1180,652 H1225" fill="none" stroke="#b94539" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#fallback)"/>
+<text x="1205" y="633" font-size="16" font-weight="400" text-anchor="middle" fill="#b94539">不合格</text>
+<path d="M1040,590 V560 H1295 V425" fill="none" stroke="#2d8651" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#accept)"/>
+<text x="1195" y="548" font-size="16" font-weight="400" text-anchor="start" fill="#2d8651">合格</text>
+<rect x="40" y="780" width="1360" height="145" rx="14" fill="#f5f8fc"/>
+<text x="62" y="817" font-size="21" font-weight="700" text-anchor="start" fill="#1e3045">③と同じ20件：両方式20/20正解 ／ Credits 31.38868 → 18.38004（41.4%減）</text>
+<text x="62" y="854" font-size="19" font-weight="400" text-anchor="start" fill="#1e3045">平均active時間 23.9 → 149.2秒。Sol直行6件＋Local実行後fallback1件を含む。</text>
+<text x="62" y="891" font-size="19" font-weight="400" text-anchor="start" fill="#1e3045">todayの渡し忘れは旧Host計画検査では止まらず、Solが出力を拒否して別実行した。</text>
+<text x="40" y="970" font-size="18" font-weight="400" text-anchor="start" fill="#536577">計画の形式が正しくても、各工程へ必要な情報が届く保証はない。Solにも見落としはあり得る。</text>
+<text x="40" y="1001" font-size="18" font-weight="400" text-anchor="start" fill="#536577">検査の準備・保守の全費用は実行Creditsに含めていない。Local全般の結論ではない。</text>
+<text x="40" y="1052" font-size="16" font-weight="400" text-anchor="start" fill="#536577">内部の保存済み実測を説明する図。旧raw・採点は不変。実行Creditsは準備込み総費用ではない。</text>
 </g></svg>
