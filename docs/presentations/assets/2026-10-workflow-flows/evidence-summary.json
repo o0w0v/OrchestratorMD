@@ -1,0 +1,151 @@
+{
+  "as_of_JST": "2026-10-29",
+  "publication_scope": "Four role diagrams and historical aggregate facts; no new model experiments",
+  "diagram_01": {
+    "source_url": "https://github.com/o0w0v/OrchestratorMD/blob/main/docs/presentations/2026-10-codex-local-llm-delegation.md",
+    "cohort": "44 quality-comparable cases of 46 internal Rust tasks",
+    "model": "GPT-6 Sol",
+    "baseline_passed": 40,
+    "hybrid_passed": 44,
+    "denominator": 44,
+    "baseline_credits_display_rounded": "145.37",
+    "hybrid_credits_display_rounded": "85.71",
+    "credit_reduction_display": "about41%",
+    "hybrid_quality_unmeasured_of_original46": 2,
+    "full46_hybrid_final_pass_rate": null,
+    "official_benchmark": false,
+    "shared_planner_text_injected_into_Gemma": false
+  },
+  "diagram_02_business_mixedLocal": {
+    "arms": {
+      "CODEX_ONLY": {
+        "completed": 20,
+        "resolved": 20,
+        "comparison_credits": "69.99399",
+        "arm_specific_actual_credits": "50.45437",
+        "shared_clarification_allocated": "19.53962",
+        "mean_workflow_seconds": 102.99605000000447,
+        "local_adopted": 0,
+        "fallback": 0,
+        "final_false_green": 0,
+        "model_step_choices": {
+          "gpt-6.1-sol": 1
+        }
+      },
+      "LOCAL_ROUTED": {
+        "completed": 20,
+        "resolved": 20,
+        "comparison_credits": "55.04098",
+        "arm_specific_actual_credits": "35.50136",
+        "shared_clarification_allocated": "19.53962",
+        "mean_workflow_seconds": 179.4116999999882,
+        "local_adopted": 20,
+        "fallback": 0,
+        "final_false_green": 0,
+        "model_step_choices": {
+          "gemma26": 17,
+          "qwen35_think": 2,
+          "gptoss20_medium": 1
+        }
+      }
+    },
+    "Gemma_tasks": 17,
+    "Qwen35_tasks": 2,
+    "gptoss20_tasks": 1,
+    "multistep_Local_jobs": 0,
+    "credits_include_full_shared_clarifier_in_each_comparison_arm": true,
+    "not_Gemma_only_aggregate": true
+  },
+  "diagrams_03_04_same20": {
+    "SOL_DIRECT": {
+      "completed": 20,
+      "resolved": 20,
+      "actual_and_comparison_credits": "31.38868",
+      "credits_per_resolved": "1.569434",
+      "role_credits": {
+        "PLANNER": "0",
+        "EXECUTOR": "16.60040",
+        "REVIEWER": "14.78828"
+      },
+      "local_adopted": 0,
+      "local_attempted_workflows": 0,
+      "direct_after_planning": 0,
+      "fallback": 0,
+      "invalid_plans": 0,
+      "public_validation_false_green": 0,
+      "final_false_green": 0,
+      "mean_workflow_seconds": 23.883799999993062,
+      "multistep_workflows": 0,
+      "credits_reduction_vs_this_SOL_DIRECT": "0"
+    },
+    "LUNA_LOCAL": {
+      "completed": 20,
+      "resolved": 20,
+      "actual_and_comparison_credits": "16.7851495",
+      "credits_per_resolved": "0.839257475",
+      "role_credits": {
+        "PLANNER": "0.9712195",
+        "EXECUTOR": "0.8511",
+        "REVIEWER": "14.96283"
+      },
+      "local_adopted": 19,
+      "local_attempted_workflows": 19,
+      "direct_after_planning": 1,
+      "fallback": 0,
+      "invalid_plans": 0,
+      "public_validation_false_green": 0,
+      "final_false_green": 0,
+      "mean_workflow_seconds": 143.31019999999845,
+      "multistep_workflows": 2,
+      "credits_reduction_vs_this_SOL_DIRECT": "0.4652483156348084723537275222"
+    },
+    "LOCAL_LOCAL": {
+      "completed": 20,
+      "resolved": 20,
+      "actual_and_comparison_credits": "18.38004",
+      "credits_per_resolved": "0.919002",
+      "role_credits": {
+        "PLANNER": "0",
+        "EXECUTOR": "5.79175",
+        "REVIEWER": "12.58829"
+      },
+      "local_adopted": 13,
+      "local_attempted_workflows": 14,
+      "direct_after_planning": 6,
+      "fallback": 1,
+      "invalid_plans": 6,
+      "public_validation_false_green": 1,
+      "final_false_green": 0,
+      "mean_workflow_seconds": 149.22735000000102,
+      "multistep_workflows": 0,
+      "credits_reduction_vs_this_SOL_DIRECT": "0.4144373066978286439569934129"
+    }
+  },
+  "review_batch_only": {
+    "primary_candidates": 19,
+    "single_calls": 19,
+    "batch_calls": 10,
+    "single_credits": "16.76520",
+    "batch_credits": "9.60190",
+    "wrong_candidate_denominator": 0,
+    "wrong_acceptance_rate": null,
+    "does_not_measure_full_workflow_reduction": true
+  },
+  "source_fingerprints": {
+    "quality-cost-pilot-20261029/analysis-001/COMPARISON.json": "ef4f646659cb677828d06e7e666cc70021ecfe15e70c0a477374332476cd6f63",
+    "quality-cost-pilot-20261029/FINAL_KNOWLEDGE_UPDATE_JA.md": "390f606c9f7329dfa403ab38f124aac2c5cda303eda046fdd4bb3bdf82eaa525",
+    "quality-cost-pilot-20261029/completion-audit-001/AUDIT_RESULTS.json": "839d7bcd3441f8fd1738451720dd566e97e7aeffaf893e0cb4844e22517719ce",
+    "unstructured-business-20-20261028/revision002/analysis-001/COMPARISON.json": "2782fff61d3daf6591161ad4fb826c7bf269d9b4c9cca3f057db2dac5fa6cd2c",
+    "unstructured-business-20-20261028/revision002/FINAL_KNOWLEDGE_UPDATE_JA.md": "03a2bf7c4df64ea177e4bda5e9c23f865b9a7aa4fc071d529dca213afc0cea13",
+    "review-batch-comparison-20261029/FINAL_KNOWLEDGE_UPDATE_JA.md": "8021ef771ac420ce2102af9739b79a368232b1cc1385373a29d16fc1f50cb62c"
+  },
+  "restrictions": [
+    "Not one four-way paired benchmark",
+    "Synthetic DATA20 are ten types times two cases",
+    "No Office GUI or general noninferiority claim",
+    "No account-balance charge reconciliation",
+    "Local energy, device cost and unmeasured preparation excluded",
+    "No raw prompts, answers, gold, tests, credentials or absolute Host paths published",
+    "Current100 full workflow comparison unfinished at publication drafting; no partial scores used"
+  ]
+}
