@@ -8,6 +8,13 @@
 
 ## 全体像と、今回の実験の位置
 
+![目指す全体像。左は未測定の依頼の明確化、右は条件と検査を事前準備した後の分担・Local実行・クラウド確認という主な実験範囲。対象外や不採用時はクラウドへ引き継ぐ。](assets/2026-10-workflow-flows/00-target-workflow-and-scope.svg)
+
+[1枚図のSVGを開く・保存する](assets/2026-10-workflow-flows/00-target-workflow-and-scope.svg)。既存の4つのフロー図と同じ1440×1080サイズです。
+
+<details>
+<summary>編集用のMermaid図を表示</summary>
+
 ~~~mermaid
 flowchart TD
     U["人間：曖昧さの残る業務依頼"] --> C["クラウドAI：目的・条件・成果物を明確化"]
@@ -40,6 +47,8 @@ flowchart TD
     class L local;
     class G,H,H2,D host;
 ~~~
+
+</details>
 
 **今回、比較した中心は「分担 → Local実行 → クラウド確認」。最初の明確化から最後までの一連の自動化・費用削減を実証したわけではない。** 図の採用は実行時の判断であり、正しさの保証ではない。業務DATA実験では、その判断を固定した後に別の期待値と照合して最終採点した。
 
