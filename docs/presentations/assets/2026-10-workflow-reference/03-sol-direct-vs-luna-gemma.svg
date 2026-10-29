@@ -11,14 +11,16 @@
 <g font-family="Yu Gothic, Meiryo, Noto Sans CJK JP, sans-serif" fill="#1e3045">
 <text x="40" y="55" font-size="32" font-weight="700" text-anchor="start" fill="#1e3045">3. Lunaが整理し、Gemmaが実行する</text>
 <text x="40" y="94" font-size="21" font-weight="400" text-anchor="start" fill="#1e3045">左は未検証の明確化、右は実験した併用方式B。比べた相手Aと結果は下部に表示。</text>
-<rect x="40" y="119" width="165" height="32" rx="16" fill="#eaf1ff" stroke="none" stroke-width="2"/>
-<text x="54" y="142" font-size="17" font-weight="400" text-anchor="start" fill="#3565b5">クラウドAI</text>
-<rect x="225" y="119" width="140" height="32" rx="16" fill="#fff1dc" stroke="none" stroke-width="2"/>
-<text x="239" y="142" font-size="17" font-weight="400" text-anchor="start" fill="#b87416">Local LLM</text>
-<rect x="385" y="119" width="195" height="32" rx="16" fill="#f0f3f6" stroke="none" stroke-width="2"/>
-<text x="399" y="142" font-size="17" font-weight="400" text-anchor="start" fill="#607183">固定プログラム</text>
-<rect x="600" y="119" width="265" height="32" rx="16" fill="#fff0ee" stroke="none" stroke-width="2"/>
-<text x="614" y="142" font-size="17" font-weight="400" text-anchor="start" fill="#b94539">破線：クラウドへ引継ぎ</text>
+<rect x="40" y="119" width="180" height="32" rx="16" fill="#eaf1ff" stroke="none" stroke-width="2"/>
+<text x="54" y="142" font-size="17" font-weight="400" text-anchor="start" fill="#3565b5">Sol・クラウドAI</text>
+<rect x="240" y="119" width="160" height="32" rx="16" fill="#e5f6f4" stroke="none" stroke-width="2"/>
+<text x="254" y="142" font-size="17" font-weight="400" text-anchor="start" fill="#168578">Luna</text>
+<rect x="420" y="119" width="140" height="32" rx="16" fill="#fff1dc" stroke="none" stroke-width="2"/>
+<text x="434" y="142" font-size="17" font-weight="400" text-anchor="start" fill="#b87416">Local LLM</text>
+<rect x="580" y="119" width="195" height="32" rx="16" fill="#f0f3f6" stroke="none" stroke-width="2"/>
+<text x="594" y="142" font-size="17" font-weight="400" text-anchor="start" fill="#607183">固定プログラム</text>
+<rect x="795" y="119" width="265" height="32" rx="16" fill="#fff0ee" stroke="none" stroke-width="2"/>
+<text x="809" y="142" font-size="17" font-weight="400" text-anchor="start" fill="#b94539">破線：クラウドへ引継ぎ</text>
 <rect x="40" y="180" width="460" height="660" rx="18" fill="#fffaf0" stroke="#ddbd70" stroke-width="2"/>
 <text x="60" y="220" font-size="23" font-weight="700" text-anchor="start" fill="#936820">未検証：曖昧な依頼の明確化</text>
 <text x="60" y="254" font-size="16" font-weight="400" text-anchor="start" fill="#76603c">必要な条件を対話でそろえる能力・全費用は未測定</text>
@@ -35,7 +37,7 @@
 <text x="377.5" y="403" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">タスクの明確化</text>
 <text x="377.5" y="437" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">目的・条件・成果物を</text>
 <text x="377.5" y="471" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">人間と合意する</text>
-<rect x="550" y="335" width="235" height="185" rx="14" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
+<rect x="550" y="335" width="235" height="185" rx="14" fill="#e5f6f4" stroke="#168578" stroke-width="2"/>
 <text x="667.5" y="369" font-size="22" font-weight="700" text-anchor="middle" fill="#1e3045">GPT-6 Luna</text>
 <text x="667.5" y="403" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">分担・必要な分解</text>
 <text x="667.5" y="437" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">手順・入力・担当を決定</text>
