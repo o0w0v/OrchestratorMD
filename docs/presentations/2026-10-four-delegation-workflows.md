@@ -11,7 +11,8 @@
 
 **4方式を同じ課題で一斉に比べた試験ではない。** ②には基準側にも独立Sol Plannerがあり、③④の基準側は理解・計画・実作業を1sessionにまとめている。削減率の大小を、そのまま整理モデルの順位にしない。
 
-> **共通の前提：必要な条件・出力形式・検査を、試験側が先に用意した。**
+> **対象：タスクが明確な依頼。**
+> 注：この実験では、業務ルール・出力形式・Host検査を事前に用意した。
 > 曖昧な依頼から人間に確認して条件をそろえる能力や、検査の準備・保守まで含めた全体の費用削減は未測定。
 > 図の平均作業時間は、整理・モデル読込み・実作業・検査・確認・fallbackを含むactive時間。研究全体の待ち行列時間とは区別する。
 
@@ -33,7 +34,7 @@
 
 出典：[同じ44件の説明](2026-10-codex-local-llm-delegation.md#4-実測結果--小さな仕事では効果あり)、[元46件の結果](../../benchmarks/internal-46/results/2026-10-22-astra-sol/RESULTS_JA.md)、[会計・時間の補足](../../benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/FINAL_TECHNICAL_ADDENDUM_JA.md)。
 
-## 2. 条件をそろえた業務20件：Sol整理 → Gemmaのみ → Sol確認
+## 2. タスクが明確な依頼（20件）：Sol整理 → Gemmaのみ → Sol確認
 
 ![左は未検証の依頼の明確化。右は元のSol計画からGemma-onlyで実行してSolが確認する方式。下部にSol整理とSol実作業の基準、旧17件再利用と3件追加の条件を示す。](assets/2026-10-workflow-reference/02-sol-plan-sol-vs-gemma-only.svg)
 
@@ -54,7 +55,7 @@
 
 出典：元 `unstructured-business-20-20261028/revision002` と追加 `sol-gemma-only-20-20261029` の凍結集計。[新しい比較図の集計・出典hash](assets/2026-10-workflow-comparisons/COMPARISON_EVIDENCE.json)。[旧・混合Local条件の詳細フロー図](assets/2026-10-workflow-flows/02-composite-sol-local-sol.svg)も保全している。
 
-## 3. 条件をそろえた業務20件：Luna整理 → Gemma4 26B → Sol確認
+## 3. タスクが明確な依頼（20件）：Luna整理 → Gemma4 26B → Sol確認
 
 ![左は未検証の依頼の明確化。右はLunaが整理しGemmaが実行してSolが確認する方式。下部にSol一括実行との比較結果を示す。](assets/2026-10-workflow-reference/03-sol-direct-vs-luna-gemma.svg)
 
@@ -75,7 +76,7 @@
 
 出典：`quality-cost-pilot-20261029`、`review-batch-comparison-20261029`。[集計と出典fingerprint](assets/2026-10-workflow-flows/evidence-summary.json)。
 
-## 4. 条件をそろえた業務20件：Local整理 → Gemma4 26B → Sol確認
+## 4. タスクが明確な依頼（20件）：Local整理 → Gemma4 26B → Sol確認
 
 ![左は未検証の依頼の明確化。右はgpt-oss20 mediumが整理しGemmaが実行してSolが確認する方式。下部に③と同じSol基準との比較結果を示す。](assets/2026-10-workflow-reference/04-sol-direct-vs-local-gemma.svg)
 

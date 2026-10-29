@@ -12,7 +12,7 @@
     {
       "file": "01-fixed-rust-sol-vs-gemma.svg",
       "title": "1. 明確なRust作業をGemmaへ任せる",
-      "sha256": "aaa0f11e74c77d8cfb141c3df079be572be414f3e678087e91ad36c9dd03bcdf",
+      "sha256": "f092534ddd3be6b1efdd76afb375e7064954325e19b2d0604fd11e581b54ac67",
       "baseline": "共有Sol計画＋契約 → GPT-6 Solが実装 → Host検査＋Sol確認",
       "quality_A": 40,
       "quality_B": 44,
@@ -24,7 +24,7 @@
     {
       "file": "02-sol-plan-sol-vs-gemma-only.svg",
       "title": "2. Solが整理し、Gemmaが実行する",
-      "sha256": "cfe4dc999ab96a94578256f023177dec01f572999fd3e63dcba8e0c96f6f6b05",
+      "sha256": "04e630ed0b04db6c0b6f24a75a6807122f75234ca6d52f2fa90a1ad697f50bfe",
       "baseline": "GPT-6.1 Solが整理 → Solが実作業 → Host検査＋独立Sol確認",
       "quality_A": 20,
       "quality_B": 20,
@@ -36,7 +36,7 @@
     {
       "file": "03-sol-direct-vs-luna-gemma.svg",
       "title": "3. Lunaが整理し、Gemmaが実行する",
-      "sha256": "4d051381bd94058dae6e4be85a599d70a4e42a9160c73272a4120365cf7fd7f9",
+      "sha256": "f28733943037758a8fcd4ae1f524096bf41b246823ab3164f24719b8bdfd70d5",
       "baseline": "GPT-6.1 Solが理解・計画・実作業を1session → Host検査＋独立Sol確認",
       "quality_A": 20,
       "quality_B": 20,
@@ -48,7 +48,7 @@
     {
       "file": "04-sol-direct-vs-local-gemma.svg",
       "title": "4. Localが整理し、Gemmaが実行する",
-      "sha256": "dc335ffe1ebd79cf26f18359b95d13530bc4444a306253608977f2c8622540eb",
+      "sha256": "7caf2062a3fd1b6b07f283eabbbe89fa70330e9d696ee97b7c461ad6c9ca0170",
       "baseline": "③と同じ：GPT-6.1 Solが理解・計画・実作業を1session → Host検査＋独立Sol確認",
       "quality_A": 20,
       "quality_B": 20,
@@ -57,5 +57,7 @@
       "credits_B": "18.38004",
       "reduction": "41.4%"
     }
-  ]
+  ],
+  "terminology_updated_JST": "2026-10-30",
+  "display_term": "タスクが明確な依頼"
 }
