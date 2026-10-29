@@ -1,0 +1,19 @@
+{
+  "kind": "CONCEPTUAL_ILLUSTRATION_NOT_RETRY_MEASUREMENT",
+  "created_JST": "2026-10-30",
+  "dimensions": [
+    1440,
+    1080
+  ],
+  "file": "01-gemma-retry-overhead.svg",
+  "sha256": "c1a21952cd4b48a2b289c52a57415054b716edaf304ebd4d4aba9410fbe6b32b",
+  "conditions": "Sol is called for diagnosis/reinstruction and re-review; not every Local retry inherently consumes Codex credits",
+  "local_generation_codex_credits": 0,
+  "fixed_Host_validation_codex_credits": 0,
+  "Local_total_cost_is_zero": false,
+  "retry_cost_increase_percent": null,
+  "break_even_retry_count": null,
+  "diagram01_measured_policy": "one-shot / repair0",
+  "new_model_calls": 0,
+  "production_or_frozen_policy_changes": false
+}
