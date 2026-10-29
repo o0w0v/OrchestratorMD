@@ -1,6 +1,6 @@
 # SolとLocal LLMを組み合わせる4つの比較
 
-2026-10-29更新。各図に**A＝比較基準、B＝Local併用**を並べ、置き換えた役割を赤枠で示した。上段には[目指す全体像と現在の実験範囲](2026-10-target-workflow-and-experiment-scope.md)も入れている。
+2026-10-30図更新。ユーザー指定の全体図と同じ構図で、**左に未検証の明確化、右に実験した併用方式B、下に比較相手Aと結果**を配置した。[目指す全体像と現在の実験範囲](2026-10-target-workflow-and-experiment-scope.md)も参照。図のレイアウト更新のみで、実験結果の再測定・変更は行っていない。
 
 |図|A：何と比べたか|B：何を試したか|課題の関係|
 |---|---|---|---|
@@ -19,7 +19,7 @@
 
 ## 1. 明確な作業指示 → Gemma4 26B → Sol確認
 
-![事前に固定した作業指示をGemmaへ直接渡し、Host検査と独立Solレビューで採否を決める。共有Sol Plannerは別途実行・会計計上されるがGemmaへの入力経路に含まれない。](assets/2026-10-workflow-comparisons/01-fixed-rust-sol-vs-gemma.svg)
+![左は未検証の依頼の明確化。右は固定した指示からGemmaがRustを実装してSolが確認する実測経路。下部に共有Sol計画を使うSol基準との比較と、入力の非対称性を示す。](assets/2026-10-workflow-reference/01-fixed-rust-sol-vs-gemma.svg)
 
 **この実測は、最初のSolによる指示作成が必要だと示したものではない。** 小さなRustの実装・修正で、仕様、編集場所、禁止範囲、テストを先に固定した。Gemmaは固定指示に従い1回実装し、Hostと独立Solが確認する。不採用なら別のSolが元資料から実装する。
 
@@ -35,7 +35,7 @@
 
 ## 2. 条件をそろえた業務20件：Sol整理 → Gemmaのみ → Sol確認
 
-![AはSol整理とSol実作業、Bは元のSol計画を使ってGemmaで実作業。同じ確認の枠組みを使う。Bは旧17件再利用と3件追加のGemma-only追試である。](assets/2026-10-workflow-comparisons/02-sol-plan-sol-vs-gemma-only.svg)
+![左は未検証の依頼の明確化。右は元のSol計画からGemma-onlyで実行してSolが確認する方式。下部にSol整理とSol実作業の基準、旧17件再利用と3件追加の条件を示す。](assets/2026-10-workflow-reference/02-sol-plan-sol-vs-gemma-only.svg)
 
 **Solによる整理を両方式に置き、実作業を誰に任せるかを比べた。** 元の混合Local条件はGemma17件＋Qwen3.5の2件＋gpt-oss20の1件だった。その後、非Gemma担当だった全3件へ同じ入力を与えてGemmaで追加実行し、Gemma-only条件を作った。
 
@@ -56,7 +56,7 @@
 
 ## 3. 条件をそろえた業務20件：Luna整理 → Gemma4 26B → Sol確認
 
-![固定した成果物形式とHost検査を前提にLunaが手順を整理し、Hostによる計画の構造検査後にGemmaが実行する。最後は独立Solが1件ずつ内容を確認する。](assets/2026-10-workflow-comparisons/03-sol-direct-vs-luna-gemma.svg)
+![左は未検証の依頼の明確化。右はLunaが整理しGemmaが実行してSolが確認する方式。下部にSol一括実行との比較結果を示す。](assets/2026-10-workflow-reference/03-sol-direct-vs-luna-gemma.svg)
 
 **この20例では、実作業をGemmaへ任せ、整理をLunaへ任せた構成が、Sol基準と同じ最終正解数で少ないCreditsになった。** 検査準備まで含めた全業務一般の節約や、Sol品質の保証を示すものではない。
 
@@ -77,7 +77,7 @@
 
 ## 4. 条件をそろえた業務20件：Local整理 → Gemma4 26B → Sol確認
 
-![gpt-oss20 mediumが手順を整理し、Hostが計画の形式と構造を検査する。Gemmaが実行し、Solが確認する。計画不備6件と実行後の不採用1件は別Solで実作業する。](assets/2026-10-workflow-comparisons/04-sol-direct-vs-local-gemma.svg)
+![左は未検証の依頼の明確化。右はgpt-oss20 mediumが整理しGemmaが実行してSolが確認する方式。下部に③と同じSol基準との比較結果を示す。](assets/2026-10-workflow-reference/04-sol-direct-vs-local-gemma.svg)
 
 **整理のクラウドCreditsは0になったが、Local計画の不備を処理する費用・時間が残った。** Local Plannerは **gpt-oss 20B / medium**。Localモデル全般の結論ではない。
 
@@ -119,11 +119,13 @@ SVGは個別に保存・拡大して使える。今回の訂正は文書・図�
 
 ## 図の保存・旧図との関係
 
-今回の4枚は、A/Bの違いを見せる比較図として追加した。以前の片側の詳細フロー図・集計・実験証跡は変更していない。②だけは監査済みのGemma-only追試を主図に反映し、元の混合Local条件も表に残した。
+主図は、指定された「目指す全体像」の配置を使った4枚へ更新した。以前のA/B上下比較図、片側の詳細フロー図、集計・実験証跡は保全している。②は監査済みGemma-only追試を示し、元の混合Local条件も表に残す。
 
-- [①の比較図](assets/2026-10-workflow-comparisons/01-fixed-rust-sol-vs-gemma.svg) ／ [旧・詳細図](assets/2026-10-workflow-flows/01-clear-spec-sol-gemma-sol.svg)
-- [②の比較図](assets/2026-10-workflow-comparisons/02-sol-plan-sol-vs-gemma-only.svg) ／ [旧・混合Localの詳細図](assets/2026-10-workflow-flows/02-composite-sol-local-sol.svg)
-- [③の比較図](assets/2026-10-workflow-comparisons/03-sol-direct-vs-luna-gemma.svg) ／ [旧・詳細図](assets/2026-10-workflow-flows/03-composite-luna-gemma-sol.svg)
-- [④の比較図](assets/2026-10-workflow-comparisons/04-sol-direct-vs-local-gemma.svg) ／ [旧・詳細図](assets/2026-10-workflow-flows/04-composite-local-gemma-sol.svg)
+- [①今回の図](assets/2026-10-workflow-reference/01-fixed-rust-sol-vs-gemma.svg) ／ [A/B上下比較図](assets/2026-10-workflow-comparisons/01-fixed-rust-sol-vs-gemma.svg) ／ [旧・詳細図](assets/2026-10-workflow-flows/01-clear-spec-sol-gemma-sol.svg)
+- [②今回の図](assets/2026-10-workflow-reference/02-sol-plan-sol-vs-gemma-only.svg) ／ [A/B上下比較図](assets/2026-10-workflow-comparisons/02-sol-plan-sol-vs-gemma-only.svg) ／ [旧・詳細図](assets/2026-10-workflow-flows/02-composite-sol-local-sol.svg)
+- [③今回の図](assets/2026-10-workflow-reference/03-sol-direct-vs-luna-gemma.svg) ／ [A/B上下比較図](assets/2026-10-workflow-comparisons/03-sol-direct-vs-luna-gemma.svg) ／ [旧・詳細図](assets/2026-10-workflow-flows/03-composite-luna-gemma-sol.svg)
+- [④今回の図](assets/2026-10-workflow-reference/04-sol-direct-vs-local-gemma.svg) ／ [A/B上下比較図](assets/2026-10-workflow-comparisons/04-sol-direct-vs-local-gemma.svg) ／ [旧・詳細図](assets/2026-10-workflow-flows/04-composite-local-gemma-sol.svg)
 
 全4枚とも1440×1080。数値は[比較図の集計・出典hash](assets/2026-10-workflow-comparisons/COMPARISON_EVIDENCE.json)と照合した。新しいモデル測定は行っていない。
+
+[今回の図のレイアウト・出典hash](assets/2026-10-workflow-reference/SOURCE_MANIFEST.json)。元の比較集計は変更していない。
