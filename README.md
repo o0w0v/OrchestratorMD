@@ -51,6 +51,7 @@ LocalのPASSはユニット検証の通過を表します。採用までには�
 | 内容 | 場所 |
 | --- | --- |
 | 開発ルールの定義 | [AGENTS.md](AGENTS.md) |
+| 同じ20課題を、独立レビューなしのSolへまとめて依頼した追加比較 | [結果と従来条件との違い](docs/presentations/2026-10-sol-normal-baseline-20.md) |
 | Gemma4 26Bの2000課題・使い分けの知識（最新500件の追補付き） | [Localモデル評価の要約](benchmarks/local-model-knowledge/2026-10-30/README_JA.md) / [説明資料](docs/presentations/2026-10-gemma-local-model-knowledge.md) |
 | 独自生成した課題セット・初期コード・テスト・過去の検証結果 | [独自課題の一覧と配布物](benchmarks/custom/README.md) |
 | 課題と条件別結果の対応表 | [48セットのINDEX](benchmarks/custom/INDEX.md) |
@@ -69,4 +70,5 @@ LocalのPASSはユニット検証の通過を表します。採用までには�
 ## 別PCでの実行について
 
 現状の公開物だけではCodex＋Gemmaの実行系を起動できません。[配布状況と不足する実装・セットアップ手順](PORTABLE_EXECUTION_READINESS_JA.md)を参照してください。研究用benchmarkの完全再現とは分けて確認しています。
+
 
