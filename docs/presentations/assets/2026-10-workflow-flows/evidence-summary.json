@@ -14,7 +14,16 @@
     "hybrid_quality_unmeasured_of_original46": 2,
     "full46_hybrid_final_pass_rate": null,
     "official_benchmark": false,
-    "shared_planner_text_injected_into_Gemma": false
+    "shared_planner_text_injected_into_Gemma": false,
+    "actual_worker_input": "pre-frozen task instruction; no shared Planner output injection",
+    "shared_planner_cost_included": true,
+    "necessity_of_first_Sol_planning_tested": false,
+    "Sol_review_versus_no_review_comparison_tested": false,
+    "baseline_credits_exact_same44": "145.37033",
+    "hybrid_credits_exact_same44": "85.70780",
+    "local_adopted_in_same44": 37,
+    "clean_fallback_in_same44": 7,
+    "denominator_selected_after_execution": true
   },
   "diagram_02_business_mixedLocal": {
     "arms": {
@@ -146,6 +155,18 @@
     "No account-balance charge reconciliation",
     "Local energy, device cost and unmeasured preparation excluded",
     "No raw prompts, answers, gold, tests, credentials or absolute Host paths published",
-    "Current100 full workflow comparison unfinished at publication drafting; no partial scores used"
-  ]
+    "New100 and Gemma-only extension are separate studies; no unreviewed partial scores used",
+    "No proof that an upfront Sol Planner or final Sol review is necessary",
+    "Business DATA validators do not recompute semantic business answers at routing time"
+  ],
+  "documentation_revision": "2026-10-29-actual-path-and-prepared-validation",
+  "prepared_validation_scope": {
+    "coding": "pre-frozen contract, edit regions, tests",
+    "business": "pre-frozen output schema and Host validation; same complete owner briefing",
+    "Host_checks_created_by_runtime_Planner": false,
+    "Host_structural_check_proves_plan_semantics": false,
+    "preparation_chat_credits": null,
+    "preparation_inclusive_savings": null,
+    "pure_decomposition_causal_effect_isolated": false
+  }
 }
