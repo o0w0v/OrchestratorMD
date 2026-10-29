@@ -1,0 +1,31 @@
+{
+  "evidence": "Preserved local-specialist-3way-228/run-003/four-way-task-comparison.csv",
+  "source_sha256": "6ce8c767e7f2ac385032e9c7cec62ea94fc160bbdf912662d441bee18e0c3edd",
+  "criterion": "Local adoption only after mandatory validation and independent ACCEPT_NO_CHANGE; final Codex fallback success is not Local success",
+  "tasks": 24,
+  "gemma_adopted": 20,
+  "qwen14_adopted": 14,
+  "qwen35_adopted": 7,
+  "gemma_not_adopted": [
+    "LS3W228-003",
+    "LS3W228-011",
+    "LS3W228-021",
+    "LS3W228-024"
+  ],
+  "alternate_model_adopted_on_gemma_not_adopted": {
+    "qwen14": [
+      "LS3W228-021"
+    ],
+    "qwen35": []
+  },
+  "qwen14_oracle_union_adopted": 21,
+  "qwen35_oracle_union_adopted": 20,
+  "oracle_union_is_not_a_deployable_router_result": true,
+  "failed_candidate_handoff_tested": false,
+  "new_generations": 0,
+  "limits": [
+    "n=4 Gemma non-adopted cases",
+    "Different old environment and protocol from additional-500 screening",
+    "No claim that Qwen14 is generally better or that automatic fallback is economical"
+  ]
+}

@@ -1,0 +1,1981 @@
+{
+  "timestamp": "2026-10-24T08:50:34.505737+00:00",
+  "scope": "known-failure diagnostic, not general task accuracy or a production router benchmark",
+  "metrics": [
+    {
+      "arm": "gemma26",
+      "model": "gemma4:26b",
+      "digest": "08ae7ec1744bd7f451c4a530afb39d2673ad9d07a8369b8a33a3613b41212a68",
+      "weight_file_gib": 17.326463491655886,
+      "attempted": 30,
+      "valid_fixed_checks": 30,
+      "not_run": 0,
+      "historical_failure_denominator": 20,
+      "historical_failures_attempted": 20,
+      "historical_failures_rescued": 1,
+      "rescued_ids": [
+        "A500-XLS-016"
+      ],
+      "control_denominator": 10,
+      "controls_attempted": 10,
+      "controls_passed": 10,
+      "cold_first_api_seconds": 27.781999999999243,
+      "mean_api_seconds": 7.377100000001034,
+      "median_api_seconds": 4.999500000001717,
+      "warm_mean_api_seconds": 6.673482758621786,
+      "warm_median_api_seconds": 4.984000000004016,
+      "total_api_seconds": 221.31300000003102,
+      "mean_native_load_seconds": 0.65797026,
+      "validation_total_seconds": 45.26500000001397,
+      "total_request_to_validation_wall_seconds": 357.86099999999715,
+      "sampled_peak_gpu_used_mib": 9888.0,
+      "background_gpu_used_mib": 2326.0,
+      "sampled_peak_increment_gpu_mib": 7562.0,
+      "loaded_idle_gpu_used_mib": 9855.0,
+      "sampled_min_free_gpu_mib": 164.0,
+      "sampled_peak_ollama_rss_gib": 17.373210906982422,
+      "sampled_peak_ollama_private_gib": 26.288219451904297,
+      "sampled_min_available_host_ram_gib": 23.6630859375,
+      "api_reported_peak_vram_gib": 1.1802929667755961,
+      "infra_errors": 0,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "output_limits": 0,
+      "protocol_incompatible": 0,
+      "classification_counts": {
+        "COMPILE_FAILURE": 13,
+        "CONTENT_AND_NATIVE_PASS": 6,
+        "CONTENT_FAILURE": 4,
+        "CONTRACT_TEST_PASS": 5,
+        "SEMANTIC_FAILURE": 2
+      },
+      "input_tokens": 11086,
+      "output_tokens": 6393,
+      "minimum_required_ram_gib": null,
+      "minimum_required_vram_gib": null,
+      "full_workflow_adoption": null,
+      "actual_sampling_interval_median_seconds": 4.8452324867248535,
+      "actual_sampling_interval_max_seconds": 8.429409980773926,
+      "os_process_lifetime_peak_working_sets_sum_gib": 17.396648406982422,
+      "resource_measurement_is_comparable_inference": true,
+      "raw_output_limits": 0,
+      "arm_wall_seconds": 420.34300000000076,
+      "cold_first_native_load_seconds": 18.8928987,
+      "started_invocations": 30,
+      "aborted_invocations": 0,
+      "completed_native_input_tokens": 11086,
+      "completed_native_output_tokens": 6393,
+      "gpu_offload_layer_records": [
+        {
+          "offloaded": 31,
+          "total": 31
+        },
+        {
+          "offloaded": 5,
+          "total": 5
+        }
+      ],
+      "model_buffer_records": [
+        {
+          "backend": "CUDA0",
+          "mib": 6075.84
+        },
+        {
+          "backend": "CUDA_Host",
+          "mib": 10819.57
+        },
+        {
+          "backend": "CUDA0",
+          "mib": 425.34
+        },
+        {
+          "backend": "CUDA_Host",
+          "mib": 272.0
+        }
+      ],
+      "current_gemma_failure_count": 19,
+      "current_gemma_failures_validly_attempted": 19,
+      "current_gemma_failures_rescued_ids": [],
+      "current_gemma_failures_rescued": 0
+    },
+    {
+      "arm": "qwen14",
+      "model": "qwen2.5-Coder:14b",
+      "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+      "weight_file_gib": 8.3708430621773,
+      "attempted": 30,
+      "valid_fixed_checks": 30,
+      "not_run": 0,
+      "historical_failure_denominator": 20,
+      "historical_failures_attempted": 20,
+      "historical_failures_rescued": 2,
+      "rescued_ids": [
+        "A500-XLS-016",
+        "A500-XLS-052"
+      ],
+      "control_denominator": 10,
+      "controls_attempted": 10,
+      "controls_passed": 8,
+      "cold_first_api_seconds": 33.875,
+      "mean_api_seconds": 11.29373333333327,
+      "median_api_seconds": 7.171999999998661,
+      "warm_mean_api_seconds": 10.515068965517175,
+      "warm_median_api_seconds": 7.171999999998661,
+      "total_api_seconds": 338.8119999999981,
+      "mean_native_load_seconds": 0.34397068333333336,
+      "validation_total_seconds": 38.639000000017404,
+      "total_request_to_validation_wall_seconds": 469.2659999999887,
+      "sampled_peak_gpu_used_mib": 9624.0,
+      "background_gpu_used_mib": 1162.0,
+      "sampled_peak_increment_gpu_mib": 8462.0,
+      "loaded_idle_gpu_used_mib": 9245.0,
+      "sampled_min_free_gpu_mib": 428.0,
+      "sampled_peak_ollama_rss_gib": 5.444362640380859,
+      "sampled_peak_ollama_private_gib": 13.630035400390625,
+      "sampled_min_available_host_ram_gib": 35.232181549072266,
+      "api_reported_peak_vram_gib": 7.719609374180436,
+      "infra_errors": 0,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "output_limits": 0,
+      "protocol_incompatible": 0,
+      "classification_counts": {
+        "BODY_CONTRACT_FAILURE": 15,
+        "CONTENT_AND_NATIVE_PASS": 7,
+        "CONTENT_FAILURE": 3,
+        "CONTRACT_TEST_PASS": 3,
+        "SEMANTIC_FAILURE": 2
+      },
+      "input_tokens": 10914,
+      "output_tokens": 4438,
+      "minimum_required_ram_gib": null,
+      "minimum_required_vram_gib": null,
+      "full_workflow_adoption": null,
+      "actual_sampling_interval_median_seconds": 8.413871049880981,
+      "actual_sampling_interval_max_seconds": 9.152413129806519,
+      "os_process_lifetime_peak_working_sets_sum_gib": 5.444660186767578,
+      "resource_measurement_is_comparable_inference": true,
+      "raw_output_limits": 0,
+      "arm_wall_seconds": 533.0310000000027,
+      "cold_first_native_load_seconds": 9.420111,
+      "started_invocations": 30,
+      "aborted_invocations": 0,
+      "completed_native_input_tokens": 10914,
+      "completed_native_output_tokens": 4438,
+      "gpu_offload_layer_records": [
+        {
+          "offloaded": 39,
+          "total": 49
+        }
+      ],
+      "model_buffer_records": [
+        {
+          "backend": "CUDA0",
+          "mib": 6522.91
+        },
+        {
+          "backend": "CUDA_Host",
+          "mib": 2043.13
+        }
+      ],
+      "current_gemma_failure_count": 19,
+      "current_gemma_failures_validly_attempted": 19,
+      "current_gemma_failures_rescued_ids": [
+        "A500-XLS-052"
+      ],
+      "current_gemma_failures_rescued": 1
+    },
+    {
+      "arm": "qwen35_9",
+      "model": "qwen3.5:9b",
+      "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+      "weight_file_gib": 6.100931717082858,
+      "attempted": 30,
+      "valid_fixed_checks": 30,
+      "not_run": 0,
+      "historical_failure_denominator": 20,
+      "historical_failures_attempted": 20,
+      "historical_failures_rescued": 1,
+      "rescued_ids": [
+        "A500-XLS-016"
+      ],
+      "control_denominator": 10,
+      "controls_attempted": 10,
+      "controls_passed": 7,
+      "cold_first_api_seconds": 29.32800000000134,
+      "mean_api_seconds": 4.3245999999999185,
+      "median_api_seconds": 2.140499999997701,
+      "warm_mean_api_seconds": 3.462413793103318,
+      "warm_median_api_seconds": 1.9680000000007567,
+      "total_api_seconds": 129.73799999999756,
+      "mean_native_load_seconds": 0.37072377,
+      "validation_total_seconds": 38.23399999999674,
+      "total_request_to_validation_wall_seconds": 246.95699999999488,
+      "sampled_peak_gpu_used_mib": 8166.0,
+      "background_gpu_used_mib": 1114.0,
+      "sampled_peak_increment_gpu_mib": 7052.0,
+      "loaded_idle_gpu_used_mib": 7821.0,
+      "sampled_min_free_gpu_mib": 1886.0,
+      "sampled_peak_ollama_rss_gib": 4.6305389404296875,
+      "sampled_peak_ollama_private_gib": 12.323875427246094,
+      "sampled_min_available_host_ram_gib": 36.87006759643555,
+      "api_reported_peak_vram_gib": 5.4596093744039536,
+      "infra_errors": 0,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "output_limits": 1,
+      "protocol_incompatible": 0,
+      "classification_counts": {
+        "BODY_CONTRACT_FAILURE": 17,
+        "CONTENT_AND_NATIVE_PASS": 6,
+        "CONTENT_FAILURE": 4,
+        "CONTRACT_TEST_PASS": 2,
+        "OUTPUT_LIMIT": 1
+      },
+      "input_tokens": 10918,
+      "output_tokens": 8610,
+      "minimum_required_ram_gib": null,
+      "minimum_required_vram_gib": null,
+      "full_workflow_adoption": null,
+      "actual_sampling_interval_median_seconds": 4.112360119819641,
+      "actual_sampling_interval_max_seconds": 4.483393907546997,
+      "os_process_lifetime_peak_working_sets_sum_gib": 4.676868438720703,
+      "resource_measurement_is_comparable_inference": true,
+      "raw_output_limits": 1,
+      "arm_wall_seconds": 310.04699999999866,
+      "cold_first_native_load_seconds": 10.1875275,
+      "started_invocations": 30,
+      "aborted_invocations": 0,
+      "completed_native_input_tokens": 10918,
+      "completed_native_output_tokens": 8610,
+      "gpu_offload_layer_records": [
+        {
+          "offloaded": 33,
+          "total": 33
+        }
+      ],
+      "model_buffer_records": [
+        {
+          "backend": "CUDA0",
+          "mib": 4812.25
+        },
+        {
+          "backend": "CUDA_Host",
+          "mib": 545.63
+        }
+      ],
+      "current_gemma_failure_count": 19,
+      "current_gemma_failures_validly_attempted": 19,
+      "current_gemma_failures_rescued_ids": [],
+      "current_gemma_failures_rescued": 0
+    },
+    {
+      "arm": "devstral24",
+      "model": "devstral-small-2:latest",
+      "digest": "24277f07f62db8f9cb68e9dfc679ea1818a7fbac47a50eff0a701d3f645b63c8",
+      "weight_file_gib": 14.135031121782959,
+      "attempted": 30,
+      "valid_fixed_checks": 30,
+      "not_run": 0,
+      "historical_failure_denominator": 20,
+      "historical_failures_attempted": 20,
+      "historical_failures_rescued": 5,
+      "rescued_ids": [
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-090",
+        "A500-XLS-016",
+        "A500-XLS-052"
+      ],
+      "control_denominator": 10,
+      "controls_attempted": 10,
+      "controls_passed": 8,
+      "cold_first_api_seconds": 89.36000000000058,
+      "mean_api_seconds": 36.79476666666669,
+      "median_api_seconds": 24.125,
+      "warm_mean_api_seconds": 34.98217241379311,
+      "warm_median_api_seconds": 20.95300000000134,
+      "total_api_seconds": 1103.8430000000008,
+      "mean_native_load_seconds": 0.6096851266666666,
+      "validation_total_seconds": 42.71700000000419,
+      "total_request_to_validation_wall_seconds": 1233.4089999999997,
+      "sampled_peak_gpu_used_mib": 9755.0,
+      "background_gpu_used_mib": 1133.0,
+      "sampled_peak_increment_gpu_mib": 8622.0,
+      "loaded_idle_gpu_used_mib": 9770.0,
+      "sampled_min_free_gpu_mib": 297.0,
+      "sampled_peak_ollama_rss_gib": 10.492324829101562,
+      "sampled_peak_ollama_private_gib": 18.959697723388672,
+      "sampled_min_available_host_ram_gib": 31.460342407226562,
+      "api_reported_peak_vram_gib": 7.062578123994172,
+      "infra_errors": 0,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "output_limits": 0,
+      "protocol_incompatible": 0,
+      "classification_counts": {
+        "BODY_CONTRACT_FAILURE": 7,
+        "COMPILE_FAILURE": 3,
+        "CONTENT_AND_NATIVE_PASS": 7,
+        "CONTENT_FAILURE": 3,
+        "CONTRACT_TEST_PASS": 6,
+        "SEMANTIC_FAILURE": 4
+      },
+      "input_tokens": 11181,
+      "output_tokens": 4253,
+      "minimum_required_ram_gib": null,
+      "minimum_required_vram_gib": null,
+      "full_workflow_adoption": null,
+      "actual_sampling_interval_median_seconds": 9.830621004104614,
+      "actual_sampling_interval_max_seconds": 11.899085998535156,
+      "os_process_lifetime_peak_working_sets_sum_gib": 10.492660522460938,
+      "resource_measurement_is_comparable_inference": true,
+      "raw_output_limits": 0,
+      "arm_wall_seconds": 1296.1559999999954,
+      "cold_first_native_load_seconds": 17.4342744,
+      "started_invocations": 30,
+      "aborted_invocations": 0,
+      "completed_native_input_tokens": 11181,
+      "completed_native_output_tokens": 4253,
+      "gpu_offload_layer_records": [
+        {
+          "offloaded": 19,
+          "total": 41
+        }
+      ],
+      "model_buffer_records": [
+        {
+          "backend": "CUDA0",
+          "mib": 6312.21
+        },
+        {
+          "backend": "CUDA_Host",
+          "mib": 7347.58
+        }
+      ],
+      "current_gemma_failure_count": 19,
+      "current_gemma_failures_validly_attempted": 19,
+      "current_gemma_failures_rescued_ids": [
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-090",
+        "A500-XLS-052"
+      ],
+      "current_gemma_failures_rescued": 4
+    },
+    {
+      "arm": "gptoss20",
+      "model": "gpt-oss:20b",
+      "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+      "weight_file_gib": 12.846143212169409,
+      "attempted": 2,
+      "valid_fixed_checks": 0,
+      "not_run": 27,
+      "historical_failure_denominator": 20,
+      "historical_failures_attempted": 2,
+      "historical_failures_rescued": 0,
+      "rescued_ids": [],
+      "control_denominator": 10,
+      "controls_attempted": 0,
+      "controls_passed": 0,
+      "cold_first_api_seconds": 83.34399999999732,
+      "mean_api_seconds": null,
+      "median_api_seconds": null,
+      "warm_mean_api_seconds": null,
+      "warm_median_api_seconds": null,
+      "total_api_seconds": 140.71899999999732,
+      "mean_native_load_seconds": null,
+      "validation_total_seconds": 0,
+      "total_request_to_validation_wall_seconds": 147.7190000000046,
+      "sampled_peak_gpu_used_mib": 9725.0,
+      "background_gpu_used_mib": 1140.0,
+      "sampled_peak_increment_gpu_mib": 8585.0,
+      "loaded_idle_gpu_used_mib": 9366.0,
+      "sampled_min_free_gpu_mib": 327.0,
+      "sampled_peak_ollama_rss_gib": 6.36968994140625,
+      "sampled_peak_ollama_private_gib": 14.652595520019531,
+      "sampled_min_available_host_ram_gib": 35.65536117553711,
+      "api_reported_peak_vram_gib": 7.632675780914724,
+      "infra_errors": 0,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "output_limits": 0,
+      "protocol_incompatible": 2,
+      "classification_counts": {
+        "PROTOCOL_INCOMPATIBLE": 2
+      },
+      "input_tokens": null,
+      "output_tokens": null,
+      "minimum_required_ram_gib": null,
+      "minimum_required_vram_gib": null,
+      "full_workflow_adoption": null,
+      "actual_sampling_interval_median_seconds": 7.887375831604004,
+      "actual_sampling_interval_max_seconds": 8.415167093276978,
+      "os_process_lifetime_peak_working_sets_sum_gib": 6.4163055419921875,
+      "resource_measurement_is_comparable_inference": false,
+      "raw_output_limits": 2,
+      "arm_wall_seconds": null,
+      "cold_first_native_load_seconds": 18.9535235,
+      "started_invocations": 3,
+      "aborted_invocations": 1,
+      "completed_native_input_tokens": 642,
+      "completed_native_output_tokens": 4096,
+      "gpu_offload_layer_records": [
+        {
+          "offloaded": 25,
+          "total": 25
+        }
+      ],
+      "model_buffer_records": [
+        {
+          "backend": "CUDA0",
+          "mib": 7587.12
+        },
+        {
+          "backend": "CUDA_Host",
+          "mib": 5554.16
+        }
+      ],
+      "current_gemma_failure_count": 19,
+      "current_gemma_failures_validly_attempted": 0,
+      "current_gemma_failures_rescued_ids": [],
+      "current_gemma_failures_rescued": 0
+    }
+  ],
+  "paired": [
+    {
+      "candidate": "qwen14",
+      "against_current_gemma_repeat": {
+        "GEMMA_ONLY": 2,
+        "CANDIDATE_ONLY": 1,
+        "BOTH": 9,
+        "NEITHER": 18,
+        "UNPAIRED": 0
+      },
+      "by_domain": {
+        "COD": {
+          "GEMMA_ONLY": 2,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 3,
+          "NEITHER": 15,
+          "UNPAIRED": 0
+        },
+        "WRK": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 1,
+          "NEITHER": 3,
+          "UNPAIRED": 0
+        },
+        "XLS": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 1,
+          "BOTH": 3,
+          "NEITHER": 0,
+          "UNPAIRED": 0
+        },
+        "PPT": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 1,
+          "NEITHER": 0,
+          "UNPAIRED": 0
+        },
+        "DOC": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 1,
+          "NEITHER": 0,
+          "UNPAIRED": 0
+        }
+      }
+    },
+    {
+      "candidate": "qwen35_9",
+      "against_current_gemma_repeat": {
+        "GEMMA_ONLY": 3,
+        "CANDIDATE_ONLY": 0,
+        "BOTH": 8,
+        "NEITHER": 19,
+        "UNPAIRED": 0
+      },
+      "by_domain": {
+        "COD": {
+          "GEMMA_ONLY": 3,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 2,
+          "NEITHER": 15,
+          "UNPAIRED": 0
+        },
+        "WRK": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 1,
+          "NEITHER": 3,
+          "UNPAIRED": 0
+        },
+        "XLS": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 3,
+          "NEITHER": 1,
+          "UNPAIRED": 0
+        },
+        "PPT": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 1,
+          "NEITHER": 0,
+          "UNPAIRED": 0
+        },
+        "DOC": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 1,
+          "NEITHER": 0,
+          "UNPAIRED": 0
+        }
+      }
+    },
+    {
+      "candidate": "devstral24",
+      "against_current_gemma_repeat": {
+        "GEMMA_ONLY": 2,
+        "CANDIDATE_ONLY": 4,
+        "BOTH": 9,
+        "NEITHER": 15,
+        "UNPAIRED": 0
+      },
+      "by_domain": {
+        "COD": {
+          "GEMMA_ONLY": 2,
+          "CANDIDATE_ONLY": 3,
+          "BOTH": 3,
+          "NEITHER": 12,
+          "UNPAIRED": 0
+        },
+        "WRK": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 1,
+          "NEITHER": 3,
+          "UNPAIRED": 0
+        },
+        "XLS": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 1,
+          "BOTH": 3,
+          "NEITHER": 0,
+          "UNPAIRED": 0
+        },
+        "PPT": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 1,
+          "NEITHER": 0,
+          "UNPAIRED": 0
+        },
+        "DOC": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 1,
+          "NEITHER": 0,
+          "UNPAIRED": 0
+        }
+      }
+    },
+    {
+      "candidate": "gptoss20",
+      "against_current_gemma_repeat": {
+        "GEMMA_ONLY": 0,
+        "CANDIDATE_ONLY": 0,
+        "BOTH": 0,
+        "NEITHER": 0,
+        "UNPAIRED": 30
+      },
+      "by_domain": {
+        "COD": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 0,
+          "NEITHER": 0,
+          "UNPAIRED": 20
+        },
+        "WRK": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 0,
+          "NEITHER": 0,
+          "UNPAIRED": 4
+        },
+        "XLS": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 0,
+          "NEITHER": 0,
+          "UNPAIRED": 4
+        },
+        "PPT": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 0,
+          "NEITHER": 0,
+          "UNPAIRED": 1
+        },
+        "DOC": {
+          "GEMMA_ONLY": 0,
+          "CANDIDATE_ONLY": 0,
+          "BOTH": 0,
+          "NEITHER": 0,
+          "UNPAIRED": 1
+        }
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "A500-COD-006",
+      "title": "設備予約の空き枠抽出",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 27.781999999999243
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 33.875
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 29.32800000000134
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 89.36000000000058
+      },
+      "gptoss20": {
+        "passed": false,
+        "classification": "PROTOCOL_INCOMPATIBLE",
+        "seconds": 83.34399999999732
+      }
+    },
+    {
+      "task_id": "A500-COD-008",
+      "title": "会議出席の共通可能時間",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 9.125
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 27.20300000000134
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "OUTPUT_LIMIT",
+        "seconds": 22.937000000005355
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "SEMANTIC_FAILURE",
+        "seconds": 108.09399999999732
+      },
+      "gptoss20": {
+        "passed": false,
+        "classification": "PROTOCOL_INCOMPATIBLE",
+        "seconds": 57.375
+      }
+    },
+    {
+      "task_id": "A500-COD-009",
+      "title": "複数営業日にまたがる対応期限",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 8.109000000004016
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 22.375
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 10.610000000000582
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 82.67200000000594
+      },
+      "gptoss20": {
+        "passed": null,
+        "classification": "INTENTIONAL_ABORT_PROTOCOL_MISMATCH",
+        "seconds": null
+      }
+    },
+    {
+      "task_id": "A500-COD-010",
+      "title": "担当者交代を伴う当番空白検出",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 27.95300000000134
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 22.32800000000134
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 12.235000000000582
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 73.26599999999598
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-019",
+      "title": "期限優先での分割引当",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 8.156000000002678
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 21.468000000000757
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 5.0939999999973224
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 84.10899999999674
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-025",
+      "title": "同梱不可商品の箱分割",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "SEMANTIC_FAILURE",
+        "seconds": 6.811999999998079
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 17.23399999999674
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 3.1560000000026776
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 60.0
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-028",
+      "title": "時間指定に合う配送便選択",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 4.735000000000582
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 12.85899999999674
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 3.186999999998079
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 43.625
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-030",
+      "title": "複数口配送の完了判定",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 5.453000000001339
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 15.110000000000582
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 3.2030000000013388
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 42.18800000000192
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-048",
+      "title": "待機者の繰上げ対象選定",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 3.6569999999992433
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 12.453000000001339
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 2.312999999994645
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 27.29699999999866
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-057",
+      "title": "交換済み部品の二重計上防止",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 3.8280000000013388
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 22.125
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 2.7039999999979045
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "SEMANTIC_FAILURE",
+        "seconds": 31.921000000002095
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-060",
+      "title": "代替機切替後の稼働率",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "SEMANTIC_FAILURE",
+        "seconds": 11.859000000004016
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 25.860000000000582
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 4.188000000001921
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 107.31300000000192
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-071",
+      "title": "公開CSV列の順序変換",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 6.046999999998661
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 11.796000000002095
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 4.046999999998661
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 56.921000000002095
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-074",
+      "title": "必須項目の欠落一覧",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 3.1719999999986612
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 10.93699999999808
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 2.437999999994645
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 43.17199999999866
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-083",
+      "title": "比率の表示用丸め",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 18.17199999999866
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "SEMANTIC_FAILURE",
+        "seconds": 6.985000000000582
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 3.437000000005355
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "SEMANTIC_FAILURE",
+        "seconds": 52.484000000004016
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-090",
+      "title": "重み付き稼働指標の集計",
+      "domain": "COD",
+      "selection": "GEMMA_CODE_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "seconds": 5.828000000001339
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 18.093999999997322
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 3.3280000000013388
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 36.32800000000134
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-WRK-036",
+      "title": "対応時間帯別の報告作成",
+      "domain": "WRK",
+      "selection": "GEMMA_CONFIRMED_SEMANTIC_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 3.4530000000013388
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 4.375
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 1.2339999999967404
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 14.514999999999418
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-WRK-045",
+      "title": "棚卸差異の集計と報告",
+      "domain": "WRK",
+      "selection": "GEMMA_CONFIRMED_SEMANTIC_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 4.984000000004016
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 4.671999999998661
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 1.5159999999959837
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 16.29699999999866
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-WRK-066",
+      "title": "候補比較の重み付き集計",
+      "domain": "WRK",
+      "selection": "GEMMA_CONFIRMED_SEMANTIC_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 7.8439999999973224
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 7.171999999998661
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 1.4539999999979045
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 20.95300000000134
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-XLS-016",
+      "title": "割引併用順の計算",
+      "domain": "XLS",
+      "selection": "GEMMA_CONFIRMED_SEMANTIC_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 4.76600000000326
+      },
+      "qwen14": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 5.234000000004016
+      },
+      "qwen35_9": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 1.0160000000032596
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 7.687999999994645
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-XLS-052",
+      "title": "2台帳の未一致ID抽出",
+      "domain": "XLS",
+      "selection": "GEMMA_CONFIRMED_SEMANTIC_FAILURE",
+      "historical_gemma_pass": false,
+      "gemma26": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 3.4069999999992433
+      },
+      "qwen14": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 3.438000000001921
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "seconds": 1.1409999999959837
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 9.515999999995984
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-001",
+      "title": "会議枠の重複判定",
+      "domain": "COD",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "historical_gemma_pass": true,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 4.7810000000026776
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "SEMANTIC_FAILURE",
+        "seconds": 2.8909999999959837
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 1.75
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "SEMANTIC_FAILURE",
+        "seconds": 5.078000000001339
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-031",
+      "title": "問い合わせ優先度の分類",
+      "domain": "COD",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "historical_gemma_pass": true,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 4.719000000004598
+      },
+      "qwen14": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 7.171999999998661
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 1.9680000000007567
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 15.280999999995402
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-061",
+      "title": "差戻し中申請の抽出",
+      "domain": "COD",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "historical_gemma_pass": true,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 3.6710000000020955
+      },
+      "qwen14": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 4.953000000001339
+      },
+      "qwen35_9": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 1.1410000000032596
+      },
+      "devstral24": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "seconds": 17.406000000002678
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-091",
+      "title": "締切ちょうどの受付誤判定修正",
+      "domain": "COD",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "historical_gemma_pass": true,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 2.688000000001921
+      },
+      "qwen14": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 1.1089999999967404
+      },
+      "qwen35_9": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 0.5630000000019209
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 2.313000000001921
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-COD-096",
+      "title": "ロット残数のoverflow修正",
+      "domain": "COD",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "historical_gemma_pass": true,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 2.936999999998079
+      },
+      "qwen14": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 1.7969999999986612
+      },
+      "qwen35_9": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 0.7969999999986612
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "seconds": 9.046999999998661
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-PPT-041",
+      "title": "指定テーマ色の適用",
+      "domain": "PPT",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "historical_gemma_pass": true,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 6.875
+      },
+      "qwen14": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 2.7819999999992433
+      },
+      "qwen35_9": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 0.9689999999973224
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 7.593000000000757
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-DOC-011",
+      "title": "見出しスタイルの適用",
+      "domain": "DOC",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "historical_gemma_pass": true,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 4.969000000004598
+      },
+      "qwen14": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 2.1090000000040163
+      },
+      "qwen35_9": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 0.8589999999967404
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 5.64100000000326
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-XLS-001",
+      "title": "名簿の姓と名を指定列へ分離",
+      "domain": "XLS",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "historical_gemma_pass": true,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 4.344000000004598
+      },
+      "qwen14": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 3.375
+      },
+      "qwen35_9": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 0.9219999999986612
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 10.609000000004016
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-XLS-011",
+      "title": "数量と単価から小計追加",
+      "domain": "XLS",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "historical_gemma_pass": true,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 6.171999999998661
+      },
+      "qwen14": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 3.1090000000040163
+      },
+      "qwen35_9": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 1.0160000000032596
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 10.25
+      },
+      "gptoss20": null
+    },
+    {
+      "task_id": "A500-WRK-001",
+      "title": "週次件数表から報告1枚作成",
+      "domain": "WRK",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "historical_gemma_pass": true,
+      "gemma26": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 5.014999999999418
+      },
+      "qwen14": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 3.9219999999986612
+      },
+      "qwen35_9": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 1.187000000005355
+      },
+      "devstral24": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "seconds": 12.905999999995402
+      },
+      "gptoss20": null
+    }
+  ],
+  "aborted_invocations": [
+    {
+      "arm": "gptoss20",
+      "task_id": "A500-COD-009",
+      "attempt": 1,
+      "event": "INTENTIONAL_ABORT_PROTOCOL_MISMATCH",
+      "request_sha256": "38b3d9221e049d1f2b5101cefb5c884af8a8d683105d3a2ffd2235e48d183d3e",
+      "started_at": "2026-10-24T08:43:02.825796+00:00",
+      "aborted_at": "2026-10-24T08:43:16.524545+00:00",
+      "prompt_eval_count": null,
+      "eval_count": null,
+      "final_native_response_available": false,
+      "not_counted_as_model_or_infra_failure": true
+    }
+  ],
+  "gates": {
+    "expected_arms_have_terminal": true,
+    "old_input_hashes_unchanged": true,
+    "payload_identity": true,
+    "completed_plus_accounted_aborts_equal_started": true,
+    "no_semantic_repairs": true
+  },
+  "offline_full_function_diagnostic": {
+    "purpose": "Full original function + same frozen tests. A separate offline representation diagnostic, NOT the original body-only contract. No new generation or semantic repair.",
+    "results": [
+      {
+        "arm": "devstral24",
+        "task_id": "A500-COD-009",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "devstral24",
+        "task_id": "A500-COD-019",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "devstral24",
+        "task_id": "A500-COD-025",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "devstral24",
+        "task_id": "A500-COD-028",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "devstral24",
+        "task_id": "A500-COD-061",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "devstral24",
+        "task_id": "A500-COD-071",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "devstral24",
+        "task_id": "A500-COD-074",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-006",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-008",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-009",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-010",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-019",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-025",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-028",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-030",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-048",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-057",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-060",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-061",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-071",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-074",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen14",
+        "task_id": "A500-COD-090",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-001",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-006",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-009",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-010",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-019",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-025",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-028",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-030",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-031",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-048",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-057",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-060",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-061",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-071",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-074",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-083",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_9",
+        "task_id": "A500-COD-090",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      }
+    ],
+    "by_arm": {
+      "gemma26": {
+        "eligible_strings": 0,
+        "whole_function_test_pass": 0,
+        "primary_results_modified": false
+      },
+      "qwen14": {
+        "eligible_strings": 15,
+        "whole_function_test_pass": 8,
+        "primary_results_modified": false
+      },
+      "qwen35_9": {
+        "eligible_strings": 17,
+        "whole_function_test_pass": 4,
+        "primary_results_modified": false
+      },
+      "devstral24": {
+        "eligible_strings": 7,
+        "whole_function_test_pass": 3,
+        "primary_results_modified": false
+      },
+      "gptoss20": {
+        "eligible_strings": 0,
+        "whole_function_test_pass": 0,
+        "primary_results_modified": false
+      }
+    }
+  },
+  "minimum_hardware_requirements_verified": false,
+  "new_provider_calls": 0,
+  "preparation_codex_tokens": null,
+  "preparation_codex_credits": null
+}

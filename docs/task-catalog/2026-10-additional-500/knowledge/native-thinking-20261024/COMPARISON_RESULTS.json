@@ -1,0 +1,2048 @@
+{
+  "timestamp": "2026-10-24T11:11:12.565406+00:00",
+  "purpose": "Evidence for per-Task delegation; no overall model ranking or automatic production adoption.",
+  "metrics": [
+    {
+      "profile": "gemma26_think",
+      "model": "gemma4:26b",
+      "digest": "08ae7ec1744bd7f451c4a530afb39d2673ad9d07a8369b8a33a3613b41212a68",
+      "think": true,
+      "num_predict": 6144,
+      "historical_result_reused": false,
+      "planned": 30,
+      "completed": 30,
+      "not_run": 0,
+      "strict_fixed_check_pass": 27,
+      "historical_failures_pass": 17,
+      "historical_failures_attempted": 20,
+      "positive_controls_pass": 10,
+      "positive_controls_attempted": 10,
+      "pass_ids": [
+        "A500-COD-001",
+        "A500-COD-006",
+        "A500-COD-010",
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-028",
+        "A500-COD-030",
+        "A500-COD-031",
+        "A500-COD-048",
+        "A500-COD-057",
+        "A500-COD-061",
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-COD-083",
+        "A500-COD-090",
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-DOC-011",
+        "A500-PPT-041",
+        "A500-WRK-001",
+        "A500-WRK-036",
+        "A500-WRK-045",
+        "A500-WRK-066",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-XLS-016",
+        "A500-XLS-052"
+      ],
+      "mean_api_seconds": 66.73389999999975,
+      "warm_mean_api_seconds": 66.10189655172395,
+      "mean_native_eval_seconds": 65.19927036663333,
+      "total_api_seconds": 2002.0169999999925,
+      "arm_wall_seconds": 2141.6410000000033,
+      "host_validation_seconds": 44.09199999998236,
+      "input_tokens": 11026,
+      "output_tokens_including_thinking": 86089,
+      "thinking_present_calls": 30,
+      "final_content_calls": 27,
+      "sampled_peak_gpu_used_mib": 9906.0,
+      "sampled_min_free_gpu_mib": 146.0,
+      "background_gpu_used_mib": 1317.0,
+      "sampled_peak_ollama_rss_gib": 19.752460479736328,
+      "sampled_peak_ollama_private_gib": 28.943038940429688,
+      "host_min_available_ram_gib": 24.204044342041016,
+      "sampling_interval_median_seconds": 5.168609976768494,
+      "minimum_hardware_requirement": null,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "infra_errors": 0,
+      "output_limits": 3,
+      "classification_counts": {
+        "CONTENT_AND_NATIVE_PASS": 10,
+        "CONTRACT_TEST_PASS": 17,
+        "OUTPUT_LIMIT": 3
+      },
+      "max_prompt_eval_count": 706,
+      "truncation_warning_lines": [],
+      "gpu_layer_offload_records": [
+        [
+          "31",
+          "31"
+        ],
+        [
+          "5",
+          "5"
+        ]
+      ],
+      "model_buffer_records": [
+        [
+          "CUDA0",
+          "6075.84"
+        ],
+        [
+          "CUDA_Host",
+          "10819.57"
+        ],
+        [
+          "CUDA0",
+          "425.34"
+        ],
+        [
+          "CUDA_Host",
+          "272.00"
+        ]
+      ]
+    },
+    {
+      "profile": "qwen35_think",
+      "model": "qwen3.5:9b",
+      "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+      "think": true,
+      "num_predict": 6144,
+      "historical_result_reused": false,
+      "planned": 30,
+      "completed": 30,
+      "not_run": 0,
+      "strict_fixed_check_pass": 9,
+      "historical_failures_pass": 2,
+      "historical_failures_attempted": 20,
+      "positive_controls_pass": 7,
+      "positive_controls_attempted": 10,
+      "pass_ids": [
+        "A500-COD-031",
+        "A500-COD-091",
+        "A500-DOC-011",
+        "A500-PPT-041",
+        "A500-WRK-001",
+        "A500-WRK-045",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-XLS-052"
+      ],
+      "mean_api_seconds": 29.718100000000657,
+      "warm_mean_api_seconds": 28.43037931034557,
+      "mean_native_eval_seconds": 29.069408066666668,
+      "total_api_seconds": 891.5430000000197,
+      "arm_wall_seconds": 1017.625,
+      "host_validation_seconds": 30.296999999991385,
+      "input_tokens": 10858,
+      "output_tokens_including_thinking": 86059,
+      "thinking_present_calls": 29,
+      "final_content_calls": 20,
+      "sampled_peak_gpu_used_mib": 7375.0,
+      "sampled_min_free_gpu_mib": 2677.0,
+      "background_gpu_used_mib": 657.0,
+      "sampled_peak_ollama_rss_gib": 6.8785552978515625,
+      "sampled_peak_ollama_private_gib": 14.581794738769531,
+      "host_min_available_ram_gib": 36.60655212402344,
+      "sampling_interval_median_seconds": 3.4382901191711426,
+      "minimum_hardware_requirement": null,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "infra_errors": 0,
+      "output_limits": 10,
+      "classification_counts": {
+        "BODY_CONTRACT_FAILURE": 6,
+        "COMPILE_FAILURE": 3,
+        "CONTENT_AND_NATIVE_PASS": 7,
+        "CONTENT_FAILURE": 1,
+        "CONTRACT_TEST_PASS": 2,
+        "OUTPUT_LIMIT": 10,
+        "SEMANTIC_FAILURE": 1
+      },
+      "max_prompt_eval_count": 694,
+      "truncation_warning_lines": [],
+      "gpu_layer_offload_records": [
+        [
+          "33",
+          "33"
+        ]
+      ],
+      "model_buffer_records": [
+        [
+          "CUDA0",
+          "4812.25"
+        ],
+        [
+          "CUDA_Host",
+          "545.63"
+        ]
+      ]
+    },
+    {
+      "profile": "gptoss_medium",
+      "model": "gpt-oss:20b",
+      "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+      "think": "medium",
+      "num_predict": 6144,
+      "historical_result_reused": false,
+      "planned": 30,
+      "completed": 30,
+      "not_run": 0,
+      "strict_fixed_check_pass": 22,
+      "historical_failures_pass": 13,
+      "historical_failures_attempted": 20,
+      "positive_controls_pass": 9,
+      "positive_controls_attempted": 10,
+      "pass_ids": [
+        "A500-COD-001",
+        "A500-COD-008",
+        "A500-COD-009",
+        "A500-COD-019",
+        "A500-COD-028",
+        "A500-COD-030",
+        "A500-COD-031",
+        "A500-COD-048",
+        "A500-COD-060",
+        "A500-COD-061",
+        "A500-COD-074",
+        "A500-COD-090",
+        "A500-COD-096",
+        "A500-DOC-011",
+        "A500-PPT-041",
+        "A500-WRK-001",
+        "A500-WRK-036",
+        "A500-WRK-045",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-XLS-016",
+        "A500-XLS-052"
+      ],
+      "mean_api_seconds": 44.83916666666628,
+      "warm_mean_api_seconds": 41.9058275862064,
+      "mean_native_eval_seconds": 43.764451799999996,
+      "total_api_seconds": 1345.1749999999884,
+      "arm_wall_seconds": 1485.640999999996,
+      "host_validation_seconds": 41.93800000000192,
+      "input_tokens": 12194,
+      "output_tokens_including_thinking": 44011,
+      "thinking_present_calls": 30,
+      "final_content_calls": 29,
+      "sampled_peak_gpu_used_mib": 8914.0,
+      "sampled_min_free_gpu_mib": 1138.0,
+      "background_gpu_used_mib": 658.0,
+      "sampled_peak_ollama_rss_gib": 7.7153778076171875,
+      "sampled_peak_ollama_private_gib": 16.028751373291016,
+      "host_min_available_ram_gib": 35.10544967651367,
+      "sampling_interval_median_seconds": 4.837939977645874,
+      "minimum_hardware_requirement": null,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "infra_errors": 0,
+      "output_limits": 0,
+      "classification_counts": {
+        "BODY_CONTRACT_FAILURE": 5,
+        "COMPILE_FAILURE": 1,
+        "CONTENT_AND_NATIVE_PASS": 9,
+        "CONTENT_FAILURE": 1,
+        "CONTRACT_TEST_PASS": 13,
+        "SCHEMA_FAILURE": 1
+      },
+      "max_prompt_eval_count": 734,
+      "truncation_warning_lines": [],
+      "gpu_layer_offload_records": [
+        [
+          "25",
+          "25"
+        ]
+      ],
+      "model_buffer_records": [
+        [
+          "CUDA0",
+          "7587.12"
+        ],
+        [
+          "CUDA_Host",
+          "5554.16"
+        ]
+      ]
+    },
+    {
+      "profile": "gptoss_low",
+      "model": "gpt-oss:20b",
+      "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+      "think": "low",
+      "num_predict": 6144,
+      "historical_result_reused": false,
+      "planned": 6,
+      "completed": 6,
+      "not_run": 0,
+      "strict_fixed_check_pass": 0,
+      "historical_failures_pass": 0,
+      "historical_failures_attempted": 6,
+      "positive_controls_pass": 0,
+      "positive_controls_attempted": 0,
+      "pass_ids": [],
+      "mean_api_seconds": 12.653999999998632,
+      "warm_mean_api_seconds": 9.815999999998894,
+      "mean_native_eval_seconds": 10.6321215,
+      "total_api_seconds": 75.92399999999179,
+      "arm_wall_seconds": 109.59300000000076,
+      "host_validation_seconds": 10.343000000000757,
+      "input_tokens": 2748,
+      "output_tokens_including_thinking": 2257,
+      "thinking_present_calls": 6,
+      "final_content_calls": 6,
+      "sampled_peak_gpu_used_mib": 8914.0,
+      "sampled_min_free_gpu_mib": 1138.0,
+      "background_gpu_used_mib": 657.0,
+      "sampled_peak_ollama_rss_gib": 6.337551116943359,
+      "sampled_peak_ollama_private_gib": 14.652328491210938,
+      "host_min_available_ram_gib": 36.538150787353516,
+      "sampling_interval_median_seconds": 4.847283959388733,
+      "minimum_hardware_requirement": null,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "infra_errors": 0,
+      "output_limits": 0,
+      "classification_counts": {
+        "BODY_CONTRACT_FAILURE": 4,
+        "CONTENT_FAILURE": 2
+      },
+      "max_prompt_eval_count": 732,
+      "truncation_warning_lines": [],
+      "gpu_layer_offload_records": [
+        [
+          "25",
+          "25"
+        ]
+      ],
+      "model_buffer_records": [
+        [
+          "CUDA0",
+          "7587.12"
+        ],
+        [
+          "CUDA_Host",
+          "5554.16"
+        ]
+      ]
+    },
+    {
+      "profile": "gptoss_high",
+      "model": "gpt-oss:20b",
+      "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+      "think": "high",
+      "num_predict": 6144,
+      "historical_result_reused": false,
+      "planned": 6,
+      "completed": 6,
+      "not_run": 0,
+      "strict_fixed_check_pass": 2,
+      "historical_failures_pass": 2,
+      "historical_failures_attempted": 6,
+      "positive_controls_pass": 0,
+      "positive_controls_attempted": 0,
+      "pass_ids": [
+        "A500-WRK-036",
+        "A500-WRK-066"
+      ],
+      "mean_api_seconds": 145.61983333333288,
+      "warm_mean_api_seconds": 136.22820000000064,
+      "mean_native_eval_seconds": 143.5831755,
+      "total_api_seconds": 873.7189999999973,
+      "arm_wall_seconds": 903.8600000000006,
+      "host_validation_seconds": 10.313999999998487,
+      "input_tokens": 2748,
+      "output_tokens_including_thinking": 28804,
+      "thinking_present_calls": 6,
+      "final_content_calls": 2,
+      "sampled_peak_gpu_used_mib": 8914.0,
+      "sampled_min_free_gpu_mib": 1138.0,
+      "background_gpu_used_mib": 657.0,
+      "sampled_peak_ollama_rss_gib": 6.894802093505859,
+      "sampled_peak_ollama_private_gib": 15.212421417236328,
+      "host_min_available_ram_gib": 36.656829833984375,
+      "sampling_interval_median_seconds": 4.747615814208984,
+      "minimum_hardware_requirement": null,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "infra_errors": 0,
+      "output_limits": 4,
+      "classification_counts": {
+        "CONTENT_AND_NATIVE_PASS": 2,
+        "OUTPUT_LIMIT": 4
+      },
+      "max_prompt_eval_count": 732,
+      "truncation_warning_lines": [],
+      "gpu_layer_offload_records": [
+        [
+          "25",
+          "25"
+        ]
+      ],
+      "model_buffer_records": [
+        [
+          "CUDA0",
+          "7587.12"
+        ],
+        [
+          "CUDA_Host",
+          "5554.16"
+        ]
+      ]
+    },
+    {
+      "profile": "gemma26_fast",
+      "model": "gemma4:26b",
+      "digest": "08ae7ec1744bd7f451c4a530afb39d2673ad9d07a8369b8a33a3613b41212a68",
+      "think": false,
+      "num_predict": 2048,
+      "historical_result_reused": true,
+      "planned": 30,
+      "completed": 30,
+      "not_run": 0,
+      "strict_fixed_check_pass": 11,
+      "historical_failures_pass": 1,
+      "historical_failures_attempted": 20,
+      "positive_controls_pass": 10,
+      "positive_controls_attempted": 10,
+      "pass_ids": [
+        "A500-COD-001",
+        "A500-COD-031",
+        "A500-COD-061",
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-DOC-011",
+        "A500-PPT-041",
+        "A500-WRK-001",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-XLS-016"
+      ],
+      "mean_api_seconds": 7.377100000001034,
+      "warm_mean_api_seconds": 6.673482758621786,
+      "mean_native_eval_seconds": 4.024715633333334,
+      "total_api_seconds": 221.31300000003102,
+      "arm_wall_seconds": 420.34300000000076,
+      "host_validation_seconds": 45.26500000001397,
+      "input_tokens": 11086,
+      "output_tokens_including_thinking": 6393,
+      "thinking_present_calls": 0,
+      "final_content_calls": 30,
+      "sampled_peak_gpu_used_mib": 9888.0,
+      "sampled_min_free_gpu_mib": 164.0,
+      "background_gpu_used_mib": 2326.0,
+      "sampled_peak_ollama_rss_gib": 17.373210906982422,
+      "sampled_peak_ollama_private_gib": 26.288219451904297,
+      "host_min_available_ram_gib": 23.6630859375,
+      "sampling_interval_median_seconds": 4.8452324867248535,
+      "minimum_hardware_requirement": null,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "infra_errors": 0,
+      "output_limits": 0,
+      "classification_counts": {
+        "COMPILE_FAILURE": 13,
+        "CONTENT_AND_NATIVE_PASS": 6,
+        "CONTENT_FAILURE": 4,
+        "CONTRACT_TEST_PASS": 5,
+        "SEMANTIC_FAILURE": 2
+      },
+      "max_prompt_eval_count": 708,
+      "truncation_warning_lines": [],
+      "gpu_layer_offload_records": [
+        [
+          "31",
+          "31"
+        ],
+        [
+          "5",
+          "5"
+        ]
+      ],
+      "model_buffer_records": [
+        [
+          "CUDA0",
+          "6075.84"
+        ],
+        [
+          "CUDA_Host",
+          "10819.57"
+        ],
+        [
+          "CUDA0",
+          "425.34"
+        ],
+        [
+          "CUDA_Host",
+          "272.00"
+        ]
+      ]
+    },
+    {
+      "profile": "qwen14_fast",
+      "model": "qwen2.5-Coder:14b",
+      "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+      "think": false,
+      "num_predict": 2048,
+      "historical_result_reused": true,
+      "planned": 30,
+      "completed": 30,
+      "not_run": 0,
+      "strict_fixed_check_pass": 10,
+      "historical_failures_pass": 2,
+      "historical_failures_attempted": 20,
+      "positive_controls_pass": 8,
+      "positive_controls_attempted": 10,
+      "pass_ids": [
+        "A500-COD-031",
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-DOC-011",
+        "A500-PPT-041",
+        "A500-WRK-001",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-XLS-016",
+        "A500-XLS-052"
+      ],
+      "mean_api_seconds": 11.29373333333327,
+      "warm_mean_api_seconds": 10.515068965517175,
+      "mean_native_eval_seconds": 10.2631637333,
+      "total_api_seconds": 338.8119999999981,
+      "arm_wall_seconds": 533.0310000000027,
+      "host_validation_seconds": 38.639000000017404,
+      "input_tokens": 10914,
+      "output_tokens_including_thinking": 4438,
+      "thinking_present_calls": 0,
+      "final_content_calls": 30,
+      "sampled_peak_gpu_used_mib": 9624.0,
+      "sampled_min_free_gpu_mib": 428.0,
+      "background_gpu_used_mib": 1162.0,
+      "sampled_peak_ollama_rss_gib": 5.444362640380859,
+      "sampled_peak_ollama_private_gib": 13.630035400390625,
+      "host_min_available_ram_gib": 35.232181549072266,
+      "sampling_interval_median_seconds": 8.413871049880981,
+      "minimum_hardware_requirement": null,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "infra_errors": 0,
+      "output_limits": 0,
+      "classification_counts": {
+        "BODY_CONTRACT_FAILURE": 15,
+        "CONTENT_AND_NATIVE_PASS": 7,
+        "CONTENT_FAILURE": 3,
+        "CONTRACT_TEST_PASS": 3,
+        "SEMANTIC_FAILURE": 2
+      },
+      "max_prompt_eval_count": 723,
+      "truncation_warning_lines": [],
+      "gpu_layer_offload_records": [
+        [
+          "39",
+          "49"
+        ]
+      ],
+      "model_buffer_records": [
+        [
+          "CUDA0",
+          "6522.91"
+        ],
+        [
+          "CUDA_Host",
+          "2043.13"
+        ]
+      ]
+    },
+    {
+      "profile": "qwen35_9_fast",
+      "model": "qwen3.5:9b",
+      "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+      "think": false,
+      "num_predict": 2048,
+      "historical_result_reused": true,
+      "planned": 30,
+      "completed": 30,
+      "not_run": 0,
+      "strict_fixed_check_pass": 8,
+      "historical_failures_pass": 1,
+      "historical_failures_attempted": 20,
+      "positive_controls_pass": 7,
+      "positive_controls_attempted": 10,
+      "pass_ids": [
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-DOC-011",
+        "A500-PPT-041",
+        "A500-WRK-001",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-XLS-016"
+      ],
+      "mean_api_seconds": 4.3245999999999185,
+      "warm_mean_api_seconds": 3.462413793103318,
+      "mean_native_eval_seconds": 3.1954750333,
+      "total_api_seconds": 129.73799999999756,
+      "arm_wall_seconds": 310.04699999999866,
+      "host_validation_seconds": 38.23399999999674,
+      "input_tokens": 10918,
+      "output_tokens_including_thinking": 8610,
+      "thinking_present_calls": 0,
+      "final_content_calls": 30,
+      "sampled_peak_gpu_used_mib": 8166.0,
+      "sampled_min_free_gpu_mib": 1886.0,
+      "background_gpu_used_mib": 1114.0,
+      "sampled_peak_ollama_rss_gib": 4.6305389404296875,
+      "sampled_peak_ollama_private_gib": 12.323875427246094,
+      "host_min_available_ram_gib": 36.87006759643555,
+      "sampling_interval_median_seconds": 4.112360119819641,
+      "minimum_hardware_requirement": null,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "infra_errors": 0,
+      "output_limits": 1,
+      "classification_counts": {
+        "BODY_CONTRACT_FAILURE": 17,
+        "CONTENT_AND_NATIVE_PASS": 6,
+        "CONTENT_FAILURE": 4,
+        "CONTRACT_TEST_PASS": 2,
+        "OUTPUT_LIMIT": 1
+      },
+      "max_prompt_eval_count": 696,
+      "truncation_warning_lines": [],
+      "gpu_layer_offload_records": [
+        [
+          "33",
+          "33"
+        ]
+      ],
+      "model_buffer_records": [
+        [
+          "CUDA0",
+          "4812.25"
+        ],
+        [
+          "CUDA_Host",
+          "545.63"
+        ]
+      ]
+    },
+    {
+      "profile": "devstral24_fast",
+      "model": "devstral-small-2:latest",
+      "digest": "24277f07f62db8f9cb68e9dfc679ea1818a7fbac47a50eff0a701d3f645b63c8",
+      "think": false,
+      "num_predict": 2048,
+      "historical_result_reused": true,
+      "planned": 30,
+      "completed": 30,
+      "not_run": 0,
+      "strict_fixed_check_pass": 13,
+      "historical_failures_pass": 5,
+      "historical_failures_attempted": 20,
+      "positive_controls_pass": 8,
+      "positive_controls_attempted": 10,
+      "pass_ids": [
+        "A500-COD-030",
+        "A500-COD-031",
+        "A500-COD-048",
+        "A500-COD-090",
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-DOC-011",
+        "A500-PPT-041",
+        "A500-WRK-001",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-XLS-016",
+        "A500-XLS-052"
+      ],
+      "mean_api_seconds": 36.79476666666669,
+      "warm_mean_api_seconds": 34.98217241379311,
+      "mean_native_eval_seconds": 35.22138006663334,
+      "total_api_seconds": 1103.8430000000008,
+      "arm_wall_seconds": 1296.1559999999954,
+      "host_validation_seconds": 42.71700000000419,
+      "input_tokens": 11181,
+      "output_tokens_including_thinking": 4253,
+      "thinking_present_calls": 0,
+      "final_content_calls": 30,
+      "sampled_peak_gpu_used_mib": 9755.0,
+      "sampled_min_free_gpu_mib": 297.0,
+      "background_gpu_used_mib": 1133.0,
+      "sampled_peak_ollama_rss_gib": 10.492324829101562,
+      "sampled_peak_ollama_private_gib": 18.959697723388672,
+      "host_min_available_ram_gib": 31.460342407226562,
+      "sampling_interval_median_seconds": 9.830621004104614,
+      "minimum_hardware_requirement": null,
+      "cuda_errors": 0,
+      "backend_crashes": 0,
+      "gpu_query_failures": 0,
+      "infra_errors": 0,
+      "output_limits": 0,
+      "classification_counts": {
+        "BODY_CONTRACT_FAILURE": 7,
+        "COMPILE_FAILURE": 3,
+        "CONTENT_AND_NATIVE_PASS": 7,
+        "CONTENT_FAILURE": 3,
+        "CONTRACT_TEST_PASS": 6,
+        "SEMANTIC_FAILURE": 4
+      },
+      "max_prompt_eval_count": 738,
+      "truncation_warning_lines": [],
+      "gpu_layer_offload_records": [
+        [
+          "19",
+          "41"
+        ]
+      ],
+      "model_buffer_records": [
+        [
+          "CUDA0",
+          "6312.21"
+        ],
+        [
+          "CUDA_Host",
+          "7347.58"
+        ]
+      ]
+    }
+  ],
+  "paired_profiles": [
+    {
+      "native": "gemma26_think",
+      "fast": "gemma26_fast",
+      "counts": {
+        "NATIVE_ONLY": 16,
+        "FAST_ONLY": 0,
+        "BOTH": 11,
+        "NEITHER": 3,
+        "UNPAIRED": 0
+      },
+      "gained_ids": [
+        "A500-COD-006",
+        "A500-COD-010",
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-028",
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-057",
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-COD-083",
+        "A500-COD-090",
+        "A500-WRK-036",
+        "A500-WRK-045",
+        "A500-WRK-066",
+        "A500-XLS-052"
+      ],
+      "lost_ids": [],
+      "interpretation": "Profile-level observation: output budget and telemetry changed as declared, not thinking-only causality."
+    },
+    {
+      "native": "qwen35_think",
+      "fast": "qwen35_9_fast",
+      "counts": {
+        "NATIVE_ONLY": 3,
+        "FAST_ONLY": 2,
+        "BOTH": 6,
+        "NEITHER": 19,
+        "UNPAIRED": 0
+      },
+      "gained_ids": [
+        "A500-WRK-045",
+        "A500-XLS-052",
+        "A500-COD-031"
+      ],
+      "lost_ids": [
+        "A500-XLS-016",
+        "A500-COD-096"
+      ],
+      "interpretation": "Profile-level observation: output budget and telemetry changed as declared, not thinking-only causality."
+    }
+  ],
+  "complement_against_thinking_gemma": [
+    {
+      "candidate": "qwen35_think",
+      "reference": "gemma26_think",
+      "candidate_only": [],
+      "gemma_only": [
+        "A500-COD-006",
+        "A500-COD-010",
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-028",
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-057",
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-COD-083",
+        "A500-COD-090",
+        "A500-WRK-036",
+        "A500-WRK-066",
+        "A500-XLS-016",
+        "A500-COD-001",
+        "A500-COD-061",
+        "A500-COD-096"
+      ],
+      "both": [
+        "A500-WRK-045",
+        "A500-XLS-052",
+        "A500-COD-031",
+        "A500-COD-091",
+        "A500-PPT-041",
+        "A500-DOC-011",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-WRK-001"
+      ],
+      "neither": [
+        "A500-COD-008",
+        "A500-COD-009",
+        "A500-COD-060"
+      ],
+      "unpaired": [],
+      "candidate_rescued_gemma_output_limit": []
+    },
+    {
+      "candidate": "gptoss_medium",
+      "reference": "gemma26_think",
+      "candidate_only": [
+        "A500-COD-008",
+        "A500-COD-009",
+        "A500-COD-060"
+      ],
+      "gemma_only": [
+        "A500-COD-006",
+        "A500-COD-010",
+        "A500-COD-025",
+        "A500-COD-057",
+        "A500-COD-071",
+        "A500-COD-083",
+        "A500-WRK-066",
+        "A500-COD-091"
+      ],
+      "both": [
+        "A500-COD-019",
+        "A500-COD-028",
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-074",
+        "A500-COD-090",
+        "A500-WRK-036",
+        "A500-WRK-045",
+        "A500-XLS-016",
+        "A500-XLS-052",
+        "A500-COD-001",
+        "A500-COD-031",
+        "A500-COD-061",
+        "A500-COD-096",
+        "A500-PPT-041",
+        "A500-DOC-011",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-WRK-001"
+      ],
+      "neither": [],
+      "unpaired": [],
+      "candidate_rescued_gemma_output_limit": [
+        "A500-COD-008",
+        "A500-COD-009",
+        "A500-COD-060"
+      ]
+    },
+    {
+      "candidate": "gptoss_low",
+      "reference": "gemma26_think",
+      "candidate_only": [],
+      "gemma_only": [
+        "A500-COD-006",
+        "A500-COD-028",
+        "A500-COD-090",
+        "A500-WRK-036",
+        "A500-WRK-066"
+      ],
+      "both": [],
+      "neither": [
+        "A500-COD-009"
+      ],
+      "unpaired": [
+        "A500-COD-008",
+        "A500-COD-010",
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-057",
+        "A500-COD-060",
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-COD-083",
+        "A500-WRK-045",
+        "A500-XLS-016",
+        "A500-XLS-052",
+        "A500-COD-001",
+        "A500-COD-031",
+        "A500-COD-061",
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-PPT-041",
+        "A500-DOC-011",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-WRK-001"
+      ],
+      "candidate_rescued_gemma_output_limit": []
+    },
+    {
+      "candidate": "gptoss_high",
+      "reference": "gemma26_think",
+      "candidate_only": [],
+      "gemma_only": [
+        "A500-COD-006",
+        "A500-COD-028",
+        "A500-COD-090"
+      ],
+      "both": [
+        "A500-WRK-036",
+        "A500-WRK-066"
+      ],
+      "neither": [
+        "A500-COD-009"
+      ],
+      "unpaired": [
+        "A500-COD-008",
+        "A500-COD-010",
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-057",
+        "A500-COD-060",
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-COD-083",
+        "A500-WRK-045",
+        "A500-XLS-016",
+        "A500-XLS-052",
+        "A500-COD-001",
+        "A500-COD-031",
+        "A500-COD-061",
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-PPT-041",
+        "A500-DOC-011",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-WRK-001"
+      ],
+      "candidate_rescued_gemma_output_limit": []
+    },
+    {
+      "candidate": "gemma26_fast",
+      "reference": "gemma26_think",
+      "candidate_only": [],
+      "gemma_only": [
+        "A500-COD-006",
+        "A500-COD-010",
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-028",
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-057",
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-COD-083",
+        "A500-COD-090",
+        "A500-WRK-036",
+        "A500-WRK-045",
+        "A500-WRK-066",
+        "A500-XLS-052"
+      ],
+      "both": [
+        "A500-XLS-016",
+        "A500-COD-001",
+        "A500-COD-031",
+        "A500-COD-061",
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-PPT-041",
+        "A500-DOC-011",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-WRK-001"
+      ],
+      "neither": [
+        "A500-COD-008",
+        "A500-COD-009",
+        "A500-COD-060"
+      ],
+      "unpaired": [],
+      "candidate_rescued_gemma_output_limit": []
+    },
+    {
+      "candidate": "qwen14_fast",
+      "reference": "gemma26_think",
+      "candidate_only": [],
+      "gemma_only": [
+        "A500-COD-006",
+        "A500-COD-010",
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-028",
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-057",
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-COD-083",
+        "A500-COD-090",
+        "A500-WRK-036",
+        "A500-WRK-045",
+        "A500-WRK-066",
+        "A500-COD-001",
+        "A500-COD-061"
+      ],
+      "both": [
+        "A500-XLS-016",
+        "A500-XLS-052",
+        "A500-COD-031",
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-PPT-041",
+        "A500-DOC-011",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-WRK-001"
+      ],
+      "neither": [
+        "A500-COD-008",
+        "A500-COD-009",
+        "A500-COD-060"
+      ],
+      "unpaired": [],
+      "candidate_rescued_gemma_output_limit": []
+    },
+    {
+      "candidate": "qwen35_9_fast",
+      "reference": "gemma26_think",
+      "candidate_only": [],
+      "gemma_only": [
+        "A500-COD-006",
+        "A500-COD-010",
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-028",
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-057",
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-COD-083",
+        "A500-COD-090",
+        "A500-WRK-036",
+        "A500-WRK-045",
+        "A500-WRK-066",
+        "A500-XLS-052",
+        "A500-COD-001",
+        "A500-COD-031",
+        "A500-COD-061"
+      ],
+      "both": [
+        "A500-XLS-016",
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-PPT-041",
+        "A500-DOC-011",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-WRK-001"
+      ],
+      "neither": [
+        "A500-COD-008",
+        "A500-COD-009",
+        "A500-COD-060"
+      ],
+      "unpaired": [],
+      "candidate_rescued_gemma_output_limit": []
+    },
+    {
+      "candidate": "devstral24_fast",
+      "reference": "gemma26_think",
+      "candidate_only": [],
+      "gemma_only": [
+        "A500-COD-006",
+        "A500-COD-010",
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-028",
+        "A500-COD-057",
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-COD-083",
+        "A500-WRK-036",
+        "A500-WRK-045",
+        "A500-WRK-066",
+        "A500-COD-001",
+        "A500-COD-061"
+      ],
+      "both": [
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-090",
+        "A500-XLS-016",
+        "A500-XLS-052",
+        "A500-COD-031",
+        "A500-COD-091",
+        "A500-COD-096",
+        "A500-PPT-041",
+        "A500-DOC-011",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-WRK-001"
+      ],
+      "neither": [
+        "A500-COD-008",
+        "A500-COD-009",
+        "A500-COD-060"
+      ],
+      "unpaired": [],
+      "candidate_rescued_gemma_output_limit": []
+    }
+  ],
+  "gptoss_effort_panel": [
+    {
+      "task_id": "A500-COD-006",
+      "title": "設備予約の空き枠抽出",
+      "low": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "generation_wall_seconds": 26.843999999997322,
+        "usage": {
+          "prompt_eval_count": 328,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 641,
+          "load_duration": 7927223000,
+          "prompt_eval_duration": 468616000,
+          "eval_duration": 18370947000,
+          "total_duration": 26775234400
+        },
+        "thinking_present": true
+      },
+      "medium": {
+        "passed": false,
+        "classification": "COMPILE_FAILURE",
+        "generation_wall_seconds": 129.90600000000268,
+        "usage": {
+          "prompt_eval_count": 328,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 3849,
+          "load_duration": 12206922100,
+          "prompt_eval_duration": 495557000,
+          "eval_duration": 117065686000,
+          "total_duration": 129780444700
+        },
+        "thinking_present": true
+      },
+      "high": {
+        "passed": false,
+        "classification": "OUTPUT_LIMIT",
+        "generation_wall_seconds": 192.57799999999406,
+        "usage": {
+          "prompt_eval_count": 328,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 6144,
+          "load_duration": 7913047400,
+          "prompt_eval_duration": 460007000,
+          "eval_duration": 184118193000,
+          "total_duration": 192500267700
+        },
+        "thinking_present": true
+      }
+    },
+    {
+      "task_id": "A500-COD-009",
+      "title": "複数営業日にまたがる対応期限",
+      "low": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "generation_wall_seconds": 20.0940000000046,
+        "usage": {
+          "prompt_eval_count": 350,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 673,
+          "load_duration": 32257500,
+          "prompt_eval_duration": 562742000,
+          "eval_duration": 19381073000,
+          "total_duration": 19999444800
+        },
+        "thinking_present": true
+      },
+      "medium": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "generation_wall_seconds": 66.5309999999954,
+        "usage": {
+          "prompt_eval_count": 350,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 2162,
+          "load_duration": 32614600,
+          "prompt_eval_duration": 505337000,
+          "eval_duration": 65905258000,
+          "total_duration": 66492790500
+        },
+        "thinking_present": true
+      },
+      "high": {
+        "passed": false,
+        "classification": "OUTPUT_LIMIT",
+        "generation_wall_seconds": 184.4690000000046,
+        "usage": {
+          "prompt_eval_count": 350,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 6144,
+          "load_duration": 35384900,
+          "prompt_eval_duration": 481530000,
+          "eval_duration": 183845554000,
+          "total_duration": 184425659200
+        },
+        "thinking_present": true
+      }
+    },
+    {
+      "task_id": "A500-COD-028",
+      "title": "時間指定に合う配送便選択",
+      "low": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "generation_wall_seconds": 7.4689999999973224,
+        "usage": {
+          "prompt_eval_count": 295,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 247,
+          "load_duration": 37297700,
+          "prompt_eval_duration": 487238000,
+          "eval_duration": 6858937000,
+          "total_duration": 7402792900
+        },
+        "thinking_present": true
+      },
+      "medium": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "generation_wall_seconds": 32.0,
+        "usage": {
+          "prompt_eval_count": 295,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 1064,
+          "load_duration": 32252800,
+          "prompt_eval_duration": 500072000,
+          "eval_duration": 31439557000,
+          "total_duration": 31989963600
+        },
+        "thinking_present": true
+      },
+      "high": {
+        "passed": false,
+        "classification": "OUTPUT_LIMIT",
+        "generation_wall_seconds": 184.84399999999732,
+        "usage": {
+          "prompt_eval_count": 295,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 6144,
+          "load_duration": 35664200,
+          "prompt_eval_duration": 485150000,
+          "eval_duration": 184090504000,
+          "total_duration": 184664354500
+        },
+        "thinking_present": true
+      }
+    },
+    {
+      "task_id": "A500-COD-090",
+      "title": "重み付き稼働指標の集計",
+      "low": {
+        "passed": false,
+        "classification": "BODY_CONTRACT_FAILURE",
+        "generation_wall_seconds": 9.390999999995984,
+        "usage": {
+          "prompt_eval_count": 330,
+          "prompt_eval_cached_count": 156,
+          "eval_count": 313,
+          "load_duration": 31158100,
+          "prompt_eval_duration": 469683000,
+          "eval_duration": 8825797000,
+          "total_duration": 9339426400
+        },
+        "thinking_present": true
+      },
+      "medium": {
+        "passed": true,
+        "classification": "CONTRACT_TEST_PASS",
+        "generation_wall_seconds": 72.03100000000268,
+        "usage": {
+          "prompt_eval_count": 330,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 2395,
+          "load_duration": 32580600,
+          "prompt_eval_duration": 551008000,
+          "eval_duration": 71352522000,
+          "total_duration": 71969335100
+        },
+        "thinking_present": true
+      },
+      "high": {
+        "passed": false,
+        "classification": "OUTPUT_LIMIT",
+        "generation_wall_seconds": 184.48399999999674,
+        "usage": {
+          "prompt_eval_count": 330,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 6144,
+          "load_duration": 17689600,
+          "prompt_eval_duration": 467773000,
+          "eval_duration": 183790380000,
+          "total_duration": 184328406100
+        },
+        "thinking_present": true
+      }
+    },
+    {
+      "task_id": "A500-WRK-036",
+      "title": "対応時間帯別の報告作成",
+      "low": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "generation_wall_seconds": 6.860000000000582,
+        "usage": {
+          "prompt_eval_count": 713,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 221,
+          "load_duration": 2058500,
+          "prompt_eval_duration": 740447000,
+          "eval_duration": 6033601000,
+          "total_duration": 6793144900
+        },
+        "thinking_present": true
+      },
+      "medium": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "generation_wall_seconds": 21.031999999999243,
+        "usage": {
+          "prompt_eval_count": 713,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 697,
+          "load_duration": 35018900,
+          "prompt_eval_duration": 750398000,
+          "eval_duration": 20126998000,
+          "total_duration": 20944160900
+        },
+        "thinking_present": true
+      },
+      "high": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "generation_wall_seconds": 54.89100000000326,
+        "usage": {
+          "prompt_eval_count": 713,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 1822,
+          "load_duration": 16458600,
+          "prompt_eval_duration": 679876000,
+          "eval_duration": 54064788000,
+          "total_duration": 54816763000
+        },
+        "thinking_present": true
+      }
+    },
+    {
+      "task_id": "A500-WRK-066",
+      "title": "候補比較の重み付き集計",
+      "low": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "generation_wall_seconds": 5.265999999995984,
+        "usage": {
+          "prompt_eval_count": 732,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 162,
+          "load_duration": 32222000,
+          "prompt_eval_duration": 810162000,
+          "eval_duration": 4322374000,
+          "total_duration": 5190048100
+        },
+        "thinking_present": true
+      },
+      "medium": {
+        "passed": false,
+        "classification": "CONTENT_FAILURE",
+        "generation_wall_seconds": 21.82800000000134,
+        "usage": {
+          "prompt_eval_count": 732,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 732,
+          "load_duration": 34900100,
+          "prompt_eval_duration": 713816000,
+          "eval_duration": 21002610000,
+          "total_duration": 21784633200
+        },
+        "thinking_present": true
+      },
+      "high": {
+        "passed": true,
+        "classification": "CONTENT_AND_NATIVE_PASS",
+        "generation_wall_seconds": 72.45300000000134,
+        "usage": {
+          "prompt_eval_count": 732,
+          "prompt_eval_cached_count": 0,
+          "eval_count": 2406,
+          "load_duration": 34664200,
+          "prompt_eval_duration": 733888000,
+          "eval_duration": 71589634000,
+          "total_duration": 72402301900
+        },
+        "thinking_present": true
+      }
+    }
+  ],
+  "operation_groups": [
+    {
+      "operation": "time_intervals_calendar",
+      "task_ids": [
+        "A500-COD-006",
+        "A500-COD-008",
+        "A500-COD-009",
+        "A500-COD-010",
+        "A500-COD-060",
+        "A500-WRK-036"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 6,
+          "strict_pass": 3,
+          "output_limit": 3,
+          "mean_api_seconds": 112.40366666666644
+        },
+        "qwen35_think": {
+          "attempted": 6,
+          "strict_pass": 0,
+          "output_limit": 4,
+          "mean_api_seconds": 46.703000000000124
+        },
+        "gptoss_medium": {
+          "attempted": 6,
+          "strict_pass": 4,
+          "output_limit": 0,
+          "mean_api_seconds": 109.72683333333286
+        },
+        "gptoss_low": {
+          "attempted": 3,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 17.9326666666675
+        },
+        "gptoss_high": {
+          "attempted": 3,
+          "strict_pass": 1,
+          "output_limit": 2,
+          "mean_api_seconds": 143.97933333333398
+        },
+        "gemma26_fast": {
+          "attempted": 6,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 14.713500000001659
+        },
+        "qwen14_fast": {
+          "attempted": 6,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 22.669333333333878
+        },
+        "qwen35_9_fast": {
+          "attempted": 6,
+          "strict_pass": 0,
+          "output_limit": 1,
+          "mean_api_seconds": 13.422000000001086
+        },
+        "devstral24_fast": {
+          "attempted": 6,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 79.20333333333353
+        }
+      }
+    },
+    {
+      "operation": "collection_constraints_state",
+      "task_ids": [
+        "A500-COD-019",
+        "A500-COD-025",
+        "A500-COD-028",
+        "A500-COD-030",
+        "A500-COD-048",
+        "A500-COD-057",
+        "A500-XLS-052"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 7,
+          "strict_pass": 7,
+          "output_limit": 0,
+          "mean_api_seconds": 78.99342857142827
+        },
+        "qwen35_think": {
+          "attempted": 7,
+          "strict_pass": 1,
+          "output_limit": 2,
+          "mean_api_seconds": 34.67842857142906
+        },
+        "gptoss_medium": {
+          "attempted": 7,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 40.178571428570386
+        },
+        "gptoss_low": {
+          "attempted": 1,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 7.4689999999973224
+        },
+        "gptoss_high": {
+          "attempted": 1,
+          "strict_pass": 0,
+          "output_limit": 1,
+          "mean_api_seconds": 184.84399999999732
+        },
+        "gemma26_fast": {
+          "attempted": 7,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 5.149714285714643
+        },
+        "qwen14_fast": {
+          "attempted": 7,
+          "strict_pass": 1,
+          "output_limit": 0,
+          "mean_api_seconds": 14.95528571428544
+        },
+        "qwen35_9_fast": {
+          "attempted": 7,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 2.971142857141136
+        },
+        "devstral24_fast": {
+          "attempted": 7,
+          "strict_pass": 3,
+          "output_limit": 0,
+          "mean_api_seconds": 42.6651428571422
+        }
+      }
+    },
+    {
+      "operation": "numeric_rounding_formulas",
+      "task_ids": [
+        "A500-COD-083",
+        "A500-COD-090",
+        "A500-WRK-066",
+        "A500-XLS-016"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 4,
+          "strict_pass": 4,
+          "output_limit": 0,
+          "mean_api_seconds": 76.93750000000182
+        },
+        "qwen35_think": {
+          "attempted": 4,
+          "strict_pass": 0,
+          "output_limit": 3,
+          "mean_api_seconds": 55.050750000002154
+        },
+        "gptoss_medium": {
+          "attempted": 4,
+          "strict_pass": 2,
+          "output_limit": 0,
+          "mean_api_seconds": 46.85925000000134
+        },
+        "gptoss_low": {
+          "attempted": 2,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 7.328499999995984
+        },
+        "gptoss_high": {
+          "attempted": 2,
+          "strict_pass": 1,
+          "output_limit": 1,
+          "mean_api_seconds": 128.46849999999904
+        },
+        "gemma26_fast": {
+          "attempted": 4,
+          "strict_pass": 1,
+          "output_limit": 0,
+          "mean_api_seconds": 9.152500000000146
+        },
+        "qwen14_fast": {
+          "attempted": 4,
+          "strict_pass": 1,
+          "output_limit": 0,
+          "mean_api_seconds": 9.371250000000146
+        },
+        "qwen35_9_fast": {
+          "attempted": 4,
+          "strict_pass": 1,
+          "output_limit": 0,
+          "mean_api_seconds": 2.3087500000019645
+        },
+        "devstral24_fast": {
+          "attempted": 4,
+          "strict_pass": 2,
+          "output_limit": 0,
+          "mean_api_seconds": 29.363250000000335
+        }
+      }
+    },
+    {
+      "operation": "schema_mapping_validation",
+      "task_ids": [
+        "A500-COD-071",
+        "A500-COD-074",
+        "A500-WRK-045"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 3,
+          "strict_pass": 3,
+          "output_limit": 0,
+          "mean_api_seconds": 69.55733333333289
+        },
+        "qwen35_think": {
+          "attempted": 3,
+          "strict_pass": 1,
+          "output_limit": 0,
+          "mean_api_seconds": 14.072666666666919
+        },
+        "gptoss_medium": {
+          "attempted": 3,
+          "strict_pass": 2,
+          "output_limit": 0,
+          "mean_api_seconds": 30.641000000000833
+        },
+        "gptoss_low": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gptoss_high": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gemma26_fast": {
+          "attempted": 3,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 4.73433333333378
+        },
+        "qwen14_fast": {
+          "attempted": 3,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 9.134999999999613
+        },
+        "qwen35_9_fast": {
+          "attempted": 3,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 2.66699999999643
+        },
+        "devstral24_fast": {
+          "attempted": 3,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": 38.796666666666475
+        }
+      }
+    },
+    {
+      "operation": "coding_positive_controls",
+      "task_ids": [
+        "A500-COD-001",
+        "A500-COD-031",
+        "A500-COD-061",
+        "A500-COD-091",
+        "A500-COD-096"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 40.75659999999916
+        },
+        "qwen35_think": {
+          "attempted": 5,
+          "strict_pass": 2,
+          "output_limit": 1,
+          "mean_api_seconds": 16.228000000001337
+        },
+        "gptoss_medium": {
+          "attempted": 5,
+          "strict_pass": 4,
+          "output_limit": 0,
+          "mean_api_seconds": 17.868799999999464
+        },
+        "gptoss_low": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gptoss_high": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gemma26_fast": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 3.7592000000018744
+        },
+        "qwen14_fast": {
+          "attempted": 5,
+          "strict_pass": 3,
+          "output_limit": 0,
+          "mean_api_seconds": 3.584399999998277
+        },
+        "qwen35_9_fast": {
+          "attempted": 5,
+          "strict_pass": 2,
+          "output_limit": 0,
+          "mean_api_seconds": 1.2438000000009197
+        },
+        "devstral24_fast": {
+          "attempted": 5,
+          "strict_pass": 3,
+          "output_limit": 0,
+          "mean_api_seconds": 9.825
+        }
+      }
+    },
+    {
+      "operation": "office_positive_controls",
+      "task_ids": [
+        "A500-PPT-041",
+        "A500-DOC-011",
+        "A500-XLS-001",
+        "A500-XLS-011",
+        "A500-WRK-001"
+      ],
+      "profiles": {
+        "gemma26_think": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 10.887199999998847
+        },
+        "qwen35_think": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 5.002999999999884
+        },
+        "gptoss_medium": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 7.371999999998661
+        },
+        "gptoss_low": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gptoss_high": {
+          "attempted": 0,
+          "strict_pass": 0,
+          "output_limit": 0,
+          "mean_api_seconds": null
+        },
+        "gemma26_fast": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 5.475000000001455
+        },
+        "qwen14_fast": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 3.0594000000011876
+        },
+        "qwen35_9_fast": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 0.9906000000002677
+        },
+        "devstral24_fast": {
+          "attempted": 5,
+          "strict_pass": 5,
+          "output_limit": 0,
+          "mean_api_seconds": 9.399800000000686
+        }
+      }
+    }
+  ],
+  "actual_experiment_spend": {
+    "new_native_main_calls": 102,
+    "prior_temperature_zero_diagnostic_calls": 2,
+    "total_new_calls_including_stopped_revision": 104,
+    "input_tokens": 40158,
+    "output_tokens_including_thinking": 259508,
+    "prior_diagnostic_output_tokens": 12288,
+    "historical_fast_profile_calls_reexecuted": 0,
+    "quality_cohorts_not_merged": true
+  },
+  "offline_whole_function_diagnostic": {
+    "purpose": "Full original function + same frozen tests. A separate offline representation diagnostic, NOT the original body-only contract. No new generation or semantic repair.",
+    "results": [
+      {
+        "arm": "gptoss_low",
+        "task_id": "A500-COD-006",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "gptoss_low",
+        "task_id": "A500-COD-009",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "gptoss_low",
+        "task_id": "A500-COD-028",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "gptoss_low",
+        "task_id": "A500-COD-090",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "gptoss_medium",
+        "task_id": "A500-COD-010",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "gptoss_medium",
+        "task_id": "A500-COD-057",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "gptoss_medium",
+        "task_id": "A500-COD-071",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "gptoss_medium",
+        "task_id": "A500-COD-083",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "gptoss_medium",
+        "task_id": "A500-COD-091",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen35_think",
+        "task_id": "A500-COD-008",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen35_think",
+        "task_id": "A500-COD-030",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      },
+      {
+        "arm": "qwen35_think",
+        "task_id": "A500-COD-057",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen35_think",
+        "task_id": "A500-COD-071",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen35_think",
+        "task_id": "A500-COD-074",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": true,
+        "executed_tests": 1
+      },
+      {
+        "arm": "qwen35_think",
+        "task_id": "A500-COD-090",
+        "primary_classification_unchanged": "BODY_CONTRACT_FAILURE",
+        "diagnostic_only": true,
+        "eligible_for_primary_adoption": false,
+        "function_signature_exact_except_whitespace": true,
+        "source_body_edited": false,
+        "tests_pass": false,
+        "executed_tests": 0
+      }
+    ],
+    "by_arm": {
+      "gemma26_think": {
+        "eligible_strings": 0,
+        "whole_function_test_pass": 0,
+        "primary_results_modified": false
+      },
+      "qwen35_think": {
+        "eligible_strings": 6,
+        "whole_function_test_pass": 4,
+        "primary_results_modified": false
+      },
+      "gptoss_medium": {
+        "eligible_strings": 5,
+        "whole_function_test_pass": 5,
+        "primary_results_modified": false
+      },
+      "gptoss_low": {
+        "eligible_strings": 4,
+        "whole_function_test_pass": 4,
+        "primary_results_modified": false
+      },
+      "gptoss_high": {
+        "eligible_strings": 0,
+        "whole_function_test_pass": 0,
+        "primary_results_modified": false
+      }
+    }
+  },
+  "gates": {
+    "planned_102_completed": true,
+    "all_native_profiles_terminal": true,
+    "historical_inputs_unchanged": true,
+    "frozen_harness_unchanged": true,
+    "request_business_identity": true,
+    "journal_started_matches_results": true,
+    "one_shot_no_semantic_repair": true,
+    "offline_tests_pass": true,
+    "isolated_no_model_preflight_pass": true
+  },
+  "new_provider_calls": 0,
+  "new_provider_tokens_structural_zero": 0,
+  "preparation_codex_tokens": null,
+  "preparation_codex_credits": null,
+  "local_tokens_are_not_codex_tokens_saved": true,
+  "production_changed": false,
+  "raw_artifacts_published": false,
+  "task_results_file": "TASK_ASSIGNMENT_KNOWLEDGE.json",
+  "local_full_results_sha256": "4c8ab9a33b92d5a9d034556429ddf7e5a14df4ea9dfaad2972f4b74e90ed8b42",
+  "publication_projection": "Aggregate metrics, pairings, effort panel, operation groups and accounting. Compact Task observations in separate file; full raw artifacts remain local."
+}

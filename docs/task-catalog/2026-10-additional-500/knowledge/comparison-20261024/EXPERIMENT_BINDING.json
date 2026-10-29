@@ -1,0 +1,339 @@
+{
+  "study": "Installed-model complementarity on Gemma26 known failures",
+  "date": "2026-10-24",
+  "freeze_sha256": "a13cba7902bfcb6fd78dbd864bd5de723814e7f2c70676ee92c35bef606c2e15",
+  "options": {
+    "temperature": 0,
+    "seed": 20260926,
+    "num_ctx": 8192,
+    "num_predict": 2048
+  },
+  "think": false,
+  "stream": false,
+  "one_shot": true,
+  "semantic_repair": 0,
+  "payload_change_allowlist": [
+    "model"
+  ],
+  "process_local_environment": {
+    "OLLAMA_HOST": "127.0.0.1:11434",
+    "OLLAMA_FLASH_ATTENTION": "1",
+    "OLLAMA_KV_CACHE_TYPE": "f16",
+    "OLLAMA_MAX_LOADED_MODELS": "1",
+    "OLLAMA_NUM_PARALLEL": "1"
+  },
+  "models": [
+    {
+      "arm": "gemma26",
+      "name": "gemma4:26b",
+      "digest": "08ae7ec1744bd7f451c4a530afb39d2673ad9d07a8369b8a33a3613b41212a68",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gemma4",
+        "families": [
+          "gemma4"
+        ],
+        "parameter_size": "25.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 262144,
+        "embedding_length": 2816,
+        "runner": "ggml"
+      },
+      "inherited_parameters": "top_p                          0.95\ndraft_num_predict              3\ntemperature                    1\ntop_k                          64"
+    },
+    {
+      "arm": "qwen14",
+      "name": "qwen2.5-Coder:14b",
+      "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 5120,
+        "runner": "ggml"
+      },
+      "inherited_parameters": null
+    },
+    {
+      "arm": "qwen35_9",
+      "name": "qwen3.5:9b",
+      "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+      "details": {
+        "parent_model": "model.gguf",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "9.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 262144,
+        "embedding_length": 4096,
+        "runner": "llamacpp"
+      },
+      "inherited_parameters": "presence_penalty               1.5\ntemperature                    1\ntop_k                          20\ntop_p                          0.95"
+    },
+    {
+      "arm": "devstral24",
+      "name": "devstral-small-2:latest",
+      "digest": "24277f07f62db8f9cb68e9dfc679ea1818a7fbac47a50eff0a701d3f645b63c8",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "mistral3",
+        "families": [
+          "mistral3"
+        ],
+        "parameter_size": "24.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 393216,
+        "embedding_length": 5120,
+        "runner": "ggml"
+      },
+      "inherited_parameters": "temperature                    0.15"
+    },
+    {
+      "arm": "gptoss20",
+      "name": "gpt-oss:20b",
+      "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gptoss",
+        "families": [
+          "gptoss"
+        ],
+        "parameter_size": "20.9B",
+        "quantization_level": "MXFP4",
+        "context_length": 131072,
+        "embedding_length": 2880,
+        "runner": "ggml"
+      },
+      "inherited_parameters": "temperature                    1"
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "A500-COD-006",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "307ddb9a5190840bf95af5c591a37eb4f05cb514094788d1586c049393579c69",
+      "request_sha256": "ba4ea2ab72439ac66362df5c6b7160fa224aae0cec6f4e922390699cf4a13b3a",
+      "old_result_sha256": "013373f1a7df489b2eadc6373e1c8ca362a1e3d98e4e4e1c87680b10496931c2"
+    },
+    {
+      "task_id": "A500-COD-008",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "c5224fcfb9a271cbc72446d3a411efaa851edb0193433a235d16a7c753eed6fa",
+      "request_sha256": "1e226e6af3b424713a4a559377918dcb32670ed112ecf2c3b2abf8205feb18ef",
+      "old_result_sha256": "58f27208e9379fa232dc9b8fd3a28f6ed6c805b5f2efd9fbb13791cc251383ab"
+    },
+    {
+      "task_id": "A500-COD-009",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "677c86011cfe90b7b88eb304a22283407394986f4be53b986128c0b24a7ae869",
+      "request_sha256": "6a7761d51726c78e9f50c33e6cddea5cfed80bfac166c14a1c89f2ba81a8dc97",
+      "old_result_sha256": "e76681ea0095ec233118e1e55d9e5f3bdf531d9a47f2df4112982fcaefd57e95"
+    },
+    {
+      "task_id": "A500-COD-010",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "4e54e04e9f61edfce800a8aaffa8cf13ff44cabf90789abcb9cb54469e880169",
+      "request_sha256": "dc1f1f13e81588ba8556832fbd09a8f9a643b6420e526fb266d38d8f0200752d",
+      "old_result_sha256": "c5869624129deb2db922cb80e798910093c80ac1d3779fc1c066b37555a1924a"
+    },
+    {
+      "task_id": "A500-COD-019",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "cdeab706b9609eeabcd357e4166915b9a6a3380e2af999344de205c97e23bac5",
+      "request_sha256": "fe24dfe2ff11b290d7ed1b20c5b55b697e2d667461e0486368fd1f3c716d1e7d",
+      "old_result_sha256": "c12288215347308dffaa2d5135d6d67bf4c1df337f552cda1a17726ce333cf25"
+    },
+    {
+      "task_id": "A500-COD-025",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "27fd8e5aeafdbf9fbe8783dda1cb04370c4f302598f9e0aba197455db88803b0",
+      "request_sha256": "d08497d6dca25f818385c03d43bf367100b465be7bee4f56cf37e23151fea5d1",
+      "old_result_sha256": "184b826d31f462587894334647c454b1a2f53bd0e34fd2377cc4e095f643b4a6"
+    },
+    {
+      "task_id": "A500-COD-028",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "79a1e74400517c9d38c6379aebc53a42ad4115a2c3cc4b4aaac466bddc44d6d4",
+      "request_sha256": "1368837baf060f912d6052ec027b8d0768dedcd57ddaefd2dcb279a7fce05097",
+      "old_result_sha256": "2e91378578b23b3771dd984e8e1a4341bdcf9c4456fd6d1ab329eb947217e9b4"
+    },
+    {
+      "task_id": "A500-COD-030",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "39f9a84d4f177d89a44e139938c9a4d5af404a2b4e65a8ef4bf76a0c9c4f30be",
+      "request_sha256": "d58dbadf3d171696e37a30971612d5dc3dbfbfa3baaba9fdafc457780fb13e86",
+      "old_result_sha256": "3f35f421d08a4d0cbe9d28f481dad628fb8c787ae625e49d1c7d11875e5e346e"
+    },
+    {
+      "task_id": "A500-COD-048",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "3598d2fb1f0f168251cee1236421c93e51569966407ccd8f3b27d150a02c8e81",
+      "request_sha256": "9f84a4c4591330d7e31d801c3c1b23406671e8e6d63e73f642a424104136db91",
+      "old_result_sha256": "779b1dc75df1b9a32fbe5abb64179478510ab21f7653968be44f11843cdeaaf3"
+    },
+    {
+      "task_id": "A500-COD-057",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "dc1ecfb0811019b129928054887f508149eadd3a5285feccda5d01f15ba624ae",
+      "request_sha256": "d2792bcc1c1fc2920316c4a149c74be3589aa125d1a961a9528bfaa70170ca7c",
+      "old_result_sha256": "6f3ebf4acf5f41cb854bab96a4021e59e7156c9000c63cbca8e78c939483b8b2"
+    },
+    {
+      "task_id": "A500-COD-060",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "7a62501e38f1bfa41f902b71026726f5a7ac52b23cd610357b7f08fdf9b5cb2b",
+      "request_sha256": "9484b1184364e083b79c16727199b12d79fe5166794923631e2c9d43fdcb5be1",
+      "old_result_sha256": "c57680c36f0be8883f0fd908210c747b52244b6085891389889643729b54b5c6"
+    },
+    {
+      "task_id": "A500-COD-071",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "ecd19dcbdf14a960e8693bbb2e2c610e5a7c956914f0fd3f95c7ce171aa7be8a",
+      "request_sha256": "1ed096b71f9f72b5dc1d463e5f13ee59c19a1b144cb0942d1f1b0255cf5e307a",
+      "old_result_sha256": "5b50ff9df68eb25428cefb3add0e50da4a96b6b925749b4a9bd84987d8b4805e"
+    },
+    {
+      "task_id": "A500-COD-074",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "83a97cdecc34ca4f820758058ffabd71a5cf4a37463ed2f5642c2a9bb3d16629",
+      "request_sha256": "5b55d12dc6dfb61eaa418b74f2fb846bf8b13fab627fea1d416cefa04404d9a1",
+      "old_result_sha256": "4e9f35ac346d4a8f8d4b5f789b67622686d598db12f98b93e3d5382ee8cacb63"
+    },
+    {
+      "task_id": "A500-COD-083",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "01ad647d7929874a6c609ded07394c3d670a8233bfbb42387ae6f1c9cf026eb3",
+      "request_sha256": "b213e719428e03f66bcaa6b9a8c845572b3371f5ccbcc20d079aebeb39a32791",
+      "old_result_sha256": "7e4fb1154feb81f761b92d0f6d7096b915cf78a32986c6e3e29e257f05a6a0fd"
+    },
+    {
+      "task_id": "A500-COD-090",
+      "selection": "GEMMA_CODE_FAILURE",
+      "contract_sha256": "cbc4755470a8a0e4446851870e65877144db79bf0fb02109e70621bfa71e74b1",
+      "request_sha256": "0d7fb3a5e01616a4948734de60acf135c1856324c7f0207906c4b144244a1c1f",
+      "old_result_sha256": "c4c353ecf88f73b4389888c21e916e58676a8d93615d8eeee3a05ef173c2f960"
+    },
+    {
+      "task_id": "A500-WRK-036",
+      "selection": "GEMMA_CONFIRMED_SEMANTIC_FAILURE",
+      "contract_sha256": "3c3acc646d51a3e372fd417d4ef30d6f3fc171b7f308f173b14cc69c132a180f",
+      "request_sha256": "055e9aefbaee348be05c3a48f974503da9dfeeedfaca441e727ce4e63cf644c7",
+      "old_result_sha256": "341669aaaf27bb8df311a2a712d2fa75b3df3ff51653fdc79f91f15a6c52d246"
+    },
+    {
+      "task_id": "A500-WRK-045",
+      "selection": "GEMMA_CONFIRMED_SEMANTIC_FAILURE",
+      "contract_sha256": "3cde9fbafe477dc19b600709b6ee2fb8ca97e32e282f99ad1b1fc48c9f9b9b5c",
+      "request_sha256": "609fe0bb75dd604cb1a1e3d65c0cd6a5ee744f0b82a185b2de8160a4f83b887a",
+      "old_result_sha256": "a8495f0693b6dc11bfe75936bb3f3d49990b10a7eb51144dec5dff923fc8a0ea"
+    },
+    {
+      "task_id": "A500-WRK-066",
+      "selection": "GEMMA_CONFIRMED_SEMANTIC_FAILURE",
+      "contract_sha256": "402baefe8be7b1d9ee8e8cdde762d14ee84fdc713f98efcb6909aa19eee4bdaa",
+      "request_sha256": "4b789e1f6410157cae01cf0fecf7d40d182bdb82b9a85459620aef185e1fc945",
+      "old_result_sha256": "5245d147b75f93e9a8f292e52c3f2eac64327de1af1f238aaa51ea3f454dd93f"
+    },
+    {
+      "task_id": "A500-XLS-016",
+      "selection": "GEMMA_CONFIRMED_SEMANTIC_FAILURE",
+      "contract_sha256": "226a56fdb5b7abb1e96c08a33b2313c7c12c4cba5feefea7433bfbf330600a2b",
+      "request_sha256": "683223680085a388f8179270bdc8d830d39bfe84f244eda5af55d77c437d25bd",
+      "old_result_sha256": "0b328a5f5a5664395be8f63073409f57645fd2957da343f63df1ed26345feb55"
+    },
+    {
+      "task_id": "A500-XLS-052",
+      "selection": "GEMMA_CONFIRMED_SEMANTIC_FAILURE",
+      "contract_sha256": "e13d126aa6152a3ec80457bcb423317ed55a3189cde85d4ae89dd8769f9f5ea4",
+      "request_sha256": "d20512e654e55690a7687f0717f82e538a1094439df70f5a339bfc5a2e864f81",
+      "old_result_sha256": "98575a102c055b5358db78e043068a21f1cd7181a7df9ec4805f9130f81fe9ab"
+    },
+    {
+      "task_id": "A500-COD-001",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "contract_sha256": "f79c3e57bf277ff0937d7507bc0a028891ecf6b2d4a1073ca52c11974fc1e4d4",
+      "request_sha256": "bdc2c7fb627c0f25d607969a5d25504bbaf3422fb96b9f37ff40daddf67a1ce5",
+      "old_result_sha256": "0be9244fd42beb774bb2355fedfbb9ab92235ca6f6c1f02f558012fa7c7b9c34"
+    },
+    {
+      "task_id": "A500-COD-031",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "contract_sha256": "5a8c3da66a2281490f096cfdf815ef39c0e98f4e6479ec7a0172f89ddda48aa4",
+      "request_sha256": "8a4c316457f063a5afc3ca416d5660ee24f2ba79c11a4cf7ac0fe63ecf206d37",
+      "old_result_sha256": "b4dff80ad9e3957e82939692108c3153a3c6857822759c72d0894995fdbd913f"
+    },
+    {
+      "task_id": "A500-COD-061",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "contract_sha256": "4c006c441d219e2cc57a91d2739f30b57f28736b0bdea96fecb4449b7893ef59",
+      "request_sha256": "13cd0c00b817462d2d19a7fe003153c3d0d552f151e86f1b81cae8f85098e3db",
+      "old_result_sha256": "4ba0b0427a4d9bc79c57bae53aee4484f5b509989f7f5745decdbd6d49408d7c"
+    },
+    {
+      "task_id": "A500-COD-091",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "contract_sha256": "2d47d8e72a4cf87fca82fb1d19924daa7b422b0baa3a7b610c3becc0b76964d3",
+      "request_sha256": "5d75e058c64e6f665b6bdff5d22c264b39f6e54f0c8e4f5956127bbac327d537",
+      "old_result_sha256": "b6cd522e9f8515ec9490a8895fc5a83a64b5d08d3825aa6dd4ad2604b1ef91dc"
+    },
+    {
+      "task_id": "A500-COD-096",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "contract_sha256": "0d53fbdf2a9bc91b8b13b29d0292c4e6ee0156037d9910fed75951f203b8d53f",
+      "request_sha256": "f3551090bb62c326c178abbbc1c4e7ba2d701a39324627512ac1ef4b133fa134",
+      "old_result_sha256": "c413d3fe174b76bd9091b4200fdafecc2072b36ec9ac2a1912f7fe461bc730c1"
+    },
+    {
+      "task_id": "A500-PPT-041",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "contract_sha256": "417f8505ce6e8bb90d39435ff83db3cf027b285cb2011828f1eaac84689a33de",
+      "request_sha256": "e07d9fe413e47fc981fc2e8c997ba7f67bbdff62f7620f6565691f9b4c0ad49a",
+      "old_result_sha256": "234c6145c7e6c16f5c4d748b2121a60c6fa350d388975d8f4dc2db3dc4738112"
+    },
+    {
+      "task_id": "A500-DOC-011",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "contract_sha256": "292faa90c945898d183fac6ec535a9b1af32d27ff236c288c3e9f74e3e4ea30d",
+      "request_sha256": "84b126508cec39dc47c55b06365a8e1c347e6c90ccbbd6e7faa040c3c490e000",
+      "old_result_sha256": "d74e6ab17d543d152e0ec526e4aae3debfe4e8ea897778925e083cc46a779f76"
+    },
+    {
+      "task_id": "A500-XLS-001",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "contract_sha256": "e337cc151922aab63bf27969f6bf64aad5123a4ea41465754db8d53d6b29a2e6",
+      "request_sha256": "f9f13b9dafd3bf84700ff8bea409280b4f3ce14b496583edf6b9bfcd9741ffa3",
+      "old_result_sha256": "c9747516ad4b14e718e8ba62556202c0c77a8a2952b6ec1f3f69581695c54b45"
+    },
+    {
+      "task_id": "A500-XLS-011",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "contract_sha256": "1d02837c5cec597d4c76090e72ba853926abeea75042ea3fcd1d1b44dd6306c0",
+      "request_sha256": "d19a4d1ce66ebb7dfc7b4ae290b37b480ea52a5f96f93153e7df0b088811ce6f",
+      "old_result_sha256": "431fc0826e5abb2931f62e16eed4a44db852290528d81df90d7df03de0d7ba61"
+    },
+    {
+      "task_id": "A500-WRK-001",
+      "selection": "GEMMA_POSITIVE_CONTROL",
+      "contract_sha256": "8efa268b6d5ce34386479361dc6201c240a96b611520fc17fe9fafcfa9e1ebbc",
+      "request_sha256": "f0a9deb999cf48898acddde7f3515dc97407efbf85e1c72170cd7e2fc56dc59c",
+      "old_result_sha256": "09c9a5e3e83090025b3f43ada999e30118a444428114ed4d3b6c00489235c681"
+    }
+  ],
+  "full_raw_public_bundle": false,
+  "raw_artifacts_retained_locally": true,
+  "results_are_diagnostic_not_general_accuracy": true,
+  "preparation_codex_tokens": null,
+  "preparation_codex_credits": null
+}

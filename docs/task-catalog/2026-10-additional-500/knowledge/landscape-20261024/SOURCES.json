@@ -1,0 +1,196 @@
+{
+  "checked_date": "2026-10-24",
+  "method": "Webで開発元model card/公式documentationとbenchmark原著repositoryを参照。model weights/datasetの取得はなし。",
+  "source_snapshot_limit": "URLは可変。raw page全体の保存・SHA256 freezeは行っていない。次の実験ではmodel commit/digestを別途固定。",
+  "entries": [
+    {
+      "id": "gemma",
+      "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "q9",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "q27",
+      "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "q35",
+      "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "q122",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "q397",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "oss20",
+      "url": "https://developers.openai.com/api/docs/models/gpt-oss-20b",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "oss120",
+      "url": "https://developers.openai.com/api/docs/models/gpt-oss-120b",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "osslocal",
+      "url": "https://developers.openai.com/cookbook/articles/gpt-oss/run-locally-ollama",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "q14",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-14B-Instruct",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "qcoder",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "devsmall",
+      "url": "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "dev123",
+      "url": "https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "msmall",
+      "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "mlarge",
+      "url": "https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "dflash",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "dpro",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "d41",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "glm47",
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "glm53f",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "glm53",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "kimi26",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "kimi3",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "mini",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "phi",
+      "url": "https://huggingface.co/microsoft/Phi-4-reasoning-plus",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "ocr",
+      "url": "https://huggingface.co/zai-org/GLM-OCR",
+      "authority": "MODEL_PUBLISHER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "lcb",
+      "url": "https://livecodebench.github.io/",
+      "authority": "BENCHMARK_MAINTAINER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "swe",
+      "url": "https://github.com/SWE-bench/SWE-bench",
+      "authority": "BENCHMARK_MAINTAINER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "long",
+      "url": "https://github.com/THUDM/LongBench",
+      "authority": "BENCHMARK_MAINTAINER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "omni",
+      "url": "https://github.com/opendatalab/OmniDocBench",
+      "authority": "BENCHMARK_MAINTAINER",
+      "raw_page_sha256": null
+    },
+    {
+      "id": "osworld",
+      "url": "https://github.com/xlang-ai/OSWorld",
+      "authority": "BENCHMARK_MAINTAINER",
+      "raw_page_sha256": null
+    }
+  ],
+  "licenses": "重み公開を一律の自由利用とは扱わない。実行時に対象版のlicenseを確認。",
+  "current_preparation_usage": null,
+  "current_preparation_credits": null
+}
