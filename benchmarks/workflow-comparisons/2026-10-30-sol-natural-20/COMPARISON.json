@@ -1,0 +1,343 @@
+{
+  "scope": "Same20 QC20 synthetic DATA jobs,10 types times2; historical controls",
+  "conclusion": "この20件では両方式20/20正解。Luna＋Gemmaの全工程は、通常依頼のSolより13.7%高かった。",
+  "metrics": [
+    {
+      "arm": "SOL_NATURAL",
+      "label": "Solへまとめて依頼（新測定）",
+      "measurement": "NEW",
+      "resolved": 20,
+      "tasks": 20,
+      "credits": "14.76715",
+      "credits_per_resolved": "0.7383575",
+      "mean_workflow_seconds": 10.874999999994179,
+      "cloud_sessions": 20,
+      "independent_reviewer_sessions": 0,
+      "local_tool_commands": 0,
+      "public_false_green": 0
+    },
+    {
+      "arm": "SOL_DIRECT",
+      "label": "旧Sol＋独立Sol確認",
+      "measurement": "HISTORICAL",
+      "resolved": 20,
+      "tasks": 20,
+      "credits": "31.38868",
+      "credits_per_resolved": "1.569434",
+      "mean_workflow_seconds": 23.883799999993062,
+      "cloud_sessions": 40,
+      "independent_reviewer_sessions": 20,
+      "role_credits": {
+        "PLANNER": "0",
+        "EXECUTOR": "16.60040",
+        "REVIEWER": "14.78828"
+      },
+      "final_false_green": 0
+    },
+    {
+      "arm": "LUNA_LOCAL",
+      "label": "旧Luna整理→Gemma→Sol確認",
+      "measurement": "HISTORICAL",
+      "resolved": 20,
+      "tasks": 20,
+      "credits": "16.7851495",
+      "credits_per_resolved": "0.839257475",
+      "mean_workflow_seconds": 143.31019999999845,
+      "cloud_sessions": 41,
+      "independent_reviewer_sessions": 20,
+      "role_credits": {
+        "PLANNER": "0.9712195",
+        "EXECUTOR": "0.8511",
+        "REVIEWER": "14.96283"
+      },
+      "final_false_green": 0
+    },
+    {
+      "arm": "LOCAL_LOCAL",
+      "label": "旧Local整理→Gemma→Sol確認",
+      "measurement": "HISTORICAL",
+      "resolved": 20,
+      "tasks": 20,
+      "credits": "18.38004",
+      "credits_per_resolved": "0.919002",
+      "mean_workflow_seconds": 149.22735000000102,
+      "cloud_sessions": 28,
+      "independent_reviewer_sessions": 21,
+      "role_credits": {
+        "PLANNER": "0",
+        "EXECUTOR": "5.79175",
+        "REVIEWER": "12.58829"
+      },
+      "final_false_green": 0
+    }
+  ],
+  "paired": {
+    "SOL_DIRECT": {
+      "counts": {
+        "BOTH": 20
+      },
+      "cases": [
+        {
+          "task_id": "QC20-001",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-002",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-003",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-004",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-005",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-006",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-007",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-008",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-009",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-010",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-011",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-012",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-013",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-014",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-015",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-016",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-017",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-018",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-019",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-020",
+          "outcome": "BOTH"
+        }
+      ]
+    },
+    "LUNA_LOCAL": {
+      "counts": {
+        "BOTH": 20
+      },
+      "cases": [
+        {
+          "task_id": "QC20-001",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-002",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-003",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-004",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-005",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-006",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-007",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-008",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-009",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-010",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-011",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-012",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-013",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-014",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-015",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-016",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-017",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-018",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-019",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-020",
+          "outcome": "BOTH"
+        }
+      ]
+    },
+    "LOCAL_LOCAL": {
+      "counts": {
+        "BOTH": 20
+      },
+      "cases": [
+        {
+          "task_id": "QC20-001",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-002",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-003",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-004",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-005",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-006",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-007",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-008",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-009",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-010",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-011",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-012",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-013",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-014",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-015",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-016",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-017",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-018",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-019",
+          "outcome": "BOTH"
+        },
+        {
+          "task_id": "QC20-020",
+          "outcome": "BOTH"
+        }
+      ]
+    }
+  },
+  "new_actual_execution_credits": "14.76715",
+  "historical_costs_included_in_new_spend": false,
+  "preparation_chat_credits": null,
+  "project_total_including_preparation": null,
+  "review_removal_only_causal_effect": false,
+  "general_noninferiority_proven": false
+}

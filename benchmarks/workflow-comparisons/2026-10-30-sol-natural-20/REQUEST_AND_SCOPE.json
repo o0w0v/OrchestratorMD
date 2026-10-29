@@ -1,0 +1,28 @@
+{
+  "instruction_verbatim": "添付資料と補足条件に基づいて、この業務依頼を完了してください。必要な確認・計算・テストは適宜行い、指定のJSON形式で最終結果を返してください。参照する情報は、この依頼で渡す資料の範囲としてください。",
+  "same_public_jobs_and_owner_reply": true,
+  "schema": "Same original per-job output_schema retained via codex exec --output-schema",
+  "model": "gpt-6.1-sol",
+  "effort": "xhigh",
+  "speed": "Standard",
+  "separate_planner": 0,
+  "independent_reviewer": 0,
+  "local_generations": 0,
+  "sessions": 20,
+  "self_checks_and_local_calculation": "Optional within the same session; no forced plan or checklist output",
+  "sandbox": "Stock read-only; these are DATA output tasks, not file-editing or Office GUI tasks",
+  "child_agents": "Disabled process-locally for usage-accounting completeness",
+  "historical_difference": "Prompt language and optional tool allowance also differ; not review-only ablation",
+  "OS_read_isolation_proven": false,
+  "official_actor_gate_changed": false,
+  "new_rate": {
+    "gpt-6.1-sol": {
+      "input": "50",
+      "cached_input": "2.5",
+      "output": "250",
+      "denominator": 1000000,
+      "speed_mode": "Standard"
+    }
+  },
+  "official_rate_url": "https://learn.chatgpt.com/docs/pricing"
+}
