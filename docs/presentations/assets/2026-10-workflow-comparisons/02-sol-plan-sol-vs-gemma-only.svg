@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title desc">
+<title id="title">2. 業務20件：Sol整理を使い、実作業をSolとGemmaで比較</title>
+<desc id="desc">比べたもの：Solによる整理は両方式に置き、実作業の担当を変更。BはGemma-onlyの追試条件。 共通の前提：完全な業務条件・成果物の形式・Host検査・採点方法を事前固定。 Bは旧Gemma17件を再利用＋他モデル担当3件だけ追加。全20件の新規再測定ではない。 共通の質問生成費を両方式に全額配賦。補足回答は事前固定。全20件1工程で、多段分解は未測定。 旧複数Local条件は20/20・55.04098 Creditsとして保全。③④とは別課題。準備の全費用は未測定。</desc>
+<defs>
+<marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#536577"/></marker>
+<marker id="fallback" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#b94539"/></marker>
+</defs>
+<rect width="1440" height="1080" fill="white"/>
+<g font-family="Yu Gothic, Meiryo, Noto Sans CJK JP, sans-serif" fill="#1e3045">
+<text x="40" y="52" font-size="29" font-weight="700" text-anchor="start" fill="#1e3045">2. 業務20件：Sol整理を使い、実作業をSolとGemmaで比較</text>
+<text x="40" y="91" font-size="20" font-weight="400" text-anchor="start" fill="#1e3045">比べたもの：Solによる整理は両方式に置き、実作業の担当を変更。BはGemma-onlyの追試条件。</text>
+<rect x="40" y="113" width="145" height="30" rx="15" fill="#eaf1ff" stroke="none" stroke-width="2"/>
+<text x="52" y="135" font-size="16" font-weight="400" text-anchor="start" fill="#3565b5">クラウドAI</text>
+<rect x="205" y="113" width="130" height="30" rx="15" fill="#fff1dc" stroke="none" stroke-width="2"/>
+<text x="217" y="135" font-size="16" font-weight="400" text-anchor="start" fill="#b87416">Local LLM</text>
+<rect x="355" y="113" width="160" height="30" rx="15" fill="#f0f3f6" stroke="none" stroke-width="2"/>
+<text x="367" y="135" font-size="16" font-weight="400" text-anchor="start" fill="#607183">事前固定・Host</text>
+<rect x="540" y="113" width="300" height="30" rx="15" fill="#fff0ee" stroke="none" stroke-width="2"/>
+<text x="553" y="135" font-size="16" font-weight="400" text-anchor="start" fill="#b94539">赤枠：Aから変えた役割・入力</text>
+<text x="1400" y="135" font-size="17" font-weight="400" text-anchor="end" fill="#536577">上段：目指す全体像のどこか</text>
+<rect x="40" y="165" width="240" height="80" rx="11" fill="#f0f3f6" stroke="#607183" stroke-width="2"/>
+<text x="160" y="196" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">人間の依頼</text>
+<text x="160" y="226" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">今回は課題文を事前固定</text>
+<path d="M280,205 H314" fill="none" stroke="#536577" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="320" y="165" width="240" height="80" rx="11" fill="#f0f3f6" stroke="#607183" stroke-width="2"/>
+<text x="440" y="196" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">タスクの明確化</text>
+<text x="440" y="226" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">対話による明確化は未測定</text>
+<path d="M560,205 H594" fill="none" stroke="#536577" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="600" y="165" width="240" height="80" rx="11" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
+<text x="720" y="196" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">分担・必要な分解</text>
+<text x="720" y="226" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">下のA/Bで方法を比較</text>
+<path d="M840,205 H874" fill="none" stroke="#536577" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="880" y="165" width="240" height="80" rx="11" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
+<text x="1000" y="196" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">実作業</text>
+<text x="1000" y="226" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">Sol または Local</text>
+<path d="M1120,205 H1154" fill="none" stroke="#536577" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1160" y="165" width="240" height="80" rx="11" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
+<text x="1280" y="196" font-size="20" font-weight="700" text-anchor="middle" fill="#1e3045">成果物の確認</text>
+<text x="1280" y="226" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">Host検査＋独立Sol</text>
+<rect x="40" y="260" width="1360" height="48" rx="12" fill="#fff9e9" stroke="#dbbf72" stroke-width="2"/>
+<text x="58" y="291" font-size="20" font-weight="700" text-anchor="start" fill="#1e3045">共通の前提：完全な業務条件・成果物の形式・Host検査・採点方法を事前固定。</text>
+<rect x="40" y="330" width="1360" height="155" rx="14" fill="#fafbfd" stroke="#d8e1eb" stroke-width="2"/>
+<text x="60" y="373" font-size="25" font-weight="700" text-anchor="start" fill="#1e3045">A：基準</text>
+<rect x="220" y="350" width="260" height="100" rx="14" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
+<text x="350.0" y="380" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">Solで整理</text>
+<text x="350.0" y="409" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">GPT-6.1 Sol</text>
+<text x="350.0" y="438" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">Hostが計画を検査</text>
+<rect x="540" y="350" width="260" height="100" rx="14" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
+<text x="670.0" y="380" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">GPT-6.1 Sol</text>
+<text x="670.0" y="409" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">元依頼から実作業</text>
+<text x="670.0" y="438" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">クラウドで実行</text>
+<path d="M480,400 H534" fill="none" stroke="#536577" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="850" y="350" width="285" height="100" rx="14" fill="#f0f3f6" stroke="#607183" stroke-width="2"/>
+<text x="992.5" y="380" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">Host検査＋Sol確認</text>
+<text x="992.5" y="409" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">形式・範囲と内容を確認</text>
+<text x="992.5" y="438" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">独立・1件ずつ確認</text>
+<rect x="1190" y="350" width="190" height="100" rx="14" fill="#e9f7ed" stroke="#2d8651" stroke-width="2"/>
+<text x="1285.0" y="380" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">採否を確定</text>
+<text x="1285.0" y="409" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">後で最終採点</text>
+<path d="M800,400 H844" fill="none" stroke="#536577" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M1135,400 H1184" fill="none" stroke="#536577" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="220" y="474" font-size="17" font-weight="400" text-anchor="start" fill="#536577">基準側にも独立したSol Plannerを置いた。計画は両方式で別々に生成した。</text>
+<rect x="40" y="505" width="1360" height="155" rx="14" fill="#fafbfd" stroke="#d8e1eb" stroke-width="2"/>
+<text x="60" y="548" font-size="25" font-weight="700" text-anchor="start" fill="#1e3045">B：併用</text>
+<rect x="220" y="525" width="260" height="100" rx="14" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
+<text x="350.0" y="555" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">Solで整理</text>
+<text x="350.0" y="584" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">元の有効なSol計画</text>
+<text x="350.0" y="613" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">Hostが計画を検査</text>
+<rect x="540" y="525" width="260" height="100" rx="14" fill="#fff1dc" stroke="#b94539" stroke-width="3"/>
+<text x="670.0" y="555" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">Gemma4 26B</text>
+<text x="670.0" y="584" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">担当部分を実行</text>
+<text x="670.0" y="613" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">Local LLM</text>
+<path d="M480,575 H534" fill="none" stroke="#536577" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="850" y="525" width="285" height="100" rx="14" fill="#f0f3f6" stroke="#607183" stroke-width="2"/>
+<text x="992.5" y="555" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">Host検査＋Sol確認</text>
+<text x="992.5" y="584" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">形式・範囲と内容を確認</text>
+<text x="992.5" y="613" font-size="16" font-weight="400" text-anchor="middle" fill="#1e3045">独立・1件ずつ確認</text>
+<rect x="1190" y="525" width="190" height="100" rx="14" fill="#e9f7ed" stroke="#2d8651" stroke-width="2"/>
+<text x="1285.0" y="555" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">採否を確定</text>
+<text x="1285.0" y="584" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">後で最終採点</text>
+<path d="M800,575 H844" fill="none" stroke="#536577" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M1135,575 H1184" fill="none" stroke="#536577" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="220" y="649" font-size="17" font-weight="400" text-anchor="start" fill="#536577">Gemmaを20件採用・fallback0。元計画は維持し、非Gemma担当だった3件のmodel欄だけ変更。</text>
+<text x="40" y="693" font-size="19" font-weight="700" text-anchor="start" fill="#b94539">BでLocalを使えない／採用できないとき（対象外・計画不備・生成／検査NG・レビュー拒否）</text>
+<rect x="200" y="710" width="340" height="79" rx="14" fill="#eaf1ff" stroke="#3565b5" stroke-width="2"/>
+<text x="370.0" y="740" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">Solが元資料から実作業</text>
+<text x="370.0" y="769" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">別sessionで実行</text>
+<rect x="600" y="710" width="340" height="79" rx="14" fill="#f0f3f6" stroke="#607183" stroke-width="2"/>
+<text x="770.0" y="740" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">Host＋独立Solで再確認</text>
+<text x="770.0" y="769" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">形式・範囲と内容を検査</text>
+<rect x="1000" y="710" width="380" height="79" rx="14" fill="#e9f7ed" stroke="#2d8651" stroke-width="2"/>
+<text x="1190.0" y="740" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3045">合格は採用／不合格は記録</text>
+<text x="1190.0" y="769" font-size="17" font-weight="400" text-anchor="middle" fill="#1e3045">追加の無制限な修正はしない</text>
+<path d="M40,749 H194" fill="none" stroke="#b94539" stroke-width="2.5" stroke-dasharray="8 5" marker-end="url(#fallback)"/>
+<path d="M540,749 H594" fill="none" stroke="#b94539" stroke-width="2.5" stroke-dasharray="8 5" marker-end="url(#fallback)"/>
+<path d="M940,749 H994" fill="none" stroke="#b94539" stroke-width="2.5" stroke-dasharray="8 5" marker-end="url(#fallback)"/>
+<rect x="40" y="815" width="430" height="129" rx="14" fill="#f0f5fc" stroke="none" stroke-width="2"/>
+<text x="60" y="856" font-size="25" font-weight="700" text-anchor="start" fill="#1e3045">A：20/20 最終正解</text>
+<text x="60" y="894" font-size="23" font-weight="700" text-anchor="start" fill="#1e3045">69.99399 Credits</text>
+<text x="60" y="924" font-size="16" font-weight="400" text-anchor="start" fill="#536577">失敗・引き継ぎの観測費用を含む</text>
+<rect x="495" y="815" width="430" height="129" rx="14" fill="#f0f5fc" stroke="none" stroke-width="2"/>
+<text x="515" y="856" font-size="25" font-weight="700" text-anchor="start" fill="#1e3045">B：20/20 最終正解</text>
+<text x="515" y="894" font-size="23" font-weight="700" text-anchor="start" fill="#1e3045">55.31062 Credits</text>
+<text x="515" y="924" font-size="16" font-weight="400" text-anchor="start" fill="#536577">失敗・引き継ぎの観測費用を含む</text>
+<rect x="950" y="815" width="450" height="129" rx="14" fill="#e9f7ed" stroke="none" stroke-width="2"/>
+<text x="970" y="856" font-size="26" font-weight="700" text-anchor="start" fill="#2d8651">Credits 20.98%減</text>
+<text x="970" y="895" font-size="20" font-weight="400" text-anchor="start" fill="#1e3045">平均作業時間：103.0 → 189.7秒</text>
+<text x="970" y="924" font-size="17" font-weight="400" text-anchor="start" fill="#536577">準備込みの全体削減率ではない</text>
+<text x="40" y="978" font-size="18" font-weight="400" text-anchor="start" fill="#536577">Bは旧Gemma17件を再利用＋他モデル担当3件だけ追加。全20件の新規再測定ではない。</text>
+<text x="40" y="1010" font-size="18" font-weight="400" text-anchor="start" fill="#536577">共通の質問生成費を両方式に全額配賦。補足回答は事前固定。全20件1工程で、多段分解は未測定。</text>
+<text x="40" y="1042" font-size="18" font-weight="400" text-anchor="start" fill="#536577">旧複数Local条件は20/20・55.04098 Creditsとして保全。③④とは別課題。準備の全費用は未測定。</text>
+</g></svg>

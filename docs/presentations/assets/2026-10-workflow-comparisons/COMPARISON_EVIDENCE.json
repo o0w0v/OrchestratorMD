@@ -1,0 +1,183 @@
+{
+  "as_of_JST": "2026-10-29",
+  "scope": "Documentation figures only; no new model measurements",
+  "figures": [
+    {
+      "id": "01-fixed-rust-sol-vs-gemma",
+      "title": "1. 小さなRust作業：Sol実装とGemma実装を比較",
+      "question": "比べたもの：同じRust課題でのSol実装とGemma実装。共有計画を入力するかどうかは異なる。",
+      "coding": true,
+      "precondition": "共通の前提：仕様・編集場所・禁止範囲・テストを、試験側が事前に固定。",
+      "a_first": [
+        "共有Sol計画＋契約",
+        "Sol Executorへ渡す",
+        "共有Plannerの出力あり"
+      ],
+      "a_worker": [
+        "GPT-6 Sol",
+        "小さなRustを実装",
+        "クラウドで実作業"
+      ],
+      "b_first": [
+        "固定した作業指示",
+        "計画はGemmaへ渡さない",
+        "仕様・編集場所・テスト"
+      ],
+      "b_worker": [
+        "Gemma4 26B",
+        "固定範囲を1回実装",
+        "Local LLM"
+      ],
+      "first_kind": "host",
+      "a_first_kind": "sol",
+      "changed_input": true,
+      "a_note": "共有Plannerの出力をSol Executorへ渡す。BのGemmaへは渡さない（費用は両方に計上）。",
+      "b_note": "Local採用37件＋clean Sol fallback7件。固定指示をGemmaへ直接入力。入力完全一致の試験ではない。",
+      "a_pass": 40,
+      "b_pass": 44,
+      "n": 44,
+      "a_credits": "145.37033",
+      "b_credits": "85.70780",
+      "reduction": "41.04%",
+      "time": "時間：全体比較は未確定",
+      "notes": [
+        "元46件中、両方式で品質比較できた44件を事後抽出。併用側2件は品質未測定。",
+        "共有Sol Plannerの費用は両方式へ全額計上。その計画出力はGemmaに渡していない。",
+        "仕様・検査準備の全費用は未測定。独立した公式採点ではない。他の3図とは別課題。"
+      ]
+    },
+    {
+      "id": "02-sol-plan-sol-vs-gemma-only",
+      "title": "2. 業務20件：Sol整理を使い、実作業をSolとGemmaで比較",
+      "question": "比べたもの：Solによる整理は両方式に置き、実作業の担当を変更。BはGemma-onlyの追試条件。",
+      "coding": false,
+      "precondition": "共通の前提：完全な業務条件・成果物の形式・Host検査・採点方法を事前固定。",
+      "a_first": [
+        "Solで整理",
+        "GPT-6.1 Sol",
+        "Hostが計画を検査"
+      ],
+      "a_worker": [
+        "GPT-6.1 Sol",
+        "元依頼から実作業",
+        "クラウドで実行"
+      ],
+      "b_first": [
+        "Solで整理",
+        "元の有効なSol計画",
+        "Hostが計画を検査"
+      ],
+      "b_worker": [
+        "Gemma4 26B",
+        "担当部分を実行",
+        "Local LLM"
+      ],
+      "first_kind": "sol",
+      "a_note": "基準側にも独立したSol Plannerを置いた。計画は両方式で別々に生成した。",
+      "b_note": "Gemmaを20件採用・fallback0。元計画は維持し、非Gemma担当だった3件のmodel欄だけ変更。",
+      "a_pass": 20,
+      "b_pass": 20,
+      "n": 20,
+      "a_credits": "69.99399",
+      "b_credits": "55.31062",
+      "reduction": "20.98%",
+      "time": "平均作業時間：103.0 → 189.7秒",
+      "notes": [
+        "Bは旧Gemma17件を再利用＋他モデル担当3件だけ追加。全20件の新規再測定ではない。",
+        "共通の質問生成費を両方式に全額配賦。補足回答は事前固定。全20件1工程で、多段分解は未測定。",
+        "旧複数Local条件は20/20・55.04098 Creditsとして保全。③④とは別課題。準備の全費用は未測定。"
+      ]
+    },
+    {
+      "id": "03-sol-direct-vs-luna-gemma",
+      "title": "3. 業務20件：Sol一括実行と、Luna整理＋Gemmaを比較",
+      "question": "比べたもの：Solの理解・計画・実作業を、Lunaの整理とGemmaの実作業へ置き換える。",
+      "coding": false,
+      "precondition": "共通の前提：同じ完全な業務情報・成果物の形式・Host検査・採点方法を事前固定。",
+      "a_integrated": [
+        "GPT-6.1 Sol",
+        "理解・計画・実作業を1sessionで実行",
+        "別のPlannerは置かない"
+      ],
+      "b_first": [
+        "Lunaで整理",
+        "GPT-6 Luna",
+        "Hostが計画を検査"
+      ],
+      "b_worker": [
+        "Gemma4 26B",
+        "担当部分を実行",
+        "Local LLM"
+      ],
+      "first_kind": "luna",
+      "a_note": "基準側はSolが1sessionで理解・計画・実作業。②の独立Planner付き基準とは異なる。",
+      "b_note": "Gemma実行・採用19件＋Solへ直接1件。対象外の判断はLuna。Local実行後のfallback0。",
+      "a_pass": 20,
+      "b_pass": 20,
+      "n": 20,
+      "a_credits": "31.38868",
+      "b_credits": "16.7851495",
+      "reduction": "46.5%",
+      "time": "平均作業時間：23.9 → 143.3秒",
+      "notes": [
+        "③④は同じ20課題、②とは別課題。この図はSolが1件ずつ確認した結果。",
+        "Lunaの2業務は2工程で成功したが、分割単独の効果は未分離。対象外1件は能力不足の実証ではない。",
+        "新100件の最大2件まとめ確認とは別。対話での明確化・検査準備の全費用は未測定。"
+      ]
+    },
+    {
+      "id": "04-sol-direct-vs-local-gemma",
+      "title": "4. 業務20件：Sol一括実行と、Local整理＋Gemmaを比較",
+      "question": "比べたもの：Solの理解・計画・実作業を、Local Plannerの整理とGemmaの実作業へ置き換える。",
+      "coding": false,
+      "precondition": "共通の前提：③と同じ業務情報・成果物の形式・Host検査・採点方法を使用。",
+      "a_integrated": [
+        "GPT-6.1 Sol",
+        "理解・計画・実作業を1sessionで実行",
+        "別のPlannerは置かない"
+      ],
+      "b_first": [
+        "Localで整理",
+        "gpt-oss 20B / medium",
+        "Hostが計画を検査"
+      ],
+      "b_worker": [
+        "Gemma4 26B",
+        "担当部分を実行",
+        "Local LLM"
+      ],
+      "first_kind": "local",
+      "a_note": "③と同じSol基準。Solが1sessionで理解・計画・実作業し、独立したSolが確認。",
+      "b_note": "計画不備6件はSolへ直接。Local実行14件中13件を採用し、実行後1件をSolでやり直した。",
+      "a_pass": 20,
+      "b_pass": 20,
+      "n": 20,
+      "a_credits": "31.38868",
+      "b_credits": "18.38004",
+      "reduction": "41.4%",
+      "time": "平均作業時間：23.9 → 149.2秒",
+      "notes": [
+        "計画不備6件はHostが検出。1件はtodayの渡し忘れで内容を誤り、Sol確認が拒否。",
+        "SolがLocal計画や答案を常に手直しする方式ではない。必要時に元資料から別sessionで実行。",
+        "gpt-oss 20B / mediumの結果でLocal全般の順位ではない。準備の全費用未測定。品質の一般保証ではない。"
+      ]
+    }
+  ],
+  "source_fingerprints": {
+    "workflow-docs-correction-20261029/docs/presentations/assets/2026-10-workflow-flows/evidence-summary.json": "d33eaefbb51ff41891f8c02609943e722cf902c3b5c9d458e62ce2b57ed51102",
+    "sol-gemma-only-20-20261029/analysis-001/COMPARISON.json": "f7eb726db6662a0355f815380efd53d0c88df8fed5aecb19e86b660b45284be3",
+    "quality-cost-pilot-20261029/analysis-001/COMPARISON.json": "ef4f646659cb677828d06e7e666cc70021ecfe15e70c0a477374332476cd6f63",
+    "sol-gemma-only-20-20261029/FINAL_KNOWLEDGE_FREEZE.json": "ee18f56a373f55a090ed1de78c509deb4019718ac0fcffaacc10aba29dfb6d67",
+    "four_arm_runner.py": "aba1bd394b9c92eaee7b0f928b4d11e337b8b5822beba26b71338d9c99b5306f"
+  },
+  "preparation_inclusive_savings": null,
+  "new_model_calls": 0,
+  "four_way_same_tasks": false,
+  "diagram02_reuse": {
+    "old_Gemma_workflows": 17,
+    "new_Gemma_workflows": 3,
+    "old_results_unchanged": true,
+    "new_actual_credits": "2.25010",
+    "historical_comparison_credits": "55.31062"
+  }
+}
