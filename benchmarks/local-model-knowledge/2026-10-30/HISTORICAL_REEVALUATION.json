@@ -1,0 +1,91 @@
+{
+  "new_task_instances": 0,
+  "selected_failed_tasks_only": true,
+  "not_a_replacement_for_original500": true,
+  "profiles": [
+    {
+      "profile_id": "expanded.devstral_recommended",
+      "model": "devstral-small-2:latest",
+      "attempts": 12,
+      "strict_check_pass": 1,
+      "primary_categories": {
+        "CODE_COMPILE_ERROR": 4,
+        "FORMAT_VIOLATION": 4,
+        "CODE_TEST_ERROR": 2,
+        "CONTENT_ERROR": 1,
+        "STRICT_CHECK_PASS": 1
+      },
+      "mean_api_seconds_all_attempts": 74.315166666666
+    },
+    {
+      "profile_id": "expanded.gemma26_think",
+      "model": "gemma4:26b",
+      "attempts": 12,
+      "strict_check_pass": 12,
+      "primary_categories": {
+        "STRICT_CHECK_PASS": 12
+      },
+      "mean_api_seconds_all_attempts": 104.657583333333
+    },
+    {
+      "profile_id": "expanded.gptoss_high",
+      "model": "gpt-oss:20b",
+      "attempts": 4,
+      "strict_check_pass": 3,
+      "primary_categories": {
+        "STRICT_CHECK_PASS": 3,
+        "CODE_COMPILE_ERROR": 1
+      },
+      "mean_api_seconds_all_attempts": 512.679750000003
+    },
+    {
+      "profile_id": "expanded.gptoss_medium",
+      "model": "gpt-oss:20b",
+      "attempts": 12,
+      "strict_check_pass": 7,
+      "primary_categories": {
+        "STRICT_CHECK_PASS": 7,
+        "CODE_COMPILE_ERROR": 1,
+        "FORMAT_VIOLATION": 3,
+        "CONTENT_ERROR": 1
+      },
+      "mean_api_seconds_all_attempts": 80.85316666666768
+    },
+    {
+      "profile_id": "expanded.qwen14_recommended",
+      "model": "qwen2.5-Coder:14b",
+      "attempts": 12,
+      "strict_check_pass": 1,
+      "primary_categories": {
+        "FORMAT_VIOLATION": 10,
+        "CONTENT_ERROR": 1,
+        "STRICT_CHECK_PASS": 1
+      },
+      "mean_api_seconds_all_attempts": 31.141833333331306
+    },
+    {
+      "profile_id": "expanded.qwen35_think",
+      "model": "qwen3.5:9b",
+      "attempts": 12,
+      "strict_check_pass": 2,
+      "primary_categories": {
+        "CODE_COMPILE_ERROR": 2,
+        "FORMAT_VIOLATION": 2,
+        "OUTPUT_LIMIT": 6,
+        "STRICT_CHECK_PASS": 2
+      },
+      "mean_api_seconds_all_attempts": 234.18758333333244
+    },
+    {
+      "profile_id": "native30.gemma26_think",
+      "model": "gemma4:26b",
+      "attempts": 30,
+      "strict_check_pass": 27,
+      "primary_categories": {
+        "STRICT_CHECK_PASS": 27,
+        "OUTPUT_LIMIT": 3
+      },
+      "mean_api_seconds_all_attempts": 66.73389999999975
+    }
+  ]
+}

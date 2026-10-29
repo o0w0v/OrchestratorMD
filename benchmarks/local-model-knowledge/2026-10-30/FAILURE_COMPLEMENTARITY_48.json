@@ -1,0 +1,1580 @@
+{
+  "selected_after_gemma_failure": true,
+  "original_gemma_scores_unchanged": true,
+  "posthoc_union_is_not_router_success_rate": true,
+  "new39_union_passed": 27,
+  "all48_union_passed": 36,
+  "strata": {
+    "CONTENT_RULE": {
+      "tasks": 15,
+      "union_recovered": 10,
+      "model_recoveries": {
+        "gptoss20_medium": 8,
+        "qwen35_think": 2,
+        "qwen14": 0,
+        "devstral24": 5
+      }
+    },
+    "FORMAT_ORDER": {
+      "tasks": 5,
+      "union_recovered": 5,
+      "model_recoveries": {
+        "gptoss20_medium": 2,
+        "qwen35_think": 2,
+        "qwen14": 1,
+        "devstral24": 1
+      }
+    },
+    "TIE_RULE": {
+      "tasks": 3,
+      "union_recovered": 1,
+      "model_recoveries": {
+        "gptoss20_medium": 1,
+        "qwen35_think": 0,
+        "qwen14": 0,
+        "devstral24": 0
+      }
+    },
+    "UNDERSPECIFIED": {
+      "tasks": 25,
+      "union_recovered": 20,
+      "model_recoveries": {
+        "gptoss20_medium": 11,
+        "qwen35_think": 7,
+        "qwen14": 5,
+        "devstral24": 8
+      }
+    }
+  },
+  "cases": [
+    {
+      "task_id": "V2500-DIG-025",
+      "operation": "VIRTUAL_PATH_RESOLUTION",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "UNDERSPECIFIED_REJECT_LABEL_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "qwen35_think",
+        "qwen14",
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 21.70299999997951
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 67.93800000002375
+        },
+        "qwen14": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 28.32799999997951
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 37.68699999997625
+        }
+      }
+    },
+    {
+      "task_id": "V2500-DIG-043",
+      "operation": "LONGEST_PREFIX_ROUTE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INVALID_ROUTE_FIELD_MAPPING_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 26.344000000040978
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 101.18700000003446
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 17.51600000000326
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 24.75
+        }
+      }
+    },
+    {
+      "task_id": "V2500-DIG-048",
+      "operation": "REVERSAL_CHAIN_LEDGER",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 67.89100000000326
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 47.56300000002375
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 18.23399999999674
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 28.28200000000652
+        }
+      }
+    },
+    {
+      "task_id": "V2500-DOC-008",
+      "operation": "DETERMINISTIC_LINE_DIFF",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "DETERMINISTIC_TIE_RULE_ONLY",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 136.5
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 173.0
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 11.14000000001397
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 18.155999999959022
+        }
+      }
+    },
+    {
+      "task_id": "V2500-DOC-011",
+      "operation": "QUOTED_REPLY_SPLIT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": false,
+      "successful_complements": [
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 15.89000000001397
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 39.90700000000652
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 7.094000000040978
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 11.844000000040978
+        }
+      }
+    },
+    {
+      "task_id": "V2500-DOC-025",
+      "operation": "VIRTUAL_PATH_RESOLUTION",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "UNDERSPECIFIED_REJECT_LABEL_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium",
+        "qwen14",
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 38.89000000001397
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 59.03099999995902
+        },
+        "qwen14": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 28.32799999997951
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 37.70400000002701
+        }
+      }
+    },
+    {
+      "task_id": "V2500-DOC-032",
+      "operation": "EARLIEST_MEETING_SLOT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium",
+        "qwen35_think",
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 11.061999999976251
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 98.20299999997951
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 4.35899999999674
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 7.922000000020489
+        }
+      }
+    },
+    {
+      "task_id": "V2500-DOC-043",
+      "operation": "LONGEST_PREFIX_ROUTE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INVALID_ROUTE_FIELD_MAPPING_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium",
+        "qwen35_think",
+        "qwen14"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 26.92200000002049
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 54.17200000002049
+        },
+        "qwen14": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 17.56199999997625
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 24.54599999997299
+        }
+      }
+    },
+    {
+      "task_id": "V2500-DOC-048",
+      "operation": "REVERSAL_CHAIN_LEDGER",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 53.32799999997951
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 48.39100000000326
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 18.07800000003772
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 28.46899999998277
+        }
+      }
+    },
+    {
+      "task_id": "V2500-DOC-050",
+      "operation": "PROPOSED_PLAN_AUDIT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "DEPENDENCY_EVIDENCE_MEMBERSHIP_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "qwen35_think"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 68.04700000002049
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 58.01600000000326
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 9.71899999998277
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 34.46899999998277
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EDU-003",
+      "operation": "LONGEST_GLOSSARY_SCAN",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 61.65700000000652
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 87.59400000004098
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 2.827999999979511
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 3.7810000000172295
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EDU-008",
+      "operation": "DETERMINISTIC_LINE_DIFF",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "DETERMINISTIC_TIE_RULE_ONLY",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 68.48399999999674
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 218.85999999998603
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 12.735000000044238
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 20.40700000000652
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EDU-028",
+      "operation": "BASE64_UTF8_VALIDATE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 87.85899999999674
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 137.03100000001723
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 26.42200000002049
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 34.625
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EDU-029",
+      "operation": "MOD11_CHECK_DIGIT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": false,
+      "successful_complements": [
+        "gptoss20_medium",
+        "qwen35_think"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 36.45299999997951
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 29.07799999997951
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 12.828000000037719
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 14.577999999979511
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EDU-043",
+      "operation": "LONGEST_PREFIX_ROUTE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INVALID_ROUTE_FIELD_MAPPING_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 34.18700000003446
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 86.57900000002701
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 18.93699999997625
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 24.59399999998277
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EDU-048",
+      "operation": "REVERSAL_CHAIN_LEDGER",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "UNDERSPECIFIED_SUCCESS_LABEL_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium",
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 28.67099999997299
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 16.875
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 19.07799999997951
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 28.64100000000326
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EVT-001",
+      "operation": "CHAR_SPAN_PATCH",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 46.20400000002701
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 165.31300000002375
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 5.702999999979511
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 10.35899999999674
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EVT-002",
+      "operation": "EDITABLE_SEGMENT_REPLACE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INNER_FORMAT_OR_ARRAY_ORDER_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 14.5
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 16.43699999997625
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 13.796999999962281
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 17.85899999999674
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EVT-008",
+      "operation": "DETERMINISTIC_LINE_DIFF",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INNER_FORMAT_OR_ARRAY_ORDER_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "qwen35_think"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 29.57799999997951
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 118.78200000000652
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 5.73399999999674
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 20.54700000002049
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EVT-011",
+      "operation": "QUOTED_REPLY_SPLIT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium",
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 17.67200000002049
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 26.45299999997951
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 8.047000000020489
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 18.07900000002701
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EVT-020",
+      "operation": "CONFIG_OVERLAY_DELETE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INNER_FORMAT_OR_ARRAY_ORDER_ONLY",
+      "new39": false,
+      "successful_complements": [
+        "qwen35_think"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 19.360000000044238
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 78.29700000002049
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 9.610000000044238
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 12.60899999999674
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EVT-043",
+      "operation": "LONGEST_PREFIX_ROUTE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INVALID_ROUTE_FIELD_MAPPING_ONLY",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 62.09399999998277
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 93.875
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 18.375
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 23.93800000002375
+        }
+      }
+    },
+    {
+      "task_id": "V2500-EVT-048",
+      "operation": "REVERSAL_CHAIN_LEDGER",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "UNDERSPECIFIED_SUCCESS_LABEL_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 70.89000000001397
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 96.79599999997299
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 22.96799999999348
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 28.20299999997951
+        }
+      }
+    },
+    {
+      "task_id": "V2500-HOB-011",
+      "operation": "QUOTED_REPLY_SPLIT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 21.96899999998277
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 28.79700000002049
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 7.85899999999674
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 18.530999999959022
+        }
+      }
+    },
+    {
+      "task_id": "V2500-HOB-043",
+      "operation": "LONGEST_PREFIX_ROUTE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INVALID_ROUTE_FIELD_MAPPING_ONLY",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 45.96799999999348
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 98.14000000001397
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 18.56200000003446
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 24.46799999999348
+        }
+      }
+    },
+    {
+      "task_id": "V2500-HOB-048",
+      "operation": "REVERSAL_CHAIN_LEDGER",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 21.20299999997951
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 159.98399999999674
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 23.20299999997951
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 28.235000000044238
+        }
+      }
+    },
+    {
+      "task_id": "V2500-HOB-050",
+      "operation": "PROPOSED_PLAN_AUDIT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "DEPENDENCY_EVIDENCE_MEMBERSHIP_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "qwen35_think"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 42.01600000000326
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 66.875
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 10.75
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 24.48399999999674
+        }
+      }
+    },
+    {
+      "task_id": "V2500-HOM-022",
+      "operation": "JSON_POINTER_LOOKUP",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "NONCANONICAL_INDEX_STATUS_ONLY",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 34.06300000002375
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 107.96799999999348
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 23.98399999999674
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 31.35899999999674
+        }
+      }
+    },
+    {
+      "task_id": "V2500-HOM-028",
+      "operation": "BASE64_UTF8_VALIDATE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 124.79599999997299
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 79.98399999999674
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 26.40700000000652
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 33.25
+        }
+      }
+    },
+    {
+      "task_id": "V2500-HOM-048",
+      "operation": "REVERSAL_CHAIN_LEDGER",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "UNDERSPECIFIED_SUCCESS_LABEL_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 24.89100000000326
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 99.03100000001723
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 23.32799999997951
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 28.54700000002049
+        }
+      }
+    },
+    {
+      "task_id": "V2500-HOM-050",
+      "operation": "PROPOSED_PLAN_AUDIT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "DEPENDENCY_EVIDENCE_MEMBERSHIP_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "qwen35_think"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 36.15700000000652
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 94.63999999995576
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 16.59299999999348
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 54.71899999998277
+        }
+      }
+    },
+    {
+      "task_id": "V2500-OPS-011",
+      "operation": "QUOTED_REPLY_SPLIT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium",
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 33.92199999996228
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 24.57900000002701
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 6.98499999998603
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 18.125
+        }
+      }
+    },
+    {
+      "task_id": "V2500-OPS-043",
+      "operation": "LONGEST_PREFIX_ROUTE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INVALID_ROUTE_FIELD_MAPPING_ONLY",
+      "new39": false,
+      "successful_complements": [
+        "qwen35_think"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 31.65600000001723
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 76.93700000003446
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 17.780999999959022
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 23.70299999997951
+        }
+      }
+    },
+    {
+      "task_id": "V2500-QA-002",
+      "operation": "EDITABLE_SEGMENT_REPLACE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INNER_FORMAT_OR_ARRAY_ORDER_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium",
+        "qwen14"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 10.969000000040978
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 9.436999999976251
+        },
+        "qwen14": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 13.297000000020489
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 18.46899999998277
+        }
+      }
+    },
+    {
+      "task_id": "V2500-QA-003",
+      "operation": "LONGEST_GLOSSARY_SCAN",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 36.68800000002375
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 56.39100000000326
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 2.9530000000377186
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 3.9060000000172295
+        }
+      }
+    },
+    {
+      "task_id": "V2500-QA-008",
+      "operation": "DETERMINISTIC_LINE_DIFF",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "DETERMINISTIC_TIE_RULE_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 75.73499999998603
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 328.2029999999795
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 9.188000000023749
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 20.375
+        }
+      }
+    },
+    {
+      "task_id": "V2500-QA-022",
+      "operation": "JSON_POINTER_LOOKUP",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "NONCANONICAL_INDEX_STATUS_ONLY",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 34.51600000000326
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 85.20299999997951
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 23.389999999955762
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 30.860000000044238
+        }
+      }
+    },
+    {
+      "task_id": "V2500-QA-025",
+      "operation": "VIRTUAL_PATH_RESOLUTION",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "UNDERSPECIFIED_REJECT_LABEL_ONLY",
+      "new39": false,
+      "successful_complements": [
+        "gptoss20_medium",
+        "qwen14",
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 23.59399999998277
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 38.85999999998603
+        },
+        "qwen14": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 28.35899999999674
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 37.17200000002049
+        }
+      }
+    },
+    {
+      "task_id": "V2500-QA-048",
+      "operation": "REVERSAL_CHAIN_LEDGER",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "UNDERSPECIFIED_SUCCESS_LABEL_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 23.67200000002049
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 52.43800000002375
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 18.280999999959022
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 28.73399999999674
+        }
+      }
+    },
+    {
+      "task_id": "V2500-QA-050",
+      "operation": "PROPOSED_PLAN_AUDIT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "DEPENDENCY_EVIDENCE_MEMBERSHIP_ONLY",
+      "new39": false,
+      "successful_complements": [
+        "qwen35_think"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 27.0
+        },
+        "qwen35_think": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 76.81300000002375
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 12.21899999998277
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 52.71799999999348
+        }
+      }
+    },
+    {
+      "task_id": "V2500-TEAM-008",
+      "operation": "DETERMINISTIC_LINE_DIFF",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INNER_FORMAT_OR_ARRAY_ORDER_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 37.51499999995576
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 138.375
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 10.936999999976251
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 17.76500000001397
+        }
+      }
+    },
+    {
+      "task_id": "V2500-TEAM-022",
+      "operation": "JSON_POINTER_LOOKUP",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "NONCANONICAL_INDEX_STATUS_ONLY",
+      "new39": false,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 43.43800000002375
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 46.04700000002049
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 24.20300000003772
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 31.18800000002375
+        }
+      }
+    },
+    {
+      "task_id": "V2500-TEAM-028",
+      "operation": "BASE64_UTF8_VALIDATE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "VALUE_OR_RULE_ERROR",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 94.40600000001723
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 183.4220000000205
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 25.64100000000326
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 33.06199999997625
+        }
+      }
+    },
+    {
+      "task_id": "V2500-TEAM-048",
+      "operation": "REVERSAL_CHAIN_LEDGER",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "UNDERSPECIFIED_SUCCESS_LABEL_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 22.70299999997951
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 8.10999999998603
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 18.375
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 28.625
+        }
+      }
+    },
+    {
+      "task_id": "V2500-TEAM-050",
+      "operation": "PROPOSED_PLAN_AUDIT",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "DEPENDENCY_EVIDENCE_MEMBERSHIP_ONLY",
+      "new39": true,
+      "successful_complements": [],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 44.89100000000326
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 81.01500000001397
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 12.73399999999674
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 61.875
+        }
+      }
+    },
+    {
+      "task_id": "V2500-TRV-025",
+      "operation": "VIRTUAL_PATH_RESOLUTION",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "UNDERSPECIFIED_REJECT_LABEL_ONLY",
+      "new39": true,
+      "successful_complements": [
+        "qwen14",
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": false,
+          "classification": "FORMAT_VIOLATION",
+          "api_seconds": 31.53100000001723
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 49.84299999999348
+        },
+        "qwen14": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 29.375
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 37.14100000000326
+        }
+      }
+    },
+    {
+      "task_id": "V2500-TRV-043",
+      "operation": "LONGEST_PREFIX_ROUTE",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "INVALID_ROUTE_FIELD_MAPPING_ONLY",
+      "new39": false,
+      "successful_complements": [
+        "gptoss20_medium"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 55.54700000002049
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 120.06199999997625
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 18.90700000000652
+        },
+        "devstral24": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 24.48399999999674
+        }
+      }
+    },
+    {
+      "task_id": "V2500-TRV-048",
+      "operation": "REVERSAL_CHAIN_LEDGER",
+      "original_gemma_pass": false,
+      "gemma_failure_category": "UNDERSPECIFIED_SUCCESS_LABEL_ONLY",
+      "new39": false,
+      "successful_complements": [
+        "gptoss20_medium",
+        "devstral24"
+      ],
+      "other_models": {
+        "gptoss20_medium": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 22.17099999997299
+        },
+        "qwen35_think": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 44.23399999999674
+        },
+        "qwen14": {
+          "passed": false,
+          "classification": "CONTENT_ERROR",
+          "api_seconds": 23.70299999997951
+        },
+        "devstral24": {
+          "passed": true,
+          "classification": "STRICT_CHECK_PASS",
+          "api_seconds": 28.71799999999348
+        }
+      }
+    }
+  ]
+}
