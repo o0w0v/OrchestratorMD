@@ -1,0 +1,108 @@
+{
+  "core2000_task_instances": 2000,
+  "supplementary_task_instances": 500,
+  "independent_ability_count": null,
+  "pooled_accuracy": null,
+  "notes": [
+    "Different cases and evaluation distributions; screen500 also uses different inference settings.",
+    "Strict Host check results, not autonomous business acceptance.",
+    "Missing resource measurements stay null."
+  ],
+  "cohorts": [
+    {
+      "cohort": "screen500",
+      "included_in_core2000": true,
+      "tasks": 500,
+      "passed": 333,
+      "failed": 167,
+      "pass_rate": 0.666,
+      "mean_api_seconds": 2.2093246492986034,
+      "rss_peak_gib": null,
+      "private_peak_gib": null,
+      "gpu_peak_used_mib": 9895,
+      "gpu_min_free_mib": 157,
+      "categories": {
+        "STRICT_CHECK_PASS": 333,
+        "CODE_COMPILE_ERROR": 13,
+        "CODE_TEST_ERROR": 2,
+        "CONTENT_ERROR": 151,
+        "HOST_ERROR": 1
+      },
+      "settings_profile": "screen500.gemma26"
+    },
+    {
+      "cohort": "business500",
+      "included_in_core2000": true,
+      "tasks": 500,
+      "passed": 492,
+      "failed": 8,
+      "pass_rate": 0.984,
+      "mean_api_seconds": 35.923388,
+      "rss_peak_gib": 21.287761688232422,
+      "private_peak_gib": 30.374427795410156,
+      "gpu_peak_used_mib": 9766.0,
+      "gpu_min_free_mib": 286.0,
+      "categories": {
+        "STRICT_CHECK_PASS": 492,
+        "CONTENT_ERROR": 8
+      },
+      "settings_profile": "expanded.gemma26"
+    },
+    {
+      "cohort": "general500",
+      "included_in_core2000": true,
+      "tasks": 500,
+      "passed": 495,
+      "failed": 5,
+      "pass_rate": 0.99,
+      "mean_api_seconds": 35.501229999999545,
+      "rss_peak_gib": 21.249263763427734,
+      "private_peak_gib": 30.333393096923828,
+      "gpu_peak_used_mib": 9715.0,
+      "gpu_min_free_mib": 337.0,
+      "categories": {
+        "STRICT_CHECK_PASS": 495,
+        "CONTENT_ERROR": 5
+      },
+      "settings_profile": "expanded.gemma26"
+    },
+    {
+      "cohort": "extension500",
+      "included_in_core2000": true,
+      "tasks": 500,
+      "passed": 456,
+      "failed": 44,
+      "pass_rate": 0.912,
+      "mean_api_seconds": 47.61766799999936,
+      "rss_peak_gib": 21.267227172851562,
+      "private_peak_gib": 30.425369262695312,
+      "gpu_peak_used_mib": 9904.0,
+      "gpu_min_free_mib": 148.0,
+      "categories": {
+        "STRICT_CHECK_PASS": 456,
+        "CONTENT_ERROR": 31,
+        "CODE_TEST_ERROR": 10,
+        "CODE_COMPILE_ERROR": 3
+      },
+      "settings_profile": "expanded.gemma26"
+    },
+    {
+      "cohort": "variety500",
+      "included_in_core2000": false,
+      "tasks": 500,
+      "passed": 452,
+      "failed": 48,
+      "pass_rate": 0.904,
+      "mean_api_seconds": 79.12202000000036,
+      "rss_peak_gib": 21.405872344970703,
+      "private_peak_gib": 30.41671371459961,
+      "gpu_peak_used_mib": 9918.0,
+      "gpu_min_free_mib": 134.0,
+      "categories": {
+        "STRICT_CHECK_PASS": 452,
+        "CONTENT_ERROR": 48
+      },
+      "settings_profile": "expanded.gemma26"
+    }
+  ]
+}

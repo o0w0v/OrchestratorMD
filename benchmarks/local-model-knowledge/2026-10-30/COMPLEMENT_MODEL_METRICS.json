@@ -1,0 +1,156 @@
+{
+  "gptoss20_medium": {
+    "new39": {
+      "tasks": 39,
+      "pass": 17,
+      "strict_pass_rate": 0.4358974358974359,
+      "categories": {
+        "FORMAT_VIOLATION": 10,
+        "CONTENT_ERROR": 12,
+        "STRICT_CHECK_PASS": 17
+      },
+      "all_attempts": 39,
+      "mean_api_seconds_all_attempts_per_task": 45.38702564102669,
+      "rss_peak_gib": 9.003780364990234,
+      "private_peak_gib": 17.344375610351562,
+      "gpu_peak_used_mib": 9324.0,
+      "gpu_min_free_mib": 728.0,
+      "native_input_tokens": 19128,
+      "native_output_tokens": 51456,
+      "native_missing_calls": 0
+    },
+    "all_gemma_failure48": {
+      "tasks": 48,
+      "pass": 22,
+      "strict_pass_rate": 0.4583333333333333,
+      "categories": {
+        "STRICT_CHECK_PASS": 22,
+        "FORMAT_VIOLATION": 13,
+        "CONTENT_ERROR": 13
+      },
+      "all_attempts": 48,
+      "mean_api_seconds_all_attempts_per_task": 42.60839583333533,
+      "rss_peak_gib": 11.26944351196289,
+      "private_peak_gib": 19.610919952392578,
+      "gpu_peak_used_mib": 9324.0,
+      "gpu_min_free_mib": 728.0,
+      "native_input_tokens": 23815,
+      "native_output_tokens": 59476,
+      "native_missing_calls": 0
+    }
+  },
+  "qwen35_think": {
+    "new39": {
+      "tasks": 39,
+      "pass": 7,
+      "strict_pass_rate": 0.1794871794871795,
+      "categories": {
+        "STRICT_CHECK_PASS": 7,
+        "CONTENT_ERROR": 32
+      },
+      "all_attempts": 39,
+      "mean_api_seconds_all_attempts_per_task": 90.37258974359167,
+      "rss_peak_gib": 9.320892333984375,
+      "private_peak_gib": 18.318233489990234,
+      "gpu_peak_used_mib": 9836.0,
+      "gpu_min_free_mib": 216.0,
+      "native_input_tokens": 16263,
+      "native_output_tokens": 321953,
+      "native_missing_calls": 0
+    },
+    "all_gemma_failure48": {
+      "tasks": 48,
+      "pass": 11,
+      "strict_pass_rate": 0.22916666666666666,
+      "categories": {
+        "CONTENT_ERROR": 37,
+        "STRICT_CHECK_PASS": 11
+      },
+      "all_attempts": 48,
+      "mean_api_seconds_all_attempts_per_task": 84.89095833333583,
+      "rss_peak_gib": 9.320892333984375,
+      "private_peak_gib": 18.318233489990234,
+      "gpu_peak_used_mib": 9836.0,
+      "gpu_min_free_mib": 216.0,
+      "native_input_tokens": 20296,
+      "native_output_tokens": 372791,
+      "native_missing_calls": 0
+    }
+  },
+  "qwen14": {
+    "new39": {
+      "tasks": 39,
+      "pass": 5,
+      "strict_pass_rate": 0.1282051282051282,
+      "categories": {
+        "STRICT_CHECK_PASS": 5,
+        "CONTENT_ERROR": 34
+      },
+      "all_attempts": 39,
+      "mean_api_seconds_all_attempts_per_task": 16.146923076919613,
+      "rss_peak_gib": 11.089569091796875,
+      "private_peak_gib": 19.341957092285156,
+      "gpu_peak_used_mib": 9358.0,
+      "gpu_min_free_mib": 694.0,
+      "native_input_tokens": 16428,
+      "native_output_tokens": 4673,
+      "native_missing_calls": 0
+    },
+    "all_gemma_failure48": {
+      "tasks": 48,
+      "pass": 6,
+      "strict_pass_rate": 0.125,
+      "categories": {
+        "CONTENT_ERROR": 42,
+        "STRICT_CHECK_PASS": 6
+      },
+      "all_attempts": 48,
+      "mean_api_seconds_all_attempts_per_task": 16.342374999998963,
+      "rss_peak_gib": 15.342422485351562,
+      "private_peak_gib": 23.599632263183594,
+      "gpu_peak_used_mib": 9358.0,
+      "gpu_min_free_mib": 694.0,
+      "native_input_tokens": 20502,
+      "native_output_tokens": 5802,
+      "native_missing_calls": 0
+    }
+  },
+  "devstral24": {
+    "new39": {
+      "tasks": 39,
+      "pass": 11,
+      "strict_pass_rate": 0.28205128205128205,
+      "categories": {
+        "STRICT_CHECK_PASS": 11,
+        "CONTENT_ERROR": 28
+      },
+      "all_attempts": 39,
+      "mean_api_seconds_all_attempts_per_task": 26.039692307692558,
+      "rss_peak_gib": 16.229991912841797,
+      "private_peak_gib": 24.517837524414062,
+      "gpu_peak_used_mib": 9254.0,
+      "gpu_min_free_mib": 798.0,
+      "native_input_tokens": 17712,
+      "native_output_tokens": 3574,
+      "native_missing_calls": 0
+    },
+    "all_gemma_failure48": {
+      "tasks": 48,
+      "pass": 14,
+      "strict_pass_rate": 0.2916666666666667,
+      "categories": {
+        "CONTENT_ERROR": 34,
+        "STRICT_CHECK_PASS": 14
+      },
+      "all_attempts": 48,
+      "mean_api_seconds_all_attempts_per_task": 26.095041666667385,
+      "rss_peak_gib": 19.037647247314453,
+      "private_peak_gib": 27.33514404296875,
+      "gpu_peak_used_mib": 9254.0,
+      "gpu_min_free_mib": 798.0,
+      "native_input_tokens": 22125,
+      "native_output_tokens": 4411,
+      "native_missing_calls": 0
+    }
+  }
+}

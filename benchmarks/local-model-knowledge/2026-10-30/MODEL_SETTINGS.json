@@ -1,0 +1,100 @@
+{
+  "host": {
+    "cpu": "Intel Core i7-13700K",
+    "ram_approx_gib": 64,
+    "gpu": "NVIDIA GeForce RTX 3080 10 GB"
+  },
+  "screen500": {
+    "model": "gemma4:26b",
+    "model_digest": "08ae7ec1744bd7f451c4a530afb39d2673ad9d07a8369b8a33a3613b41212a68",
+    "think": false,
+    "options": {
+      "temperature": 0,
+      "seed": 20260926,
+      "num_ctx": 8192,
+      "num_predict": 2048
+    },
+    "FA": 1,
+    "KV": "f16"
+  },
+  "business_general_extension_variety_and_complement": [
+    {
+      "arm": "gemma26",
+      "model": "gemma4:26b",
+      "digest": "08ae7ec1744bd7f451c4a530afb39d2673ad9d07a8369b8a33a3613b41212a68",
+      "think": true,
+      "options": {
+        "num_ctx": 65536,
+        "num_predict": 32768,
+        "seed": 20260926,
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 64
+      }
+    },
+    {
+      "arm": "gptoss20_medium",
+      "model": "gpt-oss:20b",
+      "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+      "think": "medium",
+      "options": {
+        "num_ctx": 36864,
+        "num_predict": 32768,
+        "seed": 20260926,
+        "temperature": 1
+      }
+    },
+    {
+      "arm": "qwen35_think",
+      "model": "qwen3.5:9b",
+      "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+      "think": true,
+      "options": {
+        "num_ctx": 65536,
+        "num_predict": 32768,
+        "seed": 20260926,
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 20,
+        "min_p": 0,
+        "presence_penalty": 1.5,
+        "repeat_penalty": 1
+      }
+    },
+    {
+      "arm": "qwen14",
+      "model": "qwen2.5-Coder:14b",
+      "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+      "think": null,
+      "options": {
+        "num_ctx": 32768,
+        "num_predict": 24576,
+        "seed": 20260926,
+        "temperature": 0.7,
+        "top_p": 0.8,
+        "top_k": 20,
+        "repeat_penalty": 1.05
+      }
+    },
+    {
+      "arm": "devstral24",
+      "model": "devstral-small-2:latest",
+      "digest": "24277f07f62db8f9cb68e9dfc679ea1818a7fbac47a50eff0a701d3f645b63c8",
+      "think": null,
+      "options": {
+        "num_ctx": 36864,
+        "num_predict": 32768,
+        "seed": 20260926,
+        "temperature": 0.15
+      }
+    }
+  ],
+  "flash_attention": 1,
+  "kv_cache": "f16",
+  "repair_semantic_or_format": 0,
+  "notes": [
+    "Native thinking used where supported in the later cohorts; null means no explicit thinking parameter.",
+    "Context and output settings differ by model. Output allowance includes native thinking where applicable.",
+    "These are recorded experiment settings, not a universal recommendation or minimum hardware specification."
+  ]
+}

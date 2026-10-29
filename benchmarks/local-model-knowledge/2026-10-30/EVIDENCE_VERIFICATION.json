@@ -1,0 +1,506 @@
+{
+  "performed_for_publication": "2026-10-30",
+  "mode": "OFFLINE_READ_ONLY_AGGREGATION",
+  "stored_freeze_entries_verified": 98,
+  "freeze_checks": [
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/build_knowledge.py",
+      "sha256": "d6b2e0bfd800e27d08348f11f427cd6f7d0eb9fedc8b32ba77e5fe22b0325a44"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/EXCLUSIONS.json",
+      "sha256": "943e7bce97ff052275670c95ce9000cf963da9e7522dae082eddfc6e2e8f3811"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/FAILURE_CLASSIFICATION_JA.md",
+      "sha256": "d65c26ab9cfaff0a8f423b39801b0908ee58ef63dfc463c3425ac96813ee60d6"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/FINAL_VALIDATION.json",
+      "sha256": "b6b58429525cecef661e982f069f42a22901ecf4adc604c26e6cb9413ff335e1"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/GEMMA_500_KNOWLEDGE_JA.md",
+      "sha256": "a5a68db4ee9ec0a7015e0f7dcef3f319e6d697c8811c449c18d661c98479cccf"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/GEMMA_FAMILY_KNOWLEDGE.json",
+      "sha256": "ed41acb164da773408195c0412ee90e5b9ab71527b63e2dc1296863022e3fd84"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/HISTORICAL_REVIEWED_24_CONTEXT.json",
+      "sha256": "a33567c13d125e1c22edfc94bbe0bcd1df91e59b95d69e2ac1619d0f5241c581"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/INPUT_TEXT_AUDIT.json",
+      "sha256": "c21b73edcdeb740f3948fc03310d7231fb15ebc26f93539a6cb14ab311964062"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/INTEGRATION_VALIDATION.json",
+      "sha256": "c8128a07203d434aa230d23013a327a3f07b8288be4986bb71718a76a6f3d4cd"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/MODEL_PROFILES.json",
+      "sha256": "6f3c70bb9d6b5afce1b6bf4090f9073fcd8906d381a50c153e0f582305d979ab"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/OBSERVATIONS.json",
+      "sha256": "b5b618e0330ed762b62eb6abfaa06ed9ea28762f9406d1a04aa177fe999603b5"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/OFFLINE_CLASSIFICATION_TESTS.json",
+      "sha256": "d4e2b4af29c35dd1a878c5144a348d0d4cd646301e49e61e0b55f483aecfda71"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/PERFORMANCE_BY_PROFILE.md",
+      "sha256": "b26bfda3e7858131fa95690b11b949c8728495aefbf126f2826bf4afdeed2848"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/README_JA.md",
+      "sha256": "8ab89eeb931fedd2f96c138260859d5fcd83a4a3f5d99ddae46f055f204938c9"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/REVIEW_LOG.json",
+      "sha256": "566f2223837d5e0f88b80a64d345e5b4785e508c3446aa07d6a4ab6e7dc96a8c"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/SOURCE_MANIFEST.json",
+      "sha256": "35bd95db81a00e7f369da62e93b2fd936f900f9cbad58346da5aa61ac612e5ea"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/TASK_HANDOFF_TEMPLATES.md",
+      "sha256": "b2effe9a53ca65f1a5e0a05f8304ebbfa39bee1df6f976da4a6c09dd605210a6"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/TASK_MODEL_EVIDENCE.csv",
+      "sha256": "87afa44f76cb56a08617f21bc9eee1196b5b6ae70d00922ea5780d661bb04ad5"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/TASK_ROUTING_KNOWLEDGE.json",
+      "sha256": "8f8810569762282b8917f9e719abf9fa56cef64228572e72250b3f443c0a97f8"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/TASK_ROUTING_TABLE_JA.md",
+      "sha256": "f19da3d70824a4d54d021029577cc261dd06ffa5304b7330937296f939b8dca0"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/test_knowledge.py",
+      "sha256": "526a59a0ab68fae6b014b1251641a6597fd55656006e1a3f89393c4993623f27"
+    },
+    {
+      "freeze": "model-routing-knowledge-20261025/KNOWLEDGE_FREEZE.json",
+      "file": "model-routing-knowledge-20261025/verify_knowledge.py",
+      "sha256": "76e4ce9e222e996ade3252257fb450bfe8f6c709f6bdbfde96c2135f03ef7452"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/build_report.py",
+      "sha256": "47c2ffd5ceae6bd83950047272aeeab6bfd49f82738981d4e7dab4169f7befe5"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/COMPLEMENTARY_SUCCESSES.json",
+      "sha256": "f7707aadc23d58f7804fe1bb775a80ccfa80eb659920321e8f1b69489fe180a9"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/FAILURE_DETAILS.json",
+      "sha256": "45ca15dd4cb5f8849959d08dee32c7bb90a8b2d18e7d52b6bdf5af23d5e272ba"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/FAMILY_COMPARISON.csv",
+      "sha256": "4fb6af089585d3315a9060609584fe4fb614cd73e99d4545a905b69d3ee52408"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/MODEL_METRICS.json",
+      "sha256": "b0ff3b6136bc257dfa3463acb49154fc069ede5090a8db2a687bf5472b26a7fe"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/NATIVE_USAGE_LEDGER.json",
+      "sha256": "caee9275abf480e11d014da39a68a62a77e89ca437affb219dc76a2d68afcdb9"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/PROCESSING_FAMILY_KNOWLEDGE.json",
+      "sha256": "036dba118f1dc29d83b86760a7563e582b317d1ab738d0c18690f9d7f30b3d51"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/RESOURCE_EVIDENCE.json",
+      "sha256": "5f4f3b26715c138fd7a90ee32e296b98ad5873021cc13b824b107ea90f2e7c85"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/RESULTS_JA.md",
+      "sha256": "0c0f97082b491a022c284a9b0672e98744f125ab01ebb93acd8b5b27a6c03a44"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/SOURCE_MANIFEST.json",
+      "sha256": "9b649c5e443d0a3f2474d034b1ba35d0a17ca47f3345836aab1b442e7897ac62"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/STUDY_STATUS.json",
+      "sha256": "f0657e7c9f4710f2bd51aa238f1628fe228e8954b9acb837f23da57aa51f19c9"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/TASK_TYPE_TABLE_JA.md",
+      "sha256": "d60158249d53473c72694bf52b8b8bbb55911c4c0cad3f618a17d2ab83661176"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "business-model-knowledge-20261025/VERIFICATION.json",
+      "sha256": "6f2b6f07c3da1f8a7ae80dd9d8158ed54bf6b5f74d6ceb5aa6f2a6f03338adf2"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/SUPPLEMENT_FREEZE.json",
+      "file": "business-model-knowledge-20261025/FORMAT_AND_CONTENT_DIAGNOSIS_JA.md",
+      "sha256": "4c48496280e24186e68c9ccaf7dc4fd04859bd71de2dca0b79d93491c8ad9138"
+    },
+    {
+      "freeze": "business-model-knowledge-20261025/SUPPLEMENT_FREEZE.json",
+      "file": "business-model-knowledge-20261025/README_JA.md",
+      "sha256": "8e57d304896d2190f89912dc9ae28a7e6852a81a1690845d804b4788deb4c81d"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "general-model-knowledge-20261025/MODEL_COMPARISON.json",
+      "sha256": "ff08950de1796f101f430a0f6e8013333ff82fd571ed3231f48e9438eaa3dfd4"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "general-model-knowledge-20261025/NATIVE_USAGE_LEDGER.json",
+      "sha256": "8df1895491cfb27f6035ee1be4668f58106d23bf5b55e81969015ff517be9483"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "general-model-knowledge-20261025/PROCESSING_FAMILY_KNOWLEDGE.json",
+      "sha256": "def8145dc2daa695f8cdd3f6b20a32eb43afa955c1bbf982a34a99795dbea923"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "general-model-knowledge-20261025/README_JA.md",
+      "sha256": "ddc8b67df3625f2bec41df475ecb7ce999d274a439ccef2a48d7f23aaa7770c6"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "general-model-knowledge-20261025/RESULTS_JA.md",
+      "sha256": "0e8256558980e8a1dfcb6ad439ea2c0c13a67b879f6d072621ed54e3806775bf"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "general-model-knowledge-20261025/SOURCE_MANIFEST.json",
+      "sha256": "df1b3444014d56eb2c2d95fc31b694d59ba794d802eda4e050a2fef89aa8e9de"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "general-model-knowledge-20261025/STATUS.json",
+      "sha256": "c83fe04236c7601b30aa6940bb4ab730a57ed3c60d4894222e7d2b7e43f89490"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "general-model-knowledge-20261025/TASK_MODEL_EVIDENCE.csv",
+      "sha256": "e64ee3a6ce9bf209c6839efbb7b258eed9ee0a41c30083a826088f5e41220d30"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "general-model-knowledge-20261025/TASK_TYPE_TABLE_JA.md",
+      "sha256": "ea754ef05761529404769a267315ad19b6523291919bd8e3fb1f50c4fab8970c"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/ANALYSIS_FREEZE.json",
+      "file": "general-model-knowledge-20261025/VERIFICATION.json",
+      "sha256": "1dbec266d1c2da448b396b9d50d4b3a64d98721e3769c532f954a97127606d97"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/KNOWLEDGE_UPDATE_FREEZE.json",
+      "file": "general-model-knowledge-20261025/KNOWLEDGE_UPDATE_JA.md",
+      "sha256": "4f0b42a1dfa03b4937c7fef4d513d42950c11129eabf99c0b92ca126f84e1a94"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/KNOWLEDGE_UPDATE_FREEZE.json",
+      "file": "general-model-knowledge-20261025/FAILURE_REVIEW.json",
+      "sha256": "3e002d1b904fb4ce3b5802b1230756238fecf40494962dd3a6515f8583590bc1"
+    },
+    {
+      "freeze": "general-model-knowledge-20261025/KNOWLEDGE_UPDATE_FREEZE.json",
+      "file": "general-model-knowledge-20261025/build_completion_note.py",
+      "sha256": "69c38010408892f47e54eed79245538f118d75bb4f0b6482d36443c2ed686721"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/FAILURE_INDEX.json",
+      "sha256": "fbb7c4f565c36599fb6b4566b17786a8844014ec26b48311799db1e2103d6d76"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/KNOWLEDGE_UPDATE_JA.md",
+      "sha256": "f9b39f784fe9b8552f5bc6569bc5484a8e136d4736a3d20d770646a92d049af6"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/MODEL_COMPARISON.json",
+      "sha256": "38e40aa50307260d31ee610271a67c4fc61327e0c91cc0b1777f0b8462e2bd1d"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/NATIVE_USAGE_LEDGER.json",
+      "sha256": "0c102478bff2b9736fdd8b85a15313d244f1fcba64cf031fb78dea22296a6df1"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/PROCESSING_FAMILY_KNOWLEDGE.json",
+      "sha256": "73741e007bb741f57d4bf0ded9352a0490074de655d6d3685cc054a739d03843"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/README_JA.md",
+      "sha256": "afe010efef15c76f5deef86c472c1a26d3cd9c825e676702a82d5615aa966d81"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/RESULTS_JA.md",
+      "sha256": "ce6a096b4ff68e32b32bc65a5e7ed3733aa5608a773039aea4263f0e009624f9"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/SOURCE_MANIFEST.json",
+      "sha256": "41b33c591b1e1716d3bb65b938bde268a934b5800c919c6d7d960aa11e7a518e"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/STATUS.json",
+      "sha256": "313cfdb356af770d065a5bed6bf9aedd7976bf963360fff9eb2c9870a24727a9"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/TASK_MODEL_EVIDENCE.csv",
+      "sha256": "db2a1698870c757212ce719bf391a980392a10ec48cf7cdcd7340de239119ceb"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/TASK_TYPE_TABLE_JA.md",
+      "sha256": "2b770e603fe51d6af213797c0f56e950267514539ec4f26c1517d41ae6911188"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/ANALYSIS_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/VERIFICATION.json",
+      "sha256": "3bec3d5f1cb1670ec8a3d8717beb6acc8211c6100aa00d942a57a1886cb6f022"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/build_final_knowledge.py",
+      "sha256": "87acc5d5b9ed81f36f78f8efddda2814ffc2ae9d700607378a623c44648a7dd8"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/FINAL_KNOWLEDGE_UPDATE_JA.md",
+      "sha256": "aab18682f5313073ab27f6d6b651c0f24a69cbad9d85165bf7a17ca7f9eed4c0"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/FAILURE_DIAGNOSTICS_REVISION002.json",
+      "sha256": "487f486590af6e53d42bd367c7a0d87a78268f74d3a55f18fc9bd9eb53e61c51"
+    },
+    {
+      "freeze": "extension-model-knowledge-20261026/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "extension-model-knowledge-20261026/COMPLETION_VERIFICATION.json",
+      "sha256": "a31045a9fc7c371748c1acccddc0a6a957c5ac5695729ce7f93ac109fda51b22"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/COMPLEMENTARITY.json",
+      "sha256": "74d85f4bec850da686e759fc4eee211e1b3c5f914ecaa8691b131f5825b64723"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/FAILURE_DIAGNOSTICS.json",
+      "sha256": "b4b99436672ba0a3f9dc9b7119611d38147b8d62780f341ae865489100a6971c"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/KNOWLEDGE_UPDATE_JA.md",
+      "sha256": "f898cb88b87d08e4b80cce2c9a6f62669fc1b41af32a0ba355695d2408b20549"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/MODEL_COMPARISON.json",
+      "sha256": "670a4c1fdd016a832bc0e7616250cb691dc748c3305b6a74ef9d23c00fd653b3"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/NATIVE_USAGE_LEDGER.json",
+      "sha256": "d985a20d291ea6ec03b9c1cd537fac83db837aa75ff0a43f8309bf55f9f8026e"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/PROCESSING_FAMILY_KNOWLEDGE.json",
+      "sha256": "c287dcd78e167d171c129a087cb461dc60947b2a28244e6065e47e7e912b2df0"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/README_JA.md",
+      "sha256": "fc13963bd84906df20d1a8cfe0c7f5f9224a0f0b4d1d1fb155cd4ce4016a7e6e"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/RESULTS_JA.md",
+      "sha256": "f898cb88b87d08e4b80cce2c9a6f62669fc1b41af32a0ba355695d2408b20549"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/SOURCE_MANIFEST.json",
+      "sha256": "dbbc262fa31d24899f34848a0126b5b180880c1c7f9923b4fbbbd8625b799ef7"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/STATUS.json",
+      "sha256": "23f92f45f5f0961788338c0ea91ca2ea30609742085ea55e4d345f8051cf278c"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/TASK_TYPE_TABLE_JA.md",
+      "sha256": "a3273695e0eed69b12266d613c0f0d50ea769fe00a84e57937cd726745a97381"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/VERIFICATION.json",
+      "sha256": "a1b27f52c092ab2878ae25e615868ed9322785e3a174a570ba04f90c37682442"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/FINAL_KNOWLEDGE_UPDATE_JA.md",
+      "sha256": "ddc9dad2b0465f33a0923771cdf3719acdc7b0ee0bc086c3d013c8ed7f0952c5"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/SUPPLEMENTAL_FAILURE_REVIEW.json",
+      "sha256": "8ee0f927e266c40e21c57aaf8267fd916a64f955f06648a0940ae58017df7147"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/ALL_ATTEMPT_TIMING_AND_MEMORY.json",
+      "sha256": "b3477cded7c738526bc59b6730d6eb6c4aa466122b2f27b9e41de3fd9dd642eb"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-model-knowledge-20261027/COMPLETION_EVIDENCE_VERIFICATION.json",
+      "sha256": "2e434daa6b6562719e23ebccd38e2cd59afb59d5e1771ff47a747011e5bedcb7"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-500-20261027/run-001/postprocessing-revision002/finalize_evidence.py",
+      "sha256": "1ea72dc0232972f05d9cbfff8dc886f22f867c36afee5183c154a7beba654b4b"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-500-20261027/run-001/postprocessing-revision002/RECOVERY_FREEZE.json",
+      "sha256": "808f07d7aa8e36d1a72b2fa59ff667917d5d460c4510ff8e7b075698c0f0ff2f"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-500-20261027/run-001/postprocessing-revision002/EXECUTION_RESULT.json",
+      "sha256": "ae1da4c5fd9cfe3911eccf7b5fa90f578aba0fd78c99673bb2ab2be11ba8170a"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-500-20261027/run-001/postprocessing-revision002/stdout.log",
+      "sha256": "9bbc8bb373419305e6b4aff4cfcd25091528cb58463812b26bd30faaf221d5eb"
+    },
+    {
+      "freeze": "variety-model-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-500-20261027/run-001/postprocessing-revision002/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-complement-knowledge-20261027/COMPLEMENTARITY.json",
+      "sha256": "aac028f8c3e7b36e91ac3449a4b0bdf807122c87b95e610ac48f3ae4e9814a83"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-complement-knowledge-20261027/KNOWLEDGE_UPDATE_JA.md",
+      "sha256": "9562f2cdb6c681cc10840588e178129aa4bdc5169ebe23dc7062230cd2b10f17"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-complement-knowledge-20261027/MODEL_COMPARISON.json",
+      "sha256": "aea39c9253464f44671bc4d95d95029385887073e821c5c8d314ddeeff9002ab"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-complement-knowledge-20261027/SOURCE_MANIFEST.json",
+      "sha256": "2c98a19c13d8653d7425fd74e374d3043d069bb29e1ff1b4b914004da04486bb"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/ANALYSIS_FREEZE.json",
+      "file": "variety-complement-knowledge-20261027/STATUS.json",
+      "sha256": "10b9b408978f8837471bd83870296b111884117a9a6b1582e0d0088d8f96d5e5"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-complement-knowledge-20261027/FINAL_KNOWLEDGE_UPDATE_JA.md",
+      "sha256": "73b4bc4a9e8953179273a62bd41f4663366202946db0f28e197c030719d9dde6"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-complement-knowledge-20261027/FAILURE_STRATA_AND_UNRECOVERED.json",
+      "sha256": "98616cbe20c4ed0c7eb29ae879835f677e656713fc4468a7f623c16a72f920d4"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-complement-knowledge-20261027/ORIGINAL_GEMMA_FAILURE_BASELINE.json",
+      "sha256": "1f1a4a624b3e4b7ff988ffaf97bd6118ac40f0c6f3f962e8201f6d6803b76643"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-complement-knowledge-20261027/ALL_ATTEMPT_SOURCE_MANIFEST.json",
+      "sha256": "ad8cad4e2f9635df2896a2145183a3b2ef90b282342a9b01678f71e6f5a73dcd"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-complement-knowledge-20261027/COMPLETION_EVIDENCE_VERIFICATION.json",
+      "sha256": "52141acac0423756b1be353b33c749eeab4fd7555b382efb799f76ff88b234a9"
+    },
+    {
+      "freeze": "variety-complement-knowledge-20261027/FINAL_KNOWLEDGE_FREEZE.json",
+      "file": "variety-complement-39-20261027/run-001/completion-audit-001/audit.py",
+      "sha256": "75e0dde340a573537b29fba19d49631c6feeb7ceca0c1ea185fde13cfd2fef20"
+    }
+  ],
+  "gemma_task_rows": 2500,
+  "core2000_rows": 2000,
+  "common100_model_rows": 20,
+  "failure_complement_cases": 48,
+  "source_scores_recalculated": false,
+  "old_evidence_written": false,
+  "new_model_calls": 0,
+  "production_changes": 0,
+  "not_a_fresh_revalidation_of_all_raw_requests": true
+}
