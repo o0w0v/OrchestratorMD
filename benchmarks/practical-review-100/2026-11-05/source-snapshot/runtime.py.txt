@@ -1,0 +1,118 @@
+"""Natural dialogue replication; unchanged capture, explicit incremental session ledger."""
+from pathlib import Path
+from decimal import Decimal
+import datetime as dt
+import hashlib,importlib.util,json,os,re,socket,subprocess,sys,threading,time,shutil
+sys.dont_write_bytecode=True
+ROOT=Path(__file__).resolve().parent
+RUN=ROOT/'run-001'
+def read(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def packed(v):return json.dumps(v,ensure_ascii=False,separators=(',',':')).encode('utf-8')
+def now():return dt.datetime.now(dt.timezone.utc).isoformat()
+def save(p,v):
+ p=Path(p);p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x',encoding='utf-8') as f:json.dump(v,f,ensure_ascii=False,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())
+def replace(p,v):
+ p=Path(p);q=p.with_suffix('.tmp');q.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');os.replace(q,p)
+def load(name,p):
+ s=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+def event(v):
+ with (RUN/'journal.jsonl').open('a',encoding='utf-8') as f:f.write(json.dumps({'timestamp':now(),**v},ensure_ascii=False)+'\n');f.flush();os.fsync(f.fileno())
+def verify():
+ f=read(ROOT/'EXECUTION_FREEZE.json')
+ for p,h in f['inputs'].items():assert sha(p)==h,'Frozen input drift: '+p
+ assert sha(f['cli'])==f['cli_sha256'] and sha(f['ollama_exe'])==f['ollama_sha256']
+ return f
+def guard():
+ import psutil
+ r={'timestamp':now(),'ram_available_bytes':psutil.virtual_memory().available,'disk_free_bytes':shutil.disk_usage(ROOT).free}
+ assert r['ram_available_bytes']>=6*2**30 and r['disk_free_bytes']>=5*2**30,'Resource guard STOP'
+ return r
+def preservation():
+ files=read(ROOT/'PRESERVATION_BEFORE.json')['files'];bad=[p for p,h in files.items() if not Path(p).is_file() or sha(p)!=h]
+ return {'timestamp':now(),'files_checked':len(files),'passed':not bad,'mismatches':bad}
+def workspace_for(f,tid,arm,stage):
+ # Shared consultation and normal continuation intentionally share one session;
+ # the two delegated conditions, fallbacks and blinded audits never share one.
+ return Path(f['actor_root'])/tid/('sol-dialogue' if arm in ['SHARED_DIALOGUE','SOL_CONTINUE'] else arm if arm in ['TERRA_GEMMA_TERRA','LUNA_GEMMA_LUNA','PRACTICAL'] else arm+'/'+stage)
+def argv_for(f,model,workspace,out,schema=None,session=None,persist=False,effort='medium'):
+ assert model in ['gpt-6.1-sol','gpt-6.1-terra','gpt-6-luna']
+ args=[f['cli'],'-C',str(workspace),'--sandbox','read-only','exec','--ignore-user-config','--color','never','--skip-git-repo-check','-c',f'model_reasoning_effort="{effort}"','-c','features.fast_mode=false','-c','agents.enabled=false','-c','features.multi_agent=false','-c','features.multi_agent_v2=false']
+ if session:args+=['resume',session,'--ignore-user-config']
+ elif not persist:args+=['--ephemeral']
+ args+=['--json','-m',model,'--output-last-message',str(out/'answer.txt')]
+ if schema is not None:args+=['--output-schema',str(out/'schema.json')]
+ return args+['-']
+def inspect_events(events):
+ allowed={'agent_message','reasoning','todo_list','plan','command_execution'}
+ unknown=[e.get('item',{}).get('type') for e in events if e.get('type','').startswith('item.') and e.get('item',{}).get('type') not in allowed]
+ commands=[e['item'] for e in events if e.get('type')=='item.completed' and e.get('item',{}).get('type')=='command_execution']
+ forbidden=re.compile(r'private|EXPECTED|reference\.py|auth\.json|https?://|Invoke-WebRequest|curl\b|wget\b|run-001|analysis-001|natural-handoff|practical-review|luna-escalation|large-deliverable|review-repair|quality-cost|decomposition|business-500|general-500|work-contract-10',re.I)
+ return {'unknown_types':unknown,'commands':commands,'out_of_scope':[c for c in commands if forbidden.search(str(c.get('command','')))],'OS_read_isolation_proven':False}
+FIELDS=['input_tokens','cached_input_tokens','output_tokens','reasoning_output_tokens']
+def delta(current,previous):
+ assert all(type(current.get(k))==int and current[k]>=0 for k in FIELDS),'Invalid cumulative counters'
+ d={k:current[k]-previous.get(k,0) for k in FIELDS}
+ assert all(v>=0 for v in d.values()),'Non-monotonic session counters'
+ assert d['cached_input_tokens']<=d['input_tokens'] and d['reasoning_output_tokens']<=d['output_tokens'],'Invalid token subsets'
+ return d
+def price(u,model,rate):
+ r=rate['rates'][model]
+ return ((u['input_tokens']-u['cached_input_tokens'])*Decimal(r['input'])+u['cached_input_tokens']*Decimal(r['cached_input'])+u['output_tokens']*Decimal(r['output']))/r['denominator']
+class Capture:
+ def __init__(self):
+  self.f=verify();self.c=load('natural100_verified_capture',self.f['capture']);self.rate=read(ROOT/'pricing/RATE_FREEZE.json');self.raw=(ROOT/'pricing/official-pricing.raw.md').read_bytes();self.calls=0;self.spent=Decimal(0);self.counters={};self.session_models={};self.partial_billing={};self.last_call_partial=False;self.imported_stage_keys=set()
+  if (ROOT/'RECOVERY_IMPORT.json').exists():
+   from recovery import hydrate
+   hydrate(self,ROOT,RUN)
+ def cloud(self,j,arm,stage,packet,schema,model,session=None,persist=False):
+  f=verify();effort=j['reasoning_effort'];existing=RUN/'cloud_unscored'/j['task_id']/arm/f'{stage}.json'
+  if existing.exists():
+   assert (j['task_id'],arm,stage) in self.imported_stage_keys,'Duplicate non-imported call'
+   spec=next(x for x in read(ROOT/'RECOVERY_IMPORT.json')['imported_calls'] if (x['task_id'],x['arm'],x['stage'])==(j['task_id'],arm,stage))
+   assert sha(existing)==spec['result_sha256'],'Imported result drift'
+   r=read(existing);request=packet.encode() if isinstance(packet,str) else packed(packet)
+   assert (RUN/'roles'/j['task_id']/arm/stage/'request.raw').read_bytes()==request and r['model']==model and r['continued_from']==session,'Imported call request mismatch'
+   event({'event':'REUSED_COMPLETED_CALL','task_id':j['task_id'],'arm':arm,'stage':stage,'capture_path':r['capture_path']});return r
+  snap=guard();assert effort in ['low','medium','high'];assert self.calls<500 and self.spent+Decimal(12)*len(self.partial_billing)<Decimal('600'),'Cloud call/Credits monitor STOP; not a hard cap'
+  if arm!='SHARED_DIALOGUE':
+   seal=read(RUN/'dialogues'/j['task_id']/'DESIGN_AND_DIALOGUE_SEALED.json');assert all(sha(p)==h for p,h in seal['files'].items()),'Design drift'
+  out=RUN/'roles'/j['task_id']/arm/stage;out.mkdir(parents=True,exist_ok=False)
+  workspace=workspace_for(f,j['task_id'],arm,stage);workspace.mkdir(parents=True,exist_ok=True)
+  request=packet.encode() if isinstance(packet,str) else packed(packet);(out/'request.raw').write_bytes(request)
+  if schema is not None:save(out/'schema.json',schema)
+  save(out/'RESOURCE_BEFORE.json',snap)
+  research=arm=='QUALITY_AUDIT'
+  role='VALIDATOR' if research else 'CONSULTANT' if arm=='SHARED_DIALOGUE' else 'REVIEWER' if stage in ['REVIEW','RESOLVE'] else 'COORDINATOR' if stage=='HANDOFF' else 'EXECUTOR'
+  meta={'task_id':j['task_id'],'benchmark':ROOT.name,'arm':arm,'role':role,'stage':stage,'model':model,'reasoning_effort':effort,'speed_mode':'Standard','origin_scope':'BENCHMARK_VALIDATION' if research else 'BENCHMARK_EXECUTION','retry':False,'authorization_ref':sha(ROOT/'EXECUTION_FREEZE.json'),'billing_mode':'CHATGPT_CREDITS','rate_applicable':True,'intentional_conversation_continuation':bool(session),'source_session_id':session,'assigned_profile':j['profile']}
+  assert sum((Decimal(read(q)['credits']) for q in (RUN/'cloud_unscored'/j['task_id']).glob('*/*.json')),Decimal(0))<Decimal('12'),'Per-task next-call budget STOP; not hard cap'
+  self.calls+=1;start=time.monotonic();path=self.c.capture_codex(RUN/'accounting',meta,argv_for(f,model,workspace,out,schema,session,persist,effort),request,workspace,timeout=1500)
+  report=self.c.reconcile(path,self.rate,self.raw);save(out/'CAPTURE.json',report)
+  billing_exception=None
+  if not (report['terminal']['exit_code']==0 and report['billing_coverage']=='REPORTED_USAGE_COMPLETE' and not report['issues']):
+   from recovery import completed_idle_retry
+   billing_exception=completed_idle_retry(report,path)
+   assert billing_exception is not None and len(self.partial_billing)<10 and not self.last_call_partial,'Cloud/accounting STOP; incomplete response or repeated retry uncertainty'
+  self.last_call_partial=billing_exception is not None
+  if billing_exception is not None:self.partial_billing[path.name]=billing_exception
+  events=[json.loads(x) for x in (path/'stdout.jsonl').read_bytes().splitlines()];trace=inspect_events(events);save(out/'TRACE.json',trace)
+  assert not trace['unknown_types'] and not trace['out_of_scope'] and not trace['commands'],'Unknown/out-of-scope tool STOP'
+  turns=[e for e in events if e.get('type')=='turn.completed'];assert len(turns)==1 and turns[0].get('usage',{}).get('cache_write_input_tokens')==0,'Missing/multiple turn or unproven cache-write accounting'
+  from protocol import parse,check_schema
+  tids=[e['thread_id'] for e in events if e.get('type')=='thread.started'];assert len(set(tids))==1,'Missing/ambiguous session id'
+  if session:assert tids[0]==session,'Wrong resumed session'
+  sid=tids[0];u=turns[0]['usage']
+  if session:assert sid in self.counters and self.session_models[sid]==model,'Uncaptured resume or model switch'
+  else:assert sid not in self.counters,'Unexpected continuation'
+  previous=self.counters.get(sid,{});du=delta(u,previous);amount=price(du,model,self.rate);raw_amount=price(u,model,self.rate)
+  assert raw_amount==sum((Decimal(x['credits']) for x in report['records'] if x['credits'] is not None),Decimal(0)),'Raw capture pricing disagreement'
+  ledger={'session_id':sid,'model':model,'task_id':j['task_id'],'arm':arm,'stage':stage,'continued_from':session,'previous_cumulative_usage':previous,'raw_cumulative_usage':u,'incremental_usage':du,'incremental_Credits':str(amount),'raw_counter_price_not_incremental':str(raw_amount),'capture_path':str(path),'billing_complete':billing_exception is None,'billing_exception':billing_exception}
+  save(out/'INCREMENTAL_USAGE.json',ledger);self.counters[sid]={k:u[k] for k in FIELDS};self.session_models[sid]=model;self.spent+=amount
+  text=(out/'answer.txt').read_text(encoding='utf-8') if (out/'answer.txt').exists() else '';assert text.strip(),'Empty answer';value=None;error=None
+  if schema is not None:
+   try:value=parse(text);check_schema(value,schema)
+   except (ValueError,TypeError,KeyError) as exc:error=type(exc).__name__+': '+str(exc)
+  r={'task_id':j['task_id'],'arm':arm,'stage':stage,'model':model,'timestamp':now(),'session_id':sid,'continued_from':session,'value':value,'public_schema_pass':error is None,'error':error,'seconds':time.monotonic()-start,'credits':str(amount),'usage_ledger':ledger,'capture_path':str(path),'text':text,'tool_commands':len(trace['commands']),'billing_complete':billing_exception is None,'billing_exception':billing_exception}
+  save(RUN/'cloud_unscored'/j['task_id']/arm/f'{stage}.json',r);event({'event':'CLOUD_FINISHED','task_id':j['task_id'],'arm':arm,'stage':stage,'new_credits_subtotal':str(self.spent)})
+  return r

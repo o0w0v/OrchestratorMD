@@ -1,0 +1,99 @@
+"""One-shot matched 100-case run. No private oracle until all routing sealed."""
+import traceback
+from runtime import *
+from scenario import artifact_schema,execution_transcript,clean_execution_packet
+from policy import *
+from native_runtime import Local
+
+def progress(cap,local,phase,tid=None):
+ replace(RUN/'PROGRESS.json',{'timestamp':now(),'phase':phase,'task_id':tid,'Cloud_dispatched':cap.calls,'reused_Cloud_calls':198,'historical_failed_calls':1,'new_Cloud_dispatched':cap.calls-199,'unmeasured_retry_calls':len(cap.partial_billing),'uncertainty_budget_reserve_Credits':str(Decimal(12)*len(cap.partial_billing)),'measured_incremental_Credits':str(cap.spent),'Local_primary':local.primary,'Local_physical':local.attempts,'dialogues_completed':len(list((RUN/'dialogues').glob('*/DESIGN_AND_DIALOGUE_SEALED.json'))),'dialogues_planned':100,'workflows_completed':len(list((RUN/'unscored').glob('*/*.json'))),'workflows_planned':200})
+
+def source(j,cap,local):
+ seal=RUN/'dialogues'/j['task_id']/'DESIGN_AND_DIALOGUE_SEALED.json'
+ if seal.exists():
+  assert all(sha(p)==h for p,h in read(seal)['files'].items()),'Imported sealed dialogue drift'
+  event({'event':'REUSED_SEALED_DIALOGUE','task_id':j['task_id']});return
+ progress(cap,local,'SOURCE_CONSULTATION',j['task_id'])
+ a=cap.cloud(j,'SHARED_DIALOGUE','INITIAL_REQUEST',j['initial'],None,'gpt-6.1-sol',persist=True)
+ b=cap.cloud(j,'SHARED_DIALOGUE','OWNER_REPLY_AND_DESIGN',j['owner_reply'],None,'gpt-6.1-sol',session=a['session_id'])
+ t=[{'role':'user','content':j['initial']},{'role':'assistant','content':a['text']},{'role':'user','content':j['owner_reply']},{'role':'assistant','content':b['text']},{'role':'user','content':j['continuation']}]
+ execution_transcript(t);p=RUN/'dialogues'/j['task_id'];save(p/'PUBLIC_DIALOGUE.json',t)
+ (p/'SOL_DESIGN_VERBATIM.md').write_text(b['text'],encoding='utf-8')
+ save(p/'DESIGN_AND_DIALOGUE_SEALED.json',{'timestamp':now(),'files':{str(x):sha(x) for x in [p/'PUBLIC_DIALOGUE.json',p/'SOL_DESIGN_VERBATIM.md']},'source_session':a['session_id'],'shared_Credits':str(Decimal(a['credits'])+Decimal(b['credits'])),'shared_seconds':a['seconds']+b['seconds'],'common_execution_instruction':j['continuation']})
+
+def normal(j,cap):
+ s=read(RUN/'dialogues'/j['task_id']/'DESIGN_AND_DIALOGUE_SEALED.json')
+ r=cap.cloud(j,'SOL_CONTINUE','EXECUTE',j['continuation'],artifact_schema(j),'gpt-6.1-sol',session=s['source_session'])
+ e=public_errors(j,r['value']);out={'task_id':j['task_id'],'arm':'SOL_CONTINUE','profile':j['profile'],'reasoning_effort':j['reasoning_effort'],'final_artifact':r['value'],'initial_artifact':r['value'],'adopted':not e,'public_errors':e,'category':'accepted_unchanged' if not e else 'unresolved','shared_credits':s['shared_Credits'],'incremental_credits':r['credits'],'operating_total_credits':str(Decimal(s['shared_Credits'])+Decimal(r['credits'])),'shared_seconds':s['shared_seconds'],'incremental_active_seconds':r['seconds'],'total_active_seconds':s['shared_seconds']+r['seconds'],'model_result':r,'human_repair_seconds':None}
+ save(RUN/'unscored'/j['task_id']/'SOL_CONTINUE.json',out);return out
+
+def practical(j,cap,local,normal_result=None):
+ tid=j['task_id'];s=read(RUN/'dialogues'/tid/'DESIGN_AND_DIALOGUE_SEALED.json')
+ if j['profile']=='small':
+  assert normal_result is not None
+  r={k:v for k,v in normal_result.items() if k!='model_result'};r.update({'arm':'PRACTICAL','same_physical_small_task_execution':True,'shared_execution_capture_path':normal_result['model_result']['capture_path'],'small_path_extra_model_calls':0})
+  save(RUN/'unscored'/tid/'PRACTICAL.json',r);return
+ t=read(RUN/'dialogues'/tid/'PUBLIC_DIALOGUE.json');packet={'instruction':'元条件に従って仕事を完了し、指定JSONと短いreport_mdを返す。','public_conversation_verbatim':t}
+ start=time.monotonic();before=local.load_seconds
+ try:native=local.call(tid,'PRACTICAL',{'step_id':'INITIAL','model':'gemma26','role':'LOCAL_EXECUTOR'},packet,artifact_schema(j))
+ finally:local.stop()
+ active=time.monotonic()-start;artifact=native['value'];initial=artifact;errors=public_errors(j,artifact) if native['classification']=='RESPONSE_COMPLETE' else [native['classification']]
+ assert native['classification']!='CONTEXT_WARNING','Context warning STOP; do not truncate'
+ cost=Decimal(0);history=[];category='unresolved';adopted=False;calls=0;repair_changes=[]
+ if errors:
+  # No usable artifact: one clean Sol execution, original conversation only.
+  r=cap.cloud(j,'PRACTICAL','RESOLVE_FORMAT',clean_execution_packet(t),artifact_schema(j),'gpt-6.1-sol');cost+=Decimal(r['credits']);active+=r['seconds'];calls+=1;history.append(r)
+  artifact=r['value'];errors=public_errors(j,artifact);adopted=not errors;category='reworked' if adopted else 'unresolved'
+ else:
+  r=cap.cloud(j,'PRACTICAL','REVIEW',review_packet(t,artifact),None,'gpt-6.1-sol',persist=True);cost+=Decimal(r['credits']);active+=r['seconds'];calls+=1;history.append(r)
+  v,error=parse_review(r['text']);issues=error
+  if v is not None and v['decision']=='PATCH':
+   try:artifact=apply_patch(artifact,v['changes'],artifact_schema(j));repair_changes+=v['changes'];adopted=True;category='accepted_after_partial_repair'
+   except (AssertionError,ValueError,TypeError,KeyError,IndexError) as e:issues='PATCH_APPLICATION: '+str(e)
+  elif v is not None and v['decision']=='ACCEPT':adopted=True;category='accepted_unchanged'
+  elif v is not None and v['decision']=='NEED_INPUT':issues={'question':v['question']}
+  else:issues=v if v is not None else error
+  if not adopted and not (v is not None and v['decision']=='NEED_INPUT'):
+   # At most one targeted resolution. It is not another full research audit.
+   rr=cap.cloud(j,'PRACTICAL','RESOLVE',review_packet(t,artifact,issues),None,'gpt-6.1-sol',session=r['session_id']);cost+=Decimal(rr['credits']);active+=rr['seconds'];calls+=1;history.append(rr)
+   vv,ee=parse_review(rr['text'])
+   if vv is not None and vv['decision']=='ACCEPT':adopted=True;category='accepted_unchanged'
+   elif vv is not None and vv['decision']=='PATCH':
+    try:artifact=apply_patch(artifact,vv['changes'],artifact_schema(j));repair_changes+=vv['changes'];adopted=True;category='reworked' if v is not None and v['decision']=='REWORK' else 'accepted_after_partial_repair'
+    except (AssertionError,ValueError,TypeError,KeyError,IndexError) as e:issues='PATCH_APPLICATION: '+str(e)
+   else:issues=vv if vv is not None else ee
+  errors=[] if adopted else [issues]
+ assert calls<=2
+ save(RUN/'unscored'/tid/'PRACTICAL.json',{'task_id':tid,'arm':'PRACTICAL','profile':j['profile'],'reasoning_effort':j['reasoning_effort'],'initial_artifact':initial,'final_artifact':artifact,'adopted':adopted,'public_errors':errors,'category':category,'shared_credits':s['shared_Credits'],'incremental_credits':str(cost),'operating_total_credits':str(Decimal(s['shared_Credits'])+cost),'shared_seconds':s['shared_seconds'],'incremental_active_seconds':active,'total_active_seconds':s['shared_seconds']+active,'native':native,'native_load_seconds':local.load_seconds-before,'history':history,'patch_changes':repair_changes,'postcandidate_Cloud_calls':calls,'handoff_calls':0,'coordinator_review_calls':0,'same_physical_small_task_execution':False,'human_repair_seconds':None})
+
+def run():
+ f=verify();assert not (RUN/'EXECUTION_STARTED.json').exists() and read(ROOT/'OFFLINE_TESTS.json')['passed']
+ assert not any(os.environ.get(k) for k in ['OPENAI_API_KEY','AZURE_OPENAI_API_KEY'])
+ save(RUN/'EXECUTION_STARTED.json',{'timestamp':now(),'pid':os.getpid(),'argv':sys.argv,'freeze_sha256':sha(ROOT/'EXECUTION_FREEZE.json'),'authorization':f['human_authorization']});cap=None;local=None
+ try:
+  assert preservation()['passed'];cap=Capture();local=Local(cap);save(RUN/'PREFLIGHT.json',local.h.snapshot());assert not local.h.processes(),'Unexpected unowned Ollama process'
+  jobs=read(ROOT/'JOBS_PUBLIC.json');assert len(jobs)==100
+  for j in jobs:source(j,cap,local)
+  save(RUN/'ALL_DESIGNS_SEALED.json',{'timestamp':now(),'files':{str(p):sha(p) for p in (RUN/'dialogues').rglob('*') if p.is_file()},'before_any_arm_execution':True})
+  for i,j in enumerate(jobs):
+   progress(cap,local,'EXECUTION',j['task_id'])
+   if j['profile']=='small' or i%2==0:
+    a=normal(j,cap);practical(j,cap,local,a)
+   else:practical(j,cap,local);normal(j,cap)
+   progress(cap,local,'PAIR_COMPLETE',j['task_id'])
+  paths=sorted((RUN/'unscored').glob('*/*.json'));assert len(paths)==200
+  save(RUN/'ROUTING_COMPLETE.json',{'timestamp':now(),'files':{str(p):sha(p) for p in paths},'before_private_scoring':True})
+  save(RUN/'PRESERVATION_AFTER.json',preservation());assert read(RUN/'PRESERVATION_AFTER.json')['passed']
+  save(RUN/'COMPLETE.json',{'timestamp':now(),'workflows':200,'cloud_calls':cap.calls,'local_primary':local.primary,'local_physical':local.attempts,'reported_usage_subtotal_Credits':str(cap.spent),'study_total_Credits':None,'billing_complete':False,'unmeasured_retry_calls':list(cap.partial_billing),'reused_Cloud_calls':198,'historical_failed_calls':1,'new_Cloud_calls':cap.calls-199,'research_model_calls':0,'old_model_calls_reexecuted':0})
+ except BaseException as exc:
+  if not (RUN/'STOP.json').exists():save(RUN/'STOP.json',{'timestamp':now(),'error':repr(exc),'traceback':traceback.format_exc(),'cloud_dispatched':cap.calls if cap else 0,'measured_Credit_subtotal':str(cap.spent) if cap else None,'automatic_resume':False})
+  raise
+ finally:
+  if local is not None:local.stop()
+  if (RUN/'COMPLETE.json').exists():
+   try:
+    from postprocess import finish
+    finish()
+   except BaseException as exc:
+    if not (RUN/'POSTPROCESSING_STOP.json').exists():save(RUN/'POSTPROCESSING_STOP.json',{'timestamp':now(),'error':repr(exc),'traceback':traceback.format_exc()})
+if __name__=='__main__':run()

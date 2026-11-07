@@ -1,0 +1,151 @@
+{
+  "version": "practical-review-v1",
+  "created_local_date": "2026-11-04",
+  "timezone": "Asia/Tokyo",
+  "status": "DESIGN_ONLY_NOT_BENCHMARKED",
+  "enabled": false,
+  "objective": "usable_requested_result_with_minimum_total_cost_and_repair_time",
+  "allowed_cloud_models": [
+    "gpt-6.1-sol",
+    "gpt-6.1-terra",
+    "gpt-6-luna"
+  ],
+  "routing": {
+    "dedicated_classifier_calls": 0,
+    "profile_selected_by": "existing_task_owner_or_preconfigured_public_task_type",
+    "select_once_before_execution": true,
+    "unknown_material_requirement": "NEED_INPUT",
+    "unsupported_effort": "configuration_error_no_silent_xhigh_fallback"
+  },
+  "profiles": {
+    "small": {
+      "reasoning_effort": "low",
+      "examples": [
+        "small_edit",
+        "simple_extraction",
+        "known_format_conversion"
+      ],
+      "independent_ai_review_calls": 0,
+      "existing_public_checks_and_owner_self_check": true
+    },
+    "normal": {
+      "reasoning_effort": "medium",
+      "examples": [
+        "ordinary_aggregation",
+        "document_preparation",
+        "scoped_implementation"
+      ],
+      "initial_final_review_calls_max": 1
+    },
+    "complex": {
+      "reasoning_effort": "high",
+      "examples": [
+        "dependency_scheduling",
+        "conflicting_conditions",
+        "high_consequence_calculation"
+      ],
+      "initial_final_review_calls_max": 1
+    }
+  },
+  "xhigh_default": false,
+  "xhigh_requires": "explicit_precision_request_or_previously_demonstrated_task_need",
+  "delegated_workflow": {
+    "skip_handoff_model_when_original_instructions_suffice": true,
+    "small_tasks_need_not_be_delegated": true,
+    "final_sol_review_replaces_coordinator_review": true,
+    "append_sol_after_coordinator_review_by_default": false,
+    "final_review_inputs": [
+      "original_request",
+      "required_original_sources",
+      "agreed_conditions",
+      "current_execution_authorization",
+      "candidate"
+    ],
+    "previous_model_verdict_is_not_evidence": true,
+    "local_generation_settings": "unchanged_by_this_review_design"
+  },
+  "review": {
+    "prompt_file": "review_prompt.txt",
+    "attach_design_document_to_every_call": false,
+    "decisions": [
+      "ACCEPT",
+      "PATCH",
+      "REWORK",
+      "NEED_INPUT"
+    ],
+    "accept_output": {
+      "decision": "ACCEPT"
+    },
+    "patch_fields": [
+      "decision",
+      "changes",
+      "impact"
+    ],
+    "patch_change_fields": [
+      "path",
+      "before",
+      "after"
+    ],
+    "rework_fields": [
+      "decision",
+      "scope",
+      "impact"
+    ],
+    "need_input_fields": [
+      "decision",
+      "question"
+    ],
+    "criterion_by_criterion_scoring": false,
+    "optional_improvements_output": false,
+    "style_only_regeneration": false,
+    "accept_reuses_original_artifact": true
+  },
+  "limits": {
+    "initial_review_calls_max": 1,
+    "additional_targeted_resolution_calls_max": 1,
+    "max_cloud_calls_after_candidate": 2,
+    "separate_postrepair_model_audit_calls": 0,
+    "automatic_model_call_retry": 0,
+    "on_unresolved_at_limit": "return_unresolved_scope_without_claiming_acceptance",
+    "call_count_is_token_or_credit_hard_cap": false,
+    "execution_credit_budget": null,
+    "budget_must_be_supplied_for_paid_execution": true
+  },
+  "patch_application": {
+    "verify_target_and_before_value": true,
+    "apply_explicit_changes_only": true,
+    "check_public_format_and_available_invariants": true,
+    "include_affected_totals_and_report_text": true,
+    "host_semantic_invention": false,
+    "private_gold_in_runtime": false,
+    "whole_artifact_regeneration_for_polish": false
+  },
+  "measurement": {
+    "categories": [
+      "accepted_unchanged",
+      "accepted_after_partial_repair",
+      "reworked",
+      "unresolved"
+    ],
+    "record": [
+      "actual_incremental_credits_all_calls",
+      "input_tokens",
+      "cached_input_tokens",
+      "output_tokens",
+      "reasoning_output_tokens",
+      "active_seconds",
+      "repair_scope",
+      "human_repair_seconds"
+    ],
+    "resumed_session_usage": "current_cumulative_minus_previous_cumulative",
+    "missing_usage_or_human_time": null,
+    "extra_model_calls_for_measurement": 0,
+    "postrepair_success_does_not_erase_initial_error": true
+  },
+  "authorization_scope": {
+    "design_and_local_files_only": true,
+    "dispatch_new_model_calls": false,
+    "modify_frozen_experiments_or_production": false,
+    "change_current_chat_reasoning_setting": false
+  }
+}

@@ -1,0 +1,620 @@
+{
+  "task_id": "PR100-074",
+  "metadata": {
+    "task_id": "PR100-074",
+    "family": "sales",
+    "designed_difficulty": 1,
+    "variant": 1
+  },
+  "public_job": {
+    "task_id": "PR100-074",
+    "initial": "今月の売上がどうなっているか、取消や返品も踏まえてまとめたいです。チーム別の状況と、先に対応すべきところが伝わる感じにしたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n取消またはday>as_of_dayはEXCLUDEDでnet/tax/gross=0。その他はINCLUDED、net=max(qty*price-discount-refund,0)、tax=(net*tax_bps+5000)//10000（整数切捨て）、gross=net+tax。\ndetailsは全saleをid順。teamsはT1,T2,T3順でnet/tax/grossの合計、gap=max(target-net,0)。unmetはgap>0のteamをgap降順、team昇順で並べる。totalsは全detailsのnet/tax/gross合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に売上合計・チーム別状況と、未達チームの優先順・差額。\n資料は以下のJSONです。\n{\n  \"as_of_day\": 30,\n  \"targets\": [\n    {\n      \"team\": \"T1\",\n      \"target\": 2400\n    },\n    {\n      \"team\": \"T2\",\n      \"target\": 3000\n    },\n    {\n      \"team\": \"T3\",\n      \"target\": 2000\n    }\n  ],\n  \"sales\": [\n    {\n      \"id\": \"S001\",\n      \"team\": \"T1\",\n      \"qty\": 2,\n      \"price\": 100,\n      \"discount\": 0,\n      \"refund\": 0,\n      \"tax_bps\": 1000,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S002\",\n      \"team\": \"T2\",\n      \"qty\": 2,\n      \"price\": 300,\n      \"discount\": 0,\n      \"refund\": 0,\n      \"tax_bps\": 1000,\n      \"day\": 30,\n      \"cancelled\": false\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"net\", \"tax\", \"gross\", \"state\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}, \"gap\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"net\", \"tax\", \"gross\", \"gap\"], \"additionalProperties\": false}}, \"unmet\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"totals\": {\"type\": \"object\", \"properties\": {\"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}}, \"required\": [\"net\", \"tax\", \"gross\"], \"additionalProperties\": false}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"unmet\", \"totals\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "as_of_day": 30,
+      "targets": [
+        {
+          "team": "T1",
+          "target": 2400
+        },
+        {
+          "team": "T2",
+          "target": 3000
+        },
+        {
+          "team": "T3",
+          "target": 2000
+        }
+      ],
+      "sales": [
+        {
+          "id": "S001",
+          "team": "T1",
+          "qty": 2,
+          "price": 100,
+          "discount": 0,
+          "refund": 0,
+          "tax_bps": 1000,
+          "day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "S002",
+          "team": "T2",
+          "qty": 2,
+          "price": 300,
+          "discount": 0,
+          "refund": 0,
+          "tax_bps": 1000,
+          "day": 30,
+          "cancelled": false
+        }
+      ]
+    },
+    "business_rules": [
+      "取消またはday>as_of_dayはEXCLUDEDでnet/tax/gross=0。その他はINCLUDED、net=max(qty*price-discount-refund,0)、tax=(net*tax_bps+5000)//10000（整数切捨て）、gross=net+tax。",
+      "detailsは全saleをid順。teamsはT1,T2,T3順でnet/tax/grossの合計、gap=max(target-net,0)。unmetはgap>0のteamをgap降順、team昇順で並べる。totalsは全detailsのnet/tax/gross合計。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "net": {
+                "type": "integer"
+              },
+              "tax": {
+                "type": "integer"
+              },
+              "gross": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "net",
+              "tax",
+              "gross",
+              "state"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "teams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "team": {
+                "type": "string"
+              },
+              "net": {
+                "type": "integer"
+              },
+              "tax": {
+                "type": "integer"
+              },
+              "gross": {
+                "type": "integer"
+              },
+              "gap": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "team",
+              "net",
+              "tax",
+              "gross",
+              "gap"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "unmet": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "totals": {
+          "type": "object",
+          "properties": {
+            "net": {
+              "type": "integer"
+            },
+            "tax": {
+              "type": "integer"
+            },
+            "gross": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "net",
+            "tax",
+            "gross"
+          ],
+          "additionalProperties": false
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "teams",
+        "unmet",
+        "totals",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "normal",
+    "reasoning_effort": "medium"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "今月の売上がどうなっているか、取消や返品も踏まえてまとめたいです。チーム別の状況と、先に対応すべきところが伝わる感じにしたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まずは資料と集計の前提を確認してから、まとめ方を相談しましょう。このチャットにいただく資料だけを使い、外部ファイルや他の会話の参照、外部調査・通知・システム構築は行いません。\n\n資料を貼る際に、分かる範囲で次の3点も教えてください。資料に書かれていれば、回答は省いて大丈夫です。\n\n1. **対象期間**：「今月」は2026年11月で合っていますか。何日までの状況をまとめたいですか。\n2. **読み手と目的**：チーム内の共有、上司への報告、対応方針の相談など、誰が見て何を判断するためのものですか。\n3. **比較基準**：目標・前年・前月など、比べたいものはありますか。特になければ資料を見て相談できます。\n\n取消・返品については、**今月の売上に対するものか、過去の売上分も含むか／売上金額にすでに反映されているか**を資料から確認し、不明な点だけ追加で伺います。\n\n形のたたき台は、「全体の売上と取消・返品の影響 → チーム別の比較 → 優先して対応するところとその理由」です。資料を確認した段階で、集計できること・確認が必要なことを整理し、完成品を作る前に構成を相談します。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n取消またはday>as_of_dayはEXCLUDEDでnet/tax/gross=0。その他はINCLUDED、net=max(qty*price-discount-refund,0)、tax=(net*tax_bps+5000)//10000（整数切捨て）、gross=net+tax。\ndetailsは全saleをid順。teamsはT1,T2,T3順でnet/tax/grossの合計、gap=max(target-net,0)。unmetはgap>0のteamをgap降順、team昇順で並べる。totalsは全detailsのnet/tax/gross合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に売上合計・チーム別状況と、未達チームの優先順・差額。\n資料は以下のJSONです。\n{\n  \"as_of_day\": 30,\n  \"targets\": [\n    {\n      \"team\": \"T1\",\n      \"target\": 2400\n    },\n    {\n      \"team\": \"T2\",\n      \"target\": 3000\n    },\n    {\n      \"team\": \"T3\",\n      \"target\": 2000\n    }\n  ],\n  \"sales\": [\n    {\n      \"id\": \"S001\",\n      \"team\": \"T1\",\n      \"qty\": 2,\n      \"price\": 100,\n      \"discount\": 0,\n      \"refund\": 0,\n      \"tax_bps\": 1000,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S002\",\n      \"team\": \"T2\",\n      \"qty\": 2,\n      \"price\": 300,\n      \"discount\": 0,\n      \"refund\": 0,\n      \"tax_bps\": 1000,\n      \"day\": 30,\n      \"cancelled\": false\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"net\", \"tax\", \"gross\", \"state\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}, \"gap\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"net\", \"tax\", \"gross\", \"gap\"], \"additionalProperties\": false}}, \"unmet\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"totals\": {\"type\": \"object\", \"properties\": {\"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}}, \"required\": [\"net\", \"tax\", \"gross\"], \"additionalProperties\": false}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"unmet\", \"totals\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人は、明細を確認する担当者と、チームごとの状況を見て対応の優先順位を判断する責任者を想定しています。担当者は各売上の計上状態や金額を確認し、責任者は全体・チーム別の集計と短い共有文を、必要に応じて明細に戻りながら読む形です。\n\n作成時は、提示された計算ルールで全売上の明細を確定し、それを基にチーム別集計、目標との差額、未達チームの優先順、全体合計を作ります。売上がないチームも一覧に含め、目標との差額は税抜のnetで判断します。計算と並び順、明細・チーム別・全体の合計が一致することを確認したうえで、指定された全フィールドを持つJSONにまとめる方針です。継続実行するコードやシステムは作りません。\n\nreport_mdは、売上合計、チーム別の状況、未達チームの優先順と差額を中心に、短く書きます。取消・返品などは今回の資料に実際にある内容だけを扱い、重要な注意点は数値やIDに結び付けます。対応の提案と実施済みの事実を区別し、確認や対応が完了したとは書きません。\n\n計算に必要な条件はそろっています。未確定なのは、金額の通貨・単位と対象年月です。これらは推測せず、確定しない場合は通貨記号や年月を補わずに表記します。また、集計基準は資料の `as_of_day: 30` を使い、実際の今日の日付には置き換えません。\n\n現段階では、集計や最終JSONの作成には着手していません。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-074",
+      "arm": "SOL_CONTINUE",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "S001",
+            "net": 200,
+            "tax": 20,
+            "gross": 220,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S002",
+            "net": 600,
+            "tax": 60,
+            "gross": 660,
+            "state": "INCLUDED"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "net": 200,
+            "tax": 20,
+            "gross": 220,
+            "gap": 2200
+          },
+          {
+            "team": "T2",
+            "net": 600,
+            "tax": 60,
+            "gross": 660,
+            "gap": 2400
+          },
+          {
+            "team": "T3",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "gap": 2000
+          }
+        ],
+        "unmet": [
+          "T2",
+          "T1",
+          "T3"
+        ],
+        "totals": {
+          "net": 800,
+          "tax": 80,
+          "gross": 880
+        },
+        "report_md": "30日基準の売上合計は税抜800、税80、税込880です。全チームが未達で、税抜目標合計7,400に対する不足額は6,600です。\n\nチーム別の税抜売上／目標／不足額は、T1が200／2,400／2,200、T2が600／3,000／2,400、T3が0／2,000／2,000です。不足額の大きい順に、T2 → T1 → T3を優先して対応方針を検討してください。\n\n提供資料の2件はともに30日の売上で計上対象です。取消・返品・値引きはなく、除外された明細もありません。T3は提供資料に売上明細がなく、集計額は0です。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "S001",
+            "net": 200,
+            "tax": 20,
+            "gross": 220,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S002",
+            "net": 600,
+            "tax": 60,
+            "gross": 660,
+            "state": "INCLUDED"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "net": 200,
+            "tax": 20,
+            "gross": 220,
+            "gap": 2200
+          },
+          {
+            "team": "T2",
+            "net": 600,
+            "tax": 60,
+            "gross": 660,
+            "gap": 2400
+          },
+          {
+            "team": "T3",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "gap": 2000
+          }
+        ],
+        "unmet": [
+          "T2",
+          "T1",
+          "T3"
+        ],
+        "totals": {
+          "net": 800,
+          "tax": 80,
+          "gross": 880
+        },
+        "report_md": "30日基準の売上合計は税抜800、税80、税込880です。全チームが未達で、税抜目標合計7,400に対する不足額は6,600です。\n\nチーム別の税抜売上／目標／不足額は、T1が200／2,400／2,200、T2が600／3,000／2,400、T3が0／2,000／2,000です。不足額の大きい順に、T2 → T1 → T3を優先して対応方針を検討してください。\n\n提供資料の2件はともに30日の売上で計上対象です。取消・返品・値引きはなく、除外された明細もありません。T3は提供資料に売上明細がなく、集計額は0です。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "1.1164",
+      "incremental_credits": "0.97605",
+      "operating_total_credits": "2.09245",
+      "shared_seconds": 34.21900000004098,
+      "incremental_active_seconds": 13.670999999972992,
+      "total_active_seconds": 47.89000000001397,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T18:59:52.780985+00:00",
+        "text": "{\n  \"details\": [\n    {\n      \"id\": \"S001\",\n      \"net\": 200,\n      \"tax\": 20,\n      \"gross\": 220,\n      \"state\": \"INCLUDED\"\n    },\n    {\n      \"id\": \"S002\",\n      \"net\": 600,\n      \"tax\": 60,\n      \"gross\": 660,\n      \"state\": \"INCLUDED\"\n    }\n  ],\n  \"teams\": [\n    {\n      \"team\": \"T1\",\n      \"net\": 200,\n      \"tax\": 20,\n      \"gross\": 220,\n      \"gap\": 2200\n    },\n    {\n      \"team\": \"T2\",\n      \"net\": 600,\n      \"tax\": 60,\n      \"gross\": 660,\n      \"gap\": 2400\n    },\n    {\n      \"team\": \"T3\",\n      \"net\": 0,\n      \"tax\": 0,\n      \"gross\": 0,\n      \"gap\": 2000\n    }\n  ],\n  \"unmet\": [\n    \"T2\",\n    \"T1\",\n    \"T3\"\n  ],\n  \"totals\": {\n    \"net\": 800,\n    \"tax\": 80,\n    \"gross\": 880\n  },\n  \"report_md\": \"30日基準の売上合計は税抜800、税80、税込880です。全チームが未達で、税抜目標合計7,400に対する不足額は6,600です。\\n\\nチーム別の税抜売上／目標／不足額は、T1が200／2,400／2,200、T2が600／3,000／2,400、T3が0／2,000／2,000です。不足額の大きい順に、T2 → T1 → T3を優先して対応方針を検討してください。\\n\\n提供資料の2件はともに30日の売上で計上対象です。取消・返品・値引きはなく、除外された明細もありません。T3は提供資料に売上明細がなく、集計額は0です。\"\n}",
+        "value": {
+          "details": [
+            {
+              "id": "S001",
+              "net": 200,
+              "tax": 20,
+              "gross": 220,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S002",
+              "net": 600,
+              "tax": 60,
+              "gross": 660,
+              "state": "INCLUDED"
+            }
+          ],
+          "teams": [
+            {
+              "team": "T1",
+              "net": 200,
+              "tax": 20,
+              "gross": 220,
+              "gap": 2200
+            },
+            {
+              "team": "T2",
+              "net": 600,
+              "tax": 60,
+              "gross": 660,
+              "gap": 2400
+            },
+            {
+              "team": "T3",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "gap": 2000
+            }
+          ],
+          "unmet": [
+            "T2",
+            "T1",
+            "T3"
+          ],
+          "totals": {
+            "net": 800,
+            "tax": 80,
+            "gross": 880
+          },
+          "report_md": "30日基準の売上合計は税抜800、税80、税込880です。全チームが未達で、税抜目標合計7,400に対する不足額は6,600です。\n\nチーム別の税抜売上／目標／不足額は、T1が200／2,400／2,200、T2が600／3,000／2,400、T3が0／2,000／2,000です。不足額の大きい順に、T2 → T1 → T3を優先して対応方針を検討してください。\n\n提供資料の2件はともに30日の売上で計上対象です。取消・返品・値引きはなく、除外された明細もありません。T3は提供資料に売上明細がなく、集計額は0です。"
+        },
+        "public_schema_pass": true,
+        "seconds": 13.670999999972992,
+        "credits": "0.97605",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-074",
+      "arm": "PRACTICAL",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "gross": 220,
+            "id": "S001",
+            "net": 200,
+            "state": "INCLUDED",
+            "tax": 20
+          },
+          {
+            "gross": 660,
+            "id": "S002",
+            "net": 600,
+            "state": "INCLUDED",
+            "tax": 60
+          }
+        ],
+        "report_md": "売上合計は net 800, tax 80, gross 880 です。チーム別では T2 (net 600) が最も大きな目標差額 (gap 2400) を抱えており、次いで T1 (gap 2200)、T3 (gap 2000) の順で未達となっています。対応の優先順位は、差額の大きい T2, T1, T3 の順となります。",
+        "teams": [
+          {
+            "gap": 2200,
+            "gross": 220,
+            "net": 200,
+            "tax": 20,
+            "team": "T1"
+          },
+          {
+            "gap": 2400,
+            "gross": 660,
+            "net": 600,
+            "tax": 60,
+            "team": "T2"
+          },
+          {
+            "gap": 2000,
+            "gross": 0,
+            "net": 0,
+            "tax": 0,
+            "team": "T3"
+          }
+        ],
+        "totals": {
+          "gross": 880,
+          "net": 800,
+          "tax": 80
+        },
+        "unmet": [
+          "T2",
+          "T1",
+          "T3"
+        ]
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "gross": 220,
+            "id": "S001",
+            "net": 200,
+            "state": "INCLUDED",
+            "tax": 20
+          },
+          {
+            "gross": 660,
+            "id": "S002",
+            "net": 600,
+            "state": "INCLUDED",
+            "tax": 60
+          }
+        ],
+        "report_md": "売上合計は net 800, tax 80, gross 880 です。チーム別では T2 (net 600) が最も大きな目標差額 (gap 2400) を抱えており、次いで T1 (gap 2200)、T3 (gap 2000) の順で未達となっています。対応の優先順位は、差額の大きい T2, T1, T3 の順となります。",
+        "teams": [
+          {
+            "gap": 2200,
+            "gross": 220,
+            "net": 200,
+            "tax": 20,
+            "team": "T1"
+          },
+          {
+            "gap": 2400,
+            "gross": 660,
+            "net": 600,
+            "tax": 60,
+            "team": "T2"
+          },
+          {
+            "gap": 2000,
+            "gross": 0,
+            "net": 0,
+            "tax": 0,
+            "team": "T3"
+          }
+        ],
+        "totals": {
+          "gross": 880,
+          "net": 800,
+          "tax": 80
+        },
+        "unmet": [
+          "T2",
+          "T1",
+          "T3"
+        ]
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "1.1164",
+      "incremental_credits": "0.44234",
+      "operating_total_credits": "1.55874",
+      "shared_seconds": 34.21900000004098,
+      "incremental_active_seconds": 131.93700000003446,
+      "total_active_seconds": 166.15600000007544,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T18:59:38.545548+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 3.312000000034459,
+          "credits": "0.44234",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 95.21900000004098,
+        "usage": {
+          "prompt_eval_count": 2103,
+          "eval_count": 3756,
+          "prompt_eval_duration": 2823857000,
+          "eval_duration": 92199870000,
+          "total_duration": 95048307000
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "S001",
+        "net": 200,
+        "tax": 20,
+        "gross": 220,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S002",
+        "net": 600,
+        "tax": 60,
+        "gross": 660,
+        "state": "INCLUDED"
+      }
+    ],
+    "teams": [
+      {
+        "team": "T1",
+        "net": 200,
+        "tax": 20,
+        "gross": 220,
+        "gap": 2200
+      },
+      {
+        "team": "T2",
+        "net": 600,
+        "tax": 60,
+        "gross": 660,
+        "gap": 2400
+      },
+      {
+        "team": "T3",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "gap": 2000
+      }
+    ],
+    "unmet": [
+      "T2",
+      "T1",
+      "T3"
+    ],
+    "totals": {
+      "net": 800,
+      "tax": 80,
+      "gross": 880
+    }
+  },
+  "scores": [
+    {
+      "task_id": "PR100-074",
+      "arm": "SOL_CONTINUE",
+      "family": "sales",
+      "designed_difficulty": 1,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "2.09245",
+      "total_active_seconds": 47.89000000001397,
+      "report_md": "30日基準の売上合計は税抜800、税80、税込880です。全チームが未達で、税抜目標合計7,400に対する不足額は6,600です。\n\nチーム別の税抜売上／目標／不足額は、T1が200／2,400／2,200、T2が600／3,000／2,400、T3が0／2,000／2,000です。不足額の大きい順に、T2 → T1 → T3を優先して対応方針を検討してください。\n\n提供資料の2件はともに30日の売上で計上対象です。取消・返品・値引きはなく、除外された明細もありません。T3は提供資料に売上明細がなく、集計額は0です。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-074",
+      "arm": "PRACTICAL",
+      "family": "sales",
+      "designed_difficulty": 1,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.55874",
+      "total_active_seconds": 166.15600000007544,
+      "report_md": "売上合計は net 800, tax 80, gross 880 です。チーム別では T2 (net 600) が最も大きな目標差額 (gap 2400) を抱えており、次いで T1 (gap 2200)、T3 (gap 2000) の順で未達となっています。対応の優先順位は、差額の大きい T2, T1, T3 の順となります。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

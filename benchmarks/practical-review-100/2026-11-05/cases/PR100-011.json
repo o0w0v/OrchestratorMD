@@ -1,0 +1,1313 @@
+{
+  "task_id": "PR100-011",
+  "metadata": {
+    "task_id": "PR100-011",
+    "family": "dependency_schedule",
+    "designed_difficulty": 4,
+    "variant": 0
+  },
+  "public_job": {
+    "task_id": "PR100-011",
+    "initial": "担当チームが重なる作業がいくつもあって、どの順番でいつ進めるか分かりにくいです。使える予定表と短い状況説明が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n非循環taskを1件ずつスケジュールする。depsが全てスケジュール済みの未処理taskからpriority昇順、due昇順、id昇順で1件選ぶ。実時間の完了を待って選択する方式ではない。\nstart=max(release,依存taskのend最大（なければ0）,同teamの直前に確定したend（なければ0）)、end=start+duration。teamは同時に1件だけ。late=max(end-due,0)。\nprocessing_orderは選択順。detailsはid順でstart/end/late。makespanは全end最大、total_lateは全late合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に終了見込み・遅れの全体像と、注意する作業ID・制約。\n資料は以下のJSONです。\n{\n  \"tasks\": [\n    {\n      \"id\": \"J001\",\n      \"team\": \"T1\",\n      \"deps\": [],\n      \"release\": 3,\n      \"duration\": 1,\n      \"due\": 16,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J002\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J001\"\n      ],\n      \"release\": 2,\n      \"duration\": 3,\n      \"due\": 14,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J003\",\n      \"team\": \"T1\",\n      \"deps\": [\n        \"J002\"\n      ],\n      \"release\": 2,\n      \"duration\": 3,\n      \"due\": 19,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J004\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J001\"\n      ],\n      \"release\": 4,\n      \"duration\": 3,\n      \"due\": 9,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J005\",\n      \"team\": \"T1\",\n      \"deps\": [\n        \"J002\",\n        \"J004\"\n      ],\n      \"release\": 2,\n      \"duration\": 4,\n      \"due\": 16,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J006\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J003\",\n        \"J005\"\n      ],\n      \"release\": 0,\n      \"duration\": 5,\n      \"due\": 10,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J007\",\n      \"team\": \"T1\",\n      \"deps\": [\n        \"J004\"\n      ],\n      \"release\": 3,\n      \"duration\": 5,\n      \"due\": 8,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J008\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J005\",\n        \"J007\"\n      ],\n      \"release\": 3,\n      \"duration\": 2,\n      \"due\": 18,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J009\",\n      \"team\": \"T1\",\n      \"deps\": [\n        \"J006\",\n        \"J008\"\n      ],\n      \"release\": 3,\n      \"duration\": 4,\n      \"due\": 20,\n      \"priority\": 3\n    },\n    {\n      \"id\": \"J010\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J007\"\n      ],\n      \"release\": 0,\n      \"duration\": 2,\n      \"due\": 13,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J011\",\n      \"team\": \"T1\",\n      \"deps\": [\n        \"J008\",\n        \"J010\"\n      ],\n      \"release\": 3,\n      \"duration\": 4,\n      \"due\": 17,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J012\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J009\",\n        \"J011\"\n      ],\n      \"release\": 2,\n      \"duration\": 5,\n      \"due\": 9,\n      \"priority\": 2\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"start\": {\"type\": \"integer\"}, \"end\": {\"type\": \"integer\"}, \"late\": {\"type\": \"integer\"}}, \"required\": [\"id\", \"start\", \"end\", \"late\"], \"additionalProperties\": false}}, \"processing_order\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"makespan\": {\"type\": \"integer\"}, \"total_late\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"processing_order\", \"makespan\", \"total_late\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "tasks": [
+        {
+          "id": "J001",
+          "team": "T1",
+          "deps": [],
+          "release": 3,
+          "duration": 1,
+          "due": 16,
+          "priority": 2
+        },
+        {
+          "id": "J002",
+          "team": "T2",
+          "deps": [
+            "J001"
+          ],
+          "release": 2,
+          "duration": 3,
+          "due": 14,
+          "priority": 2
+        },
+        {
+          "id": "J003",
+          "team": "T1",
+          "deps": [
+            "J002"
+          ],
+          "release": 2,
+          "duration": 3,
+          "due": 19,
+          "priority": 1
+        },
+        {
+          "id": "J004",
+          "team": "T2",
+          "deps": [
+            "J001"
+          ],
+          "release": 4,
+          "duration": 3,
+          "due": 9,
+          "priority": 2
+        },
+        {
+          "id": "J005",
+          "team": "T1",
+          "deps": [
+            "J002",
+            "J004"
+          ],
+          "release": 2,
+          "duration": 4,
+          "due": 16,
+          "priority": 1
+        },
+        {
+          "id": "J006",
+          "team": "T2",
+          "deps": [
+            "J003",
+            "J005"
+          ],
+          "release": 0,
+          "duration": 5,
+          "due": 10,
+          "priority": 1
+        },
+        {
+          "id": "J007",
+          "team": "T1",
+          "deps": [
+            "J004"
+          ],
+          "release": 3,
+          "duration": 5,
+          "due": 8,
+          "priority": 2
+        },
+        {
+          "id": "J008",
+          "team": "T2",
+          "deps": [
+            "J005",
+            "J007"
+          ],
+          "release": 3,
+          "duration": 2,
+          "due": 18,
+          "priority": 2
+        },
+        {
+          "id": "J009",
+          "team": "T1",
+          "deps": [
+            "J006",
+            "J008"
+          ],
+          "release": 3,
+          "duration": 4,
+          "due": 20,
+          "priority": 3
+        },
+        {
+          "id": "J010",
+          "team": "T2",
+          "deps": [
+            "J007"
+          ],
+          "release": 0,
+          "duration": 2,
+          "due": 13,
+          "priority": 1
+        },
+        {
+          "id": "J011",
+          "team": "T1",
+          "deps": [
+            "J008",
+            "J010"
+          ],
+          "release": 3,
+          "duration": 4,
+          "due": 17,
+          "priority": 1
+        },
+        {
+          "id": "J012",
+          "team": "T2",
+          "deps": [
+            "J009",
+            "J011"
+          ],
+          "release": 2,
+          "duration": 5,
+          "due": 9,
+          "priority": 2
+        }
+      ]
+    },
+    "business_rules": [
+      "非循環taskを1件ずつスケジュールする。depsが全てスケジュール済みの未処理taskからpriority昇順、due昇順、id昇順で1件選ぶ。実時間の完了を待って選択する方式ではない。",
+      "start=max(release,依存taskのend最大（なければ0）,同teamの直前に確定したend（なければ0）)、end=start+duration。teamは同時に1件だけ。late=max(end-due,0)。",
+      "processing_orderは選択順。detailsはid順でstart/end/late。makespanは全end最大、total_lateは全late合計。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "start": {
+                "type": "integer"
+              },
+              "end": {
+                "type": "integer"
+              },
+              "late": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "start",
+              "end",
+              "late"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "processing_order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "makespan": {
+          "type": "integer"
+        },
+        "total_late": {
+          "type": "integer"
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "processing_order",
+        "makespan",
+        "total_late",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "complex",
+    "reasoning_effort": "high"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "担当チームが重なる作業がいくつもあって、どの順番でいつ進めるか分かりにくいです。使える予定表と短い状況説明が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "このチャットでいただく資料だけを使って進めます。まず必要な情報を整理し、予定表の形を相談してから作成します。\n\nまずは資料を貼ってください。資料に含まれていなければ、次の点も教えてください。分からないところは未定で大丈夫です。\n\n- **作業と期限**：何を、いつまでに終える必要があるか。先に終わらせるべき作業はあるか。\n- **担当と余力**：各作業の担当チームと、同時進行できる範囲・動けない期間。\n- **予定表の用途**：誰が使うか、何週間・何か月先まで見たいか、日単位か週単位か。\n\n形としては、**作業ごとの担当・期間・前提作業・チームの重なりが見える予定表**と、**現在地・詰まり・次に決めることをまとめた短い状況説明**を考えています。\n\n資料を見た段階で、足りない情報と予定表の構成案をお返しし、そこで相談しましょう。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n非循環taskを1件ずつスケジュールする。depsが全てスケジュール済みの未処理taskからpriority昇順、due昇順、id昇順で1件選ぶ。実時間の完了を待って選択する方式ではない。\nstart=max(release,依存taskのend最大（なければ0）,同teamの直前に確定したend（なければ0）)、end=start+duration。teamは同時に1件だけ。late=max(end-due,0)。\nprocessing_orderは選択順。detailsはid順でstart/end/late。makespanは全end最大、total_lateは全late合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に終了見込み・遅れの全体像と、注意する作業ID・制約。\n資料は以下のJSONです。\n{\n  \"tasks\": [\n    {\n      \"id\": \"J001\",\n      \"team\": \"T1\",\n      \"deps\": [],\n      \"release\": 3,\n      \"duration\": 1,\n      \"due\": 16,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J002\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J001\"\n      ],\n      \"release\": 2,\n      \"duration\": 3,\n      \"due\": 14,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J003\",\n      \"team\": \"T1\",\n      \"deps\": [\n        \"J002\"\n      ],\n      \"release\": 2,\n      \"duration\": 3,\n      \"due\": 19,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J004\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J001\"\n      ],\n      \"release\": 4,\n      \"duration\": 3,\n      \"due\": 9,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J005\",\n      \"team\": \"T1\",\n      \"deps\": [\n        \"J002\",\n        \"J004\"\n      ],\n      \"release\": 2,\n      \"duration\": 4,\n      \"due\": 16,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J006\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J003\",\n        \"J005\"\n      ],\n      \"release\": 0,\n      \"duration\": 5,\n      \"due\": 10,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J007\",\n      \"team\": \"T1\",\n      \"deps\": [\n        \"J004\"\n      ],\n      \"release\": 3,\n      \"duration\": 5,\n      \"due\": 8,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J008\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J005\",\n        \"J007\"\n      ],\n      \"release\": 3,\n      \"duration\": 2,\n      \"due\": 18,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J009\",\n      \"team\": \"T1\",\n      \"deps\": [\n        \"J006\",\n        \"J008\"\n      ],\n      \"release\": 3,\n      \"duration\": 4,\n      \"due\": 20,\n      \"priority\": 3\n    },\n    {\n      \"id\": \"J010\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J007\"\n      ],\n      \"release\": 0,\n      \"duration\": 2,\n      \"due\": 13,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J011\",\n      \"team\": \"T1\",\n      \"deps\": [\n        \"J008\",\n        \"J010\"\n      ],\n      \"release\": 3,\n      \"duration\": 4,\n      \"due\": 17,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J012\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J009\",\n        \"J011\"\n      ],\n      \"release\": 2,\n      \"duration\": 5,\n      \"due\": 9,\n      \"priority\": 2\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"start\": {\"type\": \"integer\"}, \"end\": {\"type\": \"integer\"}, \"late\": {\"type\": \"integer\"}}, \"required\": [\"id\", \"start\", \"end\", \"late\"], \"additionalProperties\": false}}, \"processing_order\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"makespan\": {\"type\": \"integer\"}, \"total_late\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"processing_order\", \"makespan\", \"total_late\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "担当者は、自分の作業の開始・終了予定と、依存先や同じチームの作業による順番の制約を確認するために使う想定です。責任者は、全体の終了見込みと遅れの規模、特に注意が必要な作業を把握するために使います。全明細と共有文を一緒に読む前提なので、共有文は重要な判断材料に絞ります。\n\n作り方は、まず依存関係が循環していないことを確認し、依存先がすべてスケジュール済みの作業から、priority、due、idの昇順で毎回1件を選びます。実時間での完了は待ちません。選んだ作業の開始時点は、ご指定のrelease、依存先の終了、同じチームで直前に確定した終了の最大値で決めます。同じチームの空き時間に後から差し込んだり、遅れを減らすために選択順を変更したりはしません。\n\n最終成果物では、選択順をprocessing_order、各作業の開始・終了・遅れをid順のdetailsに格納し、makespanとtotal_lateを集計します。report_mdには、全体の終了見込み、遅れる件数や遅れの大きさ、注意する作業IDとその制約を、算出結果に結び付けて短く記載します。予定上の終了を実績の完了として書いたり、未実施の調整を対応済みと書いたりしません。返却時は、指定された全フィールドを含むJSONだけにします。\n\n計算規則と出力形式は確定しています。未指定なのは、時刻・期間の数値の単位と、時点0が実際のいつに当たるかです。数値のままなら追加条件なしで算出できますが、日付や「何日遅れ」といった表現への変換は、確認できるまで行わない方針です。現時点では計算・成果物の作成には着手していません。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-011",
+      "arm": "SOL_CONTINUE",
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "J001",
+            "start": 3,
+            "end": 4,
+            "late": 0
+          },
+          {
+            "id": "J002",
+            "start": 14,
+            "end": 17,
+            "late": 3
+          },
+          {
+            "id": "J003",
+            "start": 21,
+            "end": 24,
+            "late": 5
+          },
+          {
+            "id": "J004",
+            "start": 4,
+            "end": 7,
+            "late": 0
+          },
+          {
+            "id": "J005",
+            "start": 17,
+            "end": 21,
+            "late": 5
+          },
+          {
+            "id": "J006",
+            "start": 24,
+            "end": 29,
+            "late": 19
+          },
+          {
+            "id": "J007",
+            "start": 7,
+            "end": 12,
+            "late": 4
+          },
+          {
+            "id": "J008",
+            "start": 29,
+            "end": 31,
+            "late": 13
+          },
+          {
+            "id": "J009",
+            "start": 35,
+            "end": 39,
+            "late": 19
+          },
+          {
+            "id": "J010",
+            "start": 12,
+            "end": 14,
+            "late": 1
+          },
+          {
+            "id": "J011",
+            "start": 31,
+            "end": 35,
+            "late": 18
+          },
+          {
+            "id": "J012",
+            "start": 39,
+            "end": 44,
+            "late": 35
+          }
+        ],
+        "processing_order": [
+          "J001",
+          "J004",
+          "J007",
+          "J010",
+          "J002",
+          "J005",
+          "J003",
+          "J006",
+          "J008",
+          "J011",
+          "J009",
+          "J012"
+        ],
+        "makespan": 44,
+        "total_late": 122,
+        "report_md": "全12件の終了見込みは時点44です。期限超過は10件で、期限内はJ001とJ004です。遅れの合計は122（各作業のlateの合計）で、最大は最終作業J012の35です。J012は期限9に対し、開始39・終了44となります。数値は元資料の単位による予定値です。\n\n選択順は実時間の完了順ではありません。J007を確定すると、その終了を待つJ010がpriorityによりJ002より先に選ばれ、T2の12～14を確保します。そのためT2の7～12に空きがあってもJ002を後から差し込まず、J002は14～17、遅れ3となります。これは指定された選択規則と同teamの直前に確定したendを使う制約による結果です。\n\n大きな遅れはJ006・J009が各19、J011が18です。J006は依存先J003の終了24を待って24～29となり、その後T2でJ008が29～31となります。終盤のT1は優先度によりJ011（31～35）、J009（35～39）の順となり、両方に依存するJ012は39から開始します。終了見込みを検討する際は、この依存関係とチーム内の順番に注意が必要です。\n\n全件の選択順、release、依存先の終了、チーム内の重複がないこと、明細と集計値の整合を確認済みです。作業の実施・完了や、遅れへの対応が済んだことを示すものではありません。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "J001",
+            "start": 3,
+            "end": 4,
+            "late": 0
+          },
+          {
+            "id": "J002",
+            "start": 14,
+            "end": 17,
+            "late": 3
+          },
+          {
+            "id": "J003",
+            "start": 21,
+            "end": 24,
+            "late": 5
+          },
+          {
+            "id": "J004",
+            "start": 4,
+            "end": 7,
+            "late": 0
+          },
+          {
+            "id": "J005",
+            "start": 17,
+            "end": 21,
+            "late": 5
+          },
+          {
+            "id": "J006",
+            "start": 24,
+            "end": 29,
+            "late": 19
+          },
+          {
+            "id": "J007",
+            "start": 7,
+            "end": 12,
+            "late": 4
+          },
+          {
+            "id": "J008",
+            "start": 29,
+            "end": 31,
+            "late": 13
+          },
+          {
+            "id": "J009",
+            "start": 35,
+            "end": 39,
+            "late": 19
+          },
+          {
+            "id": "J010",
+            "start": 12,
+            "end": 14,
+            "late": 1
+          },
+          {
+            "id": "J011",
+            "start": 31,
+            "end": 35,
+            "late": 18
+          },
+          {
+            "id": "J012",
+            "start": 39,
+            "end": 44,
+            "late": 35
+          }
+        ],
+        "processing_order": [
+          "J001",
+          "J004",
+          "J007",
+          "J010",
+          "J002",
+          "J005",
+          "J003",
+          "J006",
+          "J008",
+          "J011",
+          "J009",
+          "J012"
+        ],
+        "makespan": 44,
+        "total_late": 122,
+        "report_md": "全12件の終了見込みは時点44です。期限超過は10件で、期限内はJ001とJ004です。遅れの合計は122（各作業のlateの合計）で、最大は最終作業J012の35です。J012は期限9に対し、開始39・終了44となります。数値は元資料の単位による予定値です。\n\n選択順は実時間の完了順ではありません。J007を確定すると、その終了を待つJ010がpriorityによりJ002より先に選ばれ、T2の12～14を確保します。そのためT2の7～12に空きがあってもJ002を後から差し込まず、J002は14～17、遅れ3となります。これは指定された選択規則と同teamの直前に確定したendを使う制約による結果です。\n\n大きな遅れはJ006・J009が各19、J011が18です。J006は依存先J003の終了24を待って24～29となり、その後T2でJ008が29～31となります。終盤のT1は優先度によりJ011（31～35）、J009（35～39）の順となり、両方に依存するJ012は39から開始します。終了見込みを検討する際は、この依存関係とチーム内の順番に注意が必要です。\n\n全件の選択順、release、依存先の終了、チーム内の重複がないこと、明細と集計値の整合を確認済みです。作業の実施・完了や、遅れへの対応が済んだことを示すものではありません。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.5478",
+      "incremental_credits": "1.60305",
+      "operating_total_credits": "2.15085",
+      "shared_seconds": 48.5,
+      "incremental_active_seconds": 67.56300000008196,
+      "total_active_seconds": 116.06300000008196,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T14:55:10.715040+00:00",
+        "text": "{\n  \"details\": [\n    {\"id\":\"J001\",\"start\":3,\"end\":4,\"late\":0},\n    {\"id\":\"J002\",\"start\":14,\"end\":17,\"late\":3},\n    {\"id\":\"J003\",\"start\":21,\"end\":24,\"late\":5},\n    {\"id\":\"J004\",\"start\":4,\"end\":7,\"late\":0},\n    {\"id\":\"J005\",\"start\":17,\"end\":21,\"late\":5},\n    {\"id\":\"J006\",\"start\":24,\"end\":29,\"late\":19},\n    {\"id\":\"J007\",\"start\":7,\"end\":12,\"late\":4},\n    {\"id\":\"J008\",\"start\":29,\"end\":31,\"late\":13},\n    {\"id\":\"J009\",\"start\":35,\"end\":39,\"late\":19},\n    {\"id\":\"J010\",\"start\":12,\"end\":14,\"late\":1},\n    {\"id\":\"J011\",\"start\":31,\"end\":35,\"late\":18},\n    {\"id\":\"J012\",\"start\":39,\"end\":44,\"late\":35}\n  ],\n  \"processing_order\": [\n    \"J001\",\"J004\",\"J007\",\"J010\",\"J002\",\"J005\",\n    \"J003\",\"J006\",\"J008\",\"J011\",\"J009\",\"J012\"\n  ],\n  \"makespan\": 44,\n  \"total_late\": 122,\n  \"report_md\": \"全12件の終了見込みは時点44です。期限超過は10件で、期限内はJ001とJ004です。遅れの合計は122（各作業のlateの合計）で、最大は最終作業J012の35です。J012は期限9に対し、開始39・終了44となります。数値は元資料の単位による予定値です。\\n\\n選択順は実時間の完了順ではありません。J007を確定すると、その終了を待つJ010がpriorityによりJ002より先に選ばれ、T2の12～14を確保します。そのためT2の7～12に空きがあってもJ002を後から差し込まず、J002は14～17、遅れ3となります。これは指定された選択規則と同teamの直前に確定したendを使う制約による結果です。\\n\\n大きな遅れはJ006・J009が各19、J011が18です。J006は依存先J003の終了24を待って24～29となり、その後T2でJ008が29～31となります。終盤のT1は優先度によりJ011（31～35）、J009（35～39）の順となり、両方に依存するJ012は39から開始します。終了見込みを検討する際は、この依存関係とチーム内の順番に注意が必要です。\\n\\n全件の選択順、release、依存先の終了、チーム内の重複がないこと、明細と集計値の整合を確認済みです。作業の実施・完了や、遅れへの対応が済んだことを示すものではありません。\"\n}",
+        "value": {
+          "details": [
+            {
+              "id": "J001",
+              "start": 3,
+              "end": 4,
+              "late": 0
+            },
+            {
+              "id": "J002",
+              "start": 14,
+              "end": 17,
+              "late": 3
+            },
+            {
+              "id": "J003",
+              "start": 21,
+              "end": 24,
+              "late": 5
+            },
+            {
+              "id": "J004",
+              "start": 4,
+              "end": 7,
+              "late": 0
+            },
+            {
+              "id": "J005",
+              "start": 17,
+              "end": 21,
+              "late": 5
+            },
+            {
+              "id": "J006",
+              "start": 24,
+              "end": 29,
+              "late": 19
+            },
+            {
+              "id": "J007",
+              "start": 7,
+              "end": 12,
+              "late": 4
+            },
+            {
+              "id": "J008",
+              "start": 29,
+              "end": 31,
+              "late": 13
+            },
+            {
+              "id": "J009",
+              "start": 35,
+              "end": 39,
+              "late": 19
+            },
+            {
+              "id": "J010",
+              "start": 12,
+              "end": 14,
+              "late": 1
+            },
+            {
+              "id": "J011",
+              "start": 31,
+              "end": 35,
+              "late": 18
+            },
+            {
+              "id": "J012",
+              "start": 39,
+              "end": 44,
+              "late": 35
+            }
+          ],
+          "processing_order": [
+            "J001",
+            "J004",
+            "J007",
+            "J010",
+            "J002",
+            "J005",
+            "J003",
+            "J006",
+            "J008",
+            "J011",
+            "J009",
+            "J012"
+          ],
+          "makespan": 44,
+          "total_late": 122,
+          "report_md": "全12件の終了見込みは時点44です。期限超過は10件で、期限内はJ001とJ004です。遅れの合計は122（各作業のlateの合計）で、最大は最終作業J012の35です。J012は期限9に対し、開始39・終了44となります。数値は元資料の単位による予定値です。\n\n選択順は実時間の完了順ではありません。J007を確定すると、その終了を待つJ010がpriorityによりJ002より先に選ばれ、T2の12～14を確保します。そのためT2の7～12に空きがあってもJ002を後から差し込まず、J002は14～17、遅れ3となります。これは指定された選択規則と同teamの直前に確定したendを使う制約による結果です。\n\n大きな遅れはJ006・J009が各19、J011が18です。J006は依存先J003の終了24を待って24～29となり、その後T2でJ008が29～31となります。終盤のT1は優先度によりJ011（31～35）、J009（35～39）の順となり、両方に依存するJ012は39から開始します。終了見込みを検討する際は、この依存関係とチーム内の順番に注意が必要です。\n\n全件の選択順、release、依存先の終了、チーム内の重複がないこと、明細と集計値の整合を確認済みです。作業の実施・完了や、遅れへの対応が済んだことを示すものではありません。"
+        },
+        "public_schema_pass": true,
+        "seconds": 67.56300000008196,
+        "credits": "1.60305",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-011",
+      "arm": "PRACTICAL",
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "initial_artifact": {
+        "details": [
+          {
+            "end": 4,
+            "id": "J001",
+            "late": 0,
+            "start": 3
+          },
+          {
+            "end": 10,
+            "id": "J002",
+            "late": 0,
+            "start": 7
+          },
+          {
+            "end": 17,
+            "id": "J003",
+            "late": 0,
+            "start": 14
+          },
+          {
+            "end": 7,
+            "id": "J004",
+            "late": 0,
+            "start": 4
+          },
+          {
+            "end": 14,
+            "id": "J005",
+            "late": 0,
+            "start": 10
+          },
+          {
+            "end": 22,
+            "id": "J006",
+            "late": 12,
+            "start": 17
+          },
+          {
+            "end": 22,
+            "id": "J007",
+            "late": 14,
+            "start": 17
+          },
+          {
+            "end": 26,
+            "id": "J008",
+            "late": 8,
+            "start": 24
+          },
+          {
+            "end": 34,
+            "id": "J009",
+            "late": 14,
+            "start": 30
+          },
+          {
+            "end": 24,
+            "id": "J010",
+            "late": 11,
+            "start": 22
+          },
+          {
+            "end": 30,
+            "id": "J011",
+            "late": 13,
+            "start": 26
+          },
+          {
+            "end": 39,
+            "id": "J012",
+            "late": 30,
+            "start": 34
+          }
+        ],
+        "makespan": 39,
+        "processing_order": [
+          "J001",
+          "J004",
+          "J002",
+          "J005",
+          "J003",
+          "J007",
+          "J006",
+          "J010",
+          "J008",
+          "J011",
+          "J009",
+          "J012"
+        ],
+        "report_md": "全体の終了見込み（makespan）は39です。合計遅延（total_late）は102となり、多くの作業で期限超過が発生しています。特にJ012は、依存作業であるJ009の終了を待つ制約により、30という最大の遅延が発生しています。また、J007やJ006も、依存関係とチームの稼働状況が重なったことで、期限を大幅に超過しています。",
+        "total_late": 102
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "J001",
+            "start": 3,
+            "end": 4,
+            "late": 0
+          },
+          {
+            "id": "J002",
+            "start": 14,
+            "end": 17,
+            "late": 3
+          },
+          {
+            "id": "J003",
+            "start": 21,
+            "end": 24,
+            "late": 5
+          },
+          {
+            "id": "J004",
+            "start": 4,
+            "end": 7,
+            "late": 0
+          },
+          {
+            "id": "J005",
+            "start": 17,
+            "end": 21,
+            "late": 5
+          },
+          {
+            "id": "J006",
+            "start": 24,
+            "end": 29,
+            "late": 19
+          },
+          {
+            "id": "J007",
+            "start": 7,
+            "end": 12,
+            "late": 4
+          },
+          {
+            "id": "J008",
+            "start": 29,
+            "end": 31,
+            "late": 13
+          },
+          {
+            "id": "J009",
+            "start": 35,
+            "end": 39,
+            "late": 19
+          },
+          {
+            "id": "J010",
+            "start": 12,
+            "end": 14,
+            "late": 1
+          },
+          {
+            "id": "J011",
+            "start": 31,
+            "end": 35,
+            "late": 18
+          },
+          {
+            "id": "J012",
+            "start": 39,
+            "end": 44,
+            "late": 35
+          }
+        ],
+        "makespan": 44,
+        "processing_order": [
+          "J001",
+          "J004",
+          "J007",
+          "J010",
+          "J002",
+          "J005",
+          "J003",
+          "J006",
+          "J008",
+          "J011",
+          "J009",
+          "J012"
+        ],
+        "report_md": "全体の終了見込み（makespan）は44、合計遅延（total_late）は122で、12件中10件が期限超過となります。最大の遅延はJ012の35で、依存先J009の終了39を待って開始し、44に終了する予定です。選択規則によりJ004の次はJ007、続いてJ010となり、同じT2のJ002は14開始となります。J006は依存先J003の終了24を待って開始し、遅延19です。T1ではJ011が31～35に確定するため、J009は依存先が31までに終了していても35開始となり、遅延19となります。同一チームの確定順を守り、空き時間への後からの差し込みは行っていません。",
+        "total_late": 122
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_after_partial_repair",
+      "shared_credits": "0.5478",
+      "incremental_credits": "0.68895",
+      "operating_total_credits": "1.23675",
+      "shared_seconds": 48.5,
+      "incremental_active_seconds": 410.5789999999106,
+      "total_active_seconds": 459.0789999999106,
+      "patch_changes": [
+        {
+          "path": "/processing_order",
+          "before": [
+            "J001",
+            "J004",
+            "J002",
+            "J005",
+            "J003",
+            "J007",
+            "J006",
+            "J010",
+            "J008",
+            "J011",
+            "J009",
+            "J012"
+          ],
+          "after": [
+            "J001",
+            "J004",
+            "J007",
+            "J010",
+            "J002",
+            "J005",
+            "J003",
+            "J006",
+            "J008",
+            "J011",
+            "J009",
+            "J012"
+          ]
+        },
+        {
+          "path": "/details",
+          "before": [
+            {
+              "end": 4,
+              "id": "J001",
+              "late": 0,
+              "start": 3
+            },
+            {
+              "end": 10,
+              "id": "J002",
+              "late": 0,
+              "start": 7
+            },
+            {
+              "end": 17,
+              "id": "J003",
+              "late": 0,
+              "start": 14
+            },
+            {
+              "end": 7,
+              "id": "J004",
+              "late": 0,
+              "start": 4
+            },
+            {
+              "end": 14,
+              "id": "J005",
+              "late": 0,
+              "start": 10
+            },
+            {
+              "end": 22,
+              "id": "J006",
+              "late": 12,
+              "start": 17
+            },
+            {
+              "end": 22,
+              "id": "J007",
+              "late": 14,
+              "start": 17
+            },
+            {
+              "end": 26,
+              "id": "J008",
+              "late": 8,
+              "start": 24
+            },
+            {
+              "end": 34,
+              "id": "J009",
+              "late": 14,
+              "start": 30
+            },
+            {
+              "end": 24,
+              "id": "J010",
+              "late": 11,
+              "start": 22
+            },
+            {
+              "end": 30,
+              "id": "J011",
+              "late": 13,
+              "start": 26
+            },
+            {
+              "end": 39,
+              "id": "J012",
+              "late": 30,
+              "start": 34
+            }
+          ],
+          "after": [
+            {
+              "id": "J001",
+              "start": 3,
+              "end": 4,
+              "late": 0
+            },
+            {
+              "id": "J002",
+              "start": 14,
+              "end": 17,
+              "late": 3
+            },
+            {
+              "id": "J003",
+              "start": 21,
+              "end": 24,
+              "late": 5
+            },
+            {
+              "id": "J004",
+              "start": 4,
+              "end": 7,
+              "late": 0
+            },
+            {
+              "id": "J005",
+              "start": 17,
+              "end": 21,
+              "late": 5
+            },
+            {
+              "id": "J006",
+              "start": 24,
+              "end": 29,
+              "late": 19
+            },
+            {
+              "id": "J007",
+              "start": 7,
+              "end": 12,
+              "late": 4
+            },
+            {
+              "id": "J008",
+              "start": 29,
+              "end": 31,
+              "late": 13
+            },
+            {
+              "id": "J009",
+              "start": 35,
+              "end": 39,
+              "late": 19
+            },
+            {
+              "id": "J010",
+              "start": 12,
+              "end": 14,
+              "late": 1
+            },
+            {
+              "id": "J011",
+              "start": 31,
+              "end": 35,
+              "late": 18
+            },
+            {
+              "id": "J012",
+              "start": 39,
+              "end": 44,
+              "late": 35
+            }
+          ]
+        },
+        {
+          "path": "/makespan",
+          "before": 39,
+          "after": 44
+        },
+        {
+          "path": "/total_late",
+          "before": 102,
+          "after": 122
+        },
+        {
+          "path": "/report_md",
+          "before": "全体の終了見込み（makespan）は39です。合計遅延（total_late）は102となり、多くの作業で期限超過が発生しています。特にJ012は、依存作業であるJ009の終了を待つ制約により、30という最大の遅延が発生しています。また、J007やJ006も、依存関係とチームの稼働状況が重なったことで、期限を大幅に超過しています。",
+          "after": "全体の終了見込み（makespan）は44、合計遅延（total_late）は122で、12件中10件が期限超過となります。最大の遅延はJ012の35で、依存先J009の終了39を待って開始し、44に終了する予定です。選択規則によりJ004の次はJ007、続いてJ010となり、同じT2のJ002は14開始となります。J006は依存先J003の終了24を待って開始し、遅延19です。T1ではJ011が31～35に確定するため、J009は依存先が31までに終了していても35開始となり、遅延19となります。同一チームの確定順を守り、空き時間への後からの差し込みは行っていません。"
+        }
+      ],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T15:02:01.988068+00:00",
+          "text": "{\"decision\":\"PATCH\",\"changes\":[{\"path\":\"/processing_order\",\"before\":[\"J001\",\"J004\",\"J002\",\"J005\",\"J003\",\"J007\",\"J006\",\"J010\",\"J008\",\"J011\",\"J009\",\"J012\"],\"after\":[\"J001\",\"J004\",\"J007\",\"J010\",\"J002\",\"J005\",\"J003\",\"J006\",\"J008\",\"J011\",\"J009\",\"J012\"]},{\"path\":\"/details\",\"before\":[{\"end\":4,\"id\":\"J001\",\"late\":0,\"start\":3},{\"end\":10,\"id\":\"J002\",\"late\":0,\"start\":7},{\"end\":17,\"id\":\"J003\",\"late\":0,\"start\":14},{\"end\":7,\"id\":\"J004\",\"late\":0,\"start\":4},{\"end\":14,\"id\":\"J005\",\"late\":0,\"start\":10},{\"end\":22,\"id\":\"J006\",\"late\":12,\"start\":17},{\"end\":22,\"id\":\"J007\",\"late\":14,\"start\":17},{\"end\":26,\"id\":\"J008\",\"late\":8,\"start\":24},{\"end\":34,\"id\":\"J009\",\"late\":14,\"start\":30},{\"end\":24,\"id\":\"J010\",\"late\":11,\"start\":22},{\"end\":30,\"id\":\"J011\",\"late\":13,\"start\":26},{\"end\":39,\"id\":\"J012\",\"late\":30,\"start\":34}],\"after\":[{\"id\":\"J001\",\"start\":3,\"end\":4,\"late\":0},{\"id\":\"J002\",\"start\":14,\"end\":17,\"late\":3},{\"id\":\"J003\",\"start\":21,\"end\":24,\"late\":5},{\"id\":\"J004\",\"start\":4,\"end\":7,\"late\":0},{\"id\":\"J005\",\"start\":17,\"end\":21,\"late\":5},{\"id\":\"J006\",\"start\":24,\"end\":29,\"late\":19},{\"id\":\"J007\",\"start\":7,\"end\":12,\"late\":4},{\"id\":\"J008\",\"start\":29,\"end\":31,\"late\":13},{\"id\":\"J009\",\"start\":35,\"end\":39,\"late\":19},{\"id\":\"J010\",\"start\":12,\"end\":14,\"late\":1},{\"id\":\"J011\",\"start\":31,\"end\":35,\"late\":18},{\"id\":\"J012\",\"start\":39,\"end\":44,\"late\":35}]},{\"path\":\"/makespan\",\"before\":39,\"after\":44},{\"path\":\"/total_late\",\"before\":102,\"after\":122},{\"path\":\"/report_md\",\"before\":\"全体の終了見込み（makespan）は39です。合計遅延（total_late）は102となり、多くの作業で期限超過が発生しています。特にJ012は、依存作業であるJ009の終了を待つ制約により、30という最大の遅延が発生しています。また、J007やJ006も、依存関係とチームの稼働状況が重なったことで、期限を大幅に超過しています。\",\"after\":\"全体の終了見込み（makespan）は44、合計遅延（total_late）は122で、12件中10件が期限超過となります。最大の遅延はJ012の35で、依存先J009の終了39を待って開始し、44に終了する予定です。選択規則によりJ004の次はJ007、続いてJ010となり、同じT2のJ002は14開始となります。J006は依存先J003の終了24を待って開始し、遅延19です。T1ではJ011が31～35に確定するため、J009は依存先が31までに終了していても35開始となり、遅延19となります。同一チームの確定順を守り、空き時間への後からの差し込みは行っていません。\"}],\"impact\":\"J004確定後は、同priorityでdueが早いJ007をJ002より先に選ぶ必要があります。この選択順の誤りが後続予定に波及し、終了見込みと合計遅延を過小に示しています。\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 46.78200000000652,
+          "credits": "0.68895",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 317.51599999994505,
+        "usage": {
+          "prompt_eval_count": 2586,
+          "eval_count": 13042,
+          "prompt_eval_duration": 3172881000,
+          "eval_duration": 314172819000,
+          "total_duration": 317378511800
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "J001",
+        "start": 3,
+        "end": 4,
+        "late": 0
+      },
+      {
+        "id": "J002",
+        "start": 14,
+        "end": 17,
+        "late": 3
+      },
+      {
+        "id": "J003",
+        "start": 21,
+        "end": 24,
+        "late": 5
+      },
+      {
+        "id": "J004",
+        "start": 4,
+        "end": 7,
+        "late": 0
+      },
+      {
+        "id": "J005",
+        "start": 17,
+        "end": 21,
+        "late": 5
+      },
+      {
+        "id": "J006",
+        "start": 24,
+        "end": 29,
+        "late": 19
+      },
+      {
+        "id": "J007",
+        "start": 7,
+        "end": 12,
+        "late": 4
+      },
+      {
+        "id": "J008",
+        "start": 29,
+        "end": 31,
+        "late": 13
+      },
+      {
+        "id": "J009",
+        "start": 35,
+        "end": 39,
+        "late": 19
+      },
+      {
+        "id": "J010",
+        "start": 12,
+        "end": 14,
+        "late": 1
+      },
+      {
+        "id": "J011",
+        "start": 31,
+        "end": 35,
+        "late": 18
+      },
+      {
+        "id": "J012",
+        "start": 39,
+        "end": 44,
+        "late": 35
+      }
+    ],
+    "processing_order": [
+      "J001",
+      "J004",
+      "J007",
+      "J010",
+      "J002",
+      "J005",
+      "J003",
+      "J006",
+      "J008",
+      "J011",
+      "J009",
+      "J012"
+    ],
+    "makespan": 44,
+    "total_late": 122
+  },
+  "scores": [
+    {
+      "task_id": "PR100-011",
+      "arm": "SOL_CONTINUE",
+      "family": "dependency_schedule",
+      "designed_difficulty": 4,
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "2.15085",
+      "total_active_seconds": 116.06300000008196,
+      "report_md": "全12件の終了見込みは時点44です。期限超過は10件で、期限内はJ001とJ004です。遅れの合計は122（各作業のlateの合計）で、最大は最終作業J012の35です。J012は期限9に対し、開始39・終了44となります。数値は元資料の単位による予定値です。\n\n選択順は実時間の完了順ではありません。J007を確定すると、その終了を待つJ010がpriorityによりJ002より先に選ばれ、T2の12～14を確保します。そのためT2の7～12に空きがあってもJ002を後から差し込まず、J002は14～17、遅れ3となります。これは指定された選択規則と同teamの直前に確定したendを使う制約による結果です。\n\n大きな遅れはJ006・J009が各19、J011が18です。J006は依存先J003の終了24を待って24～29となり、その後T2でJ008が29～31となります。終盤のT1は優先度によりJ011（31～35）、J009（35～39）の順となり、両方に依存するJ012は39から開始します。終了見込みを検討する際は、この依存関係とチーム内の順番に注意が必要です。\n\n全件の選択順、release、依存先の終了、チーム内の重複がないこと、明細と集計値の整合を確認済みです。作業の実施・完了や、遅れへの対応が済んだことを示すものではありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-011",
+      "arm": "PRACTICAL",
+      "family": "dependency_schedule",
+      "designed_difficulty": 4,
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": false,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_after_partial_repair",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.23675",
+      "total_active_seconds": 459.0789999999106,
+      "report_md": "全体の終了見込み（makespan）は44、合計遅延（total_late）は122で、12件中10件が期限超過となります。最大の遅延はJ012の35で、依存先J009の終了39を待って開始し、44に終了する予定です。選択規則によりJ004の次はJ007、続いてJ010となり、同じT2のJ002は14開始となります。J006は依存先J003の終了24を待って開始し、遅延19です。T1ではJ011が31～35に確定するため、J009は依存先が31までに終了していても35開始となり、遅延19となります。同一チームの確定順を守り、空き時間への後からの差し込みは行っていません。",
+      "patch_changes": [
+        {
+          "path": "/processing_order",
+          "before": [
+            "J001",
+            "J004",
+            "J002",
+            "J005",
+            "J003",
+            "J007",
+            "J006",
+            "J010",
+            "J008",
+            "J011",
+            "J009",
+            "J012"
+          ],
+          "after": [
+            "J001",
+            "J004",
+            "J007",
+            "J010",
+            "J002",
+            "J005",
+            "J003",
+            "J006",
+            "J008",
+            "J011",
+            "J009",
+            "J012"
+          ]
+        },
+        {
+          "path": "/details",
+          "before": [
+            {
+              "end": 4,
+              "id": "J001",
+              "late": 0,
+              "start": 3
+            },
+            {
+              "end": 10,
+              "id": "J002",
+              "late": 0,
+              "start": 7
+            },
+            {
+              "end": 17,
+              "id": "J003",
+              "late": 0,
+              "start": 14
+            },
+            {
+              "end": 7,
+              "id": "J004",
+              "late": 0,
+              "start": 4
+            },
+            {
+              "end": 14,
+              "id": "J005",
+              "late": 0,
+              "start": 10
+            },
+            {
+              "end": 22,
+              "id": "J006",
+              "late": 12,
+              "start": 17
+            },
+            {
+              "end": 22,
+              "id": "J007",
+              "late": 14,
+              "start": 17
+            },
+            {
+              "end": 26,
+              "id": "J008",
+              "late": 8,
+              "start": 24
+            },
+            {
+              "end": 34,
+              "id": "J009",
+              "late": 14,
+              "start": 30
+            },
+            {
+              "end": 24,
+              "id": "J010",
+              "late": 11,
+              "start": 22
+            },
+            {
+              "end": 30,
+              "id": "J011",
+              "late": 13,
+              "start": 26
+            },
+            {
+              "end": 39,
+              "id": "J012",
+              "late": 30,
+              "start": 34
+            }
+          ],
+          "after": [
+            {
+              "id": "J001",
+              "start": 3,
+              "end": 4,
+              "late": 0
+            },
+            {
+              "id": "J002",
+              "start": 14,
+              "end": 17,
+              "late": 3
+            },
+            {
+              "id": "J003",
+              "start": 21,
+              "end": 24,
+              "late": 5
+            },
+            {
+              "id": "J004",
+              "start": 4,
+              "end": 7,
+              "late": 0
+            },
+            {
+              "id": "J005",
+              "start": 17,
+              "end": 21,
+              "late": 5
+            },
+            {
+              "id": "J006",
+              "start": 24,
+              "end": 29,
+              "late": 19
+            },
+            {
+              "id": "J007",
+              "start": 7,
+              "end": 12,
+              "late": 4
+            },
+            {
+              "id": "J008",
+              "start": 29,
+              "end": 31,
+              "late": 13
+            },
+            {
+              "id": "J009",
+              "start": 35,
+              "end": 39,
+              "late": 19
+            },
+            {
+              "id": "J010",
+              "start": 12,
+              "end": 14,
+              "late": 1
+            },
+            {
+              "id": "J011",
+              "start": 31,
+              "end": 35,
+              "late": 18
+            },
+            {
+              "id": "J012",
+              "start": 39,
+              "end": 44,
+              "late": 35
+            }
+          ]
+        },
+        {
+          "path": "/makespan",
+          "before": 39,
+          "after": 44
+        },
+        {
+          "path": "/total_late",
+          "before": 102,
+          "after": 122
+        },
+        {
+          "path": "/report_md",
+          "before": "全体の終了見込み（makespan）は39です。合計遅延（total_late）は102となり、多くの作業で期限超過が発生しています。特にJ012は、依存作業であるJ009の終了を待つ制約により、30という最大の遅延が発生しています。また、J007やJ006も、依存関係とチームの稼働状況が重なったことで、期限を大幅に超過しています。",
+          "after": "全体の終了見込み（makespan）は44、合計遅延（total_late）は122で、12件中10件が期限超過となります。最大の遅延はJ012の35で、依存先J009の終了39を待って開始し、44に終了する予定です。選択規則によりJ004の次はJ007、続いてJ010となり、同じT2のJ002は14開始となります。J006は依存先J003の終了24を待って開始し、遅延19です。T1ではJ011が31～35に確定するため、J009は依存先が31までに終了していても35開始となり、遅延19となります。同一チームの確定順を守り、空き時間への後からの差し込みは行っていません。"
+        }
+      ],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

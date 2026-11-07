@@ -1,0 +1,12 @@
+import re
+
+def context_findings(text):
+ normal=[];suspicious=[];confirmed=[]
+ for line in text.splitlines():
+  if not re.search(r'truncat|context.*(warning|exceed)',line,re.I):continue
+  # The sole ignored pattern is the actually observed native slot-release
+  # status, with an exact zero value and no additional warning payload.
+  if re.search(r'^slot\s+release:.*\| stop processing: n_tokens = \d+, truncated = 0\s*$',line):normal.append(line)
+  elif re.search(r'\btruncated\s*=\s*[1-9]\d*\b',line):confirmed.append(line)
+  else:suspicious.append(line)
+ return {'native_no_truncation_status':normal,'confirmed':confirmed,'unresolved_warnings':suspicious}

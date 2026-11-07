@@ -1,0 +1,695 @@
+{
+  "task_id": "PR100-041",
+  "metadata": {
+    "task_id": "PR100-041",
+    "family": "service_queue",
+    "designed_difficulty": 2,
+    "variant": 1
+  },
+  "public_job": {
+    "task_id": "PR100-041",
+    "initial": "問い合わせ対応が担当者任せで、朝、何から手を付けるか分かりにくいです。対応順とチームの状況が分かる資料を作りたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n時間は同一時間軸の整数分。deadline=opened+sla[priority]+paused。全件にdeadlineを記載。\nCLOSED/CANCELLEDまたはopened>as_of_minuteはEXCLUDED、overdue=0、action=NONE。その他はdeadline<as_of_minuteでBREACHED、0<=deadline-as_of_minute<=windowでDUE_SOON、その他ON_TRACK。\noverdueはBREACHEDのみas_of_minute-deadline。BREACHEDかつ(P1またはoverdue>=480)ならESCALATE、その他BREACHED/DUE_SOONならCONTACT、その他NONE。\ndetailsは全ticketをid順。teamsはT1,T2,T3順にactive(EXCLUDED以外)/breached/due_soon/escalatedの件数。queueはaction!=NONEをESCALATE、CONTACT順、deadline昇順、id昇順で並べたid。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に対象・期限超過・期限間近の全体像と、優先対応ID・理由。\n資料は以下のJSONです。\n{\n  \"as_of_minute\": 1440,\n  \"sla\": {\n    \"P1\": 240,\n    \"P2\": 480,\n    \"P3\": 960\n  },\n  \"window\": 120,\n  \"tickets\": [\n    {\n      \"id\": \"C001\",\n      \"team\": \"T1\",\n      \"priority\": \"P3\",\n      \"opened\": 1500,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C002\",\n      \"team\": \"T2\",\n      \"priority\": \"P1\",\n      \"opened\": 960,\n      \"paused\": 0,\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"id\": \"C003\",\n      \"team\": \"T3\",\n      \"priority\": \"P1\",\n      \"opened\": 0,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C004\",\n      \"team\": \"T1\",\n      \"priority\": \"P1\",\n      \"opened\": 1500,\n      \"paused\": 0,\n      \"status\": \"CANCELLED\"\n    },\n    {\n      \"id\": \"C005\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 1200,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"deadline\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}, \"overdue\": {\"type\": \"integer\"}, \"action\": {\"type\": \"string\"}}, \"required\": [\"id\", \"deadline\", \"state\", \"overdue\", \"action\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"active\": {\"type\": \"integer\"}, \"breached\": {\"type\": \"integer\"}, \"due_soon\": {\"type\": \"integer\"}, \"escalated\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"active\", \"breached\", \"due_soon\", \"escalated\"], \"additionalProperties\": false}}, \"queue\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"queue\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "as_of_minute": 1440,
+      "sla": {
+        "P1": 240,
+        "P2": 480,
+        "P3": 960
+      },
+      "window": 120,
+      "tickets": [
+        {
+          "id": "C001",
+          "team": "T1",
+          "priority": "P3",
+          "opened": 1500,
+          "paused": 0,
+          "status": "OPEN"
+        },
+        {
+          "id": "C002",
+          "team": "T2",
+          "priority": "P1",
+          "opened": 960,
+          "paused": 0,
+          "status": "CLOSED"
+        },
+        {
+          "id": "C003",
+          "team": "T3",
+          "priority": "P1",
+          "opened": 0,
+          "paused": 0,
+          "status": "OPEN"
+        },
+        {
+          "id": "C004",
+          "team": "T1",
+          "priority": "P1",
+          "opened": 1500,
+          "paused": 0,
+          "status": "CANCELLED"
+        },
+        {
+          "id": "C005",
+          "team": "T2",
+          "priority": "P3",
+          "opened": 1200,
+          "paused": 0,
+          "status": "OPEN"
+        }
+      ]
+    },
+    "business_rules": [
+      "時間は同一時間軸の整数分。deadline=opened+sla[priority]+paused。全件にdeadlineを記載。",
+      "CLOSED/CANCELLEDまたはopened>as_of_minuteはEXCLUDED、overdue=0、action=NONE。その他はdeadline<as_of_minuteでBREACHED、0<=deadline-as_of_minute<=windowでDUE_SOON、その他ON_TRACK。",
+      "overdueはBREACHEDのみas_of_minute-deadline。BREACHEDかつ(P1またはoverdue>=480)ならESCALATE、その他BREACHED/DUE_SOONならCONTACT、その他NONE。",
+      "detailsは全ticketをid順。teamsはT1,T2,T3順にactive(EXCLUDED以外)/breached/due_soon/escalatedの件数。queueはaction!=NONEをESCALATE、CONTACT順、deadline昇順、id昇順で並べたid。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "deadline": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string"
+              },
+              "overdue": {
+                "type": "integer"
+              },
+              "action": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "deadline",
+              "state",
+              "overdue",
+              "action"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "teams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "team": {
+                "type": "string"
+              },
+              "active": {
+                "type": "integer"
+              },
+              "breached": {
+                "type": "integer"
+              },
+              "due_soon": {
+                "type": "integer"
+              },
+              "escalated": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "team",
+              "active",
+              "breached",
+              "due_soon",
+              "escalated"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "queue": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "teams",
+        "queue",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "normal",
+    "reasoning_effort": "medium"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "問い合わせ対応が担当者任せで、朝、何から手を付けるか分かりにくいです。対応順とチームの状況が分かる資料を作りたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まずはこのチャットでいただく資料だけをもとに、必要な情報と資料の形を一緒に整理しましょう。完成品の作成は、方向性が決まってから進めます。\n\n最初に、次の3点を教えてください。資料から分かることは、資料をいただいてから確認します。\n\n1. **誰が、いつ使いますか？**  \n   例：担当者が朝の業務開始時に見る、リーダーが朝会でチーム全体を確認する。\n\n2. **対応順で困っているのは、どんな場面ですか？**  \n   例：急ぎの判断が人によって違う、返答待ちが埋もれる、担当者が不在だと止まる。\n\n3. **チームの状況として、何が見えると助かりますか？**  \n   例：担当ごとの件数や負荷、未対応・停滞中の案件、応援が必要な人。\n\n分かる範囲で答えて、手元の資料をそのまま貼ってください。個人名や顧客名は伏せても大丈夫です。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n時間は同一時間軸の整数分。deadline=opened+sla[priority]+paused。全件にdeadlineを記載。\nCLOSED/CANCELLEDまたはopened>as_of_minuteはEXCLUDED、overdue=0、action=NONE。その他はdeadline<as_of_minuteでBREACHED、0<=deadline-as_of_minute<=windowでDUE_SOON、その他ON_TRACK。\noverdueはBREACHEDのみas_of_minute-deadline。BREACHEDかつ(P1またはoverdue>=480)ならESCALATE、その他BREACHED/DUE_SOONならCONTACT、その他NONE。\ndetailsは全ticketをid順。teamsはT1,T2,T3順にactive(EXCLUDED以外)/breached/due_soon/escalatedの件数。queueはaction!=NONEをESCALATE、CONTACT順、deadline昇順、id昇順で並べたid。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に対象・期限超過・期限間近の全体像と、優先対応ID・理由。\n資料は以下のJSONです。\n{\n  \"as_of_minute\": 1440,\n  \"sla\": {\n    \"P1\": 240,\n    \"P2\": 480,\n    \"P3\": 960\n  },\n  \"window\": 120,\n  \"tickets\": [\n    {\n      \"id\": \"C001\",\n      \"team\": \"T1\",\n      \"priority\": \"P3\",\n      \"opened\": 1500,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C002\",\n      \"team\": \"T2\",\n      \"priority\": \"P1\",\n      \"opened\": 960,\n      \"paused\": 0,\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"id\": \"C003\",\n      \"team\": \"T3\",\n      \"priority\": \"P1\",\n      \"opened\": 0,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C004\",\n      \"team\": \"T1\",\n      \"priority\": \"P1\",\n      \"opened\": 1500,\n      \"paused\": 0,\n      \"status\": \"CANCELLED\"\n    },\n    {\n      \"id\": \"C005\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 1200,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"deadline\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}, \"overdue\": {\"type\": \"integer\"}, \"action\": {\"type\": \"string\"}}, \"required\": [\"id\", \"deadline\", \"state\", \"overdue\", \"action\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"active\": {\"type\": \"integer\"}, \"breached\": {\"type\": \"integer\"}, \"due_soon\": {\"type\": \"integer\"}, \"escalated\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"active\", \"breached\", \"due_soon\", \"escalated\"], \"additionalProperties\": false}}, \"queue\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"queue\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人としては、朝に「どの問い合わせから対応するか」を確認する担当者と、「どのチームに期限超過や優先対応が集中しているか」を確認する責任者を想定しています。担当者はqueueで対応順をつかみ、detailsで各件の期限・判定・必要な行動を確認する。責任者はteamsと短い共有文で全体像を把握し、必要に応じて明細を見る、という使い方です。この役割分担は、現時点での想定です。\n\n作成時は、いただいた条件に沿って全件の期限を計算し、対象外の判定を先に適用してから、期限超過・期限間近・行動を決めます。その結果からチーム別集計と対応順を作り、明細との整合を確認します。対象外の案件も、期限を付けて明細に残す方針です。\n\n共有文は、判定時点での対象件数、期限超過・期限間近の全体像、優先対応のIDとその理由を中心にまとめます。対応を求める判定と、実際に対応が完了した事実は区別し、今回の資料から分からない実施状況は書きません。\n\n計算・集計・並び順・最終JSONの形式について、未確定の条件は見当たりません。一方、ESCALATEの連絡先や実際の担当割り当ては示されていないため、資料には補いません。今回は方針の相談にとどめ、計算や成果物の作成はまだ始めません。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-041",
+      "arm": "SOL_CONTINUE",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "C001",
+            "deadline": 2460,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C002",
+            "deadline": 1200,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C003",
+            "deadline": 240,
+            "state": "BREACHED",
+            "overdue": 1200,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C004",
+            "deadline": 1740,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C005",
+            "deadline": 2160,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T2",
+            "active": 1,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T3",
+            "active": 1,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1
+          }
+        ],
+        "queue": [
+          "C003"
+        ],
+        "report_md": "判定時点1440分で、全5件のうち対象は2件、対象外は3件です。対象の内訳は期限超過1件、期限間近0件、ON_TRACK 1件です。\n\n最優先はT3のC003です。期限240分に対して1200分超過しており、P1かつ超過480分以上のためESCALATE対象です。対応キューはこの1件のみで、エスカレーションの実施・完了は未確認です。\n\nT2の対象はC005の1件で、期限2160分まで残り720分あり、現時点のactionはNONEです。T1の対象は0件です。\n\nC001は判定時点より後の受付、C002はCLOSED、C004はCANCELLEDかつ判定時点より後の受付のため対象外です。特にC002は期限1200分を過ぎていますが、CLOSEDのため期限超過件数や対応キューには含めません。対象外も全件の期限を明細に記載しています。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "C001",
+            "deadline": 2460,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C002",
+            "deadline": 1200,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C003",
+            "deadline": 240,
+            "state": "BREACHED",
+            "overdue": 1200,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C004",
+            "deadline": 1740,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C005",
+            "deadline": 2160,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T2",
+            "active": 1,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T3",
+            "active": 1,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1
+          }
+        ],
+        "queue": [
+          "C003"
+        ],
+        "report_md": "判定時点1440分で、全5件のうち対象は2件、対象外は3件です。対象の内訳は期限超過1件、期限間近0件、ON_TRACK 1件です。\n\n最優先はT3のC003です。期限240分に対して1200分超過しており、P1かつ超過480分以上のためESCALATE対象です。対応キューはこの1件のみで、エスカレーションの実施・完了は未確認です。\n\nT2の対象はC005の1件で、期限2160分まで残り720分あり、現時点のactionはNONEです。T1の対象は0件です。\n\nC001は判定時点より後の受付、C002はCLOSED、C004はCANCELLEDかつ判定時点より後の受付のため対象外です。特にC002は期限1200分を過ぎていますが、CLOSEDのため期限超過件数や対応キューには含めません。対象外も全件の期限を明細に記載しています。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.64445",
+      "incremental_credits": "1.0121",
+      "operating_total_credits": "1.65655",
+      "shared_seconds": 27.984000000054948,
+      "incremental_active_seconds": 17.546999999904074,
+      "total_active_seconds": 45.53099999995902,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T16:56:58.895694+00:00",
+        "text": "{\n  \"details\": [\n    {\n      \"id\": \"C001\",\n      \"deadline\": 2460,\n      \"state\": \"EXCLUDED\",\n      \"overdue\": 0,\n      \"action\": \"NONE\"\n    },\n    {\n      \"id\": \"C002\",\n      \"deadline\": 1200,\n      \"state\": \"EXCLUDED\",\n      \"overdue\": 0,\n      \"action\": \"NONE\"\n    },\n    {\n      \"id\": \"C003\",\n      \"deadline\": 240,\n      \"state\": \"BREACHED\",\n      \"overdue\": 1200,\n      \"action\": \"ESCALATE\"\n    },\n    {\n      \"id\": \"C004\",\n      \"deadline\": 1740,\n      \"state\": \"EXCLUDED\",\n      \"overdue\": 0,\n      \"action\": \"NONE\"\n    },\n    {\n      \"id\": \"C005\",\n      \"deadline\": 2160,\n      \"state\": \"ON_TRACK\",\n      \"overdue\": 0,\n      \"action\": \"NONE\"\n    }\n  ],\n  \"teams\": [\n    {\n      \"team\": \"T1\",\n      \"active\": 0,\n      \"breached\": 0,\n      \"due_soon\": 0,\n      \"escalated\": 0\n    },\n    {\n      \"team\": \"T2\",\n      \"active\": 1,\n      \"breached\": 0,\n      \"due_soon\": 0,\n      \"escalated\": 0\n    },\n    {\n      \"team\": \"T3\",\n      \"active\": 1,\n      \"breached\": 1,\n      \"due_soon\": 0,\n      \"escalated\": 1\n    }\n  ],\n  \"queue\": [\n    \"C003\"\n  ],\n  \"report_md\": \"判定時点1440分で、全5件のうち対象は2件、対象外は3件です。対象の内訳は期限超過1件、期限間近0件、ON_TRACK 1件です。\\n\\n最優先はT3のC003です。期限240分に対して1200分超過しており、P1かつ超過480分以上のためESCALATE対象です。対応キューはこの1件のみで、エスカレーションの実施・完了は未確認です。\\n\\nT2の対象はC005の1件で、期限2160分まで残り720分あり、現時点のactionはNONEです。T1の対象は0件です。\\n\\nC001は判定時点より後の受付、C002はCLOSED、C004はCANCELLEDかつ判定時点より後の受付のため対象外です。特にC002は期限1200分を過ぎていますが、CLOSEDのため期限超過件数や対応キューには含めません。対象外も全件の期限を明細に記載しています。\"\n}",
+        "value": {
+          "details": [
+            {
+              "id": "C001",
+              "deadline": 2460,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C002",
+              "deadline": 1200,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C003",
+              "deadline": 240,
+              "state": "BREACHED",
+              "overdue": 1200,
+              "action": "ESCALATE"
+            },
+            {
+              "id": "C004",
+              "deadline": 1740,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C005",
+              "deadline": 2160,
+              "state": "ON_TRACK",
+              "overdue": 0,
+              "action": "NONE"
+            }
+          ],
+          "teams": [
+            {
+              "team": "T1",
+              "active": 0,
+              "breached": 0,
+              "due_soon": 0,
+              "escalated": 0
+            },
+            {
+              "team": "T2",
+              "active": 1,
+              "breached": 0,
+              "due_soon": 0,
+              "escalated": 0
+            },
+            {
+              "team": "T3",
+              "active": 1,
+              "breached": 1,
+              "due_soon": 0,
+              "escalated": 1
+            }
+          ],
+          "queue": [
+            "C003"
+          ],
+          "report_md": "判定時点1440分で、全5件のうち対象は2件、対象外は3件です。対象の内訳は期限超過1件、期限間近0件、ON_TRACK 1件です。\n\n最優先はT3のC003です。期限240分に対して1200分超過しており、P1かつ超過480分以上のためESCALATE対象です。対応キューはこの1件のみで、エスカレーションの実施・完了は未確認です。\n\nT2の対象はC005の1件で、期限2160分まで残り720分あり、現時点のactionはNONEです。T1の対象は0件です。\n\nC001は判定時点より後の受付、C002はCLOSED、C004はCANCELLEDかつ判定時点より後の受付のため対象外です。特にC002は期限1200分を過ぎていますが、CLOSEDのため期限超過件数や対応キューには含めません。対象外も全件の期限を明細に記載しています。"
+        },
+        "public_schema_pass": true,
+        "seconds": 17.546999999904074,
+        "credits": "1.0121",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-041",
+      "arm": "PRACTICAL",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "action": "NONE",
+            "deadline": 2460,
+            "id": "C001",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1200,
+            "id": "C002",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 240,
+            "id": "C003",
+            "overdue": 1200,
+            "state": "BREACHED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1740,
+            "id": "C004",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2160,
+            "id": "C005",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          }
+        ],
+        "queue": [
+          "C003"
+        ],
+        "report_md": "現在、対応中の案件は2件です。そのうち1件（C003）が期限超過（BREACHED）しており、P1かつ大幅な期限超過（1200分）のため、至急ESCALATEの対応が必要です。期限間近（DUE_SOON）の案件はありません。",
+        "teams": [
+          {
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0,
+            "team": "T1"
+          },
+          {
+            "active": 1,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0,
+            "team": "T2"
+          },
+          {
+            "active": 1,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1,
+            "team": "T3"
+          }
+        ]
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "action": "NONE",
+            "deadline": 2460,
+            "id": "C001",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1200,
+            "id": "C002",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 240,
+            "id": "C003",
+            "overdue": 1200,
+            "state": "BREACHED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1740,
+            "id": "C004",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2160,
+            "id": "C005",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          }
+        ],
+        "queue": [
+          "C003"
+        ],
+        "report_md": "現在、対応中の案件は2件です。そのうち1件（C003）が期限超過（BREACHED）しており、P1かつ大幅な期限超過（1200分）のため、至急ESCALATEの対応が必要です。期限間近（DUE_SOON）の案件はありません。",
+        "teams": [
+          {
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0,
+            "team": "T1"
+          },
+          {
+            "active": 1,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0,
+            "team": "T2"
+          },
+          {
+            "active": 1,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1,
+            "team": "T3"
+          }
+        ]
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.64445",
+      "incremental_credits": "0.28455",
+      "operating_total_credits": "0.92900",
+      "shared_seconds": 27.984000000054948,
+      "incremental_active_seconds": 195.5779999999795,
+      "total_active_seconds": 223.56200000003446,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T17:00:15.026698+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 5.905999999959022,
+          "credits": "0.28455",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 156.1720000000205,
+        "usage": {
+          "prompt_eval_count": 2087,
+          "eval_count": 6091,
+          "prompt_eval_duration": 2704509000,
+          "eval_duration": 153240070000,
+          "total_duration": 155977166000
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "C001",
+        "deadline": 2460,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C002",
+        "deadline": 1200,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C003",
+        "deadline": 240,
+        "state": "BREACHED",
+        "overdue": 1200,
+        "action": "ESCALATE"
+      },
+      {
+        "id": "C004",
+        "deadline": 1740,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C005",
+        "deadline": 2160,
+        "state": "ON_TRACK",
+        "overdue": 0,
+        "action": "NONE"
+      }
+    ],
+    "teams": [
+      {
+        "team": "T1",
+        "active": 0,
+        "breached": 0,
+        "due_soon": 0,
+        "escalated": 0
+      },
+      {
+        "team": "T2",
+        "active": 1,
+        "breached": 0,
+        "due_soon": 0,
+        "escalated": 0
+      },
+      {
+        "team": "T3",
+        "active": 1,
+        "breached": 1,
+        "due_soon": 0,
+        "escalated": 1
+      }
+    ],
+    "queue": [
+      "C003"
+    ]
+  },
+  "scores": [
+    {
+      "task_id": "PR100-041",
+      "arm": "SOL_CONTINUE",
+      "family": "service_queue",
+      "designed_difficulty": 2,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.65655",
+      "total_active_seconds": 45.53099999995902,
+      "report_md": "判定時点1440分で、全5件のうち対象は2件、対象外は3件です。対象の内訳は期限超過1件、期限間近0件、ON_TRACK 1件です。\n\n最優先はT3のC003です。期限240分に対して1200分超過しており、P1かつ超過480分以上のためESCALATE対象です。対応キューはこの1件のみで、エスカレーションの実施・完了は未確認です。\n\nT2の対象はC005の1件で、期限2160分まで残り720分あり、現時点のactionはNONEです。T1の対象は0件です。\n\nC001は判定時点より後の受付、C002はCLOSED、C004はCANCELLEDかつ判定時点より後の受付のため対象外です。特にC002は期限1200分を過ぎていますが、CLOSEDのため期限超過件数や対応キューには含めません。対象外も全件の期限を明細に記載しています。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-041",
+      "arm": "PRACTICAL",
+      "family": "service_queue",
+      "designed_difficulty": 2,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "0.92900",
+      "total_active_seconds": 223.56200000003446,
+      "report_md": "現在、対応中の案件は2件です。そのうち1件（C003）が期限超過（BREACHED）しており、P1かつ大幅な期限超過（1200分）のため、至急ESCALATEの対応が必要です。期限間近（DUE_SOON）の案件はありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

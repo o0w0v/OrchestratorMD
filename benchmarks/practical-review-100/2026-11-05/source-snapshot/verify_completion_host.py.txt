@@ -1,0 +1,98 @@
+"""Verify saved completion evidence and derive descriptive metrics; no model calls."""
+import hashlib
+import json
+from collections import Counter, defaultdict
+from datetime import datetime, timezone
+from decimal import Decimal
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parent
+RUN=ROOT/'run-001'
+def read(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
+def sha(p):
+ with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def save(p,v):
+ with Path(p).open('x',encoding='utf-8') as f:json.dump(v,f,ensure_ascii=False,indent=2);f.write('\n')
+def check_map(files):
+ errors=[p for p,h in files.items() if not Path(p).is_file() or sha(p)!=h]
+ assert not errors,errors
+ return len(files)
+
+assert sha(ROOT/'EXECUTION_FREEZE.json')=='1db525357734be9396b21918f648358be0decdd99f2d76f4eb8daca9da9bd6fb'
+assert not (RUN/'STOP.json').exists() and not (RUN/'POSTPROCESSING_STOP.json').exists()
+counts={}
+counts['frozen_inputs']=check_map(read(ROOT/'EXECUTION_FREEZE.json')['inputs'])
+counts['prior_files']=check_map(read(ROOT/'PRESERVATION_BEFORE.json')['files'])
+copies=read(ROOT/'IMPORT_COPY_MANIFEST.json');derived=set(copies['derived_host_files'])
+counts['copy_origins']=check_map({x['origin']:x['sha256'] for x in copies['copied_files'].values()})
+counts['byte_identical_import_copies']=check_map({p:x['sha256'] for p,x in copies['copied_files'].items() if Path(p).name not in derived})
+counts['deliberately_derived_host_files']=len(derived)
+for name in ['ALL_DESIGNS_SEALED.json','ROUTING_COMPLETE.json']:
+ counts[name]=check_map(read(RUN/name)['files'])
+for name in ['analysis-001/ANALYSIS_FREEZE.json','analysis-001/SOURCE_MANIFEST.json','completion-audit-001/AUDIT_FREEZE.json','FINAL_KNOWLEDGE_FREEZE.json']:
+ counts[name]=check_map(read(ROOT/name)['files'])
+counts['dialogue_seals']=sum(check_map(read(p)['files']) for p in (RUN/'dialogues').glob('*/DESIGN_AND_DIALOGUE_SEALED.json'))
+session_evidence=read(ROOT/'completion-audit-001/SESSION_COUNTER_EVIDENCE.json')
+counts['persistent_session_rollouts']=check_map({v['rollout_path']:v['rollout_sha256'] for v in session_evidence.values()})
+spec=read(ROOT/'RECOVERY_IMPORT.json')
+for x in spec['imported_calls']:
+ for kind in ['ledger','result']:assert sha(RUN/x[kind+'_relative'])==x[kind+'_sha256']
+counts['imported_completed_calls']=len(spec['imported_calls'])
+ledgers=[read(p) for p in (RUN/'roles').glob('*/*/*/INCREMENTAL_USAGE.json')]
+complete=read(RUN/'COMPLETE.json');audit=read(ROOT/'completion-audit-001/AUDIT_RESULTS.json')
+assert audit['passed'] and audit['model_calls_by_auditor']==0 and not audit['billing_complete']
+assert Decimal(complete['reported_usage_subtotal_Credits'])==sum((Decimal(x['incremental_Credits']) for x in ledgers),Decimal(0))
+fields=['input_tokens','cached_input_tokens','output_tokens','reasoning_output_tokens']
+roles=defaultdict(lambda:{**{k:0 for k in fields},'calls':0,'reported_Credits':Decimal(0)})
+by_session=defaultdict(list);manifests=[];cloud=local=0
+for p in sorted((RUN/'accounting/invocations').iterdir()):
+ if not p.is_dir():continue
+ m=read(p/'manifest.json');term=read(p/'terminal.json');manifests.append((m,term,p))
+ assert sha(p/'request.raw')==m['request_sha256']
+ if m['transport']=='codex_cli':
+  cloud+=1
+  for name,key in [('stdout.jsonl','stdout_sha256'),('stderr.log','stderr_sha256')]:assert sha(p/name)==term[key]
+ else:
+  local+=1
+counts.update({'Cloud_physical':cloud,'Local_physical':local,'completed_Cloud_calls':len(ledgers)})
+assert cloud==complete['cloud_calls']==387 and local==complete['local_physical']==86 and len(ledgers)==386
+for l in ledgers:
+ assert l['raw_cumulative_usage']['cache_write_input_tokens']==0
+ assert all(l['incremental_usage'][k]==l['raw_cumulative_usage'][k]-l['previous_cumulative_usage'].get(k,0)>=0 for k in fields)
+ raw=Path(l['capture_path']);m=read(raw/'manifest.json');by_session[l['session_id']].append((m['started_at'],l))
+ key=l['arm']+':'+l['stage']+':'+m['reasoning_effort'];r=roles[key];r['calls']+=1;r['reported_Credits']+=Decimal(l['incremental_Credits'])
+ for k in fields:r[k]+=l['incremental_usage'][k]
+for rows in by_session.values():
+ rows.sort(key=lambda x:x[0])
+ for k in fields:assert sum(l['incremental_usage'][k] for _,l in rows)==rows[-1][1]['raw_cumulative_usage'][k]
+for r in roles.values():r['reported_Credits']=str(r['reported_Credits'])
+native=read(ROOT/'analysis-001/NATIVE_RESOURCES.json')['physical_results']
+resources={}
+for key in ['gpu_peak_used_mib','ollama_peak_rss_gib','ollama_peak_private_gib','ollama_reported_peak_vram_gib']:
+ resources[key]=max(n['resource'][key] for n in native if n['resource'].get(key) is not None)
+for key in ['gpu_min_free_mib','host_min_available_ram_gib']:
+ resources[key]=min(n['resource'][key] for n in native if n['resource'].get(key) is not None)
+resources['gpu_query_failures']=sum(n['resource']['gpu_query_failures'] for n in native)
+resources['classification_counts']=dict(Counter(n['classification'] for n in native))
+load=sum(read(p)['load_wall_seconds'] for p in (RUN/'servers').glob('*/START.json'))
+resources['load_wall_seconds']=load;resources['server_load_count']=len(list((RUN/'servers').glob('*/START.json')))
+native_tokens={k:sum(n['usage'][k] for n in native) for k in ['prompt_eval_count','eval_count']}
+rows=read(ROOT/'analysis-001/SCORED_RESULTS.json');results=[read(p) for p in (RUN/'unscored').glob('*/*.json')]
+patches=[]
+for row in rows:
+ if row['patch_changes']:
+  r=read(RUN/'unscored'/row['task_id']/row['arm'].join(['','.json'])) if False else read(RUN/'unscored'/row['task_id']/(row['arm']+'.json'))
+  review=json.loads(r['history'][0]['text'])
+  patches.append({'task_id':row['task_id'],'family':row['family'],'initial_data_exact':row['initial_data_exact'],'final_data_exact':row['data_exact'],'changes':r['patch_changes'],'impact':review['impact'],'source_dialogue':str(RUN/'dialogues'/row['task_id']/'PUBLIC_DIALOGUE.json'),'result_path':str(RUN/'unscored'/row['task_id']/(row['arm']+'.json')),'full_result_regenerated':False})
+c=read(ROOT/'analysis-001/COMPARISON.json')
+shared_seconds=sum(read(p)['shared_seconds'] for p in (RUN/'dialogues').glob('*/DESIGN_AND_DIALOGUE_SEALED.json'))
+small_exec_seconds=sum(r['incremental_active_seconds'] for r in results if r['arm']=='SOL_CONTINUE' and r['profile']=='small')
+physical_active=sum(m['active_seconds'] for m in c['methods'].values())-shared_seconds-small_exec_seconds
+first=min(datetime.fromisoformat(m['started_at'].replace('Z','+00:00')) for m,t,p in manifests)
+last=max(datetime.fromisoformat(t['ended_at'].replace('Z','+00:00')) for m,t,p in manifests)
+time_info={'shared_source_seconds':shared_seconds,'shared_small_execution_seconds':small_exec_seconds,'unique_completed_workflow_active_seconds':physical_active,'historical_capacity_failure_seconds':2.579,'unique_active_including_recorded_failed_call_seconds':physical_active+2.579,'first_physical_call_started':first.isoformat(),'last_physical_call_ended':last.isoformat(),'model_call_calendar_span_seconds':(last-first).total_seconds(),'full_recovery_controller_started':read(RUN/'EXECUTION_STARTED.json')['timestamp'],'summary_complete':read(RUN/'SUMMARY_COMPLETE.json')['timestamp'],'all_study_elapsed_includes_pause':True,'review_Cloud_calls':sum(1 for l in ledgers if l['stage']=='REVIEW'),'resolve_Cloud_calls':sum(1 for l in ledgers if l['stage'].startswith('RESOLVE')),'research_model_calls':0,'native_api_seconds':sum(n['api_seconds'] for n in native),'native_generation_eval_seconds':sum(n['usage']['eval_duration'] for n in native)/1e9}
+assert len(patches)==12 and time_info['review_Cloud_calls']==86 and time_info['resolve_Cloud_calls']==0
+gemma_only=[row for row in rows if row['arm']=='PRACTICAL' and row['profile']!='small']
+derived_metrics={'timestamp':datetime.now(timezone.utc).isoformat(),'verification_passed':True,'counts':counts,'host_controller_query':'require_escalated Win32_Process confirmed PID29068 and matching model calls absent; completion independently established by COMPLETE/SUMMARY_COMPLETE and sealed results','original_analysis_and_reports_unchanged':True,'model_calls_by_completion_reviewer':0,'gemma_only':{'cases':len(gemma_only),'initial_data_exact':sum(x['initial_data_exact'] for x in gemma_only),'final_data_correct_adoption':sum(x['data_correct_adoption'] for x in gemma_only)},'roles':dict(roles),'native_tokens':native_tokens,'resources':resources,'time':time_info,'patches':patches,'all_narratives_independently_audited':False,'prior_host_audit_checks':audit['checks'],'unknown_cost_calls':c['unmeasured_cost_invocations'],'reported_usage_subtotal_Credits':c['reported_usage_subtotal_Credits'],'actual_total_Credits':None}
+save(ROOT/'COMPLETION_VERIFICATION.json',derived_metrics)
+print(json.dumps({k:v for k,v in derived_metrics.items() if k not in ['patches','roles']},ensure_ascii=False))

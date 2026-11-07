@@ -1,0 +1,538 @@
+{
+  "task_id": "PR100-036",
+  "metadata": {
+    "task_id": "PR100-036",
+    "family": "dependency_schedule",
+    "designed_difficulty": 2,
+    "variant": 1
+  },
+  "public_job": {
+    "task_id": "PR100-036",
+    "initial": "担当チームが重なる作業がいくつもあって、どの順番でいつ進めるか分かりにくいです。使える予定表と短い状況説明が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n非循環taskを1件ずつスケジュールする。depsが全てスケジュール済みの未処理taskからpriority昇順、due昇順、id昇順で1件選ぶ。実時間の完了を待って選択する方式ではない。\nstart=max(release,依存taskのend最大（なければ0）,同teamの直前に確定したend（なければ0）)、end=start+duration。teamは同時に1件だけ。late=max(end-due,0)。\nprocessing_orderは選択順。detailsはid順でstart/end/late。makespanは全end最大、total_lateは全late合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に終了見込み・遅れの全体像と、注意する作業ID・制約。\n資料は以下のJSONです。\n{\n  \"tasks\": [\n    {\n      \"id\": \"J001\",\n      \"team\": \"T1\",\n      \"deps\": [],\n      \"release\": 0,\n      \"duration\": 1,\n      \"due\": 11,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J002\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J001\"\n      ],\n      \"release\": 3,\n      \"duration\": 4,\n      \"due\": 15,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J003\",\n      \"team\": \"T3\",\n      \"deps\": [\n        \"J002\"\n      ],\n      \"release\": 2,\n      \"duration\": 4,\n      \"due\": 20,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J004\",\n      \"team\": \"T4\",\n      \"deps\": [],\n      \"release\": 3,\n      \"duration\": 2,\n      \"due\": 20,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J005\",\n      \"team\": \"T5\",\n      \"deps\": [\n        \"J004\"\n      ],\n      \"release\": 3,\n      \"duration\": 4,\n      \"due\": 12,\n      \"priority\": 2\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"start\": {\"type\": \"integer\"}, \"end\": {\"type\": \"integer\"}, \"late\": {\"type\": \"integer\"}}, \"required\": [\"id\", \"start\", \"end\", \"late\"], \"additionalProperties\": false}}, \"processing_order\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"makespan\": {\"type\": \"integer\"}, \"total_late\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"processing_order\", \"makespan\", \"total_late\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "tasks": [
+        {
+          "id": "J001",
+          "team": "T1",
+          "deps": [],
+          "release": 0,
+          "duration": 1,
+          "due": 11,
+          "priority": 1
+        },
+        {
+          "id": "J002",
+          "team": "T2",
+          "deps": [
+            "J001"
+          ],
+          "release": 3,
+          "duration": 4,
+          "due": 15,
+          "priority": 2
+        },
+        {
+          "id": "J003",
+          "team": "T3",
+          "deps": [
+            "J002"
+          ],
+          "release": 2,
+          "duration": 4,
+          "due": 20,
+          "priority": 2
+        },
+        {
+          "id": "J004",
+          "team": "T4",
+          "deps": [],
+          "release": 3,
+          "duration": 2,
+          "due": 20,
+          "priority": 1
+        },
+        {
+          "id": "J005",
+          "team": "T5",
+          "deps": [
+            "J004"
+          ],
+          "release": 3,
+          "duration": 4,
+          "due": 12,
+          "priority": 2
+        }
+      ]
+    },
+    "business_rules": [
+      "非循環taskを1件ずつスケジュールする。depsが全てスケジュール済みの未処理taskからpriority昇順、due昇順、id昇順で1件選ぶ。実時間の完了を待って選択する方式ではない。",
+      "start=max(release,依存taskのend最大（なければ0）,同teamの直前に確定したend（なければ0）)、end=start+duration。teamは同時に1件だけ。late=max(end-due,0)。",
+      "processing_orderは選択順。detailsはid順でstart/end/late。makespanは全end最大、total_lateは全late合計。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "start": {
+                "type": "integer"
+              },
+              "end": {
+                "type": "integer"
+              },
+              "late": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "start",
+              "end",
+              "late"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "processing_order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "makespan": {
+          "type": "integer"
+        },
+        "total_late": {
+          "type": "integer"
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "processing_order",
+        "makespan",
+        "total_late",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "complex",
+    "reasoning_effort": "high"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "担当チームが重なる作業がいくつもあって、どの順番でいつ進めるか分かりにくいです。使える予定表と短い状況説明が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まず必要な情報を確認して、予定表と短い状況説明の形を相談しましょう。このチャットでいただく資料だけを使い、外部ファイル・他の会話の参照、外部調査、通知、システム構築は行いません。\n\n最初に、次の3点を教えてください。\n\n1. **作業の資料**  \n   作業名、担当チーム、現在の状況、期限、所要期間、前後関係が分かる内容を貼ってください。今ある資料のままで構いません。不明な項目は後で整理します。\n\n2. **予定の制約**  \n   対象期間、動かせない日程、各チームが同時に進められる作業数など、分かっている制約はありますか。\n\n3. **誰が何を判断するために使うか**  \n   たとえば、担当者が次の作業を確認するため、チーム間で日程を調整するため、上司に状況を伝えるため、などです。\n\n資料を見たうえで、確認が必要な点を絞り、日単位・週単位などの粒度や、担当の重なりを見つけやすい表の形を提案します。完成版は、その方向を相談してからまとめます。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n非循環taskを1件ずつスケジュールする。depsが全てスケジュール済みの未処理taskからpriority昇順、due昇順、id昇順で1件選ぶ。実時間の完了を待って選択する方式ではない。\nstart=max(release,依存taskのend最大（なければ0）,同teamの直前に確定したend（なければ0）)、end=start+duration。teamは同時に1件だけ。late=max(end-due,0)。\nprocessing_orderは選択順。detailsはid順でstart/end/late。makespanは全end最大、total_lateは全late合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に終了見込み・遅れの全体像と、注意する作業ID・制約。\n資料は以下のJSONです。\n{\n  \"tasks\": [\n    {\n      \"id\": \"J001\",\n      \"team\": \"T1\",\n      \"deps\": [],\n      \"release\": 0,\n      \"duration\": 1,\n      \"due\": 11,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J002\",\n      \"team\": \"T2\",\n      \"deps\": [\n        \"J001\"\n      ],\n      \"release\": 3,\n      \"duration\": 4,\n      \"due\": 15,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J003\",\n      \"team\": \"T3\",\n      \"deps\": [\n        \"J002\"\n      ],\n      \"release\": 2,\n      \"duration\": 4,\n      \"due\": 20,\n      \"priority\": 2\n    },\n    {\n      \"id\": \"J004\",\n      \"team\": \"T4\",\n      \"deps\": [],\n      \"release\": 3,\n      \"duration\": 2,\n      \"due\": 20,\n      \"priority\": 1\n    },\n    {\n      \"id\": \"J005\",\n      \"team\": \"T5\",\n      \"deps\": [\n        \"J004\"\n      ],\n      \"release\": 3,\n      \"duration\": 4,\n      \"due\": 12,\n      \"priority\": 2\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"start\": {\"type\": \"integer\"}, \"end\": {\"type\": \"integer\"}, \"late\": {\"type\": \"integer\"}}, \"required\": [\"id\", \"start\", \"end\", \"late\"], \"additionalProperties\": false}}, \"processing_order\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"makespan\": {\"type\": \"integer\"}, \"total_late\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"processing_order\", \"makespan\", \"total_late\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人としては、担当者は全明細から自分の作業の開始・終了予定と遅れを確認し、責任者は短い共有文から全体の終了見込み、遅れの規模、注意が必要な作業と制約を把握する想定です。共有文は明細と一緒に読む前提なので、全件を文章で繰り返さず、判断に必要な数値や作業IDに絞って説明します。\n\n作り方は、まず依存関係がすべてスケジュール済みの作業を候補にし、priority、due、idの昇順で1件ずつ選びます。実時間の完了やreleaseの到来を待って選ぶのではなく、選んだ作業の開始時点にrelease、依存先の終了、同じチームの直前に確定した終了を反映します。その選択順をprocessing_orderに、ID順の開始・終了・遅れをdetailsにまとめ、全体の終了見込みと遅れの合計を算出する方針です。\n\nreport_mdでは、算出した予定に基づく結論と、注意が必要な作業・制約を説明します。予定上の終了を実際の完了として扱ったり、未実施の調整を対応済みとして書いたりはしません。最終成果物を作る段階では、指定された全フィールドを含むJSONだけを返します。\n\n未確定なのは、時間の単位と時点0の基準です。提示された相対値のままなら計算できますが、日付や時刻への置き換えはできません。現段階では計算や成果物の作成には着手せず、この方針までとします。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-036",
+      "arm": "SOL_CONTINUE",
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "J001",
+            "start": 0,
+            "end": 1,
+            "late": 0
+          },
+          {
+            "id": "J002",
+            "start": 3,
+            "end": 7,
+            "late": 0
+          },
+          {
+            "id": "J003",
+            "start": 7,
+            "end": 11,
+            "late": 0
+          },
+          {
+            "id": "J004",
+            "start": 3,
+            "end": 5,
+            "late": 0
+          },
+          {
+            "id": "J005",
+            "start": 5,
+            "end": 9,
+            "late": 0
+          }
+        ],
+        "processing_order": [
+          "J001",
+          "J004",
+          "J005",
+          "J002",
+          "J003"
+        ],
+        "makespan": 11,
+        "total_late": 0,
+        "report_md": "全5件が期限内に終了する予定で、遅れの合計は0です。全体の終了見込みは時点11で、最後に終了する作業はJ003です。\n\nJ002・J004はrelease=3により開始が時点3となります。J003はJ002の終了する時点7、J005はJ004の終了する時点5から開始します。各作業のteamは異なり、同teamの重複はありません。\n\nprocessing_orderは予定を確定する選択順で、開始時刻順ではありません。J005をJ002より先に選択しますが、開始はJ002が時点3、J005が時点5です。時点は元資料の相対値で表しています。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "J001",
+            "start": 0,
+            "end": 1,
+            "late": 0
+          },
+          {
+            "id": "J002",
+            "start": 3,
+            "end": 7,
+            "late": 0
+          },
+          {
+            "id": "J003",
+            "start": 7,
+            "end": 11,
+            "late": 0
+          },
+          {
+            "id": "J004",
+            "start": 3,
+            "end": 5,
+            "late": 0
+          },
+          {
+            "id": "J005",
+            "start": 5,
+            "end": 9,
+            "late": 0
+          }
+        ],
+        "processing_order": [
+          "J001",
+          "J004",
+          "J005",
+          "J002",
+          "J003"
+        ],
+        "makespan": 11,
+        "total_late": 0,
+        "report_md": "全5件が期限内に終了する予定で、遅れの合計は0です。全体の終了見込みは時点11で、最後に終了する作業はJ003です。\n\nJ002・J004はrelease=3により開始が時点3となります。J003はJ002の終了する時点7、J005はJ004の終了する時点5から開始します。各作業のteamは異なり、同teamの重複はありません。\n\nprocessing_orderは予定を確定する選択順で、開始時刻順ではありません。J005をJ002より先に選択しますが、開始はJ002が時点3、J005が時点5です。時点は元資料の相対値で表しています。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "1.15555",
+      "incremental_credits": "1.0945",
+      "operating_total_credits": "2.25005",
+      "shared_seconds": 38.5,
+      "incremental_active_seconds": 28.07900000002701,
+      "total_active_seconds": 66.57900000002701,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T16:41:26.108569+00:00",
+        "text": "{\n  \"details\": [\n    {\"id\":\"J001\",\"start\":0,\"end\":1,\"late\":0},\n    {\"id\":\"J002\",\"start\":3,\"end\":7,\"late\":0},\n    {\"id\":\"J003\",\"start\":7,\"end\":11,\"late\":0},\n    {\"id\":\"J004\",\"start\":3,\"end\":5,\"late\":0},\n    {\"id\":\"J005\",\"start\":5,\"end\":9,\"late\":0}\n  ],\n  \"processing_order\": [\"J001\",\"J004\",\"J005\",\"J002\",\"J003\"],\n  \"makespan\": 11,\n  \"total_late\": 0,\n  \"report_md\": \"全5件が期限内に終了する予定で、遅れの合計は0です。全体の終了見込みは時点11で、最後に終了する作業はJ003です。\\n\\nJ002・J004はrelease=3により開始が時点3となります。J003はJ002の終了する時点7、J005はJ004の終了する時点5から開始します。各作業のteamは異なり、同teamの重複はありません。\\n\\nprocessing_orderは予定を確定する選択順で、開始時刻順ではありません。J005をJ002より先に選択しますが、開始はJ002が時点3、J005が時点5です。時点は元資料の相対値で表しています。\"\n}",
+        "value": {
+          "details": [
+            {
+              "id": "J001",
+              "start": 0,
+              "end": 1,
+              "late": 0
+            },
+            {
+              "id": "J002",
+              "start": 3,
+              "end": 7,
+              "late": 0
+            },
+            {
+              "id": "J003",
+              "start": 7,
+              "end": 11,
+              "late": 0
+            },
+            {
+              "id": "J004",
+              "start": 3,
+              "end": 5,
+              "late": 0
+            },
+            {
+              "id": "J005",
+              "start": 5,
+              "end": 9,
+              "late": 0
+            }
+          ],
+          "processing_order": [
+            "J001",
+            "J004",
+            "J005",
+            "J002",
+            "J003"
+          ],
+          "makespan": 11,
+          "total_late": 0,
+          "report_md": "全5件が期限内に終了する予定で、遅れの合計は0です。全体の終了見込みは時点11で、最後に終了する作業はJ003です。\n\nJ002・J004はrelease=3により開始が時点3となります。J003はJ002の終了する時点7、J005はJ004の終了する時点5から開始します。各作業のteamは異なり、同teamの重複はありません。\n\nprocessing_orderは予定を確定する選択順で、開始時刻順ではありません。J005をJ002より先に選択しますが、開始はJ002が時点3、J005が時点5です。時点は元資料の相対値で表しています。"
+        },
+        "public_schema_pass": true,
+        "seconds": 28.07900000002701,
+        "credits": "1.0945",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-036",
+      "arm": "PRACTICAL",
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "initial_artifact": {
+        "details": [
+          {
+            "end": 1,
+            "id": "J001",
+            "late": 0,
+            "start": 0
+          },
+          {
+            "end": 7,
+            "id": "J002",
+            "late": 0,
+            "start": 3
+          },
+          {
+            "end": 11,
+            "id": "J003",
+            "late": 0,
+            "start": 7
+          },
+          {
+            "end": 5,
+            "id": "J004",
+            "late": 0,
+            "start": 3
+          },
+          {
+            "end": 9,
+            "id": "J005",
+            "late": 0,
+            "start": 5
+          }
+        ],
+        "makespan": 11,
+        "processing_order": [
+          "J001",
+          "J004",
+          "J005",
+          "J002",
+          "J003"
+        ],
+        "report_md": "全作業はすべて期限内に完了する見込みです。\n\n- **全体の終了見込み (makespan):** 11\n- **遅延の状況 (total_late):** 0\n\nすべての作業において遅延は発生していません。各タスクは、依存関係、リリース日、およびチームの稼働制約に基づき、適切にスケジュールされています。",
+        "total_late": 0
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "end": 1,
+            "id": "J001",
+            "late": 0,
+            "start": 0
+          },
+          {
+            "end": 7,
+            "id": "J002",
+            "late": 0,
+            "start": 3
+          },
+          {
+            "end": 11,
+            "id": "J003",
+            "late": 0,
+            "start": 7
+          },
+          {
+            "end": 5,
+            "id": "J004",
+            "late": 0,
+            "start": 3
+          },
+          {
+            "end": 9,
+            "id": "J005",
+            "late": 0,
+            "start": 5
+          }
+        ],
+        "makespan": 11,
+        "processing_order": [
+          "J001",
+          "J004",
+          "J005",
+          "J002",
+          "J003"
+        ],
+        "report_md": "全作業はすべて期限内に完了する見込みです。\n\n- **全体の終了見込み (makespan):** 11\n- **遅延の状況 (total_late):** 0\n\nすべての作業において遅延は発生していません。各タスクは、依存関係、リリース日、およびチームの稼働制約に基づき、適切にスケジュールされています。",
+        "total_late": 0
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "1.15555",
+      "incremental_credits": "0.257",
+      "operating_total_credits": "1.41255",
+      "shared_seconds": 38.5,
+      "incremental_active_seconds": 137.15500000002794,
+      "total_active_seconds": 175.65500000002794,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T16:40:57.455424+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 6.937000000034459,
+          "credits": "0.257",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 97.81200000003446,
+        "usage": {
+          "prompt_eval_count": 1946,
+          "eval_count": 3751,
+          "prompt_eval_duration": 2504567000,
+          "eval_duration": 95188580000,
+          "total_duration": 97716651200
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "J001",
+        "start": 0,
+        "end": 1,
+        "late": 0
+      },
+      {
+        "id": "J002",
+        "start": 3,
+        "end": 7,
+        "late": 0
+      },
+      {
+        "id": "J003",
+        "start": 7,
+        "end": 11,
+        "late": 0
+      },
+      {
+        "id": "J004",
+        "start": 3,
+        "end": 5,
+        "late": 0
+      },
+      {
+        "id": "J005",
+        "start": 5,
+        "end": 9,
+        "late": 0
+      }
+    ],
+    "processing_order": [
+      "J001",
+      "J004",
+      "J005",
+      "J002",
+      "J003"
+    ],
+    "makespan": 11,
+    "total_late": 0
+  },
+  "scores": [
+    {
+      "task_id": "PR100-036",
+      "arm": "SOL_CONTINUE",
+      "family": "dependency_schedule",
+      "designed_difficulty": 2,
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "2.25005",
+      "total_active_seconds": 66.57900000002701,
+      "report_md": "全5件が期限内に終了する予定で、遅れの合計は0です。全体の終了見込みは時点11で、最後に終了する作業はJ003です。\n\nJ002・J004はrelease=3により開始が時点3となります。J003はJ002の終了する時点7、J005はJ004の終了する時点5から開始します。各作業のteamは異なり、同teamの重複はありません。\n\nprocessing_orderは予定を確定する選択順で、開始時刻順ではありません。J005をJ002より先に選択しますが、開始はJ002が時点3、J005が時点5です。時点は元資料の相対値で表しています。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-036",
+      "arm": "PRACTICAL",
+      "family": "dependency_schedule",
+      "designed_difficulty": 2,
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.41255",
+      "total_active_seconds": 175.65500000002794,
+      "report_md": "全作業はすべて期限内に完了する見込みです。\n\n- **全体の終了見込み (makespan):** 11\n- **遅延の状況 (total_late):** 0\n\nすべての作業において遅延は発生していません。各タスクは、依存関係、リリース日、およびチームの稼働制約に基づき、適切にスケジュールされています。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

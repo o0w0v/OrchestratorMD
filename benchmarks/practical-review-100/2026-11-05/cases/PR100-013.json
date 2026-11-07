@@ -1,0 +1,1562 @@
+{
+  "task_id": "PR100-013",
+  "metadata": {
+    "task_id": "PR100-013",
+    "family": "sales",
+    "designed_difficulty": 5,
+    "variant": 1
+  },
+  "public_job": {
+    "task_id": "PR100-013",
+    "initial": "今月の売上がどうなっているか、取消や返品も踏まえてまとめたいです。チーム別の状況と、先に対応すべきところが伝わる感じにしたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n取消またはday>as_of_dayはEXCLUDEDでnet/tax/gross=0。その他はINCLUDED、net=max(qty*price-discount-refund,0)、tax=(net*tax_bps+5000)//10000（整数切捨て）、gross=net+tax。\ndetailsは全saleをid順。teamsはT1,T2,T3順でnet/tax/grossの合計、gap=max(target-net,0)。unmetはgap>0のteamをgap降順、team昇順で並べる。totalsは全detailsのnet/tax/gross合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に売上合計・チーム別状況と、未達チームの優先順・差額。\n資料は以下のJSONです。\n{\n  \"as_of_day\": 30,\n  \"targets\": [\n    {\n      \"team\": \"T1\",\n      \"target\": 1100\n    },\n    {\n      \"team\": \"T2\",\n      \"target\": 2100\n    },\n    {\n      \"team\": \"T3\",\n      \"target\": 2900\n    }\n  ],\n  \"sales\": [\n    {\n      \"id\": \"S001\",\n      \"team\": \"T1\",\n      \"qty\": 3,\n      \"price\": 800,\n      \"discount\": 300,\n      \"refund\": 100,\n      \"tax_bps\": 0,\n      \"day\": 29,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"S002\",\n      \"team\": \"T2\",\n      \"qty\": 4,\n      \"price\": 300,\n      \"discount\": 100,\n      \"refund\": 100,\n      \"tax_bps\": 1000,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S003\",\n      \"team\": \"T3\",\n      \"qty\": 2,\n      \"price\": 100,\n      \"discount\": 100,\n      \"refund\": 100,\n      \"tax_bps\": 0,\n      \"day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S004\",\n      \"team\": \"T1\",\n      \"qty\": 2,\n      \"price\": 800,\n      \"discount\": 300,\n      \"refund\": 0,\n      \"tax_bps\": 0,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S005\",\n      \"team\": \"T2\",\n      \"qty\": 4,\n      \"price\": 1000,\n      \"discount\": 300,\n      \"refund\": 100,\n      \"tax_bps\": 800,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S006\",\n      \"team\": \"T3\",\n      \"qty\": 1,\n      \"price\": 400,\n      \"discount\": 300,\n      \"refund\": 500,\n      \"tax_bps\": 800,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S007\",\n      \"team\": \"T1\",\n      \"qty\": 2,\n      \"price\": 300,\n      \"discount\": 300,\n      \"refund\": 100,\n      \"tax_bps\": 1000,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S008\",\n      \"team\": \"T2\",\n      \"qty\": 1,\n      \"price\": 200,\n      \"discount\": 0,\n      \"refund\": 0,\n      \"tax_bps\": 0,\n      \"day\": 31,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"S009\",\n      \"team\": \"T3\",\n      \"qty\": 4,\n      \"price\": 700,\n      \"discount\": 300,\n      \"refund\": 100,\n      \"tax_bps\": 0,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S010\",\n      \"team\": \"T1\",\n      \"qty\": 1,\n      \"price\": 1000,\n      \"discount\": 300,\n      \"refund\": 0,\n      \"tax_bps\": 0,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S011\",\n      \"team\": \"T2\",\n      \"qty\": 1,\n      \"price\": 1100,\n      \"discount\": 300,\n      \"refund\": 500,\n      \"tax_bps\": 0,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S012\",\n      \"team\": \"T3\",\n      \"qty\": 1,\n      \"price\": 600,\n      \"discount\": 100,\n      \"refund\": 0,\n      \"tax_bps\": 1000,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S013\",\n      \"team\": \"T1\",\n      \"qty\": 2,\n      \"price\": 900,\n      \"discount\": 300,\n      \"refund\": 500,\n      \"tax_bps\": 0,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S014\",\n      \"team\": \"T2\",\n      \"qty\": 2,\n      \"price\": 1000,\n      \"discount\": 100,\n      \"refund\": 500,\n      \"tax_bps\": 0,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S015\",\n      \"team\": \"T3\",\n      \"qty\": 2,\n      \"price\": 400,\n      \"discount\": 100,\n      \"refund\": 500,\n      \"tax_bps\": 1000,\n      \"day\": 31,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"S016\",\n      \"team\": \"T1\",\n      \"qty\": 1,\n      \"price\": 600,\n      \"discount\": 0,\n      \"refund\": 0,\n      \"tax_bps\": 800,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S017\",\n      \"team\": \"T2\",\n      \"qty\": 4,\n      \"price\": 100,\n      \"discount\": 100,\n      \"refund\": 500,\n      \"tax_bps\": 1000,\n      \"day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S018\",\n      \"team\": \"T3\",\n      \"qty\": 3,\n      \"price\": 400,\n      \"discount\": 100,\n      \"refund\": 500,\n      \"tax_bps\": 1000,\n      \"day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S019\",\n      \"team\": \"T1\",\n      \"qty\": 2,\n      \"price\": 100,\n      \"discount\": 300,\n      \"refund\": 0,\n      \"tax_bps\": 0,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S020\",\n      \"team\": \"T2\",\n      \"qty\": 3,\n      \"price\": 1000,\n      \"discount\": 0,\n      \"refund\": 100,\n      \"tax_bps\": 800,\n      \"day\": 29,\n      \"cancelled\": false\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"net\", \"tax\", \"gross\", \"state\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}, \"gap\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"net\", \"tax\", \"gross\", \"gap\"], \"additionalProperties\": false}}, \"unmet\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"totals\": {\"type\": \"object\", \"properties\": {\"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}}, \"required\": [\"net\", \"tax\", \"gross\"], \"additionalProperties\": false}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"unmet\", \"totals\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "as_of_day": 30,
+      "targets": [
+        {
+          "team": "T1",
+          "target": 1100
+        },
+        {
+          "team": "T2",
+          "target": 2100
+        },
+        {
+          "team": "T3",
+          "target": 2900
+        }
+      ],
+      "sales": [
+        {
+          "id": "S001",
+          "team": "T1",
+          "qty": 3,
+          "price": 800,
+          "discount": 300,
+          "refund": 100,
+          "tax_bps": 0,
+          "day": 29,
+          "cancelled": true
+        },
+        {
+          "id": "S002",
+          "team": "T2",
+          "qty": 4,
+          "price": 300,
+          "discount": 100,
+          "refund": 100,
+          "tax_bps": 1000,
+          "day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "S003",
+          "team": "T3",
+          "qty": 2,
+          "price": 100,
+          "discount": 100,
+          "refund": 100,
+          "tax_bps": 0,
+          "day": 29,
+          "cancelled": false
+        },
+        {
+          "id": "S004",
+          "team": "T1",
+          "qty": 2,
+          "price": 800,
+          "discount": 300,
+          "refund": 0,
+          "tax_bps": 0,
+          "day": 31,
+          "cancelled": false
+        },
+        {
+          "id": "S005",
+          "team": "T2",
+          "qty": 4,
+          "price": 1000,
+          "discount": 300,
+          "refund": 100,
+          "tax_bps": 800,
+          "day": 31,
+          "cancelled": false
+        },
+        {
+          "id": "S006",
+          "team": "T3",
+          "qty": 1,
+          "price": 400,
+          "discount": 300,
+          "refund": 500,
+          "tax_bps": 800,
+          "day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "S007",
+          "team": "T1",
+          "qty": 2,
+          "price": 300,
+          "discount": 300,
+          "refund": 100,
+          "tax_bps": 1000,
+          "day": 31,
+          "cancelled": false
+        },
+        {
+          "id": "S008",
+          "team": "T2",
+          "qty": 1,
+          "price": 200,
+          "discount": 0,
+          "refund": 0,
+          "tax_bps": 0,
+          "day": 31,
+          "cancelled": true
+        },
+        {
+          "id": "S009",
+          "team": "T3",
+          "qty": 4,
+          "price": 700,
+          "discount": 300,
+          "refund": 100,
+          "tax_bps": 0,
+          "day": 31,
+          "cancelled": false
+        },
+        {
+          "id": "S010",
+          "team": "T1",
+          "qty": 1,
+          "price": 1000,
+          "discount": 300,
+          "refund": 0,
+          "tax_bps": 0,
+          "day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "S011",
+          "team": "T2",
+          "qty": 1,
+          "price": 1100,
+          "discount": 300,
+          "refund": 500,
+          "tax_bps": 0,
+          "day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "S012",
+          "team": "T3",
+          "qty": 1,
+          "price": 600,
+          "discount": 100,
+          "refund": 0,
+          "tax_bps": 1000,
+          "day": 31,
+          "cancelled": false
+        },
+        {
+          "id": "S013",
+          "team": "T1",
+          "qty": 2,
+          "price": 900,
+          "discount": 300,
+          "refund": 500,
+          "tax_bps": 0,
+          "day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "S014",
+          "team": "T2",
+          "qty": 2,
+          "price": 1000,
+          "discount": 100,
+          "refund": 500,
+          "tax_bps": 0,
+          "day": 31,
+          "cancelled": false
+        },
+        {
+          "id": "S015",
+          "team": "T3",
+          "qty": 2,
+          "price": 400,
+          "discount": 100,
+          "refund": 500,
+          "tax_bps": 1000,
+          "day": 31,
+          "cancelled": true
+        },
+        {
+          "id": "S016",
+          "team": "T1",
+          "qty": 1,
+          "price": 600,
+          "discount": 0,
+          "refund": 0,
+          "tax_bps": 800,
+          "day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "S017",
+          "team": "T2",
+          "qty": 4,
+          "price": 100,
+          "discount": 100,
+          "refund": 500,
+          "tax_bps": 1000,
+          "day": 29,
+          "cancelled": false
+        },
+        {
+          "id": "S018",
+          "team": "T3",
+          "qty": 3,
+          "price": 400,
+          "discount": 100,
+          "refund": 500,
+          "tax_bps": 1000,
+          "day": 29,
+          "cancelled": false
+        },
+        {
+          "id": "S019",
+          "team": "T1",
+          "qty": 2,
+          "price": 100,
+          "discount": 300,
+          "refund": 0,
+          "tax_bps": 0,
+          "day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "S020",
+          "team": "T2",
+          "qty": 3,
+          "price": 1000,
+          "discount": 0,
+          "refund": 100,
+          "tax_bps": 800,
+          "day": 29,
+          "cancelled": false
+        }
+      ]
+    },
+    "business_rules": [
+      "取消またはday>as_of_dayはEXCLUDEDでnet/tax/gross=0。その他はINCLUDED、net=max(qty*price-discount-refund,0)、tax=(net*tax_bps+5000)//10000（整数切捨て）、gross=net+tax。",
+      "detailsは全saleをid順。teamsはT1,T2,T3順でnet/tax/grossの合計、gap=max(target-net,0)。unmetはgap>0のteamをgap降順、team昇順で並べる。totalsは全detailsのnet/tax/gross合計。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "net": {
+                "type": "integer"
+              },
+              "tax": {
+                "type": "integer"
+              },
+              "gross": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "net",
+              "tax",
+              "gross",
+              "state"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "teams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "team": {
+                "type": "string"
+              },
+              "net": {
+                "type": "integer"
+              },
+              "tax": {
+                "type": "integer"
+              },
+              "gross": {
+                "type": "integer"
+              },
+              "gap": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "team",
+              "net",
+              "tax",
+              "gross",
+              "gap"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "unmet": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "totals": {
+          "type": "object",
+          "properties": {
+            "net": {
+              "type": "integer"
+            },
+            "tax": {
+              "type": "integer"
+            },
+            "gross": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "net",
+            "tax",
+            "gross"
+          ],
+          "additionalProperties": false
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "teams",
+        "unmet",
+        "totals",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "normal",
+    "reasoning_effort": "medium"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "今月の売上がどうなっているか、取消や返品も踏まえてまとめたいです。チーム別の状況と、先に対応すべきところが伝わる感じにしたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まずは、このチャットでいただく資料だけを使い、集計の前提と見せ方を相談しましょう。完成版は、方向性が合ってから作ります。\n\n資料を貼り付ける際、分かる範囲で次の点も教えてください。資料に書いてあれば、回答は省略して大丈夫です。\n\n- **対象期間**：何年何月の、何日時点の状況ですか。\n- **読む人と用途**：チーム内の状況共有、上司への報告、対応方針の相談など、どれに使いますか。\n- **売上の扱い**：取消・返品を差し引く社内ルールはありますか。特に、前月以前の売上に対する今月の返品をどう扱うか確認したいです。\n- **比較と優先順位**：目標比・前月比・前年同月比のうち、重視したいものはありますか。また、先に対応したい条件があれば教えてください。\n\n見せ方は、**「全体の要点 → チーム別の比較表 → 優先して対応する事項」**をたたき台にすると、状況と次の行動が伝わりやすそうです。比較表には、売上・取消・返品・差引後の売上を並べる想定です。\n\nまず資料をいただき、分かることと確認が必要なことを整理してから、構成を一緒に決めましょう。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n取消またはday>as_of_dayはEXCLUDEDでnet/tax/gross=0。その他はINCLUDED、net=max(qty*price-discount-refund,0)、tax=(net*tax_bps+5000)//10000（整数切捨て）、gross=net+tax。\ndetailsは全saleをid順。teamsはT1,T2,T3順でnet/tax/grossの合計、gap=max(target-net,0)。unmetはgap>0のteamをgap降順、team昇順で並べる。totalsは全detailsのnet/tax/gross合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に売上合計・チーム別状況と、未達チームの優先順・差額。\n資料は以下のJSONです。\n{\n  \"as_of_day\": 30,\n  \"targets\": [\n    {\n      \"team\": \"T1\",\n      \"target\": 1100\n    },\n    {\n      \"team\": \"T2\",\n      \"target\": 2100\n    },\n    {\n      \"team\": \"T3\",\n      \"target\": 2900\n    }\n  ],\n  \"sales\": [\n    {\n      \"id\": \"S001\",\n      \"team\": \"T1\",\n      \"qty\": 3,\n      \"price\": 800,\n      \"discount\": 300,\n      \"refund\": 100,\n      \"tax_bps\": 0,\n      \"day\": 29,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"S002\",\n      \"team\": \"T2\",\n      \"qty\": 4,\n      \"price\": 300,\n      \"discount\": 100,\n      \"refund\": 100,\n      \"tax_bps\": 1000,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S003\",\n      \"team\": \"T3\",\n      \"qty\": 2,\n      \"price\": 100,\n      \"discount\": 100,\n      \"refund\": 100,\n      \"tax_bps\": 0,\n      \"day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S004\",\n      \"team\": \"T1\",\n      \"qty\": 2,\n      \"price\": 800,\n      \"discount\": 300,\n      \"refund\": 0,\n      \"tax_bps\": 0,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S005\",\n      \"team\": \"T2\",\n      \"qty\": 4,\n      \"price\": 1000,\n      \"discount\": 300,\n      \"refund\": 100,\n      \"tax_bps\": 800,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S006\",\n      \"team\": \"T3\",\n      \"qty\": 1,\n      \"price\": 400,\n      \"discount\": 300,\n      \"refund\": 500,\n      \"tax_bps\": 800,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S007\",\n      \"team\": \"T1\",\n      \"qty\": 2,\n      \"price\": 300,\n      \"discount\": 300,\n      \"refund\": 100,\n      \"tax_bps\": 1000,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S008\",\n      \"team\": \"T2\",\n      \"qty\": 1,\n      \"price\": 200,\n      \"discount\": 0,\n      \"refund\": 0,\n      \"tax_bps\": 0,\n      \"day\": 31,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"S009\",\n      \"team\": \"T3\",\n      \"qty\": 4,\n      \"price\": 700,\n      \"discount\": 300,\n      \"refund\": 100,\n      \"tax_bps\": 0,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S010\",\n      \"team\": \"T1\",\n      \"qty\": 1,\n      \"price\": 1000,\n      \"discount\": 300,\n      \"refund\": 0,\n      \"tax_bps\": 0,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S011\",\n      \"team\": \"T2\",\n      \"qty\": 1,\n      \"price\": 1100,\n      \"discount\": 300,\n      \"refund\": 500,\n      \"tax_bps\": 0,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S012\",\n      \"team\": \"T3\",\n      \"qty\": 1,\n      \"price\": 600,\n      \"discount\": 100,\n      \"refund\": 0,\n      \"tax_bps\": 1000,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S013\",\n      \"team\": \"T1\",\n      \"qty\": 2,\n      \"price\": 900,\n      \"discount\": 300,\n      \"refund\": 500,\n      \"tax_bps\": 0,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S014\",\n      \"team\": \"T2\",\n      \"qty\": 2,\n      \"price\": 1000,\n      \"discount\": 100,\n      \"refund\": 500,\n      \"tax_bps\": 0,\n      \"day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S015\",\n      \"team\": \"T3\",\n      \"qty\": 2,\n      \"price\": 400,\n      \"discount\": 100,\n      \"refund\": 500,\n      \"tax_bps\": 1000,\n      \"day\": 31,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"S016\",\n      \"team\": \"T1\",\n      \"qty\": 1,\n      \"price\": 600,\n      \"discount\": 0,\n      \"refund\": 0,\n      \"tax_bps\": 800,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S017\",\n      \"team\": \"T2\",\n      \"qty\": 4,\n      \"price\": 100,\n      \"discount\": 100,\n      \"refund\": 500,\n      \"tax_bps\": 1000,\n      \"day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S018\",\n      \"team\": \"T3\",\n      \"qty\": 3,\n      \"price\": 400,\n      \"discount\": 100,\n      \"refund\": 500,\n      \"tax_bps\": 1000,\n      \"day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S019\",\n      \"team\": \"T1\",\n      \"qty\": 2,\n      \"price\": 100,\n      \"discount\": 300,\n      \"refund\": 0,\n      \"tax_bps\": 0,\n      \"day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"S020\",\n      \"team\": \"T2\",\n      \"qty\": 3,\n      \"price\": 1000,\n      \"discount\": 0,\n      \"refund\": 100,\n      \"tax_bps\": 800,\n      \"day\": 29,\n      \"cancelled\": false\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"net\", \"tax\", \"gross\", \"state\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}, \"gap\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"net\", \"tax\", \"gross\", \"gap\"], \"additionalProperties\": false}}, \"unmet\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"totals\": {\"type\": \"object\", \"properties\": {\"net\": {\"type\": \"integer\"}, \"tax\": {\"type\": \"integer\"}, \"gross\": {\"type\": \"integer\"}}, \"required\": [\"net\", \"tax\", \"gross\"], \"additionalProperties\": false}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"unmet\", \"totals\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人は、全明細を見ながら数字の根拠を確認する担当者と、チーム別の状況を把握して対応の優先順位を決める責任者を想定しています。担当者はdetailsで各売上の算入・除外と金額を確認し、責任者はteams・unmet・totalsと短いreport_mdを合わせて読む形です。\n\n作り方は、まず売上ごとに取消と締め日超過を判定し、いただいた計算式で金額を確定します。その明細からチーム別・全体の合計を出し、目標との差額はnetを基準に計算します。未達チームは指定された差額順に並べ、その順序を共有文でも対応検討の優先順として伝えます。算入対象でも計算結果がゼロになる売上と、除外されてゼロになる売上は区別して扱います。\n\nreport_mdは、全体の売上、チーム別の達成・未達、未達の優先順と差額を中心にまとめます。取消・締め日超過・返品などの重要な注意点は、数値や該当明細に結び付けて説明します。資料から確認できない原因や、対応済みという記述は加えません。最終成果物を作る段階では、指定の全フィールドを持つJSONだけを返します。\n\n計算・並び順の条件は十分に定まっています。一方、対象の年月、通貨・金額単位、実際の対応担当者や期限は未指定です。これらは推測せず、現状では「30日時点」として扱い、対応については優先順位の提示までにとどめる方針です。まだ集計や成果物の作成には着手していません。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-013",
+      "arm": "SOL_CONTINUE",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "S001",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S002",
+            "net": 1000,
+            "tax": 100,
+            "gross": 1100,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S003",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S004",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S005",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S006",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S007",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S008",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S009",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S010",
+            "net": 700,
+            "tax": 0,
+            "gross": 700,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S011",
+            "net": 300,
+            "tax": 0,
+            "gross": 300,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S012",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S013",
+            "net": 1000,
+            "tax": 0,
+            "gross": 1000,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S014",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S015",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S016",
+            "net": 600,
+            "tax": 48,
+            "gross": 648,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S017",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S018",
+            "net": 600,
+            "tax": 60,
+            "gross": 660,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S019",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S020",
+            "net": 2900,
+            "tax": 232,
+            "gross": 3132,
+            "state": "INCLUDED"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "net": 2300,
+            "tax": 48,
+            "gross": 2348,
+            "gap": 0
+          },
+          {
+            "team": "T2",
+            "net": 4200,
+            "tax": 332,
+            "gross": 4532,
+            "gap": 0
+          },
+          {
+            "team": "T3",
+            "net": 600,
+            "tax": 60,
+            "gross": 660,
+            "gap": 2300
+          }
+        ],
+        "unmet": [
+          "T3"
+        ],
+        "totals": {
+          "net": 7100,
+          "tax": 440,
+          "gross": 7540
+        },
+        "report_md": "30日時点の売上は、値引き・返品を反映したnet合計7,100、税額440、税込合計7,540です。目標合計6,100をnetで1,000上回っていますが、T3は未達です。\n\nチーム別では、T1はnet 2,300／目標1,100で1,200超過、T2はnet 4,200／目標2,100で2,100超過しています。T3はnet 600／目標2,900で差額2,300。未達チームはT3のみであり、対応検討の最優先です。\n\n全20件のうち算入11件、除外9件です。取消のS001・S008・S015と、締め日を超える31日の売上は除外し、net・tax・grossをすべて0としています。S008・S015は両条件に該当します。31日の売上は今回の実績には含まれません。\n\n算入対象でも、S003は値引き・返品の控除後が0、S006・S017・S019は控除後が負になるため規定どおりnetを0としています。これらは取消による除外ではありません。T3の計上額600はS018によるもので、S003・S006の算入額が0である点も踏まえ、未達差額2,300への対応を検討してください。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "S001",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S002",
+            "net": 1000,
+            "tax": 100,
+            "gross": 1100,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S003",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S004",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S005",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S006",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S007",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S008",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S009",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S010",
+            "net": 700,
+            "tax": 0,
+            "gross": 700,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S011",
+            "net": 300,
+            "tax": 0,
+            "gross": 300,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S012",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S013",
+            "net": 1000,
+            "tax": 0,
+            "gross": 1000,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S014",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S015",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "id": "S016",
+            "net": 600,
+            "tax": 48,
+            "gross": 648,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S017",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S018",
+            "net": 600,
+            "tax": 60,
+            "gross": 660,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S019",
+            "net": 0,
+            "tax": 0,
+            "gross": 0,
+            "state": "INCLUDED"
+          },
+          {
+            "id": "S020",
+            "net": 2900,
+            "tax": 232,
+            "gross": 3132,
+            "state": "INCLUDED"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "net": 2300,
+            "tax": 48,
+            "gross": 2348,
+            "gap": 0
+          },
+          {
+            "team": "T2",
+            "net": 4200,
+            "tax": 332,
+            "gross": 4532,
+            "gap": 0
+          },
+          {
+            "team": "T3",
+            "net": 600,
+            "tax": 60,
+            "gross": 660,
+            "gap": 2300
+          }
+        ],
+        "unmet": [
+          "T3"
+        ],
+        "totals": {
+          "net": 7100,
+          "tax": 440,
+          "gross": 7540
+        },
+        "report_md": "30日時点の売上は、値引き・返品を反映したnet合計7,100、税額440、税込合計7,540です。目標合計6,100をnetで1,000上回っていますが、T3は未達です。\n\nチーム別では、T1はnet 2,300／目標1,100で1,200超過、T2はnet 4,200／目標2,100で2,100超過しています。T3はnet 600／目標2,900で差額2,300。未達チームはT3のみであり、対応検討の最優先です。\n\n全20件のうち算入11件、除外9件です。取消のS001・S008・S015と、締め日を超える31日の売上は除外し、net・tax・grossをすべて0としています。S008・S015は両条件に該当します。31日の売上は今回の実績には含まれません。\n\n算入対象でも、S003は値引き・返品の控除後が0、S006・S017・S019は控除後が負になるため規定どおりnetを0としています。これらは取消による除外ではありません。T3の計上額600はS018によるもので、S003・S006の算入額が0である点も踏まえ、未達差額2,300への対応を検討してください。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.52958",
+      "incremental_credits": "1.2627",
+      "operating_total_credits": "1.79228",
+      "shared_seconds": 35.20399999991059,
+      "incremental_active_seconds": 30.625,
+      "total_active_seconds": 65.8289999999106,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T15:05:32.383546+00:00",
+        "text": "{\n  \"details\": [\n    {\"id\":\"S001\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"EXCLUDED\"},\n    {\"id\":\"S002\",\"net\":1000,\"tax\":100,\"gross\":1100,\"state\":\"INCLUDED\"},\n    {\"id\":\"S003\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"INCLUDED\"},\n    {\"id\":\"S004\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"EXCLUDED\"},\n    {\"id\":\"S005\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"EXCLUDED\"},\n    {\"id\":\"S006\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"INCLUDED\"},\n    {\"id\":\"S007\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"EXCLUDED\"},\n    {\"id\":\"S008\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"EXCLUDED\"},\n    {\"id\":\"S009\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"EXCLUDED\"},\n    {\"id\":\"S010\",\"net\":700,\"tax\":0,\"gross\":700,\"state\":\"INCLUDED\"},\n    {\"id\":\"S011\",\"net\":300,\"tax\":0,\"gross\":300,\"state\":\"INCLUDED\"},\n    {\"id\":\"S012\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"EXCLUDED\"},\n    {\"id\":\"S013\",\"net\":1000,\"tax\":0,\"gross\":1000,\"state\":\"INCLUDED\"},\n    {\"id\":\"S014\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"EXCLUDED\"},\n    {\"id\":\"S015\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"EXCLUDED\"},\n    {\"id\":\"S016\",\"net\":600,\"tax\":48,\"gross\":648,\"state\":\"INCLUDED\"},\n    {\"id\":\"S017\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"INCLUDED\"},\n    {\"id\":\"S018\",\"net\":600,\"tax\":60,\"gross\":660,\"state\":\"INCLUDED\"},\n    {\"id\":\"S019\",\"net\":0,\"tax\":0,\"gross\":0,\"state\":\"INCLUDED\"},\n    {\"id\":\"S020\",\"net\":2900,\"tax\":232,\"gross\":3132,\"state\":\"INCLUDED\"}\n  ],\n  \"teams\": [\n    {\"team\":\"T1\",\"net\":2300,\"tax\":48,\"gross\":2348,\"gap\":0},\n    {\"team\":\"T2\",\"net\":4200,\"tax\":332,\"gross\":4532,\"gap\":0},\n    {\"team\":\"T3\",\"net\":600,\"tax\":60,\"gross\":660,\"gap\":2300}\n  ],\n  \"unmet\": [\"T3\"],\n  \"totals\": {\"net\":7100,\"tax\":440,\"gross\":7540},\n  \"report_md\": \"30日時点の売上は、値引き・返品を反映したnet合計7,100、税額440、税込合計7,540です。目標合計6,100をnetで1,000上回っていますが、T3は未達です。\\n\\nチーム別では、T1はnet 2,300／目標1,100で1,200超過、T2はnet 4,200／目標2,100で2,100超過しています。T3はnet 600／目標2,900で差額2,300。未達チームはT3のみであり、対応検討の最優先です。\\n\\n全20件のうち算入11件、除外9件です。取消のS001・S008・S015と、締め日を超える31日の売上は除外し、net・tax・grossをすべて0としています。S008・S015は両条件に該当します。31日の売上は今回の実績には含まれません。\\n\\n算入対象でも、S003は値引き・返品の控除後が0、S006・S017・S019は控除後が負になるため規定どおりnetを0としています。これらは取消による除外ではありません。T3の計上額600はS018によるもので、S003・S006の算入額が0である点も踏まえ、未達差額2,300への対応を検討してください。\"\n}",
+        "value": {
+          "details": [
+            {
+              "id": "S001",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "EXCLUDED"
+            },
+            {
+              "id": "S002",
+              "net": 1000,
+              "tax": 100,
+              "gross": 1100,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S003",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S004",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "EXCLUDED"
+            },
+            {
+              "id": "S005",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "EXCLUDED"
+            },
+            {
+              "id": "S006",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S007",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "EXCLUDED"
+            },
+            {
+              "id": "S008",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "EXCLUDED"
+            },
+            {
+              "id": "S009",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "EXCLUDED"
+            },
+            {
+              "id": "S010",
+              "net": 700,
+              "tax": 0,
+              "gross": 700,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S011",
+              "net": 300,
+              "tax": 0,
+              "gross": 300,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S012",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "EXCLUDED"
+            },
+            {
+              "id": "S013",
+              "net": 1000,
+              "tax": 0,
+              "gross": 1000,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S014",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "EXCLUDED"
+            },
+            {
+              "id": "S015",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "EXCLUDED"
+            },
+            {
+              "id": "S016",
+              "net": 600,
+              "tax": 48,
+              "gross": 648,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S017",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S018",
+              "net": 600,
+              "tax": 60,
+              "gross": 660,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S019",
+              "net": 0,
+              "tax": 0,
+              "gross": 0,
+              "state": "INCLUDED"
+            },
+            {
+              "id": "S020",
+              "net": 2900,
+              "tax": 232,
+              "gross": 3132,
+              "state": "INCLUDED"
+            }
+          ],
+          "teams": [
+            {
+              "team": "T1",
+              "net": 2300,
+              "tax": 48,
+              "gross": 2348,
+              "gap": 0
+            },
+            {
+              "team": "T2",
+              "net": 4200,
+              "tax": 332,
+              "gross": 4532,
+              "gap": 0
+            },
+            {
+              "team": "T3",
+              "net": 600,
+              "tax": 60,
+              "gross": 660,
+              "gap": 2300
+            }
+          ],
+          "unmet": [
+            "T3"
+          ],
+          "totals": {
+            "net": 7100,
+            "tax": 440,
+            "gross": 7540
+          },
+          "report_md": "30日時点の売上は、値引き・返品を反映したnet合計7,100、税額440、税込合計7,540です。目標合計6,100をnetで1,000上回っていますが、T3は未達です。\n\nチーム別では、T1はnet 2,300／目標1,100で1,200超過、T2はnet 4,200／目標2,100で2,100超過しています。T3はnet 600／目標2,900で差額2,300。未達チームはT3のみであり、対応検討の最優先です。\n\n全20件のうち算入11件、除外9件です。取消のS001・S008・S015と、締め日を超える31日の売上は除外し、net・tax・grossをすべて0としています。S008・S015は両条件に該当します。31日の売上は今回の実績には含まれません。\n\n算入対象でも、S003は値引き・返品の控除後が0、S006・S017・S019は控除後が負になるため規定どおりnetを0としています。これらは取消による除外ではありません。T3の計上額600はS018によるもので、S003・S006の算入額が0である点も踏まえ、未達差額2,300への対応を検討してください。"
+        },
+        "public_schema_pass": true,
+        "seconds": 30.625,
+        "credits": "1.2627",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-013",
+      "arm": "PRACTICAL",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "gross": 0,
+            "id": "S001",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 1100,
+            "id": "S002",
+            "net": 1000,
+            "state": "INCLUDED",
+            "tax": 100
+          },
+          {
+            "gross": 0,
+            "id": "S003",
+            "net": 0,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S004",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S005",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S006",
+            "net": 0,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S007",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S008",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S009",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 700,
+            "id": "S010",
+            "net": 700,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 300,
+            "id": "S011",
+            "net": 300,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S012",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 1000,
+            "id": "S013",
+            "net": 1000,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S014",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S015",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 648,
+            "id": "S016",
+            "net": 600,
+            "state": "INCLUDED",
+            "tax": 48
+          },
+          {
+            "gross": 0,
+            "id": "S017",
+            "net": 0,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 660,
+            "id": "S018",
+            "net": 600,
+            "state": "INCLUDED",
+            "tax": 60
+          },
+          {
+            "gross": 0,
+            "id": "S019",
+            "net": 0,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 3132,
+            "id": "S020",
+            "net": 2900,
+            "state": "INCLUDED",
+            "tax": 232
+          }
+        ],
+        "report_md": "30日時点の売上状況は、総売上（net）7,100、税金（tax）440、総計（gross）7,540です。\n\nチーム別では、T1（net 2,300）およびT2（net 4,200）は目標を達成しています。一方、T3はnet 600にとどまり、目標2,900に対し2,300の未達となっています。未達チームの対応は、差額の大きいT3を最優先としてください。\n\nなお、S001, S004, S005, S007, S008, S009, S012, S014, S015は取消または締日超過のため除外されています。また、S003, S006, S017, S019は算入対象ですが、計算の結果netが0となっています。",
+        "teams": [
+          {
+            "gap": 0,
+            "gross": 2348,
+            "net": 2300,
+            "tax": 48,
+            "team": "T1"
+          },
+          {
+            "gap": 0,
+            "gross": 4532,
+            "net": 4200,
+            "tax": 332,
+            "team": "T2"
+          },
+          {
+            "gap": 2300,
+            "gross": 660,
+            "net": 600,
+            "tax": 60,
+            "team": "T3"
+          }
+        ],
+        "totals": {
+          "gross": 7540,
+          "net": 7100,
+          "tax": 440
+        },
+        "unmet": [
+          "T3"
+        ]
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "gross": 0,
+            "id": "S001",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 1100,
+            "id": "S002",
+            "net": 1000,
+            "state": "INCLUDED",
+            "tax": 100
+          },
+          {
+            "gross": 0,
+            "id": "S003",
+            "net": 0,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S004",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S005",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S006",
+            "net": 0,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S007",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S008",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S009",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 700,
+            "id": "S010",
+            "net": 700,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 300,
+            "id": "S011",
+            "net": 300,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S012",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 1000,
+            "id": "S013",
+            "net": 1000,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S014",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 0,
+            "id": "S015",
+            "net": 0,
+            "state": "EXCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 648,
+            "id": "S016",
+            "net": 600,
+            "state": "INCLUDED",
+            "tax": 48
+          },
+          {
+            "gross": 0,
+            "id": "S017",
+            "net": 0,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 660,
+            "id": "S018",
+            "net": 600,
+            "state": "INCLUDED",
+            "tax": 60
+          },
+          {
+            "gross": 0,
+            "id": "S019",
+            "net": 0,
+            "state": "INCLUDED",
+            "tax": 0
+          },
+          {
+            "gross": 3132,
+            "id": "S020",
+            "net": 2900,
+            "state": "INCLUDED",
+            "tax": 232
+          }
+        ],
+        "report_md": "30日時点の売上状況は、総売上（net）7,100、税金（tax）440、総計（gross）7,540です。\n\nチーム別では、T1（net 2,300）およびT2（net 4,200）は目標を達成しています。一方、T3はnet 600にとどまり、目標2,900に対し2,300の未達となっています。未達チームの対応は、差額の大きいT3を最優先としてください。\n\nなお、S001, S004, S005, S007, S008, S009, S012, S014, S015は取消または締日超過のため除外されています。また、S003, S006, S017, S019は算入対象ですが、計算の結果netが0となっています。",
+        "teams": [
+          {
+            "gap": 0,
+            "gross": 2348,
+            "net": 2300,
+            "tax": 48,
+            "team": "T1"
+          },
+          {
+            "gap": 0,
+            "gross": 4532,
+            "net": 4200,
+            "tax": 332,
+            "team": "T2"
+          },
+          {
+            "gap": 2300,
+            "gross": 660,
+            "net": 600,
+            "tax": 60,
+            "team": "T3"
+          }
+        ],
+        "totals": {
+          "gross": 7540,
+          "net": 7100,
+          "tax": 440
+        },
+        "unmet": [
+          "T3"
+        ]
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.52958",
+      "incremental_credits": "0.3446",
+      "operating_total_credits": "0.87418",
+      "shared_seconds": 35.20399999991059,
+      "incremental_active_seconds": 262.85900000005495,
+      "total_active_seconds": 298.06299999996554,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T15:09:55.954418+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 5.547000000020489,
+          "credits": "0.3446",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 213.35899999993853,
+        "usage": {
+          "prompt_eval_count": 3765,
+          "eval_count": 9026,
+          "prompt_eval_duration": 4269675000,
+          "eval_duration": 208985829000,
+          "total_duration": 213279456000
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "S001",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "EXCLUDED"
+      },
+      {
+        "id": "S002",
+        "net": 1000,
+        "tax": 100,
+        "gross": 1100,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S003",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S004",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "EXCLUDED"
+      },
+      {
+        "id": "S005",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "EXCLUDED"
+      },
+      {
+        "id": "S006",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S007",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "EXCLUDED"
+      },
+      {
+        "id": "S008",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "EXCLUDED"
+      },
+      {
+        "id": "S009",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "EXCLUDED"
+      },
+      {
+        "id": "S010",
+        "net": 700,
+        "tax": 0,
+        "gross": 700,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S011",
+        "net": 300,
+        "tax": 0,
+        "gross": 300,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S012",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "EXCLUDED"
+      },
+      {
+        "id": "S013",
+        "net": 1000,
+        "tax": 0,
+        "gross": 1000,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S014",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "EXCLUDED"
+      },
+      {
+        "id": "S015",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "EXCLUDED"
+      },
+      {
+        "id": "S016",
+        "net": 600,
+        "tax": 48,
+        "gross": 648,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S017",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S018",
+        "net": 600,
+        "tax": 60,
+        "gross": 660,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S019",
+        "net": 0,
+        "tax": 0,
+        "gross": 0,
+        "state": "INCLUDED"
+      },
+      {
+        "id": "S020",
+        "net": 2900,
+        "tax": 232,
+        "gross": 3132,
+        "state": "INCLUDED"
+      }
+    ],
+    "teams": [
+      {
+        "team": "T1",
+        "net": 2300,
+        "tax": 48,
+        "gross": 2348,
+        "gap": 0
+      },
+      {
+        "team": "T2",
+        "net": 4200,
+        "tax": 332,
+        "gross": 4532,
+        "gap": 0
+      },
+      {
+        "team": "T3",
+        "net": 600,
+        "tax": 60,
+        "gross": 660,
+        "gap": 2300
+      }
+    ],
+    "unmet": [
+      "T3"
+    ],
+    "totals": {
+      "net": 7100,
+      "tax": 440,
+      "gross": 7540
+    }
+  },
+  "scores": [
+    {
+      "task_id": "PR100-013",
+      "arm": "SOL_CONTINUE",
+      "family": "sales",
+      "designed_difficulty": 5,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.79228",
+      "total_active_seconds": 65.8289999999106,
+      "report_md": "30日時点の売上は、値引き・返品を反映したnet合計7,100、税額440、税込合計7,540です。目標合計6,100をnetで1,000上回っていますが、T3は未達です。\n\nチーム別では、T1はnet 2,300／目標1,100で1,200超過、T2はnet 4,200／目標2,100で2,100超過しています。T3はnet 600／目標2,900で差額2,300。未達チームはT3のみであり、対応検討の最優先です。\n\n全20件のうち算入11件、除外9件です。取消のS001・S008・S015と、締め日を超える31日の売上は除外し、net・tax・grossをすべて0としています。S008・S015は両条件に該当します。31日の売上は今回の実績には含まれません。\n\n算入対象でも、S003は値引き・返品の控除後が0、S006・S017・S019は控除後が負になるため規定どおりnetを0としています。これらは取消による除外ではありません。T3の計上額600はS018によるもので、S003・S006の算入額が0である点も踏まえ、未達差額2,300への対応を検討してください。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-013",
+      "arm": "PRACTICAL",
+      "family": "sales",
+      "designed_difficulty": 5,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "0.87418",
+      "total_active_seconds": 298.06299999996554,
+      "report_md": "30日時点の売上状況は、総売上（net）7,100、税金（tax）440、総計（gross）7,540です。\n\nチーム別では、T1（net 2,300）およびT2（net 4,200）は目標を達成しています。一方、T3はnet 600にとどまり、目標2,900に対し2,300の未達となっています。未達チームの対応は、差額の大きいT3を最優先としてください。\n\nなお、S001, S004, S005, S007, S008, S009, S012, S014, S015は取消または締日超過のため除外されています。また、S003, S006, S017, S019は算入対象ですが、計算の結果netが0となっています。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

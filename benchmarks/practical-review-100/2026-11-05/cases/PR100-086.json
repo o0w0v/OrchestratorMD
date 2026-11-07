@@ -1,0 +1,1469 @@
+{
+  "task_id": "PR100-086",
+  "metadata": {
+    "task_id": "PR100-086",
+    "family": "service_queue",
+    "designed_difficulty": 5,
+    "variant": 0
+  },
+  "public_job": {
+    "task_id": "PR100-086",
+    "initial": "問い合わせ対応が担当者任せで、朝、何から手を付けるか分かりにくいです。対応順とチームの状況が分かる資料を作りたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n時間は同一時間軸の整数分。deadline=opened+sla[priority]+paused。全件にdeadlineを記載。\nCLOSED/CANCELLEDまたはopened>as_of_minuteはEXCLUDED、overdue=0、action=NONE。その他はdeadline<as_of_minuteでBREACHED、0<=deadline-as_of_minute<=windowでDUE_SOON、その他ON_TRACK。\noverdueはBREACHEDのみas_of_minute-deadline。BREACHEDかつ(P1またはoverdue>=480)ならESCALATE、その他BREACHED/DUE_SOONならCONTACT、その他NONE。\ndetailsは全ticketをid順。teamsはT1,T2,T3順にactive(EXCLUDED以外)/breached/due_soon/escalatedの件数。queueはaction!=NONEをESCALATE、CONTACT順、deadline昇順、id昇順で並べたid。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に対象・期限超過・期限間近の全体像と、優先対応ID・理由。\n資料は以下のJSONです。\n{\n  \"as_of_minute\": 1440,\n  \"sla\": {\n    \"P1\": 240,\n    \"P2\": 480,\n    \"P3\": 960\n  },\n  \"window\": 120,\n  \"tickets\": [\n    {\n      \"id\": \"C001\",\n      \"team\": \"T1\",\n      \"priority\": \"P1\",\n      \"opened\": 1500,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C002\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 600,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C003\",\n      \"team\": \"T3\",\n      \"priority\": \"P2\",\n      \"opened\": 1200,\n      \"paused\": 0,\n      \"status\": \"CANCELLED\"\n    },\n    {\n      \"id\": \"C004\",\n      \"team\": \"T1\",\n      \"priority\": \"P2\",\n      \"opened\": 0,\n      \"paused\": 60,\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"id\": \"C005\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 1200,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C006\",\n      \"team\": \"T3\",\n      \"priority\": \"P1\",\n      \"opened\": 0,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C007\",\n      \"team\": \"T1\",\n      \"priority\": \"P3\",\n      \"opened\": 1440,\n      \"paused\": 60,\n      \"status\": \"CANCELLED\"\n    },\n    {\n      \"id\": \"C008\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 1200,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C009\",\n      \"team\": \"T3\",\n      \"priority\": \"P2\",\n      \"opened\": 1440,\n      \"paused\": 0,\n      \"status\": \"CANCELLED\"\n    },\n    {\n      \"id\": \"C010\",\n      \"team\": \"T1\",\n      \"priority\": \"P1\",\n      \"opened\": 1440,\n      \"paused\": 0,\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"id\": \"C011\",\n      \"team\": \"T2\",\n      \"priority\": \"P1\",\n      \"opened\": 960,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C012\",\n      \"team\": \"T3\",\n      \"priority\": \"P1\",\n      \"opened\": 0,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C013\",\n      \"team\": \"T1\",\n      \"priority\": \"P3\",\n      \"opened\": 1500,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C014\",\n      \"team\": \"T2\",\n      \"priority\": \"P2\",\n      \"opened\": 1440,\n      \"paused\": 60,\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"id\": \"C015\",\n      \"team\": \"T3\",\n      \"priority\": \"P1\",\n      \"opened\": 0,\n      \"paused\": 120,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C016\",\n      \"team\": \"T1\",\n      \"priority\": \"P1\",\n      \"opened\": 600,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C017\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 1200,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C018\",\n      \"team\": \"T3\",\n      \"priority\": \"P3\",\n      \"opened\": 1500,\n      \"paused\": 120,\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"id\": \"C019\",\n      \"team\": \"T1\",\n      \"priority\": \"P3\",\n      \"opened\": 600,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C020\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 0,\n      \"paused\": 60,\n      \"status\": \"CLOSED\"\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"deadline\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}, \"overdue\": {\"type\": \"integer\"}, \"action\": {\"type\": \"string\"}}, \"required\": [\"id\", \"deadline\", \"state\", \"overdue\", \"action\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"active\": {\"type\": \"integer\"}, \"breached\": {\"type\": \"integer\"}, \"due_soon\": {\"type\": \"integer\"}, \"escalated\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"active\", \"breached\", \"due_soon\", \"escalated\"], \"additionalProperties\": false}}, \"queue\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"queue\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "as_of_minute": 1440,
+      "sla": {
+        "P1": 240,
+        "P2": 480,
+        "P3": 960
+      },
+      "window": 120,
+      "tickets": [
+        {
+          "id": "C001",
+          "team": "T1",
+          "priority": "P1",
+          "opened": 1500,
+          "paused": 60,
+          "status": "OPEN"
+        },
+        {
+          "id": "C002",
+          "team": "T2",
+          "priority": "P3",
+          "opened": 600,
+          "paused": 60,
+          "status": "OPEN"
+        },
+        {
+          "id": "C003",
+          "team": "T3",
+          "priority": "P2",
+          "opened": 1200,
+          "paused": 0,
+          "status": "CANCELLED"
+        },
+        {
+          "id": "C004",
+          "team": "T1",
+          "priority": "P2",
+          "opened": 0,
+          "paused": 60,
+          "status": "CLOSED"
+        },
+        {
+          "id": "C005",
+          "team": "T2",
+          "priority": "P3",
+          "opened": 1200,
+          "paused": 60,
+          "status": "OPEN"
+        },
+        {
+          "id": "C006",
+          "team": "T3",
+          "priority": "P1",
+          "opened": 0,
+          "paused": 60,
+          "status": "OPEN"
+        },
+        {
+          "id": "C007",
+          "team": "T1",
+          "priority": "P3",
+          "opened": 1440,
+          "paused": 60,
+          "status": "CANCELLED"
+        },
+        {
+          "id": "C008",
+          "team": "T2",
+          "priority": "P3",
+          "opened": 1200,
+          "paused": 0,
+          "status": "OPEN"
+        },
+        {
+          "id": "C009",
+          "team": "T3",
+          "priority": "P2",
+          "opened": 1440,
+          "paused": 0,
+          "status": "CANCELLED"
+        },
+        {
+          "id": "C010",
+          "team": "T1",
+          "priority": "P1",
+          "opened": 1440,
+          "paused": 0,
+          "status": "CLOSED"
+        },
+        {
+          "id": "C011",
+          "team": "T2",
+          "priority": "P1",
+          "opened": 960,
+          "paused": 60,
+          "status": "OPEN"
+        },
+        {
+          "id": "C012",
+          "team": "T3",
+          "priority": "P1",
+          "opened": 0,
+          "paused": 0,
+          "status": "OPEN"
+        },
+        {
+          "id": "C013",
+          "team": "T1",
+          "priority": "P3",
+          "opened": 1500,
+          "paused": 0,
+          "status": "OPEN"
+        },
+        {
+          "id": "C014",
+          "team": "T2",
+          "priority": "P2",
+          "opened": 1440,
+          "paused": 60,
+          "status": "CLOSED"
+        },
+        {
+          "id": "C015",
+          "team": "T3",
+          "priority": "P1",
+          "opened": 0,
+          "paused": 120,
+          "status": "OPEN"
+        },
+        {
+          "id": "C016",
+          "team": "T1",
+          "priority": "P1",
+          "opened": 600,
+          "paused": 60,
+          "status": "OPEN"
+        },
+        {
+          "id": "C017",
+          "team": "T2",
+          "priority": "P3",
+          "opened": 1200,
+          "paused": 60,
+          "status": "OPEN"
+        },
+        {
+          "id": "C018",
+          "team": "T3",
+          "priority": "P3",
+          "opened": 1500,
+          "paused": 120,
+          "status": "CLOSED"
+        },
+        {
+          "id": "C019",
+          "team": "T1",
+          "priority": "P3",
+          "opened": 600,
+          "paused": 60,
+          "status": "OPEN"
+        },
+        {
+          "id": "C020",
+          "team": "T2",
+          "priority": "P3",
+          "opened": 0,
+          "paused": 60,
+          "status": "CLOSED"
+        }
+      ]
+    },
+    "business_rules": [
+      "時間は同一時間軸の整数分。deadline=opened+sla[priority]+paused。全件にdeadlineを記載。",
+      "CLOSED/CANCELLEDまたはopened>as_of_minuteはEXCLUDED、overdue=0、action=NONE。その他はdeadline<as_of_minuteでBREACHED、0<=deadline-as_of_minute<=windowでDUE_SOON、その他ON_TRACK。",
+      "overdueはBREACHEDのみas_of_minute-deadline。BREACHEDかつ(P1またはoverdue>=480)ならESCALATE、その他BREACHED/DUE_SOONならCONTACT、その他NONE。",
+      "detailsは全ticketをid順。teamsはT1,T2,T3順にactive(EXCLUDED以外)/breached/due_soon/escalatedの件数。queueはaction!=NONEをESCALATE、CONTACT順、deadline昇順、id昇順で並べたid。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "deadline": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string"
+              },
+              "overdue": {
+                "type": "integer"
+              },
+              "action": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "deadline",
+              "state",
+              "overdue",
+              "action"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "teams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "team": {
+                "type": "string"
+              },
+              "active": {
+                "type": "integer"
+              },
+              "breached": {
+                "type": "integer"
+              },
+              "due_soon": {
+                "type": "integer"
+              },
+              "escalated": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "team",
+              "active",
+              "breached",
+              "due_soon",
+              "escalated"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "queue": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "teams",
+        "queue",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "normal",
+    "reasoning_effort": "medium"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "問い合わせ対応が担当者任せで、朝、何から手を付けるか分かりにくいです。対応順とチームの状況が分かる資料を作りたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まず、このチャットでいただく資料だけをもとに、朝の対応順とチームの状況をどう見せるか相談しましょう。完成品は、必要な情報と形が固まってから作ります。\n\n最初に、次の3点を教えてください。分かる範囲で大丈夫です。\n\n1. **誰が、いつ使う資料ですか？**  \n   例：担当者が始業時に確認する、リーダーが朝会で使う。\n2. **「対応順」「チームの状況」で、特に何を判断したいですか？**  \n   例：今日最初に対応する問い合わせ、期限が近い案件、対応が止まっている案件、担当者ごとの負荷、応援が必要な人。\n3. **今使っている一覧や運用ルールはありますか？**  \n   このチャットに貼ってください。問い合わせ一覧、担当・期限・進捗の記録、優先順位のルールなど、あるものからで構いません。個人名や顧客名は伏せても大丈夫です。\n\n資料を見ながら、足りない情報と判断基準を整理し、使いやすい形を一緒に決めます。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n時間は同一時間軸の整数分。deadline=opened+sla[priority]+paused。全件にdeadlineを記載。\nCLOSED/CANCELLEDまたはopened>as_of_minuteはEXCLUDED、overdue=0、action=NONE。その他はdeadline<as_of_minuteでBREACHED、0<=deadline-as_of_minute<=windowでDUE_SOON、その他ON_TRACK。\noverdueはBREACHEDのみas_of_minute-deadline。BREACHEDかつ(P1またはoverdue>=480)ならESCALATE、その他BREACHED/DUE_SOONならCONTACT、その他NONE。\ndetailsは全ticketをid順。teamsはT1,T2,T3順にactive(EXCLUDED以外)/breached/due_soon/escalatedの件数。queueはaction!=NONEをESCALATE、CONTACT順、deadline昇順、id昇順で並べたid。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に対象・期限超過・期限間近の全体像と、優先対応ID・理由。\n資料は以下のJSONです。\n{\n  \"as_of_minute\": 1440,\n  \"sla\": {\n    \"P1\": 240,\n    \"P2\": 480,\n    \"P3\": 960\n  },\n  \"window\": 120,\n  \"tickets\": [\n    {\n      \"id\": \"C001\",\n      \"team\": \"T1\",\n      \"priority\": \"P1\",\n      \"opened\": 1500,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C002\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 600,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C003\",\n      \"team\": \"T3\",\n      \"priority\": \"P2\",\n      \"opened\": 1200,\n      \"paused\": 0,\n      \"status\": \"CANCELLED\"\n    },\n    {\n      \"id\": \"C004\",\n      \"team\": \"T1\",\n      \"priority\": \"P2\",\n      \"opened\": 0,\n      \"paused\": 60,\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"id\": \"C005\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 1200,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C006\",\n      \"team\": \"T3\",\n      \"priority\": \"P1\",\n      \"opened\": 0,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C007\",\n      \"team\": \"T1\",\n      \"priority\": \"P3\",\n      \"opened\": 1440,\n      \"paused\": 60,\n      \"status\": \"CANCELLED\"\n    },\n    {\n      \"id\": \"C008\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 1200,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C009\",\n      \"team\": \"T3\",\n      \"priority\": \"P2\",\n      \"opened\": 1440,\n      \"paused\": 0,\n      \"status\": \"CANCELLED\"\n    },\n    {\n      \"id\": \"C010\",\n      \"team\": \"T1\",\n      \"priority\": \"P1\",\n      \"opened\": 1440,\n      \"paused\": 0,\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"id\": \"C011\",\n      \"team\": \"T2\",\n      \"priority\": \"P1\",\n      \"opened\": 960,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C012\",\n      \"team\": \"T3\",\n      \"priority\": \"P1\",\n      \"opened\": 0,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C013\",\n      \"team\": \"T1\",\n      \"priority\": \"P3\",\n      \"opened\": 1500,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C014\",\n      \"team\": \"T2\",\n      \"priority\": \"P2\",\n      \"opened\": 1440,\n      \"paused\": 60,\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"id\": \"C015\",\n      \"team\": \"T3\",\n      \"priority\": \"P1\",\n      \"opened\": 0,\n      \"paused\": 120,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C016\",\n      \"team\": \"T1\",\n      \"priority\": \"P1\",\n      \"opened\": 600,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C017\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 1200,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C018\",\n      \"team\": \"T3\",\n      \"priority\": \"P3\",\n      \"opened\": 1500,\n      \"paused\": 120,\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"id\": \"C019\",\n      \"team\": \"T1\",\n      \"priority\": \"P3\",\n      \"opened\": 600,\n      \"paused\": 60,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C020\",\n      \"team\": \"T2\",\n      \"priority\": \"P3\",\n      \"opened\": 0,\n      \"paused\": 60,\n      \"status\": \"CLOSED\"\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"deadline\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}, \"overdue\": {\"type\": \"integer\"}, \"action\": {\"type\": \"string\"}}, \"required\": [\"id\", \"deadline\", \"state\", \"overdue\", \"action\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"active\": {\"type\": \"integer\"}, \"breached\": {\"type\": \"integer\"}, \"due_soon\": {\"type\": \"integer\"}, \"escalated\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"active\", \"breached\", \"due_soon\", \"escalated\"], \"additionalProperties\": false}}, \"queue\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"queue\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人としては、朝に自分の対応順を確認する担当者と、チーム全体の状況を見て優先対応や支援の必要性を判断する責任者を想定しています。個人の担当情報は資料にないため、今回分かるのはチーム単位の状況までです。個人ごとの負荷や、誰に割り振るかまでは判断しません。\n\n作り方は、指定された条件で全件の期限と状態・対応区分を求め、担当者が見る対応順をqueueに、チーム別の件数をteamsにまとめる方針です。detailsには対象外も含めて全件の期限を残すので、集計や対応順の根拠も確認できます。\n\n責任者向けのreport_mdには、対象件数、期限超過・期限間近の全体像、先に対応すべきIDとその理由、判断に影響する例外や注意点を短くまとめます。対応区分はこれから必要な対応として説明し、連絡やエスカレーションが完了したとは書きません。最終成果物は、指定の全フィールドを含むJSONだけにします。\n\n計算と並び順を決める条件に、現時点で未確定の点はありません。一方、ESCALATEの連絡先や具体的な手順、個人への割り振りは未指定です。今回の見本にはそれらを補わず、指定された対応区分までを示す想定です。まだ計算や成果物の作成には着手していません。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-086",
+      "arm": "SOL_CONTINUE",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "C001",
+            "deadline": 1800,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C002",
+            "deadline": 1620,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C003",
+            "deadline": 1680,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C004",
+            "deadline": 540,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C005",
+            "deadline": 2220,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C006",
+            "deadline": 300,
+            "state": "BREACHED",
+            "overdue": 1140,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C007",
+            "deadline": 2460,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C008",
+            "deadline": 2160,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C009",
+            "deadline": 1920,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C010",
+            "deadline": 1680,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C011",
+            "deadline": 1260,
+            "state": "BREACHED",
+            "overdue": 180,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C012",
+            "deadline": 240,
+            "state": "BREACHED",
+            "overdue": 1200,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C013",
+            "deadline": 2460,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C014",
+            "deadline": 1980,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C015",
+            "deadline": 360,
+            "state": "BREACHED",
+            "overdue": 1080,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C016",
+            "deadline": 900,
+            "state": "BREACHED",
+            "overdue": 540,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C017",
+            "deadline": 2220,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C018",
+            "deadline": 2580,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C019",
+            "deadline": 1620,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C020",
+            "deadline": 1020,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "active": 2,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1
+          },
+          {
+            "team": "T2",
+            "active": 5,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1
+          },
+          {
+            "team": "T3",
+            "active": 3,
+            "breached": 3,
+            "due_soon": 0,
+            "escalated": 3
+          }
+        ],
+        "queue": [
+          "C012",
+          "C006",
+          "C015",
+          "C016",
+          "C011"
+        ],
+        "report_md": "基準時点1440分で、全20件のうち対応対象は10件、対象外は10件です。対象10件は期限超過5件、期限間近0件、ON_TRACK 5件です。期限超過5件はすべてESCALATEに該当し、CONTACTに該当する案件はありません。\n\n対応順はC012 → C006 → C015 → C016 → C011です。全件P1の期限超過であり、期限の早い順にエスカレーションが必要です。超過時間は順に1200分、1140分、1080分、540分、180分です。C011は超過480分未満ですが、P1のためエスカレーション対象です。\n\nT3は対応対象3件すべてが期限超過・エスカレーション対象で、全体の超過5件中3件が集中しています。T1は対象2件中1件、T2は対象5件中1件が期限超過です。責任者はこの状況を踏まえて優先対応と支援の必要性を確認してください。\n\n対象内で次に期限を迎えるC002・C019は期限1620分、残り180分のため、120分以内の期限間近には含まれません。対象外10件はCLOSED/CANCELLEDの8件と、基準時点より後に開始するC001・C013の2件です。対象外も期限を記載していますが、超過時間は0、対応区分はNONEとして集計・対応順から除外しています。\n\n上記は指定条件による判定と必要な対応を示したもので、連絡やエスカレーションの実施完了を示すものではありません。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "C001",
+            "deadline": 1800,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C002",
+            "deadline": 1620,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C003",
+            "deadline": 1680,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C004",
+            "deadline": 540,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C005",
+            "deadline": 2220,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C006",
+            "deadline": 300,
+            "state": "BREACHED",
+            "overdue": 1140,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C007",
+            "deadline": 2460,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C008",
+            "deadline": 2160,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C009",
+            "deadline": 1920,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C010",
+            "deadline": 1680,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C011",
+            "deadline": 1260,
+            "state": "BREACHED",
+            "overdue": 180,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C012",
+            "deadline": 240,
+            "state": "BREACHED",
+            "overdue": 1200,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C013",
+            "deadline": 2460,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C014",
+            "deadline": 1980,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C015",
+            "deadline": 360,
+            "state": "BREACHED",
+            "overdue": 1080,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C016",
+            "deadline": 900,
+            "state": "BREACHED",
+            "overdue": 540,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "C017",
+            "deadline": 2220,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C018",
+            "deadline": 2580,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C019",
+            "deadline": 1620,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C020",
+            "deadline": 1020,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "active": 2,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1
+          },
+          {
+            "team": "T2",
+            "active": 5,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1
+          },
+          {
+            "team": "T3",
+            "active": 3,
+            "breached": 3,
+            "due_soon": 0,
+            "escalated": 3
+          }
+        ],
+        "queue": [
+          "C012",
+          "C006",
+          "C015",
+          "C016",
+          "C011"
+        ],
+        "report_md": "基準時点1440分で、全20件のうち対応対象は10件、対象外は10件です。対象10件は期限超過5件、期限間近0件、ON_TRACK 5件です。期限超過5件はすべてESCALATEに該当し、CONTACTに該当する案件はありません。\n\n対応順はC012 → C006 → C015 → C016 → C011です。全件P1の期限超過であり、期限の早い順にエスカレーションが必要です。超過時間は順に1200分、1140分、1080分、540分、180分です。C011は超過480分未満ですが、P1のためエスカレーション対象です。\n\nT3は対応対象3件すべてが期限超過・エスカレーション対象で、全体の超過5件中3件が集中しています。T1は対象2件中1件、T2は対象5件中1件が期限超過です。責任者はこの状況を踏まえて優先対応と支援の必要性を確認してください。\n\n対象内で次に期限を迎えるC002・C019は期限1620分、残り180分のため、120分以内の期限間近には含まれません。対象外10件はCLOSED/CANCELLEDの8件と、基準時点より後に開始するC001・C013の2件です。対象外も期限を記載していますが、超過時間は0、対応区分はNONEとして集計・対応順から除外しています。\n\n上記は指定条件による判定と必要な対応を示したもので、連絡やエスカレーションの実施完了を示すものではありません。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.44368",
+      "incremental_credits": "1.2073",
+      "operating_total_credits": "1.65098",
+      "shared_seconds": 22.15500000002794,
+      "incremental_active_seconds": 29.905999999959022,
+      "total_active_seconds": 52.06099999998696,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T19:35:39.949018+00:00",
+        "text": "{\n  \"details\": [\n    {\"id\":\"C001\",\"deadline\":1800,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C002\",\"deadline\":1620,\"state\":\"ON_TRACK\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C003\",\"deadline\":1680,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C004\",\"deadline\":540,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C005\",\"deadline\":2220,\"state\":\"ON_TRACK\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C006\",\"deadline\":300,\"state\":\"BREACHED\",\"overdue\":1140,\"action\":\"ESCALATE\"},\n    {\"id\":\"C007\",\"deadline\":2460,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C008\",\"deadline\":2160,\"state\":\"ON_TRACK\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C009\",\"deadline\":1920,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C010\",\"deadline\":1680,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C011\",\"deadline\":1260,\"state\":\"BREACHED\",\"overdue\":180,\"action\":\"ESCALATE\"},\n    {\"id\":\"C012\",\"deadline\":240,\"state\":\"BREACHED\",\"overdue\":1200,\"action\":\"ESCALATE\"},\n    {\"id\":\"C013\",\"deadline\":2460,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C014\",\"deadline\":1980,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C015\",\"deadline\":360,\"state\":\"BREACHED\",\"overdue\":1080,\"action\":\"ESCALATE\"},\n    {\"id\":\"C016\",\"deadline\":900,\"state\":\"BREACHED\",\"overdue\":540,\"action\":\"ESCALATE\"},\n    {\"id\":\"C017\",\"deadline\":2220,\"state\":\"ON_TRACK\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C018\",\"deadline\":2580,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C019\",\"deadline\":1620,\"state\":\"ON_TRACK\",\"overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"C020\",\"deadline\":1020,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"}\n  ],\n  \"teams\": [\n    {\"team\":\"T1\",\"active\":2,\"breached\":1,\"due_soon\":0,\"escalated\":1},\n    {\"team\":\"T2\",\"active\":5,\"breached\":1,\"due_soon\":0,\"escalated\":1},\n    {\"team\":\"T3\",\"active\":3,\"breached\":3,\"due_soon\":0,\"escalated\":3}\n  ],\n  \"queue\": [\"C012\",\"C006\",\"C015\",\"C016\",\"C011\"],\n  \"report_md\": \"基準時点1440分で、全20件のうち対応対象は10件、対象外は10件です。対象10件は期限超過5件、期限間近0件、ON_TRACK 5件です。期限超過5件はすべてESCALATEに該当し、CONTACTに該当する案件はありません。\\n\\n対応順はC012 → C006 → C015 → C016 → C011です。全件P1の期限超過であり、期限の早い順にエスカレーションが必要です。超過時間は順に1200分、1140分、1080分、540分、180分です。C011は超過480分未満ですが、P1のためエスカレーション対象です。\\n\\nT3は対応対象3件すべてが期限超過・エスカレーション対象で、全体の超過5件中3件が集中しています。T1は対象2件中1件、T2は対象5件中1件が期限超過です。責任者はこの状況を踏まえて優先対応と支援の必要性を確認してください。\\n\\n対象内で次に期限を迎えるC002・C019は期限1620分、残り180分のため、120分以内の期限間近には含まれません。対象外10件はCLOSED/CANCELLEDの8件と、基準時点より後に開始するC001・C013の2件です。対象外も期限を記載していますが、超過時間は0、対応区分はNONEとして集計・対応順から除外しています。\\n\\n上記は指定条件による判定と必要な対応を示したもので、連絡やエスカレーションの実施完了を示すものではありません。\"\n}",
+        "value": {
+          "details": [
+            {
+              "id": "C001",
+              "deadline": 1800,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C002",
+              "deadline": 1620,
+              "state": "ON_TRACK",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C003",
+              "deadline": 1680,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C004",
+              "deadline": 540,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C005",
+              "deadline": 2220,
+              "state": "ON_TRACK",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C006",
+              "deadline": 300,
+              "state": "BREACHED",
+              "overdue": 1140,
+              "action": "ESCALATE"
+            },
+            {
+              "id": "C007",
+              "deadline": 2460,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C008",
+              "deadline": 2160,
+              "state": "ON_TRACK",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C009",
+              "deadline": 1920,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C010",
+              "deadline": 1680,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C011",
+              "deadline": 1260,
+              "state": "BREACHED",
+              "overdue": 180,
+              "action": "ESCALATE"
+            },
+            {
+              "id": "C012",
+              "deadline": 240,
+              "state": "BREACHED",
+              "overdue": 1200,
+              "action": "ESCALATE"
+            },
+            {
+              "id": "C013",
+              "deadline": 2460,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C014",
+              "deadline": 1980,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C015",
+              "deadline": 360,
+              "state": "BREACHED",
+              "overdue": 1080,
+              "action": "ESCALATE"
+            },
+            {
+              "id": "C016",
+              "deadline": 900,
+              "state": "BREACHED",
+              "overdue": 540,
+              "action": "ESCALATE"
+            },
+            {
+              "id": "C017",
+              "deadline": 2220,
+              "state": "ON_TRACK",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C018",
+              "deadline": 2580,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C019",
+              "deadline": 1620,
+              "state": "ON_TRACK",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C020",
+              "deadline": 1020,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            }
+          ],
+          "teams": [
+            {
+              "team": "T1",
+              "active": 2,
+              "breached": 1,
+              "due_soon": 0,
+              "escalated": 1
+            },
+            {
+              "team": "T2",
+              "active": 5,
+              "breached": 1,
+              "due_soon": 0,
+              "escalated": 1
+            },
+            {
+              "team": "T3",
+              "active": 3,
+              "breached": 3,
+              "due_soon": 0,
+              "escalated": 3
+            }
+          ],
+          "queue": [
+            "C012",
+            "C006",
+            "C015",
+            "C016",
+            "C011"
+          ],
+          "report_md": "基準時点1440分で、全20件のうち対応対象は10件、対象外は10件です。対象10件は期限超過5件、期限間近0件、ON_TRACK 5件です。期限超過5件はすべてESCALATEに該当し、CONTACTに該当する案件はありません。\n\n対応順はC012 → C006 → C015 → C016 → C011です。全件P1の期限超過であり、期限の早い順にエスカレーションが必要です。超過時間は順に1200分、1140分、1080分、540分、180分です。C011は超過480分未満ですが、P1のためエスカレーション対象です。\n\nT3は対応対象3件すべてが期限超過・エスカレーション対象で、全体の超過5件中3件が集中しています。T1は対象2件中1件、T2は対象5件中1件が期限超過です。責任者はこの状況を踏まえて優先対応と支援の必要性を確認してください。\n\n対象内で次に期限を迎えるC002・C019は期限1620分、残り180分のため、120分以内の期限間近には含まれません。対象外10件はCLOSED/CANCELLEDの8件と、基準時点より後に開始するC001・C013の2件です。対象外も期限を記載していますが、超過時間は0、対応区分はNONEとして集計・対応順から除外しています。\n\n上記は指定条件による判定と必要な対応を示したもので、連絡やエスカレーションの実施完了を示すものではありません。"
+        },
+        "public_schema_pass": true,
+        "seconds": 29.905999999959022,
+        "credits": "1.2073",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-086",
+      "arm": "PRACTICAL",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "action": "NONE",
+            "deadline": 1800,
+            "id": "C001",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1620,
+            "id": "C002",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1680,
+            "id": "C003",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 540,
+            "id": "C004",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2220,
+            "id": "C005",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 300,
+            "id": "C006",
+            "overdue": 1140,
+            "state": "BREACHED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2460,
+            "id": "C007",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2160,
+            "id": "C008",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1920,
+            "id": "C009",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1680,
+            "id": "C010",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 1260,
+            "id": "C011",
+            "overdue": 180,
+            "state": "BREACHED"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 240,
+            "id": "C012",
+            "overdue": 1200,
+            "state": "BREACHED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2460,
+            "id": "C013",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1980,
+            "id": "C014",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 360,
+            "id": "C015",
+            "overdue": 1080,
+            "state": "BREACHED"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 900,
+            "id": "C016",
+            "overdue": 540,
+            "state": "BREACHED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2220,
+            "id": "C017",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2580,
+            "id": "C018",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1620,
+            "id": "C019",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1020,
+            "id": "C020",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          }
+        ],
+        "queue": [
+          "C012",
+          "C006",
+          "C015",
+          "C016",
+          "C011"
+        ],
+        "report_md": "現在、対応が必要なチケットは5件あり、すべて期限超過（BREACHED）かつエスカレーション（ESCALATE）が必要です。\n\n### 全体状況\n- **期限超過**: 5件 (すべてエスカレーション対象)\n- **期限間近**: 0件\n- **対応中件数**: 10件\n\n### 優先対応事項\n以下の5件はP1案件、または大幅な期限超過により、最優先でのエスカレーション対応が必要です。\n- **対象ID**: C012, C006, C015, C016, C011\n\n### チーム別状況\n- **T1**: 期限超過 1件\n- **T2**: 期限超過 1件\n- **T3**: 期限超過 3件（最も注意が必要です）",
+        "teams": [
+          {
+            "active": 2,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1,
+            "team": "T1"
+          },
+          {
+            "active": 5,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1,
+            "team": "T2"
+          },
+          {
+            "active": 3,
+            "breached": 3,
+            "due_soon": 0,
+            "escalated": 3,
+            "team": "T3"
+          }
+        ]
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "action": "NONE",
+            "deadline": 1800,
+            "id": "C001",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1620,
+            "id": "C002",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1680,
+            "id": "C003",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 540,
+            "id": "C004",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2220,
+            "id": "C005",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 300,
+            "id": "C006",
+            "overdue": 1140,
+            "state": "BREACHED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2460,
+            "id": "C007",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2160,
+            "id": "C008",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1920,
+            "id": "C009",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1680,
+            "id": "C010",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 1260,
+            "id": "C011",
+            "overdue": 180,
+            "state": "BREACHED"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 240,
+            "id": "C012",
+            "overdue": 1200,
+            "state": "BREACHED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2460,
+            "id": "C013",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1980,
+            "id": "C014",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 360,
+            "id": "C015",
+            "overdue": 1080,
+            "state": "BREACHED"
+          },
+          {
+            "action": "ESCALATE",
+            "deadline": 900,
+            "id": "C016",
+            "overdue": 540,
+            "state": "BREACHED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2220,
+            "id": "C017",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          },
+          {
+            "action": "NONE",
+            "deadline": 2580,
+            "id": "C018",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1620,
+            "id": "C019",
+            "overdue": 0,
+            "state": "ON_TRACK"
+          },
+          {
+            "action": "NONE",
+            "deadline": 1020,
+            "id": "C020",
+            "overdue": 0,
+            "state": "EXCLUDED"
+          }
+        ],
+        "queue": [
+          "C012",
+          "C006",
+          "C015",
+          "C016",
+          "C011"
+        ],
+        "report_md": "現在、対応が必要なチケットは5件あり、すべて期限超過（BREACHED）かつエスカレーション（ESCALATE）が必要です。\n\n### 全体状況\n- **期限超過**: 5件 (すべてエスカレーション対象)\n- **期限間近**: 0件\n- **対応中件数**: 10件\n\n### 優先対応事項\n以下の5件はP1案件、または大幅な期限超過により、最優先でのエスカレーション対応が必要です。\n- **対象ID**: C012, C006, C015, C016, C011\n\n### チーム別状況\n- **T1**: 期限超過 1件\n- **T2**: 期限超過 1件\n- **T3**: 期限超過 3件（最も注意が必要です）",
+        "teams": [
+          {
+            "active": 2,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1,
+            "team": "T1"
+          },
+          {
+            "active": 5,
+            "breached": 1,
+            "due_soon": 0,
+            "escalated": 1,
+            "team": "T2"
+          },
+          {
+            "active": 3,
+            "breached": 3,
+            "due_soon": 0,
+            "escalated": 3,
+            "team": "T3"
+          }
+        ]
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.44368",
+      "incremental_credits": "0.3166",
+      "operating_total_credits": "0.76028",
+      "shared_seconds": 22.15500000002794,
+      "incremental_active_seconds": 355.68799999996554,
+      "total_active_seconds": 377.8429999999935,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T19:35:09.469899+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 4.344000000040978,
+          "credits": "0.3166",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 318.9070000000065,
+        "usage": {
+          "prompt_eval_count": 3071,
+          "eval_count": 12835,
+          "prompt_eval_duration": 3458460000,
+          "eval_duration": 315309208000,
+          "total_duration": 318792902300
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "C001",
+        "deadline": 1800,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C002",
+        "deadline": 1620,
+        "state": "ON_TRACK",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C003",
+        "deadline": 1680,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C004",
+        "deadline": 540,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C005",
+        "deadline": 2220,
+        "state": "ON_TRACK",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C006",
+        "deadline": 300,
+        "state": "BREACHED",
+        "overdue": 1140,
+        "action": "ESCALATE"
+      },
+      {
+        "id": "C007",
+        "deadline": 2460,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C008",
+        "deadline": 2160,
+        "state": "ON_TRACK",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C009",
+        "deadline": 1920,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C010",
+        "deadline": 1680,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C011",
+        "deadline": 1260,
+        "state": "BREACHED",
+        "overdue": 180,
+        "action": "ESCALATE"
+      },
+      {
+        "id": "C012",
+        "deadline": 240,
+        "state": "BREACHED",
+        "overdue": 1200,
+        "action": "ESCALATE"
+      },
+      {
+        "id": "C013",
+        "deadline": 2460,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C014",
+        "deadline": 1980,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C015",
+        "deadline": 360,
+        "state": "BREACHED",
+        "overdue": 1080,
+        "action": "ESCALATE"
+      },
+      {
+        "id": "C016",
+        "deadline": 900,
+        "state": "BREACHED",
+        "overdue": 540,
+        "action": "ESCALATE"
+      },
+      {
+        "id": "C017",
+        "deadline": 2220,
+        "state": "ON_TRACK",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C018",
+        "deadline": 2580,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C019",
+        "deadline": 1620,
+        "state": "ON_TRACK",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C020",
+        "deadline": 1020,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      }
+    ],
+    "teams": [
+      {
+        "team": "T1",
+        "active": 2,
+        "breached": 1,
+        "due_soon": 0,
+        "escalated": 1
+      },
+      {
+        "team": "T2",
+        "active": 5,
+        "breached": 1,
+        "due_soon": 0,
+        "escalated": 1
+      },
+      {
+        "team": "T3",
+        "active": 3,
+        "breached": 3,
+        "due_soon": 0,
+        "escalated": 3
+      }
+    ],
+    "queue": [
+      "C012",
+      "C006",
+      "C015",
+      "C016",
+      "C011"
+    ]
+  },
+  "scores": [
+    {
+      "task_id": "PR100-086",
+      "arm": "SOL_CONTINUE",
+      "family": "service_queue",
+      "designed_difficulty": 5,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.65098",
+      "total_active_seconds": 52.06099999998696,
+      "report_md": "基準時点1440分で、全20件のうち対応対象は10件、対象外は10件です。対象10件は期限超過5件、期限間近0件、ON_TRACK 5件です。期限超過5件はすべてESCALATEに該当し、CONTACTに該当する案件はありません。\n\n対応順はC012 → C006 → C015 → C016 → C011です。全件P1の期限超過であり、期限の早い順にエスカレーションが必要です。超過時間は順に1200分、1140分、1080分、540分、180分です。C011は超過480分未満ですが、P1のためエスカレーション対象です。\n\nT3は対応対象3件すべてが期限超過・エスカレーション対象で、全体の超過5件中3件が集中しています。T1は対象2件中1件、T2は対象5件中1件が期限超過です。責任者はこの状況を踏まえて優先対応と支援の必要性を確認してください。\n\n対象内で次に期限を迎えるC002・C019は期限1620分、残り180分のため、120分以内の期限間近には含まれません。対象外10件はCLOSED/CANCELLEDの8件と、基準時点より後に開始するC001・C013の2件です。対象外も期限を記載していますが、超過時間は0、対応区分はNONEとして集計・対応順から除外しています。\n\n上記は指定条件による判定と必要な対応を示したもので、連絡やエスカレーションの実施完了を示すものではありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-086",
+      "arm": "PRACTICAL",
+      "family": "service_queue",
+      "designed_difficulty": 5,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "0.76028",
+      "total_active_seconds": 377.8429999999935,
+      "report_md": "現在、対応が必要なチケットは5件あり、すべて期限超過（BREACHED）かつエスカレーション（ESCALATE）が必要です。\n\n### 全体状況\n- **期限超過**: 5件 (すべてエスカレーション対象)\n- **期限間近**: 0件\n- **対応中件数**: 10件\n\n### 優先対応事項\n以下の5件はP1案件、または大幅な期限超過により、最優先でのエスカレーション対応が必要です。\n- **対象ID**: C012, C006, C015, C016, C011\n\n### チーム別状況\n- **T1**: 期限超過 1件\n- **T2**: 期限超過 1件\n- **T3**: 期限超過 3件（最も注意が必要です）",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

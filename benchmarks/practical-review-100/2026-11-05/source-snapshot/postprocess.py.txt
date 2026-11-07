@@ -1,0 +1,162 @@
+"""Host-only scoring, raw accounting audit and completion report. No model calls."""
+from collections import Counter,defaultdict
+from runtime import *
+from protocol import equal
+from policy import ARMS,apply_patch,review_packet,parse_review,public_errors
+
+def differences(a,b,path=''):
+ if equal(a,b):return []
+ if isinstance(a,dict) and isinstance(b,dict):
+  return sum((differences(a.get(k),b.get(k),path+'/'+k) for k in sorted(set(a)|set(b))),[])
+ if isinstance(a,list) and isinstance(b,list) and len(a)==len(b):
+  return sum((differences(x,y,path+'/'+str(i)) for i,(x,y) in enumerate(zip(a,b))),[])
+ return [{'path':path,'actual':a,'expected':b}]
+
+def aggregate(rows):
+ costs=sum((Decimal(x['operating_reported_usage_credits']) for x in rows),Decimal(0));seconds=sum(x['total_active_seconds'] for x in rows)
+ correct=sum(x['data_correct_adoption'] for x in rows)
+ return {'cases':len(rows),'adopted':sum(x['adopted'] for x in rows),'data_exact':sum(x['data_exact'] for x in rows),'data_correct_adoption':correct,'data_false_green':sum(x['data_false_green'] for x in rows),'unresolved':sum(not x['adopted'] for x in rows),'categories':dict(Counter(x['category'] for x in rows)),'initial_data_exact':sum(x['initial_data_exact'] for x in rows),'wrong_to_correct':sum(not x['initial_data_exact'] and x['data_correct_adoption'] for x in rows),'correct_to_wrong':sum(x['initial_data_exact'] and not x['data_exact'] for x in rows),'operating_reported_usage_Credits':str(costs),'reported_Credits_per_data_correct_adoption':str(costs/correct) if correct else None,'active_seconds':seconds,'mean_active_seconds':seconds/len(rows) if rows else None,'human_repair_seconds':None}
+
+def analyze():
+ assert (RUN/'ROUTING_COMPLETE.json').exists();out=ROOT/'analysis-001';out.mkdir(exist_ok=False)
+ jobs=read(ROOT/'JOBS_PUBLIC.json');panel={x['task_id']:x for x in read(ROOT/'private/PANEL.json')};gold=read(ROOT/'private/EXPECTED.json');rows=[];review_queue=[]
+ for j in jobs:
+  for arm in ARMS:
+   r=read(RUN/'unscored'/j['task_id']/f'{arm}.json');a=r['final_artifact'];initial=r['initial_artifact'];expected=gold[j['task_id']]
+   data={k:v for k,v in a.items() if k!='report_md'} if isinstance(a,dict) else a
+   before={k:v for k,v in initial.items() if k!='report_md'} if isinstance(initial,dict) else initial
+   exact=equal(data,expected);initial_exact=equal(before,expected)
+   row={'task_id':j['task_id'],'arm':arm,'family':panel[j['task_id']]['family'],'designed_difficulty':panel[j['task_id']]['designed_difficulty'],'profile':j['profile'],'reasoning_effort':j['reasoning_effort'],'adopted':r['adopted'],'data_exact':exact,'initial_data_exact':initial_exact,'data_correct_adoption':r['adopted'] and exact,'data_false_green':r['adopted'] and not exact,'category':r['category'],'data_differences':differences(data,expected),'operating_reported_usage_credits':r['operating_total_credits'],'total_active_seconds':r['total_active_seconds'],'report_md':a.get('report_md') if isinstance(a,dict) else None,'patch_changes':r.get('patch_changes',[]),'human_repair_seconds':None,'independent_narrative_audit':False}
+   rows.append(row)
+   if not row['data_correct_adoption'] or not initial_exact or row['patch_changes']:review_queue.append({'task_id':j['task_id'],'arm':arm,'public_job':j,'result_path':str(RUN/'unscored'/j['task_id']/f'{arm}.json'),'score':row})
+ methods={a:aggregate([r for r in rows if r['arm']==a]) for a in ARMS};pairs=Counter()
+ for j in jobs:
+  a,b=[next(r for r in rows if r['task_id']==j['task_id'] and r['arm']==arm)['data_correct_adoption'] for arm in ARMS]
+  pairs['BOTH' if a and b else 'A_ONLY' if a else 'B_ONLY' if b else 'NEITHER']+=1
+ a_cost=Decimal(methods[ARMS[0]]['operating_reported_usage_Credits']);b_cost=Decimal(methods[ARMS[1]]['operating_reported_usage_Credits'])
+ actual=Decimal(read(RUN/'COMPLETE.json')['reported_usage_subtotal_Credits'])
+ shared_source=sum((Decimal(read(p)['shared_Credits']) for p in (RUN/'dialogues').glob('*/DESIGN_AND_DIALOGUE_SEALED.json')),Decimal(0))
+ shared_small=sum((Decimal(read(RUN/'unscored'/j['task_id']/'SOL_CONTINUE.json')['incremental_credits']) for j in jobs if j['profile']=='small'),Decimal(0))
+ assert a_cost+b_cost==actual+shared_source+shared_small,'Shared allocation identity'
+ comparison={'cases':100,'methods':methods,'paired_data_correct_adoption':dict(pairs),'reported_usage_credit_reduction_vs_same_profile_Sol':str((1-b_cost/a_cost)*100),'reported_usage_subtotal_Credits':str(actual),'shared_source_reported_Credits_once':str(shared_source),'shared_small_execution_reported_Credits_once':str(shared_small),'comparison_sum_not_actual':str(a_cost+b_cost),'study_total_Credits':None,'billing_complete':False,'unmeasured_retry_invocations':[x['capture_path'] for x in (read(p) for p in (RUN/'roles').glob('*/*/*/INCREMENTAL_USAGE.json')) if not x.get('billing_complete',True)],'research_model_calls':0,'independent_narrative_equivalence_proven':False,'human_repair_seconds':None,'preparation_chat_Credits':None,'project_with_preparation_Credits':None,'by_family':{f:{a:aggregate([r for r in rows if r['family']==f and r['arm']==a]) for a in ARMS} for f in sorted({r['family'] for r in rows})},'by_profile':{p:{a:aggregate([r for r in rows if r['profile']==p and r['arm']==a]) for a in ARMS} for p in ['small','normal','complex']}}
+ ledger=[read(p) for p in (RUN/'roles').glob('*/*/*/INCREMENTAL_USAGE.json')]
+ historical_failed=read(ROOT/'RECOVERY_IMPORT.json')['historical_failed_calls']
+ uncertain=[x for x in ledger if not x.get('billing_complete',True)]+historical_failed
+ comparison.update({'historical_failed_calls':historical_failed,'unmeasured_cost_invocations':[x['capture_path'] for x in uncertain]})
+ profile_by_id={j['task_id']:j['profile'] for j in jobs}
+ shared_uncertainty=all(x['arm']=='SHARED_DIALOGUE' or x['arm']=='SOL_CONTINUE' and profile_by_id[x['task_id']]=='small' for x in uncertain)
+ comparison.update({'reported_usage_credit_difference_A_minus_B':str(a_cost-b_cost),'all_unmeasured_costs_shared_between_arms':shared_uncertainty,'actual_credit_difference_A_minus_B':str(a_cost-b_cost) if shared_uncertainty else None,'actual_credit_reduction_percent':None})
+ tokens=defaultdict(lambda:{k:0 for k in FIELDS});role_cost=defaultdict(Decimal)
+ for x in ledger:
+  key=x['arm']+':'+x['stage']+':'+next(j['reasoning_effort'] for j in jobs if j['task_id']==x['task_id'])
+  for k in FIELDS:tokens[key][k]+=x['incremental_usage'][k]
+  role_cost[key]+=Decimal(x['incremental_Credits'])
+ save(out/'SCORED_RESULTS.json',rows);save(out/'COMPARISON.json',comparison);save(out/'MANUAL_REVIEW_QUEUE.json',review_queue)
+ save(out/'TOKEN_ACCOUNTING.json',{'roles':dict(tokens),'role_reported_usage_Credits':{k:str(v) for k,v in role_cost.items()},'cache_subset_of_input':True,'reasoning_subset_of_output':True,'preparation_chat_Credits':None})
+ native=[read(p) for p in (RUN/'local').rglob('RESULT.json')]
+ save(out/'NATIVE_RESOURCES.json',{'physical_results':native,'model_settings':read(ROOT/'MODEL_SELECTION.json')['Local'],'Local_tokens_not_Credits_savings':True,'device_memory_not_process_minimum_requirement':True})
+ manifest={str(p):sha(p) for p in sorted(RUN.rglob('*')) if p.is_file() and p.name not in ['controller.stdout.log','controller.stderr.log']}
+ save(out/'SOURCE_MANIFEST.json',{'files':manifest,'controller_logs_excluded_because_controller_is_still_exiting':True})
+ save(out/'ANALYSIS_FREEZE.json',{'timestamp':now(),'files':{str(p):sha(p) for p in out.iterdir() if p.is_file()}})
+
+def audit():
+ out=ROOT/'completion-audit-001';out.mkdir(exist_ok=False);f=verify();labels=[]
+ def check(k,v):assert v,k;labels.append(k)
+ for rel in ['ALL_DESIGNS_SEALED.json','ROUTING_COMPLETE.json']:
+  for p,h in read(RUN/rel)['files'].items():check('seal:'+p,sha(p)==h)
+ for p,h in read(ROOT/'analysis-001/ANALYSIS_FREEZE.json')['files'].items():check('analysis:'+p,sha(p)==h)
+ for p,h in read(ROOT/'analysis-001/SOURCE_MANIFEST.json')['files'].items():check('source:'+p,sha(p)==h)
+ check('old_files',preservation()['passed']);jobs={x['task_id']:x for x in read(ROOT/'JOBS_PUBLIC.json')};cap=Capture()
+ manifests=sorted([(read(p/'manifest.json'),p) for p in (RUN/'accounting/invocations').iterdir()],key=lambda x:x[0]['started_at'])
+ previous={};sessions=defaultdict(list);actual=Decimal(0);cloud=0;local=0;commands=0
+ native={r['capture_path']:r for r in (read(p) for p in (RUN/'local').rglob('RESULT.json'))}
+ for m,p in manifests:
+  raw=(p/'request.raw').read_bytes();check('request_sha:'+m['invocation_id'],hashlib.sha256(raw).hexdigest()==m['request_sha256']);rec=cap.c.reconcile(p,cap.rate,cap.raw);j=jobs[m['task_id']]
+  if m['transport']=='codex_cli':
+   cloud+=1
+   failed=next((x for x in read(ROOT/'RECOVERY_IMPORT.json')['historical_failed_calls'] if x['invocation_id']==m['invocation_id']),None)
+   if failed is not None:
+    saved=read(Path(failed['capture_path'])/'terminal.json')
+    events=[json.loads(x) for x in (p/'stdout.jsonl').read_bytes().splitlines()]
+    check('preserved_capacity_failure:'+m['invocation_id'],rec['terminal']['exit_code']==1 and rec['completed_turns']==0 and rec['usage_coverage']=='INCOMPLETE' and [e['type'] for e in events]==['thread.started','turn.started','error','turn.failed'] and events[2]['message']=='Selected model is at capacity. Please try a different model.')
+    check('failed_model_effort:'+m['invocation_id'],m['model']=='gpt-6.1-sol' and m['reasoning_effort']==j['reasoning_effort'])
+    check('failed_raw_preserved:'+m['invocation_id'],all(sha(p/name)==sha(Path(failed['capture_path'])/name) for name in ['request.raw','stdout.jsonl','stderr.log','terminal.json','manifest.json']))
+    check('unknown_failed_cost_not_zero:'+m['invocation_id'],failed['credits'] is None and not failed['billing_complete'])
+    continue
+   role=RUN/'roles'/m['task_id']/m['arm']/m['stage'];r=read(RUN/'cloud_unscored'/m['task_id']/m['arm']/f"{m['stage']}.json");l=read(role/'INCREMENTAL_USAGE.json')
+   from recovery import completed_idle_retry
+   exception=completed_idle_retry(rec,p) if rec['issues'] else None
+   check('terminal_or_evidenced_completed_idle_retry:'+m['invocation_id'],not rec['issues'] and rec['usage_coverage']=='REPORTED_USAGE_COMPLETE' or exception is not None and l.get('billing_complete') is False and l.get('billing_exception',{}).get('invocation_id')==m['invocation_id'])
+   events=[json.loads(x) for x in (p/'stdout.jsonl').read_bytes().splitlines()];turns=[x for x in events if x.get('type')=='turn.completed'];check('single_turn:'+m['invocation_id'],len(turns)==1);u=turns[0]['usage'];sid=r['session_id']
+   check('effort_and_model:'+m['invocation_id'],m['model']=='gpt-6.1-sol' and m['reasoning_effort']==j['reasoning_effort'] and f"model_reasoning_effort=\"{j['reasoning_effort']}\"" in m['argv'])
+   check('agents_disabled:'+m['invocation_id'],all(x in m['argv'] for x in ['agents.enabled=false','features.multi_agent=false','features.multi_agent_v2=false']))
+   trace=read(role/'TRACE.json');commands+=len(trace['commands']);check('no_tools:'+m['invocation_id'],not trace['unknown_types'] and not trace['out_of_scope'] and not trace['commands'])
+   check('cache_write_zero:'+m['invocation_id'],u.get('cache_write_input_tokens')==0)
+   prior=previous.get(sid,{})
+   check('session_continuation:'+m['invocation_id'],bool(prior)==bool(r['continued_from']))
+   du=delta(u,prior);amount=price(du,m['model'],cap.rate)
+   check('incremental:'+m['invocation_id'],l['previous_cumulative_usage']==prior and l['incremental_usage']==du and Decimal(l['incremental_Credits'])==amount==Decimal(r['credits']))
+   check('raw_cumulative_price:'+m['invocation_id'],price(u,m['model'],cap.rate)==sum((Decimal(x['credits']) for x in rec['records'] if x['credits'] is not None),Decimal(0)))
+   previous[sid]={k:u[k] for k in FIELDS};sessions[sid].append({'capture_path':str(p),'cumulative':{k:u[k] for k in FIELDS},'delta':du,'continued':bool(r['continued_from'])});actual+=amount
+   t=read(RUN/'dialogues'/j['task_id']/'PUBLIC_DIALOGUE.json');check('authorization:'+m['invocation_id'],t[-1]['content']==j['continuation'])
+   if m['arm']!='SHARED_DIALOGUE':check('all_designs_before_execution:'+m['invocation_id'],dt.datetime.fromisoformat(m['started_at'].replace('Z','+00:00'))>=dt.datetime.fromisoformat(read(RUN/'ALL_DESIGNS_SEALED.json')['timestamp']))
+   if m['arm']=='SHARED_DIALOGUE':check('verbatim_owner:'+m['invocation_id'],raw.decode()==j['initial' if m['stage']=='INITIAL_REQUEST' else 'owner_reply'])
+   elif m['arm']=='SOL_CONTINUE':check('normal_same_session:'+m['invocation_id'],r['session_id']==read(RUN/'dialogues'/j['task_id']/'DESIGN_AND_DIALOGUE_SEALED.json')['source_session'] and raw.decode()==j['continuation'])
+   else:
+    packet=json.loads(raw);check('original_dialogue_only:'+m['invocation_id'],packet['public_conversation_verbatim']==t and 'coordinator_work_instruction_verbatim' not in packet)
+    if m['stage']=='REVIEW':
+     rr=read(RUN/'unscored'/j['task_id']/'PRACTICAL.json');check('original_candidate:'+m['invocation_id'],packet==review_packet(t,rr['initial_artifact']) and not r['continued_from'])
+  else:
+   local+=1;n=native[str(p)];first_infra=n['attempt']==1 and n['classification']=='INFRA_ERROR'
+   check('native_terminal:'+m['invocation_id'],first_infra or not rec['issues'] and rec['usage_coverage']=='REPORTED_USAGE_COMPLETE')
+   if first_infra:
+    nexts=[x for x in native.values() if x['task_id']==n['task_id'] and x['step_id']==n['step_id'] and x['attempt']==2]
+    check('same_payload_retry:'+m['invocation_id'],len(nexts)==1 and (Path(nexts[0]['capture_path'])/'request.raw').read_bytes()==raw)
+   payload=json.loads(raw);check('local_settings:'+m['invocation_id'],payload['model']==f['models'][0]['model'] and payload['options']==f['models'][0]['options'] and payload['think']==f['models'][0]['think'])
+   t=read(RUN/'dialogues'/j['task_id']/'PUBLIC_DIALOGUE.json');check('local_original_dialogue:'+m['invocation_id'],json.loads(payload['messages'][1]['content'])['public_conversation_verbatim']==t)
+ for j in jobs.values():
+  if j['profile']=='small':
+   a=read(RUN/'unscored'/j['task_id']/'SOL_CONTINUE.json');b=read(RUN/'unscored'/j['task_id']/'PRACTICAL.json')
+   check('small_shared_once:'+j['task_id'],b['same_physical_small_task_execution'] and equal(a['final_artifact'],b['final_artifact']) and not (RUN/'cloud_unscored'/j['task_id']/'PRACTICAL').exists())
+  else:
+   b=read(RUN/'unscored'/j['task_id']/'PRACTICAL.json');check('bounded_resolution:'+j['task_id'],b['postcandidate_Cloud_calls']<=2 and b['coordinator_review_calls']==b['handoff_calls']==0)
+   if b['patch_changes']:check('patch_replay:'+j['task_id'],equal(apply_patch(b['initial_artifact'],b['patch_changes'],j['output_schema']),b['final_artifact']))
+ evidence={};session_root=Path(os.environ.get('CODEX_HOME',str(Path.home()/'.codex')))/'sessions'
+ for sid,rows in sessions.items():
+  for k in FIELDS:check('telescoping:'+sid+':'+k,sum(r['delta'][k] for r in rows)==rows[-1]['cumulative'][k])
+  if not any(r['continued'] for r in rows):continue
+  paths=list(session_root.glob('????/??/??/*'+sid+'*.jsonl'));check('persistent_session:'+sid,len(paths)==1);p=paths[0];tokens=[]
+  for number,line in enumerate(p.read_bytes().splitlines(),1):
+   e=json.loads(line);v=e.get('payload',{})
+   if e.get('type')=='event_msg' and v.get('type')=='token_count' and v.get('info'):tokens.append({'line':number,'line_sha256':hashlib.sha256(line).hexdigest(),'info':v['info']})
+  pos=-1;matches=[]
+  for r in rows:
+   ids=[i for i,e in enumerate(tokens) if i>pos and all(e['info']['total_token_usage'].get(k)==r['cumulative'][k] for k in FIELDS)];check('rollout_counter:'+r['capture_path'],bool(ids));pos=ids[0];matches.append({'capture_path':r['capture_path'],'usage_evidence':tokens[pos]})
+  evidence[sid]={'rollout_path':str(p),'rollout_sha256':sha(p),'matches':matches,'only_usage_metadata':True}
+ c=read(ROOT/'analysis-001/COMPARISON.json');complete=read(RUN/'COMPLETE.json')
+ check('reported_usage_subtotal_recomputed',actual==Decimal(c['reported_usage_subtotal_Credits']));check('physical_counts',cloud==complete['cloud_calls'] and local==complete['local_physical']);check('200_workflows',len(list((RUN/'unscored').glob('*/*.json')))==200)
+ save(out/'SESSION_COUNTER_EVIDENCE.json',evidence);save(out/'AUDIT_RESULTS.json',{'timestamp':now(),'passed':True,'checks':len(labels),'labels':labels,'cloud_calls':cloud,'local_physical':local,'tool_commands':commands,'OS_read_isolation_proven':False,'model_calls_by_auditor':0,'billing_complete':False,'unmeasured_cost_calls':read(ROOT/'analysis-001/COMPARISON.json')['unmeasured_cost_invocations'],'historical_failed_calls':read(ROOT/'RECOVERY_IMPORT.json')['historical_failed_calls']})
+ save(out/'AUDIT_FREEZE.json',{'timestamp':now(),'files':{str(p):sha(p) for p in out.iterdir() if p.is_file()}})
+
+def report():
+ c=read(ROOT/'analysis-001/COMPARISON.json');assert read(ROOT/'completion-audit-001/AUDIT_RESULTS.json')['passed']
+ lines=['# 新100件：必要十分な確認と部分修正の結果','',now(),'','同じ仕事ごとの推論設定を使う通常Solと、短いSol確認・差分修正の方式を比較した。既存xhigh結果との単純比較ではない。','',
+ '|方式|データ正解で採用|誤採用|未解決|運用の報告usage小計Credits|平均active秒|','|---|---:|---:|---:|---:|---:|']
+ for arm,m in c['methods'].items():lines.append(f"|{arm}|{m['data_correct_adoption']}/100|{m['data_false_green']}|{m['unresolved']}|{Decimal(m['operating_reported_usage_Credits']):.5f}|{m['mean_active_seconds']:.2f}|")
+ lines+=['',f"報告usage小計に基づく参考削減率：{Decimal(c['reported_usage_credit_reduction_vs_same_profile_Sol']):.2f}%。studyの重複しない報告usage小計：{c['reported_usage_subtotal_Credits']} Credits。",'',
+ '内部再送と容量エラー失敗の未計測消費があるためstudy実支出総額と厳密な削減率は未確定null。以下の費用は報告済みusage小計で、未計測を0とした総額ではない。','',
+ '共有相談とsmallの同じ物理実行は実支出に1回、各単独方式の比較費へ各全額配賦する。比較費用和は実支出ではない。','',
+ '採用区分：'+json.dumps({a:m['categories'] for a,m in c['methods'].items()},ensure_ascii=False),'',
+ '対比較：'+json.dumps(c['paired_data_correct_adoption'],ensure_ascii=False),'',
+ '全件データの正解、修正前後、patch、未解決、型/profile別はanalysis-001。別モデルによる採点用監査は0回。運用Solの確認と独立した文章品質評価は区別し、文章の一般的同等性を立証したとは言わない。','',
+ '手作業の修正時間と準備chat費・電力費は未測定null。部分修正はそれ自体で失敗としないが、修正前の誤りと費用も残した。','',
+ '既知10型の合成場面100例、固定owner補足、全相談先行。初期の相談・方針作成費も含む。cache・時刻・背景負荷の影響は残る。旧結果の率をpoolしない。品質低下を安さだけで成功にしない。','',
+ '旧ファイル、raw、freeze、STOPを保全。Production・公式Actor Gate・30Task・Router・GitHub公開は変更していない。','',
+ '失敗・修正例の原文確認用：analysis-001/MANUAL_REVIEW_QUEUE.json。完了レビューはこの凍結報告を上書きせず追加保存する。','']
+ path=ROOT/'FINAL_KNOWLEDGE_UPDATE_JA.md'
+ with path.open('x',encoding='utf-8') as f:f.write('\n'.join(lines))
+ save(ROOT/'FINAL_KNOWLEDGE_FREEZE.json',{'timestamp':now(),'files':{str(path):sha(path),str(ROOT/'analysis-001/ANALYSIS_FREEZE.json'):sha(ROOT/'analysis-001/ANALYSIS_FREEZE.json'),str(ROOT/'completion-audit-001/AUDIT_FREEZE.json'):sha(ROOT/'completion-audit-001/AUDIT_FREEZE.json')}})
+ save(RUN/'SUMMARY_COMPLETE.json',{'timestamp':now(),'report_path':str(path),'report_sha256':sha(path),'audit_passed':True,'manual_completion_review_pending':True})
+
+def finish():analyze();audit();report()
+if __name__=='__main__':finish()

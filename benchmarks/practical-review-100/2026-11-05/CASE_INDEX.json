@@ -1,0 +1,1002 @@
+[
+  {
+    "task_id": "PR100-001",
+    "family": "allocation",
+    "difficulty": 1,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-001.json"
+  },
+  {
+    "task_id": "PR100-002",
+    "family": "expenses",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-002.json"
+  },
+  {
+    "task_id": "PR100-003",
+    "family": "availability",
+    "difficulty": 3,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-003.json"
+  },
+  {
+    "task_id": "PR100-004",
+    "family": "deduplication",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-004.json"
+  },
+  {
+    "task_id": "PR100-005",
+    "family": "service_queue",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-005.json"
+  },
+  {
+    "task_id": "PR100-006",
+    "family": "document_edits",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-006.json"
+  },
+  {
+    "task_id": "PR100-007",
+    "family": "procurement",
+    "difficulty": 1,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-007.json"
+  },
+  {
+    "task_id": "PR100-008",
+    "family": "sales",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-008.json"
+  },
+  {
+    "task_id": "PR100-009",
+    "family": "expenses",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-009.json"
+  },
+  {
+    "task_id": "PR100-010",
+    "family": "availability",
+    "difficulty": 2,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-010.json"
+  },
+  {
+    "task_id": "PR100-011",
+    "family": "dependency_schedule",
+    "difficulty": 4,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": false,
+    "file": "cases/PR100-011.json"
+  },
+  {
+    "task_id": "PR100-012",
+    "family": "expenses",
+    "difficulty": 1,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-012.json"
+  },
+  {
+    "task_id": "PR100-013",
+    "family": "sales",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-013.json"
+  },
+  {
+    "task_id": "PR100-014",
+    "family": "availability",
+    "difficulty": 5,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-014.json"
+  },
+  {
+    "task_id": "PR100-015",
+    "family": "allocation",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-015.json"
+  },
+  {
+    "task_id": "PR100-016",
+    "family": "document_edits",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-016.json"
+  },
+  {
+    "task_id": "PR100-017",
+    "family": "expenses",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-017.json"
+  },
+  {
+    "task_id": "PR100-018",
+    "family": "availability",
+    "difficulty": 1,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-018.json"
+  },
+  {
+    "task_id": "PR100-019",
+    "family": "allocation",
+    "difficulty": 5,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-019.json"
+  },
+  {
+    "task_id": "PR100-020",
+    "family": "document_edits",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": false,
+    "file": "cases/PR100-020.json"
+  },
+  {
+    "task_id": "PR100-021",
+    "family": "allocation",
+    "difficulty": 4,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": false,
+    "file": "cases/PR100-021.json"
+  },
+  {
+    "task_id": "PR100-022",
+    "family": "expenses",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-022.json"
+  },
+  {
+    "task_id": "PR100-023",
+    "family": "receivables",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-023.json"
+  },
+  {
+    "task_id": "PR100-024",
+    "family": "allocation",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": false,
+    "file": "cases/PR100-024.json"
+  },
+  {
+    "task_id": "PR100-025",
+    "family": "procurement",
+    "difficulty": 1,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-025.json"
+  },
+  {
+    "task_id": "PR100-026",
+    "family": "availability",
+    "difficulty": 4,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-026.json"
+  },
+  {
+    "task_id": "PR100-027",
+    "family": "expenses",
+    "difficulty": 1,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-027.json"
+  },
+  {
+    "task_id": "PR100-028",
+    "family": "procurement",
+    "difficulty": 3,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-028.json"
+  },
+  {
+    "task_id": "PR100-029",
+    "family": "procurement",
+    "difficulty": 3,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-029.json"
+  },
+  {
+    "task_id": "PR100-030",
+    "family": "document_edits",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-030.json"
+  },
+  {
+    "task_id": "PR100-031",
+    "family": "dependency_schedule",
+    "difficulty": 5,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-031.json"
+  },
+  {
+    "task_id": "PR100-032",
+    "family": "receivables",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-032.json"
+  },
+  {
+    "task_id": "PR100-033",
+    "family": "deduplication",
+    "difficulty": 1,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-033.json"
+  },
+  {
+    "task_id": "PR100-034",
+    "family": "deduplication",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-034.json"
+  },
+  {
+    "task_id": "PR100-035",
+    "family": "receivables",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-035.json"
+  },
+  {
+    "task_id": "PR100-036",
+    "family": "dependency_schedule",
+    "difficulty": 2,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-036.json"
+  },
+  {
+    "task_id": "PR100-037",
+    "family": "availability",
+    "difficulty": 5,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-037.json"
+  },
+  {
+    "task_id": "PR100-038",
+    "family": "dependency_schedule",
+    "difficulty": 2,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-038.json"
+  },
+  {
+    "task_id": "PR100-039",
+    "family": "sales",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-039.json"
+  },
+  {
+    "task_id": "PR100-040",
+    "family": "service_queue",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": false,
+    "file": "cases/PR100-040.json"
+  },
+  {
+    "task_id": "PR100-041",
+    "family": "service_queue",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-041.json"
+  },
+  {
+    "task_id": "PR100-042",
+    "family": "allocation",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": false,
+    "file": "cases/PR100-042.json"
+  },
+  {
+    "task_id": "PR100-043",
+    "family": "procurement",
+    "difficulty": 5,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-043.json"
+  },
+  {
+    "task_id": "PR100-044",
+    "family": "deduplication",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-044.json"
+  },
+  {
+    "task_id": "PR100-045",
+    "family": "dependency_schedule",
+    "difficulty": 3,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-045.json"
+  },
+  {
+    "task_id": "PR100-046",
+    "family": "sales",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-046.json"
+  },
+  {
+    "task_id": "PR100-047",
+    "family": "dependency_schedule",
+    "difficulty": 3,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-047.json"
+  },
+  {
+    "task_id": "PR100-048",
+    "family": "procurement",
+    "difficulty": 4,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-048.json"
+  },
+  {
+    "task_id": "PR100-049",
+    "family": "receivables",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-049.json"
+  },
+  {
+    "task_id": "PR100-050",
+    "family": "allocation",
+    "difficulty": 1,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-050.json"
+  },
+  {
+    "task_id": "PR100-051",
+    "family": "dependency_schedule",
+    "difficulty": 4,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": false,
+    "file": "cases/PR100-051.json"
+  },
+  {
+    "task_id": "PR100-052",
+    "family": "expenses",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-052.json"
+  },
+  {
+    "task_id": "PR100-053",
+    "family": "document_edits",
+    "difficulty": 1,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-053.json"
+  },
+  {
+    "task_id": "PR100-054",
+    "family": "deduplication",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-054.json"
+  },
+  {
+    "task_id": "PR100-055",
+    "family": "receivables",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-055.json"
+  },
+  {
+    "task_id": "PR100-056",
+    "family": "sales",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-056.json"
+  },
+  {
+    "task_id": "PR100-057",
+    "family": "service_queue",
+    "difficulty": 1,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-057.json"
+  },
+  {
+    "task_id": "PR100-058",
+    "family": "document_edits",
+    "difficulty": 1,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-058.json"
+  },
+  {
+    "task_id": "PR100-059",
+    "family": "availability",
+    "difficulty": 3,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-059.json"
+  },
+  {
+    "task_id": "PR100-060",
+    "family": "allocation",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": false,
+    "file": "cases/PR100-060.json"
+  },
+  {
+    "task_id": "PR100-061",
+    "family": "document_edits",
+    "difficulty": 2,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-061.json"
+  },
+  {
+    "task_id": "PR100-062",
+    "family": "deduplication",
+    "difficulty": 1,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-062.json"
+  },
+  {
+    "task_id": "PR100-063",
+    "family": "deduplication",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-063.json"
+  },
+  {
+    "task_id": "PR100-064",
+    "family": "deduplication",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-064.json"
+  },
+  {
+    "task_id": "PR100-065",
+    "family": "receivables",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-065.json"
+  },
+  {
+    "task_id": "PR100-066",
+    "family": "procurement",
+    "difficulty": 2,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-066.json"
+  },
+  {
+    "task_id": "PR100-067",
+    "family": "allocation",
+    "difficulty": 5,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": false,
+    "file": "cases/PR100-067.json"
+  },
+  {
+    "task_id": "PR100-068",
+    "family": "service_queue",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-068.json"
+  },
+  {
+    "task_id": "PR100-069",
+    "family": "deduplication",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-069.json"
+  },
+  {
+    "task_id": "PR100-070",
+    "family": "availability",
+    "difficulty": 4,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-070.json"
+  },
+  {
+    "task_id": "PR100-071",
+    "family": "sales",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-071.json"
+  },
+  {
+    "task_id": "PR100-072",
+    "family": "document_edits",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-072.json"
+  },
+  {
+    "task_id": "PR100-073",
+    "family": "service_queue",
+    "difficulty": 1,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-073.json"
+  },
+  {
+    "task_id": "PR100-074",
+    "family": "sales",
+    "difficulty": 1,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-074.json"
+  },
+  {
+    "task_id": "PR100-075",
+    "family": "dependency_schedule",
+    "difficulty": 1,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-075.json"
+  },
+  {
+    "task_id": "PR100-076",
+    "family": "deduplication",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-076.json"
+  },
+  {
+    "task_id": "PR100-077",
+    "family": "dependency_schedule",
+    "difficulty": 1,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-077.json"
+  },
+  {
+    "task_id": "PR100-078",
+    "family": "availability",
+    "difficulty": 2,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-078.json"
+  },
+  {
+    "task_id": "PR100-079",
+    "family": "receivables",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-079.json"
+  },
+  {
+    "task_id": "PR100-080",
+    "family": "receivables",
+    "difficulty": 1,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-080.json"
+  },
+  {
+    "task_id": "PR100-081",
+    "family": "receivables",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-081.json"
+  },
+  {
+    "task_id": "PR100-082",
+    "family": "receivables",
+    "difficulty": 1,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-082.json"
+  },
+  {
+    "task_id": "PR100-083",
+    "family": "sales",
+    "difficulty": 1,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-083.json"
+  },
+  {
+    "task_id": "PR100-084",
+    "family": "sales",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-084.json"
+  },
+  {
+    "task_id": "PR100-085",
+    "family": "service_queue",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-085.json"
+  },
+  {
+    "task_id": "PR100-086",
+    "family": "service_queue",
+    "difficulty": 5,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-086.json"
+  },
+  {
+    "task_id": "PR100-087",
+    "family": "procurement",
+    "difficulty": 4,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-087.json"
+  },
+  {
+    "task_id": "PR100-088",
+    "family": "expenses",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-088.json"
+  },
+  {
+    "task_id": "PR100-089",
+    "family": "document_edits",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-089.json"
+  },
+  {
+    "task_id": "PR100-090",
+    "family": "document_edits",
+    "difficulty": 2,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-090.json"
+  },
+  {
+    "task_id": "PR100-091",
+    "family": "procurement",
+    "difficulty": 5,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-091.json"
+  },
+  {
+    "task_id": "PR100-092",
+    "family": "sales",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-092.json"
+  },
+  {
+    "task_id": "PR100-093",
+    "family": "dependency_schedule",
+    "difficulty": 5,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-093.json"
+  },
+  {
+    "task_id": "PR100-094",
+    "family": "allocation",
+    "difficulty": 4,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_after_partial_repair",
+    "B_initial_data_exact": false,
+    "file": "cases/PR100-094.json"
+  },
+  {
+    "task_id": "PR100-095",
+    "family": "service_queue",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-095.json"
+  },
+  {
+    "task_id": "PR100-096",
+    "family": "expenses",
+    "difficulty": 2,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-096.json"
+  },
+  {
+    "task_id": "PR100-097",
+    "family": "availability",
+    "difficulty": 1,
+    "profile": "small",
+    "effort": "low",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-097.json"
+  },
+  {
+    "task_id": "PR100-098",
+    "family": "service_queue",
+    "difficulty": 4,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-098.json"
+  },
+  {
+    "task_id": "PR100-099",
+    "family": "procurement",
+    "difficulty": 2,
+    "profile": "complex",
+    "effort": "high",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-099.json"
+  },
+  {
+    "task_id": "PR100-100",
+    "family": "expenses",
+    "difficulty": 3,
+    "profile": "normal",
+    "effort": "medium",
+    "B_category": "accepted_unchanged",
+    "B_initial_data_exact": true,
+    "file": "cases/PR100-100.json"
+  }
+]

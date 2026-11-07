@@ -1,0 +1,86 @@
+{
+  "roles": {
+    "PRACTICAL:REVIEW:medium": {
+      "input_tokens": 937721,
+      "cached_input_tokens": 466432,
+      "output_tokens": 3823,
+      "reasoning_output_tokens": 2154
+    },
+    "SHARED_DIALOGUE:INITIAL_REQUEST:medium": {
+      "input_tokens": 771029,
+      "cached_input_tokens": 473088,
+      "output_tokens": 20192,
+      "reasoning_output_tokens": 1541
+    },
+    "SHARED_DIALOGUE:OWNER_REPLY_AND_DESIGN:medium": {
+      "input_tokens": 876280,
+      "cached_input_tokens": 654080,
+      "output_tokens": 26247,
+      "reasoning_output_tokens": 2388
+    },
+    "SOL_CONTINUE:EXECUTE:medium": {
+      "input_tokens": 965616,
+      "cached_input_tokens": 11648,
+      "output_tokens": 46600,
+      "reasoning_output_tokens": 6963
+    },
+    "PRACTICAL:REVIEW:high": {
+      "input_tokens": 484839,
+      "cached_input_tokens": 317184,
+      "output_tokens": 12195,
+      "reasoning_output_tokens": 7255
+    },
+    "SHARED_DIALOGUE:INITIAL_REQUEST:high": {
+      "input_tokens": 453272,
+      "cached_input_tokens": 340480,
+      "output_tokens": 13619,
+      "reasoning_output_tokens": 4836
+    },
+    "SHARED_DIALOGUE:OWNER_REPLY_AND_DESIGN:high": {
+      "input_tokens": 462879,
+      "cached_input_tokens": 358016,
+      "output_tokens": 20104,
+      "reasoning_output_tokens": 6519
+    },
+    "SOL_CONTINUE:EXECUTE:high": {
+      "input_tokens": 694730,
+      "cached_input_tokens": 158336,
+      "output_tokens": 43424,
+      "reasoning_output_tokens": 21035
+    },
+    "SHARED_DIALOGUE:INITIAL_REQUEST:low": {
+      "input_tokens": 185351,
+      "cached_input_tokens": 101376,
+      "output_tokens": 3696,
+      "reasoning_output_tokens": 0
+    },
+    "SHARED_DIALOGUE:OWNER_REPLY_AND_DESIGN:low": {
+      "input_tokens": 209277,
+      "cached_input_tokens": 155008,
+      "output_tokens": 5488,
+      "reasoning_output_tokens": 74
+    },
+    "SOL_CONTINUE:EXECUTE:low": {
+      "input_tokens": 230502,
+      "cached_input_tokens": 0,
+      "output_tokens": 5302,
+      "reasoning_output_tokens": 301
+    }
+  },
+  "role_reported_usage_Credits": {
+    "PRACTICAL:REVIEW:medium": "25.68628",
+    "SHARED_DIALOGUE:INITIAL_REQUEST:medium": "21.12777",
+    "SHARED_DIALOGUE:OWNER_REPLY_AND_DESIGN:medium": "19.30695",
+    "SOL_CONTINUE:EXECUTE:medium": "59.37752",
+    "PRACTICAL:REVIEW:high": "12.22446",
+    "SHARED_DIALOGUE:INITIAL_REQUEST:high": "9.89555",
+    "SHARED_DIALOGUE:OWNER_REPLY_AND_DESIGN:high": "11.16419",
+    "SOL_CONTINUE:EXECUTE:high": "38.07154",
+    "SHARED_DIALOGUE:INITIAL_REQUEST:low": "5.37619",
+    "SHARED_DIALOGUE:OWNER_REPLY_AND_DESIGN:low": "4.47297",
+    "SOL_CONTINUE:EXECUTE:low": "12.85060"
+  },
+  "cache_subset_of_input": true,
+  "reasoning_subset_of_output": true,
+  "preparation_chat_Credits": null
+}

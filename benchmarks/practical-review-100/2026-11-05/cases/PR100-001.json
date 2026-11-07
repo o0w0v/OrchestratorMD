@@ -1,0 +1,548 @@
+{
+  "task_id": "PR100-001",
+  "metadata": {
+    "task_id": "PR100-001",
+    "family": "allocation",
+    "designed_difficulty": 1,
+    "variant": 1
+  },
+  "public_job": {
+    "task_id": "PR100-001",
+    "initial": "在庫が足りない注文もあって、何をどこまで引き当てるか整理したいです。担当者が使う明細と、責任者に共有する状況が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n取消またはdue_day>as_of_dayはEXCLUDED、allocated/backorder/valueは0。その他をpriority昇順、due_day昇順、id昇順で処理する。\nSKUごとにunitsを初期残数とし、利用可能数=max(残数-reserve,0)。allocated=min(order.units,利用可能数)//lot*lot。残数をallocatedだけ減らす。backorder=order.units-allocated、value=allocated*100。\n対象はbackorder=0ならFULFILLED、allocated=0ならBACKORDER、その他PARTIAL。detailsは全orderをid順。processing_orderは対象処理順。stocksはSKU順にremainingを返す。totalsは全detailsのallocated/backorder/valueの合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に引当・不足・残在庫の全体像と、未充足の注文・守った優先順。\n資料は以下のJSONです。\n{\n  \"as_of_day\": 30,\n  \"stocks\": [\n    {\n      \"sku\": \"S1\",\n      \"units\": 15,\n      \"reserve\": 0\n    },\n    {\n      \"sku\": \"S2\",\n      \"units\": 10,\n      \"reserve\": 0\n    },\n    {\n      \"sku\": \"S3\",\n      \"units\": 9,\n      \"reserve\": 0\n    }\n  ],\n  \"orders\": [\n    {\n      \"id\": \"O001\",\n      \"sku\": \"S1\",\n      \"units\": 7,\n      \"lot\": 1,\n      \"priority\": 3,\n      \"due_day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"O002\",\n      \"sku\": \"S2\",\n      \"units\": 7,\n      \"lot\": 1,\n      \"priority\": 2,\n      \"due_day\": 30,\n      \"cancelled\": false\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"allocated\": {\"type\": \"integer\"}, \"backorder\": {\"type\": \"integer\"}, \"value\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"allocated\", \"backorder\", \"value\", \"state\"], \"additionalProperties\": false}}, \"processing_order\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"stocks\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"sku\": {\"type\": \"string\"}, \"remaining\": {\"type\": \"integer\"}}, \"required\": [\"sku\", \"remaining\"], \"additionalProperties\": false}}, \"totals\": {\"type\": \"object\", \"properties\": {\"allocated\": {\"type\": \"integer\"}, \"backorder\": {\"type\": \"integer\"}, \"value\": {\"type\": \"integer\"}}, \"required\": [\"allocated\", \"backorder\", \"value\"], \"additionalProperties\": false}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"processing_order\", \"stocks\", \"totals\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "as_of_day": 30,
+      "stocks": [
+        {
+          "sku": "S1",
+          "units": 15,
+          "reserve": 0
+        },
+        {
+          "sku": "S2",
+          "units": 10,
+          "reserve": 0
+        },
+        {
+          "sku": "S3",
+          "units": 9,
+          "reserve": 0
+        }
+      ],
+      "orders": [
+        {
+          "id": "O001",
+          "sku": "S1",
+          "units": 7,
+          "lot": 1,
+          "priority": 3,
+          "due_day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "O002",
+          "sku": "S2",
+          "units": 7,
+          "lot": 1,
+          "priority": 2,
+          "due_day": 30,
+          "cancelled": false
+        }
+      ]
+    },
+    "business_rules": [
+      "取消またはdue_day>as_of_dayはEXCLUDED、allocated/backorder/valueは0。その他をpriority昇順、due_day昇順、id昇順で処理する。",
+      "SKUごとにunitsを初期残数とし、利用可能数=max(残数-reserve,0)。allocated=min(order.units,利用可能数)//lot*lot。残数をallocatedだけ減らす。backorder=order.units-allocated、value=allocated*100。",
+      "対象はbackorder=0ならFULFILLED、allocated=0ならBACKORDER、その他PARTIAL。detailsは全orderをid順。processing_orderは対象処理順。stocksはSKU順にremainingを返す。totalsは全detailsのallocated/backorder/valueの合計。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "allocated": {
+                "type": "integer"
+              },
+              "backorder": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "allocated",
+              "backorder",
+              "value",
+              "state"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "processing_order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stocks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              },
+              "remaining": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "sku",
+              "remaining"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "totals": {
+          "type": "object",
+          "properties": {
+            "allocated": {
+              "type": "integer"
+            },
+            "backorder": {
+              "type": "integer"
+            },
+            "value": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "allocated",
+            "backorder",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "processing_order",
+        "stocks",
+        "totals",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "normal",
+    "reasoning_effort": "medium"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "在庫が足りない注文もあって、何をどこまで引き当てるか整理したいです。担当者が使う明細と、責任者に共有する状況が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まず資料をこのチャットに貼り付けるか、添付してください。このチャットでいただく内容だけを使い、必要事項を確認してから、明細と共有用の状況整理の形を相談しましょう。\n\n最初に、次の3点を教えてください。資料から分かることは、別途回答しなくて大丈夫です。\n\n- **対象と時点**：どの注文・商品が対象で、いつ時点の在庫を使いますか。入荷予定も引当対象に含めますか。\n- **引当のルール**：納期順・受注順・顧客優先など、決まった優先順位はありますか。一部数量だけの引当や分納は可能ですか。\n- **それぞれの用途**：担当者は明細を見て何を行い、責任者には何を判断してもらいたいですか。\n\n形のたたき台としては、担当者向けは「注文ごとの必要数・引当数・不足数・対応事項」、責任者向けは「不足の全体像・納期への影響・判断が必要な事項」を想定しています。資料を確認して、必要な項目と未確定事項を整理するところから始めます。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n取消またはdue_day>as_of_dayはEXCLUDED、allocated/backorder/valueは0。その他をpriority昇順、due_day昇順、id昇順で処理する。\nSKUごとにunitsを初期残数とし、利用可能数=max(残数-reserve,0)。allocated=min(order.units,利用可能数)//lot*lot。残数をallocatedだけ減らす。backorder=order.units-allocated、value=allocated*100。\n対象はbackorder=0ならFULFILLED、allocated=0ならBACKORDER、その他PARTIAL。detailsは全orderをid順。processing_orderは対象処理順。stocksはSKU順にremainingを返す。totalsは全detailsのallocated/backorder/valueの合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に引当・不足・残在庫の全体像と、未充足の注文・守った優先順。\n資料は以下のJSONです。\n{\n  \"as_of_day\": 30,\n  \"stocks\": [\n    {\n      \"sku\": \"S1\",\n      \"units\": 15,\n      \"reserve\": 0\n    },\n    {\n      \"sku\": \"S2\",\n      \"units\": 10,\n      \"reserve\": 0\n    },\n    {\n      \"sku\": \"S3\",\n      \"units\": 9,\n      \"reserve\": 0\n    }\n  ],\n  \"orders\": [\n    {\n      \"id\": \"O001\",\n      \"sku\": \"S1\",\n      \"units\": 7,\n      \"lot\": 1,\n      \"priority\": 3,\n      \"due_day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"O002\",\n      \"sku\": \"S2\",\n      \"units\": 7,\n      \"lot\": 1,\n      \"priority\": 2,\n      \"due_day\": 30,\n      \"cancelled\": false\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"allocated\": {\"type\": \"integer\"}, \"backorder\": {\"type\": \"integer\"}, \"value\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"allocated\", \"backorder\", \"value\", \"state\"], \"additionalProperties\": false}}, \"processing_order\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"stocks\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"sku\": {\"type\": \"string\"}, \"remaining\": {\"type\": \"integer\"}}, \"required\": [\"sku\", \"remaining\"], \"additionalProperties\": false}}, \"totals\": {\"type\": \"object\", \"properties\": {\"allocated\": {\"type\": \"integer\"}, \"backorder\": {\"type\": \"integer\"}, \"value\": {\"type\": \"integer\"}}, \"required\": [\"allocated\", \"backorder\", \"value\"], \"additionalProperties\": false}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"processing_order\", \"stocks\", \"totals\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人は、注文ごとの引当結果を確認する担当者と、全体の充足状況や対応判断が必要な注文を把握する責任者を想定しています。担当者はdetailsで各注文の引当数・不足数・金額・状態を確認し、processing_orderで処理の優先順、stocksでSKU別の残在庫を追える形です。責任者は同じ明細に添える短いreport_mdから、全体の結論と注意すべき点を把握できるようにします。\n\n作成時は、まず取消・期日の条件で対象を分け、対象注文をpriority、due_day、idの昇順で処理します。その順にSKUごとの残数、reserve、lotを反映して引当を計算し、状態を判定します。結果の明細は処理順とは別にid順で並べ、残在庫と合計値まで整合していることを確認して、指定の全フィールドを持つJSONにまとめる方針です。\n\nreport_mdでは、引当・不足・残在庫の全体像と、実際に未充足となった注文、守った優先順を主要な数値や必要なIDに結び付けて説明します。不足がなければその事実を伝え、残在庫を不足と混同したり、連絡・追加手配などが完了したと書いたりはしません。valueはご指定の計算値として扱い、通貨単位は付けません。\n\n今回の資料を作るうえで、追加確認が必要な未確定条件は見当たりません。現時点では計算や成果物の作成には着手していません。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-001",
+      "arm": "SOL_CONTINUE",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "O001",
+            "allocated": 7,
+            "backorder": 0,
+            "value": 700,
+            "state": "FULFILLED"
+          },
+          {
+            "id": "O002",
+            "allocated": 7,
+            "backorder": 0,
+            "value": 700,
+            "state": "FULFILLED"
+          }
+        ],
+        "processing_order": [
+          "O002",
+          "O001"
+        ],
+        "stocks": [
+          {
+            "sku": "S1",
+            "remaining": 8
+          },
+          {
+            "sku": "S2",
+            "remaining": 3
+          },
+          {
+            "sku": "S3",
+            "remaining": 9
+          }
+        ],
+        "totals": {
+          "allocated": 14,
+          "backorder": 0,
+          "value": 1400
+        },
+        "report_md": "基準日30の対象注文2件は、合計14個を全数引当でき、いずれもFULFILLEDです。不足は0個、未充足の注文はなく、valueの合計は1,400です。\n\n処理はpriority昇順に従い、O002（priority 2）→O001（priority 3）の順で実施しました。両注文のdue_dayは30で、除外注文はありません。\n\n引当後の残在庫はS1が8個、S2が3個、S3が9個の合計20個です。S3は今回の注文対象ではなく、初期在庫9個がそのまま残っています。今回の結果に不足対応を要する注文はありません。これは引当結果であり、出荷完了を示すものではありません。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "O001",
+            "allocated": 7,
+            "backorder": 0,
+            "value": 700,
+            "state": "FULFILLED"
+          },
+          {
+            "id": "O002",
+            "allocated": 7,
+            "backorder": 0,
+            "value": 700,
+            "state": "FULFILLED"
+          }
+        ],
+        "processing_order": [
+          "O002",
+          "O001"
+        ],
+        "stocks": [
+          {
+            "sku": "S1",
+            "remaining": 8
+          },
+          {
+            "sku": "S2",
+            "remaining": 3
+          },
+          {
+            "sku": "S3",
+            "remaining": 9
+          }
+        ],
+        "totals": {
+          "allocated": 14,
+          "backorder": 0,
+          "value": 1400
+        },
+        "report_md": "基準日30の対象注文2件は、合計14個を全数引当でき、いずれもFULFILLEDです。不足は0個、未充足の注文はなく、valueの合計は1,400です。\n\n処理はpriority昇順に従い、O002（priority 2）→O001（priority 3）の順で実施しました。両注文のdue_dayは30で、除外注文はありません。\n\n引当後の残在庫はS1が8個、S2が3個、S3が9個の合計20個です。S3は今回の注文対象ではなく、初期在庫9個がそのまま残っています。今回の結果に不足対応を要する注文はありません。これは引当結果であり、出荷完了を示すものではありません。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.58590",
+      "incremental_credits": "0.99725",
+      "operating_total_credits": "1.58315",
+      "shared_seconds": 31.843999999924563,
+      "incremental_active_seconds": 13.35999999998603,
+      "total_active_seconds": 45.20399999991059,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T14:15:04.103982+00:00",
+        "text": "{\n  \"details\": [\n    {\n      \"id\": \"O001\",\n      \"allocated\": 7,\n      \"backorder\": 0,\n      \"value\": 700,\n      \"state\": \"FULFILLED\"\n    },\n    {\n      \"id\": \"O002\",\n      \"allocated\": 7,\n      \"backorder\": 0,\n      \"value\": 700,\n      \"state\": \"FULFILLED\"\n    }\n  ],\n  \"processing_order\": [\n    \"O002\",\n    \"O001\"\n  ],\n  \"stocks\": [\n    {\n      \"sku\": \"S1\",\n      \"remaining\": 8\n    },\n    {\n      \"sku\": \"S2\",\n      \"remaining\": 3\n    },\n    {\n      \"sku\": \"S3\",\n      \"remaining\": 9\n    }\n  ],\n  \"totals\": {\n    \"allocated\": 14,\n    \"backorder\": 0,\n    \"value\": 1400\n  },\n  \"report_md\": \"基準日30の対象注文2件は、合計14個を全数引当でき、いずれもFULFILLEDです。不足は0個、未充足の注文はなく、valueの合計は1,400です。\\n\\n処理はpriority昇順に従い、O002（priority 2）→O001（priority 3）の順で実施しました。両注文のdue_dayは30で、除外注文はありません。\\n\\n引当後の残在庫はS1が8個、S2が3個、S3が9個の合計20個です。S3は今回の注文対象ではなく、初期在庫9個がそのまま残っています。今回の結果に不足対応を要する注文はありません。これは引当結果であり、出荷完了を示すものではありません。\"\n}",
+        "value": {
+          "details": [
+            {
+              "id": "O001",
+              "allocated": 7,
+              "backorder": 0,
+              "value": 700,
+              "state": "FULFILLED"
+            },
+            {
+              "id": "O002",
+              "allocated": 7,
+              "backorder": 0,
+              "value": 700,
+              "state": "FULFILLED"
+            }
+          ],
+          "processing_order": [
+            "O002",
+            "O001"
+          ],
+          "stocks": [
+            {
+              "sku": "S1",
+              "remaining": 8
+            },
+            {
+              "sku": "S2",
+              "remaining": 3
+            },
+            {
+              "sku": "S3",
+              "remaining": 9
+            }
+          ],
+          "totals": {
+            "allocated": 14,
+            "backorder": 0,
+            "value": 1400
+          },
+          "report_md": "基準日30の対象注文2件は、合計14個を全数引当でき、いずれもFULFILLEDです。不足は0個、未充足の注文はなく、valueの合計は1,400です。\n\n処理はpriority昇順に従い、O002（priority 2）→O001（priority 3）の順で実施しました。両注文のdue_dayは30で、除外注文はありません。\n\n引当後の残在庫はS1が8個、S2が3個、S3が9個の合計20個です。S3は今回の注文対象ではなく、初期在庫9個がそのまま残っています。今回の結果に不足対応を要する注文はありません。これは引当結果であり、出荷完了を示すものではありません。"
+        },
+        "public_schema_pass": true,
+        "seconds": 13.35999999998603,
+        "credits": "0.99725",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-001",
+      "arm": "PRACTICAL",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "allocated": 7,
+            "backorder": 0,
+            "id": "O001",
+            "state": "FULFILLED",
+            "value": 700
+          },
+          {
+            "allocated": 7,
+            "backorder": 0,
+            "id": "O002",
+            "state": "FULFILLED",
+            "value": 700
+          }
+        ],
+        "processing_order": [
+          "O002",
+          "O001"
+        ],
+        "report_md": "引当状況のまとめ：\n全注文（O001, O002）について在庫が充足しており、未充足の注文（backorder）はありません。引当総数は14、欠品は0です。処理は優先順位（priority昇順）に基づき、O002を優先して実施しました。現在の残在庫は、S1: 8、S2: 3、S3: 9です。",
+        "stocks": [
+          {
+            "remaining": 8,
+            "sku": "S1"
+          },
+          {
+            "remaining": 3,
+            "sku": "S2"
+          },
+          {
+            "remaining": 9,
+            "sku": "S3"
+          }
+        ],
+        "totals": {
+          "allocated": 14,
+          "backorder": 0,
+          "value": 1400
+        }
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "allocated": 7,
+            "backorder": 0,
+            "id": "O001",
+            "state": "FULFILLED",
+            "value": 700
+          },
+          {
+            "allocated": 7,
+            "backorder": 0,
+            "id": "O002",
+            "state": "FULFILLED",
+            "value": 700
+          }
+        ],
+        "processing_order": [
+          "O002",
+          "O001"
+        ],
+        "report_md": "引当状況のまとめ：\n全注文（O001, O002）について在庫が充足しており、未充足の注文（backorder）はありません。引当総数は14、欠品は0です。処理は優先順位（priority昇順）に基づき、O002を優先して実施しました。現在の残在庫は、S1: 8、S2: 3、S3: 9です。",
+        "stocks": [
+          {
+            "remaining": 8,
+            "sku": "S1"
+          },
+          {
+            "remaining": 3,
+            "sku": "S2"
+          },
+          {
+            "remaining": 9,
+            "sku": "S3"
+          }
+        ],
+        "totals": {
+          "allocated": 14,
+          "backorder": 0,
+          "value": 1400
+        }
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.58590",
+      "incremental_credits": "0.27275",
+      "operating_total_credits": "0.85865",
+      "shared_seconds": 31.843999999924563,
+      "incremental_active_seconds": 180.06299999996554,
+      "total_active_seconds": 211.9069999998901,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T14:18:04.982796+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 5.687999999965541,
+          "credits": "0.27275",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 116.23499999998603,
+        "usage": {
+          "prompt_eval_count": 1989,
+          "eval_count": 4314,
+          "prompt_eval_duration": 2691090000,
+          "eval_duration": 113436481000,
+          "total_duration": 116157927400
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "O001",
+        "allocated": 7,
+        "backorder": 0,
+        "value": 700,
+        "state": "FULFILLED"
+      },
+      {
+        "id": "O002",
+        "allocated": 7,
+        "backorder": 0,
+        "value": 700,
+        "state": "FULFILLED"
+      }
+    ],
+    "processing_order": [
+      "O002",
+      "O001"
+    ],
+    "stocks": [
+      {
+        "sku": "S1",
+        "remaining": 8
+      },
+      {
+        "sku": "S2",
+        "remaining": 3
+      },
+      {
+        "sku": "S3",
+        "remaining": 9
+      }
+    ],
+    "totals": {
+      "allocated": 14,
+      "backorder": 0,
+      "value": 1400
+    }
+  },
+  "scores": [
+    {
+      "task_id": "PR100-001",
+      "arm": "SOL_CONTINUE",
+      "family": "allocation",
+      "designed_difficulty": 1,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.58315",
+      "total_active_seconds": 45.20399999991059,
+      "report_md": "基準日30の対象注文2件は、合計14個を全数引当でき、いずれもFULFILLEDです。不足は0個、未充足の注文はなく、valueの合計は1,400です。\n\n処理はpriority昇順に従い、O002（priority 2）→O001（priority 3）の順で実施しました。両注文のdue_dayは30で、除外注文はありません。\n\n引当後の残在庫はS1が8個、S2が3個、S3が9個の合計20個です。S3は今回の注文対象ではなく、初期在庫9個がそのまま残っています。今回の結果に不足対応を要する注文はありません。これは引当結果であり、出荷完了を示すものではありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-001",
+      "arm": "PRACTICAL",
+      "family": "allocation",
+      "designed_difficulty": 1,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "0.85865",
+      "total_active_seconds": 211.9069999998901,
+      "report_md": "引当状況のまとめ：\n全注文（O001, O002）について在庫が充足しており、未充足の注文（backorder）はありません。引当総数は14、欠品は0です。処理は優先順位（priority昇順）に基づき、O002を優先して実施しました。現在の残在庫は、S1: 8、S2: 3、S3: 9です。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

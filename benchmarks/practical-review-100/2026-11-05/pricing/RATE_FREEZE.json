@@ -1,0 +1,31 @@
+{
+  "canonical_url": "https://learn.chatgpt.com/docs/pricing",
+  "request_url": "https://learn.chatgpt.com/docs/pricing.md",
+  "fetched_and_verified_at_utc": "2026-11-03T15:58:51.887781+00:00",
+  "raw_sha256": "a0c502cccae440c42e790e4fec0a3733d670328dce9eb2d3904d1bce647cb246",
+  "rates": {
+    "gpt-6.1-sol": {
+      "input": "50",
+      "cached_input": "2.5",
+      "output": "250",
+      "denominator": 1000000,
+      "speed_mode": "Standard"
+    },
+    "gpt-6.1-terra": {
+      "input": "25",
+      "cached_input": "1.25",
+      "output": "125",
+      "denominator": 1000000,
+      "speed_mode": "Standard"
+    },
+    "gpt-6-luna": {
+      "input": "2.5",
+      "cached_input": "0.25",
+      "output": "12.5",
+      "denominator": 1000000,
+      "speed_mode": "Standard"
+    }
+  },
+  "no_separate_cache_write_credit_charge": true,
+  "API_USD_billing": false
+}

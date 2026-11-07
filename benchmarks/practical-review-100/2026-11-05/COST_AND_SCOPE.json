@@ -1,0 +1,47 @@
+{
+  "cases": 100,
+  "workflows": 200,
+  "arms": [
+    "SOL_CONTINUE",
+    "PRACTICAL"
+  ],
+  "profiles": {
+    "normal": 56,
+    "complex": 30,
+    "small": 14
+  },
+  "Cloud_calls_max": 500,
+  "Local_primary_max": 100,
+  "Local_physical_max": 200,
+  "Cloud_retry": 0,
+  "research_model_calls": 0,
+  "estimated_Credits": [
+    200,
+    400
+  ],
+  "next_Cloud_monitor_STOP_Credits": 600,
+  "per_task_next_cloud_guard_Credits": 12,
+  "not_hard_cap": true,
+  "RAM_guard_GiB": 6,
+  "disk_guard_GiB": 5,
+  "estimated_wall_hours": [
+    8,
+    14
+  ],
+  "hand_repair_seconds": null,
+  "preparation_chat_Credits": null,
+  "production_changes": false,
+  "publish_GitHub": false,
+  "resumed_after_user_authorization": true,
+  "reused_Cloud_calls": 198,
+  "completed_idle_retry_recovery_allowed": true,
+  "unknown_retry_calls_max": 10,
+  "uncertainty_budget_reserve_Credits_per_call": 12,
+  "study_total_Credits": null,
+  "reported_usage_only_cost_comparison": true,
+  "historical_failed_calls": 1,
+  "reported_usage_before_Credits": "70.66394",
+  "historical_unknown_cost_calls_at_least": 2,
+  "user_expanded_scope": "残り6件の設計を終えて100件比較を再開",
+  "Cloud_calls_max_includes_historical_failed_attempt": true
+}

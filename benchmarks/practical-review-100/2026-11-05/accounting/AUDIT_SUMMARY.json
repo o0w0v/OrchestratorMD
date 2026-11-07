@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-11-04T20:43:14.926259+00:00",
+  "passed": true,
+  "checks": 14304,
+  "cloud_calls": 387,
+  "local_physical": 86,
+  "tool_commands": 0,
+  "OS_read_isolation_proven": false,
+  "model_calls_by_auditor": 0,
+  "billing_complete": false,
+  "unmeasured_cost_calls": [
+    "source-file:practical-review-100-20261104/run-001/accounting/invocations/49c5e68a-1ad7-45e3-8440-bf1136d78eb8",
+    "source-file:practical-review-100-20261104-recovery-001/run-001/accounting/invocations/17c327a3-e515-4ea9-bd20-e3b73a51cc8a"
+  ],
+  "historical_failed_calls": [
+    {
+      "invocation_id": "17c327a3-e515-4ea9-bd20-e3b73a51cc8a",
+      "capture_path": "source-file:practical-review-100-20261104-recovery-001/run-001/accounting/invocations/17c327a3-e515-4ea9-bd20-e3b73a51cc8a",
+      "task_id": "PR100-095",
+      "arm": "SHARED_DIALOGUE",
+      "stage": "INITIAL_REQUEST",
+      "credits": null,
+      "billing_complete": false,
+      "cause": "historical_model_capacity_failure_without_completed_response",
+      "completed_turns": 0,
+      "human_authorized_new_attempt": true
+    }
+  ]
+}

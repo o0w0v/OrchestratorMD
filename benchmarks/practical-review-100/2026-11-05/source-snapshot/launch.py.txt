@@ -1,0 +1,9 @@
+"""Launch once. Does not resume, retry or replace existing run evidence."""
+import subprocess,sys
+from runtime import *
+f=verify();assert not (RUN/'LAUNCH.json').exists() and not (RUN/'EXECUTION_STARTED.json').exists(),'Recovery one-shot already consumed';RUN.mkdir(exist_ok=True);assert (ROOT/'RECOVERY_IMPORT.json').exists()
+argv=[sys.executable,'-X','utf8','-B',str(ROOT/'runner.py')]
+with (RUN/'controller.stdout.log').open('xb') as o,(RUN/'controller.stderr.log').open('xb') as e:
+ p=subprocess.Popen(argv,cwd=ROOT,stdout=o,stderr=e,creationflags=subprocess.CREATE_NO_WINDOW|subprocess.CREATE_NEW_PROCESS_GROUP)
+save(RUN/'LAUNCH.json',{'timestamp':now(),'pid':p.pid,'argv':argv,'freeze_sha256':sha(ROOT/'EXECUTION_FREEZE.json'),'authorization':f['human_authorization']})
+print(json.dumps({'pid':p.pid,'run':str(RUN),'freeze_sha256':sha(ROOT/'EXECUTION_FREEZE.json')}),flush=True)

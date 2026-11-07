@@ -1,0 +1,608 @@
+{
+  "task_id": "PR100-043",
+  "metadata": {
+    "task_id": "PR100-043",
+    "family": "procurement",
+    "designed_difficulty": 5,
+    "variant": 0
+  },
+  "public_job": {
+    "task_id": "PR100-043",
+    "initial": "必要なものを全部買うには予算が足りません。送料も考えて効果が高い組合せを選び、選んだ理由を責任者に短く伝えたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n各itemを整数qty=0..max_qtyで選ぶ。costはqty*priceの合計に、qty>0のitemがあるvendorのvendor_feesを各vendor1回だけ加える。cost<=budgetが必須。\nutility=qty*utilityの合計を最大化し、同点ならcost最小、さらに同点ならid昇順のqtyベクトルを辞書順で最大にする（先頭のqtyが大きいものを優先）。貪欲法の近似値ではなく厳密な最適解を返す。\nquantitiesは全itemのid順でid/qty。vendorsはV1,V2,V3順でfee（選択なしなら0）。totalsはcost/utility/remaining_budget。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に予算・使用額・効果の全体像と、選んだ数量・送料・同点規則の扱い。\n資料は以下のJSONです。\n{\n  \"budget\": 1400,\n  \"vendor_fees\": {\n    \"V1\": 200,\n    \"V2\": 300,\n    \"V3\": 100\n  },\n  \"items\": [\n    {\n      \"id\": \"B001\",\n      \"vendor\": \"V1\",\n      \"price\": 700,\n      \"utility\": 10,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B002\",\n      \"vendor\": \"V2\",\n      \"price\": 400,\n      \"utility\": 20,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B003\",\n      \"vendor\": \"V3\",\n      \"price\": 200,\n      \"utility\": 20,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B004\",\n      \"vendor\": \"V1\",\n      \"price\": 500,\n      \"utility\": 4,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B005\",\n      \"vendor\": \"V2\",\n      \"price\": 400,\n      \"utility\": 14,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B006\",\n      \"vendor\": \"V3\",\n      \"price\": 700,\n      \"utility\": 8,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B007\",\n      \"vendor\": \"V1\",\n      \"price\": 700,\n      \"utility\": 14,\n      \"max_qty\": 2\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"quantities\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"qty\": {\"type\": \"integer\"}}, \"required\": [\"id\", \"qty\"], \"additionalProperties\": false}}, \"vendors\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"vendor\": {\"type\": \"string\"}, \"fee\": {\"type\": \"integer\"}}, \"required\": [\"vendor\", \"fee\"], \"additionalProperties\": false}}, \"totals\": {\"type\": \"object\", \"properties\": {\"cost\": {\"type\": \"integer\"}, \"utility\": {\"type\": \"integer\"}, \"remaining_budget\": {\"type\": \"integer\"}}, \"required\": [\"cost\", \"utility\", \"remaining_budget\"], \"additionalProperties\": false}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"quantities\", \"vendors\", \"totals\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "budget": 1400,
+      "vendor_fees": {
+        "V1": 200,
+        "V2": 300,
+        "V3": 100
+      },
+      "items": [
+        {
+          "id": "B001",
+          "vendor": "V1",
+          "price": 700,
+          "utility": 10,
+          "max_qty": 2
+        },
+        {
+          "id": "B002",
+          "vendor": "V2",
+          "price": 400,
+          "utility": 20,
+          "max_qty": 2
+        },
+        {
+          "id": "B003",
+          "vendor": "V3",
+          "price": 200,
+          "utility": 20,
+          "max_qty": 2
+        },
+        {
+          "id": "B004",
+          "vendor": "V1",
+          "price": 500,
+          "utility": 4,
+          "max_qty": 2
+        },
+        {
+          "id": "B005",
+          "vendor": "V2",
+          "price": 400,
+          "utility": 14,
+          "max_qty": 2
+        },
+        {
+          "id": "B006",
+          "vendor": "V3",
+          "price": 700,
+          "utility": 8,
+          "max_qty": 2
+        },
+        {
+          "id": "B007",
+          "vendor": "V1",
+          "price": 700,
+          "utility": 14,
+          "max_qty": 2
+        }
+      ]
+    },
+    "business_rules": [
+      "各itemを整数qty=0..max_qtyで選ぶ。costはqty*priceの合計に、qty>0のitemがあるvendorのvendor_feesを各vendor1回だけ加える。cost<=budgetが必須。",
+      "utility=qty*utilityの合計を最大化し、同点ならcost最小、さらに同点ならid昇順のqtyベクトルを辞書順で最大にする（先頭のqtyが大きいものを優先）。貪欲法の近似値ではなく厳密な最適解を返す。",
+      "quantitiesは全itemのid順でid/qty。vendorsはV1,V2,V3順でfee（選択なしなら0）。totalsはcost/utility/remaining_budget。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "quantities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "qty": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "qty"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "vendors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "vendor": {
+                "type": "string"
+              },
+              "fee": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "vendor",
+              "fee"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "totals": {
+          "type": "object",
+          "properties": {
+            "cost": {
+              "type": "integer"
+            },
+            "utility": {
+              "type": "integer"
+            },
+            "remaining_budget": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "cost",
+            "utility",
+            "remaining_budget"
+          ],
+          "additionalProperties": false
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "quantities",
+        "vendors",
+        "totals",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "complex",
+    "reasoning_effort": "high"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "必要なものを全部買うには予算が足りません。送料も考えて効果が高い組合せを選び、選んだ理由を責任者に短く伝えたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まずは、このチャットでいただく資料だけで条件を整理し、出力の形を相談しましょう。完成案は、その確認後に作ります。\n\n確認したいのは次の点です。資料に書かれていれば、別途回答いただく必要はありません。\n\n- **予算**：送料込みの上限額\n- **購入候補**：価格・必要数・購入先・送料の条件\n- **期待する効果**：何を改善したいか、特に優先したいこと\n- **外せない条件**：必ず買うもの、最低数量、納期など\n\nまとめ方は、**「候補の組合せを比べる小さな表」と「責任者に伝える短い説明文」**を想定しています。表には送料込みの総額・期待できる効果・見送るものを載せ、説明文は２〜３文にする形はいかがでしょうか。\n\nまずは、手元の資料をそのまま送ってください。不足する情報だけ、こちらから確認します。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n各itemを整数qty=0..max_qtyで選ぶ。costはqty*priceの合計に、qty>0のitemがあるvendorのvendor_feesを各vendor1回だけ加える。cost<=budgetが必須。\nutility=qty*utilityの合計を最大化し、同点ならcost最小、さらに同点ならid昇順のqtyベクトルを辞書順で最大にする（先頭のqtyが大きいものを優先）。貪欲法の近似値ではなく厳密な最適解を返す。\nquantitiesは全itemのid順でid/qty。vendorsはV1,V2,V3順でfee（選択なしなら0）。totalsはcost/utility/remaining_budget。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に予算・使用額・効果の全体像と、選んだ数量・送料・同点規則の扱い。\n資料は以下のJSONです。\n{\n  \"budget\": 1400,\n  \"vendor_fees\": {\n    \"V1\": 200,\n    \"V2\": 300,\n    \"V3\": 100\n  },\n  \"items\": [\n    {\n      \"id\": \"B001\",\n      \"vendor\": \"V1\",\n      \"price\": 700,\n      \"utility\": 10,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B002\",\n      \"vendor\": \"V2\",\n      \"price\": 400,\n      \"utility\": 20,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B003\",\n      \"vendor\": \"V3\",\n      \"price\": 200,\n      \"utility\": 20,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B004\",\n      \"vendor\": \"V1\",\n      \"price\": 500,\n      \"utility\": 4,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B005\",\n      \"vendor\": \"V2\",\n      \"price\": 400,\n      \"utility\": 14,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B006\",\n      \"vendor\": \"V3\",\n      \"price\": 700,\n      \"utility\": 8,\n      \"max_qty\": 2\n    },\n    {\n      \"id\": \"B007\",\n      \"vendor\": \"V1\",\n      \"price\": 700,\n      \"utility\": 14,\n      \"max_qty\": 2\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"quantities\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"qty\": {\"type\": \"integer\"}}, \"required\": [\"id\", \"qty\"], \"additionalProperties\": false}}, \"vendors\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"vendor\": {\"type\": \"string\"}, \"fee\": {\"type\": \"integer\"}}, \"required\": [\"vendor\", \"fee\"], \"additionalProperties\": false}}, \"totals\": {\"type\": \"object\", \"properties\": {\"cost\": {\"type\": \"integer\"}, \"utility\": {\"type\": \"integer\"}, \"remaining_budget\": {\"type\": \"integer\"}}, \"required\": [\"cost\", \"utility\", \"remaining_budget\"], \"additionalProperties\": false}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"quantities\", \"vendors\", \"totals\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人としては、数量・送料・集計を確認して取り込む担当者と、全明細と短い共有文を合わせて判断する責任者を想定しています。担当者が選択内容を追え、責任者が「予算1,400に対していくら使い、どの程度のutilityを得る組合せか、その選定理由は何か」を把握できる形にします。\n\n作り方は、各itemの数量を0〜max_qtyの整数にした全組合せを調べ、選択したvendorの送料をそれぞれ1回だけ加えて予算内か判定する方針です。その中からutility最大、次にcost最小、さらに同点ならid昇順の数量ベクトルが辞書順で最大、という順序で厳密に選びます。選定後は、数量・商品代・送料・合計の整合性を確認します。\n\n最終成果物は指定のJSONだけにし、未選択を含む全itemの数量と、V1・V2・V3の送料、集計、report_mdをすべて返します。共有文では主要な数値と選択理由を短く説明し、数量上限や送料、同点規則が今回の判断にどう関係したかを、実際に確認できた内容に限って記します。購入や発注を完了したような表現は使いません。\n\n最適解を決める条件と出力形式に、現時点で未確定の点はありません。一方、金額の通貨とutilityが表す具体的な業務効果は未提示なので、「円」や実際の改善量には置き換えず、資料の数値として扱う方針です。ここでは計算や成果物の作成には着手していません。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-043",
+      "arm": "SOL_CONTINUE",
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "initial_artifact": {
+        "quantities": [
+          {
+            "id": "B001",
+            "qty": 0
+          },
+          {
+            "id": "B002",
+            "qty": 1
+          },
+          {
+            "id": "B003",
+            "qty": 2
+          },
+          {
+            "id": "B004",
+            "qty": 0
+          },
+          {
+            "id": "B005",
+            "qty": 0
+          },
+          {
+            "id": "B006",
+            "qty": 0
+          },
+          {
+            "id": "B007",
+            "qty": 0
+          }
+        ],
+        "vendors": [
+          {
+            "vendor": "V1",
+            "fee": 0
+          },
+          {
+            "vendor": "V2",
+            "fee": 300
+          },
+          {
+            "vendor": "V3",
+            "fee": 100
+          }
+        ],
+        "totals": {
+          "cost": 1200,
+          "utility": 60,
+          "remaining_budget": 200
+        },
+        "report_md": "予算1,400に対し、B002を数量1、B003を上限の数量2で選ぶ案が厳密な最適解です。商品代800と送料400（V2：300、V3：100を各1回）の合計使用額は1,200、残予算は200、utilityは最大の60です。\n\n全2,187通りを確認しました。B002を数量2・B003を数量1とする案もutilityは60ですが、使用額が1,400のため、同点時の費用最小規則により今回の案を選びました。utilityとcostがともに最良値で並ぶ別案はなく、id昇順の数量ベクトルによる辞書順の比較は不要でした。"
+      },
+      "final_artifact": {
+        "quantities": [
+          {
+            "id": "B001",
+            "qty": 0
+          },
+          {
+            "id": "B002",
+            "qty": 1
+          },
+          {
+            "id": "B003",
+            "qty": 2
+          },
+          {
+            "id": "B004",
+            "qty": 0
+          },
+          {
+            "id": "B005",
+            "qty": 0
+          },
+          {
+            "id": "B006",
+            "qty": 0
+          },
+          {
+            "id": "B007",
+            "qty": 0
+          }
+        ],
+        "vendors": [
+          {
+            "vendor": "V1",
+            "fee": 0
+          },
+          {
+            "vendor": "V2",
+            "fee": 300
+          },
+          {
+            "vendor": "V3",
+            "fee": 100
+          }
+        ],
+        "totals": {
+          "cost": 1200,
+          "utility": 60,
+          "remaining_budget": 200
+        },
+        "report_md": "予算1,400に対し、B002を数量1、B003を上限の数量2で選ぶ案が厳密な最適解です。商品代800と送料400（V2：300、V3：100を各1回）の合計使用額は1,200、残予算は200、utilityは最大の60です。\n\n全2,187通りを確認しました。B002を数量2・B003を数量1とする案もutilityは60ですが、使用額が1,400のため、同点時の費用最小規則により今回の案を選びました。utilityとcostがともに最良値で並ぶ別案はなく、id昇順の数量ベクトルによる辞書順の比較は不要でした。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "1.18080",
+      "incremental_credits": "1.38196",
+      "operating_total_credits": "2.56276",
+      "shared_seconds": 42.15599999995902,
+      "incremental_active_seconds": 44.01600000006147,
+      "total_active_seconds": 86.17200000002049,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T17:05:19.054216+00:00",
+        "text": "{\n  \"quantities\": [\n    {\"id\": \"B001\", \"qty\": 0},\n    {\"id\": \"B002\", \"qty\": 1},\n    {\"id\": \"B003\", \"qty\": 2},\n    {\"id\": \"B004\", \"qty\": 0},\n    {\"id\": \"B005\", \"qty\": 0},\n    {\"id\": \"B006\", \"qty\": 0},\n    {\"id\": \"B007\", \"qty\": 0}\n  ],\n  \"vendors\": [\n    {\"vendor\": \"V1\", \"fee\": 0},\n    {\"vendor\": \"V2\", \"fee\": 300},\n    {\"vendor\": \"V3\", \"fee\": 100}\n  ],\n  \"totals\": {\n    \"cost\": 1200,\n    \"utility\": 60,\n    \"remaining_budget\": 200\n  },\n  \"report_md\": \"予算1,400に対し、B002を数量1、B003を上限の数量2で選ぶ案が厳密な最適解です。商品代800と送料400（V2：300、V3：100を各1回）の合計使用額は1,200、残予算は200、utilityは最大の60です。\\n\\n全2,187通りを確認しました。B002を数量2・B003を数量1とする案もutilityは60ですが、使用額が1,400のため、同点時の費用最小規則により今回の案を選びました。utilityとcostがともに最良値で並ぶ別案はなく、id昇順の数量ベクトルによる辞書順の比較は不要でした。\"\n}",
+        "value": {
+          "quantities": [
+            {
+              "id": "B001",
+              "qty": 0
+            },
+            {
+              "id": "B002",
+              "qty": 1
+            },
+            {
+              "id": "B003",
+              "qty": 2
+            },
+            {
+              "id": "B004",
+              "qty": 0
+            },
+            {
+              "id": "B005",
+              "qty": 0
+            },
+            {
+              "id": "B006",
+              "qty": 0
+            },
+            {
+              "id": "B007",
+              "qty": 0
+            }
+          ],
+          "vendors": [
+            {
+              "vendor": "V1",
+              "fee": 0
+            },
+            {
+              "vendor": "V2",
+              "fee": 300
+            },
+            {
+              "vendor": "V3",
+              "fee": 100
+            }
+          ],
+          "totals": {
+            "cost": 1200,
+            "utility": 60,
+            "remaining_budget": 200
+          },
+          "report_md": "予算1,400に対し、B002を数量1、B003を上限の数量2で選ぶ案が厳密な最適解です。商品代800と送料400（V2：300、V3：100を各1回）の合計使用額は1,200、残予算は200、utilityは最大の60です。\n\n全2,187通りを確認しました。B002を数量2・B003を数量1とする案もutilityは60ですが、使用額が1,400のため、同点時の費用最小規則により今回の案を選びました。utilityとcostがともに最良値で並ぶ別案はなく、id昇順の数量ベクトルによる辞書順の比較は不要でした。"
+        },
+        "public_schema_pass": true,
+        "seconds": 44.01600000006147,
+        "credits": "1.38196",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-043",
+      "arm": "PRACTICAL",
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "initial_artifact": {
+        "quantities": [
+          {
+            "id": "B001",
+            "qty": 0
+          },
+          {
+            "id": "B002",
+            "qty": 1
+          },
+          {
+            "id": "B003",
+            "qty": 2
+          },
+          {
+            "id": "B004",
+            "qty": 0
+          },
+          {
+            "id": "B005",
+            "qty": 0
+          },
+          {
+            "id": "B006",
+            "qty": 0
+          },
+          {
+            "id": "B007",
+            "qty": 0
+          }
+        ],
+        "report_md": "予算1,400に対し、utilityを最大値の60とする組合せを選定しました。B002を1点、B003を2点購入し、V2およびV3の送料を含めた総額は1,200、残り予算は200です。同等のutilityが得られる他の組合せ（B002を2点、B003を1点とする案など）と比較し、コスト最小化の規則に基づき本案を採用しています。",
+        "totals": {
+          "cost": 1200,
+          "remaining_budget": 200,
+          "utility": 60
+        },
+        "vendors": [
+          {
+            "fee": 0,
+            "vendor": "V1"
+          },
+          {
+            "fee": 300,
+            "vendor": "V2"
+          },
+          {
+            "fee": 100,
+            "vendor": "V3"
+          }
+        ]
+      },
+      "final_artifact": {
+        "quantities": [
+          {
+            "id": "B001",
+            "qty": 0
+          },
+          {
+            "id": "B002",
+            "qty": 1
+          },
+          {
+            "id": "B003",
+            "qty": 2
+          },
+          {
+            "id": "B004",
+            "qty": 0
+          },
+          {
+            "id": "B005",
+            "qty": 0
+          },
+          {
+            "id": "B006",
+            "qty": 0
+          },
+          {
+            "id": "B007",
+            "qty": 0
+          }
+        ],
+        "report_md": "予算1,400に対し、utilityを最大値の60とする組合せを選定しました。B002を1点、B003を2点購入し、V2およびV3の送料を含めた総額は1,200、残り予算は200です。同等のutilityが得られる他の組合せ（B002を2点、B003を1点とする案など）と比較し、コスト最小化の規則に基づき本案を採用しています。",
+        "totals": {
+          "cost": 1200,
+          "remaining_budget": 200,
+          "utility": 60
+        },
+        "vendors": [
+          {
+            "fee": 0,
+            "vendor": "V1"
+          },
+          {
+            "fee": 300,
+            "vendor": "V2"
+          },
+          {
+            "fee": 100,
+            "vendor": "V3"
+          }
+        ]
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "1.18080",
+      "incremental_credits": "0.32415",
+      "operating_total_credits": "1.50495",
+      "shared_seconds": 42.15599999995902,
+      "incremental_active_seconds": 365.530999999959,
+      "total_active_seconds": 407.68699999991804,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T17:11:25.152392+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 10.108999999938533,
+          "credits": "0.32415",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 321.375,
+        "usage": {
+          "prompt_eval_count": 2086,
+          "eval_count": 13326,
+          "prompt_eval_duration": 2682743000,
+          "eval_duration": 318505484000,
+          "total_duration": 321211508000
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "quantities": [
+      {
+        "id": "B001",
+        "qty": 0
+      },
+      {
+        "id": "B002",
+        "qty": 1
+      },
+      {
+        "id": "B003",
+        "qty": 2
+      },
+      {
+        "id": "B004",
+        "qty": 0
+      },
+      {
+        "id": "B005",
+        "qty": 0
+      },
+      {
+        "id": "B006",
+        "qty": 0
+      },
+      {
+        "id": "B007",
+        "qty": 0
+      }
+    ],
+    "vendors": [
+      {
+        "vendor": "V1",
+        "fee": 0
+      },
+      {
+        "vendor": "V2",
+        "fee": 300
+      },
+      {
+        "vendor": "V3",
+        "fee": 100
+      }
+    ],
+    "totals": {
+      "cost": 1200,
+      "utility": 60,
+      "remaining_budget": 200
+    }
+  },
+  "scores": [
+    {
+      "task_id": "PR100-043",
+      "arm": "SOL_CONTINUE",
+      "family": "procurement",
+      "designed_difficulty": 5,
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "2.56276",
+      "total_active_seconds": 86.17200000002049,
+      "report_md": "予算1,400に対し、B002を数量1、B003を上限の数量2で選ぶ案が厳密な最適解です。商品代800と送料400（V2：300、V3：100を各1回）の合計使用額は1,200、残予算は200、utilityは最大の60です。\n\n全2,187通りを確認しました。B002を数量2・B003を数量1とする案もutilityは60ですが、使用額が1,400のため、同点時の費用最小規則により今回の案を選びました。utilityとcostがともに最良値で並ぶ別案はなく、id昇順の数量ベクトルによる辞書順の比較は不要でした。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-043",
+      "arm": "PRACTICAL",
+      "family": "procurement",
+      "designed_difficulty": 5,
+      "profile": "complex",
+      "reasoning_effort": "high",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.50495",
+      "total_active_seconds": 407.68699999991804,
+      "report_md": "予算1,400に対し、utilityを最大値の60とする組合せを選定しました。B002を1点、B003を2点購入し、V2およびV3の送料を含めた総額は1,200、残り予算は200です。同等のutilityが得られる他の組合せ（B002を2点、B003を1点とする案など）と比較し、コスト最小化の規則に基づき本案を採用しています。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}
