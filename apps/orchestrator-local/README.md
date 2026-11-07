@@ -1,21 +1,32 @@
 # Orchestrator Local 0.1.0 — Windows preview
 
-**Ask your usual chat to organize a table or total up a list, using an AI running on your own PC to share the work.**
-
-Give it a CSV of orders or transaction details, explain what you need, and receive the resulting table and a short report as files.
+> Keep asking your usual AI as before. Share some of the work with an AI on your PC to reduce Cloud AI consumption.
 
 **[日本語の導入手順・使い方](README_JA.md)**
 
 ## Why use it?
 
-For example, ask: “Total these transactions by customer and save a CSV,” or “Use these orders and stock figures to list what we can supply and what is short.” Clarify the rules in the conversation, then request changes such as “Add this column” or “Change this sentence in the report.”
+The goal is to keep the familiar way of asking for work, receive results of the quality you need, and lower the cost of producing them. Handoffs, precise edits and file saving are the mechanisms behind that goal.
 
-- **Hand over routine table work.** Ask the AI to group, total, classify or organize your data using the rules you provide.
-- **Receive files you can use.** Open the saved results later instead of rebuilding a table from a chat response.
-- **Change only what you need.** Keep the useful parts, ask for specific edits and retain the earlier files.
-- **Put your PC's AI to work.** Continue using your familiar chat while an AI on your computer shares some of the work.
+### What the 100-case comparison measured
 
-This is aimed at people who already run a local AI and repeatedly organize similar CSV/JSON data. Sharing work with the PC is intended to reduce work done in the cloud; any cost or speed benefit depends on the task and hardware.
+The comparison included initial consultation/design and the final Sol review and partial corrections.
+
+|Measure|Usual Sol|New approach, including Sol review/corrections|
+|---|---:|---:|
+|Reported-usage Credits subtotal|181.64328|122.10496|
+|Adopted data correct|100/100 cases|100/100 cases|
+|Mean active time, including consultation|63.10 seconds|247.32 seconds|
+
+**The known subtotal fell by 59.53832 Credits, about 32.78%.** Both methods shared direct Sol execution for 14 small cases. The new approach used Gemma for the other 86; its subtotal includes all 86 Sol reviews and the 12 partial corrections made in those reviews. Processing took longer.
+
+These are results for 100 synthetic business-data cases. Unmeasured consumption prevents an exact total or reduction percentage; those unknown amounts are in the shared consultation stage and cancel out of the difference when allocated equally. Prose equivalence was not independently audited across every case. See the [completion review](../../benchmarks/practical-review-100/2026-11-05/COMPLETION_REVIEW_JA.md) for conditions and evidence.
+
+The public application does not yet measure conversation-side Credits. This measured study result and the savings achieved in each use of the application are separate questions.
+
+### What happens behind the scenes
+
+The conversation AI handles consultation/design and final review, while Gemma does some of the work. Usable output is kept; necessary corrections are saved as precise edits. The [internal design](DESIGN_JA.md) and the implementation notes below explain this workflow.
 
 ## Before installing
 
