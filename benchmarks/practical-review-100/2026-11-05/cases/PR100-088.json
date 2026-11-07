@@ -1,0 +1,754 @@
+{
+  "task_id": "PR100-088",
+  "metadata": {
+    "task_id": "PR100-088",
+    "family": "expenses",
+    "designed_difficulty": 3,
+    "variant": 0
+  },
+  "public_job": {
+    "task_id": "PR100-088",
+    "initial": "経費の領収書に重複や上限超過があり、承認できる金額を整理したいです。担当者向けの明細と責任者向けの短い説明が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\nday昇順、id昇順で処理する。receipt_idは先に現れた全claimで記録し、2回目以降は他条件より優先してDUPLICATE、approved=0。初出の取消はCANCELLED、receipt_ok=falseはNO_RECEIPT、いずれもapproved=0。\nその他はapproved=min(amount,category_caps[category],そのemployeeの予算残数)、予算をapprovedだけ減らす。approved=amountならFULL、approved=0ならNO_BUDGET、その他PARTIAL。\ndetailsは全claimをid順、processing_orderは取消や重複を含む全claimの処理順。budgetsはemployee順で最終remaining。total_approvedは全approvedの合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に承認金額・残予算の全体像と、非承認や減額の主な区分・理由。\n資料は以下のJSONです。\n{\n  \"category_caps\": {\n    \"TRAVEL\": 1800,\n    \"MEAL\": 900,\n    \"OTHER\": 1200\n  },\n  \"budgets\": [\n    {\n      \"employee\": \"E1\",\n      \"remaining\": 2000\n    },\n    {\n      \"employee\": \"E2\",\n      \"remaining\": 2800\n    },\n    {\n      \"employee\": \"E3\",\n      \"remaining\": 2700\n    }\n  ],\n  \"claims\": [\n    {\n      \"id\": \"X001\",\n      \"receipt_id\": \"R001\",\n      \"employee\": \"E1\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1300,\n      \"day\": 3,\n      \"cancelled\": true,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X002\",\n      \"receipt_id\": \"R001\",\n      \"employee\": \"E2\",\n      \"category\": \"MEAL\",\n      \"amount\": 900,\n      \"day\": 2,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X003\",\n      \"receipt_id\": \"R002\",\n      \"employee\": \"E3\",\n      \"category\": \"MEAL\",\n      \"amount\": 2200,\n      \"day\": 3,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X004\",\n      \"receipt_id\": \"R002\",\n      \"employee\": \"E1\",\n      \"category\": \"MEAL\",\n      \"amount\": 1000,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X005\",\n      \"receipt_id\": \"R003\",\n      \"employee\": \"E2\",\n      \"category\": \"OTHER\",\n      \"amount\": 300,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X006\",\n      \"receipt_id\": \"R003\",\n      \"employee\": \"E3\",\n      \"category\": \"MEAL\",\n      \"amount\": 400,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X007\",\n      \"receipt_id\": \"R004\",\n      \"employee\": \"E1\",\n      \"category\": \"OTHER\",\n      \"amount\": 1600,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X008\",\n      \"receipt_id\": \"R004\",\n      \"employee\": \"E2\",\n      \"category\": \"OTHER\",\n      \"amount\": 1300,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"approved\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"approved\", \"state\"], \"additionalProperties\": false}}, \"processing_order\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"budgets\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"employee\": {\"type\": \"string\"}, \"remaining\": {\"type\": \"integer\"}}, \"required\": [\"employee\", \"remaining\"], \"additionalProperties\": false}}, \"total_approved\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"processing_order\", \"budgets\", \"total_approved\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "category_caps": {
+        "TRAVEL": 1800,
+        "MEAL": 900,
+        "OTHER": 1200
+      },
+      "budgets": [
+        {
+          "employee": "E1",
+          "remaining": 2000
+        },
+        {
+          "employee": "E2",
+          "remaining": 2800
+        },
+        {
+          "employee": "E3",
+          "remaining": 2700
+        }
+      ],
+      "claims": [
+        {
+          "id": "X001",
+          "receipt_id": "R001",
+          "employee": "E1",
+          "category": "TRAVEL",
+          "amount": 1300,
+          "day": 3,
+          "cancelled": true,
+          "receipt_ok": false
+        },
+        {
+          "id": "X002",
+          "receipt_id": "R001",
+          "employee": "E2",
+          "category": "MEAL",
+          "amount": 900,
+          "day": 2,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X003",
+          "receipt_id": "R002",
+          "employee": "E3",
+          "category": "MEAL",
+          "amount": 2200,
+          "day": 3,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X004",
+          "receipt_id": "R002",
+          "employee": "E1",
+          "category": "MEAL",
+          "amount": 1000,
+          "day": 1,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X005",
+          "receipt_id": "R003",
+          "employee": "E2",
+          "category": "OTHER",
+          "amount": 300,
+          "day": 4,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X006",
+          "receipt_id": "R003",
+          "employee": "E3",
+          "category": "MEAL",
+          "amount": 400,
+          "day": 4,
+          "cancelled": false,
+          "receipt_ok": false
+        },
+        {
+          "id": "X007",
+          "receipt_id": "R004",
+          "employee": "E1",
+          "category": "OTHER",
+          "amount": 1600,
+          "day": 1,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X008",
+          "receipt_id": "R004",
+          "employee": "E2",
+          "category": "OTHER",
+          "amount": 1300,
+          "day": 1,
+          "cancelled": false,
+          "receipt_ok": true
+        }
+      ]
+    },
+    "business_rules": [
+      "day昇順、id昇順で処理する。receipt_idは先に現れた全claimで記録し、2回目以降は他条件より優先してDUPLICATE、approved=0。初出の取消はCANCELLED、receipt_ok=falseはNO_RECEIPT、いずれもapproved=0。",
+      "その他はapproved=min(amount,category_caps[category],そのemployeeの予算残数)、予算をapprovedだけ減らす。approved=amountならFULL、approved=0ならNO_BUDGET、その他PARTIAL。",
+      "detailsは全claimをid順、processing_orderは取消や重複を含む全claimの処理順。budgetsはemployee順で最終remaining。total_approvedは全approvedの合計。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "approved": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "approved",
+              "state"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "processing_order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "budgets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "employee": {
+                "type": "string"
+              },
+              "remaining": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "employee",
+              "remaining"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "total_approved": {
+          "type": "integer"
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "processing_order",
+        "budgets",
+        "total_approved",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "normal",
+    "reasoning_effort": "medium"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "経費の領収書に重複や上限超過があり、承認できる金額を整理したいです。担当者向けの明細と責任者向けの短い説明が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まず、このチャットでいただく資料だけを使って、判断に必要な条件と出力の形を相談しましょう。完成品の作成は、その内容が固まってから進めます。\n\n最初に、以下を共有してください。分からない項目は「未確認」で大丈夫です。\n\n- **領収書・申請の内容**：日付、支払先、金額、用途、申請者、領収書や申請の識別番号など。画像や表、そのままの文章でも構いません。\n- **承認ルール**：費目ごとの上限、上限が「1件・1人・1日」のどれに適用されるか、例外の扱いなど。規程の該当部分があれば、そのまま貼ってください。\n- **気になっている点**：重複の疑いがある組み合わせ、上限超過と思われる申請、すでに承認・精算したものの有無。\n\n形としては、担当者向けには「申請額／重複・上限の確認結果／承認可能額／差額と理由／要確認事項」の明細表、責任者向けには「申請総額・承認可能額・保留額と主な理由」を数文にまとめる案を考えています。\n\nこの形で使いやすそうでしょうか。あわせて、判断がつかないものは「保留」として分けてよいか教えてください。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\nday昇順、id昇順で処理する。receipt_idは先に現れた全claimで記録し、2回目以降は他条件より優先してDUPLICATE、approved=0。初出の取消はCANCELLED、receipt_ok=falseはNO_RECEIPT、いずれもapproved=0。\nその他はapproved=min(amount,category_caps[category],そのemployeeの予算残数)、予算をapprovedだけ減らす。approved=amountならFULL、approved=0ならNO_BUDGET、その他PARTIAL。\ndetailsは全claimをid順、processing_orderは取消や重複を含む全claimの処理順。budgetsはemployee順で最終remaining。total_approvedは全approvedの合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に承認金額・残予算の全体像と、非承認や減額の主な区分・理由。\n資料は以下のJSONです。\n{\n  \"category_caps\": {\n    \"TRAVEL\": 1800,\n    \"MEAL\": 900,\n    \"OTHER\": 1200\n  },\n  \"budgets\": [\n    {\n      \"employee\": \"E1\",\n      \"remaining\": 2000\n    },\n    {\n      \"employee\": \"E2\",\n      \"remaining\": 2800\n    },\n    {\n      \"employee\": \"E3\",\n      \"remaining\": 2700\n    }\n  ],\n  \"claims\": [\n    {\n      \"id\": \"X001\",\n      \"receipt_id\": \"R001\",\n      \"employee\": \"E1\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1300,\n      \"day\": 3,\n      \"cancelled\": true,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X002\",\n      \"receipt_id\": \"R001\",\n      \"employee\": \"E2\",\n      \"category\": \"MEAL\",\n      \"amount\": 900,\n      \"day\": 2,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X003\",\n      \"receipt_id\": \"R002\",\n      \"employee\": \"E3\",\n      \"category\": \"MEAL\",\n      \"amount\": 2200,\n      \"day\": 3,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X004\",\n      \"receipt_id\": \"R002\",\n      \"employee\": \"E1\",\n      \"category\": \"MEAL\",\n      \"amount\": 1000,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X005\",\n      \"receipt_id\": \"R003\",\n      \"employee\": \"E2\",\n      \"category\": \"OTHER\",\n      \"amount\": 300,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X006\",\n      \"receipt_id\": \"R003\",\n      \"employee\": \"E3\",\n      \"category\": \"MEAL\",\n      \"amount\": 400,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X007\",\n      \"receipt_id\": \"R004\",\n      \"employee\": \"E1\",\n      \"category\": \"OTHER\",\n      \"amount\": 1600,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X008\",\n      \"receipt_id\": \"R004\",\n      \"employee\": \"E2\",\n      \"category\": \"OTHER\",\n      \"amount\": 1300,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"approved\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"approved\", \"state\"], \"additionalProperties\": false}}, \"processing_order\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"budgets\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"employee\": {\"type\": \"string\"}, \"remaining\": {\"type\": \"integer\"}}, \"required\": [\"employee\", \"remaining\"], \"additionalProperties\": false}}, \"total_approved\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"processing_order\", \"budgets\", \"total_approved\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人は、各申請の判定と金額を確認する担当者と、全体の承認額・残予算・主な例外を把握する責任者を想定しています。担当者は全明細と処理順を照合でき、責任者は短い共有文から結論を読み取れる形にします。\n\n作成時は、まず全申請をday昇順、同じdayではid昇順に並べます。取消や領収書不備の申請も含めてreceipt_idの初出を記録し、再登場なら重複を最優先に判定します。初出の場合に取消、領収書不備の順で確認し、それ以外について費目上限と本人の残予算から承認額を決め、承認した額だけ予算を減らします。\n\n最終成果物は、ご指定の全フィールドを持つJSONだけにします。明細はid順、処理順は取消・重複を含む全件、残予算はemployee順で収めます。共有文のreport_mdでは、承認総額と残予算の全体像に加え、今回実際に生じた非承認・減額の主な理由を、数値や必要なIDに結び付けて説明します。判定上の優先理由と、その申請が併せ持つ条件を混同せず、実際の承認手続きや連絡が完了したという表現も使いません。\n\n計算・判定に必要な条件は揃っています。通貨単位は未指定なので、指定がなければ「円」などは付けず、資料どおりの数値で表します。現時点では、計算や成果物の作成は始めていません。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-088",
+      "arm": "SOL_CONTINUE",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "X001",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X002",
+            "approved": 900,
+            "state": "FULL"
+          },
+          {
+            "id": "X003",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X004",
+            "approved": 900,
+            "state": "PARTIAL"
+          },
+          {
+            "id": "X005",
+            "approved": 300,
+            "state": "FULL"
+          },
+          {
+            "id": "X006",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X007",
+            "approved": 1100,
+            "state": "PARTIAL"
+          },
+          {
+            "id": "X008",
+            "approved": 0,
+            "state": "DUPLICATE"
+          }
+        ],
+        "processing_order": [
+          "X004",
+          "X007",
+          "X008",
+          "X002",
+          "X001",
+          "X003",
+          "X005",
+          "X006"
+        ],
+        "budgets": [
+          {
+            "employee": "E1",
+            "remaining": 0
+          },
+          {
+            "employee": "E2",
+            "remaining": 1600
+          },
+          {
+            "employee": "E3",
+            "remaining": 2700
+          }
+        ],
+        "total_approved": 3200,
+        "report_md": "申請8件・総額9,000に対し、指定ルールによる承認可能額は3,200です。全額承認2件、部分承認2件、重複による非承認4件で、申請額との差額は5,800（重複5,200、部分承認の減額600）です。最終残予算は合計4,300で、E1は0、E2は1,600、E3は2,700です。予算は申請者別に適用しています。\n\n減額は、X004がMEAL上限900により100減額、X007がOTHER上限1,200と処理時のE1残予算1,100により500減額です。X007では費目上限による減額400に加え、予算制約でさらに100減額しています。\n\n重複の初出は入力順ではなくday・id順で決まります。R001はX002、R002はX004、R003はX005、R004はX007が初出で、同じ領収書の後続申請は申請者が異なっても重複です。X001は取消・領収書不備、X006は領収書不備もありますが、重複判定が優先されるため、いずれもDUPLICATEです。これらの非承認は予算不足によるものではありません。\n\n全明細の承認額合計3,200と、初期予算合計7,500から最終残予算合計4,300を差し引いた額が一致することを確認しています。以上は資料上の判定結果であり、実際の承認・精算手続きの完了を示すものではありません。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "X001",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X002",
+            "approved": 900,
+            "state": "FULL"
+          },
+          {
+            "id": "X003",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X004",
+            "approved": 900,
+            "state": "PARTIAL"
+          },
+          {
+            "id": "X005",
+            "approved": 300,
+            "state": "FULL"
+          },
+          {
+            "id": "X006",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X007",
+            "approved": 1100,
+            "state": "PARTIAL"
+          },
+          {
+            "id": "X008",
+            "approved": 0,
+            "state": "DUPLICATE"
+          }
+        ],
+        "processing_order": [
+          "X004",
+          "X007",
+          "X008",
+          "X002",
+          "X001",
+          "X003",
+          "X005",
+          "X006"
+        ],
+        "budgets": [
+          {
+            "employee": "E1",
+            "remaining": 0
+          },
+          {
+            "employee": "E2",
+            "remaining": 1600
+          },
+          {
+            "employee": "E3",
+            "remaining": 2700
+          }
+        ],
+        "total_approved": 3200,
+        "report_md": "申請8件・総額9,000に対し、指定ルールによる承認可能額は3,200です。全額承認2件、部分承認2件、重複による非承認4件で、申請額との差額は5,800（重複5,200、部分承認の減額600）です。最終残予算は合計4,300で、E1は0、E2は1,600、E3は2,700です。予算は申請者別に適用しています。\n\n減額は、X004がMEAL上限900により100減額、X007がOTHER上限1,200と処理時のE1残予算1,100により500減額です。X007では費目上限による減額400に加え、予算制約でさらに100減額しています。\n\n重複の初出は入力順ではなくday・id順で決まります。R001はX002、R002はX004、R003はX005、R004はX007が初出で、同じ領収書の後続申請は申請者が異なっても重複です。X001は取消・領収書不備、X006は領収書不備もありますが、重複判定が優先されるため、いずれもDUPLICATEです。これらの非承認は予算不足によるものではありません。\n\n全明細の承認額合計3,200と、初期予算合計7,500から最終残予算合計4,300を差し引いた額が一致することを確認しています。以上は資料上の判定結果であり、実際の承認・精算手続きの完了を示すものではありません。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.42124",
+      "incremental_credits": "1.05525",
+      "operating_total_credits": "1.47649",
+      "shared_seconds": 33.40599999995902,
+      "incremental_active_seconds": 19.516000000061467,
+      "total_active_seconds": 52.92200000002049,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T19:48:39.305805+00:00",
+        "text": "{\n  \"details\": [\n    {\"id\":\"X001\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X002\",\"approved\":900,\"state\":\"FULL\"},\n    {\"id\":\"X003\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X004\",\"approved\":900,\"state\":\"PARTIAL\"},\n    {\"id\":\"X005\",\"approved\":300,\"state\":\"FULL\"},\n    {\"id\":\"X006\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X007\",\"approved\":1100,\"state\":\"PARTIAL\"},\n    {\"id\":\"X008\",\"approved\":0,\"state\":\"DUPLICATE\"}\n  ],\n  \"processing_order\": [\"X004\",\"X007\",\"X008\",\"X002\",\"X001\",\"X003\",\"X005\",\"X006\"],\n  \"budgets\": [\n    {\"employee\":\"E1\",\"remaining\":0},\n    {\"employee\":\"E2\",\"remaining\":1600},\n    {\"employee\":\"E3\",\"remaining\":2700}\n  ],\n  \"total_approved\": 3200,\n  \"report_md\": \"申請8件・総額9,000に対し、指定ルールによる承認可能額は3,200です。全額承認2件、部分承認2件、重複による非承認4件で、申請額との差額は5,800（重複5,200、部分承認の減額600）です。最終残予算は合計4,300で、E1は0、E2は1,600、E3は2,700です。予算は申請者別に適用しています。\\n\\n減額は、X004がMEAL上限900により100減額、X007がOTHER上限1,200と処理時のE1残予算1,100により500減額です。X007では費目上限による減額400に加え、予算制約でさらに100減額しています。\\n\\n重複の初出は入力順ではなくday・id順で決まります。R001はX002、R002はX004、R003はX005、R004はX007が初出で、同じ領収書の後続申請は申請者が異なっても重複です。X001は取消・領収書不備、X006は領収書不備もありますが、重複判定が優先されるため、いずれもDUPLICATEです。これらの非承認は予算不足によるものではありません。\\n\\n全明細の承認額合計3,200と、初期予算合計7,500から最終残予算合計4,300を差し引いた額が一致することを確認しています。以上は資料上の判定結果であり、実際の承認・精算手続きの完了を示すものではありません。\"\n}",
+        "value": {
+          "details": [
+            {
+              "id": "X001",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X002",
+              "approved": 900,
+              "state": "FULL"
+            },
+            {
+              "id": "X003",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X004",
+              "approved": 900,
+              "state": "PARTIAL"
+            },
+            {
+              "id": "X005",
+              "approved": 300,
+              "state": "FULL"
+            },
+            {
+              "id": "X006",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X007",
+              "approved": 1100,
+              "state": "PARTIAL"
+            },
+            {
+              "id": "X008",
+              "approved": 0,
+              "state": "DUPLICATE"
+            }
+          ],
+          "processing_order": [
+            "X004",
+            "X007",
+            "X008",
+            "X002",
+            "X001",
+            "X003",
+            "X005",
+            "X006"
+          ],
+          "budgets": [
+            {
+              "employee": "E1",
+              "remaining": 0
+            },
+            {
+              "employee": "E2",
+              "remaining": 1600
+            },
+            {
+              "employee": "E3",
+              "remaining": 2700
+            }
+          ],
+          "total_approved": 3200,
+          "report_md": "申請8件・総額9,000に対し、指定ルールによる承認可能額は3,200です。全額承認2件、部分承認2件、重複による非承認4件で、申請額との差額は5,800（重複5,200、部分承認の減額600）です。最終残予算は合計4,300で、E1は0、E2は1,600、E3は2,700です。予算は申請者別に適用しています。\n\n減額は、X004がMEAL上限900により100減額、X007がOTHER上限1,200と処理時のE1残予算1,100により500減額です。X007では費目上限による減額400に加え、予算制約でさらに100減額しています。\n\n重複の初出は入力順ではなくday・id順で決まります。R001はX002、R002はX004、R003はX005、R004はX007が初出で、同じ領収書の後続申請は申請者が異なっても重複です。X001は取消・領収書不備、X006は領収書不備もありますが、重複判定が優先されるため、いずれもDUPLICATEです。これらの非承認は予算不足によるものではありません。\n\n全明細の承認額合計3,200と、初期予算合計7,500から最終残予算合計4,300を差し引いた額が一致することを確認しています。以上は資料上の判定結果であり、実際の承認・精算手続きの完了を示すものではありません。"
+        },
+        "public_schema_pass": true,
+        "seconds": 19.516000000061467,
+        "credits": "1.05525",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-088",
+      "arm": "PRACTICAL",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "budgets": [
+          {
+            "employee": "E1",
+            "remaining": 0
+          },
+          {
+            "employee": "E2",
+            "remaining": 1600
+          },
+          {
+            "employee": "E3",
+            "remaining": 2700
+          }
+        ],
+        "details": [
+          {
+            "approved": 0,
+            "id": "X001",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 900,
+            "id": "X002",
+            "state": "FULL"
+          },
+          {
+            "approved": 0,
+            "id": "X003",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 900,
+            "id": "X004",
+            "state": "PARTIAL"
+          },
+          {
+            "approved": 300,
+            "id": "X005",
+            "state": "FULL"
+          },
+          {
+            "approved": 0,
+            "id": "X006",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 1100,
+            "id": "X007",
+            "state": "PARTIAL"
+          },
+          {
+            "approved": 0,
+            "id": "X008",
+            "state": "DUPLICATE"
+          }
+        ],
+        "processing_order": [
+          "X004",
+          "X007",
+          "X008",
+          "X002",
+          "X001",
+          "X003",
+          "X005",
+          "X006"
+        ],
+        "report_md": "承認総額は3200です。各従業員の残予算は、E1が0、E2が1600、E3が2700となっています。主な非承認理由は領収書の重複（X001, X003, X006, X008）であり、また費目上限や予算残数により申請額が減額されたもの（X004, X007）が含まれます。",
+        "total_approved": 3200
+      },
+      "final_artifact": {
+        "budgets": [
+          {
+            "employee": "E1",
+            "remaining": 0
+          },
+          {
+            "employee": "E2",
+            "remaining": 1600
+          },
+          {
+            "employee": "E3",
+            "remaining": 2700
+          }
+        ],
+        "details": [
+          {
+            "approved": 0,
+            "id": "X001",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 900,
+            "id": "X002",
+            "state": "FULL"
+          },
+          {
+            "approved": 0,
+            "id": "X003",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 900,
+            "id": "X004",
+            "state": "PARTIAL"
+          },
+          {
+            "approved": 300,
+            "id": "X005",
+            "state": "FULL"
+          },
+          {
+            "approved": 0,
+            "id": "X006",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 1100,
+            "id": "X007",
+            "state": "PARTIAL"
+          },
+          {
+            "approved": 0,
+            "id": "X008",
+            "state": "DUPLICATE"
+          }
+        ],
+        "processing_order": [
+          "X004",
+          "X007",
+          "X008",
+          "X002",
+          "X001",
+          "X003",
+          "X005",
+          "X006"
+        ],
+        "report_md": "承認総額は3200です。各従業員の残予算は、E1が0、E2が1600、E3が2700となっています。主な非承認理由は領収書の重複（X001, X003, X006, X008）であり、また費目上限や予算残数により申請額が減額されたもの（X004, X007）が含まれます。",
+        "total_approved": 3200
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.42124",
+      "incremental_credits": "0.31055",
+      "operating_total_credits": "0.73179",
+      "shared_seconds": 33.40599999995902,
+      "incremental_active_seconds": 222.53200000000652,
+      "total_active_seconds": 255.93799999996554,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T19:48:19.190092+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 4.687999999965541,
+          "credits": "0.31055",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 185.43799999996554,
+        "usage": {
+          "prompt_eval_count": 2503,
+          "eval_count": 7249,
+          "prompt_eval_duration": 2987223000,
+          "eval_duration": 182287402000,
+          "total_duration": 185298121300
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "X001",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X002",
+        "approved": 900,
+        "state": "FULL"
+      },
+      {
+        "id": "X003",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X004",
+        "approved": 900,
+        "state": "PARTIAL"
+      },
+      {
+        "id": "X005",
+        "approved": 300,
+        "state": "FULL"
+      },
+      {
+        "id": "X006",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X007",
+        "approved": 1100,
+        "state": "PARTIAL"
+      },
+      {
+        "id": "X008",
+        "approved": 0,
+        "state": "DUPLICATE"
+      }
+    ],
+    "processing_order": [
+      "X004",
+      "X007",
+      "X008",
+      "X002",
+      "X001",
+      "X003",
+      "X005",
+      "X006"
+    ],
+    "budgets": [
+      {
+        "employee": "E1",
+        "remaining": 0
+      },
+      {
+        "employee": "E2",
+        "remaining": 1600
+      },
+      {
+        "employee": "E3",
+        "remaining": 2700
+      }
+    ],
+    "total_approved": 3200
+  },
+  "scores": [
+    {
+      "task_id": "PR100-088",
+      "arm": "SOL_CONTINUE",
+      "family": "expenses",
+      "designed_difficulty": 3,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.47649",
+      "total_active_seconds": 52.92200000002049,
+      "report_md": "申請8件・総額9,000に対し、指定ルールによる承認可能額は3,200です。全額承認2件、部分承認2件、重複による非承認4件で、申請額との差額は5,800（重複5,200、部分承認の減額600）です。最終残予算は合計4,300で、E1は0、E2は1,600、E3は2,700です。予算は申請者別に適用しています。\n\n減額は、X004がMEAL上限900により100減額、X007がOTHER上限1,200と処理時のE1残予算1,100により500減額です。X007では費目上限による減額400に加え、予算制約でさらに100減額しています。\n\n重複の初出は入力順ではなくday・id順で決まります。R001はX002、R002はX004、R003はX005、R004はX007が初出で、同じ領収書の後続申請は申請者が異なっても重複です。X001は取消・領収書不備、X006は領収書不備もありますが、重複判定が優先されるため、いずれもDUPLICATEです。これらの非承認は予算不足によるものではありません。\n\n全明細の承認額合計3,200と、初期予算合計7,500から最終残予算合計4,300を差し引いた額が一致することを確認しています。以上は資料上の判定結果であり、実際の承認・精算手続きの完了を示すものではありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-088",
+      "arm": "PRACTICAL",
+      "family": "expenses",
+      "designed_difficulty": 3,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "0.73179",
+      "total_active_seconds": 255.93799999996554,
+      "report_md": "承認総額は3200です。各従業員の残予算は、E1が0、E2が1600、E3が2700となっています。主な非承認理由は領収書の重複（X001, X003, X006, X008）であり、また費目上限や予算残数により申請額が減額されたもの（X004, X007）が含まれます。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

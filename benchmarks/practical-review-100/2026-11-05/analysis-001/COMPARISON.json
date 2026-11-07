@@ -1,0 +1,614 @@
+{
+  "cases": 100,
+  "methods": {
+    "SOL_CONTINUE": {
+      "cases": 100,
+      "adopted": 100,
+      "data_exact": 100,
+      "data_correct_adoption": 100,
+      "data_false_green": 0,
+      "unresolved": 0,
+      "categories": {
+        "accepted_unchanged": 100
+      },
+      "initial_data_exact": 100,
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 0,
+      "operating_reported_usage_Credits": "181.64328",
+      "reported_Credits_per_data_correct_adoption": "1.8164328",
+      "active_seconds": 6309.762999999803,
+      "mean_active_seconds": 63.09762999999803,
+      "human_repair_seconds": null
+    },
+    "PRACTICAL": {
+      "cases": 100,
+      "adopted": 100,
+      "data_exact": 100,
+      "data_correct_adoption": 100,
+      "data_false_green": 0,
+      "unresolved": 0,
+      "categories": {
+        "accepted_unchanged": 88,
+        "accepted_after_partial_repair": 12
+      },
+      "initial_data_exact": 90,
+      "wrong_to_correct": 10,
+      "correct_to_wrong": 0,
+      "operating_reported_usage_Credits": "122.10496",
+      "reported_Credits_per_data_correct_adoption": "1.2210496",
+      "active_seconds": 24732.10400000005,
+      "mean_active_seconds": 247.3210400000005,
+      "human_repair_seconds": null
+    }
+  },
+  "paired_data_correct_adoption": {
+    "BOTH": 100
+  },
+  "reported_usage_credit_reduction_vs_same_profile_Sol": "32.77760674658594581643758029",
+  "reported_usage_subtotal_Credits": "219.55402",
+  "shared_source_reported_Credits_once": "71.34362",
+  "shared_small_execution_reported_Credits_once": "12.85060",
+  "comparison_sum_not_actual": "303.74824",
+  "study_total_Credits": null,
+  "billing_complete": false,
+  "unmeasured_retry_invocations": [
+    "source-file:practical-review-100-20261104/run-001/accounting/invocations/49c5e68a-1ad7-45e3-8440-bf1136d78eb8"
+  ],
+  "research_model_calls": 0,
+  "independent_narrative_equivalence_proven": false,
+  "human_repair_seconds": null,
+  "preparation_chat_Credits": null,
+  "project_with_preparation_Credits": null,
+  "by_family": {
+    "allocation": {
+      "SOL_CONTINUE": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "18.73466",
+        "reported_Credits_per_data_correct_adoption": "1.873466",
+        "active_seconds": 665.9540000001434,
+        "mean_active_seconds": 66.59540000001434,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 3,
+          "accepted_after_partial_repair": 7
+        },
+        "initial_data_exact": 4,
+        "wrong_to_correct": 6,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "12.85165",
+        "reported_Credits_per_data_correct_adoption": "1.285165",
+        "active_seconds": 2921.5170000002254,
+        "mean_active_seconds": 292.1517000000225,
+        "human_repair_seconds": null
+      }
+    },
+    "availability": {
+      "SOL_CONTINUE": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "17.98731",
+        "reported_Credits_per_data_correct_adoption": "1.798731",
+        "active_seconds": 587.903999999864,
+        "mean_active_seconds": 58.790399999986406,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "12.87716",
+        "reported_Credits_per_data_correct_adoption": "1.287716",
+        "active_seconds": 1573.5599999995902,
+        "mean_active_seconds": 157.355999999959,
+        "human_repair_seconds": null
+      }
+    },
+    "deduplication": {
+      "SOL_CONTINUE": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "16.43428",
+        "reported_Credits_per_data_correct_adoption": "1.643428",
+        "active_seconds": 523.6849999999395,
+        "mean_active_seconds": 52.368499999993944,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "13.65932",
+        "reported_Credits_per_data_correct_adoption": "1.365932",
+        "active_seconds": 1819.7799999999115,
+        "mean_active_seconds": 181.97799999999114,
+        "human_repair_seconds": null
+      }
+    },
+    "dependency_schedule": {
+      "SOL_CONTINUE": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "19.96406",
+        "reported_Credits_per_data_correct_adoption": "1.996406",
+        "active_seconds": 824.0180000002729,
+        "mean_active_seconds": 82.4018000000273,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_after_partial_repair": 3,
+          "accepted_unchanged": 7
+        },
+        "initial_data_exact": 8,
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "10.94284",
+        "reported_Credits_per_data_correct_adoption": "1.094284",
+        "active_seconds": 3069.564000000246,
+        "mean_active_seconds": 306.9564000000246,
+        "human_repair_seconds": null
+      }
+    },
+    "document_edits": {
+      "SOL_CONTINUE": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "15.18324",
+        "reported_Credits_per_data_correct_adoption": "1.518324",
+        "active_seconds": 726.5459999997402,
+        "mean_active_seconds": 72.65459999997401,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 9,
+          "accepted_after_partial_repair": 1
+        },
+        "initial_data_exact": 9,
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "12.33670",
+        "reported_Credits_per_data_correct_adoption": "1.23367",
+        "active_seconds": 1832.8899999997811,
+        "mean_active_seconds": 183.2889999999781,
+        "human_repair_seconds": null
+      }
+    },
+    "expenses": {
+      "SOL_CONTINUE": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "17.05561",
+        "reported_Credits_per_data_correct_adoption": "1.705561",
+        "active_seconds": 589.1420000003418,
+        "mean_active_seconds": 58.91420000003418,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "10.85881",
+        "reported_Credits_per_data_correct_adoption": "1.085881",
+        "active_seconds": 2965.3800000002375,
+        "mean_active_seconds": 296.53800000002377,
+        "human_repair_seconds": null
+      }
+    },
+    "procurement": {
+      "SOL_CONTINUE": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "19.51380",
+        "reported_Credits_per_data_correct_adoption": "1.95138",
+        "active_seconds": 831.4349999997066,
+        "mean_active_seconds": 83.14349999997066,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "10.37205",
+        "reported_Credits_per_data_correct_adoption": "1.037205",
+        "active_seconds": 3558.855999999796,
+        "mean_active_seconds": 355.8855999999796,
+        "human_repair_seconds": null
+      }
+    },
+    "receivables": {
+      "SOL_CONTINUE": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "19.21131",
+        "reported_Credits_per_data_correct_adoption": "1.921131",
+        "active_seconds": 551.2990000001155,
+        "mean_active_seconds": 55.129900000011546,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "13.19230",
+        "reported_Credits_per_data_correct_adoption": "1.31923",
+        "active_seconds": 2328.1370000002207,
+        "mean_active_seconds": 232.81370000002207,
+        "human_repair_seconds": null
+      }
+    },
+    "sales": {
+      "SOL_CONTINUE": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "18.51471",
+        "reported_Credits_per_data_correct_adoption": "1.851471",
+        "active_seconds": 541.8599999996368,
+        "mean_active_seconds": 54.18599999996368,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "11.76372",
+        "reported_Credits_per_data_correct_adoption": "1.176372",
+        "active_seconds": 2265.7189999999246,
+        "mean_active_seconds": 226.57189999999247,
+        "human_repair_seconds": null
+      }
+    },
+    "service_queue": {
+      "SOL_CONTINUE": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 10
+        },
+        "initial_data_exact": 10,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "19.04430",
+        "reported_Credits_per_data_correct_adoption": "1.90443",
+        "active_seconds": 467.9200000000419,
+        "mean_active_seconds": 46.792000000004194,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 10,
+        "adopted": 10,
+        "data_exact": 10,
+        "data_correct_adoption": 10,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 9,
+          "accepted_after_partial_repair": 1
+        },
+        "initial_data_exact": 9,
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "13.25041",
+        "reported_Credits_per_data_correct_adoption": "1.325041",
+        "active_seconds": 2396.7010000001173,
+        "mean_active_seconds": 239.67010000001173,
+        "human_repair_seconds": null
+      }
+    }
+  },
+  "by_profile": {
+    "small": {
+      "SOL_CONTINUE": {
+        "cases": 14,
+        "adopted": 14,
+        "data_exact": 14,
+        "data_correct_adoption": 14,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 14
+        },
+        "initial_data_exact": 14,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "22.69976",
+        "reported_Credits_per_data_correct_adoption": "1.621411428571428571428571429",
+        "active_seconds": 810.7809999998426,
+        "mean_active_seconds": 57.91292857141733,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 14,
+        "adopted": 14,
+        "data_exact": 14,
+        "data_correct_adoption": 14,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 14
+        },
+        "initial_data_exact": 14,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "22.69976",
+        "reported_Credits_per_data_correct_adoption": "1.621411428571428571428571429",
+        "active_seconds": 810.7809999998426,
+        "mean_active_seconds": 57.91292857141733,
+        "human_repair_seconds": null
+      }
+    },
+    "normal": {
+      "SOL_CONTINUE": {
+        "cases": 56,
+        "adopted": 56,
+        "data_exact": 56,
+        "data_correct_adoption": 56,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 56
+        },
+        "initial_data_exact": 56,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "99.81224",
+        "reported_Credits_per_data_correct_adoption": "1.782361428571428571428571429",
+        "active_seconds": 3012.3899999998976,
+        "mean_active_seconds": 53.79267857142674,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 56,
+        "adopted": 56,
+        "data_exact": 56,
+        "data_correct_adoption": 56,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 51,
+          "accepted_after_partial_repair": 5
+        },
+        "initial_data_exact": 51,
+        "wrong_to_correct": 5,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "66.12100",
+        "reported_Credits_per_data_correct_adoption": "1.180732142857142857142857143",
+        "active_seconds": 14389.857000000193,
+        "mean_active_seconds": 256.96173214286057,
+        "human_repair_seconds": null
+      }
+    },
+    "complex": {
+      "SOL_CONTINUE": {
+        "cases": 30,
+        "adopted": 30,
+        "data_exact": 30,
+        "data_correct_adoption": 30,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 30
+        },
+        "initial_data_exact": 30,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "59.13128",
+        "reported_Credits_per_data_correct_adoption": "1.971042666666666666666666667",
+        "active_seconds": 2486.5920000000624,
+        "mean_active_seconds": 82.88640000000208,
+        "human_repair_seconds": null
+      },
+      "PRACTICAL": {
+        "cases": 30,
+        "adopted": 30,
+        "data_exact": 30,
+        "data_correct_adoption": 30,
+        "data_false_green": 0,
+        "unresolved": 0,
+        "categories": {
+          "accepted_unchanged": 23,
+          "accepted_after_partial_repair": 7
+        },
+        "initial_data_exact": 25,
+        "wrong_to_correct": 5,
+        "correct_to_wrong": 0,
+        "operating_reported_usage_Credits": "33.28420",
+        "reported_Credits_per_data_correct_adoption": "1.109473333333333333333333333",
+        "active_seconds": 9531.466000000015,
+        "mean_active_seconds": 317.71553333333384,
+        "human_repair_seconds": null
+      }
+    }
+  },
+  "historical_failed_calls": [
+    {
+      "invocation_id": "17c327a3-e515-4ea9-bd20-e3b73a51cc8a",
+      "capture_path": "source-file:practical-review-100-20261104-recovery-001/run-001/accounting/invocations/17c327a3-e515-4ea9-bd20-e3b73a51cc8a",
+      "task_id": "PR100-095",
+      "arm": "SHARED_DIALOGUE",
+      "stage": "INITIAL_REQUEST",
+      "credits": null,
+      "billing_complete": false,
+      "cause": "historical_model_capacity_failure_without_completed_response",
+      "completed_turns": 0,
+      "human_authorized_new_attempt": true
+    }
+  ],
+  "unmeasured_cost_invocations": [
+    "source-file:practical-review-100-20261104/run-001/accounting/invocations/49c5e68a-1ad7-45e3-8440-bf1136d78eb8",
+    "source-file:practical-review-100-20261104-recovery-001/run-001/accounting/invocations/17c327a3-e515-4ea9-bd20-e3b73a51cc8a"
+  ],
+  "reported_usage_credit_difference_A_minus_B": "59.53832",
+  "all_unmeasured_costs_shared_between_arms": true,
+  "actual_credit_difference_A_minus_B": "59.53832",
+  "actual_credit_reduction_percent": null
+}

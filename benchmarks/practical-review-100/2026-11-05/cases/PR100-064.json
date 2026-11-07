@@ -1,0 +1,560 @@
+{
+  "task_id": "PR100-064",
+  "metadata": {
+    "task_id": "PR100-064",
+    "family": "deduplication",
+    "designed_difficulty": 3,
+    "variant": 0
+  },
+  "public_job": {
+    "task_id": "PR100-064",
+    "initial": "顧客の連絡先に古い表記や重複が混ざっていて、誰の情報を残すか困っています。使える台帳と、変更点が伝わる短い説明が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\nemailを前後空白除去・小文字化し、aliasesにあればなくなるまで変換する。aliasesは非循環。最終emailで同一顧客とする。\n各顧客の代表はactive=true優先、updated降順、id昇順で先頭。nameとrepresentative_idは代表から取得。source_idsは全員のid昇順、balanceはactive=trueのbalanceだけ合計。\ncustomersは最終email昇順。total_active_balanceは全customersのbalance合計。入力順を代表選択の基準にしない。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に統合後件数・有効残高の全体像と、代表を残す基準・主な注意点。\n資料は以下のJSONです。\n{\n  \"aliases\": {},\n  \"records\": [\n    {\n      \"id\": \"R001\",\n      \"email\": \"a@example.test\",\n      \"name\": \"Name1\",\n      \"active\": false,\n      \"updated\": 4,\n      \"balance\": 1500\n    },\n    {\n      \"id\": \"R002\",\n      \"email\": \" A@EXAMPLE.TEST \",\n      \"name\": \"Name2\",\n      \"active\": true,\n      \"updated\": 5,\n      \"balance\": 300\n    },\n    {\n      \"id\": \"R003\",\n      \"email\": \"b@example.test\",\n      \"name\": \"Name3\",\n      \"active\": true,\n      \"updated\": 3,\n      \"balance\": 0\n    },\n    {\n      \"id\": \"R004\",\n      \"email\": \" B@EXAMPLE.TEST \",\n      \"name\": \"Name4\",\n      \"active\": true,\n      \"updated\": 1,\n      \"balance\": 1100\n    },\n    {\n      \"id\": \"R005\",\n      \"email\": \"c@example.test\",\n      \"name\": \"Name5\",\n      \"active\": false,\n      \"updated\": 1,\n      \"balance\": 1500\n    },\n    {\n      \"id\": \"R006\",\n      \"email\": \" C@EXAMPLE.TEST \",\n      \"name\": \"Name6\",\n      \"active\": true,\n      \"updated\": 1,\n      \"balance\": 1300\n    },\n    {\n      \"id\": \"R007\",\n      \"email\": \"d@example.test\",\n      \"name\": \"Name7\",\n      \"active\": true,\n      \"updated\": 1,\n      \"balance\": 500\n    },\n    {\n      \"id\": \"R008\",\n      \"email\": \" D@EXAMPLE.TEST \",\n      \"name\": \"Name8\",\n      \"active\": true,\n      \"updated\": 2,\n      \"balance\": 1300\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"customers\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"email\": {\"type\": \"string\"}, \"representative_id\": {\"type\": \"string\"}, \"name\": {\"type\": \"string\"}, \"source_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"balance\": {\"type\": \"integer\"}}, \"required\": [\"email\", \"representative_id\", \"name\", \"source_ids\", \"balance\"], \"additionalProperties\": false}}, \"total_active_balance\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"customers\", \"total_active_balance\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "aliases": {},
+      "records": [
+        {
+          "id": "R001",
+          "email": "a@example.test",
+          "name": "Name1",
+          "active": false,
+          "updated": 4,
+          "balance": 1500
+        },
+        {
+          "id": "R002",
+          "email": " A@EXAMPLE.TEST ",
+          "name": "Name2",
+          "active": true,
+          "updated": 5,
+          "balance": 300
+        },
+        {
+          "id": "R003",
+          "email": "b@example.test",
+          "name": "Name3",
+          "active": true,
+          "updated": 3,
+          "balance": 0
+        },
+        {
+          "id": "R004",
+          "email": " B@EXAMPLE.TEST ",
+          "name": "Name4",
+          "active": true,
+          "updated": 1,
+          "balance": 1100
+        },
+        {
+          "id": "R005",
+          "email": "c@example.test",
+          "name": "Name5",
+          "active": false,
+          "updated": 1,
+          "balance": 1500
+        },
+        {
+          "id": "R006",
+          "email": " C@EXAMPLE.TEST ",
+          "name": "Name6",
+          "active": true,
+          "updated": 1,
+          "balance": 1300
+        },
+        {
+          "id": "R007",
+          "email": "d@example.test",
+          "name": "Name7",
+          "active": true,
+          "updated": 1,
+          "balance": 500
+        },
+        {
+          "id": "R008",
+          "email": " D@EXAMPLE.TEST ",
+          "name": "Name8",
+          "active": true,
+          "updated": 2,
+          "balance": 1300
+        }
+      ]
+    },
+    "business_rules": [
+      "emailを前後空白除去・小文字化し、aliasesにあればなくなるまで変換する。aliasesは非循環。最終emailで同一顧客とする。",
+      "各顧客の代表はactive=true優先、updated降順、id昇順で先頭。nameとrepresentative_idは代表から取得。source_idsは全員のid昇順、balanceはactive=trueのbalanceだけ合計。",
+      "customersは最終email昇順。total_active_balanceは全customersのbalance合計。入力順を代表選択の基準にしない。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "customers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "representative_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "balance": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "email",
+              "representative_id",
+              "name",
+              "source_ids",
+              "balance"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "total_active_balance": {
+          "type": "integer"
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "customers",
+        "total_active_balance",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "normal",
+    "reasoning_effort": "medium"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "顧客の連絡先に古い表記や重複が混ざっていて、誰の情報を残すか困っています。使える台帳と、変更点が伝わる短い説明が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まず資料を確認し、整理のルールと台帳の形を相談しましょう。このチャットでいただく資料だけを使い、完成品を作る前に方針を確認します。\n\n連絡先資料を貼り付ける際に、分かる範囲で次も教えてください。\n\n- **用途**：営業連絡、請求、その他\n- **情報を残す判断基準**：更新日が新しい、本人確認済みを優先するなど。未定でも大丈夫です。\n- **希望する形式**：チャット内の表、Excelに貼り付けられる形式など\n\nたたき台としては、「連絡に使う台帳」と「変更点の短い説明」を分け、判断できない重複や食い違いは確認事項として残す形を考えています。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\nemailを前後空白除去・小文字化し、aliasesにあればなくなるまで変換する。aliasesは非循環。最終emailで同一顧客とする。\n各顧客の代表はactive=true優先、updated降順、id昇順で先頭。nameとrepresentative_idは代表から取得。source_idsは全員のid昇順、balanceはactive=trueのbalanceだけ合計。\ncustomersは最終email昇順。total_active_balanceは全customersのbalance合計。入力順を代表選択の基準にしない。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に統合後件数・有効残高の全体像と、代表を残す基準・主な注意点。\n資料は以下のJSONです。\n{\n  \"aliases\": {},\n  \"records\": [\n    {\n      \"id\": \"R001\",\n      \"email\": \"a@example.test\",\n      \"name\": \"Name1\",\n      \"active\": false,\n      \"updated\": 4,\n      \"balance\": 1500\n    },\n    {\n      \"id\": \"R002\",\n      \"email\": \" A@EXAMPLE.TEST \",\n      \"name\": \"Name2\",\n      \"active\": true,\n      \"updated\": 5,\n      \"balance\": 300\n    },\n    {\n      \"id\": \"R003\",\n      \"email\": \"b@example.test\",\n      \"name\": \"Name3\",\n      \"active\": true,\n      \"updated\": 3,\n      \"balance\": 0\n    },\n    {\n      \"id\": \"R004\",\n      \"email\": \" B@EXAMPLE.TEST \",\n      \"name\": \"Name4\",\n      \"active\": true,\n      \"updated\": 1,\n      \"balance\": 1100\n    },\n    {\n      \"id\": \"R005\",\n      \"email\": \"c@example.test\",\n      \"name\": \"Name5\",\n      \"active\": false,\n      \"updated\": 1,\n      \"balance\": 1500\n    },\n    {\n      \"id\": \"R006\",\n      \"email\": \" C@EXAMPLE.TEST \",\n      \"name\": \"Name6\",\n      \"active\": true,\n      \"updated\": 1,\n      \"balance\": 1300\n    },\n    {\n      \"id\": \"R007\",\n      \"email\": \"d@example.test\",\n      \"name\": \"Name7\",\n      \"active\": true,\n      \"updated\": 1,\n      \"balance\": 500\n    },\n    {\n      \"id\": \"R008\",\n      \"email\": \" D@EXAMPLE.TEST \",\n      \"name\": \"Name8\",\n      \"active\": true,\n      \"updated\": 2,\n      \"balance\": 1300\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"customers\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"email\": {\"type\": \"string\"}, \"representative_id\": {\"type\": \"string\"}, \"name\": {\"type\": \"string\"}, \"source_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"balance\": {\"type\": \"integer\"}}, \"required\": [\"email\", \"representative_id\", \"name\", \"source_ids\", \"balance\"], \"additionalProperties\": false}}, \"total_active_balance\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"customers\", \"total_active_balance\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人としては、統合後の連絡先を取り込んで使い、必要に応じて元のレコードまで確認する担当者と、件数・有効残高・注意点を把握する責任者を想定しています。担当者はcustomersの全明細とsource_idsで統合元を確認し、責任者は同じ成果物に含まれるreport_mdで全体像をつかむ形です。\n\n作り方は、まずemailの前後空白除去と小文字化を行い、aliasesの変換を最後まで適用したemailでまとめます。各グループでは、有効なレコードを優先し、次にupdatedの降順、最後にidの昇順で代表を選びます。名前は代表から取り、source_idsには無効なレコードも含めて統合元を残します。残高は代表の値だけではなく、グループ内のactive=trueの値をすべて合計する方針です。\n\n共有文では、統合前後の件数と有効残高の合計を示し、代表を選ぶ基準と、今回の資料で実際に注意が必要な点を主要な数値やIDに結び付けて短く説明します。表記の統合を、本人確認や連絡先変更の確認まで済んだこととしては扱いません。\n\n今回の見本を作るために、追加で確定が必要な条件は見当たりません。ただし、残高の通貨・単位とupdatedの単位は資料にないため、金額に通貨を付けたり、updatedを日付に読み替えたりはしません。まだ集計や成果物の作成は始めず、作成時には指定された全フィールドを持つJSONだけを返す想定です。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-064",
+      "arm": "SOL_CONTINUE",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "customers": [
+          {
+            "email": "a@example.test",
+            "representative_id": "R002",
+            "name": "Name2",
+            "source_ids": [
+              "R001",
+              "R002"
+            ],
+            "balance": 300
+          },
+          {
+            "email": "b@example.test",
+            "representative_id": "R003",
+            "name": "Name3",
+            "source_ids": [
+              "R003",
+              "R004"
+            ],
+            "balance": 1100
+          },
+          {
+            "email": "c@example.test",
+            "representative_id": "R006",
+            "name": "Name6",
+            "source_ids": [
+              "R005",
+              "R006"
+            ],
+            "balance": 1300
+          },
+          {
+            "email": "d@example.test",
+            "representative_id": "R008",
+            "name": "Name8",
+            "source_ids": [
+              "R007",
+              "R008"
+            ],
+            "balance": 1800
+          }
+        ],
+        "total_active_balance": 4500,
+        "report_md": "元資料8件を、emailの前後空白除去・小文字化により4顧客へ統合しました。有効レコード6件の残高合計は4,500です。customersは最終email昇順、source_idsは各顧客の全レコードをid昇順で記載しています。\n\n代表はactive=trueを優先し、updated降順、同値ならid昇順で選び、名前も代表から取得しています。入力順や残高の大小では選んでいません。a・cの代表は有効なR002・R006、b・dの代表は有効レコードのうちupdatedが新しいR003・R008です。\n\n残高は代表だけでなく、各顧客の有効レコード全件を合算しています。R003自身の残高は0ですが、R004の1,100を含むためbの残高は1,100です。dもR007・R008を合算して1,800です。無効なR001・R005の残高計3,000は集計対象外ですが、統合元としてsource_idsに残しています。元の8件すべてが明細に含まれ、顧客別残高の合計が4,500となることを確認しました。"
+      },
+      "final_artifact": {
+        "customers": [
+          {
+            "email": "a@example.test",
+            "representative_id": "R002",
+            "name": "Name2",
+            "source_ids": [
+              "R001",
+              "R002"
+            ],
+            "balance": 300
+          },
+          {
+            "email": "b@example.test",
+            "representative_id": "R003",
+            "name": "Name3",
+            "source_ids": [
+              "R003",
+              "R004"
+            ],
+            "balance": 1100
+          },
+          {
+            "email": "c@example.test",
+            "representative_id": "R006",
+            "name": "Name6",
+            "source_ids": [
+              "R005",
+              "R006"
+            ],
+            "balance": 1300
+          },
+          {
+            "email": "d@example.test",
+            "representative_id": "R008",
+            "name": "Name8",
+            "source_ids": [
+              "R007",
+              "R008"
+            ],
+            "balance": 1800
+          }
+        ],
+        "total_active_balance": 4500,
+        "report_md": "元資料8件を、emailの前後空白除去・小文字化により4顧客へ統合しました。有効レコード6件の残高合計は4,500です。customersは最終email昇順、source_idsは各顧客の全レコードをid昇順で記載しています。\n\n代表はactive=trueを優先し、updated降順、同値ならid昇順で選び、名前も代表から取得しています。入力順や残高の大小では選んでいません。a・cの代表は有効なR002・R006、b・dの代表は有効レコードのうちupdatedが新しいR003・R008です。\n\n残高は代表だけでなく、各顧客の有効レコード全件を合算しています。R003自身の残高は0ですが、R004の1,100を含むためbの残高は1,100です。dもR007・R008を合算して1,800です。無効なR001・R005の残高計3,000は集計対象外ですが、統合元としてsource_idsに残しています。元の8件すべてが明細に含まれ、顧客別残高の合計が4,500となることを確認しました。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.77999",
+      "incremental_credits": "0.9146",
+      "operating_total_credits": "1.69459",
+      "shared_seconds": 32.92099999997299,
+      "incremental_active_seconds": 15.35999999998603,
+      "total_active_seconds": 48.28099999995902,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T18:21:59.493014+00:00",
+        "text": "{\n  \"customers\": [\n    {\n      \"email\": \"a@example.test\",\n      \"representative_id\": \"R002\",\n      \"name\": \"Name2\",\n      \"source_ids\": [\"R001\", \"R002\"],\n      \"balance\": 300\n    },\n    {\n      \"email\": \"b@example.test\",\n      \"representative_id\": \"R003\",\n      \"name\": \"Name3\",\n      \"source_ids\": [\"R003\", \"R004\"],\n      \"balance\": 1100\n    },\n    {\n      \"email\": \"c@example.test\",\n      \"representative_id\": \"R006\",\n      \"name\": \"Name6\",\n      \"source_ids\": [\"R005\", \"R006\"],\n      \"balance\": 1300\n    },\n    {\n      \"email\": \"d@example.test\",\n      \"representative_id\": \"R008\",\n      \"name\": \"Name8\",\n      \"source_ids\": [\"R007\", \"R008\"],\n      \"balance\": 1800\n    }\n  ],\n  \"total_active_balance\": 4500,\n  \"report_md\": \"元資料8件を、emailの前後空白除去・小文字化により4顧客へ統合しました。有効レコード6件の残高合計は4,500です。customersは最終email昇順、source_idsは各顧客の全レコードをid昇順で記載しています。\\n\\n代表はactive=trueを優先し、updated降順、同値ならid昇順で選び、名前も代表から取得しています。入力順や残高の大小では選んでいません。a・cの代表は有効なR002・R006、b・dの代表は有効レコードのうちupdatedが新しいR003・R008です。\\n\\n残高は代表だけでなく、各顧客の有効レコード全件を合算しています。R003自身の残高は0ですが、R004の1,100を含むためbの残高は1,100です。dもR007・R008を合算して1,800です。無効なR001・R005の残高計3,000は集計対象外ですが、統合元としてsource_idsに残しています。元の8件すべてが明細に含まれ、顧客別残高の合計が4,500となることを確認しました。\"\n}",
+        "value": {
+          "customers": [
+            {
+              "email": "a@example.test",
+              "representative_id": "R002",
+              "name": "Name2",
+              "source_ids": [
+                "R001",
+                "R002"
+              ],
+              "balance": 300
+            },
+            {
+              "email": "b@example.test",
+              "representative_id": "R003",
+              "name": "Name3",
+              "source_ids": [
+                "R003",
+                "R004"
+              ],
+              "balance": 1100
+            },
+            {
+              "email": "c@example.test",
+              "representative_id": "R006",
+              "name": "Name6",
+              "source_ids": [
+                "R005",
+                "R006"
+              ],
+              "balance": 1300
+            },
+            {
+              "email": "d@example.test",
+              "representative_id": "R008",
+              "name": "Name8",
+              "source_ids": [
+                "R007",
+                "R008"
+              ],
+              "balance": 1800
+            }
+          ],
+          "total_active_balance": 4500,
+          "report_md": "元資料8件を、emailの前後空白除去・小文字化により4顧客へ統合しました。有効レコード6件の残高合計は4,500です。customersは最終email昇順、source_idsは各顧客の全レコードをid昇順で記載しています。\n\n代表はactive=trueを優先し、updated降順、同値ならid昇順で選び、名前も代表から取得しています。入力順や残高の大小では選んでいません。a・cの代表は有効なR002・R006、b・dの代表は有効レコードのうちupdatedが新しいR003・R008です。\n\n残高は代表だけでなく、各顧客の有効レコード全件を合算しています。R003自身の残高は0ですが、R004の1,100を含むためbの残高は1,100です。dもR007・R008を合算して1,800です。無効なR001・R005の残高計3,000は集計対象外ですが、統合元としてsource_idsに残しています。元の8件すべてが明細に含まれ、顧客別残高の合計が4,500となることを確認しました。"
+        },
+        "public_schema_pass": true,
+        "seconds": 15.35999999998603,
+        "credits": "0.9146",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-064",
+      "arm": "PRACTICAL",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "customers": [
+          {
+            "balance": 300,
+            "email": "a@example.test",
+            "name": "Name2",
+            "representative_id": "R002",
+            "source_ids": [
+              "R001",
+              "R002"
+            ]
+          },
+          {
+            "balance": 1100,
+            "email": "b@example.test",
+            "name": "Name3",
+            "representative_id": "R003",
+            "source_ids": [
+              "R003",
+              "R004"
+            ]
+          },
+          {
+            "balance": 1300,
+            "email": "c@example.test",
+            "name": "Name6",
+            "representative_id": "R006",
+            "source_ids": [
+              "R005",
+              "R006"
+            ]
+          },
+          {
+            "balance": 1800,
+            "email": "d@example.test",
+            "name": "Name8",
+            "representative_id": "R008",
+            "source_ids": [
+              "R007",
+              "R008"
+            ]
+          }
+        ],
+        "report_md": "顧客レコード8件を、emailに基づき4件に統合しました。統合後の有効残高合計は4,500です。代表レコードは「active=true優先、updated降順、id昇順」の基準で選定しています。\n\n主な注意点：\n- `b@example.test` (R003, R004): 更新日が新しいR003を代表とし、残高は両者の合計（1,100）としています。\n- `c@example.test` (R005, R006): R005が非アクティブなため、代表および残高計算にはR006のみが反映されています。\n- `d@example.test` (R007, R008): 更新日が新しいR008を代表とし、残高は両者の合計（1,800）としています。",
+        "total_active_balance": 4500
+      },
+      "final_artifact": {
+        "customers": [
+          {
+            "balance": 300,
+            "email": "a@example.test",
+            "name": "Name2",
+            "representative_id": "R002",
+            "source_ids": [
+              "R001",
+              "R002"
+            ]
+          },
+          {
+            "balance": 1100,
+            "email": "b@example.test",
+            "name": "Name3",
+            "representative_id": "R003",
+            "source_ids": [
+              "R003",
+              "R004"
+            ]
+          },
+          {
+            "balance": 1300,
+            "email": "c@example.test",
+            "name": "Name6",
+            "representative_id": "R006",
+            "source_ids": [
+              "R005",
+              "R006"
+            ]
+          },
+          {
+            "balance": 1800,
+            "email": "d@example.test",
+            "name": "Name8",
+            "representative_id": "R008",
+            "source_ids": [
+              "R007",
+              "R008"
+            ]
+          }
+        ],
+        "report_md": "顧客レコード8件を、emailに基づき4件に統合しました。統合後の有効残高合計は4,500です。代表レコードは「active=true優先、updated降順、id昇順」の基準で選定しています。\n\n主な注意点：\n- `b@example.test` (R003, R004): 更新日が新しいR003を代表とし、残高は両者の合計（1,100）としています。\n- `c@example.test` (R005, R006): R005が非アクティブなため、代表および残高計算にはR006のみが反映されています。\n- `d@example.test` (R007, R008): 更新日が新しいR008を代表とし、残高は両者の合計（1,800）としています。",
+        "total_active_balance": 4500
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.77999",
+      "incremental_credits": "0.2449",
+      "operating_total_credits": "1.02489",
+      "shared_seconds": 32.92099999997299,
+      "incremental_active_seconds": 185.329000000027,
+      "total_active_seconds": 218.25,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T18:21:43.558921+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 5.157000000006519,
+          "credits": "0.2449",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 147.3279999999795,
+        "usage": {
+          "prompt_eval_count": 2010,
+          "eval_count": 5766,
+          "prompt_eval_duration": 2563948000,
+          "eval_duration": 144639332000,
+          "total_duration": 147230271200
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "customers": [
+      {
+        "email": "a@example.test",
+        "representative_id": "R002",
+        "name": "Name2",
+        "source_ids": [
+          "R001",
+          "R002"
+        ],
+        "balance": 300
+      },
+      {
+        "email": "b@example.test",
+        "representative_id": "R003",
+        "name": "Name3",
+        "source_ids": [
+          "R003",
+          "R004"
+        ],
+        "balance": 1100
+      },
+      {
+        "email": "c@example.test",
+        "representative_id": "R006",
+        "name": "Name6",
+        "source_ids": [
+          "R005",
+          "R006"
+        ],
+        "balance": 1300
+      },
+      {
+        "email": "d@example.test",
+        "representative_id": "R008",
+        "name": "Name8",
+        "source_ids": [
+          "R007",
+          "R008"
+        ],
+        "balance": 1800
+      }
+    ],
+    "total_active_balance": 4500
+  },
+  "scores": [
+    {
+      "task_id": "PR100-064",
+      "arm": "SOL_CONTINUE",
+      "family": "deduplication",
+      "designed_difficulty": 3,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.69459",
+      "total_active_seconds": 48.28099999995902,
+      "report_md": "元資料8件を、emailの前後空白除去・小文字化により4顧客へ統合しました。有効レコード6件の残高合計は4,500です。customersは最終email昇順、source_idsは各顧客の全レコードをid昇順で記載しています。\n\n代表はactive=trueを優先し、updated降順、同値ならid昇順で選び、名前も代表から取得しています。入力順や残高の大小では選んでいません。a・cの代表は有効なR002・R006、b・dの代表は有効レコードのうちupdatedが新しいR003・R008です。\n\n残高は代表だけでなく、各顧客の有効レコード全件を合算しています。R003自身の残高は0ですが、R004の1,100を含むためbの残高は1,100です。dもR007・R008を合算して1,800です。無効なR001・R005の残高計3,000は集計対象外ですが、統合元としてsource_idsに残しています。元の8件すべてが明細に含まれ、顧客別残高の合計が4,500となることを確認しました。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-064",
+      "arm": "PRACTICAL",
+      "family": "deduplication",
+      "designed_difficulty": 3,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.02489",
+      "total_active_seconds": 218.25,
+      "report_md": "顧客レコード8件を、emailに基づき4件に統合しました。統合後の有効残高合計は4,500です。代表レコードは「active=true優先、updated降順、id昇順」の基準で選定しています。\n\n主な注意点：\n- `b@example.test` (R003, R004): 更新日が新しいR003を代表とし、残高は両者の合計（1,100）としています。\n- `c@example.test` (R005, R006): R005が非アクティブなため、代表および残高計算にはR006のみが反映されています。\n- `d@example.test` (R007, R008): 更新日が新しいR008を代表とし、残高は両者の合計（1,800）としています。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

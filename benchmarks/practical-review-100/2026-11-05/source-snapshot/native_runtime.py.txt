@@ -1,0 +1,77 @@
+from runtime import *
+class Local:
+ def __init__(self,capture):
+  self.cap=capture;self.f=capture.f;self.h=load('e2e_native_observation',self.f['native_helper']);self.ctx=load('e2e_context_diagnostics',ROOT/'context_diagnostics.py');self.p=None;self.logs=None;self.arm=None;self.epoch=0;self.primary=0;self.attempts=0;self.load_seconds=0
+ def stop(self):
+  if self.p is not None:self.h.stop_server(self.p,self.logs);self.p=self.logs=None;self.arm=None
+ def ensure(self,arm):
+  if self.arm==arm and self.p is not None and self.p.poll() is None:return
+  self.stop();self.epoch+=1;model=next(m for m in self.f['models'] if m['arm']==arm);out=RUN/'servers'/f'{self.epoch:03d}-{arm}';out.mkdir(parents=True,exist_ok=False)
+  before=self.h.snapshot();save(out/'BEFORE.json',before);assert before['gpu'] is not None and before['ram']['available_bytes']>=6*2**30
+  assert not self.h.processes(),'Unexpected Ollama/backend; do not terminate unowned process'
+  with socket.socket() as sock:sock.settimeout(2);assert sock.connect_ex(('127.0.0.1',11434))!=0,'Unexpected API listener'
+  env=os.environ.copy();env.update(self.f['local_environment']);self.logs=[(out/'stdout.log').open('xb'),(out/'stderr.log').open('xb')]
+  self.logpath=out/'stderr.log';start=time.monotonic();self.p=subprocess.Popen([self.f['ollama_exe'],'serve'],env=env,stdout=self.logs[0],stderr=self.logs[1],creationflags=subprocess.CREATE_NO_WINDOW)
+  for _ in range(60):
+   assert self.p.poll() is None,'Owned server died before load'
+   try:
+    if self.h.api('version')['version']==self.f['ollama_version'] and self.h.api('ps')['models']==[]:break
+   except Exception:time.sleep(.5)
+  else:raise RuntimeError('API readiness timeout')
+  tags=self.h.api('tags')['models'];assert any(m['name']==model['model'] and m['digest']==model['digest'] for m in tags),'Model digest mismatch'
+  show=self.h.api('show',{'model':model['model']});save(out/'MODEL_SHOW.json',show)
+  if model['think'] is not None:assert model['think'] in show['thinking']['values']
+  payload={'model':model['model'],'prompt':'','stream':False,'keep_alive':-1,'options':model['options']};save(out/'LOAD_ONLY_REQUEST.json',payload)
+  response=self.h.api('generate',payload,600);save(out/'LOAD_ONLY_RESPONSE.json',response)
+  assert response.get('done_reason')=='load' and not response.get('response') and not response.get('eval_count'),'Load-only generated unexpected content'
+  snap=self.h.snapshot();save(out/'LOADED_IDLE.json',snap);models=snap['ps']['models'];assert len(models)==1 and models[0]['digest']==model['digest'] and models[0]['context_length']==model['options']['num_ctx']
+  backend=[p for p in snap['processes'] if '--model' in p.get('backend_argv',[]) or '-m' in p.get('backend_argv',[])];assert len(backend)==1 and backend[0]['parent_pid']==self.p.pid
+  argv=backend[0]['backend_argv']
+  for flag in ['--cache-type-k','--cache-type-v']:assert flag in argv and argv[argv.index(flag)+1]=='f16'
+  assert '--flash-attn' in argv and argv[argv.index('--flash-attn')+1]=='on'
+  assert snap['gpu'] is not None and snap['ram']['available_bytes']>=6*2**30
+  wall=time.monotonic()-start;self.load_seconds+=wall;save(out/'START.json',{'timestamp':now(),'pid':self.p.pid,'fresh_models_empty':True,'arm':arm,'load_wall_seconds':wall,'owned_backend_verified':True});self.arm=arm
+ def call(self,tid,arm,step,packet,schema):
+  guard();self.primary+=1;assert self.primary<=100
+  for attempt in [1,2]:
+   self.ensure(step['model']);model=next(m for m in self.f['models'] if m['arm']==step['model']);self.attempts+=1;assert self.attempts<=200
+   path=RUN/'local'/tid/arm/step.get('role','LOCAL_EXECUTOR')/('step-'+hashlib.sha256(step['step_id'].encode('utf-8')).hexdigest())/f'attempt-{attempt:03d}';path.mkdir(parents=True,exist_ok=False)
+   payload={'model':model['model'],'messages':[{'role':'system','content':'Complete this bounded data task. Return only the required JSON object. Use only supplied data and explicit rules. No tools or outside facts.'},{'role':'user','content':json.dumps(packet,ensure_ascii=False,separators=(',',':'))}],'format':schema,'stream':False,'keep_alive':-1,'options':model['options']}
+   if model['think'] is not None:payload['think']=model['think']
+   admission_bytes=len(json.dumps(payload['messages'],ensure_ascii=False,separators=(',',':')).encode())+len(json.dumps(schema,ensure_ascii=False).encode())+4096
+   assert admission_bytes+model['options']['num_predict']<=model['options']['num_ctx'],'Conservative context admission STOP; do not shrink output or truncate'
+   before=self.h.snapshot();save(path/'BEFORE.json',before);assert before['gpu'] is not None and before['ram']['available_bytes']>=6*2**30
+   assert all(m['digest']==model['digest'] for m in before['ps']['models'])
+   offset=self.logpath.stat().st_size;stop=threading.Event();samples=[before]
+   def sample():
+    with (path/'telemetry.jsonl').open('x',encoding='utf-8') as log:
+     while not stop.is_set():
+      snap=self.h.snapshot();samples.append(snap);log.write(json.dumps(snap)+'\n');log.flush();stop.wait(2)
+   t=threading.Thread(target=sample,daemon=True);t.start()
+   meta={'task_id':tid,'benchmark':ROOT.name,'arm':arm,'role':step.get('role','LOCAL_EXECUTOR'),'stage':step['step_id'],'model':model['model'],'model_digest':model['digest'],'reasoning_effort':str(model['think']),'speed_mode':None,'origin_scope':'BENCHMARK_EXECUTION','retry':attempt==2,'authorization_ref':sha(ROOT/'EXECUTION_FREEZE.json')}
+   try:captured=self.cap.c.capture_ollama(RUN/'accounting',meta,payload,timeout=2400)
+   finally:stop.set();t.join(25)
+   assert not t.is_alive(),'Telemetry failed to stop';after=self.h.snapshot();samples.append(after);save(path/'AFTER.json',after)
+   logs=self.logpath.read_bytes()[offset:];(path/'backend-call.log').write_bytes(logs)
+   report=self.cap.c.reconcile(captured,self.cap.rate,self.cap.raw);save(path/'CAPTURE.json',report)
+   rawbytes=(captured/'response.raw').read_bytes()
+   try:raw=json.loads(rawbytes)
+   except Exception:raw={}
+   resource=self.h.measure_samples(samples);text=logs.decode('utf-8','replace')+'\n'+rawbytes.decode('utf-8','replace')
+   cuda=bool(re.search(r'CUDA error|illegal memory access|cudaStreamSynchronize',text,re.I));crash=self.p.poll() is not None or bool(re.search(r'runner.*(crash|terminated|exit status)',text,re.I));ctx=self.ctx.context_findings(logs.decode('utf-8','replace'))
+   infra=cuda or crash or report['terminal'].get('http_status')!=200 or bool(raw.get('error')) or resource['gpu_query_failures']>0
+   category='INFRA_ERROR' if infra else 'CONTEXT_WARNING' if ctx['confirmed'] or ctx['unresolved_warnings'] else 'OUTPUT_LIMIT' if raw.get('done_reason') in ['length','max_tokens'] else 'INCOMPLETE_RESPONSE' if not raw.get('done') else 'RESPONSE_COMPLETE'
+   value=None
+   if category=='RESPONSE_COMPLETE':
+    try:
+     from protocol import parse,check_schema
+     value=parse(raw['message']['content']);check_schema(value,schema)
+    except Exception as exc:category='FORMAT_OR_SCHEMA_ERROR';value=None
+   result={'task_id':tid,'arm':arm,'step_id':step['step_id'],'local_model':step['model'],'local_role':step.get('role','LOCAL_EXECUTOR'),'attempt':attempt,'classification':category,'cuda':cuda,'backend_crash':crash,'context_findings':ctx,'resource':resource,'api_seconds':report['terminal']['elapsed_seconds'],'capture_path':str(captured),'usage':{k:raw.get(k) for k in ['prompt_eval_count','eval_count','prompt_eval_duration','eval_duration','total_duration']},'value':value}
+   save(path/'RESULT.json',result);event({'event':'LOCAL_FINISHED','task_id':tid,'arm':arm,'step':step['step_id'],'attempt':attempt,'classification':category})
+   if not infra:
+    assert report['usage_coverage']=='REPORTED_USAGE_COMPLETE','Missing native usage; preserve and STOP'
+    return result
+   self.stop();assert attempt==1,'Repeated infra failure; stop';assert self.h.snapshot()['gpu'] is not None,'GPU did not recover'
+   event({'event':'OWNED_INFRA_RESTART','task_id':tid,'arm':arm,'step':step['step_id'],'same_payload_retry':1})
+  raise RuntimeError('Unreachable')

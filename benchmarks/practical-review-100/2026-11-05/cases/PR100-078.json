@@ -1,0 +1,456 @@
+{
+  "task_id": "PR100-078",
+  "metadata": {
+    "task_id": "PR100-078",
+    "family": "availability",
+    "designed_difficulty": 2,
+    "variant": 0
+  },
+  "public_job": {
+    "task_id": "PR100-078",
+    "initial": "皆の空き時間の表記が揃っていなくて、会議をいつにするか困っています。共通の空きと候補時刻、それを説明する短い文が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n時間は同じ日の整数分、区間は[start,end)でUTC基準0..1440内のみ。personのUTC区間はlocal_windowsの両端からutc_offsetを引き、0..1440へclipし、重なりまたは接する区間をmergeする。\n全personの共通区間からblackouts（UTC）を除き、残る各区間のstartへbufferを加えendからbufferを引く。start<endだけ残し、開始順にfree_windowsへ返す。\neligible_startsはgridの整数倍tについて、どれかのfree_windowでstart<=tかつt+duration<=endを満たす全tを昇順で返す。selected_startは先頭、なければ-1。空きがない場合でも推測で候補を作らない。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に共通の空きと選んだ開始時刻、候補がない場合の扱い、時差や余白の注意点。\n資料は以下のJSONです。\n{\n  \"duration\": 45,\n  \"buffer\": 0,\n  \"grid\": 15,\n  \"people\": [\n    {\n      \"id\": \"P1\",\n      \"utc_offset\": 0,\n      \"local_windows\": [\n        [\n          675,\n          855\n        ],\n        [\n          915,\n          1155\n        ]\n      ]\n    },\n    {\n      \"id\": \"P2\",\n      \"utc_offset\": 0,\n      \"local_windows\": [\n        [\n          690,\n          855\n        ],\n        [\n          915,\n          1140\n        ]\n      ]\n    },\n    {\n      \"id\": \"P3\",\n      \"utc_offset\": 0,\n      \"local_windows\": [\n        [\n          675,\n          855\n        ],\n        [\n          915,\n          1155\n        ]\n      ]\n    }\n  ],\n  \"blackouts\": []\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"free_windows\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"start\": {\"type\": \"integer\"}, \"end\": {\"type\": \"integer\"}}, \"required\": [\"start\", \"end\"], \"additionalProperties\": false}}, \"eligible_starts\": {\"type\": \"array\", \"items\": {\"type\": \"integer\"}}, \"selected_start\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"free_windows\", \"eligible_starts\", \"selected_start\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "duration": 45,
+      "buffer": 0,
+      "grid": 15,
+      "people": [
+        {
+          "id": "P1",
+          "utc_offset": 0,
+          "local_windows": [
+            [
+              675,
+              855
+            ],
+            [
+              915,
+              1155
+            ]
+          ]
+        },
+        {
+          "id": "P2",
+          "utc_offset": 0,
+          "local_windows": [
+            [
+              690,
+              855
+            ],
+            [
+              915,
+              1140
+            ]
+          ]
+        },
+        {
+          "id": "P3",
+          "utc_offset": 0,
+          "local_windows": [
+            [
+              675,
+              855
+            ],
+            [
+              915,
+              1155
+            ]
+          ]
+        }
+      ],
+      "blackouts": []
+    },
+    "business_rules": [
+      "時間は同じ日の整数分、区間は[start,end)でUTC基準0..1440内のみ。personのUTC区間はlocal_windowsの両端からutc_offsetを引き、0..1440へclipし、重なりまたは接する区間をmergeする。",
+      "全personの共通区間からblackouts（UTC）を除き、残る各区間のstartへbufferを加えendからbufferを引く。start<endだけ残し、開始順にfree_windowsへ返す。",
+      "eligible_startsはgridの整数倍tについて、どれかのfree_windowでstart<=tかつt+duration<=endを満たす全tを昇順で返す。selected_startは先頭、なければ-1。空きがない場合でも推測で候補を作らない。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "free_windows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "integer"
+              },
+              "end": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "eligible_starts": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "selected_start": {
+          "type": "integer"
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "free_windows",
+        "eligible_starts",
+        "selected_start",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "small",
+    "reasoning_effort": "low"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "皆の空き時間の表記が揃っていなくて、会議をいつにするか困っています。共通の空きと候補時刻、それを説明する短い文が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まず、このチャットでいただく資料だけを使い、表記の整理方法と出力の形を相談してからまとめます。\n\n資料とあわせて、分かる範囲で次を教えてください。\n\n- **各参加者の空き時間**：書き方はばらばらのままで大丈夫です。\n- **会議の条件**：所要時間、対象の日付・期間、全員参加が必須かどうか。\n- **時刻の基準**：タイムゾーン。全員日本時間なら、その旨だけで十分です。\n\n仕上がりは「全員に共通する空き時間の一覧」「会議の候補時刻を数件」「候補を説明する短い文」の形を考えています。候補の優先条件（早い日、午後など）があれば、それも添えてください。\n\n不明な点や曖昧な表記は、資料を見てから確認します。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n時間は同じ日の整数分、区間は[start,end)でUTC基準0..1440内のみ。personのUTC区間はlocal_windowsの両端からutc_offsetを引き、0..1440へclipし、重なりまたは接する区間をmergeする。\n全personの共通区間からblackouts（UTC）を除き、残る各区間のstartへbufferを加えendからbufferを引く。start<endだけ残し、開始順にfree_windowsへ返す。\neligible_startsはgridの整数倍tについて、どれかのfree_windowでstart<=tかつt+duration<=endを満たす全tを昇順で返す。selected_startは先頭、なければ-1。空きがない場合でも推測で候補を作らない。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に共通の空きと選んだ開始時刻、候補がない場合の扱い、時差や余白の注意点。\n資料は以下のJSONです。\n{\n  \"duration\": 45,\n  \"buffer\": 0,\n  \"grid\": 15,\n  \"people\": [\n    {\n      \"id\": \"P1\",\n      \"utc_offset\": 0,\n      \"local_windows\": [\n        [\n          675,\n          855\n        ],\n        [\n          915,\n          1155\n        ]\n      ]\n    },\n    {\n      \"id\": \"P2\",\n      \"utc_offset\": 0,\n      \"local_windows\": [\n        [\n          690,\n          855\n        ],\n        [\n          915,\n          1140\n        ]\n      ]\n    },\n    {\n      \"id\": \"P3\",\n      \"utc_offset\": 0,\n      \"local_windows\": [\n        [\n          675,\n          855\n        ],\n        [\n          915,\n          1155\n        ]\n      ]\n    }\n  ],\n  \"blackouts\": []\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"free_windows\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"start\": {\"type\": \"integer\"}, \"end\": {\"type\": \"integer\"}}, \"required\": [\"start\", \"end\"], \"additionalProperties\": false}}, \"eligible_starts\": {\"type\": \"array\", \"items\": {\"type\": \"integer\"}}, \"selected_start\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"free_windows\", \"eligible_starts\", \"selected_start\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人は、全候補を確認して日程調整を進める担当者と、結論と注意点を把握する責任者を想定しています。担当者はJSONの共通空き区間・開始候補一覧・選択された開始時刻を確認し、責任者は同じJSON内の短い共有文 `report_md` を明細とあわせて読む形です。\n\n作成時は、各人の時間を指定どおりUTCに変換し、範囲の切り詰めと区間の統合を行います。その後、全員の共通部分から除外時間を引き、余白を適用して `free_windows` を求めます。その区間内に45分の会議が収まる15分刻みの開始時刻をすべて並べ、最も早いものを選びます。候補がなければ一覧は空、選択値は `-1` とし、別の候補を推測で補いません。\n\n共有文には、共通の空きと選択した開始時刻を、分値と読みやすいUTCの時刻に結び付けて説明します。今回は全員の時差が0、余白が0分、除外時間もないため、その条件が結果の読み方にどう関わるかを簡潔に添えます。会議の確定や参加者への連絡が済んだとは書きません。\n\n計算に必要な条件はそろっています。具体的な日付は未指定なので、日付や曜日は付けません。まだ計算・成果物の作成は始めず、作成する段階では指定された全4フィールドのJSONだけを返す方針です。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-078",
+      "arm": "SOL_CONTINUE",
+      "profile": "small",
+      "reasoning_effort": "low",
+      "initial_artifact": {
+        "free_windows": [
+          {
+            "start": 690,
+            "end": 855
+          },
+          {
+            "start": 915,
+            "end": 1140
+          }
+        ],
+        "eligible_starts": [
+          690,
+          705,
+          720,
+          735,
+          750,
+          765,
+          780,
+          795,
+          810,
+          915,
+          930,
+          945,
+          960,
+          975,
+          990,
+          1005,
+          1020,
+          1035,
+          1050,
+          1065,
+          1080,
+          1095
+        ],
+        "selected_start": 690,
+        "report_md": "全3名の共通の空きは、UTCの11:30〜14:15（[690,855)）と15:15〜19:00（[915,1140)）です。45分の会議が収まる15分刻みの開始候補は計22件あり、最も早い690（11:30）を選択しています。会議時間は11:30〜12:15です。\n\n共通区間の範囲を制限しているのはP2の空き時間です。全員のutc_offsetは0のため元の時刻とUTCは一致し、範囲外の切り詰めもありません。除外時間はなく、bufferは0分なので前後の余白は確保していません。区間は終了端を含まない[start,end)で、会議は終了端ちょうどまで収まれば候補に含めています。これは資料に基づく選択結果であり、会議の確定や参加者への連絡を示すものではありません。"
+      },
+      "final_artifact": {
+        "free_windows": [
+          {
+            "start": 690,
+            "end": 855
+          },
+          {
+            "start": 915,
+            "end": 1140
+          }
+        ],
+        "eligible_starts": [
+          690,
+          705,
+          720,
+          735,
+          750,
+          765,
+          780,
+          795,
+          810,
+          915,
+          930,
+          945,
+          960,
+          975,
+          990,
+          1005,
+          1020,
+          1035,
+          1050,
+          1065,
+          1080,
+          1095
+        ],
+        "selected_start": 690,
+        "report_md": "全3名の共通の空きは、UTCの11:30〜14:15（[690,855)）と15:15〜19:00（[915,1140)）です。45分の会議が収まる15分刻みの開始候補は計22件あり、最も早い690（11:30）を選択しています。会議時間は11:30〜12:15です。\n\n共通区間の範囲を制限しているのはP2の空き時間です。全員のutc_offsetは0のため元の時刻とUTCは一致し、範囲外の切り詰めもありません。除外時間はなく、bufferは0分なので前後の余白は確保していません。区間は終了端を含まない[start,end)で、会議は終了端ちょうどまで収まれば候補に含めています。これは資料に基づく選択結果であり、会議の確定や参加者への連絡を示すものではありません。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.95811",
+      "incremental_credits": "0.9841",
+      "operating_total_credits": "1.94221",
+      "shared_seconds": 27.04799999995157,
+      "incremental_active_seconds": 11.547000000020489,
+      "total_active_seconds": 38.59499999997206,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T19:07:40.993518+00:00",
+        "text": "{\n  \"free_windows\": [\n    {\"start\": 690, \"end\": 855},\n    {\"start\": 915, \"end\": 1140}\n  ],\n  \"eligible_starts\": [\n    690, 705, 720, 735, 750, 765, 780, 795, 810,\n    915, 930, 945, 960, 975, 990, 1005, 1020, 1035, 1050, 1065, 1080, 1095\n  ],\n  \"selected_start\": 690,\n  \"report_md\": \"全3名の共通の空きは、UTCの11:30〜14:15（[690,855)）と15:15〜19:00（[915,1140)）です。45分の会議が収まる15分刻みの開始候補は計22件あり、最も早い690（11:30）を選択しています。会議時間は11:30〜12:15です。\\n\\n共通区間の範囲を制限しているのはP2の空き時間です。全員のutc_offsetは0のため元の時刻とUTCは一致し、範囲外の切り詰めもありません。除外時間はなく、bufferは0分なので前後の余白は確保していません。区間は終了端を含まない[start,end)で、会議は終了端ちょうどまで収まれば候補に含めています。これは資料に基づく選択結果であり、会議の確定や参加者への連絡を示すものではありません。\"\n}",
+        "value": {
+          "free_windows": [
+            {
+              "start": 690,
+              "end": 855
+            },
+            {
+              "start": 915,
+              "end": 1140
+            }
+          ],
+          "eligible_starts": [
+            690,
+            705,
+            720,
+            735,
+            750,
+            765,
+            780,
+            795,
+            810,
+            915,
+            930,
+            945,
+            960,
+            975,
+            990,
+            1005,
+            1020,
+            1035,
+            1050,
+            1065,
+            1080,
+            1095
+          ],
+          "selected_start": 690,
+          "report_md": "全3名の共通の空きは、UTCの11:30〜14:15（[690,855)）と15:15〜19:00（[915,1140)）です。45分の会議が収まる15分刻みの開始候補は計22件あり、最も早い690（11:30）を選択しています。会議時間は11:30〜12:15です。\n\n共通区間の範囲を制限しているのはP2の空き時間です。全員のutc_offsetは0のため元の時刻とUTCは一致し、範囲外の切り詰めもありません。除外時間はなく、bufferは0分なので前後の余白は確保していません。区間は終了端を含まない[start,end)で、会議は終了端ちょうどまで収まれば候補に含めています。これは資料に基づく選択結果であり、会議の確定や参加者への連絡を示すものではありません。"
+        },
+        "public_schema_pass": true,
+        "seconds": 11.547000000020489,
+        "credits": "0.9841",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-078",
+      "arm": "PRACTICAL",
+      "profile": "small",
+      "reasoning_effort": "low",
+      "initial_artifact": {
+        "free_windows": [
+          {
+            "start": 690,
+            "end": 855
+          },
+          {
+            "start": 915,
+            "end": 1140
+          }
+        ],
+        "eligible_starts": [
+          690,
+          705,
+          720,
+          735,
+          750,
+          765,
+          780,
+          795,
+          810,
+          915,
+          930,
+          945,
+          960,
+          975,
+          990,
+          1005,
+          1020,
+          1035,
+          1050,
+          1065,
+          1080,
+          1095
+        ],
+        "selected_start": 690,
+        "report_md": "全3名の共通の空きは、UTCの11:30〜14:15（[690,855)）と15:15〜19:00（[915,1140)）です。45分の会議が収まる15分刻みの開始候補は計22件あり、最も早い690（11:30）を選択しています。会議時間は11:30〜12:15です。\n\n共通区間の範囲を制限しているのはP2の空き時間です。全員のutc_offsetは0のため元の時刻とUTCは一致し、範囲外の切り詰めもありません。除外時間はなく、bufferは0分なので前後の余白は確保していません。区間は終了端を含まない[start,end)で、会議は終了端ちょうどまで収まれば候補に含めています。これは資料に基づく選択結果であり、会議の確定や参加者への連絡を示すものではありません。"
+      },
+      "final_artifact": {
+        "free_windows": [
+          {
+            "start": 690,
+            "end": 855
+          },
+          {
+            "start": 915,
+            "end": 1140
+          }
+        ],
+        "eligible_starts": [
+          690,
+          705,
+          720,
+          735,
+          750,
+          765,
+          780,
+          795,
+          810,
+          915,
+          930,
+          945,
+          960,
+          975,
+          990,
+          1005,
+          1020,
+          1035,
+          1050,
+          1065,
+          1080,
+          1095
+        ],
+        "selected_start": 690,
+        "report_md": "全3名の共通の空きは、UTCの11:30〜14:15（[690,855)）と15:15〜19:00（[915,1140)）です。45分の会議が収まる15分刻みの開始候補は計22件あり、最も早い690（11:30）を選択しています。会議時間は11:30〜12:15です。\n\n共通区間の範囲を制限しているのはP2の空き時間です。全員のutc_offsetは0のため元の時刻とUTCは一致し、範囲外の切り詰めもありません。除外時間はなく、bufferは0分なので前後の余白は確保していません。区間は終了端を含まない[start,end)で、会議は終了端ちょうどまで収まれば候補に含めています。これは資料に基づく選択結果であり、会議の確定や参加者への連絡を示すものではありません。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.95811",
+      "incremental_credits": "0.9841",
+      "operating_total_credits": "1.94221",
+      "shared_seconds": 27.04799999995157,
+      "incremental_active_seconds": 11.547000000020489,
+      "total_active_seconds": 38.59499999997206,
+      "same_physical_small_task_execution": true,
+      "human_repair_seconds": null
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "free_windows": [
+      {
+        "start": 690,
+        "end": 855
+      },
+      {
+        "start": 915,
+        "end": 1140
+      }
+    ],
+    "eligible_starts": [
+      690,
+      705,
+      720,
+      735,
+      750,
+      765,
+      780,
+      795,
+      810,
+      915,
+      930,
+      945,
+      960,
+      975,
+      990,
+      1005,
+      1020,
+      1035,
+      1050,
+      1065,
+      1080,
+      1095
+    ],
+    "selected_start": 690
+  },
+  "scores": [
+    {
+      "task_id": "PR100-078",
+      "arm": "SOL_CONTINUE",
+      "family": "availability",
+      "designed_difficulty": 2,
+      "profile": "small",
+      "reasoning_effort": "low",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.94221",
+      "total_active_seconds": 38.59499999997206,
+      "report_md": "全3名の共通の空きは、UTCの11:30〜14:15（[690,855)）と15:15〜19:00（[915,1140)）です。45分の会議が収まる15分刻みの開始候補は計22件あり、最も早い690（11:30）を選択しています。会議時間は11:30〜12:15です。\n\n共通区間の範囲を制限しているのはP2の空き時間です。全員のutc_offsetは0のため元の時刻とUTCは一致し、範囲外の切り詰めもありません。除外時間はなく、bufferは0分なので前後の余白は確保していません。区間は終了端を含まない[start,end)で、会議は終了端ちょうどまで収まれば候補に含めています。これは資料に基づく選択結果であり、会議の確定や参加者への連絡を示すものではありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-078",
+      "arm": "PRACTICAL",
+      "family": "availability",
+      "designed_difficulty": 2,
+      "profile": "small",
+      "reasoning_effort": "low",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.94221",
+      "total_active_seconds": 38.59499999997206,
+      "report_md": "全3名の共通の空きは、UTCの11:30〜14:15（[690,855)）と15:15〜19:00（[915,1140)）です。45分の会議が収まる15分刻みの開始候補は計22件あり、最も早い690（11:30）を選択しています。会議時間は11:30〜12:15です。\n\n共通区間の範囲を制限しているのはP2の空き時間です。全員のutc_offsetは0のため元の時刻とUTCは一致し、範囲外の切り詰めもありません。除外時間はなく、bufferは0分なので前後の余白は確保していません。区間は終了端を含まない[start,end)で、会議は終了端ちょうどまで収まれば候補に含めています。これは資料に基づく選択結果であり、会議の確定や参加者への連絡を示すものではありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

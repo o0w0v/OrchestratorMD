@@ -1,0 +1,1306 @@
+{
+  "task_id": "PR100-002",
+  "metadata": {
+    "task_id": "PR100-002",
+    "family": "expenses",
+    "designed_difficulty": 5,
+    "variant": 0
+  },
+  "public_job": {
+    "task_id": "PR100-002",
+    "initial": "経費の領収書に重複や上限超過があり、承認できる金額を整理したいです。担当者向けの明細と責任者向けの短い説明が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\nday昇順、id昇順で処理する。receipt_idは先に現れた全claimで記録し、2回目以降は他条件より優先してDUPLICATE、approved=0。初出の取消はCANCELLED、receipt_ok=falseはNO_RECEIPT、いずれもapproved=0。\nその他はapproved=min(amount,category_caps[category],そのemployeeの予算残数)、予算をapprovedだけ減らす。approved=amountならFULL、approved=0ならNO_BUDGET、その他PARTIAL。\ndetailsは全claimをid順、processing_orderは取消や重複を含む全claimの処理順。budgetsはemployee順で最終remaining。total_approvedは全approvedの合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に承認金額・残予算の全体像と、非承認や減額の主な区分・理由。\n資料は以下のJSONです。\n{\n  \"category_caps\": {\n    \"TRAVEL\": 1800,\n    \"MEAL\": 900,\n    \"OTHER\": 1200\n  },\n  \"budgets\": [\n    {\n      \"employee\": \"E1\",\n      \"remaining\": 3900\n    },\n    {\n      \"employee\": \"E2\",\n      \"remaining\": 2800\n    },\n    {\n      \"employee\": \"E3\",\n      \"remaining\": 2600\n    }\n  ],\n  \"claims\": [\n    {\n      \"id\": \"X001\",\n      \"receipt_id\": \"R001\",\n      \"employee\": \"E1\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1000,\n      \"day\": 4,\n      \"cancelled\": true,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X002\",\n      \"receipt_id\": \"R001\",\n      \"employee\": \"E2\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1000,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X003\",\n      \"receipt_id\": \"R002\",\n      \"employee\": \"E3\",\n      \"category\": \"OTHER\",\n      \"amount\": 1900,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X004\",\n      \"receipt_id\": \"R002\",\n      \"employee\": \"E1\",\n      \"category\": \"MEAL\",\n      \"amount\": 1400,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X005\",\n      \"receipt_id\": \"R003\",\n      \"employee\": \"E2\",\n      \"category\": \"OTHER\",\n      \"amount\": 300,\n      \"day\": 2,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X006\",\n      \"receipt_id\": \"R003\",\n      \"employee\": \"E3\",\n      \"category\": \"MEAL\",\n      \"amount\": 1700,\n      \"day\": 3,\n      \"cancelled\": false,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X007\",\n      \"receipt_id\": \"R004\",\n      \"employee\": \"E1\",\n      \"category\": \"OTHER\",\n      \"amount\": 2000,\n      \"day\": 2,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X008\",\n      \"receipt_id\": \"R004\",\n      \"employee\": \"E2\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1200,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X009\",\n      \"receipt_id\": \"R005\",\n      \"employee\": \"E3\",\n      \"category\": \"OTHER\",\n      \"amount\": 2200,\n      \"day\": 1,\n      \"cancelled\": true,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X010\",\n      \"receipt_id\": \"R005\",\n      \"employee\": \"E1\",\n      \"category\": \"OTHER\",\n      \"amount\": 1700,\n      \"day\": 2,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X011\",\n      \"receipt_id\": \"R006\",\n      \"employee\": \"E2\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 600,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X012\",\n      \"receipt_id\": \"R006\",\n      \"employee\": \"E3\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 2300,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X013\",\n      \"receipt_id\": \"R007\",\n      \"employee\": \"E1\",\n      \"category\": \"MEAL\",\n      \"amount\": 1800,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X014\",\n      \"receipt_id\": \"R007\",\n      \"employee\": \"E2\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1300,\n      \"day\": 3,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X015\",\n      \"receipt_id\": \"R008\",\n      \"employee\": \"E3\",\n      \"category\": \"OTHER\",\n      \"amount\": 300,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X016\",\n      \"receipt_id\": \"R008\",\n      \"employee\": \"E1\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1100,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X017\",\n      \"receipt_id\": \"R009\",\n      \"employee\": \"E2\",\n      \"category\": \"OTHER\",\n      \"amount\": 1400,\n      \"day\": 1,\n      \"cancelled\": true,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X018\",\n      \"receipt_id\": \"R009\",\n      \"employee\": \"E3\",\n      \"category\": \"OTHER\",\n      \"amount\": 1000,\n      \"day\": 2,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X019\",\n      \"receipt_id\": \"R010\",\n      \"employee\": \"E1\",\n      \"category\": \"MEAL\",\n      \"amount\": 2200,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X020\",\n      \"receipt_id\": \"R010\",\n      \"employee\": \"E2\",\n      \"category\": \"OTHER\",\n      \"amount\": 800,\n      \"day\": 3,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"approved\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"approved\", \"state\"], \"additionalProperties\": false}}, \"processing_order\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"budgets\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"employee\": {\"type\": \"string\"}, \"remaining\": {\"type\": \"integer\"}}, \"required\": [\"employee\", \"remaining\"], \"additionalProperties\": false}}, \"total_approved\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"processing_order\", \"budgets\", \"total_approved\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "category_caps": {
+        "TRAVEL": 1800,
+        "MEAL": 900,
+        "OTHER": 1200
+      },
+      "budgets": [
+        {
+          "employee": "E1",
+          "remaining": 3900
+        },
+        {
+          "employee": "E2",
+          "remaining": 2800
+        },
+        {
+          "employee": "E3",
+          "remaining": 2600
+        }
+      ],
+      "claims": [
+        {
+          "id": "X001",
+          "receipt_id": "R001",
+          "employee": "E1",
+          "category": "TRAVEL",
+          "amount": 1000,
+          "day": 4,
+          "cancelled": true,
+          "receipt_ok": false
+        },
+        {
+          "id": "X002",
+          "receipt_id": "R001",
+          "employee": "E2",
+          "category": "TRAVEL",
+          "amount": 1000,
+          "day": 4,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X003",
+          "receipt_id": "R002",
+          "employee": "E3",
+          "category": "OTHER",
+          "amount": 1900,
+          "day": 4,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X004",
+          "receipt_id": "R002",
+          "employee": "E1",
+          "category": "MEAL",
+          "amount": 1400,
+          "day": 1,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X005",
+          "receipt_id": "R003",
+          "employee": "E2",
+          "category": "OTHER",
+          "amount": 300,
+          "day": 2,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X006",
+          "receipt_id": "R003",
+          "employee": "E3",
+          "category": "MEAL",
+          "amount": 1700,
+          "day": 3,
+          "cancelled": false,
+          "receipt_ok": false
+        },
+        {
+          "id": "X007",
+          "receipt_id": "R004",
+          "employee": "E1",
+          "category": "OTHER",
+          "amount": 2000,
+          "day": 2,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X008",
+          "receipt_id": "R004",
+          "employee": "E2",
+          "category": "TRAVEL",
+          "amount": 1200,
+          "day": 1,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X009",
+          "receipt_id": "R005",
+          "employee": "E3",
+          "category": "OTHER",
+          "amount": 2200,
+          "day": 1,
+          "cancelled": true,
+          "receipt_ok": true
+        },
+        {
+          "id": "X010",
+          "receipt_id": "R005",
+          "employee": "E1",
+          "category": "OTHER",
+          "amount": 1700,
+          "day": 2,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X011",
+          "receipt_id": "R006",
+          "employee": "E2",
+          "category": "TRAVEL",
+          "amount": 600,
+          "day": 4,
+          "cancelled": false,
+          "receipt_ok": false
+        },
+        {
+          "id": "X012",
+          "receipt_id": "R006",
+          "employee": "E3",
+          "category": "TRAVEL",
+          "amount": 2300,
+          "day": 4,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X013",
+          "receipt_id": "R007",
+          "employee": "E1",
+          "category": "MEAL",
+          "amount": 1800,
+          "day": 1,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X014",
+          "receipt_id": "R007",
+          "employee": "E2",
+          "category": "TRAVEL",
+          "amount": 1300,
+          "day": 3,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X015",
+          "receipt_id": "R008",
+          "employee": "E3",
+          "category": "OTHER",
+          "amount": 300,
+          "day": 1,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X016",
+          "receipt_id": "R008",
+          "employee": "E1",
+          "category": "TRAVEL",
+          "amount": 1100,
+          "day": 4,
+          "cancelled": false,
+          "receipt_ok": false
+        },
+        {
+          "id": "X017",
+          "receipt_id": "R009",
+          "employee": "E2",
+          "category": "OTHER",
+          "amount": 1400,
+          "day": 1,
+          "cancelled": true,
+          "receipt_ok": true
+        },
+        {
+          "id": "X018",
+          "receipt_id": "R009",
+          "employee": "E3",
+          "category": "OTHER",
+          "amount": 1000,
+          "day": 2,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X019",
+          "receipt_id": "R010",
+          "employee": "E1",
+          "category": "MEAL",
+          "amount": 2200,
+          "day": 1,
+          "cancelled": false,
+          "receipt_ok": true
+        },
+        {
+          "id": "X020",
+          "receipt_id": "R010",
+          "employee": "E2",
+          "category": "OTHER",
+          "amount": 800,
+          "day": 3,
+          "cancelled": false,
+          "receipt_ok": true
+        }
+      ]
+    },
+    "business_rules": [
+      "day昇順、id昇順で処理する。receipt_idは先に現れた全claimで記録し、2回目以降は他条件より優先してDUPLICATE、approved=0。初出の取消はCANCELLED、receipt_ok=falseはNO_RECEIPT、いずれもapproved=0。",
+      "その他はapproved=min(amount,category_caps[category],そのemployeeの予算残数)、予算をapprovedだけ減らす。approved=amountならFULL、approved=0ならNO_BUDGET、その他PARTIAL。",
+      "detailsは全claimをid順、processing_orderは取消や重複を含む全claimの処理順。budgetsはemployee順で最終remaining。total_approvedは全approvedの合計。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "approved": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "approved",
+              "state"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "processing_order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "budgets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "employee": {
+                "type": "string"
+              },
+              "remaining": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "employee",
+              "remaining"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "total_approved": {
+          "type": "integer"
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "processing_order",
+        "budgets",
+        "total_approved",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "normal",
+    "reasoning_effort": "medium"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "経費の領収書に重複や上限超過があり、承認できる金額を整理したいです。担当者向けの明細と責任者向けの短い説明が欲しいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まず、このチャットでいただく資料だけを使い、確認事項とまとめ方を相談しましょう。外部ファイル・他の会話の参照、外部調査・通知・システム構築は行いません。\n\n最初に、分かる範囲で次の情報をお願いします。資料はそのまま貼り付けていただいて構いません。個人名などは伏せても大丈夫です。\n\n- **申請と領収書の情報**：申請者、日付、用途、金額、領収書番号など。重複が疑われる箇所もあれば教えてください。\n- **承認ルール**：上限額と、その単位（1件・1人・1日など）、対象外の費用、例外の扱い。\n- **判断の前提**：すでに承認・精算済みのものがあるか、不明なものは保留にするか。\n- **読み手と用途**：担当者が修正・確認するための資料か、責任者が承認判断するための資料か。\n\nまとめ方は、次の2点を想定しています。\n\n| 資料 | 内容の案 |\n|---|---|\n| 担当者向けの明細 | 申請額、重複・上限超過の理由、減額、承認可能額、要確認事項 |\n| 責任者向けの短い説明 | 申請総額、承認可能額、減額・保留の主な理由を数文で説明 |\n\n資料をいただいたら、まず不足情報や判断が分かれる点を整理し、明細の項目と計算方法を相談します。その段階では完成品にはしません。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\nday昇順、id昇順で処理する。receipt_idは先に現れた全claimで記録し、2回目以降は他条件より優先してDUPLICATE、approved=0。初出の取消はCANCELLED、receipt_ok=falseはNO_RECEIPT、いずれもapproved=0。\nその他はapproved=min(amount,category_caps[category],そのemployeeの予算残数)、予算をapprovedだけ減らす。approved=amountならFULL、approved=0ならNO_BUDGET、その他PARTIAL。\ndetailsは全claimをid順、processing_orderは取消や重複を含む全claimの処理順。budgetsはemployee順で最終remaining。total_approvedは全approvedの合計。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に承認金額・残予算の全体像と、非承認や減額の主な区分・理由。\n資料は以下のJSONです。\n{\n  \"category_caps\": {\n    \"TRAVEL\": 1800,\n    \"MEAL\": 900,\n    \"OTHER\": 1200\n  },\n  \"budgets\": [\n    {\n      \"employee\": \"E1\",\n      \"remaining\": 3900\n    },\n    {\n      \"employee\": \"E2\",\n      \"remaining\": 2800\n    },\n    {\n      \"employee\": \"E3\",\n      \"remaining\": 2600\n    }\n  ],\n  \"claims\": [\n    {\n      \"id\": \"X001\",\n      \"receipt_id\": \"R001\",\n      \"employee\": \"E1\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1000,\n      \"day\": 4,\n      \"cancelled\": true,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X002\",\n      \"receipt_id\": \"R001\",\n      \"employee\": \"E2\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1000,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X003\",\n      \"receipt_id\": \"R002\",\n      \"employee\": \"E3\",\n      \"category\": \"OTHER\",\n      \"amount\": 1900,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X004\",\n      \"receipt_id\": \"R002\",\n      \"employee\": \"E1\",\n      \"category\": \"MEAL\",\n      \"amount\": 1400,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X005\",\n      \"receipt_id\": \"R003\",\n      \"employee\": \"E2\",\n      \"category\": \"OTHER\",\n      \"amount\": 300,\n      \"day\": 2,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X006\",\n      \"receipt_id\": \"R003\",\n      \"employee\": \"E3\",\n      \"category\": \"MEAL\",\n      \"amount\": 1700,\n      \"day\": 3,\n      \"cancelled\": false,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X007\",\n      \"receipt_id\": \"R004\",\n      \"employee\": \"E1\",\n      \"category\": \"OTHER\",\n      \"amount\": 2000,\n      \"day\": 2,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X008\",\n      \"receipt_id\": \"R004\",\n      \"employee\": \"E2\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1200,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X009\",\n      \"receipt_id\": \"R005\",\n      \"employee\": \"E3\",\n      \"category\": \"OTHER\",\n      \"amount\": 2200,\n      \"day\": 1,\n      \"cancelled\": true,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X010\",\n      \"receipt_id\": \"R005\",\n      \"employee\": \"E1\",\n      \"category\": \"OTHER\",\n      \"amount\": 1700,\n      \"day\": 2,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X011\",\n      \"receipt_id\": \"R006\",\n      \"employee\": \"E2\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 600,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X012\",\n      \"receipt_id\": \"R006\",\n      \"employee\": \"E3\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 2300,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X013\",\n      \"receipt_id\": \"R007\",\n      \"employee\": \"E1\",\n      \"category\": \"MEAL\",\n      \"amount\": 1800,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X014\",\n      \"receipt_id\": \"R007\",\n      \"employee\": \"E2\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1300,\n      \"day\": 3,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X015\",\n      \"receipt_id\": \"R008\",\n      \"employee\": \"E3\",\n      \"category\": \"OTHER\",\n      \"amount\": 300,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X016\",\n      \"receipt_id\": \"R008\",\n      \"employee\": \"E1\",\n      \"category\": \"TRAVEL\",\n      \"amount\": 1100,\n      \"day\": 4,\n      \"cancelled\": false,\n      \"receipt_ok\": false\n    },\n    {\n      \"id\": \"X017\",\n      \"receipt_id\": \"R009\",\n      \"employee\": \"E2\",\n      \"category\": \"OTHER\",\n      \"amount\": 1400,\n      \"day\": 1,\n      \"cancelled\": true,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X018\",\n      \"receipt_id\": \"R009\",\n      \"employee\": \"E3\",\n      \"category\": \"OTHER\",\n      \"amount\": 1000,\n      \"day\": 2,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X019\",\n      \"receipt_id\": \"R010\",\n      \"employee\": \"E1\",\n      \"category\": \"MEAL\",\n      \"amount\": 2200,\n      \"day\": 1,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    },\n    {\n      \"id\": \"X020\",\n      \"receipt_id\": \"R010\",\n      \"employee\": \"E2\",\n      \"category\": \"OTHER\",\n      \"amount\": 800,\n      \"day\": 3,\n      \"cancelled\": false,\n      \"receipt_ok\": true\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"approved\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"approved\", \"state\"], \"additionalProperties\": false}}, \"processing_order\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"budgets\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"employee\": {\"type\": \"string\"}, \"remaining\": {\"type\": \"integer\"}}, \"required\": [\"employee\", \"remaining\"], \"additionalProperties\": false}}, \"total_approved\": {\"type\": \"integer\"}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"processing_order\", \"budgets\", \"total_approved\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "担当者は、各申請の承認額と判定を確認し、重複や減額の理由を元資料と照合する人を想定しています。責任者は、その全明細と短い共有文を合わせて読み、承認総額と残予算、非承認・減額の主な理由を把握して判断する人を想定しています。\n\n作成時は、まずday昇順・id昇順で全申請を処理し、領収書番号は取消や領収書不備の申請も含めて記録します。重複は従業員をまたいで判定し、後続の申請には他の条件より優先して適用します。そのうえで、初出の申請について取消、領収書不備、カテゴリ上限と本人の残予算を順に反映します。明細の表示順と実際の処理順は、それぞれ指定のフィールドで確認できる形にします。\n\n共有文では、承認総額と従業員別の残予算を軸に、非承認と減額の主な区分を説明します。特に、取消や領収書不備の申請でも同じ領収書の後続申請が重複になる点は、該当するIDに結び付けて伝える方針です。減額についても、カテゴリ上限と残予算のどちらが承認額を制限したかを確認し、実際の結果に即して説明します。確認依頼や修正・連絡を実施したという記述は加えません。\n\n計算・判定に必要な条件は揃っています。金額の通貨単位は示されていないため、円などの単位は補わず扱います。現段階では集計や成果物の作成には着手せず、作成時の最終出力は指定の全フィールドを持つJSONのみとし、共有文も`report_md`内に収めます。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-002",
+      "arm": "SOL_CONTINUE",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "X001",
+            "approved": 0,
+            "state": "CANCELLED"
+          },
+          {
+            "id": "X002",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X003",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X004",
+            "approved": 900,
+            "state": "PARTIAL"
+          },
+          {
+            "id": "X005",
+            "approved": 300,
+            "state": "FULL"
+          },
+          {
+            "id": "X006",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X007",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X008",
+            "approved": 1200,
+            "state": "FULL"
+          },
+          {
+            "id": "X009",
+            "approved": 0,
+            "state": "CANCELLED"
+          },
+          {
+            "id": "X010",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X011",
+            "approved": 0,
+            "state": "NO_RECEIPT"
+          },
+          {
+            "id": "X012",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X013",
+            "approved": 900,
+            "state": "PARTIAL"
+          },
+          {
+            "id": "X014",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X015",
+            "approved": 300,
+            "state": "FULL"
+          },
+          {
+            "id": "X016",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X017",
+            "approved": 0,
+            "state": "CANCELLED"
+          },
+          {
+            "id": "X018",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X019",
+            "approved": 900,
+            "state": "PARTIAL"
+          },
+          {
+            "id": "X020",
+            "approved": 0,
+            "state": "DUPLICATE"
+          }
+        ],
+        "processing_order": [
+          "X004",
+          "X008",
+          "X009",
+          "X013",
+          "X015",
+          "X017",
+          "X019",
+          "X005",
+          "X007",
+          "X010",
+          "X018",
+          "X006",
+          "X014",
+          "X020",
+          "X001",
+          "X002",
+          "X003",
+          "X011",
+          "X012",
+          "X016"
+        ],
+        "budgets": [
+          {
+            "employee": "E1",
+            "remaining": 1200
+          },
+          {
+            "employee": "E2",
+            "remaining": 1300
+          },
+          {
+            "employee": "E3",
+            "remaining": 2300
+          }
+        ],
+        "total_approved": 4500,
+        "report_md": "申請20件・総額27,200に対し、承認可能額は4,500です。従業員別の承認額／残予算はE1が2,700／1,200、E2が1,500／1,300、E3が300／2,300で、残予算の合計は4,800です。\n\n全額承認は3件、一部承認は3件です。一部承認のX004・X013・X019は、いずれもMEALの上限900による減額で、減額合計は2,700です。予算不足による減額・非承認はありません。\n\n非承認14件の内訳は、重複10件（申請額14,800）、取消3件（X001・X009・X017、同4,600）、領収書不備1件（X011、同600）です。一部承認の減額を合わせた非承認額は22,700です。\n\n重複は従業員をまたいでday昇順・id昇順の初出を基準に判定しています。例えばX003・X007は、IDが後のX004・X008が先に処理されるため重複です。取消・領収書不備でも領収書番号は記録されるため、X001・X009・X017の後続であるX002・X010・X018、およびX011の後続であるX012も重複となります。X001は領収書不備もありますが取消を適用し、X006・X016は領収書不備より重複を優先しています。承認額0の申請による予算消費はありません。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "X001",
+            "approved": 0,
+            "state": "CANCELLED"
+          },
+          {
+            "id": "X002",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X003",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X004",
+            "approved": 900,
+            "state": "PARTIAL"
+          },
+          {
+            "id": "X005",
+            "approved": 300,
+            "state": "FULL"
+          },
+          {
+            "id": "X006",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X007",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X008",
+            "approved": 1200,
+            "state": "FULL"
+          },
+          {
+            "id": "X009",
+            "approved": 0,
+            "state": "CANCELLED"
+          },
+          {
+            "id": "X010",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X011",
+            "approved": 0,
+            "state": "NO_RECEIPT"
+          },
+          {
+            "id": "X012",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X013",
+            "approved": 900,
+            "state": "PARTIAL"
+          },
+          {
+            "id": "X014",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X015",
+            "approved": 300,
+            "state": "FULL"
+          },
+          {
+            "id": "X016",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X017",
+            "approved": 0,
+            "state": "CANCELLED"
+          },
+          {
+            "id": "X018",
+            "approved": 0,
+            "state": "DUPLICATE"
+          },
+          {
+            "id": "X019",
+            "approved": 900,
+            "state": "PARTIAL"
+          },
+          {
+            "id": "X020",
+            "approved": 0,
+            "state": "DUPLICATE"
+          }
+        ],
+        "processing_order": [
+          "X004",
+          "X008",
+          "X009",
+          "X013",
+          "X015",
+          "X017",
+          "X019",
+          "X005",
+          "X007",
+          "X010",
+          "X018",
+          "X006",
+          "X014",
+          "X020",
+          "X001",
+          "X002",
+          "X003",
+          "X011",
+          "X012",
+          "X016"
+        ],
+        "budgets": [
+          {
+            "employee": "E1",
+            "remaining": 1200
+          },
+          {
+            "employee": "E2",
+            "remaining": 1300
+          },
+          {
+            "employee": "E3",
+            "remaining": 2300
+          }
+        ],
+        "total_approved": 4500,
+        "report_md": "申請20件・総額27,200に対し、承認可能額は4,500です。従業員別の承認額／残予算はE1が2,700／1,200、E2が1,500／1,300、E3が300／2,300で、残予算の合計は4,800です。\n\n全額承認は3件、一部承認は3件です。一部承認のX004・X013・X019は、いずれもMEALの上限900による減額で、減額合計は2,700です。予算不足による減額・非承認はありません。\n\n非承認14件の内訳は、重複10件（申請額14,800）、取消3件（X001・X009・X017、同4,600）、領収書不備1件（X011、同600）です。一部承認の減額を合わせた非承認額は22,700です。\n\n重複は従業員をまたいでday昇順・id昇順の初出を基準に判定しています。例えばX003・X007は、IDが後のX004・X008が先に処理されるため重複です。取消・領収書不備でも領収書番号は記録されるため、X001・X009・X017の後続であるX002・X010・X018、およびX011の後続であるX012も重複となります。X001は領収書不備もありますが取消を適用し、X006・X016は領収書不備より重複を優先しています。承認額0の申請による予算消費はありません。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.62825",
+      "incremental_credits": "1.26655",
+      "operating_total_credits": "1.89480",
+      "shared_seconds": 37.970000000088476,
+      "incremental_active_seconds": 32.09400000004098,
+      "total_active_seconds": 70.06400000012945,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T14:25:25.741385+00:00",
+        "text": "{\n  \"details\": [\n    {\"id\":\"X001\",\"approved\":0,\"state\":\"CANCELLED\"},\n    {\"id\":\"X002\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X003\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X004\",\"approved\":900,\"state\":\"PARTIAL\"},\n    {\"id\":\"X005\",\"approved\":300,\"state\":\"FULL\"},\n    {\"id\":\"X006\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X007\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X008\",\"approved\":1200,\"state\":\"FULL\"},\n    {\"id\":\"X009\",\"approved\":0,\"state\":\"CANCELLED\"},\n    {\"id\":\"X010\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X011\",\"approved\":0,\"state\":\"NO_RECEIPT\"},\n    {\"id\":\"X012\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X013\",\"approved\":900,\"state\":\"PARTIAL\"},\n    {\"id\":\"X014\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X015\",\"approved\":300,\"state\":\"FULL\"},\n    {\"id\":\"X016\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X017\",\"approved\":0,\"state\":\"CANCELLED\"},\n    {\"id\":\"X018\",\"approved\":0,\"state\":\"DUPLICATE\"},\n    {\"id\":\"X019\",\"approved\":900,\"state\":\"PARTIAL\"},\n    {\"id\":\"X020\",\"approved\":0,\"state\":\"DUPLICATE\"}\n  ],\n  \"processing_order\": [\n    \"X004\",\"X008\",\"X009\",\"X013\",\"X015\",\"X017\",\"X019\",\n    \"X005\",\"X007\",\"X010\",\"X018\",\n    \"X006\",\"X014\",\"X020\",\n    \"X001\",\"X002\",\"X003\",\"X011\",\"X012\",\"X016\"\n  ],\n  \"budgets\": [\n    {\"employee\":\"E1\",\"remaining\":1200},\n    {\"employee\":\"E2\",\"remaining\":1300},\n    {\"employee\":\"E3\",\"remaining\":2300}\n  ],\n  \"total_approved\": 4500,\n  \"report_md\": \"申請20件・総額27,200に対し、承認可能額は4,500です。従業員別の承認額／残予算はE1が2,700／1,200、E2が1,500／1,300、E3が300／2,300で、残予算の合計は4,800です。\\n\\n全額承認は3件、一部承認は3件です。一部承認のX004・X013・X019は、いずれもMEALの上限900による減額で、減額合計は2,700です。予算不足による減額・非承認はありません。\\n\\n非承認14件の内訳は、重複10件（申請額14,800）、取消3件（X001・X009・X017、同4,600）、領収書不備1件（X011、同600）です。一部承認の減額を合わせた非承認額は22,700です。\\n\\n重複は従業員をまたいでday昇順・id昇順の初出を基準に判定しています。例えばX003・X007は、IDが後のX004・X008が先に処理されるため重複です。取消・領収書不備でも領収書番号は記録されるため、X001・X009・X017の後続であるX002・X010・X018、およびX011の後続であるX012も重複となります。X001は領収書不備もありますが取消を適用し、X006・X016は領収書不備より重複を優先しています。承認額0の申請による予算消費はありません。\"\n}",
+        "value": {
+          "details": [
+            {
+              "id": "X001",
+              "approved": 0,
+              "state": "CANCELLED"
+            },
+            {
+              "id": "X002",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X003",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X004",
+              "approved": 900,
+              "state": "PARTIAL"
+            },
+            {
+              "id": "X005",
+              "approved": 300,
+              "state": "FULL"
+            },
+            {
+              "id": "X006",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X007",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X008",
+              "approved": 1200,
+              "state": "FULL"
+            },
+            {
+              "id": "X009",
+              "approved": 0,
+              "state": "CANCELLED"
+            },
+            {
+              "id": "X010",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X011",
+              "approved": 0,
+              "state": "NO_RECEIPT"
+            },
+            {
+              "id": "X012",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X013",
+              "approved": 900,
+              "state": "PARTIAL"
+            },
+            {
+              "id": "X014",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X015",
+              "approved": 300,
+              "state": "FULL"
+            },
+            {
+              "id": "X016",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X017",
+              "approved": 0,
+              "state": "CANCELLED"
+            },
+            {
+              "id": "X018",
+              "approved": 0,
+              "state": "DUPLICATE"
+            },
+            {
+              "id": "X019",
+              "approved": 900,
+              "state": "PARTIAL"
+            },
+            {
+              "id": "X020",
+              "approved": 0,
+              "state": "DUPLICATE"
+            }
+          ],
+          "processing_order": [
+            "X004",
+            "X008",
+            "X009",
+            "X013",
+            "X015",
+            "X017",
+            "X019",
+            "X005",
+            "X007",
+            "X010",
+            "X018",
+            "X006",
+            "X014",
+            "X020",
+            "X001",
+            "X002",
+            "X003",
+            "X011",
+            "X012",
+            "X016"
+          ],
+          "budgets": [
+            {
+              "employee": "E1",
+              "remaining": 1200
+            },
+            {
+              "employee": "E2",
+              "remaining": 1300
+            },
+            {
+              "employee": "E3",
+              "remaining": 2300
+            }
+          ],
+          "total_approved": 4500,
+          "report_md": "申請20件・総額27,200に対し、承認可能額は4,500です。従業員別の承認額／残予算はE1が2,700／1,200、E2が1,500／1,300、E3が300／2,300で、残予算の合計は4,800です。\n\n全額承認は3件、一部承認は3件です。一部承認のX004・X013・X019は、いずれもMEALの上限900による減額で、減額合計は2,700です。予算不足による減額・非承認はありません。\n\n非承認14件の内訳は、重複10件（申請額14,800）、取消3件（X001・X009・X017、同4,600）、領収書不備1件（X011、同600）です。一部承認の減額を合わせた非承認額は22,700です。\n\n重複は従業員をまたいでday昇順・id昇順の初出を基準に判定しています。例えばX003・X007は、IDが後のX004・X008が先に処理されるため重複です。取消・領収書不備でも領収書番号は記録されるため、X001・X009・X017の後続であるX002・X010・X018、およびX011の後続であるX012も重複となります。X001は領収書不備もありますが取消を適用し、X006・X016は領収書不備より重複を優先しています。承認額0の申請による予算消費はありません。"
+        },
+        "public_schema_pass": true,
+        "seconds": 32.09400000004098,
+        "credits": "1.26655",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-002",
+      "arm": "PRACTICAL",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "budgets": [
+          {
+            "employee": "E1",
+            "remaining": 1200
+          },
+          {
+            "employee": "E2",
+            "remaining": 1300
+          },
+          {
+            "employee": "E3",
+            "remaining": 2300
+          }
+        ],
+        "details": [
+          {
+            "approved": 0,
+            "id": "X001",
+            "state": "CANCELLED"
+          },
+          {
+            "approved": 0,
+            "id": "X002",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 0,
+            "id": "X003",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 900,
+            "id": "X004",
+            "state": "PARTIAL"
+          },
+          {
+            "approved": 300,
+            "id": "X005",
+            "state": "FULL"
+          },
+          {
+            "approved": 0,
+            "id": "X006",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 0,
+            "id": "X007",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 1200,
+            "id": "X008",
+            "state": "FULL"
+          },
+          {
+            "approved": 0,
+            "id": "X009",
+            "state": "CANCELLED"
+          },
+          {
+            "approved": 0,
+            "id": "X010",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 0,
+            "id": "X011",
+            "state": "NO_RECEIPT"
+          },
+          {
+            "approved": 0,
+            "id": "X012",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 900,
+            "id": "X013",
+            "state": "PARTIAL"
+          },
+          {
+            "approved": 0,
+            "id": "X014",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 300,
+            "id": "X015",
+            "state": "FULL"
+          },
+          {
+            "approved": 0,
+            "id": "X016",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 0,
+            "id": "X017",
+            "state": "CANCELLED"
+          },
+          {
+            "approved": 0,
+            "id": "X018",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 900,
+            "id": "X019",
+            "state": "PARTIAL"
+          },
+          {
+            "approved": 0,
+            "id": "X020",
+            "state": "DUPLICATE"
+          }
+        ],
+        "processing_order": [
+          "X004",
+          "X008",
+          "X009",
+          "X013",
+          "X015",
+          "X017",
+          "X019",
+          "X005",
+          "X007",
+          "X010",
+          "X018",
+          "X006",
+          "X014",
+          "X020",
+          "X001",
+          "X002",
+          "X003",
+          "X011",
+          "X012",
+          "X016"
+        ],
+        "report_md": "承認総額は4500です。従業員別の残予算はE1:1200、E2:1300、E3:2300となりました。\n\n非承認の主な理由は、領収書の重複（X002, X003, X006, X007, X010, X012, X014, X016, X018, X020）、取消（X001, X009, X017）、および領収書不備（X011）です。また、MEALカテゴリの上限適用により、X004, X013, X019は減額（PARTIAL）となっています。",
+        "total_approved": 4500
+      },
+      "final_artifact": {
+        "budgets": [
+          {
+            "employee": "E1",
+            "remaining": 1200
+          },
+          {
+            "employee": "E2",
+            "remaining": 1300
+          },
+          {
+            "employee": "E3",
+            "remaining": 2300
+          }
+        ],
+        "details": [
+          {
+            "approved": 0,
+            "id": "X001",
+            "state": "CANCELLED"
+          },
+          {
+            "approved": 0,
+            "id": "X002",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 0,
+            "id": "X003",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 900,
+            "id": "X004",
+            "state": "PARTIAL"
+          },
+          {
+            "approved": 300,
+            "id": "X005",
+            "state": "FULL"
+          },
+          {
+            "approved": 0,
+            "id": "X006",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 0,
+            "id": "X007",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 1200,
+            "id": "X008",
+            "state": "FULL"
+          },
+          {
+            "approved": 0,
+            "id": "X009",
+            "state": "CANCELLED"
+          },
+          {
+            "approved": 0,
+            "id": "X010",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 0,
+            "id": "X011",
+            "state": "NO_RECEIPT"
+          },
+          {
+            "approved": 0,
+            "id": "X012",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 900,
+            "id": "X013",
+            "state": "PARTIAL"
+          },
+          {
+            "approved": 0,
+            "id": "X014",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 300,
+            "id": "X015",
+            "state": "FULL"
+          },
+          {
+            "approved": 0,
+            "id": "X016",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 0,
+            "id": "X017",
+            "state": "CANCELLED"
+          },
+          {
+            "approved": 0,
+            "id": "X018",
+            "state": "DUPLICATE"
+          },
+          {
+            "approved": 900,
+            "id": "X019",
+            "state": "PARTIAL"
+          },
+          {
+            "approved": 0,
+            "id": "X020",
+            "state": "DUPLICATE"
+          }
+        ],
+        "processing_order": [
+          "X004",
+          "X008",
+          "X009",
+          "X013",
+          "X015",
+          "X017",
+          "X019",
+          "X005",
+          "X007",
+          "X010",
+          "X018",
+          "X006",
+          "X014",
+          "X020",
+          "X001",
+          "X002",
+          "X003",
+          "X011",
+          "X012",
+          "X016"
+        ],
+        "report_md": "承認総額は4500です。従業員別の残予算はE1:1200、E2:1300、E3:2300となりました。\n\n非承認の主な理由は、領収書の重複（X002, X003, X006, X007, X010, X012, X014, X016, X018, X020）、取消（X001, X009, X017）、および領収書不備（X011）です。また、MEALカテゴリの上限適用により、X004, X013, X019は減額（PARTIAL）となっています。",
+        "total_approved": 4500
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.62825",
+      "incremental_credits": "0.88485",
+      "operating_total_credits": "1.51310",
+      "shared_seconds": 37.970000000088476,
+      "incremental_active_seconds": 407.23500000010245,
+      "total_active_seconds": 445.2050000001909,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T14:24:52.938742+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 6.532000000006519,
+          "credits": "0.88485",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 352.7179999999935,
+        "usage": {
+          "prompt_eval_count": 3614,
+          "eval_count": 14301,
+          "prompt_eval_duration": 4273930000,
+          "eval_duration": 348250255000,
+          "total_duration": 352558532100
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "X001",
+        "approved": 0,
+        "state": "CANCELLED"
+      },
+      {
+        "id": "X002",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X003",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X004",
+        "approved": 900,
+        "state": "PARTIAL"
+      },
+      {
+        "id": "X005",
+        "approved": 300,
+        "state": "FULL"
+      },
+      {
+        "id": "X006",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X007",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X008",
+        "approved": 1200,
+        "state": "FULL"
+      },
+      {
+        "id": "X009",
+        "approved": 0,
+        "state": "CANCELLED"
+      },
+      {
+        "id": "X010",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X011",
+        "approved": 0,
+        "state": "NO_RECEIPT"
+      },
+      {
+        "id": "X012",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X013",
+        "approved": 900,
+        "state": "PARTIAL"
+      },
+      {
+        "id": "X014",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X015",
+        "approved": 300,
+        "state": "FULL"
+      },
+      {
+        "id": "X016",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X017",
+        "approved": 0,
+        "state": "CANCELLED"
+      },
+      {
+        "id": "X018",
+        "approved": 0,
+        "state": "DUPLICATE"
+      },
+      {
+        "id": "X019",
+        "approved": 900,
+        "state": "PARTIAL"
+      },
+      {
+        "id": "X020",
+        "approved": 0,
+        "state": "DUPLICATE"
+      }
+    ],
+    "processing_order": [
+      "X004",
+      "X008",
+      "X009",
+      "X013",
+      "X015",
+      "X017",
+      "X019",
+      "X005",
+      "X007",
+      "X010",
+      "X018",
+      "X006",
+      "X014",
+      "X020",
+      "X001",
+      "X002",
+      "X003",
+      "X011",
+      "X012",
+      "X016"
+    ],
+    "budgets": [
+      {
+        "employee": "E1",
+        "remaining": 1200
+      },
+      {
+        "employee": "E2",
+        "remaining": 1300
+      },
+      {
+        "employee": "E3",
+        "remaining": 2300
+      }
+    ],
+    "total_approved": 4500
+  },
+  "scores": [
+    {
+      "task_id": "PR100-002",
+      "arm": "SOL_CONTINUE",
+      "family": "expenses",
+      "designed_difficulty": 5,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.89480",
+      "total_active_seconds": 70.06400000012945,
+      "report_md": "申請20件・総額27,200に対し、承認可能額は4,500です。従業員別の承認額／残予算はE1が2,700／1,200、E2が1,500／1,300、E3が300／2,300で、残予算の合計は4,800です。\n\n全額承認は3件、一部承認は3件です。一部承認のX004・X013・X019は、いずれもMEALの上限900による減額で、減額合計は2,700です。予算不足による減額・非承認はありません。\n\n非承認14件の内訳は、重複10件（申請額14,800）、取消3件（X001・X009・X017、同4,600）、領収書不備1件（X011、同600）です。一部承認の減額を合わせた非承認額は22,700です。\n\n重複は従業員をまたいでday昇順・id昇順の初出を基準に判定しています。例えばX003・X007は、IDが後のX004・X008が先に処理されるため重複です。取消・領収書不備でも領収書番号は記録されるため、X001・X009・X017の後続であるX002・X010・X018、およびX011の後続であるX012も重複となります。X001は領収書不備もありますが取消を適用し、X006・X016は領収書不備より重複を優先しています。承認額0の申請による予算消費はありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-002",
+      "arm": "PRACTICAL",
+      "family": "expenses",
+      "designed_difficulty": 5,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.51310",
+      "total_active_seconds": 445.2050000001909,
+      "report_md": "承認総額は4500です。従業員別の残予算はE1:1200、E2:1300、E3:2300となりました。\n\n非承認の主な理由は、領収書の重複（X002, X003, X006, X007, X010, X012, X014, X016, X018, X020）、取消（X001, X009, X017）、および領収書不備（X011）です。また、MEALカテゴリの上限適用により、X004, X013, X019は減額（PARTIAL）となっています。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

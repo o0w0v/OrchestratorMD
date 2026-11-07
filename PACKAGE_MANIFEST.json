@@ -16,20 +16,24 @@
       "sha256": "2e0439a4ae851c15c735d9fe048a5604affb7c6e826bb9bfd3531330258d20e5"
     },
     {
-      "path": "benchmarks/custom/catalog.json",
-      "sha256": "dd1064c7b56e9643f2d47f7ab1cd600b88248ec292a63d4cc75099bdfb2fe7b2"
+      "path": "LICENSE",
+      "sha256": "0b35eaef92e97aa6b0b1155740765dfbf7684076112bd3be0df850f6739eb827"
+    },
+    {
+      "path": "PORTABLE_EXECUTION_READINESS_JA.md",
+      "sha256": "c2db4bdb751ab493d8018145aae433c9528b5743369e97fe7acb7ff4f3b5ae59"
+    },
+    {
+      "path": "README.md",
+      "sha256": "be69e73d85c3c48e6cfe8e63d594e29b6d3189e1efb1102420600dfec8101135"
+    },
+    {
+      "path": "benchmarks/README.md",
+      "sha256": "cf35b33a7ae583f9892681c1e7b3c1f3e2f50e89a5b31a2a076253c385ce76bf"
     },
     {
       "path": "benchmarks/custom/CORRESPONDENCE_AUDIT.md",
       "sha256": "3a114b30385c57ea4946625fa8853e203dee5e677086087bc9c0178011d972c6"
-    },
-    {
-      "path": "benchmarks/custom/correspondence-audit.json",
-      "sha256": "145fd497c284a94ab277234eacf3adf59f060d792694547c3142400bdab35134"
-    },
-    {
-      "path": "benchmarks/custom/historical-results.csv",
-      "sha256": "dddbcc1a82437ec75bd7a6375a6b035ba58fc39def50065211151adcc897e9bd"
     },
     {
       "path": "benchmarks/custom/INDEX.md",
@@ -38,6 +42,22 @@
     {
       "path": "benchmarks/custom/README.md",
       "sha256": "ab49bbb108505956a297c829556cb9733ad298144e0e9d9a735c61cfa093d79f"
+    },
+    {
+      "path": "benchmarks/custom/UPLOAD_MANIFEST.json",
+      "sha256": "decfa9dbf8b4600bdbb6748399899969ae0fba422862ffb9b0756e71c6244ce5"
+    },
+    {
+      "path": "benchmarks/custom/catalog.json",
+      "sha256": "dd1064c7b56e9643f2d47f7ab1cd600b88248ec292a63d4cc75099bdfb2fe7b2"
+    },
+    {
+      "path": "benchmarks/custom/correspondence-audit.json",
+      "sha256": "145fd497c284a94ab277234eacf3adf59f060d792694547c3142400bdab35134"
+    },
+    {
+      "path": "benchmarks/custom/historical-results.csv",
+      "sha256": "dddbcc1a82437ec75bd7a6375a6b035ba58fc39def50065211151adcc897e9bd"
     },
     {
       "path": "benchmarks/custom/reports/adaptive-reviewer-escalation/RESULTS_JA.md",
@@ -836,10 +856,6 @@
       "sha256": "1766304d1fd9df63f34f26f93324009db30ab699578c4bb357e9e2738b84881c"
     },
     {
-      "path": "benchmarks/custom/UPLOAD_MANIFEST.json",
-      "sha256": "decfa9dbf8b4600bdbb6748399899969ae0fba422862ffb9b0756e71c6244ce5"
-    },
-    {
       "path": "benchmarks/internal-46/results/2026-10-22-astra-sol-addendum/CREDIT_MEASUREMENT_METHOD.json",
       "sha256": "679099d6fa16744095a55695bbd9b849032fceb32cd0b8d42435c9e7ffcc7212"
     },
@@ -900,6 +916,14 @@
       "sha256": "4d7e893a187b01d61adde243be250c05cc5273650ad145cefa66f7593a5df886"
     },
     {
+      "path": "benchmarks/official-30/README.md",
+      "sha256": "3c59bd1d91a6430f7ab988020388a9a38f5c38742b914118d8d8bd4e79154390"
+    },
+    {
+      "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",
+      "sha256": "f40754fdf68a6ce8af074ee09ca5304dd36d0568d39c30acc5c1d3ad3fba18e1"
+    },
+    {
       "path": "benchmarks/official-30/licenses/multi_swe-LICENSE",
       "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
     },
@@ -952,10 +976,6 @@
       "sha256": "0ee41da58c06f3579c4fcfe571b96dd616cd74a6d24c1c0e7cef8fc46b4efdfd"
     },
     {
-      "path": "benchmarks/official-30/prompts/clap-rs__clap-5873.md",
-      "sha256": "c3840c959fe8785f9cfb701f03aface7058f1ba97c1025618c776889dc0ade8d"
-    },
-    {
       "path": "benchmarks/official-30/prompts/HumanEval_109_move_one_ball.md",
       "sha256": "37a2a9e76dee9c7a64e0f64d34d4d72cdcf4180f4058a74ab5ca0bf7ca309803"
     },
@@ -964,16 +984,16 @@
       "sha256": "4e85ad6320caa1979f71462e7e59e99518734977ebdace57b3c48f0d7e066d57"
     },
     {
-      "path": "benchmarks/official-30/prompts/HumanEval_13_greatest_common_divisor.md",
-      "sha256": "a48b1949cace27e81b6789c01196448d7d3db6b4a5ead368983527448d72dc63"
-    },
-    {
       "path": "benchmarks/official-30/prompts/HumanEval_132_is_nested.md",
       "sha256": "e97cdd867220b0ffadf3e092b0a73bbb5c70eec8b2088257fb0d0fb8e3e1812c"
     },
     {
       "path": "benchmarks/official-30/prompts/HumanEval_135_can_arrange.md",
       "sha256": "a37ff80f211281de4199db0913863d53c9b90a2badbc541df705f9174a92ed2b"
+    },
+    {
+      "path": "benchmarks/official-30/prompts/HumanEval_13_greatest_common_divisor.md",
+      "sha256": "a48b1949cace27e81b6789c01196448d7d3db6b4a5ead368983527448d72dc63"
     },
     {
       "path": "benchmarks/official-30/prompts/HumanEval_146_specialFilter.md",
@@ -1028,12 +1048,16 @@
       "sha256": "c3a5875430a8a9120524431fa9d1b28df9635b20b6d00ee0d65af40bff8de71e"
     },
     {
+      "path": "benchmarks/official-30/prompts/HumanEval_99_closest_integer.md",
+      "sha256": "de2819a298a699ed968101ed5c8961e468faf559ac8e9eb6a4cac529fa953c44"
+    },
+    {
       "path": "benchmarks/official-30/prompts/HumanEval_9_rolling_max.md",
       "sha256": "3a8abf75c6f5b628fd17a4ae2c9f590a8404c64df931e65b2f795d86d10cd63e"
     },
     {
-      "path": "benchmarks/official-30/prompts/HumanEval_99_closest_integer.md",
-      "sha256": "de2819a298a699ed968101ed5c8961e468faf559ac8e9eb6a4cac529fa953c44"
+      "path": "benchmarks/official-30/prompts/clap-rs__clap-5873.md",
+      "sha256": "c3840c959fe8785f9cfb701f03aface7058f1ba97c1025618c776889dc0ade8d"
     },
     {
       "path": "benchmarks/official-30/prompts/nushell__nushell-13870.md",
@@ -1066,10 +1090,6 @@
     {
       "path": "benchmarks/official-30/prompts/tokio-rs__tracing-2897.md",
       "sha256": "b7c6f4be6e8c6c102a162495932e431fedbcb44a8320dda0c40b42b4a6959e37"
-    },
-    {
-      "path": "benchmarks/official-30/README.md",
-      "sha256": "3c59bd1d91a6430f7ab988020388a9a38f5c38742b914118d8d8bd4e79154390"
     },
     {
       "path": "benchmarks/official-30/results-template.csv",
@@ -1134,166 +1154,6 @@
     {
       "path": "benchmarks/official-30/results/2026-10-21-gemma26-router/TASK_AB_RESULTS.csv",
       "sha256": "c65843c8ade7765d48f56894c992f816fcded60fb7ec981e89385bb86bd8bf65"
-    },
-    {
-      "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_PROGRESS_JA.md",
-      "sha256": "641c2b0ae83e596100986fb1c2af26fcde2ee5d9f773bae32d3f6cb57b45487e"
-    },
-    {
-      "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_SNAPSHOT.json",
-      "sha256": "3a3c6fa3efd4c3579fa13b61f2a9f65d2bad1a4836c50b95fc5415e1d1584844"
-    },
-    {
-      "path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_PROGRESS_JA.md",
-      "sha256": "fb95beefe397b9fecf5320591412a8837c0c66aff9065ef78d4503485a5a021a"
-    },
-    {
-      "path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_SNAPSHOT.json",
-      "sha256": "f857ed967d88b148f15af7b75931831ecab4ef15317811b0c384c70429f6ffea"
-    },
-    {
-      "path": "benchmarks/official-30/source-pins.json",
-      "sha256": "91f219848592d9605dc76ce69d2d1fd179491ead3769621f72471c949f39e0be"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/BurntSushi__ripgrep-2626.json",
-      "sha256": "81723f72cb1e6b1529d55b06a3ef6cf072dc8d8ef812b7fd55302a160754f1d8"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/clap-rs__clap-5873.json",
-      "sha256": "6156477929be10414dafc0d0c74c9452da84f40a80f04c89ef3a2a32dcae4ac5"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_109_move_one_ball.json",
-      "sha256": "43e0db6026f4e2e6e90690d7f24295d5eadb45774fd5637e05e4bad68f5ba7c9"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_11_string_xor.json",
-      "sha256": "3263ceb46c8e3f5631e07a7f5a9eed7c781f9efd2d6cac0fd027a1980051d010"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_13_greatest_common_divisor.json",
-      "sha256": "9c366718fe8926b14226990ac58298482d783c5868a218ed8803d2f8d837ab86"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_132_is_nested.json",
-      "sha256": "e31215d9d10927e29aee44e99a4e7c6a9f50d3e877df2eb7821cbcb029875f86"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_135_can_arrange.json",
-      "sha256": "f6339087deca57d8725355ddf4589c52d5464c1f85252fda5b7d7b5d859eb9c7"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_146_specialFilter.json",
-      "sha256": "6a30064f4318a05ef0e59a19bb2123c4c2a7265409f2db9df0f448337dc13af9"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_156_int_to_mini_roman.json",
-      "sha256": "aae3b4d217cd4933f1af643caf7ff7a9e496b878847ce18f4826b6d369561e0f"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_158_find_max.json",
-      "sha256": "593ff195ba5662d014e4765bdc784d679dc043088ce46a89491ce3c6025aed40"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_18_how_many_times.json",
-      "sha256": "6e06f9e5d017f78a91f3bf3cf4245ced0ac0fcbe6aebfc0d2c7b93f30a2650cd"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_30_get_positive.json",
-      "sha256": "eeca96ed32a3efc964ab300c05ba1ae4b560729c00efa255cf62ce226a8ce1af"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_34_unique.json",
-      "sha256": "e4d1ab15e6301f86d91cf48244036b9ce04a703733c4d320c805c580da45c996"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_4_mean_absolute_deviation.json",
-      "sha256": "e549a40bdb65010925804ac530ede3e3168542f71bbc75c8a14db43095cafcdf"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_51_remove_vowels.json",
-      "sha256": "3118d7e8443c4b7952f74d5a453f4e74b8d4a334cf5ded82c4c6c6ab2303652b"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_55_fib.json",
-      "sha256": "a627968d8b53256a01344c44af05d5c8475896bedb5941b29cb30becde89a746"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_61_correct_bracketing.json",
-      "sha256": "bc2936018c74a97702c3e2117d1d2d894135c4b58be541c0f34bcb334e6874a2"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_62_derivative.json",
-      "sha256": "cb8d37dec536ebfaf403784033473fa65056449f4d1aa662695465f9cd88552d"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_67_fruit_distribution.json",
-      "sha256": "79a40bba56b71ec1d99cb22b184de6c29c20baf16d7e0ad314f15f3231918caa"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_83_starts_one_ends.json",
-      "sha256": "ab7832af8b3f0680b1a9ddb97364548dd10ea2c470ca46d6a88c2b73b24411d8"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_9_rolling_max.json",
-      "sha256": "407eced831f674f8491be555a5a49e0a9e31663eaa27c983fdc9443ef9fd6628"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/HumanEval_99_closest_integer.json",
-      "sha256": "4f2460c25b2f1d162cc048a56a5e0ea118c24504fa736f727bd4f365243733d6"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/nushell__nushell-13870.json",
-      "sha256": "2eed5523c46f106458417084ed18ef07773090c38fdb1c20191b0cfb3cde75ac"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/rayon-rs__rayon-986.json",
-      "sha256": "fd63e3bc657d2cf5f52764918908a7962f87737d7095368c1e1002a177a77652"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/serde-rs__serde-2798.json",
-      "sha256": "74cb3a9a876671016ae55eaacd12d32336196d637d70c59b3ae98c17826d50c2"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/sharkdp__bat-3189.json",
-      "sha256": "c3ce21fa8092fa61f788f5e0afcf3b1e876c0970d245f2c8d232ff7a181ffad3"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/sharkdp__fd-1394.json",
-      "sha256": "70909c115df82e92e4ecc0c516081e1b971e39cfc92a47a4dddba49e391b1a86"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/tokio-rs__bytes-732.json",
-      "sha256": "97e4e5e6228e47a3077d34338c541164d5812de19761265000dfc1dcbb97665d"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/tokio-rs__tokio-7124.json",
-      "sha256": "d85ef94a6768284495dac4e3a7fbf7a4089e0f3f8917db1a9b30b4a068d6fb15"
-    },
-    {
-      "path": "benchmarks/official-30/tasks/tokio-rs__tracing-2897.json",
-      "sha256": "ed0f8aecd841fa166f6c58da7f25dbaa37fe5198e3a901eb9130b92895b996a2"
-    },
-    {
-      "path": "benchmarks/official-30/THIRD_PARTY_NOTICES.md",
-      "sha256": "f40754fdf68a6ce8af074ee09ca5304dd36d0568d39c30acc5c1d3ad3fba18e1"
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "0b35eaef92e97aa6b0b1155740765dfbf7684076112bd3be0df850f6739eb827"
-    },
-    {
-      "path": "README.md",
-      "sha256": "602c6c196c505c5661241852700c3be28ca3b0b1a337013a6a1d16ec512f3a8c"
-    },
-    {
-      "path": "benchmarks/official-30/results/2026-10-22-recovery022/PROGRESS022_JA.md",
-      "sha256": "00caa34b6883537f63ab20e42f8f53726adaab2bbbceef05974a2d6fccce0d76"
-    },
-    {
-      "path": "benchmarks/official-30/results/2026-10-22-recovery022/PROGRESS022_SNAPSHOT.json",
-      "sha256": "e1bc2cb5fc7a19031a2a8369c53ccba48d7c1f0a3054ea24384c24d67d9ba487"
     },
     {
       "path": "benchmarks/official-30/results/2026-10-22-astra-sol-final/ACCOUNTING_PHASE_SCOPE.json",
@@ -1428,12 +1288,796 @@
       "sha256": "f94c450aeede9722f9e8cdbda45011b3bff7007f8021c025bdb51042823ccc22"
     },
     {
-      "path": "PORTABLE_EXECUTION_READINESS_JA.md",
-      "sha256": "c2db4bdb751ab493d8018145aae433c9528b5743369e97fe7acb7ff4f3b5ae59"
+      "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_PROGRESS_JA.md",
+      "sha256": "641c2b0ae83e596100986fb1c2af26fcde2ee5d9f773bae32d3f6cb57b45487e"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery018/RECOVERY018_SNAPSHOT.json",
+      "sha256": "3a3c6fa3efd4c3579fa13b61f2a9f65d2bad1a4836c50b95fc5415e1d1584844"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_PROGRESS_JA.md",
+      "sha256": "fb95beefe397b9fecf5320591412a8837c0c66aff9065ef78d4503485a5a021a"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery021/RECOVERY021_SNAPSHOT.json",
+      "sha256": "f857ed967d88b148f15af7b75931831ecab4ef15317811b0c384c70429f6ffea"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery022/PROGRESS022_JA.md",
+      "sha256": "00caa34b6883537f63ab20e42f8f53726adaab2bbbceef05974a2d6fccce0d76"
+    },
+    {
+      "path": "benchmarks/official-30/results/2026-10-22-recovery022/PROGRESS022_SNAPSHOT.json",
+      "sha256": "e1bc2cb5fc7a19031a2a8369c53ccba48d7c1f0a3054ea24384c24d67d9ba487"
+    },
+    {
+      "path": "benchmarks/official-30/source-pins.json",
+      "sha256": "91f219848592d9605dc76ce69d2d1fd179491ead3769621f72471c949f39e0be"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/BurntSushi__ripgrep-2626.json",
+      "sha256": "81723f72cb1e6b1529d55b06a3ef6cf072dc8d8ef812b7fd55302a160754f1d8"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_109_move_one_ball.json",
+      "sha256": "43e0db6026f4e2e6e90690d7f24295d5eadb45774fd5637e05e4bad68f5ba7c9"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_11_string_xor.json",
+      "sha256": "3263ceb46c8e3f5631e07a7f5a9eed7c781f9efd2d6cac0fd027a1980051d010"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_132_is_nested.json",
+      "sha256": "e31215d9d10927e29aee44e99a4e7c6a9f50d3e877df2eb7821cbcb029875f86"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_135_can_arrange.json",
+      "sha256": "f6339087deca57d8725355ddf4589c52d5464c1f85252fda5b7d7b5d859eb9c7"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_13_greatest_common_divisor.json",
+      "sha256": "9c366718fe8926b14226990ac58298482d783c5868a218ed8803d2f8d837ab86"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_146_specialFilter.json",
+      "sha256": "6a30064f4318a05ef0e59a19bb2123c4c2a7265409f2db9df0f448337dc13af9"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_156_int_to_mini_roman.json",
+      "sha256": "aae3b4d217cd4933f1af643caf7ff7a9e496b878847ce18f4826b6d369561e0f"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_158_find_max.json",
+      "sha256": "593ff195ba5662d014e4765bdc784d679dc043088ce46a89491ce3c6025aed40"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_18_how_many_times.json",
+      "sha256": "6e06f9e5d017f78a91f3bf3cf4245ced0ac0fcbe6aebfc0d2c7b93f30a2650cd"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_30_get_positive.json",
+      "sha256": "eeca96ed32a3efc964ab300c05ba1ae4b560729c00efa255cf62ce226a8ce1af"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_34_unique.json",
+      "sha256": "e4d1ab15e6301f86d91cf48244036b9ce04a703733c4d320c805c580da45c996"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_4_mean_absolute_deviation.json",
+      "sha256": "e549a40bdb65010925804ac530ede3e3168542f71bbc75c8a14db43095cafcdf"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_51_remove_vowels.json",
+      "sha256": "3118d7e8443c4b7952f74d5a453f4e74b8d4a334cf5ded82c4c6c6ab2303652b"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_55_fib.json",
+      "sha256": "a627968d8b53256a01344c44af05d5c8475896bedb5941b29cb30becde89a746"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_61_correct_bracketing.json",
+      "sha256": "bc2936018c74a97702c3e2117d1d2d894135c4b58be541c0f34bcb334e6874a2"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_62_derivative.json",
+      "sha256": "cb8d37dec536ebfaf403784033473fa65056449f4d1aa662695465f9cd88552d"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_67_fruit_distribution.json",
+      "sha256": "79a40bba56b71ec1d99cb22b184de6c29c20baf16d7e0ad314f15f3231918caa"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_83_starts_one_ends.json",
+      "sha256": "ab7832af8b3f0680b1a9ddb97364548dd10ea2c470ca46d6a88c2b73b24411d8"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_99_closest_integer.json",
+      "sha256": "4f2460c25b2f1d162cc048a56a5e0ea118c24504fa736f727bd4f365243733d6"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/HumanEval_9_rolling_max.json",
+      "sha256": "407eced831f674f8491be555a5a49e0a9e31663eaa27c983fdc9443ef9fd6628"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/clap-rs__clap-5873.json",
+      "sha256": "6156477929be10414dafc0d0c74c9452da84f40a80f04c89ef3a2a32dcae4ac5"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/nushell__nushell-13870.json",
+      "sha256": "2eed5523c46f106458417084ed18ef07773090c38fdb1c20191b0cfb3cde75ac"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/rayon-rs__rayon-986.json",
+      "sha256": "fd63e3bc657d2cf5f52764918908a7962f87737d7095368c1e1002a177a77652"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/serde-rs__serde-2798.json",
+      "sha256": "74cb3a9a876671016ae55eaacd12d32336196d637d70c59b3ae98c17826d50c2"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/sharkdp__bat-3189.json",
+      "sha256": "c3ce21fa8092fa61f788f5e0afcf3b1e876c0970d245f2c8d232ff7a181ffad3"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/sharkdp__fd-1394.json",
+      "sha256": "70909c115df82e92e4ecc0c516081e1b971e39cfc92a47a4dddba49e391b1a86"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/tokio-rs__bytes-732.json",
+      "sha256": "97e4e5e6228e47a3077d34338c541164d5812de19761265000dfc1dcbb97665d"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/tokio-rs__tokio-7124.json",
+      "sha256": "d85ef94a6768284495dac4e3a7fbf7a4089e0f3f8917db1a9b30b4a068d6fb15"
+    },
+    {
+      "path": "benchmarks/official-30/tasks/tokio-rs__tracing-2897.json",
+      "sha256": "ed0f8aecd841fa166f6c58da7f25dbaa37fe5198e3a901eb9130b92895b996a2"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/CASE_INDEX.json",
+      "sha256": "2b5982f0854564b11de3cd6690eb177095d54a3c302e82016dc4b68d3ca789fd"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/CASE_INDEX_JA.md",
+      "sha256": "bee52729e4d15c5698686837d19906d34b191ebe28f6fdf64ce7bd1e4bb97d56"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/CASE_RESULTS.csv",
+      "sha256": "61e67646f68f0edffeeeb7709be14f324e0373f1783db90afcf8a6d787f6a04c"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/COMPLETION_REVIEW_JA.md",
+      "sha256": "34bf64cdac8d4d69f562169629ee9f93a6eac639a6935c7c1c0837e1cf6aec97"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/COMPLETION_VERIFICATION.json",
+      "sha256": "379acc14d1077424924c08617c50497ad3341d679e4f4d59b70cc7e15b1b94da"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/COST_AND_SCOPE.json",
+      "sha256": "a79f3d07a050655d7749e300cdb95c37af595eb378b699bc9d1714f2fae9aed9"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/DESIGN_SOURCE_DESIGN_JA.md",
+      "sha256": "f0d09e11723395f8e940ca0f18fffb3db5dfb9654f428c0d5f91f62fdb471ad0"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/DESIGN_SOURCE_POLICY.json",
+      "sha256": "fe45ffc19a0d9f0a98a7b8746662f393dded697d071e6666bf80e12122830aa0"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/DESIGN_SOURCE_review_prompt.txt",
+      "sha256": "fabbf4b037e27a808f63b96257b5b7febcc4da3e14338ed080f962ace2b497bb"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/DETAILED_DESIGN_JA.md",
+      "sha256": "82a88dc4c8420723be6301aa948f656c85f75b52cb2d363b06075b9a4328e784"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/EXECUTION_PLAN_JA.md",
+      "sha256": "fa46f23e4e4f22f62e28639d33e58c99494c468c569dfd7e90d282d3838c7fa9"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/FINAL_KNOWLEDGE_UPDATE_JA.md",
+      "sha256": "9812400da64b2a685abd13f90c832f60bb2a78bab0a7e4f8072320c2fe773b2a"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/MODEL_SELECTION.json",
+      "sha256": "f70c3699f067091058c40fb2fffb3484f7e9303135ada1991830508539ccccd4"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/NATIVE_RESOURCE_SUMMARY.json",
+      "sha256": "edb0c3c8276852dbf801d8b67697ae96d95872d56481bd4102715c18c263e393"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/NOVELTY.json",
+      "sha256": "bf5a1e26753bedf6e5f32ae448fac9a14d929b11c5b8cb317d2ba42041a39176"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/OFFLINE_TESTS.json",
+      "sha256": "9ff880e40d2d41cf8a5d761b0914aa12713056da4ce458daa01770710516c98f"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/PACKAGE_MANIFEST.json",
+      "sha256": "90b4638bb1470550c34804c5a9db9a3495425ed3119ae93798e392a2d66bdad0"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/PATCH_CASES_JA.md",
+      "sha256": "daec0bcdd6984074e0ee43e8890cfacb962436f17abe94f75754a3fd36ea3805"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/PROFILE_ASSIGNMENTS.json",
+      "sha256": "05726aed12f016a0f4b3490f4ce9be6c519b442cf99b40678b1645321825f058"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/README.md",
+      "sha256": "1939cc9d323b8253a92ff7cb47e63ce93264a56ebfa8243acffb0486457d17ec"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/RECOVERY_PLAN_JA.md",
+      "sha256": "6ef295c35726981be3e8237b75e9cc473d2ebc65ae97acaa502bd76b4e2cbec9"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/REPRODUCIBILITY_JA.md",
+      "sha256": "c59f8896f7f2e2a1240ee308bb20dd81729a83c14bbb122fb9f0378c57923040"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/SOURCE_PROVENANCE.json",
+      "sha256": "0f615cd1d5107e61888e3c893717db96b31d74b37deaf1542111b4b903900e0b"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/accounting/AUDIT_SUMMARY.json",
+      "sha256": "10f9a97fe0a51d4b93e2be83d9cfca0f805cba02b8a10f1f7fb6c4a6e865238e"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/accounting/INCREMENTAL_USAGE.json",
+      "sha256": "fcbc879a7a4d53abb1ba8ba2d61d4d573c395bf2fdf7e720aa745b15b22be1e7"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/accounting/SESSION_COUNTER_EVIDENCE.json",
+      "sha256": "fe7bacf30eb053e441f91c0453e90e7f595bdba2612475124893b93c54ad0ee3"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/analysis-001/COMPARISON.json",
+      "sha256": "76e874142638e8d0c6305c2ff3c298978d9bc5380854976251dbabac86307854"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/analysis-001/SCORED_RESULTS.json",
+      "sha256": "8aa58f6aa171860d8686ec54bb6123087429cca6163a39b43b38931fe3981b75"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/analysis-001/TOKEN_ACCOUNTING.json",
+      "sha256": "8e5c26d70c16ed6bd657333efa885857103e7640893c3cd8f0cc6cadee846b79"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-001.json",
+      "sha256": "533f3345b5b39c2834663bd341772fecfc11332c5e369d7e42653824a97de979"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-002.json",
+      "sha256": "33798050780200b99d6dc858ccaae85dcff4f76e317a8a585b98eb8a5ff2a6d1"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-003.json",
+      "sha256": "c96a4b7edcfa6991e94d6f26d19e4e9e751d4f384cb6e0787e690baf75e7d858"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-004.json",
+      "sha256": "ac7e095907404d0212b0927ec4864e6a6dafd6d0a59e793fa112f0f258f0583a"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-005.json",
+      "sha256": "07b1c3e44e6710c4f1299b059627662a6162c93ef2231c78108e1f6db0dceaf9"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-006.json",
+      "sha256": "084af55122eefcfbe81dba95b73927c453b53f3f66076b17c2fc2b6a5d55e4bb"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-007.json",
+      "sha256": "cfd80cde514ddb8080423745d918ccd468e167555076b0becd2f8874ac705a4c"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-008.json",
+      "sha256": "db080dbba4e6142c714b5486454f7ecc93310da806750866ec362c3697ae1bd2"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-009.json",
+      "sha256": "c1640175fafb6518281eae236397c30b0209195c06953f85c7627c2c95c78198"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-010.json",
+      "sha256": "6cb451d680d6889ca937722012ce841a360078f3b4445f93d439bf9f2816a419"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-011.json",
+      "sha256": "d0aaf5e3e88c1e2e95761ea3c3c5fd293d3856fafafa7bd80fc248e471752384"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-012.json",
+      "sha256": "0bc639fffe5733bf966701848c09e85a7f6a1ba656d380b7eb2b3c21165da7f4"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-013.json",
+      "sha256": "e50bf91f972e182096d4c76be8828b045b29b9fd1751fca86eb6e2390cee408c"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-014.json",
+      "sha256": "fd33a5a796b2c94599f5b2d83bd61ae05aeacbfd42b1bcf4111c3ea5fce3691f"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-015.json",
+      "sha256": "ad9f5db5c1a496bee68e7ba83a6ce8409c6cb058a28f4e6c53f1e5b0bed0a031"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-016.json",
+      "sha256": "94492db01eea1219a83536e95c0e340950accdf9d5c8cce9121efcce7008cc2b"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-017.json",
+      "sha256": "d0e3c15f0a5d1eaf5a93e08de4d4c99399212bcc5c46cebed931d01a0be922eb"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-018.json",
+      "sha256": "2c9e573f6d9aad18a4e9c4a835939f9be420d318fce8a70362009ba7fa1c418f"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-019.json",
+      "sha256": "cdf2eb3d1ffa3c265e03985e1b0da025699228dbce16ab76fab9dfa18fb49a53"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-020.json",
+      "sha256": "ed691314f55b9728a8f9e9ca36f080f960516d4106624f72fd4f0fd6f49c02e2"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-021.json",
+      "sha256": "1f27c789562fe6e24b291c51f0f87efa5dd1193be7de77696a3483a8a91adfad"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-022.json",
+      "sha256": "584cdfdde5f4067b2cbb23c9338fe7e8c6020e18c00b61313eaa36df4ee942e1"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-023.json",
+      "sha256": "4aec0e4dda23786c11f2bc68a20da030c1899040db538c6edba84e8a178637a6"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-024.json",
+      "sha256": "591f1928bce0ede432e51d6380431615056deebd60b4f74efcc9d4f1b66afc28"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-025.json",
+      "sha256": "4aa8e11399485403d450c7b5f07d882e0ac25eebdd76e49060acadb892db1589"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-026.json",
+      "sha256": "9963bb0a3bc3fbe51cbbf0ebb5e4b6f07f4b335a06ffcbd5473d86d4b316d5ec"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-027.json",
+      "sha256": "b8c7dd5b02f12cfa51482aef59a7e12f5aa65afa44ba9ceef396058617c530b5"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-028.json",
+      "sha256": "f319575932c3a2e070828c5296f0b23408386e7107bcac34b34a351e61d9e5cb"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-029.json",
+      "sha256": "fe908f1eea7760cba90f22b81bf81327e12649c4002535965f2b3656bdb6f856"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-030.json",
+      "sha256": "1af6bfab0983947365e834554e7b76e64288410b81ef98aecf2c3b6e84bd2a1b"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-031.json",
+      "sha256": "fe8d1af0504ba9f15c869b8291d688e6f6074c860b2a7c048e01432830cb5ab5"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-032.json",
+      "sha256": "7a939c610c4d23093dd2d8d3d2624af51e4cb8275eb6794fec62602123996e71"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-033.json",
+      "sha256": "d7e3ab5016afa36a474e3ef56f4f6b12069e1a80124eb5b00ec82441d07585a9"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-034.json",
+      "sha256": "71dc1a4c416282a6979b8698f54d7029c67da0a8a0f14d2737438799005d4afb"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-035.json",
+      "sha256": "9919a36883be02d68471f4ba762f0fdbbbb29ce964064ac393fc7375e2f382a8"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-036.json",
+      "sha256": "ab23e99c2de83c7de15958de7cab21e340983bfde3dcc1023f6495fa164b18d1"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-037.json",
+      "sha256": "428c9461a4679b57ca7e089a302eb5a7f2e4dc08c70e2bf253bfe2284ad3c29a"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-038.json",
+      "sha256": "af37a16308b029d9e596e278b60c59f01de65cb5e7c39e0a5ee6431741b9597d"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-039.json",
+      "sha256": "2af8b8baba132760597b28232bad67feadcfa00f0c8c6759be647cb7f92c8f6a"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-040.json",
+      "sha256": "39753fe81501344c38cdd98b504e849e41fb8b7975a0c54ea4b01268aa2ef75c"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-041.json",
+      "sha256": "49a7a783b5f2be548cff76268768aedf0a2a221434f1fe0d1e0b0c180d4b9b25"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-042.json",
+      "sha256": "db6177deadaa272a596cb8a08beea33840a26549bd66e9d645d4bd45b5415248"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-043.json",
+      "sha256": "a07998ba09d9a757bcbee98d25cca48df80937315613a5646ce48ddc67e37216"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-044.json",
+      "sha256": "22ccb42f1d9afc311664cac7db915ef7996780cfddedaece7055a88c47e97b91"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-045.json",
+      "sha256": "71cb6ed7d877e9c0a27aba09ec3e46b34ea7eaaa959a87c9b9767036a44a5452"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-046.json",
+      "sha256": "df67566e3ebcb275da49fad286d126fa282cfe1109e1046fa115457a88af1aa3"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-047.json",
+      "sha256": "0bd844125741263e196a4f33275d914537c26f7b03145c96f4dd9bfaa08b280a"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-048.json",
+      "sha256": "9e70e7e0c856fc63d85074eaa79289d4ce5396ba503627269ef808ba68df5503"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-049.json",
+      "sha256": "3e57f61ccb42b15b4f0e3eb4c41e50ea76e2d01f4ae2556c146f9dccffe0a7cc"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-050.json",
+      "sha256": "2d9ef33ae2c9700437735ccaa438861f86d6496a81e15e4efec61a233c273b00"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-051.json",
+      "sha256": "5f63d8d950972fb52a6468e4ac800e864ddd833b6b6ab6b72cea2ec1506749cd"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-052.json",
+      "sha256": "eb7132180c68490eabf14a4a112f2aaa5c004ac89fb2881f4b76181ea703a717"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-053.json",
+      "sha256": "ab3a0a7b889497c8cb7faf975cd1fe3f75604df60c6863a18256bda568dc4553"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-054.json",
+      "sha256": "87ebb9a0c83a10d0de374a207c91b9b3f76d5fbf8fd45abef29389a4a3c66af2"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-055.json",
+      "sha256": "56d926b32f45b17d098422e1cc733c38b1487265d0d33257489c25d90bfe4925"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-056.json",
+      "sha256": "e2901a7436084503e1d4070386a88e321393254aad8c987bbb19d9c61f3addb5"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-057.json",
+      "sha256": "d600e09d3cb252649c33363049627e7e15d59d838337a7c65089e3d44579ee29"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-058.json",
+      "sha256": "e43d7357f9535c10e2e4adba574f792dbafa99bcdd2ac7717217e56f25094e43"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-059.json",
+      "sha256": "497e371997ab8f02348ec27eeb36a6e570d1b7c47bc58fae1dfb3ff075fd45a9"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-060.json",
+      "sha256": "b76dbec102193e13c23fcdb3ed1a6ad90e09943df7e148aceb8c7ad25da1fbc0"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-061.json",
+      "sha256": "639cd29fa2fef64f0c8d39c1a42324705508d5e4f3e2aa3e4c4f2cc2751aceb3"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-062.json",
+      "sha256": "665c904235a0f24258d85c250c41f060f898308d50bad2d47967d35fadfc8a0f"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-063.json",
+      "sha256": "b3b15cfc3b109ba33b2097b39d0504325941d43a1a07eeedf57a508df5b0c8f6"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-064.json",
+      "sha256": "939baae4c0254d3c76f9488cc2915aee4b8412c89854093115aca4cd2ddef6fe"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-065.json",
+      "sha256": "dab4062d373edd10e1b4f56c9aa4a536781663dba91cd8a020a96d7e034292ad"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-066.json",
+      "sha256": "94ded508039cf3eb0f4f0e776be3fb809f29de07158fda1247d88624193a9737"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-067.json",
+      "sha256": "f06dc70d5295740268b41cc79922353bfefbac54f81ac92ad80b83151f5b7b57"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-068.json",
+      "sha256": "cd349e286d95352bd20541e8b00ecc167d4929e262f0c18b9308bd133717c475"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-069.json",
+      "sha256": "6e209f076a2d96b6f54f01896dd4c093ebf95477f97ee14a3f194f47b0945073"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-070.json",
+      "sha256": "5f87301129dcf9750c1601835753e13cf3f18d2d00e978865685e19b4042bd45"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-071.json",
+      "sha256": "c36be8feb812e0291f0de0487532fa5434490d7707002cf2d331bc754f2e9a4a"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-072.json",
+      "sha256": "deacf807474b0a26096765afd5d178da38cb12531519affb52f0456c9811fa88"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-073.json",
+      "sha256": "e5c9edd18eed85eee29ad4b76a059bb6ee198739bf2f283de4ecac8ff4fa9257"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-074.json",
+      "sha256": "319a2fe5ec359c7d523cf501e4a8c1fe00199ffe581d600f23cf0c1c3abe1ae3"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-075.json",
+      "sha256": "ed4c1d57051de40806a14d498332021e011b240b4d5aad9f155002c66de0347f"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-076.json",
+      "sha256": "ac165d5acb23b55ec9ecf6046615d8cc5f7477f76266c00cc927a2d6b5e2d9a8"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-077.json",
+      "sha256": "7f5acac5cf9533457ab374ccbfce13f5a271388431a03c38486e912b609965d6"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-078.json",
+      "sha256": "c7dafc723b7472ed8852eca905100d63856abae1d0ca177f9b88b40c45a91de4"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-079.json",
+      "sha256": "d60aa7b422b5f4defec55f239b4c4be4d13ee5c217d6cf1d3677d8d9bd41115d"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-080.json",
+      "sha256": "160f18883d31e3fee70687b073c4d6a8cd2cad6dd0341fea45296d6aaedf615f"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-081.json",
+      "sha256": "0ec8a22ab2be3c97ae3480f36ecc3302350439c5daf76cf8e1467c6b949e7e75"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-082.json",
+      "sha256": "cf1350a0ff9dce756325ed272091287ab15d1b171d8be85f90d9809ab58fe2af"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-083.json",
+      "sha256": "500a07f70c381ed477e06c7a9f7374d193f05580010564798ff401309d80b9a7"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-084.json",
+      "sha256": "05c1edcd209eb5522363b4a1afff7b08a1aeb1118b0bafa9bd60e250e032550a"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-085.json",
+      "sha256": "d975e6dcfaa9cfcb645cfc6a75f7aa484fe606c6458409f82b13cee85825b52f"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-086.json",
+      "sha256": "fff73a51bdd45b9bac177c794c2986aadb59d4857712b566f01df761c655f67e"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-087.json",
+      "sha256": "ee7c2e705e2b28581bf5eed32f986e63c6b8cc744a38451ae68940f012db617b"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-088.json",
+      "sha256": "8f6e187ae04b5d58ce9a34fc0ef3cd665c83a1e12af0881a59e856d280e6db34"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-089.json",
+      "sha256": "afb76e13d4206222ef1484f4b81cb04ceff16be905a3792a19314c429c590804"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-090.json",
+      "sha256": "7a0411fa2cd7ccea5ab2011d56df172790bcfeeb5657021fbe19d169825adc8d"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-091.json",
+      "sha256": "91b561c3f2a47ce99f6c6a9ab72e70602b90c6f7e509a52930c79692edbb334c"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-092.json",
+      "sha256": "5444bde65bc5378d4da7e3b1a0baa429174243db91da704a7f9927907ed8a990"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-093.json",
+      "sha256": "66c5331d5deed8e9cbc71e00390346a956f2a3677462d4c9dd943375b406ed4e"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-094.json",
+      "sha256": "6955253f5348b26d47943bf3d7dd92d80f481db4a67381d9b64e98e5f65e9941"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-095.json",
+      "sha256": "8fddf7e060b4f57e57718d844dd6889b881fb65e99c91339504d453bcac9142c"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-096.json",
+      "sha256": "52ad38bb81fecf538575565102feb255480014523fa00e22ab68ccc64d904172"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-097.json",
+      "sha256": "bbe6ffefd42982da81bd7ac5c437b7e363f01eec264581bc01e8e6221dffc8c3"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-098.json",
+      "sha256": "2c54866cf44141693363a3733e88974c7b8033e228ccce3eadbf50f321624f2f"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-099.json",
+      "sha256": "dd9af6dc2d27c34d0cb1224f3123b9bc9f1770efef1eb50b00e1314a25fe8974"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/cases/PR100-100.json",
+      "sha256": "a49c9c91422613a1a4547108aa590dfb98a46ad96825998ff93d32e0fbf42d24"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/integrity/ALL_DESIGNS_SEALED.json",
+      "sha256": "8b0be8d4f59bc945c2f4e6d1338459e1caa7780c0d02510ab0933357eb0fae95"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/integrity/ANALYSIS_FREEZE.json",
+      "sha256": "ee5e9154113c50cec6ec65420c9f3c5e3e4c75b7bd762330157b6f00b3f26a10"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/integrity/AUDIT_FREEZE.json",
+      "sha256": "05b7acbc1f7eecb006aff25bf766409fdd0ba88f0f506c6bd5d1a2a12d910d48"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/integrity/COMPLETE.json",
+      "sha256": "e9f58267d3b0c6f7da710eb45fac10f9e0999c1862a879263535fc7cbf0d326c"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/integrity/COMPLETION_REVIEW_FREEZE.json",
+      "sha256": "1dd70afe3111e40ec3c3ab511ce87053d02bb3e7fbfba5c97a14081eb4dd1f44"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/integrity/EXECUTION_FREEZE.json",
+      "sha256": "1ac554ac2e1a7530340646ce0c7e7c856aafa1beb37f5f7aa198c1f2c1f8a536"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/integrity/FINAL_KNOWLEDGE_FREEZE.json",
+      "sha256": "1bbf198b2f884cb996b46141d5b2a07cda4f1c8425e5729af1a8dd7390a58f95"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/integrity/ROUTING_COMPLETE.json",
+      "sha256": "bbdb092dca9f068a8807d0fe650f5946a78b75d6cb7d6a3c5c40e1818b2b19a8"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/integrity/SUMMARY_COMPLETE.json",
+      "sha256": "d082869d16f7c443f2937006d98e48047703638db7faf858eafcbac7cb7ebd08"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/pricing/RATE_FREEZE.json",
+      "sha256": "fc64c52f1ff2b2ffbb998c891d3b2bca105a1e1558519014251a7ffc4f466b71"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/replay/policy.py",
+      "sha256": "85918752fea89f68f1eedf687b065b737a4a214cf7bd82f2e069b6caa5ed74bf"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/replay/protocol.py",
+      "sha256": "91534081b4b8791c830a88b614519fb68679de9259e867f9b273e611d993fdcf"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/replay/reference.py",
+      "sha256": "f430da3bd7856a980f73d1e1b98d689c684a09366c92721f213f1f7ff7989d6e"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/replay/task_factory.py",
+      "sha256": "7be40f259d3815db0238321f8522c5b072c60b0d14b9367503ada20bc554ca98"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/build_completion_review_host.py.txt",
+      "sha256": "038e35f3fdddaf4d22a53d04047c3471f35ab42685fb7f4c8df601d6dc905d43"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/context_diagnostics.py.txt",
+      "sha256": "a5b1694019cad97b68e5f277259d490def29ebb7fc7babbd868b6a3959f98754"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/launch.py.txt",
+      "sha256": "c942c12bfac4ad451637bc4d8d7e8ad5f24cd1f571f2a360d9876fcbec4ac1c6"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/native_runtime.py.txt",
+      "sha256": "4fe98321b594d8458e9a9a8091f54586b3ea3429cfdbc72d391acc3251f0676f"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/policy.py.txt",
+      "sha256": "85918752fea89f68f1eedf687b065b737a4a214cf7bd82f2e069b6caa5ed74bf"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/postprocess.py.txt",
+      "sha256": "d3a30770467fe296334e3ad3918a63a5bccffedef5120fb7abd696d0e8c3d56a"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/protocol.py.txt",
+      "sha256": "91534081b4b8791c830a88b614519fb68679de9259e867f9b273e611d993fdcf"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/recovery.py.txt",
+      "sha256": "1c56ac749cba5bcd7b860b602477347e119fb15fc31a5b0e9690a98746feef61"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/reference.py.txt",
+      "sha256": "f430da3bd7856a980f73d1e1b98d689c684a09366c92721f213f1f7ff7989d6e"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/runner.py.txt",
+      "sha256": "fb1aba2ca71af652c04de18d2673d57d9b365920fa97cedac4bda761ef243b42"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/runtime.py.txt",
+      "sha256": "dbbd351b8d71dcc37cb540cf7b415436b8455d3b69b9fc76ffe9586eed82c7d8"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/scenario.py.txt",
+      "sha256": "8e184e9b5341438e24bf647c7dd5e952d7452ceaf4fa7913830fd5fde37c0464"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/task_factory.py.txt",
+      "sha256": "7be40f259d3815db0238321f8522c5b072c60b0d14b9367503ada20bc554ca98"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/source-snapshot/verify_completion_host.py.txt",
+      "sha256": "3637365dc266f2850d5d5b17424a0474da797db6c9b6ee56d49f031f7d848ba6"
+    },
+    {
+      "path": "benchmarks/practical-review-100/2026-11-05/verify.py",
+      "sha256": "deae8524be1b7cbe81df3a59154da3cc83e613ce9406013a072fe4c43df887d4"
     },
     {
       "path": "docs/presentations/2026-10-codex-local-llm-delegation.md",
       "sha256": "315150a36a4d8bd9a97c7d65f218d19eab1fb3d7738cd168299f07f7c36e5354"
+    },
+    {
+      "path": "docs/presentations/2026-11-practical-review-100.md",
+      "sha256": "12a33ff3c77824bf862266aba50aff98ba9105966504e0e763cea76817f0ff52"
+    },
+    {
+      "path": "docs/presentations/README.md",
+      "sha256": "7367dfc58401f3a44c70aafe0b996055d12dc3a76870717ac0c989e053f683cc"
     }
   ],
   "official_result_revision": "2026-10-21-gemma26-router",
@@ -1569,5 +2213,13 @@
         "artifact_bytes_changed": false
       }
     ]
+  },
+  "practical_review_100_20261105": {
+    "cases": 100,
+    "method_results": 200,
+    "path": "benchmarks/practical-review-100/2026-11-05",
+    "reported_usage_only": true,
+    "research_grading_model_calls": 0,
+    "independent_narrative_equivalence_proven": false
   }
 }

@@ -1,0 +1,510 @@
+{
+  "rule": "policy.profile_for(public family structure, attachments), fixed before execution",
+  "counts": {
+    "normal": 56,
+    "complex": 30,
+    "small": 14
+  },
+  "tasks": [
+    {
+      "task_id": "PR100-001",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-002",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-003",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-004",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-005",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-006",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-007",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-008",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-009",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-010",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-011",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-012",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-013",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-014",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-015",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-016",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-017",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-018",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-019",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-020",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-021",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-022",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-023",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-024",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-025",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-026",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-027",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-028",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-029",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-030",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-031",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-032",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-033",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-034",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-035",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-036",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-037",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-038",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-039",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-040",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-041",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-042",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-043",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-044",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-045",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-046",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-047",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-048",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-049",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-050",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-051",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-052",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-053",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-054",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-055",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-056",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-057",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-058",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-059",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-060",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-061",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-062",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-063",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-064",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-065",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-066",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-067",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-068",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-069",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-070",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-071",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-072",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-073",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-074",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-075",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-076",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-077",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-078",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-079",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-080",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-081",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-082",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-083",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-084",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-085",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-086",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-087",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-088",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-089",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-090",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-091",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-092",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-093",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-094",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-095",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-096",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-097",
+      "profile": "small",
+      "reasoning_effort": "low"
+    },
+    {
+      "task_id": "PR100-098",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    },
+    {
+      "task_id": "PR100-099",
+      "profile": "complex",
+      "reasoning_effort": "high"
+    },
+    {
+      "task_id": "PR100-100",
+      "profile": "normal",
+      "reasoning_effort": "medium"
+    }
+  ]
+}

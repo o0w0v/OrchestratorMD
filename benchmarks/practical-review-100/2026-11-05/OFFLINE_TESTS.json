@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": 19,
+  "labels": [
+    "198_completed_calls_and_one_failed_restored",
+    "known_incremental_subtotal_restored",
+    "unknown_consumption_retained",
+    "99_dialogues_sealed",
+    "199_physical_attempts_present",
+    "new95_response_reused_without_dispatch",
+    "changed_payload_reuse_refused",
+    "syntax:runtime.py",
+    "syntax:recovery.py",
+    "syntax:runner.py",
+    "syntax:postprocess.py",
+    "syntax:native_runtime.py",
+    "syntax:launch.py",
+    "shared_cost_identity_preserved",
+    "failed_call_counted_without_zero_cost",
+    "fixed_models",
+    "fixed_profiles",
+    "fixed_public_jobs",
+    "fixed_review_policy"
+  ],
+  "provider_calls": 0,
+  "inherited_231_checks_passed": true,
+  "inherited_offline_result_sha256": "9b15f6d582d59529f421045d35297b61a509e2381aef18b5a6444055d2ef3f93",
+  "private_expected_values_not_read": true
+}

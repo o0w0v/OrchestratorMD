@@ -1,0 +1,1267 @@
+{
+  "task_id": "PR100-020",
+  "metadata": {
+    "task_id": "PR100-020",
+    "family": "document_edits",
+    "designed_difficulty": 5,
+    "variant": 0
+  },
+  "public_job": {
+    "task_id": "PR100-020",
+    "initial": "社内文書に複数の修正依頼が来ています。触ってはいけない箇所を守って更新し、何ができて何が残ったかを担当者に伝えたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\nupdatesをid昇順で適用。section_idがなければUNKNOWN_SECTION、protected=trueならPROTECTEDとして適用しない。\n対象の現在textにoldがちょうど1回だけ含まれるとき、その1箇所をnewへ置換しAPPLIED。0回または2回以上ならOLD_NOT_UNIQUEで適用しない。前の更新結果を次の更新へ渡す。\nsectionsは入力順の全idと最終text。outcomesは全updateのid昇順でid/state。applied_idsはAPPLIEDのidだけid順。保護本文は1文字も変えない。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に適用できた更新・できなかった更新の全体像と、保護や未適用の理由。\n資料は以下のJSONです。\n{\n  \"sections\": [\n    {\n      \"id\": \"D001\",\n      \"protected\": true,\n      \"text\": \"部署1の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D002\",\n      \"protected\": false,\n      \"text\": \"部署2の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D003\",\n      \"protected\": false,\n      \"text\": \"部署3の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D004\",\n      \"protected\": false,\n      \"text\": \"部署4の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D005\",\n      \"protected\": true,\n      \"text\": \"部署5の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D006\",\n      \"protected\": false,\n      \"text\": \"部署6の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D007\",\n      \"protected\": false,\n      \"text\": \"部署7の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D008\",\n      \"protected\": false,\n      \"text\": \"部署8の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D009\",\n      \"protected\": true,\n      \"text\": \"部署9の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D010\",\n      \"protected\": false,\n      \"text\": \"部署10の予定は旧版です。\"\n    }\n  ],\n  \"updates\": [\n    {\n      \"id\": \"U001\",\n      \"section_id\": \"D001\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-1\"\n    },\n    {\n      \"id\": \"U002\",\n      \"section_id\": \"D002\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-2\"\n    },\n    {\n      \"id\": \"U003\",\n      \"section_id\": \"D003\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-3\"\n    },\n    {\n      \"id\": \"U004\",\n      \"section_id\": \"D004\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-4\"\n    },\n    {\n      \"id\": \"U005\",\n      \"section_id\": \"D005\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-5\"\n    },\n    {\n      \"id\": \"U006\",\n      \"section_id\": \"D006\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-6\"\n    },\n    {\n      \"id\": \"U007\",\n      \"section_id\": \"D007\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-7\"\n    },\n    {\n      \"id\": \"U008\",\n      \"section_id\": \"D008\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-8\"\n    },\n    {\n      \"id\": \"U009\",\n      \"section_id\": \"D009\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-9\"\n    },\n    {\n      \"id\": \"U010\",\n      \"section_id\": \"D010\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-10\"\n    },\n    {\n      \"id\": \"U011\",\n      \"section_id\": \"D001\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-11\"\n    },\n    {\n      \"id\": \"U012\",\n      \"section_id\": \"D002\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-12\"\n    },\n    {\n      \"id\": \"U013\",\n      \"section_id\": \"D003\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-13\"\n    },\n    {\n      \"id\": \"U014\",\n      \"section_id\": \"D004\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-14\"\n    },\n    {\n      \"id\": \"U015\",\n      \"section_id\": \"D005\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-15\"\n    },\n    {\n      \"id\": \"U016\",\n      \"section_id\": \"D006\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-16\"\n    },\n    {\n      \"id\": \"U017\",\n      \"section_id\": \"D007\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-17\"\n    },\n    {\n      \"id\": \"U018\",\n      \"section_id\": \"D008\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-18\"\n    },\n    {\n      \"id\": \"U019\",\n      \"section_id\": \"D009\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-19\"\n    },\n    {\n      \"id\": \"U020\",\n      \"section_id\": \"D010\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-20\"\n    },\n    {\n      \"id\": \"U021\",\n      \"section_id\": \"D999\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂\"\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"sections\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"text\": {\"type\": \"string\"}}, \"required\": [\"id\", \"text\"], \"additionalProperties\": false}}, \"outcomes\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"state\"], \"additionalProperties\": false}}, \"applied_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"sections\", \"outcomes\", \"applied_ids\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "sections": [
+        {
+          "id": "D001",
+          "protected": true,
+          "text": "部署1の予定は旧版です。"
+        },
+        {
+          "id": "D002",
+          "protected": false,
+          "text": "部署2の予定は旧版です。"
+        },
+        {
+          "id": "D003",
+          "protected": false,
+          "text": "部署3の予定は旧版です。"
+        },
+        {
+          "id": "D004",
+          "protected": false,
+          "text": "部署4の予定は旧版です。"
+        },
+        {
+          "id": "D005",
+          "protected": true,
+          "text": "部署5の予定は旧版です。"
+        },
+        {
+          "id": "D006",
+          "protected": false,
+          "text": "部署6の予定は旧版です。"
+        },
+        {
+          "id": "D007",
+          "protected": false,
+          "text": "部署7の予定は旧版です。"
+        },
+        {
+          "id": "D008",
+          "protected": false,
+          "text": "部署8の予定は旧版です。"
+        },
+        {
+          "id": "D009",
+          "protected": true,
+          "text": "部署9の予定は旧版です。"
+        },
+        {
+          "id": "D010",
+          "protected": false,
+          "text": "部署10の予定は旧版です。"
+        }
+      ],
+      "updates": [
+        {
+          "id": "U001",
+          "section_id": "D001",
+          "old": "存在しない文字",
+          "new": "改訂5-700-1"
+        },
+        {
+          "id": "U002",
+          "section_id": "D002",
+          "old": "旧版",
+          "new": "改訂5-700-2"
+        },
+        {
+          "id": "U003",
+          "section_id": "D003",
+          "old": "旧版",
+          "new": "改訂5-700-3"
+        },
+        {
+          "id": "U004",
+          "section_id": "D004",
+          "old": "存在しない文字",
+          "new": "改訂5-700-4"
+        },
+        {
+          "id": "U005",
+          "section_id": "D005",
+          "old": "旧版",
+          "new": "改訂5-700-5"
+        },
+        {
+          "id": "U006",
+          "section_id": "D006",
+          "old": "旧版",
+          "new": "改訂5-700-6"
+        },
+        {
+          "id": "U007",
+          "section_id": "D007",
+          "old": "存在しない文字",
+          "new": "改訂5-700-7"
+        },
+        {
+          "id": "U008",
+          "section_id": "D008",
+          "old": "旧版",
+          "new": "改訂5-700-8"
+        },
+        {
+          "id": "U009",
+          "section_id": "D009",
+          "old": "旧版",
+          "new": "改訂5-700-9"
+        },
+        {
+          "id": "U010",
+          "section_id": "D010",
+          "old": "存在しない文字",
+          "new": "改訂5-700-10"
+        },
+        {
+          "id": "U011",
+          "section_id": "D001",
+          "old": "旧版",
+          "new": "改訂5-700-11"
+        },
+        {
+          "id": "U012",
+          "section_id": "D002",
+          "old": "旧版",
+          "new": "改訂5-700-12"
+        },
+        {
+          "id": "U013",
+          "section_id": "D003",
+          "old": "存在しない文字",
+          "new": "改訂5-700-13"
+        },
+        {
+          "id": "U014",
+          "section_id": "D004",
+          "old": "旧版",
+          "new": "改訂5-700-14"
+        },
+        {
+          "id": "U015",
+          "section_id": "D005",
+          "old": "旧版",
+          "new": "改訂5-700-15"
+        },
+        {
+          "id": "U016",
+          "section_id": "D006",
+          "old": "存在しない文字",
+          "new": "改訂5-700-16"
+        },
+        {
+          "id": "U017",
+          "section_id": "D007",
+          "old": "旧版",
+          "new": "改訂5-700-17"
+        },
+        {
+          "id": "U018",
+          "section_id": "D008",
+          "old": "旧版",
+          "new": "改訂5-700-18"
+        },
+        {
+          "id": "U019",
+          "section_id": "D009",
+          "old": "存在しない文字",
+          "new": "改訂5-700-19"
+        },
+        {
+          "id": "U020",
+          "section_id": "D010",
+          "old": "旧版",
+          "new": "改訂5-700-20"
+        },
+        {
+          "id": "U021",
+          "section_id": "D999",
+          "old": "旧版",
+          "new": "改訂"
+        }
+      ]
+    },
+    "business_rules": [
+      "updatesをid昇順で適用。section_idがなければUNKNOWN_SECTION、protected=trueならPROTECTEDとして適用しない。",
+      "対象の現在textにoldがちょうど1回だけ含まれるとき、その1箇所をnewへ置換しAPPLIED。0回または2回以上ならOLD_NOT_UNIQUEで適用しない。前の更新結果を次の更新へ渡す。",
+      "sectionsは入力順の全idと最終text。outcomesは全updateのid昇順でid/state。applied_idsはAPPLIEDのidだけid順。保護本文は1文字も変えない。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "state"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "applied_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sections",
+        "outcomes",
+        "applied_ids",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "normal",
+    "reasoning_effort": "medium"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "社内文書に複数の修正依頼が来ています。触ってはいけない箇所を守って更新し、何ができて何が残ったかを担当者に伝えたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まずこのチャットでいただく資料だけを使い、修正範囲と触ってはいけない箇所を整理してから、仕上げ方を相談しましょう。現時点では完成版の作成には進みません。\n\n分かる範囲で、次の内容を貼ってください。\n\n- **対象文書**：本文や修正対象部分\n- **修正依頼**：複数ある場合は、依頼者と依頼内容が分かる形\n- **変更禁止の範囲**：文言・数値・書式など、維持する必要があるもの\n- **担当者への報告条件**：誰に、どの形式で、いつまでに伝えたいか\n\n未定の項目は未定のままで大丈夫です。資料を確認したら、依頼同士の矛盾や不足情報を整理し、更新案と「対応済み・保留・確認が必要な点」の報告をどうまとめるか提案します。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\nupdatesをid昇順で適用。section_idがなければUNKNOWN_SECTION、protected=trueならPROTECTEDとして適用しない。\n対象の現在textにoldがちょうど1回だけ含まれるとき、その1箇所をnewへ置換しAPPLIED。0回または2回以上ならOLD_NOT_UNIQUEで適用しない。前の更新結果を次の更新へ渡す。\nsectionsは入力順の全idと最終text。outcomesは全updateのid昇順でid/state。applied_idsはAPPLIEDのidだけid順。保護本文は1文字も変えない。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に適用できた更新・できなかった更新の全体像と、保護や未適用の理由。\n資料は以下のJSONです。\n{\n  \"sections\": [\n    {\n      \"id\": \"D001\",\n      \"protected\": true,\n      \"text\": \"部署1の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D002\",\n      \"protected\": false,\n      \"text\": \"部署2の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D003\",\n      \"protected\": false,\n      \"text\": \"部署3の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D004\",\n      \"protected\": false,\n      \"text\": \"部署4の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D005\",\n      \"protected\": true,\n      \"text\": \"部署5の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D006\",\n      \"protected\": false,\n      \"text\": \"部署6の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D007\",\n      \"protected\": false,\n      \"text\": \"部署7の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D008\",\n      \"protected\": false,\n      \"text\": \"部署8の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D009\",\n      \"protected\": true,\n      \"text\": \"部署9の予定は旧版です。\"\n    },\n    {\n      \"id\": \"D010\",\n      \"protected\": false,\n      \"text\": \"部署10の予定は旧版です。\"\n    }\n  ],\n  \"updates\": [\n    {\n      \"id\": \"U001\",\n      \"section_id\": \"D001\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-1\"\n    },\n    {\n      \"id\": \"U002\",\n      \"section_id\": \"D002\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-2\"\n    },\n    {\n      \"id\": \"U003\",\n      \"section_id\": \"D003\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-3\"\n    },\n    {\n      \"id\": \"U004\",\n      \"section_id\": \"D004\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-4\"\n    },\n    {\n      \"id\": \"U005\",\n      \"section_id\": \"D005\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-5\"\n    },\n    {\n      \"id\": \"U006\",\n      \"section_id\": \"D006\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-6\"\n    },\n    {\n      \"id\": \"U007\",\n      \"section_id\": \"D007\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-7\"\n    },\n    {\n      \"id\": \"U008\",\n      \"section_id\": \"D008\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-8\"\n    },\n    {\n      \"id\": \"U009\",\n      \"section_id\": \"D009\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-9\"\n    },\n    {\n      \"id\": \"U010\",\n      \"section_id\": \"D010\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-10\"\n    },\n    {\n      \"id\": \"U011\",\n      \"section_id\": \"D001\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-11\"\n    },\n    {\n      \"id\": \"U012\",\n      \"section_id\": \"D002\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-12\"\n    },\n    {\n      \"id\": \"U013\",\n      \"section_id\": \"D003\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-13\"\n    },\n    {\n      \"id\": \"U014\",\n      \"section_id\": \"D004\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-14\"\n    },\n    {\n      \"id\": \"U015\",\n      \"section_id\": \"D005\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-15\"\n    },\n    {\n      \"id\": \"U016\",\n      \"section_id\": \"D006\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-16\"\n    },\n    {\n      \"id\": \"U017\",\n      \"section_id\": \"D007\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-17\"\n    },\n    {\n      \"id\": \"U018\",\n      \"section_id\": \"D008\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-18\"\n    },\n    {\n      \"id\": \"U019\",\n      \"section_id\": \"D009\",\n      \"old\": \"存在しない文字\",\n      \"new\": \"改訂5-700-19\"\n    },\n    {\n      \"id\": \"U020\",\n      \"section_id\": \"D010\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂5-700-20\"\n    },\n    {\n      \"id\": \"U021\",\n      \"section_id\": \"D999\",\n      \"old\": \"旧版\",\n      \"new\": \"改訂\"\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"sections\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"text\": {\"type\": \"string\"}}, \"required\": [\"id\", \"text\"], \"additionalProperties\": false}}, \"outcomes\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"state\": {\"type\": \"string\"}}, \"required\": [\"id\", \"state\"], \"additionalProperties\": false}}, \"applied_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"sections\", \"outcomes\", \"applied_ids\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人としては、担当者が全明細から各更新の結果と最終本文を確認し、未適用の依頼について次の対応を判断する場面を想定しています。責任者は、同じ成果物に添えた短い共有文で、どこまで更新できたか、何が残ったか、その理由を把握する形です。\n\n作り方は、いただいたJSONだけを使い、更新IDの昇順に、対象の存在、保護の有無、その時点の本文でのoldの出現回数を順に確認します。適用した本文を次の更新へ引き継ぎ、保護された本文はそのまま維持します。最終成果物には、全セクションの最終本文、全更新の判定、適用済みID、共有文を指定のJSON形式でまとめます。\n\n共有文では、適用・未適用の件数と主な理由を明細に結び付けて説明します。特に、保護による未適用と、置換対象が見つからないことによる未適用を区別し、先行する更新によって後続の置換対象がなくなった場合も、その経緯が分かるようにします。未適用の依頼を解決済みとして扱うことはしません。\n\n今回の資料を処理するための条件に、未確定の点は見当たりません。未適用分を今後どう直すかは別途判断が必要ですが、今回の成果物では残件として示せます。現時点では処理や完成版の作成には着手せず、作成に進む段階で、指定どおりJSONだけを返す方針です。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-020",
+      "arm": "SOL_CONTINUE",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "sections": [
+          {
+            "id": "D001",
+            "text": "部署1の予定は旧版です。"
+          },
+          {
+            "id": "D002",
+            "text": "部署2の予定は改訂5-700-2です。"
+          },
+          {
+            "id": "D003",
+            "text": "部署3の予定は改訂5-700-3です。"
+          },
+          {
+            "id": "D004",
+            "text": "部署4の予定は改訂5-700-14です。"
+          },
+          {
+            "id": "D005",
+            "text": "部署5の予定は旧版です。"
+          },
+          {
+            "id": "D006",
+            "text": "部署6の予定は改訂5-700-6です。"
+          },
+          {
+            "id": "D007",
+            "text": "部署7の予定は改訂5-700-17です。"
+          },
+          {
+            "id": "D008",
+            "text": "部署8の予定は改訂5-700-8です。"
+          },
+          {
+            "id": "D009",
+            "text": "部署9の予定は旧版です。"
+          },
+          {
+            "id": "D010",
+            "text": "部署10の予定は改訂5-700-20です。"
+          }
+        ],
+        "outcomes": [
+          {
+            "id": "U001",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U002",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U003",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U004",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U005",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U006",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U007",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U008",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U009",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U010",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U011",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U012",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U013",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U014",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U015",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U016",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U017",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U018",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U019",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U020",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U021",
+            "state": "UNKNOWN_SECTION"
+          }
+        ],
+        "applied_ids": [
+          "U002",
+          "U003",
+          "U006",
+          "U008",
+          "U014",
+          "U017",
+          "U020"
+        ],
+        "report_md": "全21件をID昇順で判定し、7件を適用、14件を未適用としました。全10セクションのうち、保護対象以外の7セクションを更新しました。保護対象のD001・D005・D009は本文を1文字も変更していません。\n\n未適用の内訳は、保護によるPROTECTEDが6件、置換対象の不一致によるOLD_NOT_UNIQUEが7件、対象不存在によるUNKNOWN_SECTIONが1件です。保護対象では本文の一致判定より保護を優先しています。OLD_NOT_UNIQUEの7件はいずれも、その時点の本文でoldが0回でした。このうちU012・U018は、先行するU002・U008で「旧版」を置換済みのため適用できず、先行更新の結果を維持しています。他の5件は指定された「存在しない文字」が本文にありませんでした。U021の対象D999は元資料にありません。\n\n未適用14件は未解決の依頼として残っています。再対応時は、保護対象の扱い、置換する文言、D999の対象指定をそれぞれ確認する必要があります。各更新の判定と最終本文は明細をご確認ください。"
+      },
+      "final_artifact": {
+        "sections": [
+          {
+            "id": "D001",
+            "text": "部署1の予定は旧版です。"
+          },
+          {
+            "id": "D002",
+            "text": "部署2の予定は改訂5-700-2です。"
+          },
+          {
+            "id": "D003",
+            "text": "部署3の予定は改訂5-700-3です。"
+          },
+          {
+            "id": "D004",
+            "text": "部署4の予定は改訂5-700-14です。"
+          },
+          {
+            "id": "D005",
+            "text": "部署5の予定は旧版です。"
+          },
+          {
+            "id": "D006",
+            "text": "部署6の予定は改訂5-700-6です。"
+          },
+          {
+            "id": "D007",
+            "text": "部署7の予定は改訂5-700-17です。"
+          },
+          {
+            "id": "D008",
+            "text": "部署8の予定は改訂5-700-8です。"
+          },
+          {
+            "id": "D009",
+            "text": "部署9の予定は旧版です。"
+          },
+          {
+            "id": "D010",
+            "text": "部署10の予定は改訂5-700-20です。"
+          }
+        ],
+        "outcomes": [
+          {
+            "id": "U001",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U002",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U003",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U004",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U005",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U006",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U007",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U008",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U009",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U010",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U011",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U012",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U013",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U014",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U015",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U016",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U017",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U018",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U019",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U020",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U021",
+            "state": "UNKNOWN_SECTION"
+          }
+        ],
+        "applied_ids": [
+          "U002",
+          "U003",
+          "U006",
+          "U008",
+          "U014",
+          "U017",
+          "U020"
+        ],
+        "report_md": "全21件をID昇順で判定し、7件を適用、14件を未適用としました。全10セクションのうち、保護対象以外の7セクションを更新しました。保護対象のD001・D005・D009は本文を1文字も変更していません。\n\n未適用の内訳は、保護によるPROTECTEDが6件、置換対象の不一致によるOLD_NOT_UNIQUEが7件、対象不存在によるUNKNOWN_SECTIONが1件です。保護対象では本文の一致判定より保護を優先しています。OLD_NOT_UNIQUEの7件はいずれも、その時点の本文でoldが0回でした。このうちU012・U018は、先行するU002・U008で「旧版」を置換済みのため適用できず、先行更新の結果を維持しています。他の5件は指定された「存在しない文字」が本文にありませんでした。U021の対象D999は元資料にありません。\n\n未適用14件は未解決の依頼として残っています。再対応時は、保護対象の扱い、置換する文言、D999の対象指定をそれぞれ確認する必要があります。各更新の判定と最終本文は明細をご確認ください。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "1.09175",
+      "incremental_credits": "1.12675",
+      "operating_total_credits": "2.21850",
+      "shared_seconds": 29.92200000002049,
+      "incremental_active_seconds": 23.84299999999348,
+      "total_active_seconds": 53.76500000001397,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T15:40:45.827038+00:00",
+        "text": "{\n  \"sections\": [\n    {\"id\":\"D001\",\"text\":\"部署1の予定は旧版です。\"},\n    {\"id\":\"D002\",\"text\":\"部署2の予定は改訂5-700-2です。\"},\n    {\"id\":\"D003\",\"text\":\"部署3の予定は改訂5-700-3です。\"},\n    {\"id\":\"D004\",\"text\":\"部署4の予定は改訂5-700-14です。\"},\n    {\"id\":\"D005\",\"text\":\"部署5の予定は旧版です。\"},\n    {\"id\":\"D006\",\"text\":\"部署6の予定は改訂5-700-6です。\"},\n    {\"id\":\"D007\",\"text\":\"部署7の予定は改訂5-700-17です。\"},\n    {\"id\":\"D008\",\"text\":\"部署8の予定は改訂5-700-8です。\"},\n    {\"id\":\"D009\",\"text\":\"部署9の予定は旧版です。\"},\n    {\"id\":\"D010\",\"text\":\"部署10の予定は改訂5-700-20です。\"}\n  ],\n  \"outcomes\": [\n    {\"id\":\"U001\",\"state\":\"PROTECTED\"},\n    {\"id\":\"U002\",\"state\":\"APPLIED\"},\n    {\"id\":\"U003\",\"state\":\"APPLIED\"},\n    {\"id\":\"U004\",\"state\":\"OLD_NOT_UNIQUE\"},\n    {\"id\":\"U005\",\"state\":\"PROTECTED\"},\n    {\"id\":\"U006\",\"state\":\"APPLIED\"},\n    {\"id\":\"U007\",\"state\":\"OLD_NOT_UNIQUE\"},\n    {\"id\":\"U008\",\"state\":\"APPLIED\"},\n    {\"id\":\"U009\",\"state\":\"PROTECTED\"},\n    {\"id\":\"U010\",\"state\":\"OLD_NOT_UNIQUE\"},\n    {\"id\":\"U011\",\"state\":\"PROTECTED\"},\n    {\"id\":\"U012\",\"state\":\"OLD_NOT_UNIQUE\"},\n    {\"id\":\"U013\",\"state\":\"OLD_NOT_UNIQUE\"},\n    {\"id\":\"U014\",\"state\":\"APPLIED\"},\n    {\"id\":\"U015\",\"state\":\"PROTECTED\"},\n    {\"id\":\"U016\",\"state\":\"OLD_NOT_UNIQUE\"},\n    {\"id\":\"U017\",\"state\":\"APPLIED\"},\n    {\"id\":\"U018\",\"state\":\"OLD_NOT_UNIQUE\"},\n    {\"id\":\"U019\",\"state\":\"PROTECTED\"},\n    {\"id\":\"U020\",\"state\":\"APPLIED\"},\n    {\"id\":\"U021\",\"state\":\"UNKNOWN_SECTION\"}\n  ],\n  \"applied_ids\": [\"U002\",\"U003\",\"U006\",\"U008\",\"U014\",\"U017\",\"U020\"],\n  \"report_md\": \"全21件をID昇順で判定し、7件を適用、14件を未適用としました。全10セクションのうち、保護対象以外の7セクションを更新しました。保護対象のD001・D005・D009は本文を1文字も変更していません。\\n\\n未適用の内訳は、保護によるPROTECTEDが6件、置換対象の不一致によるOLD_NOT_UNIQUEが7件、対象不存在によるUNKNOWN_SECTIONが1件です。保護対象では本文の一致判定より保護を優先しています。OLD_NOT_UNIQUEの7件はいずれも、その時点の本文でoldが0回でした。このうちU012・U018は、先行するU002・U008で「旧版」を置換済みのため適用できず、先行更新の結果を維持しています。他の5件は指定された「存在しない文字」が本文にありませんでした。U021の対象D999は元資料にありません。\\n\\n未適用14件は未解決の依頼として残っています。再対応時は、保護対象の扱い、置換する文言、D999の対象指定をそれぞれ確認する必要があります。各更新の判定と最終本文は明細をご確認ください。\"\n}",
+        "value": {
+          "sections": [
+            {
+              "id": "D001",
+              "text": "部署1の予定は旧版です。"
+            },
+            {
+              "id": "D002",
+              "text": "部署2の予定は改訂5-700-2です。"
+            },
+            {
+              "id": "D003",
+              "text": "部署3の予定は改訂5-700-3です。"
+            },
+            {
+              "id": "D004",
+              "text": "部署4の予定は改訂5-700-14です。"
+            },
+            {
+              "id": "D005",
+              "text": "部署5の予定は旧版です。"
+            },
+            {
+              "id": "D006",
+              "text": "部署6の予定は改訂5-700-6です。"
+            },
+            {
+              "id": "D007",
+              "text": "部署7の予定は改訂5-700-17です。"
+            },
+            {
+              "id": "D008",
+              "text": "部署8の予定は改訂5-700-8です。"
+            },
+            {
+              "id": "D009",
+              "text": "部署9の予定は旧版です。"
+            },
+            {
+              "id": "D010",
+              "text": "部署10の予定は改訂5-700-20です。"
+            }
+          ],
+          "outcomes": [
+            {
+              "id": "U001",
+              "state": "PROTECTED"
+            },
+            {
+              "id": "U002",
+              "state": "APPLIED"
+            },
+            {
+              "id": "U003",
+              "state": "APPLIED"
+            },
+            {
+              "id": "U004",
+              "state": "OLD_NOT_UNIQUE"
+            },
+            {
+              "id": "U005",
+              "state": "PROTECTED"
+            },
+            {
+              "id": "U006",
+              "state": "APPLIED"
+            },
+            {
+              "id": "U007",
+              "state": "OLD_NOT_UNIQUE"
+            },
+            {
+              "id": "U008",
+              "state": "APPLIED"
+            },
+            {
+              "id": "U009",
+              "state": "PROTECTED"
+            },
+            {
+              "id": "U010",
+              "state": "OLD_NOT_UNIQUE"
+            },
+            {
+              "id": "U011",
+              "state": "PROTECTED"
+            },
+            {
+              "id": "U012",
+              "state": "OLD_NOT_UNIQUE"
+            },
+            {
+              "id": "U013",
+              "state": "OLD_NOT_UNIQUE"
+            },
+            {
+              "id": "U014",
+              "state": "APPLIED"
+            },
+            {
+              "id": "U015",
+              "state": "PROTECTED"
+            },
+            {
+              "id": "U016",
+              "state": "OLD_NOT_UNIQUE"
+            },
+            {
+              "id": "U017",
+              "state": "APPLIED"
+            },
+            {
+              "id": "U018",
+              "state": "OLD_NOT_UNIQUE"
+            },
+            {
+              "id": "U019",
+              "state": "PROTECTED"
+            },
+            {
+              "id": "U020",
+              "state": "APPLIED"
+            },
+            {
+              "id": "U021",
+              "state": "UNKNOWN_SECTION"
+            }
+          ],
+          "applied_ids": [
+            "U002",
+            "U003",
+            "U006",
+            "U008",
+            "U014",
+            "U017",
+            "U020"
+          ],
+          "report_md": "全21件をID昇順で判定し、7件を適用、14件を未適用としました。全10セクションのうち、保護対象以外の7セクションを更新しました。保護対象のD001・D005・D009は本文を1文字も変更していません。\n\n未適用の内訳は、保護によるPROTECTEDが6件、置換対象の不一致によるOLD_NOT_UNIQUEが7件、対象不存在によるUNKNOWN_SECTIONが1件です。保護対象では本文の一致判定より保護を優先しています。OLD_NOT_UNIQUEの7件はいずれも、その時点の本文でoldが0回でした。このうちU012・U018は、先行するU002・U008で「旧版」を置換済みのため適用できず、先行更新の結果を維持しています。他の5件は指定された「存在しない文字」が本文にありませんでした。U021の対象D999は元資料にありません。\n\n未適用14件は未解決の依頼として残っています。再対応時は、保護対象の扱い、置換する文言、D999の対象指定をそれぞれ確認する必要があります。各更新の判定と最終本文は明細をご確認ください。"
+        },
+        "public_schema_pass": true,
+        "seconds": 23.84299999999348,
+        "credits": "1.12675",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-020",
+      "arm": "PRACTICAL",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "applied_ids": [
+          "U002",
+          "U003",
+          "U006",
+          "U008",
+          "U014",
+          "U017",
+          "U020"
+        ],
+        "outcomes": [
+          {
+            "id": "U001",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U002",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U003",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U004",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U005",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U006",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U007",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U008",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U009",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U010",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U011",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U012",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U013",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U014",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U015",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U016",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U017",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U018",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U019",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U020",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U021",
+            "state": "OLD_NOT_UNIQUE"
+          }
+        ],
+        "report_md": "全21件の更新依頼のうち、7件（U002, U003, U006, U008, U014, U017, U020）が適用されました。\n未適用の主な理由は、保護対象セクション（D001, D005, D009）への更新依頼（計6件）と、置換対象文字列の不在や、先行する更新により置換対象が既に変更されていた等の理由によるもの（計8件：U004, U007, U010, U012, U013, U016, U018, U021）です。",
+        "sections": [
+          {
+            "id": "D001",
+            "text": "部署1の予定は旧版です。"
+          },
+          {
+            "id": "D002",
+            "text": "部署2の予定は改訂5-700-2です。"
+          },
+          {
+            "id": "D003",
+            "text": "部署3の予定は改訂5-700-3です。"
+          },
+          {
+            "id": "D004",
+            "text": "部署4の予定は改訂5-700-14です。"
+          },
+          {
+            "id": "D005",
+            "text": "部署5の予定は旧版です。"
+          },
+          {
+            "id": "D006",
+            "text": "部署6の予定は改訂5-700-6です。"
+          },
+          {
+            "id": "D007",
+            "text": "部署7の予定は改訂5-700-17です。"
+          },
+          {
+            "id": "D008",
+            "text": "部署8の予定は改訂5-700-8です。"
+          },
+          {
+            "id": "D009",
+            "text": "部署9の予定は旧版です。"
+          },
+          {
+            "id": "D010",
+            "text": "部署10の予定は改訂5-700-20です。"
+          }
+        ]
+      },
+      "final_artifact": {
+        "applied_ids": [
+          "U002",
+          "U003",
+          "U006",
+          "U008",
+          "U014",
+          "U017",
+          "U020"
+        ],
+        "outcomes": [
+          {
+            "id": "U001",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U002",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U003",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U004",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U005",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U006",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U007",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U008",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U009",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U010",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U011",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U012",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U013",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U014",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U015",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U016",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U017",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U018",
+            "state": "OLD_NOT_UNIQUE"
+          },
+          {
+            "id": "U019",
+            "state": "PROTECTED"
+          },
+          {
+            "id": "U020",
+            "state": "APPLIED"
+          },
+          {
+            "id": "U021",
+            "state": "UNKNOWN_SECTION"
+          }
+        ],
+        "report_md": "全21件の更新依頼のうち7件が適用され、14件が未適用です。\n未適用の内訳は、保護対象セクション（D001, D005, D009）への更新依頼6件、置換対象文字列が現在の本文に存在しない更新依頼7件、対象セクションが存在しない更新依頼1件（U021：D999）です。U012とU018は先行更新で「旧版」が置換済みのため未適用です。保護本文はすべて維持しています。",
+        "sections": [
+          {
+            "id": "D001",
+            "text": "部署1の予定は旧版です。"
+          },
+          {
+            "id": "D002",
+            "text": "部署2の予定は改訂5-700-2です。"
+          },
+          {
+            "id": "D003",
+            "text": "部署3の予定は改訂5-700-3です。"
+          },
+          {
+            "id": "D004",
+            "text": "部署4の予定は改訂5-700-14です。"
+          },
+          {
+            "id": "D005",
+            "text": "部署5の予定は旧版です。"
+          },
+          {
+            "id": "D006",
+            "text": "部署6の予定は改訂5-700-6です。"
+          },
+          {
+            "id": "D007",
+            "text": "部署7の予定は改訂5-700-17です。"
+          },
+          {
+            "id": "D008",
+            "text": "部署8の予定は改訂5-700-8です。"
+          },
+          {
+            "id": "D009",
+            "text": "部署9の予定は旧版です。"
+          },
+          {
+            "id": "D010",
+            "text": "部署10の予定は改訂5-700-20です。"
+          }
+        ]
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_after_partial_repair",
+      "shared_credits": "1.09175",
+      "incremental_credits": "0.39505",
+      "operating_total_credits": "1.48680",
+      "shared_seconds": 29.92200000002049,
+      "incremental_active_seconds": 273.670999999973,
+      "total_active_seconds": 303.5929999999935,
+      "patch_changes": [
+        {
+          "path": "/outcomes/20/state",
+          "before": "OLD_NOT_UNIQUE",
+          "after": "UNKNOWN_SECTION"
+        },
+        {
+          "path": "/report_md",
+          "before": "全21件の更新依頼のうち、7件（U002, U003, U006, U008, U014, U017, U020）が適用されました。\n未適用の主な理由は、保護対象セクション（D001, D005, D009）への更新依頼（計6件）と、置換対象文字列の不在や、先行する更新により置換対象が既に変更されていた等の理由によるもの（計8件：U004, U007, U010, U012, U013, U016, U018, U021）です。",
+          "after": "全21件の更新依頼のうち7件が適用され、14件が未適用です。\n未適用の内訳は、保護対象セクション（D001, D005, D009）への更新依頼6件、置換対象文字列が現在の本文に存在しない更新依頼7件、対象セクションが存在しない更新依頼1件（U021：D999）です。U012とU018は先行更新で「旧版」が置換済みのため未適用です。保護本文はすべて維持しています。"
+        }
+      ],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T15:40:21.281306+00:00",
+          "text": "{\"decision\":\"PATCH\",\"changes\":[{\"path\":\"/outcomes/20/state\",\"before\":\"OLD_NOT_UNIQUE\",\"after\":\"UNKNOWN_SECTION\"},{\"path\":\"/report_md\",\"before\":\"全21件の更新依頼のうち、7件（U002, U003, U006, U008, U014, U017, U020）が適用されました。\\n未適用の主な理由は、保護対象セクション（D001, D005, D009）への更新依頼（計6件）と、置換対象文字列の不在や、先行する更新により置換対象が既に変更されていた等の理由によるもの（計8件：U004, U007, U010, U012, U013, U016, U018, U021）です。\",\"after\":\"全21件の更新依頼のうち7件が適用され、14件が未適用です。\\n未適用の内訳は、保護対象セクション（D001, D005, D009）への更新依頼6件、置換対象文字列が現在の本文に存在しない更新依頼7件、対象セクションが存在しない更新依頼1件（U021：D999）です。U012とU018は先行更新で「旧版」が置換済みのため未適用です。保護本文はすべて維持しています。\"}],\"impact\":\"U021は対象D999が存在しないため、本文内の文字列不在とは異なる確認が必要です。判定と報告の理由別件数を修正します。\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 11.96799999999348,
+          "credits": "0.39505",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 213.34299999999348,
+        "usage": {
+          "prompt_eval_count": 3164,
+          "eval_count": 8604,
+          "prompt_eval_duration": 3761591000,
+          "eval_duration": 209407525000,
+          "total_duration": 213190139000
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "sections": [
+      {
+        "id": "D001",
+        "text": "部署1の予定は旧版です。"
+      },
+      {
+        "id": "D002",
+        "text": "部署2の予定は改訂5-700-2です。"
+      },
+      {
+        "id": "D003",
+        "text": "部署3の予定は改訂5-700-3です。"
+      },
+      {
+        "id": "D004",
+        "text": "部署4の予定は改訂5-700-14です。"
+      },
+      {
+        "id": "D005",
+        "text": "部署5の予定は旧版です。"
+      },
+      {
+        "id": "D006",
+        "text": "部署6の予定は改訂5-700-6です。"
+      },
+      {
+        "id": "D007",
+        "text": "部署7の予定は改訂5-700-17です。"
+      },
+      {
+        "id": "D008",
+        "text": "部署8の予定は改訂5-700-8です。"
+      },
+      {
+        "id": "D009",
+        "text": "部署9の予定は旧版です。"
+      },
+      {
+        "id": "D010",
+        "text": "部署10の予定は改訂5-700-20です。"
+      }
+    ],
+    "outcomes": [
+      {
+        "id": "U001",
+        "state": "PROTECTED"
+      },
+      {
+        "id": "U002",
+        "state": "APPLIED"
+      },
+      {
+        "id": "U003",
+        "state": "APPLIED"
+      },
+      {
+        "id": "U004",
+        "state": "OLD_NOT_UNIQUE"
+      },
+      {
+        "id": "U005",
+        "state": "PROTECTED"
+      },
+      {
+        "id": "U006",
+        "state": "APPLIED"
+      },
+      {
+        "id": "U007",
+        "state": "OLD_NOT_UNIQUE"
+      },
+      {
+        "id": "U008",
+        "state": "APPLIED"
+      },
+      {
+        "id": "U009",
+        "state": "PROTECTED"
+      },
+      {
+        "id": "U010",
+        "state": "OLD_NOT_UNIQUE"
+      },
+      {
+        "id": "U011",
+        "state": "PROTECTED"
+      },
+      {
+        "id": "U012",
+        "state": "OLD_NOT_UNIQUE"
+      },
+      {
+        "id": "U013",
+        "state": "OLD_NOT_UNIQUE"
+      },
+      {
+        "id": "U014",
+        "state": "APPLIED"
+      },
+      {
+        "id": "U015",
+        "state": "PROTECTED"
+      },
+      {
+        "id": "U016",
+        "state": "OLD_NOT_UNIQUE"
+      },
+      {
+        "id": "U017",
+        "state": "APPLIED"
+      },
+      {
+        "id": "U018",
+        "state": "OLD_NOT_UNIQUE"
+      },
+      {
+        "id": "U019",
+        "state": "PROTECTED"
+      },
+      {
+        "id": "U020",
+        "state": "APPLIED"
+      },
+      {
+        "id": "U021",
+        "state": "UNKNOWN_SECTION"
+      }
+    ],
+    "applied_ids": [
+      "U002",
+      "U003",
+      "U006",
+      "U008",
+      "U014",
+      "U017",
+      "U020"
+    ]
+  },
+  "scores": [
+    {
+      "task_id": "PR100-020",
+      "arm": "SOL_CONTINUE",
+      "family": "document_edits",
+      "designed_difficulty": 5,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "2.21850",
+      "total_active_seconds": 53.76500000001397,
+      "report_md": "全21件をID昇順で判定し、7件を適用、14件を未適用としました。全10セクションのうち、保護対象以外の7セクションを更新しました。保護対象のD001・D005・D009は本文を1文字も変更していません。\n\n未適用の内訳は、保護によるPROTECTEDが6件、置換対象の不一致によるOLD_NOT_UNIQUEが7件、対象不存在によるUNKNOWN_SECTIONが1件です。保護対象では本文の一致判定より保護を優先しています。OLD_NOT_UNIQUEの7件はいずれも、その時点の本文でoldが0回でした。このうちU012・U018は、先行するU002・U008で「旧版」を置換済みのため適用できず、先行更新の結果を維持しています。他の5件は指定された「存在しない文字」が本文にありませんでした。U021の対象D999は元資料にありません。\n\n未適用14件は未解決の依頼として残っています。再対応時は、保護対象の扱い、置換する文言、D999の対象指定をそれぞれ確認する必要があります。各更新の判定と最終本文は明細をご確認ください。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-020",
+      "arm": "PRACTICAL",
+      "family": "document_edits",
+      "designed_difficulty": 5,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": false,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_after_partial_repair",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.48680",
+      "total_active_seconds": 303.5929999999935,
+      "report_md": "全21件の更新依頼のうち7件が適用され、14件が未適用です。\n未適用の内訳は、保護対象セクション（D001, D005, D009）への更新依頼6件、置換対象文字列が現在の本文に存在しない更新依頼7件、対象セクションが存在しない更新依頼1件（U021：D999）です。U012とU018は先行更新で「旧版」が置換済みのため未適用です。保護本文はすべて維持しています。",
+      "patch_changes": [
+        {
+          "path": "/outcomes/20/state",
+          "before": "OLD_NOT_UNIQUE",
+          "after": "UNKNOWN_SECTION"
+        },
+        {
+          "path": "/report_md",
+          "before": "全21件の更新依頼のうち、7件（U002, U003, U006, U008, U014, U017, U020）が適用されました。\n未適用の主な理由は、保護対象セクション（D001, D005, D009）への更新依頼（計6件）と、置換対象文字列の不在や、先行する更新により置換対象が既に変更されていた等の理由によるもの（計8件：U004, U007, U010, U012, U013, U016, U018, U021）です。",
+          "after": "全21件の更新依頼のうち7件が適用され、14件が未適用です。\n未適用の内訳は、保護対象セクション（D001, D005, D009）への更新依頼6件、置換対象文字列が現在の本文に存在しない更新依頼7件、対象セクションが存在しない更新依頼1件（U021：D999）です。U012とU018は先行更新で「旧版」が置換済みのため未適用です。保護本文はすべて維持しています。"
+        }
+      ],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

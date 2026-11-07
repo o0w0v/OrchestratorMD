@@ -1,0 +1,1946 @@
+{
+  "task_id": "PR100-065",
+  "metadata": {
+    "task_id": "PR100-065",
+    "family": "receivables",
+    "designed_difficulty": 5,
+    "variant": 1
+  },
+  "public_job": {
+    "task_id": "PR100-065",
+    "initial": "入金と請求の一覧が別々で、朝どこから連絡すればよいか分かりにくいです。チームがそのまま使えて、責任者には状況が短く伝わる資料にしたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\npaidは同じinvoice_idのSETTLED支払額だけを合計。取消でもpaidを記載する。\n取消はstate=CANCELLED、balance/credit/days_overdue=0、action=NONE。その他はbalance=max(amount-paid,0)、credit=max(paid-amount,0)。balance=0はPAID、balance>0でdue_day<as_of_dayはOVERDUE、その他OPEN。\ndays_overdueはOVERDUEのみas_of_day-due_day。OVERDUEでbalance>=threshold_balanceまたはdays_overdue>=threshold_daysならESCALATE、その他OVERDUEはREMIND、その他NONE。\ndetailsは全invoiceをid昇順。teamsはT1,T2,T3順にbalance/credit/overdue_countを集計。totalsも全detailsを集計。queueはOVERDUEのidをdays_overdue降順、balance降順、id昇順。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に未回収残高・過入金・期限超過の全体像と、連絡順の先頭・理由。\n資料は以下のJSONです。\n{\n  \"as_of_day\": 30,\n  \"threshold_balance\": 2500,\n  \"threshold_days\": 15,\n  \"invoices\": [\n    {\n      \"id\": \"I001\",\n      \"team\": \"T1\",\n      \"amount\": 900,\n      \"due_day\": 31,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"I002\",\n      \"team\": \"T2\",\n      \"amount\": 2900,\n      \"due_day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I003\",\n      \"team\": \"T3\",\n      \"amount\": 2400,\n      \"due_day\": 15,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I004\",\n      \"team\": \"T1\",\n      \"amount\": 1600,\n      \"due_day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I005\",\n      \"team\": \"T2\",\n      \"amount\": 400,\n      \"due_day\": 40,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I006\",\n      \"team\": \"T3\",\n      \"amount\": 1600,\n      \"due_day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I007\",\n      \"team\": \"T1\",\n      \"amount\": 2800,\n      \"due_day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I008\",\n      \"team\": \"T2\",\n      \"amount\": 1800,\n      \"due_day\": 29,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"I009\",\n      \"team\": \"T3\",\n      \"amount\": 1400,\n      \"due_day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I010\",\n      \"team\": \"T1\",\n      \"amount\": 900,\n      \"due_day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I011\",\n      \"team\": \"T2\",\n      \"amount\": 1900,\n      \"due_day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I012\",\n      \"team\": \"T3\",\n      \"amount\": 900,\n      \"due_day\": 40,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I013\",\n      \"team\": \"T1\",\n      \"amount\": 2400,\n      \"due_day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I014\",\n      \"team\": \"T2\",\n      \"amount\": 700,\n      \"due_day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I015\",\n      \"team\": \"T3\",\n      \"amount\": 500,\n      \"due_day\": 30,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"I016\",\n      \"team\": \"T1\",\n      \"amount\": 2200,\n      \"due_day\": 15,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I017\",\n      \"team\": \"T2\",\n      \"amount\": 500,\n      \"due_day\": 40,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I018\",\n      \"team\": \"T3\",\n      \"amount\": 500,\n      \"due_day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I019\",\n      \"team\": \"T1\",\n      \"amount\": 2800,\n      \"due_day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I020\",\n      \"team\": \"T2\",\n      \"amount\": 1900,\n      \"due_day\": 29,\n      \"cancelled\": false\n    }\n  ],\n  \"payments\": [\n    {\n      \"id\": \"P001\",\n      \"invoice_id\": \"I001\",\n      \"amount\": 900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P002\",\n      \"invoice_id\": \"I001\",\n      \"amount\": 400,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P003\",\n      \"invoice_id\": \"I002\",\n      \"amount\": 3200,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P004\",\n      \"invoice_id\": \"I002\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P005\",\n      \"invoice_id\": \"I003\",\n      \"amount\": 1200,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P006\",\n      \"invoice_id\": \"I003\",\n      \"amount\": 100,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P007\",\n      \"invoice_id\": \"I004\",\n      \"amount\": 1900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P008\",\n      \"invoice_id\": \"I004\",\n      \"amount\": 400,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P009\",\n      \"invoice_id\": \"I005\",\n      \"amount\": 0,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P010\",\n      \"invoice_id\": \"I005\",\n      \"amount\": 200,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P011\",\n      \"invoice_id\": \"I006\",\n      \"amount\": 1900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P012\",\n      \"invoice_id\": \"I006\",\n      \"amount\": 100,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P013\",\n      \"invoice_id\": \"I007\",\n      \"amount\": 0,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P014\",\n      \"invoice_id\": \"I007\",\n      \"amount\": 200,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P015\",\n      \"invoice_id\": \"I008\",\n      \"amount\": 900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P016\",\n      \"invoice_id\": \"I008\",\n      \"amount\": 200,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P017\",\n      \"invoice_id\": \"I009\",\n      \"amount\": 1700,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P018\",\n      \"invoice_id\": \"I009\",\n      \"amount\": 300,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P019\",\n      \"invoice_id\": \"I010\",\n      \"amount\": 900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P020\",\n      \"invoice_id\": \"I010\",\n      \"amount\": 100,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P021\",\n      \"invoice_id\": \"I011\",\n      \"amount\": 2200,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P022\",\n      \"invoice_id\": \"I011\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P023\",\n      \"invoice_id\": \"I012\",\n      \"amount\": 450,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P024\",\n      \"invoice_id\": \"I012\",\n      \"amount\": 200,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P025\",\n      \"invoice_id\": \"I013\",\n      \"amount\": 0,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P026\",\n      \"invoice_id\": \"I013\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P027\",\n      \"invoice_id\": \"I014\",\n      \"amount\": 1000,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P028\",\n      \"invoice_id\": \"I014\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P029\",\n      \"invoice_id\": \"I015\",\n      \"amount\": 250,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P030\",\n      \"invoice_id\": \"I015\",\n      \"amount\": 300,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P031\",\n      \"invoice_id\": \"I016\",\n      \"amount\": 2500,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P032\",\n      \"invoice_id\": \"I016\",\n      \"amount\": 300,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P033\",\n      \"invoice_id\": \"I017\",\n      \"amount\": 500,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P034\",\n      \"invoice_id\": \"I017\",\n      \"amount\": 400,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P035\",\n      \"invoice_id\": \"I018\",\n      \"amount\": 0,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P036\",\n      \"invoice_id\": \"I018\",\n      \"amount\": 200,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P037\",\n      \"invoice_id\": \"I019\",\n      \"amount\": 1400,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P038\",\n      \"invoice_id\": \"I019\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P039\",\n      \"invoice_id\": \"I020\",\n      \"amount\": 1900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P040\",\n      \"invoice_id\": \"I020\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"paid\": {\"type\": \"integer\"}, \"balance\": {\"type\": \"integer\"}, \"credit\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}, \"days_overdue\": {\"type\": \"integer\"}, \"action\": {\"type\": \"string\"}}, \"required\": [\"id\", \"paid\", \"balance\", \"credit\", \"state\", \"days_overdue\", \"action\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"balance\": {\"type\": \"integer\"}, \"credit\": {\"type\": \"integer\"}, \"overdue_count\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"balance\", \"credit\", \"overdue_count\"], \"additionalProperties\": false}}, \"queue\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"totals\": {\"type\": \"object\", \"properties\": {\"balance\": {\"type\": \"integer\"}, \"credit\": {\"type\": \"integer\"}, \"overdue_count\": {\"type\": \"integer\"}}, \"required\": [\"balance\", \"credit\", \"overdue_count\"], \"additionalProperties\": false}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"queue\", \"totals\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "as_of_day": 30,
+      "threshold_balance": 2500,
+      "threshold_days": 15,
+      "invoices": [
+        {
+          "id": "I001",
+          "team": "T1",
+          "amount": 900,
+          "due_day": 31,
+          "cancelled": true
+        },
+        {
+          "id": "I002",
+          "team": "T2",
+          "amount": 2900,
+          "due_day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "I003",
+          "team": "T3",
+          "amount": 2400,
+          "due_day": 15,
+          "cancelled": false
+        },
+        {
+          "id": "I004",
+          "team": "T1",
+          "amount": 1600,
+          "due_day": 29,
+          "cancelled": false
+        },
+        {
+          "id": "I005",
+          "team": "T2",
+          "amount": 400,
+          "due_day": 40,
+          "cancelled": false
+        },
+        {
+          "id": "I006",
+          "team": "T3",
+          "amount": 1600,
+          "due_day": 31,
+          "cancelled": false
+        },
+        {
+          "id": "I007",
+          "team": "T1",
+          "amount": 2800,
+          "due_day": 31,
+          "cancelled": false
+        },
+        {
+          "id": "I008",
+          "team": "T2",
+          "amount": 1800,
+          "due_day": 29,
+          "cancelled": true
+        },
+        {
+          "id": "I009",
+          "team": "T3",
+          "amount": 1400,
+          "due_day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "I010",
+          "team": "T1",
+          "amount": 900,
+          "due_day": 29,
+          "cancelled": false
+        },
+        {
+          "id": "I011",
+          "team": "T2",
+          "amount": 1900,
+          "due_day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "I012",
+          "team": "T3",
+          "amount": 900,
+          "due_day": 40,
+          "cancelled": false
+        },
+        {
+          "id": "I013",
+          "team": "T1",
+          "amount": 2400,
+          "due_day": 30,
+          "cancelled": false
+        },
+        {
+          "id": "I014",
+          "team": "T2",
+          "amount": 700,
+          "due_day": 29,
+          "cancelled": false
+        },
+        {
+          "id": "I015",
+          "team": "T3",
+          "amount": 500,
+          "due_day": 30,
+          "cancelled": true
+        },
+        {
+          "id": "I016",
+          "team": "T1",
+          "amount": 2200,
+          "due_day": 15,
+          "cancelled": false
+        },
+        {
+          "id": "I017",
+          "team": "T2",
+          "amount": 500,
+          "due_day": 40,
+          "cancelled": false
+        },
+        {
+          "id": "I018",
+          "team": "T3",
+          "amount": 500,
+          "due_day": 31,
+          "cancelled": false
+        },
+        {
+          "id": "I019",
+          "team": "T1",
+          "amount": 2800,
+          "due_day": 29,
+          "cancelled": false
+        },
+        {
+          "id": "I020",
+          "team": "T2",
+          "amount": 1900,
+          "due_day": 29,
+          "cancelled": false
+        }
+      ],
+      "payments": [
+        {
+          "id": "P001",
+          "invoice_id": "I001",
+          "amount": 900,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P002",
+          "invoice_id": "I001",
+          "amount": 400,
+          "status": "PENDING"
+        },
+        {
+          "id": "P003",
+          "invoice_id": "I002",
+          "amount": 3200,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P004",
+          "invoice_id": "I002",
+          "amount": 300,
+          "status": "REVERSED"
+        },
+        {
+          "id": "P005",
+          "invoice_id": "I003",
+          "amount": 1200,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P006",
+          "invoice_id": "I003",
+          "amount": 100,
+          "status": "PENDING"
+        },
+        {
+          "id": "P007",
+          "invoice_id": "I004",
+          "amount": 1900,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P008",
+          "invoice_id": "I004",
+          "amount": 400,
+          "status": "REVERSED"
+        },
+        {
+          "id": "P009",
+          "invoice_id": "I005",
+          "amount": 0,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P010",
+          "invoice_id": "I005",
+          "amount": 200,
+          "status": "PENDING"
+        },
+        {
+          "id": "P011",
+          "invoice_id": "I006",
+          "amount": 1900,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P012",
+          "invoice_id": "I006",
+          "amount": 100,
+          "status": "PENDING"
+        },
+        {
+          "id": "P013",
+          "invoice_id": "I007",
+          "amount": 0,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P014",
+          "invoice_id": "I007",
+          "amount": 200,
+          "status": "REVERSED"
+        },
+        {
+          "id": "P015",
+          "invoice_id": "I008",
+          "amount": 900,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P016",
+          "invoice_id": "I008",
+          "amount": 200,
+          "status": "PENDING"
+        },
+        {
+          "id": "P017",
+          "invoice_id": "I009",
+          "amount": 1700,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P018",
+          "invoice_id": "I009",
+          "amount": 300,
+          "status": "PENDING"
+        },
+        {
+          "id": "P019",
+          "invoice_id": "I010",
+          "amount": 900,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P020",
+          "invoice_id": "I010",
+          "amount": 100,
+          "status": "REVERSED"
+        },
+        {
+          "id": "P021",
+          "invoice_id": "I011",
+          "amount": 2200,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P022",
+          "invoice_id": "I011",
+          "amount": 300,
+          "status": "REVERSED"
+        },
+        {
+          "id": "P023",
+          "invoice_id": "I012",
+          "amount": 450,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P024",
+          "invoice_id": "I012",
+          "amount": 200,
+          "status": "REVERSED"
+        },
+        {
+          "id": "P025",
+          "invoice_id": "I013",
+          "amount": 0,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P026",
+          "invoice_id": "I013",
+          "amount": 300,
+          "status": "REVERSED"
+        },
+        {
+          "id": "P027",
+          "invoice_id": "I014",
+          "amount": 1000,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P028",
+          "invoice_id": "I014",
+          "amount": 300,
+          "status": "REVERSED"
+        },
+        {
+          "id": "P029",
+          "invoice_id": "I015",
+          "amount": 250,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P030",
+          "invoice_id": "I015",
+          "amount": 300,
+          "status": "PENDING"
+        },
+        {
+          "id": "P031",
+          "invoice_id": "I016",
+          "amount": 2500,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P032",
+          "invoice_id": "I016",
+          "amount": 300,
+          "status": "PENDING"
+        },
+        {
+          "id": "P033",
+          "invoice_id": "I017",
+          "amount": 500,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P034",
+          "invoice_id": "I017",
+          "amount": 400,
+          "status": "PENDING"
+        },
+        {
+          "id": "P035",
+          "invoice_id": "I018",
+          "amount": 0,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P036",
+          "invoice_id": "I018",
+          "amount": 200,
+          "status": "PENDING"
+        },
+        {
+          "id": "P037",
+          "invoice_id": "I019",
+          "amount": 1400,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P038",
+          "invoice_id": "I019",
+          "amount": 300,
+          "status": "REVERSED"
+        },
+        {
+          "id": "P039",
+          "invoice_id": "I020",
+          "amount": 1900,
+          "status": "SETTLED"
+        },
+        {
+          "id": "P040",
+          "invoice_id": "I020",
+          "amount": 300,
+          "status": "REVERSED"
+        }
+      ]
+    },
+    "business_rules": [
+      "paidは同じinvoice_idのSETTLED支払額だけを合計。取消でもpaidを記載する。",
+      "取消はstate=CANCELLED、balance/credit/days_overdue=0、action=NONE。その他はbalance=max(amount-paid,0)、credit=max(paid-amount,0)。balance=0はPAID、balance>0でdue_day<as_of_dayはOVERDUE、その他OPEN。",
+      "days_overdueはOVERDUEのみas_of_day-due_day。OVERDUEでbalance>=threshold_balanceまたはdays_overdue>=threshold_daysならESCALATE、その他OVERDUEはREMIND、その他NONE。",
+      "detailsは全invoiceをid昇順。teamsはT1,T2,T3順にbalance/credit/overdue_countを集計。totalsも全detailsを集計。queueはOVERDUEのidをdays_overdue降順、balance降順、id昇順。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "paid": {
+                "type": "integer"
+              },
+              "balance": {
+                "type": "integer"
+              },
+              "credit": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string"
+              },
+              "days_overdue": {
+                "type": "integer"
+              },
+              "action": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "paid",
+              "balance",
+              "credit",
+              "state",
+              "days_overdue",
+              "action"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "teams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "team": {
+                "type": "string"
+              },
+              "balance": {
+                "type": "integer"
+              },
+              "credit": {
+                "type": "integer"
+              },
+              "overdue_count": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "team",
+              "balance",
+              "credit",
+              "overdue_count"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "queue": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "totals": {
+          "type": "object",
+          "properties": {
+            "balance": {
+              "type": "integer"
+            },
+            "credit": {
+              "type": "integer"
+            },
+            "overdue_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "balance",
+            "credit",
+            "overdue_count"
+          ],
+          "additionalProperties": false
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "teams",
+        "queue",
+        "totals",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "normal",
+    "reasoning_effort": "medium"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "入金と請求の一覧が別々で、朝どこから連絡すればよいか分かりにくいです。チームがそのまま使えて、責任者には状況が短く伝わる資料にしたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まずはこのチャットでいただく資料を見ながら、必要な情報と使いやすい形を相談しましょう。完成版の作成は、方向性が決まってから進めます。\n\n最初に、次の3点を教えてください。分からないところは未定で大丈夫です。\n\n1. **今の入金一覧・請求一覧**\n   このチャットに添付するか、項目名と数行の例を貼ってください。取引先名や金額は伏せても構いません。\n\n2. **朝、連絡先を決めるときの困りごと**\n   例えば「支払期限を過ぎた相手が分からない」「入金済みか確認が必要」「誰が連絡するか決まっていない」など、特に困っていることを教えてください。優先順位のルールがあれば、それも知りたいです。\n\n3. **チームと責任者が、それぞれ知りたいこと**\n   チームは何人ほどで、誰が一覧を更新しますか。責任者には「未回収額・対応状況・判断が必要な案件」など、何が短く伝わるとよいでしょうか。\n\n形のたたき台としては、**チーム向けの「今日の連絡・確認リスト」と、責任者向けの「状況要約」**を組み合わせる案が考えられます。資料を見て、ひとつにまとめるか、用途別に分けるかも相談したいです。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\npaidは同じinvoice_idのSETTLED支払額だけを合計。取消でもpaidを記載する。\n取消はstate=CANCELLED、balance/credit/days_overdue=0、action=NONE。その他はbalance=max(amount-paid,0)、credit=max(paid-amount,0)。balance=0はPAID、balance>0でdue_day<as_of_dayはOVERDUE、その他OPEN。\ndays_overdueはOVERDUEのみas_of_day-due_day。OVERDUEでbalance>=threshold_balanceまたはdays_overdue>=threshold_daysならESCALATE、その他OVERDUEはREMIND、その他NONE。\ndetailsは全invoiceをid昇順。teamsはT1,T2,T3順にbalance/credit/overdue_countを集計。totalsも全detailsを集計。queueはOVERDUEのidをdays_overdue降順、balance降順、id昇順。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に未回収残高・過入金・期限超過の全体像と、連絡順の先頭・理由。\n資料は以下のJSONです。\n{\n  \"as_of_day\": 30,\n  \"threshold_balance\": 2500,\n  \"threshold_days\": 15,\n  \"invoices\": [\n    {\n      \"id\": \"I001\",\n      \"team\": \"T1\",\n      \"amount\": 900,\n      \"due_day\": 31,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"I002\",\n      \"team\": \"T2\",\n      \"amount\": 2900,\n      \"due_day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I003\",\n      \"team\": \"T3\",\n      \"amount\": 2400,\n      \"due_day\": 15,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I004\",\n      \"team\": \"T1\",\n      \"amount\": 1600,\n      \"due_day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I005\",\n      \"team\": \"T2\",\n      \"amount\": 400,\n      \"due_day\": 40,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I006\",\n      \"team\": \"T3\",\n      \"amount\": 1600,\n      \"due_day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I007\",\n      \"team\": \"T1\",\n      \"amount\": 2800,\n      \"due_day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I008\",\n      \"team\": \"T2\",\n      \"amount\": 1800,\n      \"due_day\": 29,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"I009\",\n      \"team\": \"T3\",\n      \"amount\": 1400,\n      \"due_day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I010\",\n      \"team\": \"T1\",\n      \"amount\": 900,\n      \"due_day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I011\",\n      \"team\": \"T2\",\n      \"amount\": 1900,\n      \"due_day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I012\",\n      \"team\": \"T3\",\n      \"amount\": 900,\n      \"due_day\": 40,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I013\",\n      \"team\": \"T1\",\n      \"amount\": 2400,\n      \"due_day\": 30,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I014\",\n      \"team\": \"T2\",\n      \"amount\": 700,\n      \"due_day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I015\",\n      \"team\": \"T3\",\n      \"amount\": 500,\n      \"due_day\": 30,\n      \"cancelled\": true\n    },\n    {\n      \"id\": \"I016\",\n      \"team\": \"T1\",\n      \"amount\": 2200,\n      \"due_day\": 15,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I017\",\n      \"team\": \"T2\",\n      \"amount\": 500,\n      \"due_day\": 40,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I018\",\n      \"team\": \"T3\",\n      \"amount\": 500,\n      \"due_day\": 31,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I019\",\n      \"team\": \"T1\",\n      \"amount\": 2800,\n      \"due_day\": 29,\n      \"cancelled\": false\n    },\n    {\n      \"id\": \"I020\",\n      \"team\": \"T2\",\n      \"amount\": 1900,\n      \"due_day\": 29,\n      \"cancelled\": false\n    }\n  ],\n  \"payments\": [\n    {\n      \"id\": \"P001\",\n      \"invoice_id\": \"I001\",\n      \"amount\": 900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P002\",\n      \"invoice_id\": \"I001\",\n      \"amount\": 400,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P003\",\n      \"invoice_id\": \"I002\",\n      \"amount\": 3200,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P004\",\n      \"invoice_id\": \"I002\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P005\",\n      \"invoice_id\": \"I003\",\n      \"amount\": 1200,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P006\",\n      \"invoice_id\": \"I003\",\n      \"amount\": 100,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P007\",\n      \"invoice_id\": \"I004\",\n      \"amount\": 1900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P008\",\n      \"invoice_id\": \"I004\",\n      \"amount\": 400,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P009\",\n      \"invoice_id\": \"I005\",\n      \"amount\": 0,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P010\",\n      \"invoice_id\": \"I005\",\n      \"amount\": 200,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P011\",\n      \"invoice_id\": \"I006\",\n      \"amount\": 1900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P012\",\n      \"invoice_id\": \"I006\",\n      \"amount\": 100,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P013\",\n      \"invoice_id\": \"I007\",\n      \"amount\": 0,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P014\",\n      \"invoice_id\": \"I007\",\n      \"amount\": 200,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P015\",\n      \"invoice_id\": \"I008\",\n      \"amount\": 900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P016\",\n      \"invoice_id\": \"I008\",\n      \"amount\": 200,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P017\",\n      \"invoice_id\": \"I009\",\n      \"amount\": 1700,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P018\",\n      \"invoice_id\": \"I009\",\n      \"amount\": 300,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P019\",\n      \"invoice_id\": \"I010\",\n      \"amount\": 900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P020\",\n      \"invoice_id\": \"I010\",\n      \"amount\": 100,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P021\",\n      \"invoice_id\": \"I011\",\n      \"amount\": 2200,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P022\",\n      \"invoice_id\": \"I011\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P023\",\n      \"invoice_id\": \"I012\",\n      \"amount\": 450,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P024\",\n      \"invoice_id\": \"I012\",\n      \"amount\": 200,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P025\",\n      \"invoice_id\": \"I013\",\n      \"amount\": 0,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P026\",\n      \"invoice_id\": \"I013\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P027\",\n      \"invoice_id\": \"I014\",\n      \"amount\": 1000,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P028\",\n      \"invoice_id\": \"I014\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P029\",\n      \"invoice_id\": \"I015\",\n      \"amount\": 250,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P030\",\n      \"invoice_id\": \"I015\",\n      \"amount\": 300,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P031\",\n      \"invoice_id\": \"I016\",\n      \"amount\": 2500,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P032\",\n      \"invoice_id\": \"I016\",\n      \"amount\": 300,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P033\",\n      \"invoice_id\": \"I017\",\n      \"amount\": 500,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P034\",\n      \"invoice_id\": \"I017\",\n      \"amount\": 400,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P035\",\n      \"invoice_id\": \"I018\",\n      \"amount\": 0,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P036\",\n      \"invoice_id\": \"I018\",\n      \"amount\": 200,\n      \"status\": \"PENDING\"\n    },\n    {\n      \"id\": \"P037\",\n      \"invoice_id\": \"I019\",\n      \"amount\": 1400,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P038\",\n      \"invoice_id\": \"I019\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    },\n    {\n      \"id\": \"P039\",\n      \"invoice_id\": \"I020\",\n      \"amount\": 1900,\n      \"status\": \"SETTLED\"\n    },\n    {\n      \"id\": \"P040\",\n      \"invoice_id\": \"I020\",\n      \"amount\": 300,\n      \"status\": \"REVERSED\"\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"paid\": {\"type\": \"integer\"}, \"balance\": {\"type\": \"integer\"}, \"credit\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}, \"days_overdue\": {\"type\": \"integer\"}, \"action\": {\"type\": \"string\"}}, \"required\": [\"id\", \"paid\", \"balance\", \"credit\", \"state\", \"days_overdue\", \"action\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"balance\": {\"type\": \"integer\"}, \"credit\": {\"type\": \"integer\"}, \"overdue_count\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"balance\", \"credit\", \"overdue_count\"], \"additionalProperties\": false}}, \"queue\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"totals\": {\"type\": \"object\", \"properties\": {\"balance\": {\"type\": \"integer\"}, \"credit\": {\"type\": \"integer\"}, \"overdue_count\": {\"type\": \"integer\"}}, \"required\": [\"balance\", \"credit\", \"overdue_count\"], \"additionalProperties\": false}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"queue\", \"totals\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人としては、朝に「どの請求から、どんな対応をするか」を確認する担当者と、未回収の全体像や判断が必要な案件を短時間で把握する責任者を想定しています。担当者は連絡順と各請求の明細を一緒に見て動き、責任者は共有文から要点をつかみ、必要に応じて明細を確認する形です。\n\n作り方は、いただいた判定ルールに沿って全請求の明細を確定し、それを基にチーム別集計、全体集計、連絡順を作る方針です。連絡順は指定どおり期限超過日数、残高、IDで決め、対応区分のESCALATE／REMINDは明細で確認できるようにします。ESCALATEだから自動的に先頭へ移す、といった別の優先順位は加えません。\n\n共有文には、未回収残高・過入金・期限超過の全体像と、連絡順の先頭およびその理由を、主要な数値やIDに結び付けてまとめます。取消でも確定入金がある点など、読み違えると判断に影響する例外も取り上げます。過入金と未回収残高は相殺せず、対応の指示と実際の対応完了も区別して書きます。最終成果物は、指定の全フィールドを含むJSONひとつにまとめ、共有文はreport_mdに収めます。\n\n計算・並び順・出力形式については、今回の見本を作るための条件はそろっています。一方、実際の連絡担当者、ESCALATEの相談先、通貨、dayが対応する実日付は未提示です。これらは推測して補いません。今回はまだ集計や成果物の作成には着手していません。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-065",
+      "arm": "SOL_CONTINUE",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "I001",
+            "paid": 900,
+            "balance": 0,
+            "credit": 0,
+            "state": "CANCELLED",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I002",
+            "paid": 3200,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I003",
+            "paid": 1200,
+            "balance": 1200,
+            "credit": 0,
+            "state": "OVERDUE",
+            "days_overdue": 15,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "I004",
+            "paid": 1900,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I005",
+            "paid": 0,
+            "balance": 400,
+            "credit": 0,
+            "state": "OPEN",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I006",
+            "paid": 1900,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I007",
+            "paid": 0,
+            "balance": 2800,
+            "credit": 0,
+            "state": "OPEN",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I008",
+            "paid": 900,
+            "balance": 0,
+            "credit": 0,
+            "state": "CANCELLED",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I009",
+            "paid": 1700,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I010",
+            "paid": 900,
+            "balance": 0,
+            "credit": 0,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I011",
+            "paid": 2200,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I012",
+            "paid": 450,
+            "balance": 450,
+            "credit": 0,
+            "state": "OPEN",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I013",
+            "paid": 0,
+            "balance": 2400,
+            "credit": 0,
+            "state": "OPEN",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I014",
+            "paid": 1000,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I015",
+            "paid": 250,
+            "balance": 0,
+            "credit": 0,
+            "state": "CANCELLED",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I016",
+            "paid": 2500,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I017",
+            "paid": 500,
+            "balance": 0,
+            "credit": 0,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I018",
+            "paid": 0,
+            "balance": 500,
+            "credit": 0,
+            "state": "OPEN",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I019",
+            "paid": 1400,
+            "balance": 1400,
+            "credit": 0,
+            "state": "OVERDUE",
+            "days_overdue": 1,
+            "action": "REMIND"
+          },
+          {
+            "id": "I020",
+            "paid": 1900,
+            "balance": 0,
+            "credit": 0,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "balance": 6600,
+            "credit": 600,
+            "overdue_count": 1
+          },
+          {
+            "team": "T2",
+            "balance": 400,
+            "credit": 900,
+            "overdue_count": 0
+          },
+          {
+            "team": "T3",
+            "balance": 2150,
+            "credit": 600,
+            "overdue_count": 1
+          }
+        ],
+        "queue": [
+          "I003",
+          "I019"
+        ],
+        "totals": {
+          "balance": 9150,
+          "credit": 2100,
+          "overdue_count": 2
+        },
+        "report_md": "基準日day 30の未回収残高は9,150、過入金は7件・2,100です。両者は相殺していません。期限超過は2件・残高2,600で、残りの未回収6,550は期限未超過です。チーム別の未回収残高はT1が6,600、T2が400、T3が2,150です。\n\n連絡順の先頭はT3のI003です。残高1,200、期限超過15日で、日数基準15日に達するためESCALATEです。次はT1のI019で、残高1,400、期限超過1日のためREMINDです。残高の大きさより期限超過日数を優先する指定順です。I007は残高2,800ですが期限はday 31、I013は残高2,400で期限は基準日当日のため、いずれもOPEN・連絡対象外です。\n\n入金はSETTLEDのみを集計し、PENDING・REVERSEDは加算も減算もしていません。取消のI001・I008・I015にも確定入金が合計2,050ありますが、指定どおり残高・過入金は0としており、過入金2,100には含めていません。取消やPAIDの表示は返金完了を意味しません。actionは今回の判定結果であり、連絡・エスカレーションの実施完了を示すものではありません。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "I001",
+            "paid": 900,
+            "balance": 0,
+            "credit": 0,
+            "state": "CANCELLED",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I002",
+            "paid": 3200,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I003",
+            "paid": 1200,
+            "balance": 1200,
+            "credit": 0,
+            "state": "OVERDUE",
+            "days_overdue": 15,
+            "action": "ESCALATE"
+          },
+          {
+            "id": "I004",
+            "paid": 1900,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I005",
+            "paid": 0,
+            "balance": 400,
+            "credit": 0,
+            "state": "OPEN",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I006",
+            "paid": 1900,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I007",
+            "paid": 0,
+            "balance": 2800,
+            "credit": 0,
+            "state": "OPEN",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I008",
+            "paid": 900,
+            "balance": 0,
+            "credit": 0,
+            "state": "CANCELLED",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I009",
+            "paid": 1700,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I010",
+            "paid": 900,
+            "balance": 0,
+            "credit": 0,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I011",
+            "paid": 2200,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I012",
+            "paid": 450,
+            "balance": 450,
+            "credit": 0,
+            "state": "OPEN",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I013",
+            "paid": 0,
+            "balance": 2400,
+            "credit": 0,
+            "state": "OPEN",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I014",
+            "paid": 1000,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I015",
+            "paid": 250,
+            "balance": 0,
+            "credit": 0,
+            "state": "CANCELLED",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I016",
+            "paid": 2500,
+            "balance": 0,
+            "credit": 300,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I017",
+            "paid": 500,
+            "balance": 0,
+            "credit": 0,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I018",
+            "paid": 0,
+            "balance": 500,
+            "credit": 0,
+            "state": "OPEN",
+            "days_overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "I019",
+            "paid": 1400,
+            "balance": 1400,
+            "credit": 0,
+            "state": "OVERDUE",
+            "days_overdue": 1,
+            "action": "REMIND"
+          },
+          {
+            "id": "I020",
+            "paid": 1900,
+            "balance": 0,
+            "credit": 0,
+            "state": "PAID",
+            "days_overdue": 0,
+            "action": "NONE"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "balance": 6600,
+            "credit": 600,
+            "overdue_count": 1
+          },
+          {
+            "team": "T2",
+            "balance": 400,
+            "credit": 900,
+            "overdue_count": 0
+          },
+          {
+            "team": "T3",
+            "balance": 2150,
+            "credit": 600,
+            "overdue_count": 1
+          }
+        ],
+        "queue": [
+          "I003",
+          "I019"
+        ],
+        "totals": {
+          "balance": 9150,
+          "credit": 2100,
+          "overdue_count": 2
+        },
+        "report_md": "基準日day 30の未回収残高は9,150、過入金は7件・2,100です。両者は相殺していません。期限超過は2件・残高2,600で、残りの未回収6,550は期限未超過です。チーム別の未回収残高はT1が6,600、T2が400、T3が2,150です。\n\n連絡順の先頭はT3のI003です。残高1,200、期限超過15日で、日数基準15日に達するためESCALATEです。次はT1のI019で、残高1,400、期限超過1日のためREMINDです。残高の大きさより期限超過日数を優先する指定順です。I007は残高2,800ですが期限はday 31、I013は残高2,400で期限は基準日当日のため、いずれもOPEN・連絡対象外です。\n\n入金はSETTLEDのみを集計し、PENDING・REVERSEDは加算も減算もしていません。取消のI001・I008・I015にも確定入金が合計2,050ありますが、指定どおり残高・過入金は0としており、過入金2,100には含めていません。取消やPAIDの表示は返金完了を意味しません。actionは今回の判定結果であり、連絡・エスカレーションの実施完了を示すものではありません。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.56056",
+      "incremental_credits": "1.32095",
+      "operating_total_credits": "1.88151",
+      "shared_seconds": 38.89199999999255,
+      "incremental_active_seconds": 32.64100000006147,
+      "total_active_seconds": 71.53300000005402,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T18:22:32.715293+00:00",
+        "text": "{\n  \"details\": [\n    {\"id\":\"I001\",\"paid\":900,\"balance\":0,\"credit\":0,\"state\":\"CANCELLED\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I002\",\"paid\":3200,\"balance\":0,\"credit\":300,\"state\":\"PAID\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I003\",\"paid\":1200,\"balance\":1200,\"credit\":0,\"state\":\"OVERDUE\",\"days_overdue\":15,\"action\":\"ESCALATE\"},\n    {\"id\":\"I004\",\"paid\":1900,\"balance\":0,\"credit\":300,\"state\":\"PAID\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I005\",\"paid\":0,\"balance\":400,\"credit\":0,\"state\":\"OPEN\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I006\",\"paid\":1900,\"balance\":0,\"credit\":300,\"state\":\"PAID\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I007\",\"paid\":0,\"balance\":2800,\"credit\":0,\"state\":\"OPEN\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I008\",\"paid\":900,\"balance\":0,\"credit\":0,\"state\":\"CANCELLED\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I009\",\"paid\":1700,\"balance\":0,\"credit\":300,\"state\":\"PAID\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I010\",\"paid\":900,\"balance\":0,\"credit\":0,\"state\":\"PAID\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I011\",\"paid\":2200,\"balance\":0,\"credit\":300,\"state\":\"PAID\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I012\",\"paid\":450,\"balance\":450,\"credit\":0,\"state\":\"OPEN\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I013\",\"paid\":0,\"balance\":2400,\"credit\":0,\"state\":\"OPEN\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I014\",\"paid\":1000,\"balance\":0,\"credit\":300,\"state\":\"PAID\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I015\",\"paid\":250,\"balance\":0,\"credit\":0,\"state\":\"CANCELLED\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I016\",\"paid\":2500,\"balance\":0,\"credit\":300,\"state\":\"PAID\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I017\",\"paid\":500,\"balance\":0,\"credit\":0,\"state\":\"PAID\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I018\",\"paid\":0,\"balance\":500,\"credit\":0,\"state\":\"OPEN\",\"days_overdue\":0,\"action\":\"NONE\"},\n    {\"id\":\"I019\",\"paid\":1400,\"balance\":1400,\"credit\":0,\"state\":\"OVERDUE\",\"days_overdue\":1,\"action\":\"REMIND\"},\n    {\"id\":\"I020\",\"paid\":1900,\"balance\":0,\"credit\":0,\"state\":\"PAID\",\"days_overdue\":0,\"action\":\"NONE\"}\n  ],\n  \"teams\": [\n    {\"team\":\"T1\",\"balance\":6600,\"credit\":600,\"overdue_count\":1},\n    {\"team\":\"T2\",\"balance\":400,\"credit\":900,\"overdue_count\":0},\n    {\"team\":\"T3\",\"balance\":2150,\"credit\":600,\"overdue_count\":1}\n  ],\n  \"queue\": [\"I003\",\"I019\"],\n  \"totals\": {\"balance\":9150,\"credit\":2100,\"overdue_count\":2},\n  \"report_md\": \"基準日day 30の未回収残高は9,150、過入金は7件・2,100です。両者は相殺していません。期限超過は2件・残高2,600で、残りの未回収6,550は期限未超過です。チーム別の未回収残高はT1が6,600、T2が400、T3が2,150です。\\n\\n連絡順の先頭はT3のI003です。残高1,200、期限超過15日で、日数基準15日に達するためESCALATEです。次はT1のI019で、残高1,400、期限超過1日のためREMINDです。残高の大きさより期限超過日数を優先する指定順です。I007は残高2,800ですが期限はday 31、I013は残高2,400で期限は基準日当日のため、いずれもOPEN・連絡対象外です。\\n\\n入金はSETTLEDのみを集計し、PENDING・REVERSEDは加算も減算もしていません。取消のI001・I008・I015にも確定入金が合計2,050ありますが、指定どおり残高・過入金は0としており、過入金2,100には含めていません。取消やPAIDの表示は返金完了を意味しません。actionは今回の判定結果であり、連絡・エスカレーションの実施完了を示すものではありません。\"\n}",
+        "value": {
+          "details": [
+            {
+              "id": "I001",
+              "paid": 900,
+              "balance": 0,
+              "credit": 0,
+              "state": "CANCELLED",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I002",
+              "paid": 3200,
+              "balance": 0,
+              "credit": 300,
+              "state": "PAID",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I003",
+              "paid": 1200,
+              "balance": 1200,
+              "credit": 0,
+              "state": "OVERDUE",
+              "days_overdue": 15,
+              "action": "ESCALATE"
+            },
+            {
+              "id": "I004",
+              "paid": 1900,
+              "balance": 0,
+              "credit": 300,
+              "state": "PAID",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I005",
+              "paid": 0,
+              "balance": 400,
+              "credit": 0,
+              "state": "OPEN",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I006",
+              "paid": 1900,
+              "balance": 0,
+              "credit": 300,
+              "state": "PAID",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I007",
+              "paid": 0,
+              "balance": 2800,
+              "credit": 0,
+              "state": "OPEN",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I008",
+              "paid": 900,
+              "balance": 0,
+              "credit": 0,
+              "state": "CANCELLED",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I009",
+              "paid": 1700,
+              "balance": 0,
+              "credit": 300,
+              "state": "PAID",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I010",
+              "paid": 900,
+              "balance": 0,
+              "credit": 0,
+              "state": "PAID",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I011",
+              "paid": 2200,
+              "balance": 0,
+              "credit": 300,
+              "state": "PAID",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I012",
+              "paid": 450,
+              "balance": 450,
+              "credit": 0,
+              "state": "OPEN",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I013",
+              "paid": 0,
+              "balance": 2400,
+              "credit": 0,
+              "state": "OPEN",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I014",
+              "paid": 1000,
+              "balance": 0,
+              "credit": 300,
+              "state": "PAID",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I015",
+              "paid": 250,
+              "balance": 0,
+              "credit": 0,
+              "state": "CANCELLED",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I016",
+              "paid": 2500,
+              "balance": 0,
+              "credit": 300,
+              "state": "PAID",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I017",
+              "paid": 500,
+              "balance": 0,
+              "credit": 0,
+              "state": "PAID",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I018",
+              "paid": 0,
+              "balance": 500,
+              "credit": 0,
+              "state": "OPEN",
+              "days_overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "I019",
+              "paid": 1400,
+              "balance": 1400,
+              "credit": 0,
+              "state": "OVERDUE",
+              "days_overdue": 1,
+              "action": "REMIND"
+            },
+            {
+              "id": "I020",
+              "paid": 1900,
+              "balance": 0,
+              "credit": 0,
+              "state": "PAID",
+              "days_overdue": 0,
+              "action": "NONE"
+            }
+          ],
+          "teams": [
+            {
+              "team": "T1",
+              "balance": 6600,
+              "credit": 600,
+              "overdue_count": 1
+            },
+            {
+              "team": "T2",
+              "balance": 400,
+              "credit": 900,
+              "overdue_count": 0
+            },
+            {
+              "team": "T3",
+              "balance": 2150,
+              "credit": 600,
+              "overdue_count": 1
+            }
+          ],
+          "queue": [
+            "I003",
+            "I019"
+          ],
+          "totals": {
+            "balance": 9150,
+            "credit": 2100,
+            "overdue_count": 2
+          },
+          "report_md": "基準日day 30の未回収残高は9,150、過入金は7件・2,100です。両者は相殺していません。期限超過は2件・残高2,600で、残りの未回収6,550は期限未超過です。チーム別の未回収残高はT1が6,600、T2が400、T3が2,150です。\n\n連絡順の先頭はT3のI003です。残高1,200、期限超過15日で、日数基準15日に達するためESCALATEです。次はT1のI019で、残高1,400、期限超過1日のためREMINDです。残高の大きさより期限超過日数を優先する指定順です。I007は残高2,800ですが期限はday 31、I013は残高2,400で期限は基準日当日のため、いずれもOPEN・連絡対象外です。\n\n入金はSETTLEDのみを集計し、PENDING・REVERSEDは加算も減算もしていません。取消のI001・I008・I015にも確定入金が合計2,050ありますが、指定どおり残高・過入金は0としており、過入金2,100には含めていません。取消やPAIDの表示は返金完了を意味しません。actionは今回の判定結果であり、連絡・エスカレーションの実施完了を示すものではありません。"
+        },
+        "public_schema_pass": true,
+        "seconds": 32.64100000006147,
+        "credits": "1.32095",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-065",
+      "arm": "PRACTICAL",
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "initial_artifact": {
+        "details": [
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I001",
+            "paid": 900,
+            "state": "CANCELLED"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I002",
+            "paid": 3200,
+            "state": "PAID"
+          },
+          {
+            "action": "ESCALATE",
+            "balance": 1200,
+            "credit": 0,
+            "days_overdue": 15,
+            "id": "I003",
+            "paid": 1200,
+            "state": "OVERDUE"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I004",
+            "paid": 1900,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 400,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I005",
+            "paid": 0,
+            "state": "OPEN"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I006",
+            "paid": 1900,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 2800,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I007",
+            "paid": 0,
+            "state": "OPEN"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I008",
+            "paid": 900,
+            "state": "CANCELLED"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I009",
+            "paid": 1700,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I010",
+            "paid": 900,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I011",
+            "paid": 2200,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 450,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I012",
+            "paid": 450,
+            "state": "OPEN"
+          },
+          {
+            "action": "NONE",
+            "balance": 2400,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I013",
+            "paid": 0,
+            "state": "OPEN"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I014",
+            "paid": 1000,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I015",
+            "paid": 250,
+            "state": "CANCELLED"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I016",
+            "paid": 2500,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I017",
+            "paid": 500,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 500,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I018",
+            "paid": 0,
+            "state": "OPEN"
+          },
+          {
+            "action": "REMIND",
+            "balance": 1400,
+            "credit": 0,
+            "days_overdue": 1,
+            "id": "I019",
+            "paid": 1400,
+            "state": "OVERDUE"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I020",
+            "paid": 1900,
+            "state": "PAID"
+          }
+        ],
+        "queue": [
+          "I003",
+          "I019"
+        ],
+        "report_md": "未回収残高は9,150、過入金は2,100、期限超過は2件です。連絡の先頭はI003で、期限超過が15日に達しており、ESCALATEの対応が必要です。なお、取消済みの案件（I001, I008, I015）において、それぞれ900, 900, 250の入金が記録されています。",
+        "teams": [
+          {
+            "balance": 6600,
+            "credit": 600,
+            "overdue_count": 1,
+            "team": "T1"
+          },
+          {
+            "balance": 400,
+            "credit": 900,
+            "overdue_count": 0,
+            "team": "T2"
+          },
+          {
+            "balance": 2150,
+            "credit": 600,
+            "overdue_count": 1,
+            "team": "T3"
+          }
+        ],
+        "totals": {
+          "balance": 9150,
+          "credit": 2100,
+          "overdue_count": 2
+        }
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I001",
+            "paid": 900,
+            "state": "CANCELLED"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I002",
+            "paid": 3200,
+            "state": "PAID"
+          },
+          {
+            "action": "ESCALATE",
+            "balance": 1200,
+            "credit": 0,
+            "days_overdue": 15,
+            "id": "I003",
+            "paid": 1200,
+            "state": "OVERDUE"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I004",
+            "paid": 1900,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 400,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I005",
+            "paid": 0,
+            "state": "OPEN"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I006",
+            "paid": 1900,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 2800,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I007",
+            "paid": 0,
+            "state": "OPEN"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I008",
+            "paid": 900,
+            "state": "CANCELLED"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I009",
+            "paid": 1700,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I010",
+            "paid": 900,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I011",
+            "paid": 2200,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 450,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I012",
+            "paid": 450,
+            "state": "OPEN"
+          },
+          {
+            "action": "NONE",
+            "balance": 2400,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I013",
+            "paid": 0,
+            "state": "OPEN"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I014",
+            "paid": 1000,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I015",
+            "paid": 250,
+            "state": "CANCELLED"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 300,
+            "days_overdue": 0,
+            "id": "I016",
+            "paid": 2500,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I017",
+            "paid": 500,
+            "state": "PAID"
+          },
+          {
+            "action": "NONE",
+            "balance": 500,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I018",
+            "paid": 0,
+            "state": "OPEN"
+          },
+          {
+            "action": "REMIND",
+            "balance": 1400,
+            "credit": 0,
+            "days_overdue": 1,
+            "id": "I019",
+            "paid": 1400,
+            "state": "OVERDUE"
+          },
+          {
+            "action": "NONE",
+            "balance": 0,
+            "credit": 0,
+            "days_overdue": 0,
+            "id": "I020",
+            "paid": 1900,
+            "state": "PAID"
+          }
+        ],
+        "queue": [
+          "I003",
+          "I019"
+        ],
+        "report_md": "未回収残高は9,150、過入金は2,100、期限超過は2件です。連絡の先頭はI003で、期限超過が15日に達しており、ESCALATEの対応が必要です。なお、取消済みの案件（I001, I008, I015）において、それぞれ900, 900, 250の入金が記録されています。",
+        "teams": [
+          {
+            "balance": 6600,
+            "credit": 600,
+            "overdue_count": 1,
+            "team": "T1"
+          },
+          {
+            "balance": 400,
+            "credit": 900,
+            "overdue_count": 0,
+            "team": "T2"
+          },
+          {
+            "balance": 2150,
+            "credit": 600,
+            "overdue_count": 1,
+            "team": "T3"
+          }
+        ],
+        "totals": {
+          "balance": 9150,
+          "credit": 2100,
+          "overdue_count": 2
+        }
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "0.56056",
+      "incremental_credits": "0.41485",
+      "operating_total_credits": "0.97541",
+      "shared_seconds": 38.89199999999255,
+      "incremental_active_seconds": 264.43699999991804,
+      "total_active_seconds": 303.3289999999106,
+      "patch_changes": [],
+      "postcandidate_Cloud_calls": 1,
+      "same_physical_small_task_execution": false,
+      "human_repair_seconds": null,
+      "visible_review_responses": [
+        {
+          "stage": "REVIEW",
+          "model": "gpt-6.1-sol",
+          "timestamp": "2026-11-04T18:26:57.700056+00:00",
+          "text": "{\"decision\":\"ACCEPT\"}",
+          "value": null,
+          "public_schema_pass": true,
+          "seconds": 5.233999999938533,
+          "credits": "0.41485",
+          "tool_commands": 0,
+          "billing_complete": true,
+          "billing_exception": null
+        }
+      ],
+      "native_usage_metadata": {
+        "attempt": 1,
+        "classification": "RESPONSE_COMPLETE",
+        "api_seconds": 227.0,
+        "usage": {
+          "prompt_eval_count": 5187,
+          "eval_count": 9200,
+          "prompt_eval_duration": 5629337000,
+          "eval_duration": 221253883000,
+          "total_duration": 226912246300
+        }
+      }
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "I001",
+        "paid": 900,
+        "balance": 0,
+        "credit": 0,
+        "state": "CANCELLED",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I002",
+        "paid": 3200,
+        "balance": 0,
+        "credit": 300,
+        "state": "PAID",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I003",
+        "paid": 1200,
+        "balance": 1200,
+        "credit": 0,
+        "state": "OVERDUE",
+        "days_overdue": 15,
+        "action": "ESCALATE"
+      },
+      {
+        "id": "I004",
+        "paid": 1900,
+        "balance": 0,
+        "credit": 300,
+        "state": "PAID",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I005",
+        "paid": 0,
+        "balance": 400,
+        "credit": 0,
+        "state": "OPEN",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I006",
+        "paid": 1900,
+        "balance": 0,
+        "credit": 300,
+        "state": "PAID",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I007",
+        "paid": 0,
+        "balance": 2800,
+        "credit": 0,
+        "state": "OPEN",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I008",
+        "paid": 900,
+        "balance": 0,
+        "credit": 0,
+        "state": "CANCELLED",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I009",
+        "paid": 1700,
+        "balance": 0,
+        "credit": 300,
+        "state": "PAID",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I010",
+        "paid": 900,
+        "balance": 0,
+        "credit": 0,
+        "state": "PAID",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I011",
+        "paid": 2200,
+        "balance": 0,
+        "credit": 300,
+        "state": "PAID",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I012",
+        "paid": 450,
+        "balance": 450,
+        "credit": 0,
+        "state": "OPEN",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I013",
+        "paid": 0,
+        "balance": 2400,
+        "credit": 0,
+        "state": "OPEN",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I014",
+        "paid": 1000,
+        "balance": 0,
+        "credit": 300,
+        "state": "PAID",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I015",
+        "paid": 250,
+        "balance": 0,
+        "credit": 0,
+        "state": "CANCELLED",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I016",
+        "paid": 2500,
+        "balance": 0,
+        "credit": 300,
+        "state": "PAID",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I017",
+        "paid": 500,
+        "balance": 0,
+        "credit": 0,
+        "state": "PAID",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I018",
+        "paid": 0,
+        "balance": 500,
+        "credit": 0,
+        "state": "OPEN",
+        "days_overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "I019",
+        "paid": 1400,
+        "balance": 1400,
+        "credit": 0,
+        "state": "OVERDUE",
+        "days_overdue": 1,
+        "action": "REMIND"
+      },
+      {
+        "id": "I020",
+        "paid": 1900,
+        "balance": 0,
+        "credit": 0,
+        "state": "PAID",
+        "days_overdue": 0,
+        "action": "NONE"
+      }
+    ],
+    "teams": [
+      {
+        "team": "T1",
+        "balance": 6600,
+        "credit": 600,
+        "overdue_count": 1
+      },
+      {
+        "team": "T2",
+        "balance": 400,
+        "credit": 900,
+        "overdue_count": 0
+      },
+      {
+        "team": "T3",
+        "balance": 2150,
+        "credit": 600,
+        "overdue_count": 1
+      }
+    ],
+    "queue": [
+      "I003",
+      "I019"
+    ],
+    "totals": {
+      "balance": 9150,
+      "credit": 2100,
+      "overdue_count": 2
+    }
+  },
+  "scores": [
+    {
+      "task_id": "PR100-065",
+      "arm": "SOL_CONTINUE",
+      "family": "receivables",
+      "designed_difficulty": 5,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.88151",
+      "total_active_seconds": 71.53300000005402,
+      "report_md": "基準日day 30の未回収残高は9,150、過入金は7件・2,100です。両者は相殺していません。期限超過は2件・残高2,600で、残りの未回収6,550は期限未超過です。チーム別の未回収残高はT1が6,600、T2が400、T3が2,150です。\n\n連絡順の先頭はT3のI003です。残高1,200、期限超過15日で、日数基準15日に達するためESCALATEです。次はT1のI019で、残高1,400、期限超過1日のためREMINDです。残高の大きさより期限超過日数を優先する指定順です。I007は残高2,800ですが期限はday 31、I013は残高2,400で期限は基準日当日のため、いずれもOPEN・連絡対象外です。\n\n入金はSETTLEDのみを集計し、PENDING・REVERSEDは加算も減算もしていません。取消のI001・I008・I015にも確定入金が合計2,050ありますが、指定どおり残高・過入金は0としており、過入金2,100には含めていません。取消やPAIDの表示は返金完了を意味しません。actionは今回の判定結果であり、連絡・エスカレーションの実施完了を示すものではありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-065",
+      "arm": "PRACTICAL",
+      "family": "receivables",
+      "designed_difficulty": 5,
+      "profile": "normal",
+      "reasoning_effort": "medium",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "0.97541",
+      "total_active_seconds": 303.3289999999106,
+      "report_md": "未回収残高は9,150、過入金は2,100、期限超過は2件です。連絡の先頭はI003で、期限超過が15日に達しており、ESCALATEの対応が必要です。なお、取消済みの案件（I001, I008, I015）において、それぞれ900, 900, 250の入金が記録されています。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

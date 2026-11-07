@@ -1,0 +1,31 @@
+{
+  "Cloud": [
+    "gpt-6.1-sol"
+  ],
+  "Local": {
+    "arm": "gemma26",
+    "model": "gemma4:26b",
+    "digest": "08ae7ec1744bd7f451c4a530afb39d2673ad9d07a8369b8a33a3613b41212a68",
+    "think": true,
+    "options": {
+      "num_ctx": 65536,
+      "num_predict": 32768,
+      "seed": 20260926,
+      "temperature": 1,
+      "top_p": 0.95,
+      "top_k": 64
+    }
+  },
+  "efforts": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "same_profile_in_both_arms": true,
+  "source_dialogue_shared": true,
+  "small_execution_physically_shared_not_rerun": true,
+  "independent_research_grading_models": 0,
+  "speed": "Standard",
+  "billing": "CHATGPT_CREDITS",
+  "agents_enabled": false
+}

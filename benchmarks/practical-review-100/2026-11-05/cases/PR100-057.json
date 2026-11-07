@@ -1,0 +1,504 @@
+{
+  "task_id": "PR100-057",
+  "metadata": {
+    "task_id": "PR100-057",
+    "family": "service_queue",
+    "designed_difficulty": 1,
+    "variant": 1
+  },
+  "public_job": {
+    "task_id": "PR100-057",
+    "initial": "問い合わせ対応が担当者任せで、朝、何から手を付けるか分かりにくいです。対応順とチームの状況が分かる資料を作りたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。",
+    "owner_reply": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n時間は同一時間軸の整数分。deadline=opened+sla[priority]+paused。全件にdeadlineを記載。\nCLOSED/CANCELLEDまたはopened>as_of_minuteはEXCLUDED、overdue=0、action=NONE。その他はdeadline<as_of_minuteでBREACHED、0<=deadline-as_of_minute<=windowでDUE_SOON、その他ON_TRACK。\noverdueはBREACHEDのみas_of_minute-deadline。BREACHEDかつ(P1またはoverdue>=480)ならESCALATE、その他BREACHED/DUE_SOONならCONTACT、その他NONE。\ndetailsは全ticketをid順。teamsはT1,T2,T3順にactive(EXCLUDED以外)/breached/due_soon/escalatedの件数。queueはaction!=NONEをESCALATE、CONTACT順、deadline昇順、id昇順で並べたid。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に対象・期限超過・期限間近の全体像と、優先対応ID・理由。\n資料は以下のJSONです。\n{\n  \"as_of_minute\": 1440,\n  \"sla\": {\n    \"P1\": 240,\n    \"P2\": 480,\n    \"P3\": 960\n  },\n  \"window\": 120,\n  \"tickets\": [\n    {\n      \"id\": \"C001\",\n      \"team\": \"T1\",\n      \"priority\": \"P1\",\n      \"opened\": 1500,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C002\",\n      \"team\": \"T2\",\n      \"priority\": \"P2\",\n      \"opened\": 1200,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"deadline\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}, \"overdue\": {\"type\": \"integer\"}, \"action\": {\"type\": \"string\"}}, \"required\": [\"id\", \"deadline\", \"state\", \"overdue\", \"action\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"active\": {\"type\": \"integer\"}, \"breached\": {\"type\": \"integer\"}, \"due_soon\": {\"type\": \"integer\"}, \"escalated\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"active\", \"breached\", \"due_soon\", \"escalated\"], \"additionalProperties\": false}}, \"queue\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"queue\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。",
+    "continuation": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。",
+    "attachments": {
+      "as_of_minute": 1440,
+      "sla": {
+        "P1": 240,
+        "P2": 480,
+        "P3": 960
+      },
+      "window": 120,
+      "tickets": [
+        {
+          "id": "C001",
+          "team": "T1",
+          "priority": "P1",
+          "opened": 1500,
+          "paused": 0,
+          "status": "OPEN"
+        },
+        {
+          "id": "C002",
+          "team": "T2",
+          "priority": "P2",
+          "opened": 1200,
+          "paused": 0,
+          "status": "OPEN"
+        }
+      ]
+    },
+    "business_rules": [
+      "時間は同一時間軸の整数分。deadline=opened+sla[priority]+paused。全件にdeadlineを記載。",
+      "CLOSED/CANCELLEDまたはopened>as_of_minuteはEXCLUDED、overdue=0、action=NONE。その他はdeadline<as_of_minuteでBREACHED、0<=deadline-as_of_minute<=windowでDUE_SOON、その他ON_TRACK。",
+      "overdueはBREACHEDのみas_of_minute-deadline。BREACHEDかつ(P1またはoverdue>=480)ならESCALATE、その他BREACHED/DUE_SOONならCONTACT、その他NONE。",
+      "detailsは全ticketをid順。teamsはT1,T2,T3順にactive(EXCLUDED以外)/breached/due_soon/escalatedの件数。queueはaction!=NONEをESCALATE、CONTACT順、deadline昇順、id昇順で並べたid。"
+    ],
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "deadline": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string"
+              },
+              "overdue": {
+                "type": "integer"
+              },
+              "action": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "deadline",
+              "state",
+              "overdue",
+              "action"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "teams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "team": {
+                "type": "string"
+              },
+              "active": {
+                "type": "integer"
+              },
+              "breached": {
+                "type": "integer"
+              },
+              "due_soon": {
+                "type": "integer"
+              },
+              "escalated": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "team",
+              "active",
+              "breached",
+              "due_soon",
+              "escalated"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "queue": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "report_md": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "details",
+        "teams",
+        "queue",
+        "report_md"
+      ],
+      "additionalProperties": false
+    },
+    "profile": "small",
+    "reasoning_effort": "low"
+  },
+  "public_dialogue": [
+    {
+      "role": "user",
+      "content": "問い合わせ対応が担当者任せで、朝、何から手を付けるか分かりにくいです。対応順とチームの状況が分かる資料を作りたいです。 いきなり完成品を作る前に、必要なことを確認して、どういう形にするか相談したいです。このチャット内で資料を渡すので、外部ファイルや他の会話を読まず、外部調査・通知・システム構築は不要です。"
+    },
+    {
+      "role": "assistant",
+      "content": "まずはこのチャットでいただく資料だけを使って、必要な情報と資料の形を一緒に整理します。完成品の作成は、方向性が決まってから進めます。\n\n最初に、次の3点を教えてください。分かる範囲で大丈夫です。\n\n1. **誰が、いつ見る資料ですか？**  \n   例：担当者が朝の対応開始前に見る／リーダーが朝会でチームに共有する。\n\n2. **対応順を決めるルールや、今困っていることはありますか？**  \n   例：期限が近い案件を優先したい、長く止まっている案件を見落とす、担当者によって判断が違う。\n\n3. **元になる資料を、このチャットに貼っていただけますか？**  \n   問い合わせ一覧や現在の管理表など。氏名・顧客名などは伏せて構いません。\n\nいただいた内容を見て、「朝に確認する対応順の一覧」と「担当別の件数・滞留状況」など、使い方に合う形を提案します。"
+    },
+    {
+      "role": "user",
+      "content": "ありがとうございます。今回の運用と資料を補足します。今回は一度分の資料の見本で、継続実行するコードやシステムは要りません。担当者向けの全成果物と責任者向けの共有文を作ります。\n業務で守る条件は次のとおりです。\n時間は同一時間軸の整数分。deadline=opened+sla[priority]+paused。全件にdeadlineを記載。\nCLOSED/CANCELLEDまたはopened>as_of_minuteはEXCLUDED、overdue=0、action=NONE。その他はdeadline<as_of_minuteでBREACHED、0<=deadline-as_of_minute<=windowでDUE_SOON、その他ON_TRACK。\noverdueはBREACHEDのみas_of_minute-deadline。BREACHEDかつ(P1またはoverdue>=480)ならESCALATE、その他BREACHED/DUE_SOONならCONTACT、その他NONE。\ndetailsは全ticketをid順。teamsはT1,T2,T3順にactive(EXCLUDED以外)/breached/due_soon/escalatedの件数。queueはaction!=NONEをESCALATE、CONTACT順、deadline昇順、id昇順で並べたid。\n短い共有文report_mdも付けてください。成果物の全明細と一緒に読む担当者・責任者向けに、全体の結論と重要な例外・注意点を、主要な数値やIDに結び付けて説明してください。業務判断が変わる誤説明や架空の対応完了を作らないでください。全明細の文章への再掲、該当しない条件分岐の説明、定型句の完全一致は不要です。必要な対象が明細・一覧から明らかな場合は文章に全IDを重ねて列挙しなくて構いません。 特に対象・期限超過・期限間近の全体像と、優先対応ID・理由。\n資料は以下のJSONです。\n{\n  \"as_of_minute\": 1440,\n  \"sla\": {\n    \"P1\": 240,\n    \"P2\": 480,\n    \"P3\": 960\n  },\n  \"window\": 120,\n  \"tickets\": [\n    {\n      \"id\": \"C001\",\n      \"team\": \"T1\",\n      \"priority\": \"P1\",\n      \"opened\": 1500,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    },\n    {\n      \"id\": \"C002\",\n      \"team\": \"T2\",\n      \"priority\": \"P2\",\n      \"opened\": 1200,\n      \"paused\": 0,\n      \"status\": \"OPEN\"\n    }\n  ]\n}\n取り込み用の最終JSON形式は以下です。列挙した全フィールドを返し、JSONの外に解説は加えません。\n{\"type\": \"object\", \"properties\": {\"details\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"id\": {\"type\": \"string\"}, \"deadline\": {\"type\": \"integer\"}, \"state\": {\"type\": \"string\"}, \"overdue\": {\"type\": \"integer\"}, \"action\": {\"type\": \"string\"}}, \"required\": [\"id\", \"deadline\", \"state\", \"overdue\", \"action\"], \"additionalProperties\": false}}, \"teams\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"team\": {\"type\": \"string\"}, \"active\": {\"type\": \"integer\"}, \"breached\": {\"type\": \"integer\"}, \"due_soon\": {\"type\": \"integer\"}, \"escalated\": {\"type\": \"integer\"}}, \"required\": [\"team\", \"active\", \"breached\", \"due_soon\", \"escalated\"], \"additionalProperties\": false}}, \"queue\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"report_md\": {\"type\": \"string\"}}, \"required\": [\"details\", \"teams\", \"queue\", \"report_md\"], \"additionalProperties\": false}\nこの内容を前提に、まだ作業を始めず、使う人のイメージと作り方の方針を自然な文章で教えてください。委託用の依頼書やチェックシートへの整形は不要です。未確定の条件は勝手に決めず教えてください。"
+    },
+    {
+      "role": "assistant",
+      "content": "使う人は、朝に自分たちの対応順を確認する担当者と、チーム全体の状況を把握する責任者を想定しています。担当者はqueueで対応順を確認し、detailsで各問い合わせの期限・状態・必要な行動を確認します。責任者はteamsでチームごとの対象件数や期限超過・期限間近・エスカレーション対象の件数を把握し、report_mdで全体の結論と注意点を読み取る形です。\n\n作成時は、いただいた条件で各問い合わせを判定し、その結果からチーム別集計と対応順を作ります。共有文も同じ判定結果に基づき、対象・期限超過・期限間近の全体像と、優先対応が必要なIDと理由を短く説明します。除外された問い合わせも期限付きで明細に残し、対応が必要という判定と、実際に対応を完了した事実は区別します。\n\n最終成果物は、指定された全フィールドを含むJSONひとつにまとめ、共有文はreport_mdに入れます。このチャットの資料だけを使い、コードやシステムは作りません。\n\n計算・判定・並び順・出力形式について、現時点で未確定の条件は見当たりません。ただし、資料には担当者個人の情報がないため、把握できるのはチーム単位の状況までです。また、整数分を実際の日付・時刻へ変換する基準はないため、期限は指定どおり整数分で示す方針です。まだ計算や成果物の作成は始めていません。"
+    },
+    {
+      "role": "user",
+      "content": "共有した元の条件を優先し、その方針で一度分の資料を完成させてください。ここからは実作業を行ってよいという依頼です。必要な計算・自己確認も含めて指定JSONの全成果物を返してください。新しい条件や未合意の作業は追加しません。成果物一式と元資料を併せて業務に使えるかが基準です。全数値・明細・対象・順序・保護範囲は元条件に従います。文章はおおむね正しく、合理的な読み手の判断・優先順・次の対応を誤らせなければ、言い換えの余地、細部の省略、改善提案だけで不合格にしません。曖昧な表現は前後と明細から自然に読んで判定し、明記のない厳密な語義や新しい業務を要求しません。一方、存在しない完了・重要な対象落ち・明確な原因の取り違えが判断を変える場合は重大な問題です。"
+    }
+  ],
+  "methods": {
+    "SOL_CONTINUE": {
+      "task_id": "PR100-057",
+      "arm": "SOL_CONTINUE",
+      "profile": "small",
+      "reasoning_effort": "low",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "C001",
+            "deadline": 1740,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C002",
+            "deadline": 1680,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T2",
+            "active": 1,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T3",
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          }
+        ],
+        "queue": [],
+        "report_md": "基準時点1440分では、全2件のうち対応対象はT2のC002の1件です。期限超過・期限間近・エスカレーション対象はいずれも0件で、今回のルールによる優先対応IDはなく、対応キューは空です。\n\nC002の期限は1680分で、基準時点から240分後のため、期限間近の範囲（残り120分以内）には入りません。P1のC001は開始時点1500分が基準時点より後のため対象外です。期限1740分は明細に記載していますが、今回の対応順には含めません。\n\nT1・T3の対応対象は0件です。対応キューが空なのは今回の判定で連絡・エスカレーションが必要な案件がないためで、問い合わせの対応完了を示すものではありません。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "C001",
+            "deadline": 1740,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C002",
+            "deadline": 1680,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T2",
+            "active": 1,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T3",
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          }
+        ],
+        "queue": [],
+        "report_md": "基準時点1440分では、全2件のうち対応対象はT2のC002の1件です。期限超過・期限間近・エスカレーション対象はいずれも0件で、今回のルールによる優先対応IDはなく、対応キューは空です。\n\nC002の期限は1680分で、基準時点から240分後のため、期限間近の範囲（残り120分以内）には入りません。P1のC001は開始時点1500分が基準時点より後のため対象外です。期限1740分は明細に記載していますが、今回の対応順には含めません。\n\nT1・T3の対応対象は0件です。対応キューが空なのは今回の判定で連絡・エスカレーションが必要な案件がないためで、問い合わせの対応完了を示すものではありません。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "1.06080",
+      "incremental_credits": "0.9128",
+      "operating_total_credits": "1.97360",
+      "shared_seconds": 17.829000000143424,
+      "incremental_active_seconds": 9.952999999979511,
+      "total_active_seconds": 27.782000000122935,
+      "human_repair_seconds": null,
+      "visible_model_response": {
+        "stage": "EXECUTE",
+        "model": "gpt-6.1-sol",
+        "timestamp": "2026-11-04T18:06:17.407877+00:00",
+        "text": "{\"details\":[{\"id\":\"C001\",\"deadline\":1740,\"state\":\"EXCLUDED\",\"overdue\":0,\"action\":\"NONE\"},{\"id\":\"C002\",\"deadline\":1680,\"state\":\"ON_TRACK\",\"overdue\":0,\"action\":\"NONE\"}],\"teams\":[{\"team\":\"T1\",\"active\":0,\"breached\":0,\"due_soon\":0,\"escalated\":0},{\"team\":\"T2\",\"active\":1,\"breached\":0,\"due_soon\":0,\"escalated\":0},{\"team\":\"T3\",\"active\":0,\"breached\":0,\"due_soon\":0,\"escalated\":0}],\"queue\":[],\"report_md\":\"基準時点1440分では、全2件のうち対応対象はT2のC002の1件です。期限超過・期限間近・エスカレーション対象はいずれも0件で、今回のルールによる優先対応IDはなく、対応キューは空です。\\n\\nC002の期限は1680分で、基準時点から240分後のため、期限間近の範囲（残り120分以内）には入りません。P1のC001は開始時点1500分が基準時点より後のため対象外です。期限1740分は明細に記載していますが、今回の対応順には含めません。\\n\\nT1・T3の対応対象は0件です。対応キューが空なのは今回の判定で連絡・エスカレーションが必要な案件がないためで、問い合わせの対応完了を示すものではありません。\"}",
+        "value": {
+          "details": [
+            {
+              "id": "C001",
+              "deadline": 1740,
+              "state": "EXCLUDED",
+              "overdue": 0,
+              "action": "NONE"
+            },
+            {
+              "id": "C002",
+              "deadline": 1680,
+              "state": "ON_TRACK",
+              "overdue": 0,
+              "action": "NONE"
+            }
+          ],
+          "teams": [
+            {
+              "team": "T1",
+              "active": 0,
+              "breached": 0,
+              "due_soon": 0,
+              "escalated": 0
+            },
+            {
+              "team": "T2",
+              "active": 1,
+              "breached": 0,
+              "due_soon": 0,
+              "escalated": 0
+            },
+            {
+              "team": "T3",
+              "active": 0,
+              "breached": 0,
+              "due_soon": 0,
+              "escalated": 0
+            }
+          ],
+          "queue": [],
+          "report_md": "基準時点1440分では、全2件のうち対応対象はT2のC002の1件です。期限超過・期限間近・エスカレーション対象はいずれも0件で、今回のルールによる優先対応IDはなく、対応キューは空です。\n\nC002の期限は1680分で、基準時点から240分後のため、期限間近の範囲（残り120分以内）には入りません。P1のC001は開始時点1500分が基準時点より後のため対象外です。期限1740分は明細に記載していますが、今回の対応順には含めません。\n\nT1・T3の対応対象は0件です。対応キューが空なのは今回の判定で連絡・エスカレーションが必要な案件がないためで、問い合わせの対応完了を示すものではありません。"
+        },
+        "public_schema_pass": true,
+        "seconds": 9.952999999979511,
+        "credits": "0.9128",
+        "tool_commands": 0,
+        "billing_complete": true,
+        "billing_exception": null
+      }
+    },
+    "PRACTICAL": {
+      "task_id": "PR100-057",
+      "arm": "PRACTICAL",
+      "profile": "small",
+      "reasoning_effort": "low",
+      "initial_artifact": {
+        "details": [
+          {
+            "id": "C001",
+            "deadline": 1740,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C002",
+            "deadline": 1680,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T2",
+            "active": 1,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T3",
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          }
+        ],
+        "queue": [],
+        "report_md": "基準時点1440分では、全2件のうち対応対象はT2のC002の1件です。期限超過・期限間近・エスカレーション対象はいずれも0件で、今回のルールによる優先対応IDはなく、対応キューは空です。\n\nC002の期限は1680分で、基準時点から240分後のため、期限間近の範囲（残り120分以内）には入りません。P1のC001は開始時点1500分が基準時点より後のため対象外です。期限1740分は明細に記載していますが、今回の対応順には含めません。\n\nT1・T3の対応対象は0件です。対応キューが空なのは今回の判定で連絡・エスカレーションが必要な案件がないためで、問い合わせの対応完了を示すものではありません。"
+      },
+      "final_artifact": {
+        "details": [
+          {
+            "id": "C001",
+            "deadline": 1740,
+            "state": "EXCLUDED",
+            "overdue": 0,
+            "action": "NONE"
+          },
+          {
+            "id": "C002",
+            "deadline": 1680,
+            "state": "ON_TRACK",
+            "overdue": 0,
+            "action": "NONE"
+          }
+        ],
+        "teams": [
+          {
+            "team": "T1",
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T2",
+            "active": 1,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          },
+          {
+            "team": "T3",
+            "active": 0,
+            "breached": 0,
+            "due_soon": 0,
+            "escalated": 0
+          }
+        ],
+        "queue": [],
+        "report_md": "基準時点1440分では、全2件のうち対応対象はT2のC002の1件です。期限超過・期限間近・エスカレーション対象はいずれも0件で、今回のルールによる優先対応IDはなく、対応キューは空です。\n\nC002の期限は1680分で、基準時点から240分後のため、期限間近の範囲（残り120分以内）には入りません。P1のC001は開始時点1500分が基準時点より後のため対象外です。期限1740分は明細に記載していますが、今回の対応順には含めません。\n\nT1・T3の対応対象は0件です。対応キューが空なのは今回の判定で連絡・エスカレーションが必要な案件がないためで、問い合わせの対応完了を示すものではありません。"
+      },
+      "adopted": true,
+      "public_errors": [],
+      "category": "accepted_unchanged",
+      "shared_credits": "1.06080",
+      "incremental_credits": "0.9128",
+      "operating_total_credits": "1.97360",
+      "shared_seconds": 17.829000000143424,
+      "incremental_active_seconds": 9.952999999979511,
+      "total_active_seconds": 27.782000000122935,
+      "same_physical_small_task_execution": true,
+      "human_repair_seconds": null
+    }
+  },
+  "expected_data_after_routing_sealed": {
+    "details": [
+      {
+        "id": "C001",
+        "deadline": 1740,
+        "state": "EXCLUDED",
+        "overdue": 0,
+        "action": "NONE"
+      },
+      {
+        "id": "C002",
+        "deadline": 1680,
+        "state": "ON_TRACK",
+        "overdue": 0,
+        "action": "NONE"
+      }
+    ],
+    "teams": [
+      {
+        "team": "T1",
+        "active": 0,
+        "breached": 0,
+        "due_soon": 0,
+        "escalated": 0
+      },
+      {
+        "team": "T2",
+        "active": 1,
+        "breached": 0,
+        "due_soon": 0,
+        "escalated": 0
+      },
+      {
+        "team": "T3",
+        "active": 0,
+        "breached": 0,
+        "due_soon": 0,
+        "escalated": 0
+      }
+    ],
+    "queue": []
+  },
+  "scores": [
+    {
+      "task_id": "PR100-057",
+      "arm": "SOL_CONTINUE",
+      "family": "service_queue",
+      "designed_difficulty": 1,
+      "profile": "small",
+      "reasoning_effort": "low",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.97360",
+      "total_active_seconds": 27.782000000122935,
+      "report_md": "基準時点1440分では、全2件のうち対応対象はT2のC002の1件です。期限超過・期限間近・エスカレーション対象はいずれも0件で、今回のルールによる優先対応IDはなく、対応キューは空です。\n\nC002の期限は1680分で、基準時点から240分後のため、期限間近の範囲（残り120分以内）には入りません。P1のC001は開始時点1500分が基準時点より後のため対象外です。期限1740分は明細に記載していますが、今回の対応順には含めません。\n\nT1・T3の対応対象は0件です。対応キューが空なのは今回の判定で連絡・エスカレーションが必要な案件がないためで、問い合わせの対応完了を示すものではありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    },
+    {
+      "task_id": "PR100-057",
+      "arm": "PRACTICAL",
+      "family": "service_queue",
+      "designed_difficulty": 1,
+      "profile": "small",
+      "reasoning_effort": "low",
+      "adopted": true,
+      "data_exact": true,
+      "initial_data_exact": true,
+      "data_correct_adoption": true,
+      "data_false_green": false,
+      "category": "accepted_unchanged",
+      "data_differences": [],
+      "operating_reported_usage_credits": "1.97360",
+      "total_active_seconds": 27.782000000122935,
+      "report_md": "基準時点1440分では、全2件のうち対応対象はT2のC002の1件です。期限超過・期限間近・エスカレーション対象はいずれも0件で、今回のルールによる優先対応IDはなく、対応キューは空です。\n\nC002の期限は1680分で、基準時点から240分後のため、期限間近の範囲（残り120分以内）には入りません。P1のC001は開始時点1500分が基準時点より後のため対象外です。期限1740分は明細に記載していますが、今回の対応順には含めません。\n\nT1・T3の対応対象は0件です。対応キューが空なのは今回の判定で連絡・エスカレーションが必要な案件がないためで、問い合わせの対応完了を示すものではありません。",
+      "patch_changes": [],
+      "human_repair_seconds": null,
+      "independent_narrative_audit": false
+    }
+  ],
+  "independent_narrative_audit": false
+}

@@ -1,0 +1,55 @@
+{
+  "resources": {
+    "gpu_peak_used_mib": 9769.0,
+    "ollama_peak_rss_gib": 13.523143768310547,
+    "ollama_peak_private_gib": 22.72649383544922,
+    "ollama_reported_peak_vram_gib": 1.2349804667755961,
+    "gpu_min_free_mib": 283.0,
+    "host_min_available_ram_gib": 23.63869857788086,
+    "gpu_query_failures": 0,
+    "classification_counts": {
+      "RESPONSE_COMPLETE": 86
+    },
+    "load_wall_seconds": 1608.1259999998147,
+    "server_load_count": 86
+  },
+  "time": {
+    "shared_source_seconds": 3943.278999999864,
+    "shared_small_execution_seconds": 151.63899999996647,
+    "unique_completed_workflow_active_seconds": 26946.949000000022,
+    "historical_capacity_failure_seconds": 2.579,
+    "unique_active_including_recorded_failed_call_seconds": 26949.528000000024,
+    "first_physical_call_started": "2026-11-03T16:03:47.047506+00:00",
+    "last_physical_call_ended": "2026-11-04T20:40:10.451567+00:00",
+    "model_call_calendar_span_seconds": 102983.404061,
+    "full_recovery_controller_started": "2026-11-04T14:13:48.579579+00:00",
+    "summary_complete": "2026-11-04T20:43:14.976696+00:00",
+    "all_study_elapsed_includes_pause": true,
+    "review_Cloud_calls": 86,
+    "resolve_Cloud_calls": 0,
+    "research_model_calls": 0,
+    "native_api_seconds": 16746.70200000005,
+    "native_generation_eval_seconds": 16462.170200998
+  },
+  "native_tokens": {
+    "prompt_eval_count": 218489,
+    "eval_count": 666558
+  },
+  "model_settings": {
+    "arm": "gemma26",
+    "model": "gemma4:26b",
+    "digest": "08ae7ec1744bd7f451c4a530afb39d2673ad9d07a8369b8a33a3613b41212a68",
+    "think": true,
+    "options": {
+      "num_ctx": 65536,
+      "num_predict": 32768,
+      "seed": 20260926,
+      "temperature": 1,
+      "top_p": 0.95,
+      "top_k": 64
+    }
+  },
+  "Local_tokens_not_Credits_savings": true,
+  "minimum_hardware_requirement_proven": false,
+  "device_vram_includes_background": true
+}

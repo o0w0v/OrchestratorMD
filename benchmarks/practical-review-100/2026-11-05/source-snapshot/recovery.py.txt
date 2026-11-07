@@ -1,0 +1,52 @@
+"""Recover only complete, evidenced turns. Never erase retry uncertainty or call a model."""
+import json,re,hashlib
+from pathlib import Path
+
+def completed_idle_retry(report,path):
+ """A completed turn may be reusable while its provider-retry bill stays unknown."""
+ try:
+  if set(report['issues'])!={'STDERR_PROVIDER_OR_RETRY_EVIDENCE'}:return None
+  if report['terminal']['exit_code']!=0 or report['terminal']['status']!='EXITED' or report['completed_turns']!=1:return None
+  if len([x for x in report['records'] if x['credits'] is None])!=1:return None
+  unknown=[x for x in report['records'] if x['credits'] is None][0]
+  if unknown.get('source_event_type')!='STDERR_PROVIDER_OR_RETRY_EVIDENCE':return None
+  if hashlib.sha256((path/'request.raw').read_bytes()).hexdigest()!=report['invocation']['request_sha256']:return None
+  for name,key in [('stdout.jsonl','stdout_sha256'),('stderr.log','stderr_sha256')]:
+   if hashlib.sha256((path/name).read_bytes()).hexdigest()!=report['terminal'][key]:return None
+  events=[json.loads(x) for x in (path/'stdout.jsonl').read_bytes().splitlines()]
+  if any(x.get('type') in ['error','turn.failed'] for x in events):return None
+  turns=[x for x in events if x.get('type')=='turn.completed'];messages=[x['item'] for x in events if x.get('type')=='item.completed' and x.get('item',{}).get('type')=='agent_message']
+  if len(turns)!=1 or len(messages)!=1 or not messages[0].get('text','').strip():return None
+  u=turns[0]['usage'];fields=['input_tokens','cached_input_tokens','output_tokens','reasoning_output_tokens']
+  if any(type(u.get(k))!=int or u[k]<0 for k in fields) or u.get('cache_write_input_tokens')!=0:return None
+  if u['cached_input_tokens']>u['input_tokens'] or u['reasoning_output_tokens']>u['output_tokens']:return None
+  if any(x.get('item',{}).get('type') not in ['agent_message','reasoning','todo_list','plan'] for x in events if x.get('type','').startswith('item.')):return None
+  stderr=(path/'stderr.log').read_text(encoding='utf-8',errors='strict')
+  retry_lines=[x for x in stderr.splitlines() if 'codex_core::responses_retry' in x]
+  if len(retry_lines)!=1 or 'idle timeout waiting for websocket' not in retry_lines[0] or 'retries=1 ' not in retry_lines[0]:return None
+  if re.search(r'capacity|overloaded|rate.limit|authentication|unauthorized|quota|forbidden',stderr,re.I):return None
+  return {'invocation_id':report['invocation']['invocation_id'],'cause':'single_idle_timeout_retry_with_completed_turn','retry_evidence_sha256':hashlib.sha256((path/'stderr.log').read_bytes()).hexdigest(),'reported_usage':u,'provider_retry_Credits':None,'billing_complete':False}
+ except (KeyError,ValueError,TypeError,OSError):return None
+
+def hydrate(cap,root,run):
+ spec=json.loads((root/'RECOVERY_IMPORT.json').read_text(encoding='utf-8'));rows=[]
+ for item in spec['imported_calls']:
+  p=run/item['ledger_relative'];assert hashlib.sha256(p.read_bytes()).hexdigest()==item['ledger_sha256'],'Imported ledger drift'
+  result=run/item['result_relative'];assert hashlib.sha256(result.read_bytes()).hexdigest()==item['result_sha256'],'Imported result drift'
+  ledger=json.loads(p.read_text(encoding='utf-8'));manifest=json.loads((Path(ledger['capture_path'])/'manifest.json').read_text(encoding='utf-8'));rows.append((manifest['started_at'],ledger))
+ for _,l in sorted(rows):
+  sid=l['session_id'];prior=cap.counters.get(sid,{})
+  assert prior==l['previous_cumulative_usage'],'Recovered session ordering'
+  assert cap_delta(l['raw_cumulative_usage'],prior)==l['incremental_usage'],'Recovered usage delta'
+  cap.counters[sid]={k:l['raw_cumulative_usage'][k] for k in l['incremental_usage']};cap.session_models[sid]=l['model']
+  cap.spent+=__import__('decimal').Decimal(l['incremental_Credits']);cap.calls+=1
+  if not l.get('billing_complete',True):cap.partial_billing[Path(l['capture_path']).name]=l['billing_exception']
+ cap.last_call_partial=not sorted(rows)[-1][1].get('billing_complete',True)
+ cap.imported_stage_keys={(x['task_id'],x['arm'],x['stage']) for x in spec['imported_calls']}
+ assert cap.calls==198 and cap.spent==__import__('decimal').Decimal('70.66394'),'Recovered counters/spend mismatch'
+ for failed in spec['historical_failed_calls']:
+  cap.partial_billing[failed['invocation_id']]=failed;cap.calls+=1
+ assert cap.calls==199 and len(cap.partial_billing)>=2
+ cap.last_call_partial=not sorted(rows)[-1][1].get('billing_complete',True)
+
+def cap_delta(u,p):return {k:u[k]-p.get(k,0) for k in ['input_tokens','cached_input_tokens','output_tokens','reasoning_output_tokens']}

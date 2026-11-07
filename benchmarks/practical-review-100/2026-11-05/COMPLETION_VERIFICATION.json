@@ -1,0 +1,898 @@
+{
+  "timestamp": "2026-11-04T21:29:28.345921+00:00",
+  "verification_passed": true,
+  "counts": {
+    "frozen_inputs": 36,
+    "prior_files": 45560,
+    "copy_origins": 2923,
+    "byte_identical_import_copies": 2918,
+    "deliberately_derived_host_files": 5,
+    "ALL_DESIGNS_SEALED.json": 300,
+    "ROUTING_COMPLETE.json": 200,
+    "analysis-001/ANALYSIS_FREEZE.json": 6,
+    "analysis-001/SOURCE_MANIFEST.json": 7285,
+    "completion-audit-001/AUDIT_FREEZE.json": 2,
+    "FINAL_KNOWLEDGE_FREEZE.json": 3,
+    "dialogue_seals": 200,
+    "persistent_session_rollouts": 100,
+    "imported_completed_calls": 198,
+    "Cloud_physical": 387,
+    "Local_physical": 86,
+    "completed_Cloud_calls": 386
+  },
+  "host_controller_query": "require_escalated Win32_Process confirmed PID29068 and matching model calls absent; completion independently established by COMPLETE/SUMMARY_COMPLETE and sealed results",
+  "original_analysis_and_reports_unchanged": true,
+  "model_calls_by_completion_reviewer": 0,
+  "gemma_only": {
+    "cases": 86,
+    "initial_data_exact": 76,
+    "final_data_correct_adoption": 86
+  },
+  "roles": {
+    "PRACTICAL:REVIEW:medium": {
+      "input_tokens": 937721,
+      "cached_input_tokens": 466432,
+      "output_tokens": 3823,
+      "reasoning_output_tokens": 2154,
+      "calls": 56,
+      "reported_Credits": "25.68628"
+    },
+    "SHARED_DIALOGUE:INITIAL_REQUEST:medium": {
+      "input_tokens": 771029,
+      "cached_input_tokens": 473088,
+      "output_tokens": 20192,
+      "reasoning_output_tokens": 1541,
+      "calls": 56,
+      "reported_Credits": "21.12777"
+    },
+    "SHARED_DIALOGUE:OWNER_REPLY_AND_DESIGN:medium": {
+      "input_tokens": 876280,
+      "cached_input_tokens": 654080,
+      "output_tokens": 26247,
+      "reasoning_output_tokens": 2388,
+      "calls": 56,
+      "reported_Credits": "19.30695"
+    },
+    "SOL_CONTINUE:EXECUTE:medium": {
+      "input_tokens": 965616,
+      "cached_input_tokens": 11648,
+      "output_tokens": 46600,
+      "reasoning_output_tokens": 6963,
+      "calls": 56,
+      "reported_Credits": "59.37752"
+    },
+    "PRACTICAL:REVIEW:high": {
+      "input_tokens": 484839,
+      "cached_input_tokens": 317184,
+      "output_tokens": 12195,
+      "reasoning_output_tokens": 7255,
+      "calls": 30,
+      "reported_Credits": "12.22446"
+    },
+    "SHARED_DIALOGUE:INITIAL_REQUEST:high": {
+      "input_tokens": 453272,
+      "cached_input_tokens": 340480,
+      "output_tokens": 13619,
+      "reasoning_output_tokens": 4836,
+      "calls": 30,
+      "reported_Credits": "9.89555"
+    },
+    "SHARED_DIALOGUE:OWNER_REPLY_AND_DESIGN:high": {
+      "input_tokens": 462879,
+      "cached_input_tokens": 358016,
+      "output_tokens": 20104,
+      "reasoning_output_tokens": 6519,
+      "calls": 30,
+      "reported_Credits": "11.16419"
+    },
+    "SOL_CONTINUE:EXECUTE:high": {
+      "input_tokens": 694730,
+      "cached_input_tokens": 158336,
+      "output_tokens": 43424,
+      "reasoning_output_tokens": 21035,
+      "calls": 30,
+      "reported_Credits": "38.07154"
+    },
+    "SHARED_DIALOGUE:INITIAL_REQUEST:low": {
+      "input_tokens": 185351,
+      "cached_input_tokens": 101376,
+      "output_tokens": 3696,
+      "reasoning_output_tokens": 0,
+      "calls": 14,
+      "reported_Credits": "5.37619"
+    },
+    "SHARED_DIALOGUE:OWNER_REPLY_AND_DESIGN:low": {
+      "input_tokens": 209277,
+      "cached_input_tokens": 155008,
+      "output_tokens": 5488,
+      "reasoning_output_tokens": 74,
+      "calls": 14,
+      "reported_Credits": "4.47297"
+    },
+    "SOL_CONTINUE:EXECUTE:low": {
+      "input_tokens": 230502,
+      "cached_input_tokens": 0,
+      "output_tokens": 5302,
+      "reasoning_output_tokens": 301,
+      "calls": 14,
+      "reported_Credits": "12.85060"
+    }
+  },
+  "native_tokens": {
+    "prompt_eval_count": 218489,
+    "eval_count": 666558
+  },
+  "resources": {
+    "gpu_peak_used_mib": 9769.0,
+    "ollama_peak_rss_gib": 13.523143768310547,
+    "ollama_peak_private_gib": 22.72649383544922,
+    "ollama_reported_peak_vram_gib": 1.2349804667755961,
+    "gpu_min_free_mib": 283.0,
+    "host_min_available_ram_gib": 23.63869857788086,
+    "gpu_query_failures": 0,
+    "classification_counts": {
+      "RESPONSE_COMPLETE": 86
+    },
+    "load_wall_seconds": 1608.1259999998147,
+    "server_load_count": 86
+  },
+  "time": {
+    "shared_source_seconds": 3943.278999999864,
+    "shared_small_execution_seconds": 151.63899999996647,
+    "unique_completed_workflow_active_seconds": 26946.949000000022,
+    "historical_capacity_failure_seconds": 2.579,
+    "unique_active_including_recorded_failed_call_seconds": 26949.528000000024,
+    "first_physical_call_started": "2026-11-03T16:03:47.047506+00:00",
+    "last_physical_call_ended": "2026-11-04T20:40:10.451567+00:00",
+    "model_call_calendar_span_seconds": 102983.404061,
+    "full_recovery_controller_started": "2026-11-04T14:13:48.579579+00:00",
+    "summary_complete": "2026-11-04T20:43:14.976696+00:00",
+    "all_study_elapsed_includes_pause": true,
+    "review_Cloud_calls": 86,
+    "resolve_Cloud_calls": 0,
+    "research_model_calls": 0,
+    "native_api_seconds": 16746.70200000005,
+    "native_generation_eval_seconds": 16462.170200998
+  },
+  "patches": [
+    {
+      "task_id": "PR100-011",
+      "family": "dependency_schedule",
+      "initial_data_exact": false,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/processing_order",
+          "before": [
+            "J001",
+            "J004",
+            "J002",
+            "J005",
+            "J003",
+            "J007",
+            "J006",
+            "J010",
+            "J008",
+            "J011",
+            "J009",
+            "J012"
+          ],
+          "after": [
+            "J001",
+            "J004",
+            "J007",
+            "J010",
+            "J002",
+            "J005",
+            "J003",
+            "J006",
+            "J008",
+            "J011",
+            "J009",
+            "J012"
+          ]
+        },
+        {
+          "path": "/details",
+          "before": [
+            {
+              "end": 4,
+              "id": "J001",
+              "late": 0,
+              "start": 3
+            },
+            {
+              "end": 10,
+              "id": "J002",
+              "late": 0,
+              "start": 7
+            },
+            {
+              "end": 17,
+              "id": "J003",
+              "late": 0,
+              "start": 14
+            },
+            {
+              "end": 7,
+              "id": "J004",
+              "late": 0,
+              "start": 4
+            },
+            {
+              "end": 14,
+              "id": "J005",
+              "late": 0,
+              "start": 10
+            },
+            {
+              "end": 22,
+              "id": "J006",
+              "late": 12,
+              "start": 17
+            },
+            {
+              "end": 22,
+              "id": "J007",
+              "late": 14,
+              "start": 17
+            },
+            {
+              "end": 26,
+              "id": "J008",
+              "late": 8,
+              "start": 24
+            },
+            {
+              "end": 34,
+              "id": "J009",
+              "late": 14,
+              "start": 30
+            },
+            {
+              "end": 24,
+              "id": "J010",
+              "late": 11,
+              "start": 22
+            },
+            {
+              "end": 30,
+              "id": "J011",
+              "late": 13,
+              "start": 26
+            },
+            {
+              "end": 39,
+              "id": "J012",
+              "late": 30,
+              "start": 34
+            }
+          ],
+          "after": [
+            {
+              "id": "J001",
+              "start": 3,
+              "end": 4,
+              "late": 0
+            },
+            {
+              "id": "J002",
+              "start": 14,
+              "end": 17,
+              "late": 3
+            },
+            {
+              "id": "J003",
+              "start": 21,
+              "end": 24,
+              "late": 5
+            },
+            {
+              "id": "J004",
+              "start": 4,
+              "end": 7,
+              "late": 0
+            },
+            {
+              "id": "J005",
+              "start": 17,
+              "end": 21,
+              "late": 5
+            },
+            {
+              "id": "J006",
+              "start": 24,
+              "end": 29,
+              "late": 19
+            },
+            {
+              "id": "J007",
+              "start": 7,
+              "end": 12,
+              "late": 4
+            },
+            {
+              "id": "J008",
+              "start": 29,
+              "end": 31,
+              "late": 13
+            },
+            {
+              "id": "J009",
+              "start": 35,
+              "end": 39,
+              "late": 19
+            },
+            {
+              "id": "J010",
+              "start": 12,
+              "end": 14,
+              "late": 1
+            },
+            {
+              "id": "J011",
+              "start": 31,
+              "end": 35,
+              "late": 18
+            },
+            {
+              "id": "J012",
+              "start": 39,
+              "end": 44,
+              "late": 35
+            }
+          ]
+        },
+        {
+          "path": "/makespan",
+          "before": 39,
+          "after": 44
+        },
+        {
+          "path": "/total_late",
+          "before": 102,
+          "after": 122
+        },
+        {
+          "path": "/report_md",
+          "before": "全体の終了見込み（makespan）は39です。合計遅延（total_late）は102となり、多くの作業で期限超過が発生しています。特にJ012は、依存作業であるJ009の終了を待つ制約により、30という最大の遅延が発生しています。また、J007やJ006も、依存関係とチームの稼働状況が重なったことで、期限を大幅に超過しています。",
+          "after": "全体の終了見込み（makespan）は44、合計遅延（total_late）は122で、12件中10件が期限超過となります。最大の遅延はJ012の35で、依存先J009の終了39を待って開始し、44に終了する予定です。選択規則によりJ004の次はJ007、続いてJ010となり、同じT2のJ002は14開始となります。J006は依存先J003の終了24を待って開始し、遅延19です。T1ではJ011が31～35に確定するため、J009は依存先が31までに終了していても35開始となり、遅延19となります。同一チームの確定順を守り、空き時間への後からの差し込みは行っていません。"
+        }
+      ],
+      "impact": "J004確定後は、同priorityでdueが早いJ007をJ002より先に選ぶ必要があります。この選択順の誤りが後続予定に波及し、終了見込みと合計遅延を過小に示しています。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-011/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-011/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-019",
+      "family": "allocation",
+      "initial_data_exact": true,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/report_md",
+          "before": "基準日30時点の引当状況です。\n全体では34件を引当、14件の未充足（backorder）が発生しています。\n在庫残数は、S1:2、S2:1、S3:7です。\n\n未充足の主な要因は以下の通りです：\n- ロット制約：O003 (S3) および O002 (S2) は、利用可能数がロット数に満たないため引当できませんでした。\n- 在庫不足・不一致：O007 (S1) および O017 (S2) は、ロット単位での引当後に注文数に満たないため、一部引当（PARTIAL）となっています。\n\n優先順位（Priority 1-3）および納期に基づき処理を完了しています。",
+          "after": "基準日30時点で、引当数量34、未充足数量14、value合計3400です。残在庫はS1:2、S2:1、S3:7の計10で、S2・S3では各1のreserveを確保しています。\n\n未充足は5注文です。O003は利用可能在庫14に対して注文数量2がlotの3未満のため、引当0です。O002は先行注文への引当後、reserveを除く利用可能数が0のため、引当0です。O007は利用可能数5からlotの3単位で3を引き当て、4が未充足です。O017は利用可能数1を引き当て、6が未充足です。O020は注文数量5をlotの2単位に切り下げて4を引き当て、1が未充足です。\n\n取消またはdue_dayが30を超える注文は対象外とし、対象注文はpriority昇順、due_day昇順、id昇順で処理しました。対象外注文の数量は未充足合計に含めていません。"
+        }
+      ],
+      "impact": "共有文が数量34・14を注文件数として示し、O003の未充足原因を利用可能在庫不足と誤説明しています。件数と不足原因の判断を誤らせるため修正します。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-019/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-019/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-020",
+      "family": "document_edits",
+      "initial_data_exact": false,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/outcomes/20/state",
+          "before": "OLD_NOT_UNIQUE",
+          "after": "UNKNOWN_SECTION"
+        },
+        {
+          "path": "/report_md",
+          "before": "全21件の更新依頼のうち、7件（U002, U003, U006, U008, U014, U017, U020）が適用されました。\n未適用の主な理由は、保護対象セクション（D001, D005, D009）への更新依頼（計6件）と、置換対象文字列の不在や、先行する更新により置換対象が既に変更されていた等の理由によるもの（計8件：U004, U007, U010, U012, U013, U016, U018, U021）です。",
+          "after": "全21件の更新依頼のうち7件が適用され、14件が未適用です。\n未適用の内訳は、保護対象セクション（D001, D005, D009）への更新依頼6件、置換対象文字列が現在の本文に存在しない更新依頼7件、対象セクションが存在しない更新依頼1件（U021：D999）です。U012とU018は先行更新で「旧版」が置換済みのため未適用です。保護本文はすべて維持しています。"
+        }
+      ],
+      "impact": "U021は対象D999が存在しないため、本文内の文字列不在とは異なる確認が必要です。判定と報告の理由別件数を修正します。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-020/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-020/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-021",
+      "family": "allocation",
+      "initial_data_exact": false,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/details/0/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/2/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/3/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/5/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/9/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/10/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/processing_order",
+          "before": [
+            "O007",
+            "O002",
+            "O008",
+            "O012",
+            "O009",
+            "O005"
+          ],
+          "after": [
+            "O002",
+            "O007",
+            "O008",
+            "O012",
+            "O009",
+            "O005"
+          ]
+        }
+      ],
+      "impact": "取消・期日超過の対象外6件が充足済みと誤認されます。また、同一priority・due_dayのO002とO007が指定のid昇順に反しています。引当数・不足数・残在庫・集計値への変更はありません。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-021/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-021/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-024",
+      "family": "allocation",
+      "initial_data_exact": false,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/details/0/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/1/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/3/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        }
+      ],
+      "impact": "対象外のO001・O002・O004が充足済みと誤表示されています。元条件に従いEXCLUDEDへ修正します。数値・集計・報告文の修正は不要です。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-024/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-024/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-038",
+      "family": "dependency_schedule",
+      "initial_data_exact": true,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/report_md",
+          "before": "全作業において期限内の完了が見込まれます。全体の終了見込み（makespan）は14であり、期限超過（total_late）は発生していません。すべてのタスクが制約条件下でスケジュールされています。",
+          "after": "全作業において期限内の完了が見込まれます。全体の終了見込み（makespan）は14、遅れの合計（total_late）は0です。J003はJ001→J002の依存関係に従って9に開始し、期限と同じ14に終了するため、余裕がない点に注意が必要です。すべてのタスクが制約条件下でスケジュールされています。"
+        }
+      ],
+      "impact": "共有文に注意対象のJ003とその制約がなく、期限に余裕がない作業が伝わりません。数値・明細・選択順の修正は不要です。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-038/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-038/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-040",
+      "family": "service_queue",
+      "initial_data_exact": false,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/details/1/deadline",
+          "before": 1620,
+          "after": 1860
+        },
+        {
+          "path": "/details/2/deadline",
+          "before": 1560,
+          "after": 2040
+        },
+        {
+          "path": "/details/4/deadline",
+          "before": 120,
+          "after": 360
+        },
+        {
+          "path": "/details/5/deadline",
+          "before": 1140,
+          "after": 2040
+        },
+        {
+          "path": "/details/6/deadline",
+          "before": 1500,
+          "after": 2460
+        },
+        {
+          "path": "/details/7/deadline",
+          "before": 1500,
+          "after": 1980
+        },
+        {
+          "path": "/details/10/deadline",
+          "before": 1560,
+          "after": 1800
+        },
+        {
+          "path": "/details/11/deadline",
+          "before": 1620,
+          "after": 2580
+        },
+        {
+          "path": "/details/12/deadline",
+          "before": 1560,
+          "after": 1980
+        },
+        {
+          "path": "/details/14/deadline",
+          "before": 1620,
+          "after": 1860
+        },
+        {
+          "path": "/details/15/deadline",
+          "before": 120,
+          "after": 360
+        },
+        {
+          "path": "/details/16/deadline",
+          "before": 1500,
+          "after": 2460
+        },
+        {
+          "path": "/details/19/deadline",
+          "before": 1200,
+          "after": 1440
+        }
+      ],
+      "impact": "除外対象13件のdeadlineにSLAが加算されておらず、期限の参照を誤らせます。集計・対応順・共有文への影響はありません。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-040/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-040/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-042",
+      "family": "allocation",
+      "initial_data_exact": false,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/details/0/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/1/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/3/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        }
+      ],
+      "impact": "除外対象のO001・O002・O004が充足済みと誤表示されています。元条件に従いEXCLUDEDに修正します。数値・集計・報告文の修正は不要です。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-042/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-042/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-051",
+      "family": "dependency_schedule",
+      "initial_data_exact": false,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/processing_order",
+          "before": [
+            "J001",
+            "J002",
+            "J004",
+            "J007",
+            "J010",
+            "J005",
+            "J003",
+            "J008",
+            "J006",
+            "J011",
+            "J009",
+            "J012"
+          ],
+          "after": [
+            "J001",
+            "J002",
+            "J004",
+            "J007",
+            "J010",
+            "J005",
+            "J008",
+            "J011",
+            "J003",
+            "J006",
+            "J009",
+            "J012"
+          ]
+        },
+        {
+          "path": "/details/2",
+          "before": {
+            "end": 19,
+            "id": "J003",
+            "late": 1,
+            "start": 15
+          },
+          "after": {
+            "end": 27,
+            "id": "J003",
+            "late": 9,
+            "start": 23
+          }
+        },
+        {
+          "path": "/details/5",
+          "before": {
+            "end": 21,
+            "id": "J006",
+            "late": 5,
+            "start": 19
+          },
+          "after": {
+            "end": 29,
+            "id": "J006",
+            "late": 13,
+            "start": 27
+          }
+        },
+        {
+          "path": "/details/8",
+          "before": {
+            "end": 28,
+            "id": "J009",
+            "late": 9,
+            "start": 24
+          },
+          "after": {
+            "end": 33,
+            "id": "J009",
+            "late": 14,
+            "start": 29
+          }
+        },
+        {
+          "path": "/details/10",
+          "before": {
+            "end": 24,
+            "id": "J011",
+            "late": 17,
+            "start": 19
+          },
+          "after": {
+            "end": 23,
+            "id": "J011",
+            "late": 16,
+            "start": 18
+          }
+        },
+        {
+          "path": "/details/11",
+          "before": {
+            "end": 30,
+            "id": "J012",
+            "late": 21,
+            "start": 28
+          },
+          "after": {
+            "end": 35,
+            "id": "J012",
+            "late": 26,
+            "start": 33
+          }
+        },
+        {
+          "path": "/makespan",
+          "before": 30,
+          "after": 35
+        },
+        {
+          "path": "/total_late",
+          "before": 59,
+          "after": 84
+        },
+        {
+          "path": "/report_md",
+          "before": "全体の終了時刻（makespan）は30、遅延の合計（total_late）は59となりました。スケジュール後半において、J012（遅延21）、J011（遅延17）、J009（遅延9）といった作業で顕著な遅れが発生しています。これらの遅延は、依存関係にある作業の完了待ちとチームの稼働制限が重なったことによるものです。特にJ011は期限（due: 7）に対して非常に大きな遅延が生じている点に注意が必要です。",
+          "after": "全体の終了見込み（makespan）は35、遅延の合計（total_late）は84で、6件が期限超過となる予定です。特にJ012（遅延26）、J011（遅延16）、J009（遅延14）に注意が必要です。指定の選択規則では、J005の確定後にJ008、続いてJ011をJ003より先に確定します。同じT1のJ011が23に終了するためJ003は23開始となり、依存するJ006・J009・J012の終了見込みにも影響します。依存先の終了待ちと各チーム同時1件の制約を反映した予定であり、特にJ011は期限7に対し終了23となります。"
+        }
+      ],
+      "impact": "J005確定後、選択可能なJ008（priority 2）よりJ003（priority 3）を先に選んでいます。選択順と5件の明細が変わり、全体終了を5、遅延合計を25過小評価しています。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-051/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-051/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-060",
+      "family": "allocation",
+      "initial_data_exact": false,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/details/0/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/1/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/4/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        }
+      ],
+      "impact": "取消のO001と基準日超過のO002・O005が充足済みと誤表示されています。元条件どおり対象外に修正します。集計・報告文の修正は不要です。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-060/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-060/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-067",
+      "family": "allocation",
+      "initial_data_exact": false,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/details/0/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/1/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/2/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/9/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/11/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/13/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/16/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/18/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/19/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/stocks/0/remaining",
+          "before": 0,
+          "after": 2
+        },
+        {
+          "path": "/stocks/1/remaining",
+          "before": 0,
+          "after": 2
+        },
+        {
+          "path": "/report_md",
+          "before": "### 引当状況のまとめ\n\n**全体像**\n- **引当合計**: 33 (value: 3300)\n- **不足合計**: 16\n- **残在庫**: S1: 0, S2: 0, S3: 5\n\n**未充足・不足の主な状況**\n- **S1**: O016は在庫不足によりBACKORDER、O004/O007/O013はロット制約または在庫の関係でPARTIALとなっています。\n- **S2**: O008はロット制約（ロット2に対し利用可能数1）によりBACKORDER、O005はPARTIALです。\n- **S3**: O006はロット制約（ロット3に対し注文数2）によりBACKORDER、O009/O015はPARTIALです。\n\n**対応方針**\n優先順位（P1〜P3）に基づき引当処理を行いました。",
+          "after": "### 引当状況のまとめ\n\n対象11件の引当合計は33、valueは3300、不足合計は16です。2件がFULFILLED、9件が未充足です。取消またはdue_day>30の9件はEXCLUDEDで、引当・不足・valueの集計には加算されません。\n\n残在庫はS1: 2、S2: 2、S3: 5の計9です。S1・S2の各2はreserveとして保護され、追加引当には使えません。\n\nS1ではO004・O007がロット制約でPARTIAL、O013が利用可能在庫の不足でPARTIALです。O016は利用可能数0に加え、注文数1がロット3未満のため引当0です。S2のO008は利用可能数1がロット2未満のためBACKORDERとなり、後続のO005に1を引き当て、不足2が残りました。S3は5残っていますが、O006・O009・O015の未充足分は各注文のロット3による端数です。\n\n対象注文はpriority昇順、due_day昇順、id昇順で処理しました。未充足の対象と数量はdetailsで確認できます。"
+        }
+      ],
+      "impact": "除外9件が充足済みと誤表示され、S1・S2の保護在庫各2が消失した表示になっています。対象状態と残在庫の判断を誤らせるため修正が必要です。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-067/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-067/PRACTICAL.json",
+      "full_result_regenerated": false
+    },
+    {
+      "task_id": "PR100-094",
+      "family": "allocation",
+      "initial_data_exact": false,
+      "final_data_exact": true,
+      "changes": [
+        {
+          "path": "/details/0/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/5/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/8/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/9/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/details/10/state",
+          "before": "FULFILLED",
+          "after": "EXCLUDED"
+        },
+        {
+          "path": "/report_md",
+          "before": "### 引当状況サマリー\n\n**全体の集計**\n- **合計引当数**: 24\n- **合計不足数**: 3\n- **合計金額(value)**: 2400\n- **残在庫**: S1: 7, S2: 5, S3: 9\n\n**未充足の注文と要因**\n優先順位（priority）に基づき処理を行いましたが、ロット制約により以下の注文が未充足となっています。\n- **BACKORDER (全量不足)**: O007 (S1) および O008 (S2) は、注文数が指定ロット数に満たないため引当ができませんでした。\n- **PARTIAL (一部不足)**: O012 (S3) は、ロット制約により7単位のうち6単位のみの引当となりました。\n\n※キャンセル分および納期超過分は、引当対象外として集計しています。",
+          "after": "### 引当状況サマリー\n\n**全体の集計**\n- **合計引当数**: 24\n- **合計不足数**: 3\n- **合計金額(value)**: 2400\n- **残在庫**: S1: 7, S2: 5, S3: 9\n\n**未充足の注文と要因**\n優先順位（priority）に基づき処理を行いましたが、ロット制約により以下の注文が未充足となっています。\n- **BACKORDER (全量不足)**: O007 (S1) および O008 (S2) は、注文数が指定ロット数に満たないため引当ができませんでした。\n- **PARTIAL (一部不足)**: O012 (S3) は、ロット制約により7単位のうち6単位のみの引当となりました。\n\n※キャンセル分およびdue_dayがas_of_day（30）を超える注文は、引当対象外として集計しています。"
+        }
+      ],
+      "impact": "除外対象の5注文が充足済みと誤表示されています。また「納期超過分」は納期を過ぎた注文を除外したと読め、実際の除外条件と逆の判断を招きます。数値・処理順・集計の修正は不要です。",
+      "source_dialogue": "source-file:practical-review-100-20261104-recovery-003/run-001/dialogues/PR100-094/PUBLIC_DIALOGUE.json",
+      "result_path": "source-file:practical-review-100-20261104-recovery-003/run-001/unscored/PR100-094/PRACTICAL.json",
+      "full_result_regenerated": false
+    }
+  ],
+  "all_narratives_independently_audited": false,
+  "prior_host_audit_checks": 14304,
+  "unknown_cost_calls": [
+    "source-file:practical-review-100-20261104/run-001/accounting/invocations/49c5e68a-1ad7-45e3-8440-bf1136d78eb8",
+    "source-file:practical-review-100-20261104-recovery-001/run-001/accounting/invocations/17c327a3-e515-4ea9-bd20-e3b73a51cc8a"
+  ],
+  "reported_usage_subtotal_Credits": "219.55402",
+  "actual_total_Credits": null
+}
