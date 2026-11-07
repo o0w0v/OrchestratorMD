@@ -84,6 +84,8 @@ LocalのPASSはユニット検証の通過を表します。採用までには�
 
 CSV/JSON業務向けの実行アプリ[Orchestrator Local 0.1.0](apps/orchestrator-local/README_JA.md)を公開しました。既存Ollama・Gemma4 26BとPythonを持つWindows PCで、会話から依頼し、元条件で確認してJSON・共有文・CSVへ保存します。小さい仕事は会話側で直接処理でき、別のCloudモデルを追加しません。導入・起動・ログイン自動起動・登録解除の手順と、モデルを使わないテストを同梱しています。
 
+利点は、Gemmaとの手作業の受け渡しや、回答をファイルへ転記する手間を減らし、使える成果物を必要な分だけ直して残せることです。条件が明確な定型データ作業を繰り返す人に向きます。[利点と利用例](apps/orchestrator-local/README_JA.md#使うと何がよいか)をまとめています。
+
 一台のWindows PCでの実機確認を行った初期版です。別PC・全OSでの動作、全件文章品質、節約額の保証ではありません。入力と候補は会話側にも渡るため完全オフラインではありません。
 
 従来のRust開発用Host/Router一式や研究用benchmarkの完全再現とは別の配布物です。それらの不足範囲は[配布状況の記録](PORTABLE_EXECUTION_READINESS_JA.md)を参照してください。
