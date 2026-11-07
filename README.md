@@ -1,94 +1,62 @@
-# OrchestratorMD
+# Orchestrator Local
 
-**Codexが設計とレビューを担当し、ローカルLLMへ小さな実装を委譲するための開発ルールです。** [AGENTS.md](AGENTS.md) に、作業の分け方、編集範囲、テスト、修正回数、採用判断、計測方法を定義しています。
+> いつものAIへの頼み方はそのまま。作業の一部をPC内のAIに分担させ、クラウドAIの消費を抑えることを目指します。
 
-目的は、品質を確認する工程を保ちながら、Codexの実装・修正にかかる作業とトークン消費を減らすことです。委譲する割合を増やすこと自体を目標にはせず、直接処理した方が効率的な作業はCodexが担当します。
+**今までと同じように依頼して、必要な品質の結果を受け取り、そのためのコストを下げること**が狙いです。相談・設計と最終確認をふだんの会話で行い、実作業の一部を手元のAIに任せます。
 
-## 読む目的から探す
+このリポジトリ（OrchestratorMD）のメインコンテンツは、[Orchestrator Local](apps/orchestrator-local)です。現在は、CSV/JSONの整理・集計や、一覧と短い共有文を作成するWindows向け初期版を公開しています。
 
-|目的|入口|
-|---|---|
-|デスクトップからCSV/JSON作業をLocalへ依頼して使う|[Orchestrator Local — Windows向け初期版](apps/orchestrator-local/README_JA.md)|
-|今回の100件比較と説明資料|[通常Sol vs Gemma＋必要な修正だけ行うSol確認](docs/presentations/2026-11-practical-review-100.md)|
-|同じ比較の詳細設計図・100件の原文・結果・再検証|[2026-11-05 実験一式](benchmarks/practical-review-100/2026-11-05/README.md)|
-|説明資料・図を一覧で見る|[説明資料の目次](docs/presentations/README.md)|
-|課題・実験・公式比較を種類別に探す|[ベンチマークの案内](benchmarks/README.md)|
-|運用ルールを使う|[AGENTS.md](AGENTS.md) / [別PCでの配布状況](PORTABLE_EXECUTION_READINESS_JA.md)|
+**[導入・使い方](apps/orchestrator-local/README_JA.md)** · [ソースコード](apps/orchestrator-local) · [内部の構成図](apps/orchestrator-local/DESIGN_JA.md) · [English](apps/orchestrator-local/README.md)
 
-今回の100件は合成JSON業務データの比較です。両方式の採用データ100/100、Sol最終確認込みの報告usage小計181.64→122.10 Credits、平均active63.10→247.32秒。small14件は同じSol実行を物理共有します。未計測消費があるため厳密な総支出・削減率は未確定、全件の文章独立監査も実施していません。過去の独自課題619エントリや公式30課題とは別の実験として収録しています。
+## 使い始める
 
-## 役割分担
+Python 3.11以降と、OllamaでGemma4 26Bを実行できるWindows PCが必要です。モデル本体は同梱していません。
 
-| 担当 | 役割 |
-| --- | --- |
-| Codex | 設計、型・インターフェース、実装の骨組み、受入条件、リスク判断、タスク分割、最終レビュー |
-| ローカルLLM | 決められた範囲で、一つの責務を持つ小さな実装や構造化回答を作成 |
-| Host・テスト | 編集権限と実行範囲の制限、差分・契約・テストの検証、結果と使用量の記録 |
+1. このリポジトリを[ZIPでダウンロード](https://github.com/o0w0v/OrchestratorMD/archive/refs/heads/main.zip)するか、cloneします。
+2. `apps/orchestrator-local`を開き、[導入手順](apps/orchestrator-local/README_JA.md#導入)に沿って接続と実行サービスを設定します。
+3. デスクトップアプリのMCP接続を再起動し、[最初の依頼例](apps/orchestrator-local/examples/first-request.md)で使い始めます。
 
-曖昧な仕様、複雑な設計、セキュリティ・認証・DB・公開APIの変更などはCodexが担当します。委譲するタスクには、目標、固定インターフェース、受入条件、検証方法、編集範囲を事前に用意します。編集量の初期目安は1〜2ファイル、追加・削除の合計80行です。
+一度の導入後は、いつもの会話から作業を依頼します。必要な条件を相談し、作成した結果を確認してCSV・JSON・共有文として受け取れます。ログイン時の自動起動や、後からの登録解除にも対応しています。
 
-## 作業に合わせた三つのプロトコル
+## コストについて分かったこと
 
-| プロトコル | 使用する場面 | ローカルLLMが返すもの |
-| --- | --- | --- |
-| FIXED_SLOT | 編集箇所が分かっている | Hostが指定した領域の実装内容 |
-| AGENTIC | 編集箇所を調べる必要がある | 制限された探索・編集操作と実装 |
-| REASONING | コードの編集が不要 | 決められた形式の回答 |
+設計の参考にした100件比較では、初期相談・設計からSolの最終確認・部分修正までを含めて、次の結果になりました。
 
-モデルの選択とプロトコルの選択は別に扱います。現行ルールではGemma26を小規模・通常実装、CoderNextをデバッグに割り当てています。Gemma12は実行対象外、Qwen14は実験用で、自動フォールバックには使いません。具体的な制約は [AGENTS.md](AGENTS.md) を参照してください。
+|項目|通常Sol|新方式（Sol確認・部分修正込み）|
+|---|---:|---:|
+|既知Credits小計|181.64328|122.10496|
+|採用データ正解|100/100件|100/100件|
+|平均active時間（相談込み）|63.10秒|247.32秒|
 
-## 実装から採用まで
+**既知小計は59.53832 Credits、約32.78％減りました。** その一方で、処理時間は増えました。小さい14件は両方式で直接Solの実行を共有し、新方式では残る86件をGemmaに任せています。
 
-1. Codexが仕様と受入条件を固め、独立した小さな作業へ分割します。
-2. ローカルLLMが専用の作業コピー内で実装し、Hostが対象のテスト・lintを実行します。
-3. 通常の実装失敗では、実際の標準出力・標準エラーを同じモデルへ返し、修正を1回だけ行います。初回を含めて最大2回です。
-4. Codexが差分、検証結果、試行数、要約、リスクを確認します。
-5. 元のコードとの整合性を確認し、統合後の必要な検証を経て採用します。
+これは合成業務データ100件の実測です。共通工程の未計測消費があるため総支出と厳密な削減率は未確定で、全件文章の独立した同等性評価も実施していません。公開アプリの会話側Creditsはまだ計測しておらず、実験結果と各利用場面の効果は分けて扱います。[比較の条件・全記録](benchmarks/practical-review-100/2026-11-05/COMPLETION_REVIEW_JA.md)を参照してください。
 
-LocalのPASSはユニット検証の通過を表します。採用までには設計・ユニット・統合・レビューの各段階を通します。Shadow modeでは本体コードへの自動反映を行いません。
+## 内部の仕組み
 
-出力上限に達した場合は作業を分割し直し、上限の引き上げで継続しません。編集範囲違反は採用せず、GPU・通信・保存などのインフラ障害は実装能力の失敗と分けて記録します。テストを緩めたり、失敗結果を後の成功で上書きしたりしないルールです。
+会話側のAIが相談・設計と最終確認を担当し、Gemmaが実作業の一部を担当します。小さい仕事は会話側で直接処理することもできます。使える成果物はそのまま採用し、必要な箇所だけ直して保存します。別のCloud Reviewerは追加しません。
 
-## 効果の測り方
+受け渡し・確認・部分修正・保存は、この使い方を支える裏側の仕組みです。実行中の状態や成果物を残し、会話の接続を開き直しても確認できるようにしています。
 
-ローカルLLMのtokens・時間・初回成功・修正結果に加え、Codexの計画・レビュー・修正、介入量、採否を記録します。削減効果はCodex側を含む総作業量で評価します。取得できない使用量は欠測のまま扱い、ローカルLLMが生成したtokensをそのまま節約量には換算しません。
+- [構成図と処理の流れ](apps/orchestrator-local/DESIGN_JA.md)
+- [処理・確認・保存の詳しい説明](apps/orchestrator-local/README_JA.md#処理と確認)
+- [実装と動作確認の範囲](apps/orchestrator-local/VALIDATION.md)
+- [MCP・Skill・テストを含む実装一式](apps/orchestrator-local)
 
-## 利用する際の前提
+この初期版の実機確認は一台のWindows PCで行っています。入力と候補は確認のため会話側にも渡るので、完全オフラインの構成ではありません。
 
-このリポジトリの中心は **運用方針を定義するAGENTS.md** です。ファイルを置くだけでローカルLLMの呼び出しや権限制御が実装されるわけではありません。実際の委譲には、モデル接続、範囲を制限するHost、固定した検証コマンド、使用量を記録する実行系を用意します。
+## 開発の背景・実験資料
 
-現行のAGENTS.mdには、Rust製のNew-Concept-OS向けのcrate構成・検証コマンド・参照文書が含まれています。別のプロジェクトへ適用する際は、それらとモデルの割当を対象環境に合わせて調整してください。専用のGit作業コピーはOSレベルのsandboxとは別のものです。
+Orchestrator Localの説明をトップに置き、従来の開発ルールや研究資料の案内は[開発ルール・資料の背景ページ](DEVELOPMENT_RULES_OVERVIEW_JA.md)へまとめました。
 
-## 比較用課題と検証結果
+- [100件比較の説明資料](docs/presentations/2026-11-practical-review-100.md)
+- [100件の課題・結果・詳細設計・再検証](benchmarks/practical-review-100/2026-11-05/README.md)
+- [実験・課題の一覧](benchmarks/README.md)
+- [過去の説明資料・図](docs/presentations/README.md)
+- [従来の開発用ルール](AGENTS.md) / [従来の開発用実行系の配布状況](PORTABLE_EXECUTION_READINESS_JA.md)
 
-| 内容 | 場所 |
-| --- | --- |
-| 開発ルールの定義 | [AGENTS.md](AGENTS.md) |
-| 同じ20課題を、独立レビューなしのSolへまとめて依頼した追加比較 | [結果と従来条件との違い](docs/presentations/2026-10-sol-normal-baseline-20.md) |
-| Gemma4 26Bの2000課題・使い分けの知識（最新500件の追補付き） | [Localモデル評価の要約](benchmarks/local-model-knowledge/2026-10-30/README_JA.md) / [説明資料](docs/presentations/2026-10-gemma-local-model-knowledge.md) |
-| 独自生成した課題セット・初期コード・テスト・過去の検証結果 | [独自課題の一覧と配布物](benchmarks/custom/README.md) |
-| 課題と条件別結果の対応表 | [48セットのINDEX](benchmarks/custom/INDEX.md) |
-| 過去の課題別検証記録 | [historical-results.csv](benchmarks/custom/historical-results.csv) |
-| 公式データセットから選定した30課題 | [公式課題のINDEX](benchmarks/official-30/INDEX.md) |
-| 公式課題の比較手順 | [比較手順](benchmarks/official-30/README.md) |
+従来のRust開発用Host/Routerや研究環境全体は、このCSV/JSONアプリとは別です。過去の課題・結果・実行記録は保持しています。
 
-独自課題は **48セット・619課題エントリ**です。改訂・再実行・部分集合を含みます。各課題ページで、課題文・受入条件・条件別の結果・根拠を確認できます。初期コードとテスト、対応する過去結果はZIPから一緒に取り出せます。607エントリに個別記録が対応し、12エントリは個別結果未確認として明示しています。検証結果にはFAIL・未完了・欠測も含めており、全件の実行・成功を示す件数ではありません。
+## ライセンス
 
-公式課題は **MultiPL-E Rust 20件＋Multi-SWE-bench Rust 10件**の固定部分集合です。全体の公式ベンチマークを代替するものではなく、公式評価の実測結果と制約は[2026-10-21 A/B報告](benchmarks/official-30/results/2026-10-21-gemma26-router/RESULTS_JA.md)に収録しています。
-
-独自課題の検証結果は過去の実験記録です。別製品で再評価するための空のCSVも用意しています。小規模な課題群の結果を、他の環境でも同じ効果が得られる保証としては扱いません。
-
-ライセンスは [LICENSE](LICENSE)、第三者の公式課題については [出典とライセンス](benchmarks/official-30/THIRD_PARTY_NOTICES.md) を参照してください。公開ファイルのSHA-256は [PACKAGE_MANIFEST.json](PACKAGE_MANIFEST.json) に記録しています。
-
-## 別PCでの実行について
-
-CSV/JSON業務向けの実行アプリ[Orchestrator Local 0.1.0](apps/orchestrator-local/README_JA.md)を公開しました。既存Ollama・Gemma4 26BとPythonを持つWindows PCで、会話から依頼し、元条件で確認してJSON・共有文・CSVへ保存します。小さい仕事は会話側で直接処理でき、別のCloudモデルを追加しません。導入・起動・ログイン自動起動・登録解除の手順と、モデルを使わないテストを同梱しています。
-
-ユーザーにとっての狙いは、**今までと同じように依頼して、必要な品質の結果を受け取り、そのためのコストを下げること**です。実作業の一部をPC内のAIに任せ、受け渡し・確認・必要な修正・保存は裏側で支えます。100件比較ではSol確認・部分修正込みの既知Credits小計が約32.78％減りました。実験の条件とアプリでの計測状況を分けて、[狙い・実測結果・内部の仕組み](apps/orchestrator-local/README_JA.md#使うと何がよいか)にまとめています。
-
-一台のWindows PCでの実機確認を行った初期版です。別PC・全OSでの動作、全件文章品質、節約額の保証ではありません。入力と候補は会話側にも渡るため完全オフラインではありません。
-
-従来のRust開発用Host/Router一式や研究用benchmarkの完全再現とは別の配布物です。それらの不足範囲は[配布状況の記録](PORTABLE_EXECUTION_READINESS_JA.md)を参照してください。
-
-
-
+公開ソースは[MIT License](LICENSE)。公開ファイルのSHA-256は[PACKAGE_MANIFEST.json](PACKAGE_MANIFEST.json)に記録しています。第三者の公式課題の出典・ライセンスは[こちら](benchmarks/official-30/THIRD_PARTY_NOTICES.md)を参照してください。

@@ -25,7 +25,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "ea90826c02c7b9cd50bbbe78739945d11d2444a4cf82667e3bc522e308e3280b"
+      "sha256": "a16d69b6debffaff2a83d57fe7ebed526bda94b23a18746b712f6ec0441b249e"
     },
     {
       "path": "benchmarks/README.md",
@@ -2186,6 +2186,10 @@
     {
       "path": "apps/orchestrator-local/tests/test_setup.py",
       "sha256": "1939ed985f707607e191d01d16192c610dbbe824a6f7e15957bc99eb5418f836"
+    },
+    {
+      "path": "DEVELOPMENT_RULES_OVERVIEW_JA.md",
+      "sha256": "a68148668a0d72ee6eccdcbf3f60cdddd9c30dd0695152efc820cd202fa09848"
     }
   ],
   "official_result_revision": "2026-10-21-gemma26-router",
@@ -2352,5 +2356,11 @@
       "scripts/test_worker.py",
       "Cargo.toml"
     ]
+  },
+  "primary_content": {
+    "name": "Orchestrator Local",
+    "source": "apps/orchestrator-local",
+    "usage": "apps/orchestrator-local/README_JA.md",
+    "background": "DEVELOPMENT_RULES_OVERVIEW_JA.md"
   }
 }
