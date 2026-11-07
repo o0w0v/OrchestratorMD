@@ -1,5 +1,7 @@
 # 別PCでCodex＋Gemmaを動かせるか — 配布状況の確認
 
+> 2026-11-07追記: CSV/JSON業務専用の[Orchestrator Local 0.1.0](apps/orchestrator-local/README_JA.md)を別アプリとして公開しました。Windows向けソース・導入/解除手順・MCP/Skill・偽backendによるテストを含みます。以下は従来のRust開発用Host/Routerと研究環境の配布状況を調べた当時の記録です。新アプリはその全機能を実装したものではなく、元の判定や実験結果は変更しません。
+
 **現時点では、このリポジトリをcloneするだけでは実行できません。運用ルール・課題・結果の公開と、実行ソフトウェアの配布は別です。**
 
 確認対象はOrchestratorMDのmain commit `2f59d8bf6949cd60bb353acb4b2c3bcd0b58bb15`です。目的は研究環境やbenchmarkの完全再現ではなく、利用者のPCでCodex＋Gemmaによる開発workflowを開始できるかの確認です。
@@ -38,4 +40,5 @@
 旧の結果・Task・STOP・Production Routerは変更していません。公式解決率やCredits削減の結論も変えていません。研究用の追加入力ZIPと環境fingerprintの公開は、この確認の目的とは別なので実施しません。
 
 **判定: PORTABLE_RUNTIME_PACKAGE_INCOMPLETE**
+
 

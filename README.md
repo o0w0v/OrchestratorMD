@@ -8,6 +8,7 @@
 
 |目的|入口|
 |---|---|
+|デスクトップからCSV/JSON作業をLocalへ依頼して使う|[Orchestrator Local — Windows向け初期版](apps/orchestrator-local/README_JA.md)|
 |今回の100件比較と説明資料|[通常Sol vs Gemma＋必要な修正だけ行うSol確認](docs/presentations/2026-11-practical-review-100.md)|
 |同じ比較の詳細設計図・100件の原文・結果・再検証|[2026-11-05 実験一式](benchmarks/practical-review-100/2026-11-05/README.md)|
 |説明資料・図を一覧で見る|[説明資料の目次](docs/presentations/README.md)|
@@ -81,6 +82,11 @@ LocalのPASSはユニット検証の通過を表します。採用までには�
 
 ## 別PCでの実行について
 
-現状の公開物だけではCodex＋Gemmaの実行系を起動できません。[配布状況と不足する実装・セットアップ手順](PORTABLE_EXECUTION_READINESS_JA.md)を参照してください。研究用benchmarkの完全再現とは分けて確認しています。
+CSV/JSON業務向けの実行アプリ[Orchestrator Local 0.1.0](apps/orchestrator-local/README_JA.md)を公開しました。既存Ollama・Gemma4 26BとPythonを持つWindows PCで、会話から依頼し、元条件で確認してJSON・共有文・CSVへ保存します。小さい仕事は会話側で直接処理でき、別のCloudモデルを追加しません。導入・起動・ログイン自動起動・登録解除の手順と、モデルを使わないテストを同梱しています。
+
+一台のWindows PCでの実機確認を行った初期版です。別PC・全OSでの動作、全件文章品質、節約額の保証ではありません。入力と候補は会話側にも渡るため完全オフラインではありません。
+
+従来のRust開発用Host/Router一式や研究用benchmarkの完全再現とは別の配布物です。それらの不足範囲は[配布状況の記録](PORTABLE_EXECUTION_READINESS_JA.md)を参照してください。
+
 
 
