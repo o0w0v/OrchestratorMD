@@ -28,114 +28,6 @@
       "sha256": "df5de782e0c46592233a7b6424b9030c1efc6f6377a330024f1036c4a7215684"
     },
     {
-      "path": "apps/orchestrator-local/.gitignore",
-      "sha256": "b14fe9f57d4d25c193182b0719758546f9cc111d9a79969178c3c476f5110238"
-    },
-    {
-      "path": "apps/orchestrator-local/AGENTS.md",
-      "sha256": "f450708d8db725f2a8c58cdb5135ce7bd714ec0543b4049533eb5b47802b9b22"
-    },
-    {
-      "path": "apps/orchestrator-local/DESIGN_JA.md",
-      "sha256": "c950065a02cd2ba09e594c2d8e72d6f2359567242e2f80a37136e21b4146a833"
-    },
-    {
-      "path": "apps/orchestrator-local/LICENSE",
-      "sha256": "f00071a070f054bb59837aef436bbc53cc87bf6730bbd39b5d3fddc26c0ff034"
-    },
-    {
-      "path": "apps/orchestrator-local/README.md",
-      "sha256": "1ebd1d58ba4f5640f764148c0707cb924a5011859bf35e0d98e740d56cba352c"
-    },
-    {
-      "path": "apps/orchestrator-local/README_JA.md",
-      "sha256": "39bbdd3ca2a78b453cbe720e7f9b5860f89270ee6d58b8ee2668644012966cb2"
-    },
-    {
-      "path": "apps/orchestrator-local/VALIDATION.md",
-      "sha256": "dce1f958256f6d4c0ce20e5bac62da82d1c4a6d15337e685c1951f7e09b4963e"
-    },
-    {
-      "path": "apps/orchestrator-local/enable-startup.ps1",
-      "sha256": "4dcd1b6c942fbfc648f40d35373d5260ab9f9efabe06da4ee408a036561fbc5d"
-    },
-    {
-      "path": "apps/orchestrator-local/examples/first-request.md",
-      "sha256": "756b3ec4438ba403ed69177d0d41cd9fe5a148f7869fea418e7930d2db4c4f36"
-    },
-    {
-      "path": "apps/orchestrator-local/examples/inventory.json",
-      "sha256": "bd739248eb2ac56c2199e651c63e6a5a6a2f6348773cf2de2d1beba696fcb691"
-    },
-    {
-      "path": "apps/orchestrator-local/mcp.json",
-      "sha256": "b86549a8a364213729f33426f9f1d68b24d16163d91c9a26eaba379c6d40a2c0"
-    },
-    {
-      "path": "apps/orchestrator-local/orchestrator_local/__init__.py",
-      "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed"
-    },
-    {
-      "path": "apps/orchestrator-local/orchestrator_local/core.py",
-      "sha256": "c37b3e9074f929f97ce9be71014a84fd52a3be0965fb36192f79803b35b856d4"
-    },
-    {
-      "path": "apps/orchestrator-local/orchestrator_local/server.py",
-      "sha256": "4c8e150ae4c9377cefc81b3891ab727d665530b1ce255346f531f041dbe49d99"
-    },
-    {
-      "path": "apps/orchestrator-local/orchestrator_local/service.py",
-      "sha256": "73584d7409905f73f04048582b8c2ce196b81c0addedc48ec34fdec78dc5f1e0"
-    },
-    {
-      "path": "apps/orchestrator-local/orchestrator_local/worker.py",
-      "sha256": "1bb72717e8e7d05cf33f77e8e899e1dc3a18fffc7242c4fcd09b33c0c1863a8c"
-    },
-    {
-      "path": "apps/orchestrator-local/plugin.json",
-      "sha256": "524f75e40d92030342f7598d76c0392d1bb3968648dc15bda54c94a8156e5e87"
-    },
-    {
-      "path": "apps/orchestrator-local/pyproject.toml",
-      "sha256": "0174d447183a13d075fea50e7c3002d9b063fadeb64928eb9ed88e880e1094ba"
-    },
-    {
-      "path": "apps/orchestrator-local/requirements.lock",
-      "sha256": "008f9b26794655a3b47d19ef817d9f52f2f25c531d4bdeb4b973a2fa52cdc297"
-    },
-    {
-      "path": "apps/orchestrator-local/serve.py",
-      "sha256": "a504208662bd14573781b155a64ffd85053be1e2284a2c150a454bc3e7feb4bf"
-    },
-    {
-      "path": "apps/orchestrator-local/service_entry.py",
-      "sha256": "fd3ed43180fabf3d0b12b810aca7abd8e59f01f11ddd70a69b26b0fdbd4719b0"
-    },
-    {
-      "path": "apps/orchestrator-local/setup_local.py",
-      "sha256": "ddd70f633da987506d94ddddb2178ef3283cd3bcbf95399dccb78f3be5b71080"
-    },
-    {
-      "path": "apps/orchestrator-local/skills/orchestrator-local/SKILL.md",
-      "sha256": "e2520dd6cf99291ba84bfc4cd7b3f1f82d18a9884115297e56c5f74e5408f266"
-    },
-    {
-      "path": "apps/orchestrator-local/skills/orchestrator-local/agents/openai.yaml",
-      "sha256": "c31fc37078042571491fe4b97e553d1977439bf69838c0c5d721ee6525b9c5f8"
-    },
-    {
-      "path": "apps/orchestrator-local/start-service.ps1",
-      "sha256": "cef5b8c4336f023c3c0ce9d83bdd1a7495f100979ec534c68ef7cd63e99f7711"
-    },
-    {
-      "path": "apps/orchestrator-local/tests/test_runtime.py",
-      "sha256": "5050680e134b17b0660941867ed5a53c3f62aed328f01aa97c6c99149df7c889"
-    },
-    {
-      "path": "apps/orchestrator-local/tests/test_setup.py",
-      "sha256": "1939ed985f707607e191d01d16192c610dbbe824a6f7e15957bc99eb5418f836"
-    },
-    {
       "path": "benchmarks/README.md",
       "sha256": "cf35b33a7ae583f9892681c1e7b3c1f3e2f50e89a5b31a2a076253c385ce76bf"
     },
@@ -2186,6 +2078,114 @@
     {
       "path": "docs/presentations/README.md",
       "sha256": "7367dfc58401f3a44c70aafe0b996055d12dc3a76870717ac0c989e053f683cc"
+    },
+    {
+      "path": "apps/orchestrator-local/.gitignore",
+      "sha256": "b14fe9f57d4d25c193182b0719758546f9cc111d9a79969178c3c476f5110238"
+    },
+    {
+      "path": "apps/orchestrator-local/AGENTS.md",
+      "sha256": "f450708d8db725f2a8c58cdb5135ce7bd714ec0543b4049533eb5b47802b9b22"
+    },
+    {
+      "path": "apps/orchestrator-local/DESIGN_JA.md",
+      "sha256": "c950065a02cd2ba09e594c2d8e72d6f2359567242e2f80a37136e21b4146a833"
+    },
+    {
+      "path": "apps/orchestrator-local/enable-startup.ps1",
+      "sha256": "4dcd1b6c942fbfc648f40d35373d5260ab9f9efabe06da4ee408a036561fbc5d"
+    },
+    {
+      "path": "apps/orchestrator-local/LICENSE",
+      "sha256": "f00071a070f054bb59837aef436bbc53cc87bf6730bbd39b5d3fddc26c0ff034"
+    },
+    {
+      "path": "apps/orchestrator-local/mcp.json",
+      "sha256": "b86549a8a364213729f33426f9f1d68b24d16163d91c9a26eaba379c6d40a2c0"
+    },
+    {
+      "path": "apps/orchestrator-local/plugin.json",
+      "sha256": "524f75e40d92030342f7598d76c0392d1bb3968648dc15bda54c94a8156e5e87"
+    },
+    {
+      "path": "apps/orchestrator-local/pyproject.toml",
+      "sha256": "0174d447183a13d075fea50e7c3002d9b063fadeb64928eb9ed88e880e1094ba"
+    },
+    {
+      "path": "apps/orchestrator-local/README.md",
+      "sha256": "1ebd1d58ba4f5640f764148c0707cb924a5011859bf35e0d98e740d56cba352c"
+    },
+    {
+      "path": "apps/orchestrator-local/README_JA.md",
+      "sha256": "39bbdd3ca2a78b453cbe720e7f9b5860f89270ee6d58b8ee2668644012966cb2"
+    },
+    {
+      "path": "apps/orchestrator-local/requirements.lock",
+      "sha256": "008f9b26794655a3b47d19ef817d9f52f2f25c531d4bdeb4b973a2fa52cdc297"
+    },
+    {
+      "path": "apps/orchestrator-local/serve.py",
+      "sha256": "a504208662bd14573781b155a64ffd85053be1e2284a2c150a454bc3e7feb4bf"
+    },
+    {
+      "path": "apps/orchestrator-local/service_entry.py",
+      "sha256": "fd3ed43180fabf3d0b12b810aca7abd8e59f01f11ddd70a69b26b0fdbd4719b0"
+    },
+    {
+      "path": "apps/orchestrator-local/setup_local.py",
+      "sha256": "ddd70f633da987506d94ddddb2178ef3283cd3bcbf95399dccb78f3be5b71080"
+    },
+    {
+      "path": "apps/orchestrator-local/start-service.ps1",
+      "sha256": "cef5b8c4336f023c3c0ce9d83bdd1a7495f100979ec534c68ef7cd63e99f7711"
+    },
+    {
+      "path": "apps/orchestrator-local/VALIDATION.md",
+      "sha256": "dce1f958256f6d4c0ce20e5bac62da82d1c4a6d15337e685c1951f7e09b4963e"
+    },
+    {
+      "path": "apps/orchestrator-local/examples/first-request.md",
+      "sha256": "756b3ec4438ba403ed69177d0d41cd9fe5a148f7869fea418e7930d2db4c4f36"
+    },
+    {
+      "path": "apps/orchestrator-local/examples/inventory.json",
+      "sha256": "bd739248eb2ac56c2199e651c63e6a5a6a2f6348773cf2de2d1beba696fcb691"
+    },
+    {
+      "path": "apps/orchestrator-local/orchestrator_local/core.py",
+      "sha256": "c37b3e9074f929f97ce9be71014a84fd52a3be0965fb36192f79803b35b856d4"
+    },
+    {
+      "path": "apps/orchestrator-local/orchestrator_local/server.py",
+      "sha256": "4c8e150ae4c9377cefc81b3891ab727d665530b1ce255346f531f041dbe49d99"
+    },
+    {
+      "path": "apps/orchestrator-local/orchestrator_local/service.py",
+      "sha256": "73584d7409905f73f04048582b8c2ce196b81c0addedc48ec34fdec78dc5f1e0"
+    },
+    {
+      "path": "apps/orchestrator-local/orchestrator_local/worker.py",
+      "sha256": "1bb72717e8e7d05cf33f77e8e899e1dc3a18fffc7242c4fcd09b33c0c1863a8c"
+    },
+    {
+      "path": "apps/orchestrator-local/orchestrator_local/__init__.py",
+      "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed"
+    },
+    {
+      "path": "apps/orchestrator-local/skills/orchestrator-local/SKILL.md",
+      "sha256": "e2520dd6cf99291ba84bfc4cd7b3f1f82d18a9884115297e56c5f74e5408f266"
+    },
+    {
+      "path": "apps/orchestrator-local/skills/orchestrator-local/agents/openai.yaml",
+      "sha256": "c31fc37078042571491fe4b97e553d1977439bf69838c0c5d721ee6525b9c5f8"
+    },
+    {
+      "path": "apps/orchestrator-local/tests/test_runtime.py",
+      "sha256": "5050680e134b17b0660941867ed5a53c3f62aed328f01aa97c6c99149df7c889"
+    },
+    {
+      "path": "apps/orchestrator-local/tests/test_setup.py",
+      "sha256": "1939ed985f707607e191d01d16192c610dbbe824a6f7e15957bc99eb5418f836"
     }
   ],
   "official_result_revision": "2026-10-21-gemma26-router",
