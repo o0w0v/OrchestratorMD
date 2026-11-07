@@ -1,18 +1,23 @@
 # Orchestrator Local 0.1.0 — Windows preview
 
-Create CSV/JSON work products with a local Gemma model, review them in your existing ChatGPT/Codex conversation, and save the original or a precise patch. Small jobs can be completed directly in the conversation. The application does not call a separate Cloud model or require an OpenAI API key.
+**Ask your usual chat to organize a table or total up a list, using an AI running on your own PC to share the work.**
+
+Give it a CSV of orders or transaction details, explain what you need, and receive the resulting table and a short report as files.
 
 **[日本語の導入手順・使い方](README_JA.md)**
 
 ## Why use it?
 
-- Request routine data work in your existing conversation instead of manually moving prompts and candidates between chat and Gemma.
-- Keep usable output. Correct errors that affect use with precise patches, without regenerating the whole result for wording preferences.
-- Receive saved JSON, CSV and a short Markdown report rather than copying a chat response into files. Follow-up edits retain previous result versions.
-- Use the local model for candidate creation while the conversation handles clarification and review. Small jobs can be completed directly; no separate Cloud reviewer is added.
-- Reconnect to the same persisted job. Resending the same request key and inputs does not start another generation.
+For example, ask: “Total these transactions by customer and save a CSV,” or “Use these orders and stock figures to list what we can supply and what is short.” Clarify the rules in the conversation, then request changes such as “Add this column” or “Change this sentence in the report.”
 
-This suits repeated, clearly specified CSV/JSON aggregation, classification and formatting work. It does not guarantee lower cost or latency: conversation-side review still consumes input, and local generation uses PC resources and may take longer. For tiny jobs, direct conversation work can be simpler.
+- **Hand over routine table work.** Ask the AI to group, total, classify or organize your data using the rules you provide.
+- **Receive files you can use.** Open the saved results later instead of rebuilding a table from a chat response.
+- **Change only what you need.** Keep the useful parts, ask for specific edits and retain the earlier files.
+- **Put your PC's AI to work.** Continue using your familiar chat while an AI on your computer shares some of the work.
+
+This is aimed at people who already run a local AI and repeatedly organize similar CSV/JSON data. Sharing work with the PC is intended to reduce work done in the cloud; any cost or speed benefit depends on the task and hardware.
+
+## Before installing
 
 This is a source release for Windows users who already have Python 3.11+ and a working Ollama installation with `gemma4:26b`. Model weights, Ollama, Python, user configuration, job data and credentials are not included. This is not a one-click installer or a reviewed plugin-directory listing. macOS/Linux and other machines have not been acceptance tested.
 
